@@ -66,5 +66,20 @@ namespace SistemaFigueri
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+        private void AbreFormEnPanel(object Formhijo)
+        {
+            if (this.PanelContenedor.Controls.Count > 0)
+                this.PanelContenedor.Controls.RemoveAt(0);
+            Form fh = Formhijo as Form;
+            fh.TopLevel = false;
+            fh.Dock = DockStyle.Fill;
+            this.PanelContenedor.Controls.Add(fh);
+            this.PanelContenedor.Tag = fh;
+            fh.Show();
+        }
+        private void btnproductos_Click(object sender, EventArgs e)
+        {
+            AbreFormEnPanel(new Productos());
+        }
     }
 }
