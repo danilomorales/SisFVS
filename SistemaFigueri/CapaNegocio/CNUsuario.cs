@@ -13,7 +13,7 @@ namespace CapaNegocio
     {
 
         //Escapsula las variables
-        private CDUsuario objDato = new CDUsuario(); // INstancia a la capa datos de usuario
+        private CDUsuario objDato = new CDUsuario(); // Instancia a la capa datos de usuario
         //Variables
         private String _IdPersona;
         private String _Login;
