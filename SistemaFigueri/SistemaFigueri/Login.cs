@@ -7,6 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
+using CapaNegocio;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace SistemaFigueri
 {
@@ -16,6 +20,10 @@ namespace SistemaFigueri
         {
             InitializeComponent();
         }
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hend, int wsmg, int wparam, int lparam);
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
@@ -32,7 +40,7 @@ namespace SistemaFigueri
             if(tbUsuario.Text == "USUARIO")
             {
                 tbUsuario.Text = "";
-                tbUsuario.ForeColor = Color.LightGray;
+                tbUsuario.ForeColor = Color.WhiteSmoke;
             }
         }
 
@@ -44,13 +52,14 @@ namespace SistemaFigueri
                 tbUsuario.ForeColor = Color.DimGray;
             }
         }
-
+        
         private void tbContrasenna_Enter(object sender, EventArgs e)
         {
             if (tbContrasenna.Text == "CONTRASEÑA")
             {
                 tbContrasenna.Text = "";
-                tbContrasenna.ForeColor = Color.LightGray;
+                tbContrasenna.ForeColor = Color.WhiteSmoke;
+                tbContrasenna.UseSystemPasswordChar = true;
             }
         }
 
@@ -60,7 +69,34 @@ namespace SistemaFigueri
             {
                 tbContrasenna.Text = "CONTRASEÑA";
                 tbContrasenna.ForeColor = Color.DimGray;
+                tbContrasenna.UseSystemPasswordChar = false;
             }
+        }
+
+        private void Login_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void btnAceder_Click(object sender, EventArgs e)
+        {
+            CNUsuario objUsuario = new CNUsuario();
+            SqlDataReader Loguear;
+            objUsuario.Usuario = tbUsuario.Text;
+            objUsuario.Usuario = tbContrasenna.Text;
+            Loguear = objUsuario.IniciarSesion();
+            if (Loguear.Read() == true)
+            {
+                this.Hide();
+                Principal objPPrincipal = new Principal();
+                objPPrincipal.Show();
+            }
+            else
+            {
+                MessageBox.Show("Usuarioo contraseña Invalidos");
+            }
+
         }
     }
 }
