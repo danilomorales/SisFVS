@@ -84,18 +84,22 @@ namespace SistemaFigueri
             CNUsuario objUsuario = new CNUsuario();
             SqlDataReader Loguear;
             objUsuario.Usuario = tbUsuario.Text;
-            objUsuario.Usuario = tbContrasenna.Text;
-            Loguear = objUsuario.IniciarSesion();
-            if (Loguear.Read() == true)
+            objUsuario.Pass = tbContrasenna.Text;
+            if (objUsuario.Usuario == tbUsuario.Text)
             {
-                this.Hide();
-                Principal objPPrincipal = new Principal();
-                objPPrincipal.Show();
+                Loguear = objUsuario.IniciarSesion();
+                if (Loguear.Read() == true)
+                {
+                    this.Hide();
+                    Principal objPPrincipal = new Principal();
+                    objPPrincipal.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Usuario o contraseña Invalidos");
+                }
             }
-            else
-            {
-                MessageBox.Show("Usuario o contraseña Invalidos");
-            }
+
 
         }
     }
