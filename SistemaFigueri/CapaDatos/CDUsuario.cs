@@ -15,10 +15,10 @@ namespace CapaDatos
 
         public SqlDataReader iniciarSesion(string usuario, string contrasena)
         {
-            string sql = "select * from Usuario where Login='"+usuario+"' and Pass='"+contrasena+"'";
-            SqlCommand comando = new SqlCommand();
-            comando.Connection = Conexion.AbrirConexion();
-            comando.CommandText = sql;
+            SqlCommand comando = new SqlCommand("SFIniciarSesion", Conexion.AbrirConexion());
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@Usuario", usuario);
+            comando.Parameters.AddWithValue("@Contrasena", contrasena);
             leer = comando.ExecuteReader();
             return leer;
         }
