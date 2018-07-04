@@ -20,7 +20,7 @@ namespace CapaDatos
             comando.Connection = Conexion.AbrirConexion();
             comando.CommandText = sql;
             leer = comando.ExecuteReader();
-    
+   
             return leer;
         }
     }
