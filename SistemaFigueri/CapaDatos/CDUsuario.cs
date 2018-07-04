@@ -15,6 +15,7 @@ namespace CapaDatos
 
         public SqlDataReader iniciarSesion(string usuario, string contrasena)
         {
+
             SqlCommand comando = new SqlCommand("SFIniciarSesion", Conexion.AbrirConexion());
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.AddWithValue("@Usuario", usuario);

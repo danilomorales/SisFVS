@@ -15,32 +15,32 @@ namespace CapaNegocio
         //Escapsula las variables
         private CDUsuario objDato = new CDUsuario(); // Instancia a la capa datos de usuario
         //Variables
-        private String _IdPersona;
         private String _Login;
         private String _Pass;
 
-        //Get an Set
+        //Get y Set
 
         public String Usuario
         {
-            set{ _Login = value; }
+            set
+            {
+                if (value == "Usuario") { _Login = "No ingresó nombre de Usuario"; }
+                else { _Login = value; }
+            }
             get { return _Login; }
-
         }
-        public String Contrasena
+        public String Pass
         {
-            set { _Login = value; }
+            set { _Pass = value; }
             get { return _Pass; }
-
         }
         //constructor
-
         public CNUsuario() { }
         //funcoines metodos
         public SqlDataReader IniciarSesion()
         {
             SqlDataReader Loguear;
-            Loguear = objDato.iniciarSesion(Usuario, Contrasena);
+            Loguear = objDato.iniciarSesion(Usuario, Pass);
             return Loguear;
         }
 

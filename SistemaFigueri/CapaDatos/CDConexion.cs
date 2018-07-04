@@ -10,7 +10,7 @@ namespace CapaDatos
 {
     class CDConexion
     {
-        private SqlConnection Conexion = new SqlConnection("Server = DESKTOP-L6011JV; DataBase=DBFIGUE2;Integrated Security=true");
+        private SqlConnection Conexion = new SqlConnection("Server=DESKTOP-S4P82SD;DataBase=DBFIGUE2;Integrated Security=true");
 
         public SqlConnection AbrirConexion()
         {
@@ -24,6 +24,7 @@ namespace CapaDatos
             if (Conexion.State == ConnectionState.Open)
                 Conexion.Close();
             return Conexion;
+
         }
     }
 }

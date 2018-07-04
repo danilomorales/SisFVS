@@ -94,7 +94,7 @@ namespace SistemaFigueri
             }
             else
             {
-                MessageBox.Show("Usuarioo contraseña Invalidos");
+                MessageBox.Show("Usuario o contraseña Invalidos");
             }
 
         }
