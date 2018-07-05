@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
             Microsoft.VisualBasic.PowerPacks.LineShape lineShape2;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tbUsuario = new System.Windows.Forms.TextBox();
@@ -48,6 +48,24 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             this.SuspendLayout();
+            // 
+            // lineShape1
+            // 
+            lineShape1.BorderColor = System.Drawing.SystemColors.WindowFrame;
+            lineShape1.Name = "lineShape1";
+            lineShape1.X1 = 308;
+            lineShape1.X2 = 746;
+            lineShape1.Y1 = 92;
+            lineShape1.Y2 = 92;
+            // 
+            // lineShape2
+            // 
+            lineShape2.BorderColor = System.Drawing.SystemColors.WindowFrame;
+            lineShape2.Name = "lineShape2";
+            lineShape2.X1 = 310;
+            lineShape2.X2 = 748;
+            lineShape2.Y1 = 154;
+            lineShape2.Y2 = 154;
             // 
             // panel1
             // 
@@ -71,13 +89,14 @@
             // 
             // tbUsuario
             // 
-            this.tbUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.tbUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(22)))));
             this.tbUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbUsuario.Font = new System.Drawing.Font("Dubai", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbUsuario.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.tbUsuario.Location = new System.Drawing.Point(309, 67);
+            this.tbUsuario.Multiline = true;
             this.tbUsuario.Name = "tbUsuario";
-            this.tbUsuario.Size = new System.Drawing.Size(443, 32);
+            this.tbUsuario.Size = new System.Drawing.Size(443, 24);
             this.tbUsuario.TabIndex = 1;
             this.tbUsuario.Text = "USUARIO";
             this.tbUsuario.Enter += new System.EventHandler(this.tbUsuario_Enter);
@@ -85,13 +104,13 @@
             // 
             // tbContrasenna
             // 
-            this.tbContrasenna.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.tbContrasenna.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(22)))));
             this.tbContrasenna.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbContrasenna.Font = new System.Drawing.Font("Dubai", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbContrasenna.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbContrasenna.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.tbContrasenna.Location = new System.Drawing.Point(309, 129);
             this.tbContrasenna.Name = "tbContrasenna";
-            this.tbContrasenna.Size = new System.Drawing.Size(443, 32);
+            this.tbContrasenna.Size = new System.Drawing.Size(443, 22);
             this.tbContrasenna.TabIndex = 2;
             this.tbContrasenna.Text = "CONTRASEÑA";
             this.tbContrasenna.Enter += new System.EventHandler(this.tbContrasenna_Enter);
@@ -177,29 +196,11 @@
             this.shapeContainer1.TabIndex = 7;
             this.shapeContainer1.TabStop = false;
             // 
-            // lineShape1
-            // 
-            lineShape1.BorderColor = System.Drawing.SystemColors.WindowFrame;
-            lineShape1.Name = "lineShape1";
-            lineShape1.X1 = 309;
-            lineShape1.X2 = 747;
-            lineShape1.Y1 = 99;
-            lineShape1.Y2 = 99;
-            // 
-            // lineShape2
-            // 
-            lineShape2.BorderColor = System.Drawing.SystemColors.WindowFrame;
-            lineShape2.Name = "lineShape2";
-            lineShape2.X1 = 309;
-            lineShape2.X2 = 747;
-            lineShape2.Y1 = 161;
-            lineShape2.Y2 = 161;
-            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(22)))));
             this.ClientSize = new System.Drawing.Size(780, 330);
             this.Controls.Add(this.btnMinimizar);
             this.Controls.Add(this.btnCerrar);

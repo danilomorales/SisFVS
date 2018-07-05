@@ -81,5 +81,10 @@ namespace SistemaFigueri
         {
             AbreFormEnPanel(new Productos());
         }
+
+        private void btnVentas_Click(object sender, EventArgs e)
+        {
+            AbreFormEnPanel(new Venta());
+        }
     }
 }
