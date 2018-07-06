@@ -26,5 +26,27 @@ namespace SistemaFigueri
         {
 
         }
+        private void TbBuscarcliente_Enter(object sender,EventArgs e)
+        {
+            if(tbBuscarcliente.Text == "Buscar Cliente")
+            {
+                tbBuscarcliente.Text = "";
+                tbBuscarcliente.ForeColor = Color.WhiteSmoke;
+            }
+
+        }
+        private void TbBuscarcliente_Leave(object sender, EventArgs e)
+        {
+            if (tbBuscarcliente.Text == "")
+            {
+                tbBuscarcliente.Text = "Buscar Cliente";
+                tbBuscarcliente.ForeColor = Color.DimGray;
+            }
+        }
+
+        private void tbBuscarcliente_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

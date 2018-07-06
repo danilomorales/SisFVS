@@ -102,5 +102,15 @@ namespace SistemaFigueri
 
 
         }
+
+        private void tbUsuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbContrasenna_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

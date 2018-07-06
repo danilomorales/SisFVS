@@ -89,7 +89,7 @@
             // 
             // tbUsuario
             // 
-            this.tbUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(22)))));
+            this.tbUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.tbUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbUsuario.ForeColor = System.Drawing.SystemColors.WindowFrame;
@@ -99,12 +99,13 @@
             this.tbUsuario.Size = new System.Drawing.Size(443, 24);
             this.tbUsuario.TabIndex = 1;
             this.tbUsuario.Text = "USUARIO";
+            this.tbUsuario.TextChanged += new System.EventHandler(this.tbUsuario_TextChanged);
             this.tbUsuario.Enter += new System.EventHandler(this.tbUsuario_Enter);
             this.tbUsuario.Leave += new System.EventHandler(this.tbUsuario_Leave);
             // 
             // tbContrasenna
             // 
-            this.tbContrasenna.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(22)))));
+            this.tbContrasenna.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.tbContrasenna.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbContrasenna.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbContrasenna.ForeColor = System.Drawing.SystemColors.WindowFrame;
@@ -113,6 +114,7 @@
             this.tbContrasenna.Size = new System.Drawing.Size(443, 22);
             this.tbContrasenna.TabIndex = 2;
             this.tbContrasenna.Text = "CONTRASEÑA";
+            this.tbContrasenna.TextChanged += new System.EventHandler(this.tbContrasenna_TextChanged);
             this.tbContrasenna.Enter += new System.EventHandler(this.tbContrasenna_Enter);
             this.tbContrasenna.Leave += new System.EventHandler(this.tbContrasenna_Leave);
             // 
@@ -200,7 +202,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(22)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.ClientSize = new System.Drawing.Size(780, 330);
             this.Controls.Add(this.btnMinimizar);
             this.Controls.Add(this.btnCerrar);
@@ -211,6 +213,7 @@
             this.Controls.Add(this.tbUsuario);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.shapeContainer1);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Login";
             this.Opacity = 0.95D;
