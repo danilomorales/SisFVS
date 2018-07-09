@@ -37,7 +37,7 @@ namespace SistemaFigueri
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("mensaje", "seguro de cerrar?", MessageBoxButtons.YesNoCancel) == DialogResult.Yes)
+            if (MessageBox.Show("Está seguro que desea salir de la aplicación...", "Mensaje", MessageBoxButtons.YesNoCancel) == DialogResult.Yes)
             {
                
                 Application.Exit();
@@ -47,6 +47,7 @@ namespace SistemaFigueri
                 
             }
         }
+
 
         private void btnAmpliar_Click(object sender, EventArgs e)
         {
