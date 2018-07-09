@@ -1,6 +1,6 @@
 ﻿namespace SistemaFigueri
 {
-    partial class Login
+    partial class FormLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@
         {
             Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
             Microsoft.VisualBasic.PowerPacks.LineShape lineShape2;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tbUsuario = new System.Windows.Forms.TextBox();
@@ -92,7 +92,7 @@
             this.tbUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.tbUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbUsuario.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.tbUsuario.ForeColor = System.Drawing.SystemColors.MenuBar;
             this.tbUsuario.Location = new System.Drawing.Point(309, 67);
             this.tbUsuario.Multiline = true;
             this.tbUsuario.Name = "tbUsuario";
@@ -108,7 +108,7 @@
             this.tbContrasenna.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.tbContrasenna.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbContrasenna.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbContrasenna.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.tbContrasenna.ForeColor = System.Drawing.SystemColors.MenuBar;
             this.tbContrasenna.Location = new System.Drawing.Point(309, 129);
             this.tbContrasenna.Name = "tbContrasenna";
             this.tbContrasenna.Size = new System.Drawing.Size(443, 22);
@@ -136,7 +136,8 @@
             this.btnAceder.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
             this.btnAceder.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(64)))));
             this.btnAceder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAceder.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnAceder.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAceder.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnAceder.Location = new System.Drawing.Point(359, 234);
             this.btnAceder.Name = "btnAceder";
             this.btnAceder.Size = new System.Drawing.Size(319, 31);
@@ -150,7 +151,7 @@
             this.linkLabel1.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.LinkColor = System.Drawing.Color.DimGray;
+            this.linkLabel1.LinkColor = System.Drawing.Color.Silver;
             this.linkLabel1.Location = new System.Drawing.Point(439, 277);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(157, 17);
@@ -198,7 +199,7 @@
             this.shapeContainer1.TabIndex = 7;
             this.shapeContainer1.TabStop = false;
             // 
-            // Login
+            // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -215,7 +216,7 @@
             this.Controls.Add(this.shapeContainer1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Login";
+            this.Name = "FormLogin";
             this.Opacity = 0.95D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";

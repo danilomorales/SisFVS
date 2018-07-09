@@ -14,9 +14,9 @@ using System.Data;
 
 namespace SistemaFigueri
 {
-    public partial class Login : Form
+    public partial class FormLogin : Form
     {
-        public Login()
+        public FormLogin()
         {
             InitializeComponent();
         }
@@ -91,7 +91,7 @@ namespace SistemaFigueri
                 if (Loguear.Read() == true)
                 {
                     this.Hide();
-                    Principal objPPrincipal = new Principal();
+                    FormPrincipal objPPrincipal = new FormPrincipal();
                     objPPrincipal.Show();
                 }
                 else

@@ -11,9 +11,9 @@ using System.Runtime.InteropServices;
 
 namespace SistemaFigueri
 {
-    public partial class Principal : Form
+    public partial class FormPrincipal : Form
     {
-        public Principal()
+        public FormPrincipal()
         {
             InitializeComponent();
         }
@@ -37,7 +37,15 @@ namespace SistemaFigueri
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            if (MessageBox.Show("mensaje", "seguro de cerrar?", MessageBoxButtons.YesNoCancel) == DialogResult.Yes)
+            {
+               
+                Application.Exit();
+            }
+            else
+            {
+                
+            }
         }
 
         private void btnAmpliar_Click(object sender, EventArgs e)
@@ -79,12 +87,12 @@ namespace SistemaFigueri
         }
         private void btnproductos_Click(object sender, EventArgs e)
         {
-            AbreFormEnPanel(new Productos());
+            AbreFormEnPanel(new FormProductos());
         }
 
         private void btnVentas_Click(object sender, EventArgs e)
         {
-            AbreFormEnPanel(new Venta());
+            AbreFormEnPanel(new FormVenta());
         }
     }
 }

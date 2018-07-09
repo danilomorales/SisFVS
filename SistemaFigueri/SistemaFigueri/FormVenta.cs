@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SistemaFigueri
 {
-    public partial class Venta : Form
+    public partial class FormVenta : Form
     {
-        public Venta()
+        public FormVenta()
         {
             InitializeComponent();
         }

@@ -10,19 +10,14 @@ using System.Windows.Forms;
 
 namespace SistemaFigueri
 {
-    public partial class Productos : Form
+    public partial class FormMantProducto : Form
     {
-        public Productos()
+        public FormMantProducto()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnCerrar_Click(object sender, EventArgs e)
+        private void btnMPCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
