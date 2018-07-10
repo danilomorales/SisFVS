@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace SistemaFigueri
 {
-    public partial class FormMantProducto : Form
+    public partial class FormAperturaCaja : Form
     {
-        public FormMantProducto()
+        public FormAperturaCaja()
         {
             InitializeComponent();
-        }
-
-        private void btnMPCancelar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void FormMantProducto_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

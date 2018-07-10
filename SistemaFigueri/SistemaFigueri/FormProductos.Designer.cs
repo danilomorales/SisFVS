@@ -39,18 +39,16 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnProdEliminar = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnEditarProd = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.ovalShape4 = new Microsoft.VisualBasic.PowerPacks.OvalShape();
-            this.ovalShape5 = new Microsoft.VisualBasic.PowerPacks.OvalShape();
             this.ovalShape7 = new Microsoft.VisualBasic.PowerPacks.OvalShape();
-            this.ovalShape8 = new Microsoft.VisualBasic.PowerPacks.OvalShape();
             this.ovalShape9 = new Microsoft.VisualBasic.PowerPacks.OvalShape();
-            this.ovalShape10 = new Microsoft.VisualBasic.PowerPacks.OvalShape();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.btnFormProdCerrar = new System.Windows.Forms.Button();
-            this.ovalShape1 = new Microsoft.VisualBasic.PowerPacks.OvalShape();
             this.ovalShape2 = new Microsoft.VisualBasic.PowerPacks.OvalShape();
+            this.ovalShape1 = new Microsoft.VisualBasic.PowerPacks.OvalShape();
+            this.btnFormProdCerrar = new System.Windows.Forms.Button();
+            this.ovalShape3 = new Microsoft.VisualBasic.PowerPacks.OvalShape();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -100,7 +98,7 @@
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.Color.SteelBlue;
-            this.dataGridView1.Location = new System.Drawing.Point(17, 85);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 115);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -151,7 +149,7 @@
             this.btnProdEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProdEliminar.ForeColor = System.Drawing.Color.White;
             this.btnProdEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProdEliminar.Location = new System.Drawing.Point(855, 330);
+            this.btnProdEliminar.Location = new System.Drawing.Point(858, 394);
             this.btnProdEliminar.Name = "btnProdEliminar";
             this.btnProdEliminar.Size = new System.Drawing.Size(100, 30);
             this.btnProdEliminar.TabIndex = 27;
@@ -160,33 +158,34 @@
             this.btnProdEliminar.UseVisualStyleBackColor = false;
             this.btnProdEliminar.Click += new System.EventHandler(this.btnProdEliminar_Click);
             // 
-            // btnEditar
+            // btnEditarProd
             // 
-            this.btnEditar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(155)))), ((int)(((byte)(32)))));
-            this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
-            this.btnEditar.FlatAppearance.BorderSize = 0;
-            this.btnEditar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(155)))), ((int)(((byte)(32)))));
-            this.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(155)))), ((int)(((byte)(32)))));
-            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditar.Location = new System.Drawing.Point(855, 286);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(100, 30);
-            this.btnEditar.TabIndex = 28;
-            this.btnEditar.Text = "EDITAR";
-            this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEditar.UseVisualStyleBackColor = false;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            this.btnEditarProd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEditarProd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(155)))), ((int)(((byte)(32)))));
+            this.btnEditarProd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditarProd.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
+            this.btnEditarProd.FlatAppearance.BorderSize = 0;
+            this.btnEditarProd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(155)))), ((int)(((byte)(32)))));
+            this.btnEditarProd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(155)))), ((int)(((byte)(32)))));
+            this.btnEditarProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditarProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarProd.ForeColor = System.Drawing.Color.White;
+            this.btnEditarProd.Image = ((System.Drawing.Image)(resources.GetObject("btnEditarProd.Image")));
+            this.btnEditarProd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditarProd.Location = new System.Drawing.Point(858, 296);
+            this.btnEditarProd.Name = "btnEditarProd";
+            this.btnEditarProd.Size = new System.Drawing.Size(100, 30);
+            this.btnEditarProd.TabIndex = 28;
+            this.btnEditarProd.Text = "EDITAR";
+            this.btnEditarProd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEditarProd.UseVisualStyleBackColor = false;
+            this.btnEditarProd.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnNuevo
             // 
             this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
-            this.btnNuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnNuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnNuevo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNuevo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
             this.btnNuevo.FlatAppearance.BorderSize = 0;
@@ -195,12 +194,14 @@
             this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.ForeColor = System.Drawing.Color.White;
-            this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.btnNuevo.Location = new System.Drawing.Point(855, 243);
+            this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
+            this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNuevo.Location = new System.Drawing.Point(858, 200);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(100, 31);
             this.btnNuevo.TabIndex = 26;
             this.btnNuevo.Text = "NUEVO";
+            this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
@@ -210,22 +211,9 @@
             this.ovalShape4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ovalShape4.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
             this.ovalShape4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
-            this.ovalShape4.Location = new System.Drawing.Point(837, 243);
+            this.ovalShape4.Location = new System.Drawing.Point(846, 200);
             this.ovalShape4.Name = "ovalShape4";
             this.ovalShape4.Size = new System.Drawing.Size(30, 30);
-            // 
-            // ovalShape5
-            // 
-            this.ovalShape5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
-            this.ovalShape5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ovalShape5.BackgroundImage")));
-            this.ovalShape5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ovalShape5.BorderColor = System.Drawing.Color.Transparent;
-            this.ovalShape5.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dot;
-            this.ovalShape5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ovalShape5.FillGradientStyle = Microsoft.VisualBasic.PowerPacks.FillGradientStyle.Central;
-            this.ovalShape5.Location = new System.Drawing.Point(940, 240);
-            this.ovalShape5.Name = "ovalShape5";
-            this.ovalShape5.Size = new System.Drawing.Size(39, 36);
             // 
             // ovalShape7
             // 
@@ -233,19 +221,9 @@
             this.ovalShape7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ovalShape7.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
             this.ovalShape7.BorderColor = System.Drawing.Color.Transparent;
-            this.ovalShape7.Location = new System.Drawing.Point(838, 285);
+            this.ovalShape7.Location = new System.Drawing.Point(838, 295);
             this.ovalShape7.Name = "ovalShape7";
             this.ovalShape7.Size = new System.Drawing.Size(29, 31);
-            // 
-            // ovalShape8
-            // 
-            this.ovalShape8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(155)))), ((int)(((byte)(32)))));
-            this.ovalShape8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ovalShape8.BackgroundImage")));
-            this.ovalShape8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ovalShape8.BorderColor = System.Drawing.Color.Transparent;
-            this.ovalShape8.Location = new System.Drawing.Point(944, 284);
-            this.ovalShape8.Name = "ovalShape8";
-            this.ovalShape8.Size = new System.Drawing.Size(31, 34);
             // 
             // ovalShape9
             // 
@@ -253,19 +231,9 @@
             this.ovalShape9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ovalShape9.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
             this.ovalShape9.BorderColor = System.Drawing.Color.Transparent;
-            this.ovalShape9.Location = new System.Drawing.Point(837, 329);
+            this.ovalShape9.Location = new System.Drawing.Point(841, 393);
             this.ovalShape9.Name = "ovalShape9";
             this.ovalShape9.Size = new System.Drawing.Size(29, 31);
-            // 
-            // ovalShape10
-            // 
-            this.ovalShape10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
-            this.ovalShape10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ovalShape10.BackgroundImage")));
-            this.ovalShape10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ovalShape10.BorderColor = System.Drawing.Color.Transparent;
-            this.ovalShape10.Location = new System.Drawing.Point(944, 329);
-            this.ovalShape10.Name = "ovalShape10";
-            this.ovalShape10.Size = new System.Drawing.Size(33, 31);
             // 
             // shapeContainer1
             // 
@@ -273,17 +241,36 @@
             this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
             this.shapeContainer1.Name = "shapeContainer1";
             this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.ovalShape3,
             this.ovalShape2,
             this.ovalShape1,
-            this.ovalShape10,
             this.ovalShape9,
-            this.ovalShape8,
             this.ovalShape7,
-            this.ovalShape5,
             this.ovalShape4});
             this.shapeContainer1.Size = new System.Drawing.Size(1050, 600);
             this.shapeContainer1.TabIndex = 29;
             this.shapeContainer1.TabStop = false;
+            // 
+            // ovalShape2
+            // 
+            this.ovalShape2.BackColor = System.Drawing.Color.Transparent;
+            this.ovalShape2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ovalShape2.BackgroundImage")));
+            this.ovalShape2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ovalShape2.BorderColor = System.Drawing.Color.Transparent;
+            this.ovalShape2.FillGradientStyle = Microsoft.VisualBasic.PowerPacks.FillGradientStyle.Vertical;
+            this.ovalShape2.Location = new System.Drawing.Point(997, 538);
+            this.ovalShape2.Name = "ovalShape2";
+            this.ovalShape2.Size = new System.Drawing.Size(30, 30);
+            // 
+            // ovalShape1
+            // 
+            this.ovalShape1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(166)))), ((int)(((byte)(255)))));
+            this.ovalShape1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ovalShape1.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
+            this.ovalShape1.BorderColor = System.Drawing.Color.Transparent;
+            this.ovalShape1.Location = new System.Drawing.Point(904, 542);
+            this.ovalShape1.Name = "ovalShape1";
+            this.ovalShape1.Size = new System.Drawing.Size(20, 21);
             // 
             // btnFormProdCerrar
             // 
@@ -295,38 +282,26 @@
             this.btnFormProdCerrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(166)))), ((int)(((byte)(255)))));
             this.btnFormProdCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(166)))), ((int)(((byte)(255)))));
             this.btnFormProdCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFormProdCerrar.Font = new System.Drawing.Font("Microsoft Tai Le", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFormProdCerrar.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFormProdCerrar.ForeColor = System.Drawing.Color.White;
-            this.btnFormProdCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFormProdCerrar.Location = new System.Drawing.Point(901, 543);
+            this.btnFormProdCerrar.Location = new System.Drawing.Point(916, 543);
             this.btnFormProdCerrar.Name = "btnFormProdCerrar";
-            this.btnFormProdCerrar.Size = new System.Drawing.Size(104, 34);
+            this.btnFormProdCerrar.Size = new System.Drawing.Size(89, 20);
             this.btnFormProdCerrar.TabIndex = 30;
             this.btnFormProdCerrar.Text = "CERRAR";
             this.btnFormProdCerrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnFormProdCerrar.UseVisualStyleBackColor = false;
             this.btnFormProdCerrar.Click += new System.EventHandler(this.btnFormProdCerrar_Click);
             // 
-            // ovalShape1
+            // ovalShape3
             // 
-            this.ovalShape1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(166)))), ((int)(((byte)(255)))));
-            this.ovalShape1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ovalShape1.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
-            this.ovalShape1.BorderColor = System.Drawing.Color.Transparent;
-            this.ovalShape1.Location = new System.Drawing.Point(882, 542);
-            this.ovalShape1.Name = "ovalShape1";
-            this.ovalShape1.Size = new System.Drawing.Size(35, 35);
-            // 
-            // ovalShape2
-            // 
-            this.ovalShape2.BackColor = System.Drawing.Color.Transparent;
-            this.ovalShape2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ovalShape2.BackgroundImage")));
-            this.ovalShape2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ovalShape2.BorderColor = System.Drawing.Color.Transparent;
-            this.ovalShape2.FillGradientStyle = Microsoft.VisualBasic.PowerPacks.FillGradientStyle.Vertical;
-            this.ovalShape2.Location = new System.Drawing.Point(985, 540);
-            this.ovalShape2.Name = "ovalShape2";
-            this.ovalShape2.Size = new System.Drawing.Size(48, 40);
+            this.ovalShape3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
+            this.ovalShape3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ovalShape3.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
+            this.ovalShape3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
+            this.ovalShape3.Location = new System.Drawing.Point(941, 200);
+            this.ovalShape3.Name = "ovalShape3";
+            this.ovalShape3.Size = new System.Drawing.Size(30, 30);
             // 
             // FormProductos
             // 
@@ -336,10 +311,10 @@
             this.ClientSize = new System.Drawing.Size(1050, 600);
             this.Controls.Add(this.btnFormProdCerrar);
             this.Controls.Add(this.btnProdEliminar);
-            this.Controls.Add(this.btnEditar);
-            this.Controls.Add(this.btnNuevo);
+            this.Controls.Add(this.btnEditarProd);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.shapeContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormProductos";
@@ -359,17 +334,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.Button btnProdEliminar;
-        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Button btnEditarProd;
         private System.Windows.Forms.Button btnNuevo;
         private Microsoft.VisualBasic.PowerPacks.OvalShape ovalShape4;
-        private Microsoft.VisualBasic.PowerPacks.OvalShape ovalShape5;
         private Microsoft.VisualBasic.PowerPacks.OvalShape ovalShape7;
-        private Microsoft.VisualBasic.PowerPacks.OvalShape ovalShape8;
         private Microsoft.VisualBasic.PowerPacks.OvalShape ovalShape9;
-        private Microsoft.VisualBasic.PowerPacks.OvalShape ovalShape10;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private Microsoft.VisualBasic.PowerPacks.OvalShape ovalShape2;
         private Microsoft.VisualBasic.PowerPacks.OvalShape ovalShape1;
         private System.Windows.Forms.Button btnFormProdCerrar;
+        private Microsoft.VisualBasic.PowerPacks.OvalShape ovalShape3;
     }
 }

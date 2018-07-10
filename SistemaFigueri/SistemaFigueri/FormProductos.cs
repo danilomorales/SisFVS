@@ -26,7 +26,11 @@ namespace SistemaFigueri
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-
+            FormMantProducto formMP = new FormMantProducto();
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                formMP.
+            }
         }
 
         private void btnProdEliminar_Click(object sender, EventArgs e)

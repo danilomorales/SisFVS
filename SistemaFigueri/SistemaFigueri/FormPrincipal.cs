@@ -37,15 +37,7 @@ namespace SistemaFigueri
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Está seguro que desea salir de la aplicación...", "Mensaje", MessageBoxButtons.YesNoCancel) == DialogResult.Yes)
-            {
-               
-                Application.Exit();
-            }
-            else
-            {
-                
-            }
+            
         }
 
 
@@ -94,6 +86,20 @@ namespace SistemaFigueri
         private void btnVentas_Click(object sender, EventArgs e)
         {
             AbreFormEnPanel(new FormVenta());
+        }
+
+        private void btnCerrarPrincipal_Click(object sender, EventArgs e)
+        {
+            DialogResult res = MessageBox.Show("¿Seguro que desea salir de la aplicación?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
+            if (res == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            else
+            {
+
+            }
+
         }
     }
 }
