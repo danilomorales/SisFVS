@@ -29,7 +29,7 @@ namespace SistemaFigueri
             FormMantProducto formMP = new FormMantProducto();
             if (dataGridView1.SelectedRows.Count > 0)
             {
-                formMP.
+                
             }
         }
 

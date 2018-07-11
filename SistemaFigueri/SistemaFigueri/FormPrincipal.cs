@@ -101,5 +101,10 @@ namespace SistemaFigueri
             }
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AbreFormEnPanel(new FormAperturaCaja());
+        }
     }
 }

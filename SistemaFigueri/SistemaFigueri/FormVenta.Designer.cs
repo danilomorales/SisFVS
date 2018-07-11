@@ -32,7 +32,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnVenCerrar = new System.Windows.Forms.PictureBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.cboTipoDoc = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tbNumeroDoc = new System.Windows.Forms.TextBox();
@@ -70,9 +69,7 @@
             this.txtMonto = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
             this.btnRegistrarCobro = new System.Windows.Forms.Button();
-            this.cboMoneda = new System.Windows.Forms.ComboBox();
             this.label25 = new System.Windows.Forms.Label();
-            this.cboFormaPago = new System.Windows.Forms.ComboBox();
             this.label24 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.lblTc = new System.Windows.Forms.Label();
@@ -94,6 +91,9 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.bunifuDropdown1 = new Bunifu.Framework.UI.BunifuDropdown();
+            this.bunifuDropdown2 = new Bunifu.Framework.UI.BunifuDropdown();
+            this.bunifuDropdown3 = new Bunifu.Framework.UI.BunifuDropdown();
             ((System.ComponentModel.ISupportInitialize)(this.btnVenCerrar)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -132,7 +132,7 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.cboTipoDoc);
+            this.groupBox3.Controls.Add(this.bunifuDropdown2);
             this.groupBox3.Controls.Add(this.label13);
             this.groupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -143,16 +143,6 @@
             this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "☻DATOS DE COMPROBANTE";
-            // 
-            // cboTipoDoc
-            // 
-            this.cboTipoDoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboTipoDoc.FormattingEnabled = true;
-            this.cboTipoDoc.Location = new System.Drawing.Point(68, 20);
-            this.cboTipoDoc.Name = "cboTipoDoc";
-            this.cboTipoDoc.Size = new System.Drawing.Size(138, 21);
-            this.cboTipoDoc.TabIndex = 2;
-            this.cboTipoDoc.TabStop = false;
             // 
             // label13
             // 
@@ -521,13 +511,13 @@
             // 
             this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox4.Controls.Add(this.bunifuDropdown3);
+            this.groupBox4.Controls.Add(this.bunifuDropdown1);
             this.groupBox4.Controls.Add(this.label27);
             this.groupBox4.Controls.Add(this.txtMonto);
             this.groupBox4.Controls.Add(this.label26);
             this.groupBox4.Controls.Add(this.btnRegistrarCobro);
-            this.groupBox4.Controls.Add(this.cboMoneda);
             this.groupBox4.Controls.Add(this.label25);
-            this.groupBox4.Controls.Add(this.cboFormaPago);
             this.groupBox4.Controls.Add(this.label24);
             this.groupBox4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -582,16 +572,6 @@
             this.btnRegistrarCobro.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnRegistrarCobro.UseVisualStyleBackColor = true;
             // 
-            // cboMoneda
-            // 
-            this.cboMoneda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboMoneda.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboMoneda.FormattingEnabled = true;
-            this.cboMoneda.Location = new System.Drawing.Point(185, 36);
-            this.cboMoneda.Name = "cboMoneda";
-            this.cboMoneda.Size = new System.Drawing.Size(95, 24);
-            this.cboMoneda.TabIndex = 5;
-            // 
             // label25
             // 
             this.label25.AutoSize = true;
@@ -601,16 +581,6 @@
             this.label25.Size = new System.Drawing.Size(56, 13);
             this.label25.TabIndex = 4;
             this.label25.Text = "Moneda:";
-            // 
-            // cboFormaPago
-            // 
-            this.cboFormaPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboFormaPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboFormaPago.FormattingEnabled = true;
-            this.cboFormaPago.Location = new System.Drawing.Point(14, 36);
-            this.cboFormaPago.Name = "cboFormaPago";
-            this.cboFormaPago.Size = new System.Drawing.Size(121, 24);
-            this.cboFormaPago.TabIndex = 3;
             // 
             // label24
             // 
@@ -675,6 +645,7 @@
             this.btnFinalizar.TabIndex = 16;
             this.btnFinalizar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnFinalizar.UseVisualStyleBackColor = true;
+            this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
             // 
             // label28
             // 
@@ -850,7 +821,49 @@
             this.pictureBox1.TabIndex = 24;
             this.pictureBox1.TabStop = false;
             // 
-            // Venta
+            // bunifuDropdown1
+            // 
+            this.bunifuDropdown1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuDropdown1.BorderRadius = 3;
+            this.bunifuDropdown1.ForeColor = System.Drawing.Color.White;
+            this.bunifuDropdown1.Items = new string[0];
+            this.bunifuDropdown1.Location = new System.Drawing.Point(12, 36);
+            this.bunifuDropdown1.Name = "bunifuDropdown1";
+            this.bunifuDropdown1.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.bunifuDropdown1.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.bunifuDropdown1.selectedIndex = -1;
+            this.bunifuDropdown1.Size = new System.Drawing.Size(128, 21);
+            this.bunifuDropdown1.TabIndex = 32;
+            // 
+            // bunifuDropdown2
+            // 
+            this.bunifuDropdown2.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuDropdown2.BorderRadius = 3;
+            this.bunifuDropdown2.ForeColor = System.Drawing.Color.White;
+            this.bunifuDropdown2.Items = new string[0];
+            this.bunifuDropdown2.Location = new System.Drawing.Point(67, 19);
+            this.bunifuDropdown2.Name = "bunifuDropdown2";
+            this.bunifuDropdown2.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.bunifuDropdown2.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.bunifuDropdown2.selectedIndex = -1;
+            this.bunifuDropdown2.Size = new System.Drawing.Size(149, 21);
+            this.bunifuDropdown2.TabIndex = 33;
+            // 
+            // bunifuDropdown3
+            // 
+            this.bunifuDropdown3.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuDropdown3.BorderRadius = 3;
+            this.bunifuDropdown3.ForeColor = System.Drawing.Color.White;
+            this.bunifuDropdown3.Items = new string[0];
+            this.bunifuDropdown3.Location = new System.Drawing.Point(171, 36);
+            this.bunifuDropdown3.Name = "bunifuDropdown3";
+            this.bunifuDropdown3.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.bunifuDropdown3.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.bunifuDropdown3.selectedIndex = -1;
+            this.bunifuDropdown3.Size = new System.Drawing.Size(116, 21);
+            this.bunifuDropdown3.TabIndex = 33;
+            // 
+            // FormVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -866,7 +879,7 @@
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.SystemColors.Window;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Venta";
+            this.Name = "FormVenta";
             this.Text = " ";
             ((System.ComponentModel.ISupportInitialize)(this.btnVenCerrar)).EndInit();
             this.groupBox3.ResumeLayout(false);
@@ -891,7 +904,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox btnVenCerrar;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.ComboBox cboTipoDoc;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rbtRuc;
@@ -929,9 +941,7 @@
         private System.Windows.Forms.TextBox txtMonto;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Button btnRegistrarCobro;
-        private System.Windows.Forms.ComboBox cboMoneda;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.ComboBox cboFormaPago;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Label lblTc;
@@ -953,5 +963,8 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private Bunifu.Framework.UI.BunifuDropdown bunifuDropdown1;
+        private Bunifu.Framework.UI.BunifuDropdown bunifuDropdown2;
+        private Bunifu.Framework.UI.BunifuDropdown bunifuDropdown3;
     }
 }

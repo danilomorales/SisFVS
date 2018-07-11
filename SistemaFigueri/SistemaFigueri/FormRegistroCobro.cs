@@ -10,20 +10,11 @@ using System.Windows.Forms;
 
 namespace SistemaFigueri
 {
-    public partial class FormMantProducto : Form
+    public partial class FormRegistroCobro : Form
     {
-        public FormMantProducto()
+        public FormRegistroCobro()
         {
             InitializeComponent();
-        }
-        private void FormMantProducto_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnCancelarMant_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }
