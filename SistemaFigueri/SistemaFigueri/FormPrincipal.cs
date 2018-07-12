@@ -87,6 +87,10 @@ namespace SistemaFigueri
         {
             AbreFormEnPanel(new FormVenta());
         }
+        private void btnCentralizacioncaja_Click(object sender, EventArgs e)
+        {
+            AbreFormEnPanel(new FormAperturaCaja());
+        }
 
         private void btnCerrarPrincipal_Click(object sender, EventArgs e)
         {
@@ -106,5 +110,7 @@ namespace SistemaFigueri
         {
             AbreFormEnPanel(new FormAperturaCaja());
         }
+
+       
     }
 }

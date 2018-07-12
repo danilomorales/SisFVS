@@ -43,7 +43,7 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCentralizacioncaja = new System.Windows.Forms.Button();
             this.btnPromocion = new System.Windows.Forms.Button();
             this.btnProveedor = new System.Windows.Forms.Button();
             this.btnClientes = new System.Windows.Forms.Button();
@@ -81,7 +81,7 @@
             this.BarraLateral.Controls.Add(this.panel5);
             this.BarraLateral.Controls.Add(this.panel4);
             this.BarraLateral.Controls.Add(this.panel3);
-            this.BarraLateral.Controls.Add(this.button1);
+            this.BarraLateral.Controls.Add(this.btnCentralizacioncaja);
             this.BarraLateral.Controls.Add(this.btnPromocion);
             this.BarraLateral.Controls.Add(this.btnProveedor);
             this.BarraLateral.Controls.Add(this.btnClientes);
@@ -232,25 +232,25 @@
             this.panel3.Size = new System.Drawing.Size(5, 32);
             this.panel3.TabIndex = 9;
             // 
-            // button1
+            // btnCentralizacioncaja
             // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(57)))), ((int)(((byte)(80)))));
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(9, 409);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(241, 33);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Centralización de Caja";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnCentralizacioncaja.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCentralizacioncaja.FlatAppearance.BorderSize = 0;
+            this.btnCentralizacioncaja.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(57)))), ((int)(((byte)(80)))));
+            this.btnCentralizacioncaja.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnCentralizacioncaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCentralizacioncaja.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCentralizacioncaja.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnCentralizacioncaja.Image = ((System.Drawing.Image)(resources.GetObject("btnCentralizacioncaja.Image")));
+            this.btnCentralizacioncaja.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCentralizacioncaja.Location = new System.Drawing.Point(9, 409);
+            this.btnCentralizacioncaja.Name = "btnCentralizacioncaja";
+            this.btnCentralizacioncaja.Size = new System.Drawing.Size(241, 33);
+            this.btnCentralizacioncaja.TabIndex = 10;
+            this.btnCentralizacioncaja.Text = "Centralización de Caja";
+            this.btnCentralizacioncaja.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCentralizacioncaja.UseVisualStyleBackColor = true;
+            this.btnCentralizacioncaja.Click += new System.EventHandler(this.btnCentralizacioncaja_Click);
             // 
             // btnPromocion
             // 
@@ -466,6 +466,7 @@
             this.Controls.Add(this.BarraLateral);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Principal";
             this.BarraLateral.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -485,7 +486,6 @@
         private System.Windows.Forms.Panel BarraLateral;
         private System.Windows.Forms.Panel BarraTitulo;
         private System.Windows.Forms.PictureBox btnSlide;
-        private System.Windows.Forms.Panel PanelContenedor;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox btnRestaurar;
@@ -510,6 +510,7 @@
         private System.Windows.Forms.Button btnVentas;
         private System.Windows.Forms.Button btnCerrarPrincipal;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCentralizacioncaja;
+        private System.Windows.Forms.Panel PanelContenedor;
     }
 }
