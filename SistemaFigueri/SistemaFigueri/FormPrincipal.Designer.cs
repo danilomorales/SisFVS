@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.BarraLateral = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -58,6 +59,7 @@
             this.btnAmpliar = new System.Windows.Forms.PictureBox();
             this.btnSlide = new System.Windows.Forms.PictureBox();
             this.PanelContenedor = new System.Windows.Forms.Panel();
+            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.BarraLateral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel8.SuspendLayout();
@@ -387,7 +389,7 @@
             this.btnCerrarPrincipal.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.btnCerrarPrincipal.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnCerrarPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrarPrincipal.Location = new System.Drawing.Point(990, 12);
+            this.btnCerrarPrincipal.Location = new System.Drawing.Point(1020, 12);
             this.btnCerrarPrincipal.Name = "btnCerrarPrincipal";
             this.btnCerrarPrincipal.Size = new System.Drawing.Size(30, 15);
             this.btnCerrarPrincipal.TabIndex = 0;
@@ -400,7 +402,7 @@
             this.btnRestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRestaurar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRestaurar.Image = ((System.Drawing.Image)(resources.GetObject("btnRestaurar.Image")));
-            this.btnRestaurar.Location = new System.Drawing.Point(969, 12);
+            this.btnRestaurar.Location = new System.Drawing.Point(999, 12);
             this.btnRestaurar.Name = "btnRestaurar";
             this.btnRestaurar.Size = new System.Drawing.Size(15, 15);
             this.btnRestaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -414,7 +416,7 @@
             this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
-            this.btnMinimizar.Location = new System.Drawing.Point(938, 12);
+            this.btnMinimizar.Location = new System.Drawing.Point(968, 12);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(15, 15);
             this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -427,7 +429,7 @@
             this.btnAmpliar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAmpliar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAmpliar.Image = ((System.Drawing.Image)(resources.GetObject("btnAmpliar.Image")));
-            this.btnAmpliar.Location = new System.Drawing.Point(969, 12);
+            this.btnAmpliar.Location = new System.Drawing.Point(999, 12);
             this.btnAmpliar.Name = "btnAmpliar";
             this.btnAmpliar.Size = new System.Drawing.Size(15, 15);
             this.btnAmpliar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -450,16 +452,22 @@
             // PanelContenedor
             // 
             this.PanelContenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.PanelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelContenedor.Location = new System.Drawing.Point(250, 50);
             this.PanelContenedor.Name = "PanelContenedor";
-            this.PanelContenedor.Size = new System.Drawing.Size(1050, 600);
+            this.PanelContenedor.Size = new System.Drawing.Size(1050, 588);
             this.PanelContenedor.TabIndex = 2;
+            this.PanelContenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelContenedor_Paint);
+            // 
+            // bunifuElipse1
+            // 
+            this.bunifuElipse1.ElipseRadius = 10;
+            this.bunifuElipse1.TargetControl = this;
             // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.ClientSize = new System.Drawing.Size(1300, 650);
             this.Controls.Add(this.PanelContenedor);
             this.Controls.Add(this.BarraTitulo);
@@ -512,5 +520,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnCentralizacioncaja;
         private System.Windows.Forms.Panel PanelContenedor;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
     }
 }
