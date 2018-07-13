@@ -26,24 +26,7 @@ namespace SistemaFigueri
         {
 
         }
-        private void TbBuscarcliente_Enter(object sender,EventArgs e)
-        {
-            if(tbBuscarcliente.Text == "Buscar Cliente")
-            {
-                tbBuscarcliente.Text = "";
-                tbBuscarcliente.ForeColor = Color.WhiteSmoke;
-            }
-
-        }
-        private void TbBuscarcliente_Leave(object sender, EventArgs e)
-        {
-            if (tbBuscarcliente.Text == "")
-            {
-                tbBuscarcliente.Text = "Buscar Cliente";
-                tbBuscarcliente.ForeColor = Color.DimGray;
-            }
-        }
-
+       
         private void tbBuscarcliente_TextChanged(object sender, EventArgs e)
         {
 
@@ -53,6 +36,27 @@ namespace SistemaFigueri
         {
             FormRegistroCobro formRp = new FormRegistroCobro();
             formRp.ShowDialog();
+        }
+
+        private void bunifuDropdown6_onItemSelected(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuTileButton4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCerrarVenta_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnMantCliente_Click(object sender, EventArgs e)
+        {
+            FormMantCliente formMP = new FormMantCliente();
+            formMP.ShowDialog();
         }
     }
 }

@@ -72,6 +72,12 @@
     <Compile Include="FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormMantCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMantCliente.Designer.cs">
+      <DependentUpon>FormMantCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMantProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +122,9 @@
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormMantCliente.resx">
+      <DependentUpon>FormMantCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMantProducto.resx">
       <DependentUpon>FormMantProducto.cs</DependentUpon>
     </EmbeddedResource>
@@ -133,13 +142,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="SistemaFigueri.Principal.resources" />
     <EmbeddedResource Include="FormVenta.resx">
       <DependentUpon>FormVenta.cs</DependentUpon>
@@ -165,6 +169,15 @@
       <Project>{219bca42-af85-414d-aaf3-af7654eff427}</Project>
       <Name>CapaNegocio</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maximize2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Minimize1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Normal.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

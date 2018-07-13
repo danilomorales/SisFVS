@@ -31,7 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.BarraLateral = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.btnReporteCompras = new System.Windows.Forms.Button();
             this.panel10 = new System.Windows.Forms.Panel();
@@ -51,8 +54,8 @@
             this.btnVentas = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnproductos = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.BarraTitulo = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnCerrarPrincipal = new System.Windows.Forms.Button();
             this.btnRestaurar = new System.Windows.Forms.PictureBox();
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
@@ -60,11 +63,13 @@
             this.btnSlide = new System.Windows.Forms.PictureBox();
             this.PanelContenedor = new System.Windows.Forms.Panel();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.tmOcultarbarra = new System.Windows.Forms.Timer(this.components);
+            this.tmMostrarBarra = new System.Windows.Forms.Timer(this.components);
             this.BarraLateral.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.BarraTitulo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAmpliar)).BeginInit();
@@ -74,7 +79,10 @@
             // BarraLateral
             // 
             this.BarraLateral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(57)))), ((int)(((byte)(80)))));
-            this.BarraLateral.Controls.Add(this.pictureBox2);
+            this.BarraLateral.Controls.Add(this.label5);
+            this.BarraLateral.Controls.Add(this.label4);
+            this.BarraLateral.Controls.Add(this.label3);
+            this.BarraLateral.Controls.Add(this.pictureBox7);
             this.BarraLateral.Controls.Add(this.panel8);
             this.BarraLateral.Controls.Add(this.panel7);
             this.BarraLateral.Controls.Add(this.btnReportes);
@@ -90,22 +98,54 @@
             this.BarraLateral.Controls.Add(this.btnVentas);
             this.BarraLateral.Controls.Add(this.panel2);
             this.BarraLateral.Controls.Add(this.btnproductos);
-            this.BarraLateral.Controls.Add(this.pictureBox1);
             this.BarraLateral.Dock = System.Windows.Forms.DockStyle.Left;
             this.BarraLateral.Location = new System.Drawing.Point(0, 0);
             this.BarraLateral.Name = "BarraLateral";
             this.BarraLateral.Size = new System.Drawing.Size(250, 650);
             this.BarraLateral.TabIndex = 0;
             // 
-            // pictureBox2
+            // label5
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(70, 80);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 17;
-            this.pictureBox2.TabStop = false;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.LightGray;
+            this.label5.Location = new System.Drawing.Point(71, 48);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(45, 16);
+            this.label5.TabIndex = 21;
+            this.label5.Text = "Cargo";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.LightGray;
+            this.label4.Location = new System.Drawing.Point(71, 30);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(68, 16);
+            this.label4.TabIndex = 20;
+            this.label4.Text = "Apellidos ";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.LightGray;
+            this.label3.Location = new System.Drawing.Point(71, 12);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(67, 16);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "Nombres ";
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
+            this.pictureBox7.Location = new System.Drawing.Point(0, 12);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(65, 65);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 18;
+            this.pictureBox7.TabStop = false;
             // 
             // panel8
             // 
@@ -245,11 +285,11 @@
             this.btnCentralizacioncaja.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnCentralizacioncaja.Image = ((System.Drawing.Image)(resources.GetObject("btnCentralizacioncaja.Image")));
             this.btnCentralizacioncaja.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCentralizacioncaja.Location = new System.Drawing.Point(9, 409);
+            this.btnCentralizacioncaja.Location = new System.Drawing.Point(11, 409);
             this.btnCentralizacioncaja.Name = "btnCentralizacioncaja";
             this.btnCentralizacioncaja.Size = new System.Drawing.Size(241, 33);
             this.btnCentralizacioncaja.TabIndex = 10;
-            this.btnCentralizacioncaja.Text = "Centralización de Caja";
+            this.btnCentralizacioncaja.Text = "    Centralización de Caja";
             this.btnCentralizacioncaja.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCentralizacioncaja.UseVisualStyleBackColor = true;
             this.btnCentralizacioncaja.Click += new System.EventHandler(this.btnCentralizacioncaja_Click);
@@ -354,19 +394,10 @@
             this.btnproductos.UseVisualStyleBackColor = true;
             this.btnproductos.Click += new System.EventHandler(this.btnproductos_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(16, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(275, 93);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // BarraTitulo
             // 
             this.BarraTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
+            this.BarraTitulo.Controls.Add(this.pictureBox1);
             this.BarraTitulo.Controls.Add(this.btnCerrarPrincipal);
             this.BarraTitulo.Controls.Add(this.btnRestaurar);
             this.BarraTitulo.Controls.Add(this.btnMinimizar);
@@ -377,7 +408,19 @@
             this.BarraTitulo.Name = "BarraTitulo";
             this.BarraTitulo.Size = new System.Drawing.Size(1050, 50);
             this.BarraTitulo.TabIndex = 1;
+            this.BarraTitulo.Paint += new System.Windows.Forms.PaintEventHandler(this.BarraTitulo_Paint);
             this.BarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BarraTitulo_MouseDown);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(466, -7);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(156, 90);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
             // 
             // btnCerrarPrincipal
             // 
@@ -389,7 +432,7 @@
             this.btnCerrarPrincipal.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.btnCerrarPrincipal.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnCerrarPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrarPrincipal.Location = new System.Drawing.Point(1020, 12);
+            this.btnCerrarPrincipal.Location = new System.Drawing.Point(1008, 3);
             this.btnCerrarPrincipal.Name = "btnCerrarPrincipal";
             this.btnCerrarPrincipal.Size = new System.Drawing.Size(30, 15);
             this.btnCerrarPrincipal.TabIndex = 0;
@@ -402,7 +445,7 @@
             this.btnRestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRestaurar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRestaurar.Image = ((System.Drawing.Image)(resources.GetObject("btnRestaurar.Image")));
-            this.btnRestaurar.Location = new System.Drawing.Point(999, 12);
+            this.btnRestaurar.Location = new System.Drawing.Point(978, 3);
             this.btnRestaurar.Name = "btnRestaurar";
             this.btnRestaurar.Size = new System.Drawing.Size(15, 15);
             this.btnRestaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -410,13 +453,14 @@
             this.btnRestaurar.TabStop = false;
             this.btnRestaurar.Visible = false;
             this.btnRestaurar.Click += new System.EventHandler(this.btnRestaurar_Click);
+            this.btnRestaurar.Paint += new System.Windows.Forms.PaintEventHandler(this.btnRestaurar_Paint);
             // 
             // btnMinimizar
             // 
             this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
-            this.btnMinimizar.Location = new System.Drawing.Point(968, 12);
+            this.btnMinimizar.Location = new System.Drawing.Point(944, 3);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(15, 15);
             this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -429,7 +473,7 @@
             this.btnAmpliar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAmpliar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAmpliar.Image = ((System.Drawing.Image)(resources.GetObject("btnAmpliar.Image")));
-            this.btnAmpliar.Location = new System.Drawing.Point(999, 12);
+            this.btnAmpliar.Location = new System.Drawing.Point(978, 3);
             this.btnAmpliar.Name = "btnAmpliar";
             this.btnAmpliar.Size = new System.Drawing.Size(15, 15);
             this.btnAmpliar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -456,12 +500,19 @@
             this.PanelContenedor.Name = "PanelContenedor";
             this.PanelContenedor.Size = new System.Drawing.Size(1050, 588);
             this.PanelContenedor.TabIndex = 2;
-            this.PanelContenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelContenedor_Paint);
             // 
             // bunifuElipse1
             // 
             this.bunifuElipse1.ElipseRadius = 10;
             this.bunifuElipse1.TargetControl = this;
+            // 
+            // tmOcultarbarra
+            // 
+            this.tmOcultarbarra.Tick += new System.EventHandler(this.tmOcultarBarra_Tick);
+            // 
+            // tmMostrarBarra
+            // 
+            this.tmMostrarBarra.Tick += new System.EventHandler(this.tmMostrarBarra_Tick);
             // 
             // FormPrincipal
             // 
@@ -477,10 +528,11 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Principal";
             this.BarraLateral.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.BarraLateral.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.panel8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.BarraTitulo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestaurar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAmpliar)).EndInit();
@@ -494,8 +546,6 @@
         private System.Windows.Forms.Panel BarraLateral;
         private System.Windows.Forms.Panel BarraTitulo;
         private System.Windows.Forms.PictureBox btnSlide;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox btnRestaurar;
         private System.Windows.Forms.PictureBox btnMinimizar;
         private System.Windows.Forms.PictureBox btnAmpliar;
@@ -521,5 +571,12 @@
         private System.Windows.Forms.Button btnCentralizacioncaja;
         private System.Windows.Forms.Panel PanelContenedor;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
+        private System.Windows.Forms.Timer tmOcultarbarra;
+        private System.Windows.Forms.Timer tmMostrarBarra;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
