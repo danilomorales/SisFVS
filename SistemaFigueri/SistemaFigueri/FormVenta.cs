@@ -19,7 +19,7 @@ namespace SistemaFigueri
 
         private void btnVenCerrar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -50,13 +50,18 @@ namespace SistemaFigueri
 
         private void btnCerrarVenta_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void btnMantCliente_Click(object sender, EventArgs e)
         {
             FormMantCliente formMP = new FormMantCliente();
             formMP.ShowDialog();
+        }
+
+        private void bunifuDropdown4_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

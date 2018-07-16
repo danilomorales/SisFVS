@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormVenta));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
             this.bunifuDropdown4 = new Bunifu.Framework.UI.BunifuDropdown();
@@ -90,6 +90,7 @@
             this.bunifuTextbox3 = new Bunifu.Framework.UI.BunifuTextbox();
             this.bunifuTextbox2 = new Bunifu.Framework.UI.BunifuTextbox();
             this.bunifuTextbox1 = new Bunifu.Framework.UI.BunifuTextbox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.bunifuCards1.SuspendLayout();
             this.bunifuCards2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
@@ -142,6 +143,7 @@
             this.bunifuDropdown4.selectedIndex = -1;
             this.bunifuDropdown4.Size = new System.Drawing.Size(149, 30);
             this.bunifuDropdown4.TabIndex = 34;
+            this.bunifuDropdown4.Load += new System.EventHandler(this.bunifuDropdown4_Load);
             // 
             // bunifuFlatButton3
             // 
@@ -570,19 +572,19 @@
             // 
             this.bunifuCustomDataGrid1.AllowUserToAddRows = false;
             this.bunifuCustomDataGrid1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.bunifuCustomDataGrid1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.bunifuCustomDataGrid1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.bunifuCustomDataGrid1.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.bunifuCustomDataGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.bunifuCustomDataGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bunifuCustomDataGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.bunifuCustomDataGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.bunifuCustomDataGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.bunifuCustomDataGrid1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -1106,6 +1108,20 @@
             this.bunifuTextbox1.TabIndex = 2;
             this.bunifuTextbox1.text = "000000000";
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "hola ",
+            "adadad",
+            "ad",
+            "ada",
+            "d"});
+            this.comboBox1.Location = new System.Drawing.Point(424, 571);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 52;
+            // 
             // FormVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -1113,6 +1129,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.ClientSize = new System.Drawing.Size(1050, 600);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.bunifuCards5);
             this.Controls.Add(this.bunifuCards4);
             this.Controls.Add(this.bunifuCards2);
@@ -1200,5 +1217,6 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel10;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel9;
         private Bunifu.Framework.UI.BunifuTileButton btnMantCliente;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

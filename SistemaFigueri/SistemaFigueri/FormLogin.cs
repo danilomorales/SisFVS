@@ -32,7 +32,7 @@ namespace SistemaFigueri
 
         private void btnMinimizar_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
+            WindowState = FormWindowState.Minimized;
         }
 
         private void tbUsuario_Enter(object sender, EventArgs e)
@@ -76,7 +76,7 @@ namespace SistemaFigueri
         private void Login_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
+            SendMessage(Handle, 0x112, 0xf012, 0);
         }
 
         private void btnAceder_Click(object sender, EventArgs e)
@@ -90,7 +90,7 @@ namespace SistemaFigueri
                 Loguear = objUsuario.IniciarSesion();
                 if (Loguear.Read() == true)
                 {
-                    this.Hide();
+                    Hide();
                     FormPrincipal objPPrincipal = new FormPrincipal();
                     objPPrincipal.Show();
                 }

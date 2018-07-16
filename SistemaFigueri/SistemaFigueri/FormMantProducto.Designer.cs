@@ -34,7 +34,7 @@
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnCancelarMant = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.btnCancelarMantCli = new Bunifu.Framework.UI.BunifuThinButton2();
             this.bunifuFlatButton3 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuMaterialTextbox1 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuMaterialTextbox2 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
@@ -93,31 +93,31 @@
             this.panel2.Size = new System.Drawing.Size(497, 26);
             this.panel2.TabIndex = 44;
             // 
-            // btnCancelarMant
+            // btnCancelarMantCli
             // 
-            this.btnCancelarMant.ActiveBorderThickness = 1;
-            this.btnCancelarMant.ActiveCornerRadius = 25;
-            this.btnCancelarMant.ActiveFillColor = System.Drawing.Color.SeaGreen;
-            this.btnCancelarMant.ActiveForecolor = System.Drawing.Color.White;
-            this.btnCancelarMant.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.btnCancelarMant.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.btnCancelarMant.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancelarMant.BackgroundImage")));
-            this.btnCancelarMant.ButtonText = "CANCELAR";
-            this.btnCancelarMant.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelarMant.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelarMant.ForeColor = System.Drawing.Color.White;
-            this.btnCancelarMant.IdleBorderThickness = 1;
-            this.btnCancelarMant.IdleCornerRadius = 20;
-            this.btnCancelarMant.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
-            this.btnCancelarMant.IdleForecolor = System.Drawing.Color.White;
-            this.btnCancelarMant.IdleLineColor = System.Drawing.Color.Transparent;
-            this.btnCancelarMant.Location = new System.Drawing.Point(306, 444);
-            this.btnCancelarMant.Margin = new System.Windows.Forms.Padding(5);
-            this.btnCancelarMant.Name = "btnCancelarMant";
-            this.btnCancelarMant.Size = new System.Drawing.Size(165, 49);
-            this.btnCancelarMant.TabIndex = 57;
-            this.btnCancelarMant.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnCancelarMant.Click += new System.EventHandler(this.btnCancelarMant_Click);
+            this.btnCancelarMantCli.ActiveBorderThickness = 1;
+            this.btnCancelarMantCli.ActiveCornerRadius = 25;
+            this.btnCancelarMantCli.ActiveFillColor = System.Drawing.Color.SeaGreen;
+            this.btnCancelarMantCli.ActiveForecolor = System.Drawing.Color.White;
+            this.btnCancelarMantCli.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.btnCancelarMantCli.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.btnCancelarMantCli.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancelarMantCli.BackgroundImage")));
+            this.btnCancelarMantCli.ButtonText = "CANCELAR";
+            this.btnCancelarMantCli.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelarMantCli.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelarMantCli.ForeColor = System.Drawing.Color.White;
+            this.btnCancelarMantCli.IdleBorderThickness = 1;
+            this.btnCancelarMantCli.IdleCornerRadius = 20;
+            this.btnCancelarMantCli.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
+            this.btnCancelarMantCli.IdleForecolor = System.Drawing.Color.White;
+            this.btnCancelarMantCli.IdleLineColor = System.Drawing.Color.Transparent;
+            this.btnCancelarMantCli.Location = new System.Drawing.Point(306, 444);
+            this.btnCancelarMantCli.Margin = new System.Windows.Forms.Padding(5);
+            this.btnCancelarMantCli.Name = "btnCancelarMantCli";
+            this.btnCancelarMantCli.Size = new System.Drawing.Size(165, 49);
+            this.btnCancelarMantCli.TabIndex = 57;
+            this.btnCancelarMantCli.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnCancelarMantCli.Click += new System.EventHandler(this.btnCancelarMant_Click);
             // 
             // bunifuFlatButton3
             // 
@@ -410,7 +410,7 @@
             this.Controls.Add(this.bunifuFlatButton1);
             this.Controls.Add(this.bunifuMaterialTextbox1);
             this.Controls.Add(this.bunifuFlatButton3);
-            this.Controls.Add(this.btnCancelarMant);
+            this.Controls.Add(this.btnCancelarMantCli);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.bunifuThinButton21);
             this.Controls.Add(this.panel1);
@@ -428,7 +428,7 @@
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton21;
         private System.Windows.Forms.Panel panel2;
-        private Bunifu.Framework.UI.BunifuThinButton2 btnCancelarMant;
+        private Bunifu.Framework.UI.BunifuThinButton2 btnCancelarMantCli;
         private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox1;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton3;
         private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox5;

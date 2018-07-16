@@ -33,8 +33,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuFlatButton3 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.bunifuDropdown4 = new Bunifu.Framework.UI.BunifuDropdown();
-            this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btndTipoPersona = new Bunifu.Framework.UI.BunifuDropdown();
             this.bunifuDropdown1 = new Bunifu.Framework.UI.BunifuDropdown();
             this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton4 = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -69,13 +68,13 @@
             this.bunifuMaterialTextbox13 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuDatepicker1 = new Bunifu.Framework.UI.BunifuDatepicker();
             this.bunifuFlatButton17 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnCancelarMant = new Bunifu.Framework.UI.BunifuThinButton2();
             this.bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.btnCancelarMant = new Bunifu.Framework.UI.BunifuThinButton2();
             this.SuspendLayout();
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(633, 26);
@@ -122,70 +121,40 @@
             this.bunifuFlatButton3.Textcolor = System.Drawing.Color.White;
             this.bunifuFlatButton3.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
-            // bunifuDropdown4
+            // btndTipoPersona
             // 
-            this.bunifuDropdown4.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuDropdown4.BorderRadius = 3;
-            this.bunifuDropdown4.ForeColor = System.Drawing.Color.White;
-            this.bunifuDropdown4.Items = new string[0];
-            this.bunifuDropdown4.Location = new System.Drawing.Point(120, 44);
-            this.bunifuDropdown4.Name = "bunifuDropdown4";
-            this.bunifuDropdown4.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuDropdown4.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.bunifuDropdown4.selectedIndex = -1;
-            this.bunifuDropdown4.Size = new System.Drawing.Size(98, 32);
-            this.bunifuDropdown4.TabIndex = 64;
-            this.bunifuDropdown4.onItemSelected += new System.EventHandler(this.bunifuDropdown4_onItemSelected);
-            // 
-            // bunifuFlatButton1
-            // 
-            this.bunifuFlatButton1.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFlatButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFlatButton1.BorderRadius = 0;
-            this.bunifuFlatButton1.ButtonText = "Tipo de Persona";
-            this.bunifuFlatButton1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.bunifuFlatButton1.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuFlatButton1.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton1.Iconimage = null;
-            this.bunifuFlatButton1.Iconimage_right = null;
-            this.bunifuFlatButton1.Iconimage_right_Selected = null;
-            this.bunifuFlatButton1.Iconimage_Selected = null;
-            this.bunifuFlatButton1.IconMarginLeft = 0;
-            this.bunifuFlatButton1.IconMarginRight = 0;
-            this.bunifuFlatButton1.IconRightVisible = true;
-            this.bunifuFlatButton1.IconRightZoom = 0D;
-            this.bunifuFlatButton1.IconVisible = true;
-            this.bunifuFlatButton1.IconZoom = 90D;
-            this.bunifuFlatButton1.IsTab = false;
-            this.bunifuFlatButton1.Location = new System.Drawing.Point(9, 44);
-            this.bunifuFlatButton1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.bunifuFlatButton1.Name = "bunifuFlatButton1";
-            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.White;
-            this.bunifuFlatButton1.selected = false;
-            this.bunifuFlatButton1.Size = new System.Drawing.Size(112, 32);
-            this.bunifuFlatButton1.TabIndex = 63;
-            this.bunifuFlatButton1.Text = "Tipo de Persona";
-            this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuFlatButton1.Textcolor = System.Drawing.Color.White;
-            this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btndTipoPersona.BackColor = System.Drawing.Color.Transparent;
+            this.btndTipoPersona.BorderRadius = 3;
+            this.btndTipoPersona.ForeColor = System.Drawing.Color.White;
+            this.btndTipoPersona.ImeMode = System.Windows.Forms.ImeMode.Alpha;
+            this.btndTipoPersona.Items = new string[0];
+            this.btndTipoPersona.Location = new System.Drawing.Point(13, 46);
+            this.btndTipoPersona.Name = "btndTipoPersona";
+            this.btndTipoPersona.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btndTipoPersona.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btndTipoPersona.selectedIndex = -1;
+            this.btndTipoPersona.Size = new System.Drawing.Size(128, 32);
+            this.btndTipoPersona.TabIndex = 64;
             // 
             // bunifuDropdown1
             // 
+            this.bunifuDropdown1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.bunifuDropdown1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuDropdown1.BorderRadius = 3;
+            this.bunifuDropdown1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.bunifuDropdown1.BorderRadius = 2;
             this.bunifuDropdown1.ForeColor = System.Drawing.Color.White;
-            this.bunifuDropdown1.Items = new string[0];
+            this.bunifuDropdown1.ImeMode = System.Windows.Forms.ImeMode.AlphaFull;
+            this.bunifuDropdown1.Items = new string[] {
+        "DNI",
+        "CARNÉ DE EXTRANGERÍA"};
             this.bunifuDropdown1.Location = new System.Drawing.Point(343, 46);
             this.bunifuDropdown1.Name = "bunifuDropdown1";
-            this.bunifuDropdown1.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuDropdown1.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.bunifuDropdown1.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
+            this.bunifuDropdown1.onHoverColor = System.Drawing.Color.DarkSlateGray;
             this.bunifuDropdown1.selectedIndex = -1;
-            this.bunifuDropdown1.Size = new System.Drawing.Size(119, 30);
+            this.bunifuDropdown1.Size = new System.Drawing.Size(213, 30);
             this.bunifuDropdown1.TabIndex = 66;
+            this.bunifuDropdown1.Tag = "adadad";
             // 
             // bunifuFlatButton2
             // 
@@ -1061,31 +1030,6 @@
             this.bunifuFlatButton17.Textcolor = System.Drawing.Color.White;
             this.bunifuFlatButton17.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
-            // btnCancelarMant
-            // 
-            this.btnCancelarMant.ActiveBorderThickness = 1;
-            this.btnCancelarMant.ActiveCornerRadius = 25;
-            this.btnCancelarMant.ActiveFillColor = System.Drawing.Color.SeaGreen;
-            this.btnCancelarMant.ActiveForecolor = System.Drawing.Color.White;
-            this.btnCancelarMant.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.btnCancelarMant.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
-            this.btnCancelarMant.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancelarMant.BackgroundImage")));
-            this.btnCancelarMant.ButtonText = "CANCELAR";
-            this.btnCancelarMant.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelarMant.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelarMant.ForeColor = System.Drawing.Color.White;
-            this.btnCancelarMant.IdleBorderThickness = 1;
-            this.btnCancelarMant.IdleCornerRadius = 20;
-            this.btnCancelarMant.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
-            this.btnCancelarMant.IdleForecolor = System.Drawing.Color.White;
-            this.btnCancelarMant.IdleLineColor = System.Drawing.Color.Transparent;
-            this.btnCancelarMant.Location = new System.Drawing.Point(320, 537);
-            this.btnCancelarMant.Margin = new System.Windows.Forms.Padding(5);
-            this.btnCancelarMant.Name = "btnCancelarMant";
-            this.btnCancelarMant.Size = new System.Drawing.Size(165, 49);
-            this.btnCancelarMant.TabIndex = 103;
-            this.btnCancelarMant.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // bunifuThinButton21
             // 
             this.bunifuThinButton21.ActiveBorderThickness = 1;
@@ -1093,7 +1037,7 @@
             this.bunifuThinButton21.ActiveFillColor = System.Drawing.Color.SeaGreen;
             this.bunifuThinButton21.ActiveForecolor = System.Drawing.Color.White;
             this.bunifuThinButton21.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.bunifuThinButton21.BackColor = System.Drawing.Color.SlateGray;
             this.bunifuThinButton21.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton21.BackgroundImage")));
             this.bunifuThinButton21.ButtonText = "GUARDAR";
             this.bunifuThinButton21.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -1111,11 +1055,37 @@
             this.bunifuThinButton21.TabIndex = 102;
             this.bunifuThinButton21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnCancelarMant
+            // 
+            this.btnCancelarMant.ActiveBorderThickness = 1;
+            this.btnCancelarMant.ActiveCornerRadius = 25;
+            this.btnCancelarMant.ActiveFillColor = System.Drawing.Color.SeaGreen;
+            this.btnCancelarMant.ActiveForecolor = System.Drawing.Color.White;
+            this.btnCancelarMant.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.btnCancelarMant.BackColor = System.Drawing.Color.SlateGray;
+            this.btnCancelarMant.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancelarMant.BackgroundImage")));
+            this.btnCancelarMant.ButtonText = "CANCELAR";
+            this.btnCancelarMant.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelarMant.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelarMant.ForeColor = System.Drawing.Color.White;
+            this.btnCancelarMant.IdleBorderThickness = 1;
+            this.btnCancelarMant.IdleCornerRadius = 20;
+            this.btnCancelarMant.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
+            this.btnCancelarMant.IdleForecolor = System.Drawing.Color.White;
+            this.btnCancelarMant.IdleLineColor = System.Drawing.Color.Transparent;
+            this.btnCancelarMant.Location = new System.Drawing.Point(391, 537);
+            this.btnCancelarMant.Margin = new System.Windows.Forms.Padding(5);
+            this.btnCancelarMant.Name = "btnCancelarMant";
+            this.btnCancelarMant.Size = new System.Drawing.Size(165, 49);
+            this.btnCancelarMant.TabIndex = 104;
+            this.btnCancelarMant.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnCancelarMant.Click += new System.EventHandler(this.btnCancelarMant_Click);
+            // 
             // FormMantCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
+            this.BackColor = System.Drawing.Color.SlateGray;
             this.ClientSize = new System.Drawing.Size(634, 593);
             this.Controls.Add(this.btnCancelarMant);
             this.Controls.Add(this.bunifuThinButton21);
@@ -1153,8 +1123,7 @@
             this.Controls.Add(this.bunifuFlatButton4);
             this.Controls.Add(this.bunifuDropdown1);
             this.Controls.Add(this.bunifuFlatButton2);
-            this.Controls.Add(this.bunifuDropdown4);
-            this.Controls.Add(this.bunifuFlatButton1);
+            this.Controls.Add(this.btndTipoPersona);
             this.Controls.Add(this.bunifuFlatButton3);
             this.Controls.Add(this.panel2);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -1170,10 +1139,9 @@
         private System.Windows.Forms.Panel panel2;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton3;
-        private Bunifu.Framework.UI.BunifuDropdown bunifuDropdown1;
+        private Bunifu.Framework.UI.BunifuDropdown cbTipoDocumento;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton2;
-        private Bunifu.Framework.UI.BunifuDropdown bunifuDropdown4;
-        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
+        private Bunifu.Framework.UI.BunifuDropdown btndTipoPersona;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton5;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton4;
         private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox7;
@@ -1206,7 +1174,8 @@
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton11;
         private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox8;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton10;
-        private Bunifu.Framework.UI.BunifuThinButton2 btnCancelarMant;
         private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton21;
+        private Bunifu.Framework.UI.BunifuThinButton2 btnCancelarMant;
+        private Bunifu.Framework.UI.BunifuDropdown bunifuDropdown1;
     }
 }
