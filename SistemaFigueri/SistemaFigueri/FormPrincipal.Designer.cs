@@ -396,7 +396,7 @@
             // 
             // BarraTitulo
             // 
-            this.BarraTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
+            this.BarraTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(96)))), ((int)(((byte)(100)))));
             this.BarraTitulo.Controls.Add(this.pictureBox1);
             this.BarraTitulo.Controls.Add(this.btnCerrarPrincipal);
             this.BarraTitulo.Controls.Add(this.btnRestaurar);

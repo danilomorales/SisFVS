@@ -63,5 +63,11 @@ namespace SistemaFigueri
         {
 
         }
+
+        private void btnRegistrarCobro_Click(object sender, EventArgs e)
+        {
+            FormRegistroCobro frmRegCobro = new FormRegistroCobro();
+            frmRegCobro.ShowDialog();
+        }
     }
 }
