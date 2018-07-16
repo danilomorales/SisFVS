@@ -16,7 +16,7 @@ namespace SistemaFigueri
         public FormPrincipal()
         {
             InitializeComponent();
-            this.SetStyle(ControlStyles.ResizeRedraw, true);
+            SetStyle(ControlStyles.ResizeRedraw, true);
         }
         //
         int LX, LY;
@@ -38,12 +38,12 @@ namespace SistemaFigueri
         {
             //this.WindowState = FormWindowState.Maximized;
 
-            LX = this.Location.X;
-            LY = this.Location.Y;
-            sw = this.Size.Width;
-            sh = this.Size.Height;
-            this.Size = Screen.PrimaryScreen.WorkingArea.Size;
-            this.Location = Screen.PrimaryScreen.WorkingArea.Location;
+            LX = Location.X;
+            LY = Location.Y;
+            sw = Size.Width;
+            sh = Size.Height;
+            Size = Screen.PrimaryScreen.WorkingArea.Size;
+            Location = Screen.PrimaryScreen.WorkingArea.Location;
             btnRestaurar.Visible = true;
             btnAmpliar.Visible = false;
         }
@@ -52,8 +52,8 @@ namespace SistemaFigueri
         {
             //this.WindowState = FormWindowState.Normal;
 
-            this.Size = new Size(sw, sh);
-            this.Location = new Point (LX, LY);
+            Size = new Size(sw, sh);
+            Location = new Point (LX, LY);
             btnRestaurar.Visible = false;
             btnAmpliar.Visible = true;
 
@@ -61,7 +61,7 @@ namespace SistemaFigueri
 
         private void btnMinimizar_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
+            WindowState = FormWindowState.Minimized;
 
         }
         private void btnCerrarPrincipal_Click(object sender, EventArgs e)
@@ -84,18 +84,18 @@ namespace SistemaFigueri
 
             if (BarraLateral.Width == 250)
             {
-                this.tmOcultarbarra.Enabled = true;
+                tmOcultarbarra.Enabled = true;
             }
             else
             {
-                this.tmMostrarBarra.Enabled = true;
+                tmMostrarBarra.Enabled = true;
             }
 
         }
         private void tmMostrarBarra_Tick(object sender, EventArgs e)
         {
             if (BarraLateral.Width >= 250)
-                this.tmMostrarBarra.Enabled = false;
+                tmMostrarBarra.Enabled = false;
             else
                 BarraLateral.Width = BarraLateral.Width + 60;
 
@@ -105,7 +105,7 @@ namespace SistemaFigueri
         private void tmOcultarBarra_Tick(object sender, EventArgs e)
         {
             if (BarraLateral.Width <= 70)
-                this.tmOcultarbarra.Enabled = false;
+                tmOcultarbarra.Enabled = false;
             else
                 BarraLateral.Width = BarraLateral.Width - 60;
         }
@@ -113,19 +113,19 @@ namespace SistemaFigueri
         private void BarraTitulo_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
+            SendMessage(Handle, 0x112, 0xf012, 0);
         }
 
         //metodo para mostrar formulario en panel 
         private void AbreFormEnPanel(object Formhijo)
         {
-            if (this.PanelContenedor.Controls.Count > 0)
-                this.PanelContenedor.Controls.RemoveAt(0);
+            if (PanelContenedor.Controls.Count > 0)
+                PanelContenedor.Controls.RemoveAt(0);
             Form fh = Formhijo as Form;
             fh.TopLevel = false;
             fh.Dock = DockStyle.Fill;
-            this.PanelContenedor.Controls.Add(fh);
-            this.PanelContenedor.Tag = fh;
+            PanelContenedor.Controls.Add(fh);
+            PanelContenedor.Tag = fh;
             fh.Show();
         }
         //icial logo
@@ -166,7 +166,7 @@ namespace SistemaFigueri
             {
                 case WM_NCHITTEST:
                     base.WndProc(ref m);
-                    var hitPoint = this.PointToClient(new Point(m.LParam.ToInt32() & 0xffff, m.LParam.ToInt32() >> 16));
+                    var hitPoint = PointToClient(new Point(m.LParam.ToInt32() & 0xffff, m.LParam.ToInt32() >> 16));
                     if (sizeGripRectangle.Contains(hitPoint))
                         m.Result = new IntPtr(HTBOTTOMRIGHT);
                     break;
@@ -179,16 +179,21 @@ namespace SistemaFigueri
         protected override void OnSizeChanged(EventArgs e)
         {
             base.OnSizeChanged(e);
-            var region = new Region(new Rectangle(0, 0, this.ClientRectangle.Width, this.ClientRectangle.Height));
+            var region = new Region(new Rectangle(0, 0, ClientRectangle.Width, ClientRectangle.Height));
 
-            sizeGripRectangle = new Rectangle(this.ClientRectangle.Width - tolerance, this.ClientRectangle.Height - tolerance, tolerance, tolerance);
+            sizeGripRectangle = new Rectangle(ClientRectangle.Width - tolerance, ClientRectangle.Height - tolerance, tolerance, tolerance);
 
             region.Exclude(sizeGripRectangle);
-            this.PanelContenedor.Region = region;
-            this.Invalidate();
+            PanelContenedor.Region = region;
+            Invalidate();
         }
 
         private void btnRestaurar_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void PanelContenedor_Paint(object sender, PaintEventArgs e)
         {
 
         }

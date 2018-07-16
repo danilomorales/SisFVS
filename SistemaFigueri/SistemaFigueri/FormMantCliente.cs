@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace SistemaFigueri
 {
     public partial class FormMantCliente : Form
@@ -17,9 +18,9 @@ namespace SistemaFigueri
             InitializeComponent();
         }
 
-        private void bunifuDropdown4_onItemSelected(object sender, EventArgs e)
+        private void btnCancelarMant_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }
