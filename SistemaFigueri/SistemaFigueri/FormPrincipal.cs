@@ -202,6 +202,11 @@ namespace SistemaFigueri
             AbreFormEnPanel(new FormVenta());
         }
 
+        private void btnCentralizacioncaja_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnRestaurar_Paint(object sender, PaintEventArgs e)
         {
 

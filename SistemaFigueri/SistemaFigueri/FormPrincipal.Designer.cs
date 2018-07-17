@@ -318,6 +318,7 @@
             this.btnCentralizacioncaja.Text = "    Centralización de Caja";
             this.btnCentralizacioncaja.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCentralizacioncaja.UseVisualStyleBackColor = true;
+            this.btnCentralizacioncaja.Click += new System.EventHandler(this.btnCentralizacioncaja_Click_1);
             // 
             // btnPromocion
             // 
@@ -450,7 +451,7 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(469, -7);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(156, 90);
+            this.pictureBox1.Size = new System.Drawing.Size(156, 84);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
