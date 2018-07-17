@@ -46,10 +46,6 @@ namespace SistemaFigueri
         //        BarraLateral.Width = BarraLateral.Width - 60;
         //}
 
-
-
-       
-
         //metodo para mostrar formulario en panel 
         private void AbreFormEnPanel(object Formhijo)
         {
