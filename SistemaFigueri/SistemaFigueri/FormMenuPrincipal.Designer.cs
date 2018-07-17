@@ -72,6 +72,8 @@
             this.panel1ContenedorPrincipal.Controls.Add(this.BarraTitulo);
             this.panel1ContenedorPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1ContenedorPrincipal.Location = new System.Drawing.Point(0, 0);
+            this.panel1ContenedorPrincipal.MaximumSize = new System.Drawing.Size(1920, 1080);
+            this.panel1ContenedorPrincipal.MinimumSize = new System.Drawing.Size(800, 500);
             this.panel1ContenedorPrincipal.Name = "panel1ContenedorPrincipal";
             this.panel1ContenedorPrincipal.Size = new System.Drawing.Size(1100, 600);
             this.panel1ContenedorPrincipal.TabIndex = 1;
@@ -81,8 +83,10 @@
             this.panelContenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContenedor.Location = new System.Drawing.Point(230, 43);
+            this.panelContenedor.MaximumSize = new System.Drawing.Size(1920, 1080);
+            this.panelContenedor.MinimumSize = new System.Drawing.Size(1029, 600);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(870, 557);
+            this.panelContenedor.Size = new System.Drawing.Size(1029, 600);
             this.panelContenedor.TabIndex = 6;
             // 
             // panelMenu
@@ -484,7 +488,10 @@
             this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrar.FlatAppearance.BorderSize = 0;
+            this.btnCerrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrar.ForeColor = System.Drawing.Color.Transparent;
             this.btnCerrar.Image = global::SistemaFigueri.Properties.Resources.close;
             this.btnCerrar.Location = new System.Drawing.Point(1043, 2);
             this.btnCerrar.Name = "btnCerrar";
@@ -517,7 +524,10 @@
             this.ClientSize = new System.Drawing.Size(1100, 600);
             this.Controls.Add(this.panel1ContenedorPrincipal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximumSize = new System.Drawing.Size(1920, 1080);
+            this.MinimumSize = new System.Drawing.Size(800, 500);
             this.Name = "FormMenuPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormMenuPrincipal";
             this.panel1ContenedorPrincipal.ResumeLayout(false);
             this.panelMenu.ResumeLayout(false);
