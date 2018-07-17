@@ -90,7 +90,6 @@
             this.bunifuTextbox3 = new Bunifu.Framework.UI.BunifuTextbox();
             this.bunifuTextbox2 = new Bunifu.Framework.UI.BunifuTextbox();
             this.bunifuTextbox1 = new Bunifu.Framework.UI.BunifuTextbox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.bunifuCards1.SuspendLayout();
             this.bunifuCards2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
@@ -1109,20 +1108,6 @@
             this.bunifuTextbox1.TabIndex = 2;
             this.bunifuTextbox1.text = "000000000";
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "hola ",
-            "adadad",
-            "ad",
-            "ada",
-            "d"});
-            this.comboBox1.Location = new System.Drawing.Point(424, 571);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 52;
-            // 
             // FormVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -1130,7 +1115,6 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.ClientSize = new System.Drawing.Size(1050, 600);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.bunifuCards5);
             this.Controls.Add(this.bunifuCards4);
             this.Controls.Add(this.bunifuCards2);
@@ -1218,6 +1202,5 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel10;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel9;
         private Bunifu.Framework.UI.BunifuTileButton btnMantCliente;
-        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
