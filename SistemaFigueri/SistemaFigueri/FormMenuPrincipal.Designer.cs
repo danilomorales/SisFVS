@@ -72,6 +72,8 @@
             this.panel1ContenedorPrincipal.Controls.Add(this.BarraTitulo);
             this.panel1ContenedorPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1ContenedorPrincipal.Location = new System.Drawing.Point(0, 0);
+            this.panel1ContenedorPrincipal.MaximumSize = new System.Drawing.Size(1920, 1080);
+            this.panel1ContenedorPrincipal.MinimumSize = new System.Drawing.Size(800, 500);
             this.panel1ContenedorPrincipal.Name = "panel1ContenedorPrincipal";
             this.panel1ContenedorPrincipal.Size = new System.Drawing.Size(1100, 600);
             this.panel1ContenedorPrincipal.TabIndex = 1;
@@ -81,8 +83,10 @@
             this.panelContenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContenedor.Location = new System.Drawing.Point(230, 43);
+            this.panelContenedor.MaximumSize = new System.Drawing.Size(1920, 1080);
+            this.panelContenedor.MinimumSize = new System.Drawing.Size(1029, 600);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(870, 557);
+            this.panelContenedor.Size = new System.Drawing.Size(1029, 600);
             this.panelContenedor.TabIndex = 6;
             // 
             // panelMenu
@@ -517,8 +521,12 @@
             this.ClientSize = new System.Drawing.Size(1100, 600);
             this.Controls.Add(this.panel1ContenedorPrincipal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximumSize = new System.Drawing.Size(1920, 1080);
+            this.MinimumSize = new System.Drawing.Size(800, 500);
             this.Name = "FormMenuPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormMenuPrincipal";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1ContenedorPrincipal.ResumeLayout(false);
             this.panelMenu.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
