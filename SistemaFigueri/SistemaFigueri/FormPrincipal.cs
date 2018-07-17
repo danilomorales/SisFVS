@@ -207,6 +207,11 @@ namespace SistemaFigueri
 
         }
 
+        private void PanelContenedor_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void btnRestaurar_Paint(object sender, PaintEventArgs e)
         {
 
