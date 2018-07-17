@@ -129,6 +129,7 @@
             this.BarraLateral.Name = "BarraLateral";
             this.BarraLateral.Size = new System.Drawing.Size(241, 650);
             this.BarraLateral.TabIndex = 1;
+            this.BarraLateral.Paint += new System.Windows.Forms.PaintEventHandler(this.BarraLateral_Paint);
             // 
             // label5
             // 
@@ -431,7 +432,8 @@
             // 
             // BarraTitulo
             // 
-            this.BarraTitulo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BarraTitulo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.BarraTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(96)))), ((int)(((byte)(100)))));
             this.BarraTitulo.Controls.Add(this.pictureBox1);
             this.BarraTitulo.Controls.Add(this.btnCerrarPrincipal);

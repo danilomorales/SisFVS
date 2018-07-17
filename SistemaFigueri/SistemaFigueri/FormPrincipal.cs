@@ -26,28 +26,28 @@ namespace SistemaFigueri
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hend, int wsmg, int wparam, int lparam);
-
-        
-
        //Cerrar, maximizar, minimizar formulario
     
 
         //animacion boton Barra
       
-        private void tmMostrarBarra_Tick(object sender, EventArgs e)
-        {
-            if (BarraLateral.Width >= 250)
-                tmMostrarBarra.Enabled = false;
-            else
-                BarraLateral.Width = BarraLateral.Width + 60;
-        }
-        private void tmOcultarBarra_Tick(object sender, EventArgs e)
-        {
-            if (BarraLateral.Width <= 70)
-                tmOcultarbarra.Enabled = false;
-            else
-                BarraLateral.Width = BarraLateral.Width - 60;
-        }
+        //private void tmMostrarBarra_Tick(object sender, EventArgs e)
+        //{
+        //    if (BarraLateral.Width >= 250)
+        //        tmMostrarBarra.Enabled = false;
+        //    else
+        //        BarraLateral.Width = BarraLateral.Width + 60;
+        //}
+        //private void tmOcultarBarra_Tick(object sender, EventArgs e)
+        //{
+        //    if (BarraLateral.Width <= 70)
+        //        tmOcultarbarra.Enabled = false;
+        //    else
+        //        BarraLateral.Width = BarraLateral.Width - 60;
+        //}
+
+
+
        
 
         //metodo para mostrar formulario en panel 
@@ -203,6 +203,11 @@ namespace SistemaFigueri
         }
 
         private void btnCentralizacioncaja_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BarraLateral_Paint(object sender, PaintEventArgs e)
         {
 
         }
