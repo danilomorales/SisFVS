@@ -35,82 +35,87 @@ namespace SistemaFigueri
             WindowState = FormWindowState.Minimized;
         }
 
-        private void tbUsuario_Enter(object sender, EventArgs e)
-        {
-            if(tbUsuario.Text == "USUARIO")
-            {
-                tbUsuario.Text = "";
-                tbUsuario.ForeColor = Color.WhiteSmoke;
-            }
-        }
-
-        private void tbUsuario_Leave(object sender, EventArgs e)
-        {
-            if (tbUsuario.Text =="")
-            {
-                tbUsuario.Text = "USUARIO";
-                tbUsuario.ForeColor = Color.DimGray;
-            }
-        }
-        
-        private void tbContrasenna_Enter(object sender, EventArgs e)
-        {
-            if (tbContrasenna.Text == "CONTRASEÑA")
-            {
-                tbContrasenna.Text = "";
-                tbContrasenna.ForeColor = Color.WhiteSmoke;
-                tbContrasenna.UseSystemPasswordChar = true;
-            }
-        }
-
-        private void tbContrasenna_Leave(object sender, EventArgs e)
-        {
-            if (tbContrasenna.Text == "")
-            {
-                tbContrasenna.Text = "CONTRASEÑA";
-                tbContrasenna.ForeColor = Color.DimGray;
-                tbContrasenna.UseSystemPasswordChar = false;
-            }
-        }
-
-        private void Login_MouseDown(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(Handle, 0x112, 0xf012, 0);
-        }
-
         private void btnAceder_Click(object sender, EventArgs e)
         {
-            CNUsuario objUsuario = new CNUsuario();
-            SqlDataReader Loguear;
-            objUsuario.Usuario = tbUsuario.Text;
-            objUsuario.Pass = tbContrasenna.Text;
-            if (objUsuario.Usuario == tbUsuario.Text)
-            {
-                Loguear = objUsuario.IniciarSesion();
-                if (Loguear.Read() == true)
-                {
-                    Hide();
-                    FormPrincipal objPPrincipal = new FormPrincipal();
-                    objPPrincipal.Show();
-                }
-                else
-                {
-                    MessageBox.Show("Usuario o contraseña Invalidos");
-                }
-            }
-
 
         }
 
-        private void tbUsuario_TextChanged(object sender, EventArgs e)
-        {
+        //private void tbUsuario_Enter(object sender, EventArgs e)
+        //{
+        //    if(ss.Text == "USUARIO")
+        //    {
+        //        ss.Text = "";
+        //        ss.ForeColor = Color.WhiteSmoke;
+        //    }
+        //}
 
-        }
+        //private void tbUsuario_Leave(object sender, EventArgs e)
+        //{
+        //    if (ss.Text =="")
+        //    {
+        //        ss.Text = "USUARIO";
+        //        ss.ForeColor = Color.DimGray;
+        //    }
+        //}
 
-        private void tbContrasenna_TextChanged(object sender, EventArgs e)
-        {
+        //private void tbContrasenna_Enter(object sender, EventArgs e)
+        //{
+        //    if (x.Text == "CONTRASEÑA")
+        //    {
+        //        x.Text = "";
+        //        x.ForeColor = Color.WhiteSmoke;
+        //        x.UseSystemPasswordChar = true;
+        //    }
+        //}
 
-        }
+        //private void tbContrasenna_Leave(object sender, EventArgs e)
+        //{
+        //    if (x.Text == "")
+        //    {
+        //        x.Text = "CONTRASEÑA";
+        //        x.ForeColor = Color.DimGray;
+        //        x.UseSystemPasswordChar = false;
+        //    }
+        //}
+
+        //private void Login_MouseDown(object sender, MouseEventArgs e)
+        //{
+        //    ReleaseCapture();
+        //    SendMessage(Handle, 0x112, 0xf012, 0);
+        //}
+
+        //private void btnAceder_Click(object sender, EventArgs e)
+        //{
+        //    CNUsuario objUsuario = new CNUsuario();
+        //    SqlDataReader Loguear;
+        //    objUsuario.Usuario = ss.Text;
+        //    objUsuario.Pass = x.Text;
+        //    if (objUsuario.Usuario == ss.Text)
+        //    {
+        //        Loguear = objUsuario.IniciarSesion();
+        //        if (Loguear.Read() == true)
+        //        {
+        //            Hide();
+        //            FormPrincipal objPPrincipal = new FormPrincipal();
+        //            objPPrincipal.Show();
+        //        }
+        //        else
+        //        {
+        //            MessageBox.Show("Usuario o contraseña Invalidos");
+        //        }
+        //    }
+
+
+        //}
+
+        //private void tbUsuario_TextChanged(object sender, EventArgs e)
+        //{
+
+        //}
+
+        //private void tbContrasenna_TextChanged(object sender, EventArgs e)
+        //{
+
+        //}
     }
 }

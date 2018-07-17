@@ -64,9 +64,10 @@ namespace SistemaFigueri
 
         }
 
-        private void bunifuCustomDataGrid1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnRegistrarCobro_Click(object sender, EventArgs e)
         {
-
+            FormRegistroCobro frmRegCobro = new FormRegistroCobro();
+            frmRegCobro.ShowDialog();
         }
     }
 }

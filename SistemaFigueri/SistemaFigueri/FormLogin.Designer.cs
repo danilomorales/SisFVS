@@ -29,45 +29,22 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
-            Microsoft.VisualBasic.PowerPacks.LineShape lineShape2;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.tbUsuario = new System.Windows.Forms.TextBox();
-            this.tbContrasenna = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAceder = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
-            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.tbContrasenna = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.tbUsuario = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lineShape1
-            // 
-            lineShape1.BorderColor = System.Drawing.SystemColors.WindowFrame;
-            lineShape1.Name = "lineShape1";
-            lineShape1.X1 = 308;
-            lineShape1.X2 = 746;
-            lineShape1.Y1 = 92;
-            lineShape1.Y2 = 92;
-            // 
-            // lineShape2
-            // 
-            lineShape2.BorderColor = System.Drawing.SystemColors.WindowFrame;
-            lineShape2.Name = "lineShape2";
-            lineShape2.X1 = 310;
-            lineShape2.X2 = 748;
-            lineShape2.Y1 = 154;
-            lineShape2.Y2 = 154;
             // 
             // panel1
             // 
@@ -88,37 +65,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // tbUsuario
-            // 
-            this.tbUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.tbUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbUsuario.ForeColor = System.Drawing.SystemColors.MenuBar;
-            this.tbUsuario.Location = new System.Drawing.Point(309, 67);
-            this.tbUsuario.Multiline = true;
-            this.tbUsuario.Name = "tbUsuario";
-            this.tbUsuario.Size = new System.Drawing.Size(443, 24);
-            this.tbUsuario.TabIndex = 1;
-            this.tbUsuario.Text = "USUARIO";
-            this.tbUsuario.TextChanged += new System.EventHandler(this.tbUsuario_TextChanged);
-            this.tbUsuario.Enter += new System.EventHandler(this.tbUsuario_Enter);
-            this.tbUsuario.Leave += new System.EventHandler(this.tbUsuario_Leave);
-            // 
-            // tbContrasenna
-            // 
-            this.tbContrasenna.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.tbContrasenna.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbContrasenna.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbContrasenna.ForeColor = System.Drawing.SystemColors.MenuBar;
-            this.tbContrasenna.Location = new System.Drawing.Point(309, 129);
-            this.tbContrasenna.Name = "tbContrasenna";
-            this.tbContrasenna.Size = new System.Drawing.Size(443, 22);
-            this.tbContrasenna.TabIndex = 2;
-            this.tbContrasenna.Text = "CONTRASEÑA";
-            this.tbContrasenna.TextChanged += new System.EventHandler(this.tbContrasenna_TextChanged);
-            this.tbContrasenna.Enter += new System.EventHandler(this.tbContrasenna_Enter);
-            this.tbContrasenna.Leave += new System.EventHandler(this.tbContrasenna_Leave);
             // 
             // label1
             // 
@@ -189,45 +135,69 @@
             this.btnMinimizar.TabStop = false;
             this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
             // 
-            // shapeContainer1
-            // 
-            this.shapeContainer1.Location = new System.Drawing.Point(0, 0);
-            this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
-            this.shapeContainer1.Name = "shapeContainer1";
-            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
-            lineShape2,
-            lineShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(780, 330);
-            this.shapeContainer1.TabIndex = 7;
-            this.shapeContainer1.TabStop = false;
-            // 
             // bunifuElipse1
             // 
             this.bunifuElipse1.ElipseRadius = 15;
             this.bunifuElipse1.TargetControl = this;
             // 
+            // tbContrasenna
+            // 
+            this.tbContrasenna.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbContrasenna.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
+            this.tbContrasenna.ForeColor = System.Drawing.Color.White;
+            this.tbContrasenna.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.tbContrasenna.HintText = "CONTRASEÑA";
+            this.tbContrasenna.isPassword = true;
+            this.tbContrasenna.LineFocusedColor = System.Drawing.Color.Red;
+            this.tbContrasenna.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
+            this.tbContrasenna.LineMouseHoverColor = System.Drawing.Color.SandyBrown;
+            this.tbContrasenna.LineThickness = 5;
+            this.tbContrasenna.Location = new System.Drawing.Point(359, 155);
+            this.tbContrasenna.Margin = new System.Windows.Forms.Padding(4);
+            this.tbContrasenna.Name = "tbContrasenna";
+            this.tbContrasenna.Size = new System.Drawing.Size(325, 30);
+            this.tbContrasenna.TabIndex = 74;
+            this.tbContrasenna.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // tbUsuario
+            // 
+            this.tbUsuario.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbUsuario.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
+            this.tbUsuario.ForeColor = System.Drawing.Color.White;
+            this.tbUsuario.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.tbUsuario.HintText = "USUARIO";
+            this.tbUsuario.isPassword = false;
+            this.tbUsuario.LineFocusedColor = System.Drawing.Color.Red;
+            this.tbUsuario.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
+            this.tbUsuario.LineMouseHoverColor = System.Drawing.Color.SandyBrown;
+            this.tbUsuario.LineThickness = 5;
+            this.tbUsuario.Location = new System.Drawing.Point(359, 70);
+            this.tbUsuario.Margin = new System.Windows.Forms.Padding(4);
+            this.tbUsuario.Name = "tbUsuario";
+            this.tbUsuario.Size = new System.Drawing.Size(325, 30);
+            this.tbUsuario.TabIndex = 75;
+            this.tbUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(96)))), ((int)(((byte)(100)))));
             this.ClientSize = new System.Drawing.Size(780, 330);
             this.Controls.Add(this.btnMinimizar);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.btnAceder);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.tbContrasenna);
             this.Controls.Add(this.tbUsuario);
+            this.Controls.Add(this.tbContrasenna);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.shapeContainer1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormLogin";
             this.Opacity = 0.95D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
-            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Login_MouseDown);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
@@ -240,15 +210,14 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox tbUsuario;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox tbContrasenna;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnAceder;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.PictureBox btnCerrar;
         private System.Windows.Forms.PictureBox btnMinimizar;
-        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox tbUsuario;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox tbContrasenna;
     }
 }

@@ -128,7 +128,7 @@
             this.btndTipoPersona.ForeColor = System.Drawing.Color.White;
             this.btndTipoPersona.ImeMode = System.Windows.Forms.ImeMode.Alpha;
             this.btndTipoPersona.Items = new string[0];
-            this.btndTipoPersona.Location = new System.Drawing.Point(13, 46);
+            this.btndTipoPersona.Location = new System.Drawing.Point(120, 46);
             this.btndTipoPersona.Name = "btndTipoPersona";
             this.btndTipoPersona.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.btndTipoPersona.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
@@ -147,7 +147,7 @@
             this.bunifuDropdown1.Items = new string[] {
         "DNI",
         "CARNÉ DE EXTRANGERÍA"};
-            this.bunifuDropdown1.Location = new System.Drawing.Point(343, 46);
+            this.bunifuDropdown1.Location = new System.Drawing.Point(391, 46);
             this.bunifuDropdown1.Name = "bunifuDropdown1";
             this.bunifuDropdown1.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
             this.bunifuDropdown1.onHoverColor = System.Drawing.Color.DarkSlateGray;
@@ -178,7 +178,7 @@
             this.bunifuFlatButton2.IconVisible = true;
             this.bunifuFlatButton2.IconZoom = 90D;
             this.bunifuFlatButton2.IsTab = false;
-            this.bunifuFlatButton2.Location = new System.Drawing.Point(256, 46);
+            this.bunifuFlatButton2.Location = new System.Drawing.Point(305, 46);
             this.bunifuFlatButton2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.bunifuFlatButton2.Name = "bunifuFlatButton2";
             this.bunifuFlatButton2.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));

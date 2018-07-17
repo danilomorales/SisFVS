@@ -72,7 +72,7 @@
             this.bunifuCards4 = new Bunifu.Framework.UI.BunifuCards();
             this.bunifuMetroTextbox3 = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuTileButton1 = new Bunifu.Framework.UI.BunifuTileButton();
+            this.btnRegistrarCobro = new Bunifu.Framework.UI.BunifuTileButton();
             this.bunifuDropdown6 = new Bunifu.Framework.UI.BunifuDropdown();
             this.bunifuFlatButton6 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuDropdown5 = new Bunifu.Framework.UI.BunifuDropdown();
@@ -115,9 +115,6 @@
             // 
             // bunifuCards1
             // 
-            this.bunifuCards1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.bunifuCards1.AutoSize = true;
             this.bunifuCards1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
             this.bunifuCards1.BorderRadius = 5;
@@ -186,9 +183,6 @@
             // 
             // bunifuCards2
             // 
-            this.bunifuCards2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.bunifuCards2.AutoSize = true;
             this.bunifuCards2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
             this.bunifuCards2.BorderRadius = 5;
@@ -364,7 +358,6 @@
             // 
             // bunifuMaterialTextbox1
             // 
-            this.bunifuMaterialTextbox1.AutoSize = true;
             this.bunifuMaterialTextbox1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.bunifuMaterialTextbox1.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
             this.bunifuMaterialTextbox1.ForeColor = System.Drawing.Color.White;
@@ -385,9 +378,6 @@
             // 
             // bunifuCards3
             // 
-            this.bunifuCards3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.bunifuCards3.AutoSize = true;
             this.bunifuCards3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
             this.bunifuCards3.BorderRadius = 5;
@@ -414,7 +404,7 @@
             this.bunifuCards3.Name = "bunifuCards3";
             this.bunifuCards3.RightSahddow = true;
             this.bunifuCards3.ShadowDepth = 20;
-            this.bunifuCards3.Size = new System.Drawing.Size(1060, 601);
+            this.bunifuCards3.Size = new System.Drawing.Size(672, 385);
             this.bunifuCards3.TabIndex = 35;
             // 
             // bunifuMetroTextbox6
@@ -584,10 +574,6 @@
             this.bunifuCustomDataGrid1.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.bunifuCustomDataGrid1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.bunifuCustomDataGrid1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuCustomDataGrid1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.bunifuCustomDataGrid1.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.bunifuCustomDataGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.bunifuCustomDataGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -615,35 +601,29 @@
             this.bunifuCustomDataGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(637, 208);
             this.bunifuCustomDataGrid1.TabIndex = 61;
-            this.bunifuCustomDataGrid1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bunifuCustomDataGrid1_CellContentClick);
             // 
             // Column1
             // 
-            this.Column1.FillWeight = 100.4427F;
             this.Column1.HeaderText = "Descripción de Producto";
             this.Column1.Name = "Column1";
             // 
             // Column2
             // 
-            this.Column2.FillWeight = 101.9426F;
             this.Column2.HeaderText = "Precio U";
             this.Column2.Name = "Column2";
             // 
             // Column3
             // 
-            this.Column3.FillWeight = 101.1454F;
             this.Column3.HeaderText = "IGV";
             this.Column3.Name = "Column3";
             // 
             // Column4
             // 
-            this.Column4.FillWeight = 94.12029F;
             this.Column4.HeaderText = "Cantidad";
             this.Column4.Name = "Column4";
             // 
             // Column5
             // 
-            this.Column5.FillWeight = 102.349F;
             this.Column5.HeaderText = "Total";
             this.Column5.Name = "Column5";
             // 
@@ -688,7 +668,6 @@
             // 
             // bunifuMaterialTextbox4
             // 
-            this.bunifuMaterialTextbox4.AutoSize = true;
             this.bunifuMaterialTextbox4.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.bunifuMaterialTextbox4.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
             this.bunifuMaterialTextbox4.ForeColor = System.Drawing.Color.White;
@@ -708,7 +687,6 @@
             // 
             // bunifuMaterialTextbox2
             // 
-            this.bunifuMaterialTextbox2.AutoSize = true;
             this.bunifuMaterialTextbox2.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.bunifuMaterialTextbox2.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
             this.bunifuMaterialTextbox2.ForeColor = System.Drawing.Color.White;
@@ -728,7 +706,6 @@
             // 
             // bunifuDropdown2
             // 
-            this.bunifuDropdown2.AutoSize = true;
             this.bunifuDropdown2.BackColor = System.Drawing.Color.Transparent;
             this.bunifuDropdown2.BorderRadius = 3;
             this.bunifuDropdown2.ForeColor = System.Drawing.Color.White;
@@ -779,9 +756,6 @@
             // 
             // bunifuCards4
             // 
-            this.bunifuCards4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.bunifuCards4.AutoSize = true;
             this.bunifuCards4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
             this.bunifuCards4.BorderRadius = 5;
@@ -789,7 +763,7 @@
             this.bunifuCards4.color = System.Drawing.Color.Tomato;
             this.bunifuCards4.Controls.Add(this.bunifuMetroTextbox3);
             this.bunifuCards4.Controls.Add(this.bunifuCustomLabel8);
-            this.bunifuCards4.Controls.Add(this.bunifuTileButton1);
+            this.bunifuCards4.Controls.Add(this.btnRegistrarCobro);
             this.bunifuCards4.Controls.Add(this.bunifuDropdown6);
             this.bunifuCards4.Controls.Add(this.bunifuFlatButton6);
             this.bunifuCards4.Controls.Add(this.bunifuDropdown5);
@@ -832,24 +806,25 @@
             this.bunifuCustomLabel8.Text = "MONTO";
             this.bunifuCustomLabel8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // bunifuTileButton1
+            // btnRegistrarCobro
             // 
-            this.bunifuTileButton1.BackColor = System.Drawing.Color.SeaGreen;
-            this.bunifuTileButton1.color = System.Drawing.Color.SeaGreen;
-            this.bunifuTileButton1.colorActive = System.Drawing.Color.MediumSeaGreen;
-            this.bunifuTileButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuTileButton1.Font = new System.Drawing.Font("Century Gothic", 8F);
-            this.bunifuTileButton1.ForeColor = System.Drawing.Color.White;
-            this.bunifuTileButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuTileButton1.Image")));
-            this.bunifuTileButton1.ImagePosition = 1;
-            this.bunifuTileButton1.ImageZoom = 32;
-            this.bunifuTileButton1.LabelPosition = 15;
-            this.bunifuTileButton1.LabelText = "Multi pago";
-            this.bunifuTileButton1.Location = new System.Drawing.Point(188, 62);
-            this.bunifuTileButton1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.bunifuTileButton1.Name = "bunifuTileButton1";
-            this.bunifuTileButton1.Size = new System.Drawing.Size(70, 38);
-            this.bunifuTileButton1.TabIndex = 74;
+            this.btnRegistrarCobro.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnRegistrarCobro.color = System.Drawing.Color.SeaGreen;
+            this.btnRegistrarCobro.colorActive = System.Drawing.Color.MediumSeaGreen;
+            this.btnRegistrarCobro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRegistrarCobro.Font = new System.Drawing.Font("Century Gothic", 8F);
+            this.btnRegistrarCobro.ForeColor = System.Drawing.Color.White;
+            this.btnRegistrarCobro.Image = ((System.Drawing.Image)(resources.GetObject("btnRegistrarCobro.Image")));
+            this.btnRegistrarCobro.ImagePosition = 1;
+            this.btnRegistrarCobro.ImageZoom = 32;
+            this.btnRegistrarCobro.LabelPosition = 15;
+            this.btnRegistrarCobro.LabelText = "Multi pago";
+            this.btnRegistrarCobro.Location = new System.Drawing.Point(188, 62);
+            this.btnRegistrarCobro.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnRegistrarCobro.Name = "btnRegistrarCobro";
+            this.btnRegistrarCobro.Size = new System.Drawing.Size(70, 38);
+            this.btnRegistrarCobro.TabIndex = 74;
+            this.btnRegistrarCobro.Click += new System.EventHandler(this.btnRegistrarCobro_Click);
             // 
             // bunifuDropdown6
             // 
@@ -954,9 +929,6 @@
             // 
             // bunifuCards5
             // 
-            this.bunifuCards5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.bunifuCards5.AutoSize = true;
             this.bunifuCards5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
             this.bunifuCards5.BorderRadius = 10;
@@ -979,7 +951,7 @@
             this.bunifuCards5.Name = "bunifuCards5";
             this.bunifuCards5.RightSahddow = true;
             this.bunifuCards5.ShadowDepth = 20;
-            this.bunifuCards5.Size = new System.Drawing.Size(255, 252);
+            this.bunifuCards5.Size = new System.Drawing.Size(321, 253);
             this.bunifuCards5.TabIndex = 51;
             // 
             // bunifuCustomLabel13
@@ -1153,11 +1125,11 @@
             // 
             // FormVenta
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.ClientSize = new System.Drawing.Size(1060, 601);
+            this.ClientSize = new System.Drawing.Size(1050, 600);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.bunifuCards5);
             this.Controls.Add(this.bunifuCards4);
@@ -1211,7 +1183,7 @@
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton6;
         private Bunifu.Framework.UI.BunifuDropdown bunifuDropdown5;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton4;
-        private Bunifu.Framework.UI.BunifuTileButton bunifuTileButton1;
+        private Bunifu.Framework.UI.BunifuTileButton btnRegistrarCobro;
         private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
