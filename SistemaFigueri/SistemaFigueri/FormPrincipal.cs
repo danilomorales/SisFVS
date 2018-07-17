@@ -27,70 +27,13 @@ namespace SistemaFigueri
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hend, int wsmg, int wparam, int lparam);
 
-
-        private void btnCerrar_Click(object sender, EventArgs e)
-        {
-            
-        }
+        
 
        //Cerrar, maximizar, minimizar formulario
-        private void btnAmpliar_Click(object sender, EventArgs e)
-        {
-            //this.WindowState = FormWindowState.Maximized;
-
-            LX = Location.X;
-            LY = Location.Y;
-            sw = Size.Width;
-            sh = Size.Height;
-            Size = Screen.PrimaryScreen.WorkingArea.Size;
-            Location = Screen.PrimaryScreen.WorkingArea.Location;
-            btnRestaurar.Visible = true;
-            btnAmpliar.Visible = false;
-        }
-
-        private void btnRestaurar_Click(object sender, EventArgs e)
-        {
-            //this.WindowState = FormWindowState.Normal;
-
-            this.Size = new Size(sw, sh);
-            this.Location = new Point (LX, LY);
-            btnRestaurar.Visible = false;
-            btnAmpliar.Visible = true;
-
-        }
-
-        private void btnMinimizar_Click(object sender, EventArgs e)
-        {
-            WindowState = FormWindowState.Minimized;
-
-        }
-        private void btnCerrarPrincipal_Click(object sender, EventArgs e)
-        {
-            DialogResult res = MessageBox.Show("¿Seguro que desea salir de la aplicación?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
-            if (res == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
-            else
-            {
-
-            }
-
-        }
+    
 
         //animacion boton Barra
-        private void btnSlide_Click(object sender, EventArgs e)
-        {
-
-            if (BarraLateral.Width == 250)
-            {
-                tmOcultarbarra.Enabled = true;
-            }
-            else
-            {
-                tmMostrarBarra.Enabled = true;
-            }
-        }
+      
         private void tmMostrarBarra_Tick(object sender, EventArgs e)
         {
             if (BarraLateral.Width >= 250)
@@ -105,11 +48,7 @@ namespace SistemaFigueri
             else
                 BarraLateral.Width = BarraLateral.Width - 60;
         }
-        private void BarraTitulo_MouseDown(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(Handle, 0x112, 0xf012, 0);
-        }
+       
 
         //metodo para mostrar formulario en panel 
         private void AbreFormEnPanel(object Formhijo)
@@ -134,15 +73,9 @@ namespace SistemaFigueri
         //    mostrarHomelogo();
         //}
         //click botones
-        private void btnproductos_Click(object sender, EventArgs e)
-        {
-            AbreFormEnPanel(new FormProductos());
-        }
+      
 
-        private void btnVentas_Click(object sender, EventArgs e)
-        {
-            AbreFormEnPanel(new FormVenta());
-        }
+       
         private void btnCentralizacioncaja_Click(object sender, EventArgs e)
         {
             AbreFormEnPanel(new FormAperturaCaja());
@@ -180,7 +113,7 @@ namespace SistemaFigueri
             sizeGripRectangle = new Rectangle(this.ClientRectangle.Width - tolerance, this.ClientRectangle.Height - tolerance, tolerance, tolerance);
 
             region.Exclude(sizeGripRectangle);
-            this.PanelContenedor.Region = region;
+            this.PanelContenedorPrimario.Region = region;
             this.Invalidate();
         }
         //color rectangulo fondo
@@ -201,6 +134,72 @@ namespace SistemaFigueri
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
             PaginaInicio();
+        }
+
+        private void btnCerrarPrincipal_Click_1(object sender, EventArgs e)
+        {
+            DialogResult res = MessageBox.Show("¿Seguro que desea salir de la aplicación?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
+            if (res == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            else
+            {
+
+            }
+        }
+
+        private void btnSlide_Click_1(object sender, EventArgs e)
+        {
+            if (BarraLateral.Width == 250)
+            {
+                tmOcultarbarra.Enabled = true;
+            }
+            else
+            {
+                tmMostrarBarra.Enabled = true;
+            }
+        }
+
+        private void btnproductos_Click_1(object sender, EventArgs e)
+        {
+            AbreFormEnPanel(new FormProductos());
+        }
+
+        private void btnAmpliar_Click_1(object sender, EventArgs e)
+        {
+            LX = Location.X;
+            LY = Location.Y;
+            sw = Size.Width;
+            sh = Size.Height;
+            Size = Screen.PrimaryScreen.WorkingArea.Size;
+            Location = Screen.PrimaryScreen.WorkingArea.Location;
+            btnRestaurar.Visible = true;
+            btnAmpliar.Visible = false;
+        }
+
+        private void btnRestaurar_Click_1(object sender, EventArgs e)
+        {
+            this.Size = new Size(sw, sh);
+            this.Location = new Point(LX, LY);
+            btnRestaurar.Visible = false;
+            btnAmpliar.Visible = true;
+        }
+
+        private void btnMinimizar_Click_1(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void BarraTitulo_MouseDown_1(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(Handle, 0x112, 0xf012, 0);
+        }
+
+        private void btnVentas_Click_1(object sender, EventArgs e)
+        {
+            AbreFormEnPanel(new FormVenta());
         }
 
         private void btnRestaurar_Paint(object sender, PaintEventArgs e)
