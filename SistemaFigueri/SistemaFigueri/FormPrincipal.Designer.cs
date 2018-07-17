@@ -498,7 +498,7 @@
             this.PanelContenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.PanelContenedor.Location = new System.Drawing.Point(250, 50);
             this.PanelContenedor.Name = "PanelContenedor";
-            this.PanelContenedor.Size = new System.Drawing.Size(1050, 588);
+            this.PanelContenedor.Size = new System.Drawing.Size(1047, 574);
             this.PanelContenedor.TabIndex = 2;
             // 
             // bunifuElipse1
@@ -524,9 +524,11 @@
             this.Controls.Add(this.BarraTitulo);
             this.Controls.Add(this.BarraLateral);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MinimumSize = new System.Drawing.Size(680, 500);
             this.Name = "FormPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Principal";
+            this.Load += new System.EventHandler(this.FormPrincipal_Load);
             this.BarraLateral.ResumeLayout(false);
             this.BarraLateral.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();

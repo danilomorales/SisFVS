@@ -52,8 +52,8 @@ namespace SistemaFigueri
         {
             //this.WindowState = FormWindowState.Normal;
 
-            Size = new Size(sw, sh);
-            Location = new Point (LX, LY);
+            this.Size = new Size(sw, sh);
+            this.Location = new Point (LX, LY);
             btnRestaurar.Visible = false;
             btnAmpliar.Visible = true;
 
@@ -90,7 +90,6 @@ namespace SistemaFigueri
             {
                 tmMostrarBarra.Enabled = true;
             }
-
         }
         private void tmMostrarBarra_Tick(object sender, EventArgs e)
         {
@@ -98,10 +97,7 @@ namespace SistemaFigueri
                 tmMostrarBarra.Enabled = false;
             else
                 BarraLateral.Width = BarraLateral.Width + 60;
-
-
         }
-
         private void tmOcultarBarra_Tick(object sender, EventArgs e)
         {
             if (BarraLateral.Width <= 70)
@@ -109,7 +105,6 @@ namespace SistemaFigueri
             else
                 BarraLateral.Width = BarraLateral.Width - 60;
         }
-
         private void BarraTitulo_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
@@ -119,13 +114,14 @@ namespace SistemaFigueri
         //metodo para mostrar formulario en panel 
         private void AbreFormEnPanel(object Formhijo)
         {
-            if (PanelContenedor.Controls.Count > 0)
-                PanelContenedor.Controls.RemoveAt(0);
+            if (this.PanelContenedor.Controls.Count > 0)
+                this.PanelContenedor.Controls.RemoveAt(0);
             Form fh = Formhijo as Form;
             fh.TopLevel = false;
+            fh.FormBorderStyle = FormBorderStyle.None;
             fh.Dock = DockStyle.Fill;
-            PanelContenedor.Controls.Add(fh);
-            PanelContenedor.Tag = fh;
+            this.PanelContenedor.Controls.Add(fh);
+            this.PanelContenedor.Tag = fh;
             fh.Show();
         }
         //icial logo
@@ -179,13 +175,32 @@ namespace SistemaFigueri
         protected override void OnSizeChanged(EventArgs e)
         {
             base.OnSizeChanged(e);
-            var region = new Region(new Rectangle(0, 0, ClientRectangle.Width, ClientRectangle.Height));
+            var region = new Region(new Rectangle(0, 0, this.ClientRectangle.Width, this.ClientRectangle.Height));
 
-            sizeGripRectangle = new Rectangle(ClientRectangle.Width - tolerance, ClientRectangle.Height - tolerance, tolerance, tolerance);
+            sizeGripRectangle = new Rectangle(this.ClientRectangle.Width - tolerance, this.ClientRectangle.Height - tolerance, tolerance, tolerance);
 
             region.Exclude(sizeGripRectangle);
-            PanelContenedor.Region = region;
-            Invalidate();
+            this.PanelContenedor.Region = region;
+            this.Invalidate();
+        }
+        //color rectangulo fondo
+        protected override void OnPaint(PaintEventArgs e)
+        {
+
+            SolidBrush blueBrush = new SolidBrush(Color.FromArgb(52, 73, 94));
+            e.Graphics.FillRectangle(blueBrush, sizeGripRectangle);
+
+            base.OnPaint(e);
+            ControlPaint.DrawSizeGrip(e.Graphics, Color.Transparent, sizeGripRectangle);
+        }
+        //------------------
+        private void PaginaInicio()
+        {
+            AbreFormEnPanel(new FormPrincipalPage());
+        }
+        private void FormPrincipal_Load(object sender, EventArgs e)
+        {
+            PaginaInicio();
         }
 
         private void btnRestaurar_Paint(object sender, PaintEventArgs e)
@@ -198,16 +213,7 @@ namespace SistemaFigueri
 
         }
 
-        //color rectangulo fondo
-        protected override void OnPaint(PaintEventArgs e)
-        {
-
-            SolidBrush blueBrush = new SolidBrush(Color.FromArgb(52, 73, 94));
-            e.Graphics.FillRectangle(blueBrush, sizeGripRectangle);
-
-            base.OnPaint(e);
-            ControlPaint.DrawSizeGrip(e.Graphics, Color.Transparent, sizeGripRectangle);
-        }
+      
 
     }
 }
