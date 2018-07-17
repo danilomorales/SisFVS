@@ -92,6 +92,7 @@
             this.btnAceder.TabIndex = 3;
             this.btnAceder.Text = "ACCEDER";
             this.btnAceder.UseVisualStyleBackColor = false;
+            this.btnAceder.Click += new System.EventHandler(this.btnAceder_Click);
             // 
             // linkLabel1
             // 

@@ -35,6 +35,11 @@ namespace SistemaFigueri
             WindowState = FormWindowState.Minimized;
         }
 
+        private void btnAceder_Click(object sender, EventArgs e)
+        {
+
+        }
+
         //private void tbUsuario_Enter(object sender, EventArgs e)
         //{
         //    if(ss.Text == "USUARIO")
@@ -52,7 +57,7 @@ namespace SistemaFigueri
         //        ss.ForeColor = Color.DimGray;
         //    }
         //}
-        
+
         //private void tbContrasenna_Enter(object sender, EventArgs e)
         //{
         //    if (x.Text == "CONTRASEÑA")
