@@ -134,10 +134,12 @@ namespace SistemaFigueri
         //Metodo para mostrar los formularios en contenedor 
         private void btnProductos_Click(object sender, EventArgs e)
         {
+            
             AbrirFormEnPanel(new FormProductos());
         }
         private void btnVentas_Click(object sender, EventArgs e)
         {
+           
             AbrirFormEnPanel(new FormVenta());
         }
 
@@ -169,8 +171,8 @@ namespace SistemaFigueri
         //Fecha y HOra 
         private void tmFechaHora_Tick(object sender, EventArgs e)
         {
-            lbFecha.Text = DateTime.Now.ToLongDateString();
-            lblHora.Text = DateTime.Now.ToString("HH:mm:ssss");
+            lbFechadia.Text = DateTime.Now.ToLongDateString();
+            lbHora1.Text = DateTime.Now.ToString("HH:mm:ssss");
         }
         //redimencionar tamaño de os formularios 
 
@@ -193,6 +195,56 @@ namespace SistemaFigueri
                     base.WndProc(ref m);
                     break;
             }
+        }
+
+        private void panel1ContenedorPrincipal_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panelMenu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void BarraTitulo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panelContenedor_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbHora1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbFechadia_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void FormMenuPrincipal_Load_1(object sender, EventArgs e)
+        {
+            btnProductos.selected = true;
         }
 
         //rectagulo en la parte inferior
