@@ -8,29 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
 namespace SistemaFigueri
 {
-    public partial class FormMantCliente : Form
+    public partial class FormUpdateCliente : Form
     {
-        public FormMantCliente()
+        public FormUpdateCliente()
         {
             InitializeComponent();
-        }
-
-        private void btnCancelarMant_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void bunifuMaterialTextbox11_OnValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bunifuFlatButton12_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void bunifuThinButton22_Click(object sender, EventArgs e)

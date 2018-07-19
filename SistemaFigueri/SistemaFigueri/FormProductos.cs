@@ -23,7 +23,32 @@ namespace SistemaFigueri
             formMP.ShowDialog();
         }
 
-        
+        private void bunifuCustomDataGrid1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void FormProductos_Load(object sender, EventArgs e)
+        {
+           
+
+        }
+
+        private void bunifuTileButton2_Click(object sender, EventArgs e)
+        {
+            FormUpdateProducto formUP = new FormUpdateProducto();
+            formUP.ShowDialog();
+        }
+
+        private void btneliminar_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("¿Estas seguro de eliminar este producto?");
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 
    

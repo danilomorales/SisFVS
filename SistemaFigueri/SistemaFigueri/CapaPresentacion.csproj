@@ -33,7 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bunifu_UI_v1.52">
-      <HintPath>..\..\..\libs\Bunifu_UI_v1.52.dll</HintPath>
+      <HintPath>..\..\libs\Bunifu_UI_v1.52.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Microsoft.VisualBasic.Compatibility" />
@@ -59,6 +59,24 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCliente.Designer.cs">
+      <DependentUpon>FormCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUpdateCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUpdateCliente.Designer.cs">
+      <DependentUpon>FormUpdateCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUpdateProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUpdateProducto.Designer.cs">
+      <DependentUpon>FormUpdateProducto.cs</DependentUpon>
     </Compile>
     <Compile Include="FormAperturaCaja.cs">
       <SubType>Form</SubType>
@@ -119,6 +137,9 @@
     <EmbeddedResource Include="FormAperturaCaja.resx">
       <DependentUpon>FormAperturaCaja.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormCliente.resx">
+      <DependentUpon>FormCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -139,6 +160,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormRegistroCobro.resx">
       <DependentUpon>FormRegistroCobro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUpdateCliente.resx">
+      <DependentUpon>FormUpdateCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUpdateProducto.resx">
+      <DependentUpon>FormUpdateProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

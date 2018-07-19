@@ -193,6 +193,11 @@ namespace SistemaFigueri
 
         }
 
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+            AbreFormEnPanel(new FormCliente());
+        }
+
         private void BarraTitulo_Paint(object sender, PaintEventArgs e)
         {
 
