@@ -145,7 +145,7 @@ namespace SistemaFigueri
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
-
+            AbrirFormEnPanel(new FormCliente());
         }
 
         private void btnProveedores_Click(object sender, EventArgs e)
