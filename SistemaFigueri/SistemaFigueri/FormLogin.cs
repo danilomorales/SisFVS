@@ -72,6 +72,7 @@ namespace SistemaFigueri
                 tbContrasenna.isPassword = true;
             }
 
+
         }
 
         private void tbContrasenna_Leave(object sender, EventArgs e)
