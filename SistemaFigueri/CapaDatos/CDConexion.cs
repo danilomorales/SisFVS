@@ -11,7 +11,7 @@ namespace CapaDatos
     class CDConexion
     {
         
-        private SqlConnection Conexion = new SqlConnection("Server=DESKTOP-S4P82SD;DataBase=DBFIGUE2;Integrated Security = true");
+        private SqlConnection Conexion = new SqlConnection("Server=192.168.21.5;DataBase=DBFIGUE2;Integrated Security = true;User ID=sa;Password=123");
         
         public SqlConnection AbrirConexion()
         {
