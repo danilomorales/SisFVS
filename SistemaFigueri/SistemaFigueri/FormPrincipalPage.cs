@@ -28,9 +28,6 @@ namespace SistemaFigueri
             //lblHora.Text = DateTime.Now.ToString("HH:mm:ssss");
         }
 
-        private void bunifuRange1_RangeChanged(object sender, EventArgs e)
-        {
 
-        }
     }
 }
