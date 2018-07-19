@@ -116,6 +116,9 @@
     <Compile Include="FormVenta.Designer.cs">
       <DependentUpon>FormVenta.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAperturaCaja.resx">
       <DependentUpon>FormAperturaCaja.cs</DependentUpon>
     </EmbeddedResource>
@@ -238,6 +241,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\reporte.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\busca.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agrega.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clieteventa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pago.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imprime.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
