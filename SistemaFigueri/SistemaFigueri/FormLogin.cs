@@ -11,6 +11,7 @@ using System.Runtime.InteropServices;
 using CapaNegocio;
 using System.Data.SqlClient;
 using System.Data;
+using Bunifu.Framework.UI;
 
 namespace SistemaFigueri
 {

@@ -23,5 +23,6 @@ namespace CapaDatos
             leer = comando.ExecuteReader();
             return leer;
         }
+        
     }
 }

@@ -5,6 +5,10 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using CapaDatos;
+using CapaNegocio;
+using System.Data.SqlClient;
+using System.Data;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -12,7 +16,9 @@ namespace SistemaFigueri
 {
     public partial class FormVenta : Form
     {
+        CNBuscarCliente objCN = new CNBuscarCliente();
         public FormVenta()
+
         {
             InitializeComponent();
         }
@@ -73,9 +79,27 @@ namespace SistemaFigueri
         private void FormVenta_Load(object sender, EventArgs e)
         {
             var cards = new Bunifu.Framework.UI.BunifuCards();
+            MostrarClientes();
           
 
 
+        }
+        public void MostrarClientes()
+        {
+            ListaCliente.DataSource = objCN.MostrarResultadoCliente();
+
+        }
+        public void FiltrarDatosCliente (Bunifu.Framework.UI.BunifuCustomDataGrid , String BuscarNombre)
+        {
+            try
+            {
+
+          
+            }
+            catch
+            {
+
+            }
         }
 
         private void FormVenta_Resize(object sender, EventArgs e)
@@ -123,5 +147,24 @@ namespace SistemaFigueri
         {
 
         }
+
+        //public void autoCompletar(TextBox cajaTexto)
+        //{
+        //    try
+        //    {
+        //        SqlCommand comando = new SqlCommand ("SELECT NombreEmpresa, NroDocumento FROM DBFIGUE2.Caja.CLIENTE; ", Conexion.AbrirConexion());
+        //        leer = comando.ExecuteReader();
+        //        while (dr.Read())
+        //        {
+        //            cajaTexto.AutoCompleteCustomSource.Add(dr["Nombre"].ToString());
+        //        }
+        //        dr.Close();
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("No se pudo autocompletar el TextBox: " + ex.ToString());
+        //    }
+        //}
     }
 }
