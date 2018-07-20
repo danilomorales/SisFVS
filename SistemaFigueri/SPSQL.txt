@@ -12,5 +12,8 @@ as
 select * from caja.Usuario
 where Login=@Usuario and Pass=@Contrasena;
 
+
+
+
 *************************************************************************************
 
