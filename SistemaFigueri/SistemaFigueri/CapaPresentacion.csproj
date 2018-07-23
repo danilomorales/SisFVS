@@ -54,7 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="conexion.cs" />
+    <Compile Include="Busqueda.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -208,6 +208,10 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CapaDatos\CapaDatos.csproj">
+      <Project>{43dd90cb-9917-4b9b-a608-a4a27de69f2d}</Project>
+      <Name>CapaDatos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CapaNegocio\CapaNegocio.csproj">
       <Project>{219bca42-af85-414d-aaf3-af7654eff427}</Project>
       <Name>CapaNegocio</Name>
@@ -299,6 +303,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\compra.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\quitar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

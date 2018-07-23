@@ -36,7 +36,8 @@ namespace CapaNegocio
         }
         //constructor
         public CNUsuario() { }
-        //funcoines metodos
+
+        //funciones metodos
         public SqlDataReader IniciarSesion()
         {
             SqlDataReader Loguear;

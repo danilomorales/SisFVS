@@ -110,7 +110,7 @@
             this.Column23});
             this.dataGridView1.Location = new System.Drawing.Point(14, 86);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1051, 362);
+            this.dataGridView1.Size = new System.Drawing.Size(952, 362);
             this.dataGridView1.TabIndex = 33;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -347,6 +347,7 @@
             // 
             // bunifuCards2
             // 
+            this.bunifuCards2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.bunifuCards2.AutoSize = true;
             this.bunifuCards2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
             this.bunifuCards2.BorderRadius = 5;
@@ -360,7 +361,7 @@
             this.bunifuCards2.Name = "bunifuCards2";
             this.bunifuCards2.RightSahddow = true;
             this.bunifuCards2.ShadowDepth = 20;
-            this.bunifuCards2.Size = new System.Drawing.Size(1077, 464);
+            this.bunifuCards2.Size = new System.Drawing.Size(975, 464);
             this.bunifuCards2.TabIndex = 34;
             this.bunifuCards2.Paint += new System.Windows.Forms.PaintEventHandler(this.bunifuCards2_Paint);
             // 
@@ -417,7 +418,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.ClientSize = new System.Drawing.Size(1101, 618);
+            this.ClientSize = new System.Drawing.Size(1320, 650);
             this.Controls.Add(this.bunifuCards3);
             this.Controls.Add(this.bunifuCards2);
             this.Controls.Add(this.bunifuCards1);
