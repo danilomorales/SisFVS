@@ -16,7 +16,7 @@ namespace SistemaFigueri
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormMenuPrincipal());
+            Application.Run(new FormProductos());
         }
     }
 }

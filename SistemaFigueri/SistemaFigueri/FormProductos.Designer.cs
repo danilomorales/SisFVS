@@ -36,33 +36,33 @@
             this.bunifuTileButton2 = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnNuevoProducto = new Bunifu.Framework.UI.BunifuTileButton();
             this.bunifuCards2 = new Bunifu.Framework.UI.BunifuCards();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Alias = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bunifuCards3 = new Bunifu.Framework.UI.BunifuCards();
-            this.bunifuMaterialTextbox1 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.bunifuMaterialTextbox1 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.dgvProductos = new System.Windows.Forms.DataGridView();
+            this.bunifuCards3 = new Bunifu.Framework.UI.BunifuCards();
+            this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Alias = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bunifuCards1.SuspendLayout();
             this.bunifuCards2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.bunifuCards3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
+            this.bunifuCards3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -164,7 +164,7 @@
             this.bunifuCards2.color = System.Drawing.Color.Tomato;
             this.bunifuCards2.Controls.Add(this.bunifuImageButton1);
             this.bunifuCards2.Controls.Add(this.bunifuMaterialTextbox1);
-            this.bunifuCards2.Controls.Add(this.dataGridView1);
+            this.bunifuCards2.Controls.Add(this.dgvProductos);
             this.bunifuCards2.LeftSahddow = false;
             this.bunifuCards2.Location = new System.Drawing.Point(12, 105);
             this.bunifuCards2.Name = "bunifuCards2";
@@ -173,163 +173,19 @@
             this.bunifuCards2.Size = new System.Drawing.Size(1018, 483);
             this.bunifuCards2.TabIndex = 33;
             // 
-            // dataGridView1
+            // bunifuImageButton1
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Alias,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column1,
-            this.Column2,
-            this.Column7,
-            this.Column8,
-            this.Column9,
-            this.Column10,
-            this.Column11,
-            this.Column12,
-            this.Column13,
-            this.Column14,
-            this.Column15,
-            this.Column16,
-            this.Column17,
-            this.Column19});
-            this.dataGridView1.Location = new System.Drawing.Point(11, 81);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(999, 388);
-            this.dataGridView1.TabIndex = 33;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // Alias
-            // 
-            this.Alias.HeaderText = "Alias";
-            this.Alias.Name = "Alias";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Categoria";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Medida";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Descripción del Producto";
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 300;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Tiempo de duración";
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 70;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Stock";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 50;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Stock Maximo";
-            this.Column7.Name = "Column7";
-            this.Column7.Width = 60;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Stock Minimo";
-            this.Column8.Name = "Column8";
-            this.Column8.Width = 60;
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Valor Unitario";
-            this.Column9.Name = "Column9";
-            this.Column9.Width = 60;
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "Precio 1";
-            this.Column10.Name = "Column10";
-            this.Column10.Width = 60;
-            // 
-            // Column11
-            // 
-            this.Column11.HeaderText = "Precio 2";
-            this.Column11.Name = "Column11";
-            this.Column11.Width = 60;
-            // 
-            // Column12
-            // 
-            this.Column12.HeaderText = "Precio Oferta";
-            this.Column12.Name = "Column12";
-            this.Column12.Width = 60;
-            // 
-            // Column13
-            // 
-            this.Column13.HeaderText = "Nota";
-            this.Column13.Name = "Column13";
-            this.Column13.Width = 200;
-            // 
-            // Column14
-            // 
-            this.Column14.HeaderText = "Factor";
-            this.Column14.Name = "Column14";
-            this.Column14.Width = 50;
-            // 
-            // Column15
-            // 
-            this.Column15.HeaderText = "Estado";
-            this.Column15.Name = "Column15";
-            this.Column15.Width = 50;
-            // 
-            // Column16
-            // 
-            this.Column16.HeaderText = "Item";
-            this.Column16.Name = "Column16";
-            this.Column16.Width = 50;
-            // 
-            // Column17
-            // 
-            this.Column17.HeaderText = "Stock Inicial";
-            this.Column17.Name = "Column17";
-            this.Column17.Width = 60;
-            // 
-            // Column19
-            // 
-            this.Column19.HeaderText = "Vigente";
-            this.Column19.Name = "Column19";
-            this.Column19.Width = 50;
-            // 
-            // bunifuCards3
-            // 
-            this.bunifuCards3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
-            this.bunifuCards3.BorderRadius = 5;
-            this.bunifuCards3.BottomSahddow = true;
-            this.bunifuCards3.color = System.Drawing.Color.Tomato;
-            this.bunifuCards3.Controls.Add(this.label1);
-            this.bunifuCards3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCards3.LeftSahddow = false;
-            this.bunifuCards3.Location = new System.Drawing.Point(12, 3);
-            this.bunifuCards3.Name = "bunifuCards3";
-            this.bunifuCards3.RightSahddow = true;
-            this.bunifuCards3.ShadowDepth = 20;
-            this.bunifuCards3.Size = new System.Drawing.Size(710, 76);
-            this.bunifuCards3.TabIndex = 34;
+            this.bunifuImageButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
+            this.bunifuImageButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
+            this.bunifuImageButton1.ImageActive = null;
+            this.bunifuImageButton1.Location = new System.Drawing.Point(695, 30);
+            this.bunifuImageButton1.Name = "bunifuImageButton1";
+            this.bunifuImageButton1.Size = new System.Drawing.Size(30, 30);
+            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuImageButton1.TabIndex = 56;
+            this.bunifuImageButton1.TabStop = false;
+            this.bunifuImageButton1.Zoom = 10;
             // 
             // bunifuMaterialTextbox1
             // 
@@ -350,19 +206,163 @@
             this.bunifuMaterialTextbox1.TabIndex = 55;
             this.bunifuMaterialTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // bunifuImageButton1
+            // dgvProductos
             // 
-            this.bunifuImageButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
-            this.bunifuImageButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
-            this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.Location = new System.Drawing.Point(695, 30);
-            this.bunifuImageButton1.Name = "bunifuImageButton1";
-            this.bunifuImageButton1.Size = new System.Drawing.Size(30, 30);
-            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton1.TabIndex = 56;
-            this.bunifuImageButton1.TabStop = false;
-            this.bunifuImageButton1.Zoom = 10;
+            this.dgvProductos.BackgroundColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Alias,
+            this.Column4,
+            this.Column5,
+            this.Column6,
+            this.Column1,
+            this.Column2,
+            this.Column7,
+            this.Column8,
+            this.Column9,
+            this.Column10,
+            this.Column11,
+            this.Column12,
+            this.Column13,
+            this.Column14,
+            this.Column15,
+            this.Column16,
+            this.Column17,
+            this.Column19});
+            this.dgvProductos.Location = new System.Drawing.Point(11, 81);
+            this.dgvProductos.Name = "dgvProductos";
+            this.dgvProductos.Size = new System.Drawing.Size(999, 388);
+            this.dgvProductos.TabIndex = 33;
+            this.dgvProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // bunifuCards3
+            // 
+            this.bunifuCards3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            this.bunifuCards3.BorderRadius = 5;
+            this.bunifuCards3.BottomSahddow = true;
+            this.bunifuCards3.color = System.Drawing.Color.Tomato;
+            this.bunifuCards3.Controls.Add(this.label1);
+            this.bunifuCards3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCards3.LeftSahddow = false;
+            this.bunifuCards3.Location = new System.Drawing.Point(12, 3);
+            this.bunifuCards3.Name = "bunifuCards3";
+            this.bunifuCards3.RightSahddow = true;
+            this.bunifuCards3.ShadowDepth = 20;
+            this.bunifuCards3.Size = new System.Drawing.Size(710, 76);
+            this.bunifuCards3.TabIndex = 34;
+            // 
+            // Column19
+            // 
+            this.Column19.HeaderText = "Vigente";
+            this.Column19.Name = "Column19";
+            this.Column19.Width = 50;
+            // 
+            // Column17
+            // 
+            this.Column17.HeaderText = "Stock Inicial";
+            this.Column17.Name = "Column17";
+            this.Column17.Width = 60;
+            // 
+            // Column16
+            // 
+            this.Column16.HeaderText = "Item";
+            this.Column16.Name = "Column16";
+            this.Column16.Width = 50;
+            // 
+            // Column15
+            // 
+            this.Column15.HeaderText = "Estado";
+            this.Column15.Name = "Column15";
+            this.Column15.Width = 50;
+            // 
+            // Column14
+            // 
+            this.Column14.HeaderText = "Factor";
+            this.Column14.Name = "Column14";
+            this.Column14.Width = 50;
+            // 
+            // Column13
+            // 
+            this.Column13.HeaderText = "Nota";
+            this.Column13.Name = "Column13";
+            this.Column13.Width = 200;
+            // 
+            // Column12
+            // 
+            this.Column12.HeaderText = "Precio Oferta";
+            this.Column12.Name = "Column12";
+            this.Column12.Width = 60;
+            // 
+            // Column11
+            // 
+            this.Column11.HeaderText = "Precio 2";
+            this.Column11.Name = "Column11";
+            this.Column11.Width = 60;
+            // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "Precio 1";
+            this.Column10.Name = "Column10";
+            this.Column10.Width = 60;
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "Valor Unitario";
+            this.Column9.Name = "Column9";
+            this.Column9.Width = 60;
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Stock Minimo";
+            this.Column8.Name = "Column8";
+            this.Column8.Width = 60;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Stock Maximo";
+            this.Column7.Name = "Column7";
+            this.Column7.Width = 60;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Stock";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 50;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Tiempo de duración";
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 70;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Descripción del Producto";
+            this.Column6.Name = "Column6";
+            this.Column6.Width = 300;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Medida";
+            this.Column5.Name = "Column5";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Categoria";
+            this.Column4.Name = "Column4";
+            // 
+            // Alias
+            // 
+            this.Alias.HeaderText = "Alias";
+            this.Alias.Name = "Alias";
             // 
             // FormProductos
             // 
@@ -381,10 +381,10 @@
             this.Load += new System.EventHandler(this.FormProductos_Load);
             this.bunifuCards1.ResumeLayout(false);
             this.bunifuCards2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             this.bunifuCards3.ResumeLayout(false);
             this.bunifuCards3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -398,7 +398,10 @@
         private Bunifu.Framework.UI.BunifuTileButton bunifuTileButton2;
         private Bunifu.Framework.UI.BunifuTileButton btnNuevoProducto;
         private Bunifu.Framework.UI.BunifuCards bunifuCards2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvProductos;
+        private Bunifu.Framework.UI.BunifuCards bunifuCards3;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox1;
+        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Alias;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
@@ -417,8 +420,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column16;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column17;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column19;
-        private Bunifu.Framework.UI.BunifuCards bunifuCards3;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox1;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
     }
 }
