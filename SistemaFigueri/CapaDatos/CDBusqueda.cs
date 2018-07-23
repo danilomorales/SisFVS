@@ -29,18 +29,6 @@ namespace CapaDatos
 
         }
 
-        public DataTable Filtrar()
-        {
-            try
-            {
-                comando = new SqlCommand("select Nombres from Caja.ClienteReceptor")
-            }
-            catch
-            {
-
-            }
-
-        }
 
         
 

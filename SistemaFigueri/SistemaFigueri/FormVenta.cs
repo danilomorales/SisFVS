@@ -89,12 +89,13 @@ namespace SistemaFigueri
             ListaCliente.DataSource = objCN.MostrarResultadoCliente();
 
         }
-        public void FiltrarDatosCliente (Bunifu.Framework.UI.BunifuCustomDataGrid , String BuscarNombre)
+
+        public void autocompletar(TextBox cajaTexto)
         {
             try
             {
-
-          
+              
+                
             }
             catch
             {
@@ -102,51 +103,17 @@ namespace SistemaFigueri
             }
         }
 
-        private void FormVenta_Resize(object sender, EventArgs e)
-        {
-            //tamaño card tipo ducumento
-            //bnTipoDoc.Width = this.Width - 1290;
-            //bnTipoDoc.Height = this.Height - 680;
-
-            ////tamaño card bnDatosCliente
-            //bnDatosCliente.Width = this.Width - 590;
-            //bnDatosCliente.Height = this.Height - 680;
-
-            ////tamaño card bnVenta
-            //bnVenta.Width = this.Width - 640;
-            //bnVenta.Height = this.Height - 320;
-
-            ////tamaño card bnPago
-            //bnPago.Width = this.Width - 990;
-            //bnVenta.Height = this.Height - 590;
-
-            ////tamaño card bnResumen de pago 
-            //bnResumePago.Width = this.Width - 760;
-            //bnResumePago.Height = this.Height - 443;
-
-   
-
-
-            //btnFinalizar.Top = this.Top - 100;
-            //btnFinalizar.Left = this.Left - 150;
-
-
-        }
-
-        private void tabla_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void ListaCliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
 
-        private void bunifuMaterialTextbox4_OnValueChanged(object sender, EventArgs e)
+        private void tbBuscaClientes_OnValueChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void bunifuCustomLabel9_Click(object sender, EventArgs e)
-        {
 
-        }
 
         //public void autoCompletar(TextBox cajaTexto)
         //{
@@ -168,3 +135,4 @@ namespace SistemaFigueri
         //}
     }
 }
+
