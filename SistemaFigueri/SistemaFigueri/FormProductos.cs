@@ -15,7 +15,10 @@ namespace SistemaFigueri
         public FormProductos()
         {
             InitializeComponent();
+            mostarProductos();
         }
+
+        conexion con = new conexion();
 
         private void btnNuevoProducto_Click(object sender, EventArgs e)
         {
@@ -30,7 +33,7 @@ namespace SistemaFigueri
 
         private void FormProductos_Load(object sender, EventArgs e)
         {
-           
+            con.conectar();
 
         }
 
@@ -48,6 +51,12 @@ namespace SistemaFigueri
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        public void mostarProductos()
+        {
+            con.listar("select * from caja.PRODUCTO", "caja.PRODUCTO");
+            dgvProductos.DataSource = con.ds.Tables["caja.PRODUCTO"];
         }
     }
 
