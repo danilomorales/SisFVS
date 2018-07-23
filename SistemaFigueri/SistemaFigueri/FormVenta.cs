@@ -80,9 +80,21 @@ namespace SistemaFigueri
         {
             var cards = new Bunifu.Framework.UI.BunifuCards();
             MostrarClientes();
+
+
+           
+            
           
 
 
+        }
+
+        public void filtrar (DataTable data, String buscarnombre)
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter();
+            da.Fill(dt);
+            
         }
         public void MostrarClientes()
         {

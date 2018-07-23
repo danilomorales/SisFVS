@@ -19,6 +19,11 @@ namespace CapaNegocio
             return table;
         }
 
+        
+
+
+        //comando.Parameters.Add("@filtro", SqlDbType.VarChar, 50).Value = MostrarResultado;
+
 
    }
 }

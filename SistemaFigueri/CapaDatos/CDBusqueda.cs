@@ -29,6 +29,15 @@ namespace CapaDatos
 
         }
 
+        public void filtrar()
+        {
+            SqlCommand comando = new SqlCommand("SPFiltro_Busqueda", Conexion.AbrirConexion());
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Add("@filtro", SqlDbType.VarChar, 50).Value = MostrarResultado();
+            comando.ExecuteNonQuery();
+           
+        }
+
 
         
 
