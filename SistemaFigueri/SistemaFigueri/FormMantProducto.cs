@@ -17,7 +17,7 @@ namespace SistemaFigueri
             InitializeComponent();
         }
 
-        conexion con = new conexion();
+       
         private void FormMantProducto_Load(object sender, EventArgs e)
         {
 
@@ -75,7 +75,7 @@ namespace SistemaFigueri
 
         private void bunifuThinButton21_Click_1(object sender, EventArgs e)
         {
-            string agregar = "insert into caja.PRODUCTO values("+
+       
         }
     }
 }

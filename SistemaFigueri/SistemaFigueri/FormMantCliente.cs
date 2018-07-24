@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace SistemaFigueri
 {
-    public partial class FormMantCliente : Form
+    public partial class FormMantCliente : MaterialSkin.Controls.MaterialForm
     {
         public FormMantCliente()
         {
