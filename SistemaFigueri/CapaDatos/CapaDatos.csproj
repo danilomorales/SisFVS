@@ -41,7 +41,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CDBusqueda.cs" />
+    <Compile Include="CDCliente.cs" />
     <Compile Include="CDConexion.cs" />
+    <Compile Include="CDProductos.cs" />
     <Compile Include="CDUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

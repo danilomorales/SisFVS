@@ -41,6 +41,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CNBuscarCliente.cs" />
+    <Compile Include="CNClientes.cs" />
+    <Compile Include="CNProductos.cs" />
     <Compile Include="CNUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

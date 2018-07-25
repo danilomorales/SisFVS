@@ -113,6 +113,11 @@ namespace SistemaFigueri
 
         }
 
+        private void bunifuImageButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
 
         //public void autoCompletar(TextBox cajaTexto)

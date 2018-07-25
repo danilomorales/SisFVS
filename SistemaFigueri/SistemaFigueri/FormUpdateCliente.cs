@@ -21,5 +21,18 @@ namespace SistemaFigueri
         {
             this.Close();
         }
+
+        private void FormUpdateCliente_Load(object sender, EventArgs e)
+        {
+            LlenarItems li = new LlenarItems();
+            li.llenarTienda(cbotienda);
+            li.llenarSector(cbosector);
+            li.llenarTipoDoc(cbodocumento);
+        }
+
+        private void bunifuCards1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

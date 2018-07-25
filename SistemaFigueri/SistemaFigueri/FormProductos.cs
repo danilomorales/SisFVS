@@ -7,22 +7,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaNegocio;
 
 namespace SistemaFigueri
 {
     public partial class FormProductos : Form
     {
+        CNProductos cp = new CNProductos();
+
         public FormProductos()
         {
             InitializeComponent();
-            mostarProductos();
+           
         }
 
-        conexion con = new conexion();
 
         private void btnNuevoProducto_Click(object sender, EventArgs e)
         {
-            FormMantProducto formMP = new FormMantProducto();
+            FormInsertProducto formMP = new FormInsertProducto();
             formMP.ShowDialog();
         }
 
@@ -33,7 +35,7 @@ namespace SistemaFigueri
 
         private void FormProductos_Load(object sender, EventArgs e)
         {
-            con.conectar();
+            mostarProductos();
 
         }
 
@@ -50,15 +52,18 @@ namespace SistemaFigueri
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+           
         }
 
         public void mostarProductos()
+       {
+            dgvProductos.DataSource = cp.MostarProductos();
+        }
+
+        private void bunifuCards2_Paint(object sender, PaintEventArgs e)
         {
-            con.listar("select * from caja.PRODUCTO", "caja.PRODUCTO");
-            dgvProductos.DataSource = con.ds.Tables["caja.PRODUCTO"];
+
         }
     }
-
    
 }

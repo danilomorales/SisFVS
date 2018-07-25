@@ -7,6 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using CapaNegocio;
+using BunifuAnimatorNS;
+using Bunifu.Framework.Lib;
+using Bunifu.Framework.UI;
 
 
 namespace SistemaFigueri
@@ -36,6 +41,20 @@ namespace SistemaFigueri
         private void bunifuThinButton22_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void FormMantCliente_Load(object sender, EventArgs e)
+        {
+            LlenarItems li = new LlenarItems();
+            li.llenarTienda(cbotienda);
+            li.llenarSector(cbosector);
+            li.llenarTipoDoc(cbodocumento);
+        }       
+
+
+        private void cbotienda_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

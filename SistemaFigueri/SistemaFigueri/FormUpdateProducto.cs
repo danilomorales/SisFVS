@@ -34,5 +34,12 @@ namespace SistemaFigueri
         {
             this.Close();
         }
+
+        private void FormUpdateProducto_Load(object sender, EventArgs e)
+        {
+            LlenarItems li = new LlenarItems();
+            li.llenarCategoria(cbocategoria);
+            li.llenarMedida(cbomedida);
+        }
     }
 }

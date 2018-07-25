@@ -41,8 +41,8 @@
             this.bunifuMaterialTextbox8 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuMaterialTextbox7 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuMaterialTextbox6 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbomedida = new System.Windows.Forms.ComboBox();
+            this.cbocategoria = new System.Windows.Forms.ComboBox();
             this.bunifuMaterialTextbox5 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuMaterialTextbox4 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuMaterialTextbox3 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
@@ -277,35 +277,35 @@
             this.bunifuMaterialTextbox6.TabIndex = 109;
             this.bunifuMaterialTextbox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // comboBox2
+            // cbomedida
             // 
-            this.comboBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.comboBox2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.ForeColor = System.Drawing.Color.White;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cbomedida.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.cbomedida.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbomedida.ForeColor = System.Drawing.Color.White;
+            this.cbomedida.FormattingEnabled = true;
+            this.cbomedida.Items.AddRange(new object[] {
             "Kilos",
             "Litros"});
-            this.comboBox2.Location = new System.Drawing.Point(783, 73);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(184, 24);
-            this.comboBox2.TabIndex = 107;
-            this.comboBox2.Text = "Escoja Medida";
+            this.cbomedida.Location = new System.Drawing.Point(783, 73);
+            this.cbomedida.Name = "cbomedida";
+            this.cbomedida.Size = new System.Drawing.Size(184, 24);
+            this.cbomedida.TabIndex = 107;
+            this.cbomedida.Text = "Escoja Medida";
             // 
-            // comboBox1
+            // cbocategoria
             // 
-            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.comboBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.ForeColor = System.Drawing.SystemColors.Menu;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbocategoria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.cbocategoria.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbocategoria.ForeColor = System.Drawing.SystemColors.Menu;
+            this.cbocategoria.FormattingEnabled = true;
+            this.cbocategoria.Items.AddRange(new object[] {
             "Dulces",
             "Harinas"});
-            this.comboBox1.Location = new System.Drawing.Point(487, 73);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(189, 24);
-            this.comboBox1.TabIndex = 106;
-            this.comboBox1.Text = "Escoja Categoria";
+            this.cbocategoria.Location = new System.Drawing.Point(487, 73);
+            this.cbocategoria.Name = "cbocategoria";
+            this.cbocategoria.Size = new System.Drawing.Size(189, 24);
+            this.cbocategoria.TabIndex = 106;
+            this.cbocategoria.Text = "Escoja Categoria";
             // 
             // bunifuMaterialTextbox5
             // 
@@ -1042,8 +1042,8 @@
             this.Controls.Add(this.bunifuFlatButton7);
             this.Controls.Add(this.bunifuMaterialTextbox6);
             this.Controls.Add(this.bunifuFlatButton6);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbomedida);
+            this.Controls.Add(this.cbocategoria);
             this.Controls.Add(this.bunifuMaterialTextbox5);
             this.Controls.Add(this.bunifuFlatButton5);
             this.Controls.Add(this.bunifuMaterialTextbox4);
@@ -1057,6 +1057,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormUpdateProducto";
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.FormUpdateProducto_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1085,8 +1086,8 @@
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton7;
         private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox6;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton6;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbomedida;
+        private System.Windows.Forms.ComboBox cbocategoria;
         private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox5;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton5;
         private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox4;

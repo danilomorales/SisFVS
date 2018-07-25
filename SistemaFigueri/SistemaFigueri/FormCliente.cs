@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaNegocio;
 
 namespace SistemaFigueri
 {
     public partial class FormCliente : Form
     {
+        CNClientes cli = new CNClientes();
         public FormCliente()
         {
             InitializeComponent();
@@ -48,5 +50,16 @@ namespace SistemaFigueri
         {
             MessageBox.Show("¿Estas seguro de eliminar este Cliente?");
         }
+
+        private void FormCliente_Load(object sender, EventArgs e)
+        {
+            MostrarClientes();
+        }
+
+        private void MostrarClientes()
+        {
+            dgvCliente.DataSource = cli.MostarClientes();
+        }
+
     }
 }

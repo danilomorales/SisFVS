@@ -60,6 +60,7 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.buscatb = new System.Windows.Forms.TextBox();
             this.ListaCliente = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.bunifuMetroTextbox1 = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.bunifuMetroTextbox3 = new Bunifu.Framework.UI.BunifuMetroTextbox();
@@ -97,7 +98,6 @@
             this.panel11 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.buscatb = new System.Windows.Forms.TextBox();
             this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
             this.panel10.SuspendLayout();
@@ -540,6 +540,13 @@
             this.panel6.Size = new System.Drawing.Size(652, 186);
             this.panel6.TabIndex = 11;
             // 
+            // buscatb
+            // 
+            this.buscatb.Location = new System.Drawing.Point(458, 85);
+            this.buscatb.Name = "buscatb";
+            this.buscatb.Size = new System.Drawing.Size(190, 20);
+            this.buscatb.TabIndex = 184;
+            // 
             // ListaCliente
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -717,6 +724,7 @@
             this.bunifuImageButton1.TabIndex = 162;
             this.bunifuImageButton1.TabStop = false;
             this.bunifuImageButton1.Zoom = 10;
+            this.bunifuImageButton1.Click += new System.EventHandler(this.bunifuImageButton1_Click);
             // 
             // tbBuscaClientes
             // 
@@ -1112,13 +1120,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
-            // 
-            // buscatb
-            // 
-            this.buscatb.Location = new System.Drawing.Point(458, 85);
-            this.buscatb.Name = "buscatb";
-            this.buscatb.Size = new System.Drawing.Size(190, 20);
-            this.buscatb.TabIndex = 184;
             // 
             // FormVenta
             // 
