@@ -185,6 +185,41 @@ namespace SistemaFigueri
         {
 
         }
+        public void lista(DataGridView dta)
+        {
+
+        }
+        private void tbBuscaProducto_TextChanged(object sender, EventArgs e)
+        {
+           
+            SqlConnection cnn = new SqlConnection("Data Source =.; Initial Catalog = DBFIGUE2; Integrated Security = True");
+            String cadcone = "select * from Producto where Alias='" + tbBuscaProducto.Text + "'";
+            SqlCommand cm = new SqlCommand(cadcone, cnn);
+            cnn.Open();
+
+            SqlDataReader leer = cm.ExecuteReader();
+            if (leer.Read() == true)
+            {
+
+                tlClienteNombres.Text = leer["Alias"].ToString();
+                tlRuc.Text = leer["RUC"].ToString();
+                tlDocumento.Text = leer["NroDocumento"].ToString();
+
+            }
+            else
+            {
+
+                tlClienteNombres.Text = " ";
+                tlRuc.Text = " ";
+                tlDocumento.Text = "";
+
+            }
+            cnn.Close();
+
+                   
+            
+        }
+
 
         //private void tbBuscaClienteReceptor_Enter_1(object sender, EventArgs e)
         //{
