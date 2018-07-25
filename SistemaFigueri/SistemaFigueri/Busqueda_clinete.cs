@@ -31,9 +31,20 @@ namespace SistemaFigueri
             while (dr.Read())
             {
                 cajaTexto.AutoCompleteCustomSource.Add(dr["NombreEmpresa"].ToString());
+                
             }
             dr.Close();
 
+        }
+        public void autocompletaPro(TextBox ctPro)
+        {
+            cmd = new SqlCommand("select Alias from PRODUCTO;", cnn);
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                ctPro.AutoCompleteCustomSource.Add(dr["Alias"].ToString());
+            }
+            dr.Close();
         }
     }
 }

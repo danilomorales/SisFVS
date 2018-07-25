@@ -81,12 +81,7 @@ namespace SistemaFigueri
             MostrarClientes();
             Busqueda_clinete bu = new Busqueda_clinete();
             bu.autoCompletar(tbBuscaClienteRece);
-
-
-           
-            
-          
-
+            bu.autocompletaPro(tbBuscaProducto);
 
         }
 
@@ -177,11 +172,18 @@ namespace SistemaFigueri
             }
             else
             {
-                tlClienteNombres.Text = "";
-                tlRuc.Text = "";
+                
+                tlClienteNombres.Text = " ";
+                tlRuc.Text = " ";
                 tlDocumento.Text = "";
+                
             }
             cnn.Close();
+        }
+
+        private void tbBuscaProducto_TextAlignChanged(object sender, EventArgs e)
+        {
+
         }
 
         //private void tbBuscaClienteReceptor_Enter_1(object sender, EventArgs e)
