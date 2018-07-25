@@ -16,6 +16,10 @@ namespace SistemaFigueri
 {
     public partial class FormLogin : Form
     {
+        public static string nomUsu;
+        public static string patUsu;
+        public static string matUsu;
+        public static string rol;
         public FormLogin()
         {
             InitializeComponent();
@@ -36,18 +40,56 @@ namespace SistemaFigueri
         }
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            validar();
+        }
+
+        private void validar()
+        {
             CNUsuario objUsuario = new CNUsuario();
             SqlDataReader Loguear;
+            SqlDataReader Perfil;
             objUsuario.Usuario = tbUsuario.Text;
             objUsuario.Pass = tbContrasenna.Text;
             if (objUsuario.Usuario == tbUsuario.Text)
             {
                 Loguear = objUsuario.IniciarSesion();
+                
                 if (Loguear.Read() == true)
                 {
-                    Hide();
+                    Perfil = objUsuario.UsuarioPerfil();
                     FormMenuPrincipal objPPrincipal = new FormMenuPrincipal();
-                    objPPrincipal.Show();
+                    try
+                    {
+                        while (Perfil.Read())
+                        {
+                            nomUsu = Perfil["Nombres"].ToString();
+                            matUsu = Perfil["ApellidoPaterno"].ToString();
+                            patUsu = Perfil["ApellidoMaterno"].ToString();
+                            rol = Perfil["nomRol"].ToString();
+                            objPPrincipal.label1.Text = nomUsu;
+                            objPPrincipal.label2.Text = patUsu + " " + matUsu;
+                            objPPrincipal.label3.Text = rol;
+                        }
+                        Hide();
+                        Loguear.Close();
+                        /*Label label = new Label();
+                        label.Font= new Font("Arial", label.Font.Size, FontStyle.Bold);
+                        label.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+                        label.BackColor = Color.FromArgb(39, 57, 80);
+                        label.Location = new Point(22, 13);
+                        label.Text="Nombre del usuario";
+                        objPPrincipal.Controls.Add(label);*/
+
+                        objPPrincipal.Show();
+                    }
+                    catch(Exception e){
+                        MessageBox.Show("Error en el login"+e);
+                    }
+
+
+
+
+                    
                 }
                 else
                 {
@@ -55,6 +97,7 @@ namespace SistemaFigueri
                 }
             }
         }
+
 
 
         private void FormLogin_MouseDown(object sender, MouseEventArgs e)
@@ -82,6 +125,22 @@ namespace SistemaFigueri
                 tbContrasenna.Text = "CONTRASEÑA";
                 tbContrasenna.ForeColor = Color.DimGray;
                 tbContrasenna.isPassword = false;
+            }
+        }
+
+        private void tbUsuario_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                validar();
+            }
+        }
+
+        private void tbContrasenna_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                validar();
             }
         }
     }

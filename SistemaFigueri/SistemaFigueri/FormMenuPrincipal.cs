@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace SistemaFigueri
 {
     public partial class FormMenuPrincipal : Form
@@ -120,10 +121,21 @@ namespace SistemaFigueri
 
         private void FormMenuPrincipal_Load(object sender, EventArgs e)
         {
+
+            /*Label label = new Label();
+            label.Text = "Nombre del usuario";
+            label.Font= new Font("Arial", label.Font.Size, FontStyle.Bold);
+            label.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            label.BackColor = Color.FromArgb(39, 57, 80);
+            label.Location = new Point(22, 33);
+            this.panelMenu.Controls.Add(label);*/
+            
             MostrarFormInicio();
+
+
         }
 
-      
+
         private void MostrarFormInicioAlCerrarForms(object sender, FormClosedEventArgs e)
         {
             MostrarFormInicio();
@@ -245,6 +257,8 @@ namespace SistemaFigueri
         private void FormMenuPrincipal_Load_1(object sender, EventArgs e)
         {
             btnProductos.selected = true;
+            /*label1.Text = "";
+            label1.Text = "Carlos Romero";*/
         }
 
         //rectagulo en la parte inferior

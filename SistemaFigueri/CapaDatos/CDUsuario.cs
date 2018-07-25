@@ -12,6 +12,7 @@ namespace CapaDatos
     {
         private CDConexion Conexion = new CDConexion();
         private SqlDataReader leer;
+        private SqlDataReader lector;
 
         public SqlDataReader iniciarSesion(string usuario, string contrasena)
         {
@@ -22,6 +23,16 @@ namespace CapaDatos
             comando.Parameters.AddWithValue("@Contrasena", contrasena);
             leer = comando.ExecuteReader();
             return leer;
+        }
+
+        public SqlDataReader usuarioPerfil(string usuario)
+        {
+            String sql = "SFPerfilUsuario";
+            SqlCommand comandon = new SqlCommand(sql, Conexion.AbrirConexion());
+            comandon.CommandType = CommandType.StoredProcedure;
+            comandon.Parameters.AddWithValue("@Usuario", usuario);
+            lector = comandon.ExecuteReader();
+            return lector;
         }
     }
 }

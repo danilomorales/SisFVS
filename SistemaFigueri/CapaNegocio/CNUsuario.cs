@@ -44,6 +44,13 @@ namespace CapaNegocio
             return Loguear;
         }
 
+        public SqlDataReader UsuarioPerfil()
+        {
+            SqlDataReader perfil;
+            perfil = objDato.usuarioPerfil(Usuario);
+            return perfil;
+        }
+
 
 
 
