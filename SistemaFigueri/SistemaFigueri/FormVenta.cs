@@ -5,6 +5,9 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using CapaDatos;
+using CapaNegocio;
+using System.Data.SqlClient;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -12,7 +15,9 @@ namespace SistemaFigueri
 {
     public partial class FormVenta : Form
     {
+        CNBuscarCliente objCN = new CNBuscarCliente();
         public FormVenta()
+
         {
             InitializeComponent();
         }
@@ -73,55 +78,133 @@ namespace SistemaFigueri
         private void FormVenta_Load(object sender, EventArgs e)
         {
             var cards = new Bunifu.Framework.UI.BunifuCards();
+            MostrarClientes();
+            Busqueda_clinete bu = new Busqueda_clinete();
+            bu.autoCompletar(tbBuscaClienteRece);
+
+
+           
+            
           
 
 
         }
 
-        private void FormVenta_Resize(object sender, EventArgs e)
+        public void filtrar (DataTable data, String buscarnombre)
         {
-            //tamaño card tipo ducumento
-            //bnTipoDoc.Width = this.Width - 1290;
-            //bnTipoDoc.Height = this.Height - 680;
-
-            ////tamaño card bnDatosCliente
-            //bnDatosCliente.Width = this.Width - 590;
-            //bnDatosCliente.Height = this.Height - 680;
-
-            ////tamaño card bnVenta
-            //bnVenta.Width = this.Width - 640;
-            //bnVenta.Height = this.Height - 320;
-
-            ////tamaño card bnPago
-            //bnPago.Width = this.Width - 990;
-            //bnVenta.Height = this.Height - 590;
-
-            ////tamaño card bnResumen de pago 
-            //bnResumePago.Width = this.Width - 760;
-            //bnResumePago.Height = this.Height - 443;
-
-   
-
-
-            //btnFinalizar.Top = this.Top - 100;
-            //btnFinalizar.Left = this.Left - 150;
-
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter();
+            da.Fill(dt);
+            
+        }
+        public void MostrarClientes()
+        {
+            //ListaCliente.DataSource = objCN.MostrarResultadoCliente();
 
         }
 
-        private void tabla_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        public void autocompleta(TextBox cajadetexto)
+        {
+            
+        }
+
+        private void ListaCliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
 
-        private void bunifuMaterialTextbox4_OnValueChanged(object sender, EventArgs e)
+        private void tbBuscaClientes_OnValueChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void bunifuCustomLabel9_Click(object sender, EventArgs e)
+        private void tbBuscaClienteReceptor_Enter(object sender, EventArgs e)
         {
 
         }
+
+        private void tbBuscaClienteReceptor_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbBuscaClienteReceptor_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbBuscaClienteRece_Enter(object sender, EventArgs e)
+        {
+            if (tbBuscaClienteRece.Text == "Buscar Cliente Receptor")
+            {
+                tbBuscaClienteRece.Text = "";
+                tbBuscaClienteRece.ForeColor = Color.White;
+                
+            }
+        }
+
+        private void tbBuscaClienteRece_Leave(object sender, EventArgs e)
+        {
+            if (tbBuscaClienteRece.Text == "")
+            {
+                tbBuscaClienteRece.Text = "Buscar Cliente Receptor";
+                tbBuscaClienteRece.ForeColor = Color.FromArgb (236, 240, 241); 
+
+            }
+
+        }
+
+        private void btnAgregarCliente_Click(object sender, EventArgs e)
+        {
+            FormMantCliente formMP = new FormMantCliente();
+            formMP.ShowDialog();
+        }
+
+        private void tbBuscaClienteRece_TextChanged(object sender, EventArgs e)
+        {
+            SqlConnection cnn = new SqlConnection("Data Source =.; Initial Catalog = DBFIGUE2; Integrated Security = True");
+            String cadcone = "select * from CLIENTE where NombreEmpresa='" + tbBuscaClienteRece.Text + "'";
+            SqlCommand cm = new SqlCommand(cadcone, cnn);
+            cnn.Open();
+
+            SqlDataReader leer = cm.ExecuteReader();
+            if(leer.Read()==true)
+            {
+                tlClienteNombres.Text = leer["NombreEmpresa"].ToString();
+                tlRuc.Text = leer["RUC"].ToString();
+                tlDocumento.Text = leer["NroDocumento"].ToString();
+
+            }
+            else
+            {
+                tlClienteNombres.Text = "";
+                tlRuc.Text = "";
+                tlDocumento.Text = "";
+            }
+            cnn.Close();
+        }
+
+        //private void tbBuscaClienteReceptor_Enter_1(object sender, EventArgs e)
+        //{
+        //    if (tbBuscaClienteReceptor.Text == "BUSCAR CLIENTE RECEPTOR")
+        //    {
+        //        tbBuscaClienteReceptor.Text = "";
+        //        tbBuscaClienteReceptor.ForeColor = Color.WhiteSmoke;
+        //        tbBuscaClienteReceptor.UseSystemPasswordChar = true;
+        //    }
+        //}
+
+        //private void tbBuscaClienteReceptor_Leave_1(object sender, EventArgs e)
+        //{
+
+        //    if (tbBuscaClienteReceptor.Text == "")
+        //    {
+        //        tbBuscaClienteReceptor.Text = "BUSCAR CLIENTE RECEPTOR";
+        //        tbBuscaClienteReceptor.ForeColor = Color.DimGray;
+        //        tbBuscaClienteReceptor.UseSystemPasswordChar = false;
+        //    }
     }
+
 }
+
+
