@@ -81,7 +81,7 @@ namespace SistemaFigueri
             {
                 this.tmOcultarMenu.Enabled = true;
             }
-            else if (panelMenu.Width == 55)
+            else if (panelMenu.Width == 80)
                 this.tmMostrarMenu.Enabled = true;
         }
 
@@ -90,15 +90,15 @@ namespace SistemaFigueri
             if (panelMenu.Width >= 240)
                 this.tmMostrarMenu.Enabled = false;
             else
-                panelMenu.Width = panelMenu.Width + 35;
+                panelMenu.Width = panelMenu.Width + 32;
 
         }
         private void tmOcultarMenu_Tick(object sender, EventArgs e)
         {
-            if (panelMenu.Width <= 65)
+            if (panelMenu.Width <= 80)
                 this.tmOcultarMenu.Enabled = false;
             else
-                panelMenu.Width = panelMenu.Width - 35;
+                panelMenu.Width = panelMenu.Width - 32;
         }
         //Método para todo los formularios y carga en Panel principal 
         private void AbrirFormEnPanel(object formHijo)

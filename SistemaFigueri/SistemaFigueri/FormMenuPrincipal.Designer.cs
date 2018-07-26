@@ -35,7 +35,7 @@
             this.panelMenu = new System.Windows.Forms.Panel();
             this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pbPerfil = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -63,7 +63,7 @@
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel1ContenedorPrincipal.SuspendLayout();
             this.panelMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPerfil)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
             this.panel1.SuspendLayout();
             this.BarraTitulo.SuspendLayout();
@@ -100,7 +100,7 @@
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(57)))), ((int)(((byte)(80)))));
             this.panelMenu.Controls.Add(this.bunifuFlatButton2);
             this.panelMenu.Controls.Add(this.bunifuFlatButton1);
-            this.panelMenu.Controls.Add(this.pictureBox2);
+            this.panelMenu.Controls.Add(this.pbPerfil);
             this.panelMenu.Controls.Add(this.label3);
             this.panelMenu.Controls.Add(this.label2);
             this.panelMenu.Controls.Add(this.label1);
@@ -134,7 +134,7 @@
             this.bunifuFlatButton2.Iconimage_right = null;
             this.bunifuFlatButton2.Iconimage_right_Selected = null;
             this.bunifuFlatButton2.Iconimage_Selected = null;
-            this.bunifuFlatButton2.IconMarginLeft = 4;
+            this.bunifuFlatButton2.IconMarginLeft = 15;
             this.bunifuFlatButton2.IconMarginRight = 0;
             this.bunifuFlatButton2.IconRightVisible = true;
             this.bunifuFlatButton2.IconRightZoom = 0D;
@@ -168,7 +168,7 @@
             this.bunifuFlatButton1.Iconimage_right = null;
             this.bunifuFlatButton1.Iconimage_right_Selected = null;
             this.bunifuFlatButton1.Iconimage_Selected = null;
-            this.bunifuFlatButton1.IconMarginLeft = 4;
+            this.bunifuFlatButton1.IconMarginLeft = 15;
             this.bunifuFlatButton1.IconMarginRight = 0;
             this.bunifuFlatButton1.IconRightVisible = true;
             this.bunifuFlatButton1.IconRightZoom = 0D;
@@ -188,13 +188,14 @@
             this.bunifuFlatButton1.Textcolor = System.Drawing.Color.White;
             this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
-            // pictureBox2
+            // pbPerfil
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(7, 52);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(57, 73);
-            this.pictureBox2.TabIndex = 26;
-            this.pictureBox2.TabStop = false;
+            this.pbPerfil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbPerfil.Location = new System.Drawing.Point(10, 52);
+            this.pbPerfil.Name = "pbPerfil";
+            this.pbPerfil.Size = new System.Drawing.Size(60, 75);
+            this.pbPerfil.TabIndex = 26;
+            this.pbPerfil.TabStop = false;
             // 
             // label3
             // 
@@ -244,7 +245,7 @@
             this.btnCaja.Iconimage_right = null;
             this.btnCaja.Iconimage_right_Selected = null;
             this.btnCaja.Iconimage_Selected = null;
-            this.btnCaja.IconMarginLeft = 4;
+            this.btnCaja.IconMarginLeft = 15;
             this.btnCaja.IconMarginRight = 0;
             this.btnCaja.IconRightVisible = true;
             this.btnCaja.IconRightZoom = 0D;
@@ -279,7 +280,7 @@
             this.btnReportes.Iconimage_right = null;
             this.btnReportes.Iconimage_right_Selected = null;
             this.btnReportes.Iconimage_Selected = null;
-            this.btnReportes.IconMarginLeft = 4;
+            this.btnReportes.IconMarginLeft = 15;
             this.btnReportes.IconMarginRight = 0;
             this.btnReportes.IconRightVisible = true;
             this.btnReportes.IconRightZoom = 0D;
@@ -314,7 +315,7 @@
             this.btnPromociones.Iconimage_right = null;
             this.btnPromociones.Iconimage_right_Selected = null;
             this.btnPromociones.Iconimage_Selected = null;
-            this.btnPromociones.IconMarginLeft = 4;
+            this.btnPromociones.IconMarginLeft = 15;
             this.btnPromociones.IconMarginRight = 0;
             this.btnPromociones.IconRightVisible = true;
             this.btnPromociones.IconRightZoom = 0D;
@@ -349,7 +350,7 @@
             this.btnProveedores.Iconimage_right = null;
             this.btnProveedores.Iconimage_right_Selected = null;
             this.btnProveedores.Iconimage_Selected = null;
-            this.btnProveedores.IconMarginLeft = 4;
+            this.btnProveedores.IconMarginLeft = 15;
             this.btnProveedores.IconMarginRight = 0;
             this.btnProveedores.IconRightVisible = true;
             this.btnProveedores.IconRightZoom = 0D;
@@ -384,7 +385,7 @@
             this.btnClientes.Iconimage_right = null;
             this.btnClientes.Iconimage_right_Selected = null;
             this.btnClientes.Iconimage_Selected = null;
-            this.btnClientes.IconMarginLeft = 4;
+            this.btnClientes.IconMarginLeft = 15;
             this.btnClientes.IconMarginRight = 0;
             this.btnClientes.IconRightVisible = true;
             this.btnClientes.IconRightZoom = 0D;
@@ -419,7 +420,7 @@
             this.btnVentas.Iconimage_right = null;
             this.btnVentas.Iconimage_right_Selected = null;
             this.btnVentas.Iconimage_Selected = null;
-            this.btnVentas.IconMarginLeft = 4;
+            this.btnVentas.IconMarginLeft = 15;
             this.btnVentas.IconMarginRight = 0;
             this.btnVentas.IconRightVisible = true;
             this.btnVentas.IconRightZoom = 0D;
@@ -467,7 +468,7 @@
             this.btnProductos.Iconimage_right = null;
             this.btnProductos.Iconimage_right_Selected = null;
             this.btnProductos.Iconimage_Selected = null;
-            this.btnProductos.IconMarginLeft = 4;
+            this.btnProductos.IconMarginLeft = 15;
             this.btnProductos.IconMarginRight = 0;
             this.btnProductos.IconRightVisible = true;
             this.btnProductos.IconRightZoom = 0D;
@@ -662,7 +663,7 @@
             this.panel1ContenedorPrincipal.ResumeLayout(false);
             this.panelMenu.ResumeLayout(false);
             this.panelMenu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPerfil)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -702,7 +703,7 @@
         private System.Windows.Forms.Panel panelContenedor;
         public System.Windows.Forms.Label label1;
         public System.Windows.Forms.Label label2;
-        public System.Windows.Forms.PictureBox pictureBox2;
+        public System.Windows.Forms.PictureBox pbPerfil;
         public System.Windows.Forms.Label label3;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton2;
