@@ -77,7 +77,7 @@ namespace SistemaFigueri
         //Método pra animación del menú lateral 
         private void btnMenu_Click(object sender, EventArgs e)
         {
-            if (panelMenu.Width == 230)
+            if (panelMenu.Width == 240)
             {
                 this.tmOcultarMenu.Enabled = true;
             }
@@ -87,7 +87,7 @@ namespace SistemaFigueri
 
         private void tmMostrarMenu_Tick(object sender, EventArgs e)
         {
-            if (panelMenu.Width >= 230)
+            if (panelMenu.Width >= 240)
                 this.tmMostrarMenu.Enabled = false;
             else
                 panelMenu.Width = panelMenu.Width + 35;
@@ -95,7 +95,7 @@ namespace SistemaFigueri
         }
         private void tmOcultarMenu_Tick(object sender, EventArgs e)
         {
-            if (panelMenu.Width <= 55)
+            if (panelMenu.Width <= 65)
                 this.tmOcultarMenu.Enabled = false;
             else
                 panelMenu.Width = panelMenu.Width - 35;
