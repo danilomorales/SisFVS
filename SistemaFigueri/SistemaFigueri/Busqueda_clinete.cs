@@ -12,7 +12,7 @@ using CapaDatos;
 
 namespace SistemaFigueri
 {
-    class Busqueda_clinete
+    class Busqueda_clinete :FormVenta
     {
         SqlConnection cnn;
         SqlCommand cmd;
