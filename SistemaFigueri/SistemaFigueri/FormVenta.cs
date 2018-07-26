@@ -10,7 +10,8 @@ using CapaNegocio;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using MaterialSkin;
+using MaterialSkin.Controls;
 
 namespace SistemaFigueri
 {
@@ -83,6 +84,8 @@ namespace SistemaFigueri
             Busqueda_clinete bu = new Busqueda_clinete();
             bu.autoCompletar(tbBuscaClienteRece);
             bu.autocompletaPro(tbBuscaProducto);
+            var aux = new Busqueda_Cliente();
+            aux.Lista(dgvProductos);
 
         }
 
@@ -209,6 +212,38 @@ namespace SistemaFigueri
 
             String AliasProducto = tbBuscaProducto.Text;
             MessageBox.Show(AliasProducto);
+        }
+
+        private void btnSumaCan_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int contar = int.Parse(tbCantidad.Text);
+                contar++;
+                tbCantidad.Text = contar.ToString();
+            }
+            catch
+            {
+                MessageBox.Show("Ingrese Cantidad Correcta");
+            }
+
+        }
+
+        private void btnRestaCan_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                int descontar = int.Parse(tbCantidad.Text);
+                descontar--;
+                tbCantidad.Text = descontar.ToString();
+
+            }
+            catch (Exception )
+            {
+                MessageBox.Show("Ingrese Cantidad Correcta");
+            }
+
         }
 
 
