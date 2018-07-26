@@ -11,6 +11,7 @@ using System.Data.SqlClient;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace SistemaFigueri
 {
     public partial class FormVenta : Form
@@ -157,7 +158,7 @@ namespace SistemaFigueri
 
         private void tbBuscaClienteRece_TextChanged(object sender, EventArgs e)
         {
-            SqlConnection cnn = new SqlConnection("Data Source =.; Initial Catalog = DBFIGUE2; Integrated Security = True");
+            SqlConnection cnn = new SqlConnection("Data Source=192.168.21.5;Initial Catalog=DBFIGUE2;User ID=sa;Password=123");
             String cadcone = "select * from CLIENTE where NombreEmpresa='" + tbBuscaClienteRece.Text + "'";
             SqlCommand cm = new SqlCommand(cadcone, cnn);
             cnn.Open();
@@ -192,32 +193,22 @@ namespace SistemaFigueri
         private void tbBuscaProducto_TextChanged(object sender, EventArgs e)
         {
            
-            SqlConnection cnn = new SqlConnection("Data Source =.; Initial Catalog = DBFIGUE2; Integrated Security = True");
+                   
+            
+        }
+
+        private void btnAgregaCarro_Click(object sender, EventArgs e)
+        {
+
+            SqlConnection cnn = new SqlConnection("Data Source=192.168.21.5;Initial Catalog=DBFIGUE2;User ID=sa;Password=123");
             String cadcone = "select * from Producto where Alias='" + tbBuscaProducto.Text + "'";
             SqlCommand cm = new SqlCommand(cadcone, cnn);
             cnn.Open();
 
-            SqlDataReader leer = cm.ExecuteReader();
-            if (leer.Read() == true)
-            {
 
-                tlClienteNombres.Text = leer["Alias"].ToString();
-                tlRuc.Text = leer["RUC"].ToString();
-                tlDocumento.Text = leer["NroDocumento"].ToString();
 
-            }
-            else
-            {
-
-                tlClienteNombres.Text = " ";
-                tlRuc.Text = " ";
-                tlDocumento.Text = "";
-
-            }
-            cnn.Close();
-
-                   
-            
+            String AliasProducto = tbBuscaProducto.Text;
+            MessageBox.Show(AliasProducto);
         }
 
 

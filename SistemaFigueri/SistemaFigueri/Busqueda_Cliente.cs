@@ -1,24 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.SqlClient;
-using System.Data;
 using System.Windows.Forms;
-using CapaDatos;
-
-
-
 namespace SistemaFigueri
 {
-    class Busqueda_clinete
+    class Busqueda_Cliente
     {
         SqlConnection cnn;
         SqlCommand cmd;
         SqlDataReader dr;
 
-        public Busqueda_clinete()
+        public void Busqueda_clinete()
         {
             cnn = new SqlConnection("Data Source=192.168.21.5;Initial Catalog=DBFIGUE2;User ID=sa;Password=123");
             cnn.Open();
@@ -31,7 +26,7 @@ namespace SistemaFigueri
             while (dr.Read())
             {
                 cajaTexto.AutoCompleteCustomSource.Add(dr["NombreEmpresa"].ToString());
-                
+
             }
             dr.Close();
 
