@@ -8,7 +8,6 @@ using System.Text;
 using CapaDatos;
 using CapaNegocio;
 using System.Data.SqlClient;
-using System.Data;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -80,27 +79,28 @@ namespace SistemaFigueri
         {
             var cards = new Bunifu.Framework.UI.BunifuCards();
             MostrarClientes();
-          
+            Busqueda_clinete bu = new Busqueda_clinete();
+            bu.autoCompletar(tbBuscaClienteRece);
+            bu.autocompletaPro(tbBuscaProducto);
 
+        }
 
+        public void filtrar (DataTable data, String buscarnombre)
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter();
+            da.Fill(dt);
+            
         }
         public void MostrarClientes()
         {
-            ListaCliente.DataSource = objCN.MostrarResultadoCliente();
+            //ListaCliente.DataSource = objCN.MostrarResultadoCliente();
 
         }
 
-        public void autocompletar(TextBox cajaTexto)
+        public void autocompleta(TextBox cajadetexto)
         {
-            try
-            {
-              
-                
-            }
-            catch
-            {
-
-            }
+            
         }
 
         private void ListaCliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -113,31 +113,135 @@ namespace SistemaFigueri
 
         }
 
-        private void bunifuImageButton1_Click(object sender, EventArgs e)
+        private void tbBuscaClienteReceptor_Enter(object sender, EventArgs e)
         {
 
         }
 
+        private void tbBuscaClienteReceptor_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbBuscaClienteReceptor_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbBuscaClienteRece_Enter(object sender, EventArgs e)
+        {
+            if (tbBuscaClienteRece.Text == "Buscar Cliente Receptor")
+            {
+                tbBuscaClienteRece.Text = "";
+                tbBuscaClienteRece.ForeColor = Color.White;
+                
+            }
+        }
+
+        private void tbBuscaClienteRece_Leave(object sender, EventArgs e)
+        {
+            if (tbBuscaClienteRece.Text == "")
+            {
+                tbBuscaClienteRece.Text = "Buscar Cliente Receptor";
+                tbBuscaClienteRece.ForeColor = Color.FromArgb (236, 240, 241); 
+
+            }
+
+        }
+
+        private void btnAgregarCliente_Click(object sender, EventArgs e)
+        {
+            FormMantCliente formMP = new FormMantCliente();
+            formMP.ShowDialog();
+        }
+
+        private void tbBuscaClienteRece_TextChanged(object sender, EventArgs e)
+        {
+            SqlConnection cnn = new SqlConnection("Data Source =.; Initial Catalog = DBFIGUE2; Integrated Security = True");
+            String cadcone = "select * from CLIENTE where NombreEmpresa='" + tbBuscaClienteRece.Text + "'";
+            SqlCommand cm = new SqlCommand(cadcone, cnn);
+            cnn.Open();
+
+            SqlDataReader leer = cm.ExecuteReader();
+            if(leer.Read()==true)
+            {
+                tlClienteNombres.Text = leer["NombreEmpresa"].ToString();
+                tlRuc.Text = leer["RUC"].ToString();
+                tlDocumento.Text = leer["NroDocumento"].ToString();
+
+            }
+            else
+            {
+                
+                tlClienteNombres.Text = " ";
+                tlRuc.Text = " ";
+                tlDocumento.Text = "";
+                
+            }
+            cnn.Close();
+        }
+
+        private void tbBuscaProducto_TextAlignChanged(object sender, EventArgs e)
+        {
+
+        }
+        public void lista(DataGridView dta)
+        {
+
+        }
+        private void tbBuscaProducto_TextChanged(object sender, EventArgs e)
+        {
+           
+            SqlConnection cnn = new SqlConnection("Data Source =.; Initial Catalog = DBFIGUE2; Integrated Security = True");
+            String cadcone = "select * from Producto where Alias='" + tbBuscaProducto.Text + "'";
+            SqlCommand cm = new SqlCommand(cadcone, cnn);
+            cnn.Open();
+
+            SqlDataReader leer = cm.ExecuteReader();
+            if (leer.Read() == true)
+            {
+
+                tlClienteNombres.Text = leer["Alias"].ToString();
+                tlRuc.Text = leer["RUC"].ToString();
+                tlDocumento.Text = leer["NroDocumento"].ToString();
+
+            }
+            else
+            {
+
+                tlClienteNombres.Text = " ";
+                tlRuc.Text = " ";
+                tlDocumento.Text = "";
+
+            }
+            cnn.Close();
+
+                   
+            
+        }
 
 
-        //public void autoCompletar(TextBox cajaTexto)
+        //private void tbBuscaClienteReceptor_Enter_1(object sender, EventArgs e)
         //{
-        //    try
+        //    if (tbBuscaClienteReceptor.Text == "BUSCAR CLIENTE RECEPTOR")
         //    {
-        //        SqlCommand comando = new SqlCommand ("SELECT NombreEmpresa, NroDocumento FROM DBFIGUE2.Caja.CLIENTE; ", Conexion.AbrirConexion());
-        //        leer = comando.ExecuteReader();
-        //        while (dr.Read())
-        //        {
-        //            cajaTexto.AutoCompleteCustomSource.Add(dr["Nombre"].ToString());
-        //        }
-        //        dr.Close();
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("No se pudo autocompletar el TextBox: " + ex.ToString());
+        //        tbBuscaClienteReceptor.Text = "";
+        //        tbBuscaClienteReceptor.ForeColor = Color.WhiteSmoke;
+        //        tbBuscaClienteReceptor.UseSystemPasswordChar = true;
         //    }
         //}
+
+        //private void tbBuscaClienteReceptor_Leave_1(object sender, EventArgs e)
+        //{
+
+        //    if (tbBuscaClienteReceptor.Text == "")
+        //    {
+        //        tbBuscaClienteReceptor.Text = "BUSCAR CLIENTE RECEPTOR";
+        //        tbBuscaClienteReceptor.ForeColor = Color.DimGray;
+        //        tbBuscaClienteReceptor.UseSystemPasswordChar = false;
+        //    }
     }
+
 }
+
 

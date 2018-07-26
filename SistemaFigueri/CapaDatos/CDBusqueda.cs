@@ -13,6 +13,12 @@ namespace CapaDatos
         private CDConexion Conexion = new CDConexion();
         SqlDataReader leer;
         DataTable tabla = new DataTable();
+        DataTable tab = new DataTable();
+        SqlConnection cnn;
+        SqlCommand cmd;
+        SqlDataReader dr;
+
+
         SqlCommand comando = new SqlCommand();
         private object sqlDbType;
 
@@ -28,6 +34,30 @@ namespace CapaDatos
             return tabla;
 
         }
+
+        //public DataTable Filtrar()
+        //{
+
+        //    SqlCommand comando = new SqlCommand("SPFiltro_Busqueda", Conexion.AbrirConexion());
+        //    comando.CommandType = CommandType.StoredProcedure;
+        //    comando.Parameters.Add("@filtro", SqlDbType.VarChar, 50).Value = MostrarResultado();
+        //    comando.ExecuteNonQuery();
+        //    SqlDataAdapter adapter = new SqlDataAdapter(comando);
+        //    adapter.Fill(tab);
+        //    return tab;
+
+
+        //}
+        public DataTable autocompletar()
+        {
+            cmd = new SqlCommand("select NombreEmpresa from CLIENTE;", cnn);
+            dr = cmd.ExecuteReader();
+            tab.Load(leer);
+            Conexion.CerrarConexion();
+            return tab;
+        }
+        
+    
 
 
         

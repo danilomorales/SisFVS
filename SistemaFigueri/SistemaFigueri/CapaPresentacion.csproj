@@ -35,12 +35,16 @@
     <Reference Include="Bunifu_UI_v1.52">
       <HintPath>..\..\libs\Bunifu_UI_v1.52.dll</HintPath>
     </Reference>
+    <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialSkin.0.2.1\lib\MaterialSkin.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Microsoft.VisualBasic.Compatibility" />
     <Reference Include="Microsoft.VisualBasic.Compatibility.Data" />
     <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.VisualC" />
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
@@ -54,6 +58,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Busqueda_clinete.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,6 +193,7 @@
     <EmbeddedResource Include="FormVenta.resx">
       <DependentUpon>FormVenta.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -309,6 +317,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\quitar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Receipt_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Settings_48px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

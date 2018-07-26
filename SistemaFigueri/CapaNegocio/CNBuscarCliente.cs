@@ -19,6 +19,17 @@ namespace CapaNegocio
             return table;
         }
 
+        private CDBusqueda ojAuto = new CDBusqueda();
+        public DataTable MostrarAutocompletado()
+        {
+            DataTable tab = new DataTable();
+            tab = ojAuto.autocompletar();
+            return tab;
+        }
+
+
+        //comando.Parameters.Add("@filtro", SqlDbType.VarChar, 50).Value = MostrarResultado;
+
 
    }
 }

@@ -54,7 +54,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(250, 330);
-            this.panel1.TabIndex = 0;
+            this.panel1.TabIndex = 1;
             // 
             // pictureBox1
             // 
@@ -74,7 +74,7 @@
             this.label1.Location = new System.Drawing.Point(415, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(181, 25);
-            this.label1.TabIndex = 3;
+            this.label1.TabIndex = 2;
             this.label1.Text = "INICIAR SESIÓN ";
             // 
             // linkLabel1
@@ -111,10 +111,11 @@
             this.tbContrasenna.Margin = new System.Windows.Forms.Padding(4);
             this.tbContrasenna.Name = "tbContrasenna";
             this.tbContrasenna.Size = new System.Drawing.Size(372, 30);
-            this.tbContrasenna.TabIndex = 74;
+            this.tbContrasenna.TabIndex = 4;
             this.tbContrasenna.Text = "CONTRASEÑA";
             this.tbContrasenna.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.tbContrasenna.Enter += new System.EventHandler(this.tbContrasenna_Enter);
+            this.tbContrasenna.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbContrasenna_KeyDown);
             this.tbContrasenna.Leave += new System.EventHandler(this.tbContrasenna_Leave);
             // 
             // tbUsuario
@@ -133,8 +134,9 @@
             this.tbUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.tbUsuario.Name = "tbUsuario";
             this.tbUsuario.Size = new System.Drawing.Size(372, 30);
-            this.tbUsuario.TabIndex = 75;
+            this.tbUsuario.TabIndex = 3;
             this.tbUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.tbUsuario.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbUsuario_KeyDown);
             // 
             // btnLogin
             // 
@@ -166,7 +168,7 @@
             this.btnLogin.OnHoverTextColor = System.Drawing.Color.White;
             this.btnLogin.selected = false;
             this.btnLogin.Size = new System.Drawing.Size(319, 32);
-            this.btnLogin.TabIndex = 76;
+            this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "ACCEDER";
             this.btnLogin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnLogin.Textcolor = System.Drawing.Color.Gainsboro;
