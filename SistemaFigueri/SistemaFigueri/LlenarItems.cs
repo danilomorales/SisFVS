@@ -29,43 +29,6 @@ namespace SistemaFigueri
             
         }
 
-        //Listar Categoria en ComboBox
-        public void llenarCategoria(ComboBox cb)
-        {
-            try
-            {
-                cmd = new SqlCommand("select Descripcion from dbo.CATEGORIA ", cnn);
-                dr = cmd.ExecuteReader();
-                while (dr.Read())
-                {
-                    cb.Items.Add(dr["Descripcion"].ToString());
-                }
-                dr.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("No se lleno el comboBox: " + ex.ToString());
-            }
-        }
-
-        //Listar Medida en ComboBox
-        public void llenarMedida(ComboBox cb)
-        {
-            try
-            {
-                cmd = new SqlCommand("select Descripcion from dbo.MEDIDA ", cnn);
-                dr = cmd.ExecuteReader();
-                while (dr.Read())
-                {
-                    cb.Items.Add(dr["Descripcion"].ToString());
-                }
-                dr.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("No se lleno el comboBox: " + ex.ToString());
-            }
-        }
 
         //Listar Tienda en ComboBox
         public void llenarTienda(ComboBox cb)
