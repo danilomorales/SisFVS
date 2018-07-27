@@ -48,7 +48,7 @@ namespace SistemaFigueri
             LlenarItems li = new LlenarItems();
             li.llenarTienda(cbotienda);
             li.llenarSector(cbosector);
-            li.llenarTipoDoc(cbodocumento);
+            li.llenarTipoDoc(cbodocumento); 
         }       
 
 
