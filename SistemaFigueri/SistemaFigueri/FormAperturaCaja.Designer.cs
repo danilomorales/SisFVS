@@ -190,6 +190,7 @@
             this.bunifuDatepicker2.Size = new System.Drawing.Size(303, 36);
             this.bunifuDatepicker2.TabIndex = 14;
             this.bunifuDatepicker2.Value = new System.DateTime(2018, 7, 11, 13, 19, 36, 963);
+            this.bunifuDatepicker2.onValueChanged += new System.EventHandler(this.bunifuDatepicker2_onValueChanged);
             // 
             // FormAperturaCaja
             // 
