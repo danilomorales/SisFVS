@@ -87,14 +87,6 @@
             this.btnAgregaCarro = new Bunifu.Framework.UI.BunifuImageButton();
             this.tbCantidad = new System.Windows.Forms.TextBox();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
-            this.IdProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DesProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PrecioU = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IGVU = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel9.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -1036,15 +1028,6 @@
             this.dgvProductos.AllowUserToResizeColumns = false;
             this.dgvProductos.AllowUserToResizeRows = false;
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IdProducto,
-            this.DesProducto,
-            this.PrecioU,
-            this.IGV,
-            this.Cantidad,
-            this.total,
-            this.Precio,
-            this.IGVU});
             this.dgvProductos.Location = new System.Drawing.Point(16, 97);
             this.dgvProductos.MultiSelect = false;
             this.dgvProductos.Name = "dgvProductos";
@@ -1056,72 +1039,6 @@
             this.dgvProductos.ShowRowErrors = false;
             this.dgvProductos.Size = new System.Drawing.Size(540, 182);
             this.dgvProductos.TabIndex = 192;
-            // 
-            // IdProducto
-            // 
-            this.IdProducto.HeaderText = "IdProducto";
-            this.IdProducto.Name = "IdProducto";
-            this.IdProducto.ReadOnly = true;
-            this.IdProducto.Visible = false;
-            // 
-            // DesProducto
-            // 
-            this.DesProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.DesProducto.HeaderText = "Descripción de Producto";
-            this.DesProducto.Name = "DesProducto";
-            this.DesProducto.ReadOnly = true;
-            this.DesProducto.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.DesProducto.Width = 230;
-            // 
-            // PrecioU
-            // 
-            this.PrecioU.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.PrecioU.HeaderText = "Precio U";
-            this.PrecioU.Name = "PrecioU";
-            this.PrecioU.ReadOnly = true;
-            this.PrecioU.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.PrecioU.Width = 65;
-            // 
-            // IGV
-            // 
-            this.IGV.HeaderText = "IGV";
-            this.IGV.Name = "IGV";
-            this.IGV.ReadOnly = true;
-            this.IGV.Width = 70;
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.ReadOnly = true;
-            this.Cantidad.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Cantidad.Width = 65;
-            // 
-            // total
-            // 
-            this.total.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.total.HeaderText = "Total";
-            this.total.Name = "total";
-            this.total.ReadOnly = true;
-            this.total.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.total.Width = 70;
-            // 
-            // Precio
-            // 
-            this.Precio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Precio.HeaderText = "Precio";
-            this.Precio.Name = "Precio";
-            this.Precio.ReadOnly = true;
-            this.Precio.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Precio.Visible = false;
-            // 
-            // IGVU
-            // 
-            this.IGVU.HeaderText = "IGVU";
-            this.IGVU.Name = "IGVU";
-            this.IGVU.ReadOnly = true;
-            this.IGVU.Visible = false;
             // 
             // FormVenta
             // 
@@ -1226,13 +1143,5 @@
         private Bunifu.Framework.UI.BunifuFlatButton btnSumaCan;
         private System.Windows.Forms.TextBox tbCantidad;
         private System.Windows.Forms.DataGridView dgvProductos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DesProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PrecioU;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IGV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn total;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IGVU;
     }
 }
