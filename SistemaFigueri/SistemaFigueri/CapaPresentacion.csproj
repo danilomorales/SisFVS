@@ -80,6 +80,18 @@
     <Compile Include="FormInsertProducto.Designer.cs">
       <DependentUpon>FormInsertProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormNuevoPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNuevoPerfil.Designer.cs">
+      <DependentUpon>FormNuevoPerfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPerfiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPerfiles.Designer.cs">
+      <DependentUpon>FormPerfiles.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormUpdateCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,6 +181,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMenuPrincipal.resx">
       <DependentUpon>FormMenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNuevoPerfil.resx">
+      <DependentUpon>FormNuevoPerfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPerfiles.resx">
+      <DependentUpon>FormPerfiles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPrincipalPage.resx">
       <DependentUpon>FormPrincipalPage.cs</DependentUpon>
