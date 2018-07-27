@@ -52,10 +52,6 @@ namespace SistemaFigueri
 
         private void FormInsertProducto_Load(object sender, EventArgs e)
         {
-
-            //LlenarItems li = new LlenarItems();
-            //li.llenarCategoria(cbocategoria);
-            //li.llenarMedida(cbomedida);
             listarCategoria();
             listarMedida();
         }

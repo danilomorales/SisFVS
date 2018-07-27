@@ -13,13 +13,13 @@ namespace SistemaFigueri
 {
     public partial class FormProductos : Form
     {
-
+        CNProductos cp = new CNProductos();
         public FormProductos()
         {
             InitializeComponent();
            
         }
-        CNProductos cp = new CNProductos();
+       
         private void btnNuevoProducto_Click(object sender, EventArgs e)
         {
             FormInsertProducto formMP = new FormInsertProducto();
@@ -69,7 +69,7 @@ namespace SistemaFigueri
                     formUP.bmedicta.Text = dgvProductos.CurrentRow.Cells[18].Value.ToString();
                     formUP.bmedivigente.Text = dgvProductos.CurrentRow.Cells[19].Value.ToString();
                     formUP.ShowDialog();
-                    
+                    mostarProductos();
 
                 }
                 else
@@ -107,9 +107,7 @@ namespace SistemaFigueri
 
         public void mostarProductos()
         {
-            dgvProductos.DataSource = cp.MostarProductos();
-
-            
+            dgvProductos.DataSource = cp.MostarProductos();           
             
         }
 

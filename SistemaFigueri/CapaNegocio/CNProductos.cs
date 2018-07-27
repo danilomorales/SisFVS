@@ -12,7 +12,7 @@ namespace CapaNegocio
     public class CNProductos
     {
         private CDProductos pro = new CDProductos();
-        CNProductos cnProd = new CNProductos();
+        
 
         //READALL PRODUCT
         public DataTable MostarProductos()

@@ -60,10 +60,10 @@ namespace SistemaFigueri
 
         private void FormUpdateProducto_Load(object sender, EventArgs e)
         {
-            //listarCategoria();
-            //listarMedida();
+
         }
 
+        //LLENAR COMBOBOX DE CATEGORIA
         public void listarCategoria()
         {
             CDProductos cdpor = new CDProductos();
@@ -73,6 +73,7 @@ namespace SistemaFigueri
 
         }
 
+        //LLENAR COMBOBOX DE MEDIDA
         public void listarMedida()
         {
             CDProductos cdpor = new CDProductos();
