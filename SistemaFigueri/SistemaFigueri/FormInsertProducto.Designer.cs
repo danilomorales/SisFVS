@@ -71,7 +71,6 @@
             this.bunifuFlatButton3 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bmvigente = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuFlatButton17 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.txtnombre = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // bmcta
@@ -1119,20 +1118,12 @@
             this.bunifuFlatButton17.Textcolor = System.Drawing.Color.White;
             this.bunifuFlatButton17.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
-            // txtnombre
-            // 
-            this.txtnombre.Location = new System.Drawing.Point(158, 429);
-            this.txtnombre.Name = "txtnombre";
-            this.txtnombre.Size = new System.Drawing.Size(435, 20);
-            this.txtnombre.TabIndex = 139;
-            // 
             // FormInsertProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.ClientSize = new System.Drawing.Size(1095, 571);
-            this.Controls.Add(this.txtnombre);
             this.Controls.Add(this.bmvigente);
             this.Controls.Add(this.bunifuFlatButton17);
             this.Controls.Add(this.bmcta);
@@ -1226,7 +1217,6 @@
         private System.Windows.Forms.Panel panel1;
         private Bunifu.Framework.UI.BunifuMaterialTextbox bmvigente;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton17;
-        private System.Windows.Forms.TextBox txtnombre;
         public Bunifu.Framework.UI.BunifuMaterialTextbox bmaximo;
         public Bunifu.Framework.UI.BunifuMaterialTextbox bmnombre;
     }

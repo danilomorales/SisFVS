@@ -9,10 +9,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaNegocio;
 using System.Data.SqlClient;
+using CapaDatos;
+
 
 namespace SistemaFigueri
 {
-    
+
     public partial class FormInsertProducto : Form
     {
         CNProductos pro = new CNProductos();
@@ -32,25 +34,73 @@ namespace SistemaFigueri
         {
             try
             {
-                
-                pro.InsertProduct(bmnombre.Text.ToString(),cbocategoria.Text.ToString(), cbomedida.Text.ToString(), bmdescripcion.Text.ToString(), bmtiempo.Text.ToString(), bmstock.Text.ToString(),
-              bmaximo.Text.ToString(), bminimo.Text.ToString(), bmvalorunitario.Text.ToString(), bmprecio1.Text.ToString(), bmprecio2.Text.ToString(), bmoferta.Text.ToString(), bmnota.Text.ToString(),
-              bmfactor.Text.ToString(), cboestado.Text.ToString(), bmitem.Text.ToString(), bminicial.Text.ToString(), bmcta.Text.ToString(), bmvigente.Text.ToString());
+
+                pro.InsertProduct(bmnombre.Text, cbocategoria.SelectedValue.ToString(), cbomedida.SelectedValue.ToString(), bmdescripcion.Text, bmtiempo.Text, bmstock.Text,
+              bmaximo.Text, bminimo.Text, bmvalorunitario.Text, bmprecio1.Text, bmprecio2.Text, bmoferta.Text, bmnota.Text,
+              bmfactor.Text, cboestado.Text, bmitem.Text, bminicial.Text, bmcta.Text, bmvigente.Text);
                 MessageBox.Show("Se inserto correctamente");
+                this.Close();
                 formPro.mostarProductos();
+                limpiarForm();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("No se pudo registrar los datos por :" + ex.ToString());
             }
         }
-     
+
 
         private void FormInsertProducto_Load(object sender, EventArgs e)
         {
-            LlenarItems li = new LlenarItems();
-            li.llenarCategoria(cbocategoria);
-            li.llenarMedida(cbomedida);
+
+            //LlenarItems li = new LlenarItems();
+            //li.llenarCategoria(cbocategoria);
+            //li.llenarMedida(cbomedida);
+            listarCategoria();
+            listarMedida();
+        }
+
+        //LLENAR COMBOBOX CATEGORIA
+        private void listarCategoria()
+        {
+            CDProductos cdpor = new CDProductos();
+            cbocategoria.DataSource = cdpor.ListarCategoria();
+            cbocategoria.DisplayMember = "Descripcion";
+            cbocategoria.ValueMember = "IdCategoria";
+
+        }
+
+        //LLENAR COMBOBOX MEDIDA
+        private void listarMedida()
+        {
+            CDProductos cdpor = new CDProductos();
+            cbomedida.DataSource = cdpor.ListarMedida();
+            cbomedida.DisplayMember = "Descripcion";
+            cbomedida.ValueMember = "IdMedida";
+
+        }
+
+        private void limpiarForm()
+        {
+            bmnombre.Text = "";
+            cbocategoria.Text = "";
+            cbomedida.Text = "";
+            bmdescripcion.Text = "";
+            bmtiempo.Text = "";
+            bmstock.Text = "";
+            bmaximo.Text = "";
+            bminimo.Text = "";
+            bmvalorunitario.Text = "";
+            bmprecio1.Text = "";
+            bmprecio2.Text = "";
+            bmoferta.Text = "";
+            bmnota.Text = "";
+            bmfactor.Text = "";
+            cboestado.Text = "";
+            bmitem.Text = "";
+            bminicial.Text = "";
+            bmcta.Text = "";
+            bmvigente.Text="";
         }
     }
 }
