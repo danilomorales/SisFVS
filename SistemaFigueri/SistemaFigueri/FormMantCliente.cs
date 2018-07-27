@@ -18,7 +18,7 @@ namespace SistemaFigueri
 {
     public partial class FormMantCliente : MaterialSkin.Controls.MaterialForm
     {
-        public FormMantCliente() 
+        public FormMantCliente()
         {
             InitializeComponent();
         }
