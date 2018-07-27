@@ -81,6 +81,8 @@ namespace SistemaFigueri
                 DataTable dt = new DataTable();
                 SqlDataAdapter da = new SqlDataAdapter(sql);
                 da.Fill(dt);
+
+
                 datos.DataSource = dt;
 
             }
