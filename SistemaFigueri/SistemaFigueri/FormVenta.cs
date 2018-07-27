@@ -10,6 +10,8 @@ using CapaNegocio;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MaterialSkin;
+using MaterialSkin.Controls;
 
 namespace SistemaFigueri
 {
@@ -82,6 +84,8 @@ namespace SistemaFigueri
             Busqueda_clinete bu = new Busqueda_clinete();
             bu.autoCompletar(tbBuscaClienteRece);
             bu.autocompletaPro(tbBuscaProducto);
+            var aux = new Busqueda_Cliente();
+            aux.Lista(dgvProductos);
 
         }
 
@@ -157,7 +161,7 @@ namespace SistemaFigueri
 
         private void tbBuscaClienteRece_TextChanged(object sender, EventArgs e)
         {
-            SqlConnection cnn = new SqlConnection("Data Source =.; Initial Catalog = DBFIGUE2; Integrated Security = True");
+            SqlConnection cnn = new SqlConnection("Data Source=192.168.21.5;Initial Catalog=DBFIGUE2;User ID=sa;Password=123");
             String cadcone = "select * from CLIENTE where NombreEmpresa='" + tbBuscaClienteRece.Text + "'";
             SqlCommand cm = new SqlCommand(cadcone, cnn);
             cnn.Open();
@@ -192,32 +196,54 @@ namespace SistemaFigueri
         private void tbBuscaProducto_TextChanged(object sender, EventArgs e)
         {
            
-            SqlConnection cnn = new SqlConnection("Data Source =.; Initial Catalog = DBFIGUE2; Integrated Security = True");
+                   
+            
+        }
+
+        private void btnAgregaCarro_Click(object sender, EventArgs e)
+        {
+
+            SqlConnection cnn = new SqlConnection("Data Source=192.168.21.5;Initial Catalog=DBFIGUE2;User ID=sa;Password=123");
             String cadcone = "select * from Producto where Alias='" + tbBuscaProducto.Text + "'";
             SqlCommand cm = new SqlCommand(cadcone, cnn);
             cnn.Open();
 
-            SqlDataReader leer = cm.ExecuteReader();
-            if (leer.Read() == true)
-            {
 
-                tlClienteNombres.Text = leer["Alias"].ToString();
-                tlRuc.Text = leer["RUC"].ToString();
-                tlDocumento.Text = leer["NroDocumento"].ToString();
+
+            String AliasProducto = tbBuscaProducto.Text;
+            MessageBox.Show(AliasProducto);
+        }
+
+        private void btnSumaCan_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int contar = int.Parse(tbCantidad.Text);
+                contar++;
+                tbCantidad.Text = contar.ToString();
+            }
+            catch
+            {
+                MessageBox.Show("Ingrese Cantidad Correcta");
+            }
+
+        }
+
+        private void btnRestaCan_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                int descontar = int.Parse(tbCantidad.Text);
+                descontar--;
+                tbCantidad.Text = descontar.ToString();
 
             }
-            else
+            catch (Exception )
             {
-
-                tlClienteNombres.Text = " ";
-                tlRuc.Text = " ";
-                tlDocumento.Text = "";
-
+                MessageBox.Show("Ingrese Cantidad Correcta");
             }
-            cnn.Close();
 
-                   
-            
         }
 
 

@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMantCliente));
-            this.panel2 = new System.Windows.Forms.Panel();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuFlatButton3 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton4 = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -53,6 +52,11 @@
             this.fechaInscripcon = new Bunifu.Framework.UI.BunifuDatepicker();
             this.bunifuFlatButton17 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
+            this.cbocliente = new System.Windows.Forms.ComboBox();
+            this.cboestado = new System.Windows.Forms.ComboBox();
+            this.cbodocumento = new System.Windows.Forms.ComboBox();
+            this.cbosector = new System.Windows.Forms.ComboBox();
+            this.cbotienda = new System.Windows.Forms.ComboBox();
             this.bunifuFlatButton12 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.fechaNacimiento = new Bunifu.Framework.UI.BunifuDatepicker();
             this.bmempresa = new Bunifu.Framework.UI.BunifuMaterialTextbox();
@@ -74,23 +78,9 @@
             this.bunifuFlatButton11 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuThinButton22 = new Bunifu.Framework.UI.BunifuThinButton2();
             this.bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.cbotienda = new System.Windows.Forms.ComboBox();
-            this.cbosector = new System.Windows.Forms.ComboBox();
-            this.cbodocumento = new System.Windows.Forms.ComboBox();
-            this.cboestado = new System.Windows.Forms.ComboBox();
-            this.cbocliente = new System.Windows.Forms.ComboBox();
             this.bunifuCards1.SuspendLayout();
             this.bunifuCards2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Blue;
-            this.panel2.Location = new System.Drawing.Point(-2, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1017, 26);
-            this.panel2.TabIndex = 45;
             // 
             // bunifuElipse1
             // 
@@ -660,12 +650,79 @@
             this.bunifuCards1.Controls.Add(this.bunifuFlatButton4);
             this.bunifuCards1.Controls.Add(this.bmnumerodoc);
             this.bunifuCards1.LeftSahddow = false;
-            this.bunifuCards1.Location = new System.Drawing.Point(641, 32);
+            this.bunifuCards1.Location = new System.Drawing.Point(632, 67);
             this.bunifuCards1.Name = "bunifuCards1";
             this.bunifuCards1.RightSahddow = true;
             this.bunifuCards1.ShadowDepth = 20;
             this.bunifuCards1.Size = new System.Drawing.Size(363, 526);
             this.bunifuCards1.TabIndex = 106;
+            // 
+            // cbocliente
+            // 
+            this.cbocliente.BackColor = System.Drawing.Color.DarkGreen;
+            this.cbocliente.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbocliente.ForeColor = System.Drawing.SystemColors.Menu;
+            this.cbocliente.FormattingEnabled = true;
+            this.cbocliente.Items.AddRange(new object[] {
+            "D",
+            "E"});
+            this.cbocliente.Location = new System.Drawing.Point(24, 466);
+            this.cbocliente.Name = "cbocliente";
+            this.cbocliente.Size = new System.Drawing.Size(260, 24);
+            this.cbocliente.TabIndex = 121;
+            this.cbocliente.Text = "Escoja Tipo de Cliente";
+            // 
+            // cboestado
+            // 
+            this.cboestado.BackColor = System.Drawing.Color.DarkGreen;
+            this.cboestado.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboestado.ForeColor = System.Drawing.SystemColors.Menu;
+            this.cboestado.FormattingEnabled = true;
+            this.cboestado.Items.AddRange(new object[] {
+            "A",
+            "B"});
+            this.cboestado.Location = new System.Drawing.Point(24, 345);
+            this.cboestado.Name = "cboestado";
+            this.cboestado.Size = new System.Drawing.Size(260, 24);
+            this.cboestado.TabIndex = 120;
+            this.cboestado.Text = "Escoja Estado";
+            // 
+            // cbodocumento
+            // 
+            this.cbodocumento.BackColor = System.Drawing.Color.DarkGreen;
+            this.cbodocumento.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbodocumento.ForeColor = System.Drawing.SystemColors.Menu;
+            this.cbodocumento.FormattingEnabled = true;
+            this.cbodocumento.Location = new System.Drawing.Point(24, 150);
+            this.cbodocumento.Name = "cbodocumento";
+            this.cbodocumento.Size = new System.Drawing.Size(260, 24);
+            this.cbodocumento.TabIndex = 119;
+            this.cbodocumento.Text = "Escoja Tipo de Documento";
+            // 
+            // cbosector
+            // 
+            this.cbosector.BackColor = System.Drawing.Color.DarkGreen;
+            this.cbosector.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbosector.ForeColor = System.Drawing.SystemColors.Menu;
+            this.cbosector.FormattingEnabled = true;
+            this.cbosector.Location = new System.Drawing.Point(24, 82);
+            this.cbosector.Name = "cbosector";
+            this.cbosector.Size = new System.Drawing.Size(260, 24);
+            this.cbosector.TabIndex = 118;
+            this.cbosector.Text = "Escoja Sector";
+            // 
+            // cbotienda
+            // 
+            this.cbotienda.BackColor = System.Drawing.Color.DarkGreen;
+            this.cbotienda.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbotienda.ForeColor = System.Drawing.SystemColors.Menu;
+            this.cbotienda.FormattingEnabled = true;
+            this.cbotienda.Location = new System.Drawing.Point(24, 21);
+            this.cbotienda.Name = "cbotienda";
+            this.cbotienda.Size = new System.Drawing.Size(260, 24);
+            this.cbotienda.TabIndex = 117;
+            this.cbotienda.Text = "Escoja Tienda";
+            this.cbotienda.SelectedIndexChanged += new System.EventHandler(this.cbotienda_SelectedIndexChanged);
             // 
             // bunifuFlatButton12
             // 
@@ -812,7 +869,7 @@
             this.bunifuCards2.Controls.Add(this.bunifuFlatButton10);
             this.bunifuCards2.Controls.Add(this.bmtelefono);
             this.bunifuCards2.LeftSahddow = false;
-            this.bunifuCards2.Location = new System.Drawing.Point(11, 32);
+            this.bunifuCards2.Location = new System.Drawing.Point(14, 67);
             this.bunifuCards2.Name = "bunifuCards2";
             this.bunifuCards2.RightSahddow = true;
             this.bunifuCards2.ShadowDepth = 20;
@@ -1208,7 +1265,7 @@
             // 
             this.bunifuThinButton22.ActiveBorderThickness = 1;
             this.bunifuThinButton22.ActiveCornerRadius = 20;
-            this.bunifuThinButton22.ActiveFillColor = System.Drawing.Color.Red;
+            this.bunifuThinButton22.ActiveFillColor = System.Drawing.Color.Maroon;
             this.bunifuThinButton22.ActiveForecolor = System.Drawing.Color.White;
             this.bunifuThinButton22.ActiveLineColor = System.Drawing.Color.SeaGreen;
             this.bunifuThinButton22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
@@ -1222,7 +1279,7 @@
             this.bunifuThinButton22.IdleFillColor = System.Drawing.Color.Maroon;
             this.bunifuThinButton22.IdleForecolor = System.Drawing.Color.White;
             this.bunifuThinButton22.IdleLineColor = System.Drawing.Color.SteelBlue;
-            this.bunifuThinButton22.Location = new System.Drawing.Point(551, 585);
+            this.bunifuThinButton22.Location = new System.Drawing.Point(542, 606);
             this.bunifuThinButton22.Margin = new System.Windows.Forms.Padding(5);
             this.bunifuThinButton22.Name = "bunifuThinButton22";
             this.bunifuThinButton22.Size = new System.Drawing.Size(181, 41);
@@ -1248,87 +1305,12 @@
             this.bunifuThinButton21.IdleFillColor = System.Drawing.Color.Green;
             this.bunifuThinButton21.IdleForecolor = System.Drawing.Color.White;
             this.bunifuThinButton21.IdleLineColor = System.Drawing.Color.SteelBlue;
-            this.bunifuThinButton21.Location = new System.Drawing.Point(360, 585);
+            this.bunifuThinButton21.Location = new System.Drawing.Point(351, 606);
             this.bunifuThinButton21.Margin = new System.Windows.Forms.Padding(5);
             this.bunifuThinButton21.Name = "bunifuThinButton21";
             this.bunifuThinButton21.Size = new System.Drawing.Size(181, 41);
             this.bunifuThinButton21.TabIndex = 111;
             this.bunifuThinButton21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Blue;
-            this.panel1.Location = new System.Drawing.Point(0, 634);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1017, 26);
-            this.panel1.TabIndex = 112;
-            // 
-            // cbotienda
-            // 
-            this.cbotienda.BackColor = System.Drawing.Color.DarkGreen;
-            this.cbotienda.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbotienda.ForeColor = System.Drawing.SystemColors.Menu;
-            this.cbotienda.FormattingEnabled = true;
-            this.cbotienda.Location = new System.Drawing.Point(24, 21);
-            this.cbotienda.Name = "cbotienda";
-            this.cbotienda.Size = new System.Drawing.Size(260, 24);
-            this.cbotienda.TabIndex = 117;
-            this.cbotienda.Text = "Escoja Tienda";
-            this.cbotienda.SelectedIndexChanged += new System.EventHandler(this.cbotienda_SelectedIndexChanged);
-            // 
-            // cbosector
-            // 
-            this.cbosector.BackColor = System.Drawing.Color.DarkGreen;
-            this.cbosector.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbosector.ForeColor = System.Drawing.SystemColors.Menu;
-            this.cbosector.FormattingEnabled = true;
-            this.cbosector.Location = new System.Drawing.Point(24, 82);
-            this.cbosector.Name = "cbosector";
-            this.cbosector.Size = new System.Drawing.Size(260, 24);
-            this.cbosector.TabIndex = 118;
-            this.cbosector.Text = "Escoja Sector";
-            // 
-            // cbodocumento
-            // 
-            this.cbodocumento.BackColor = System.Drawing.Color.DarkGreen;
-            this.cbodocumento.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbodocumento.ForeColor = System.Drawing.SystemColors.Menu;
-            this.cbodocumento.FormattingEnabled = true;
-            this.cbodocumento.Location = new System.Drawing.Point(24, 150);
-            this.cbodocumento.Name = "cbodocumento";
-            this.cbodocumento.Size = new System.Drawing.Size(260, 24);
-            this.cbodocumento.TabIndex = 119;
-            this.cbodocumento.Text = "Escoja Tipo de Documento";
-            // 
-            // cboestado
-            // 
-            this.cboestado.BackColor = System.Drawing.Color.DarkGreen;
-            this.cboestado.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboestado.ForeColor = System.Drawing.SystemColors.Menu;
-            this.cboestado.FormattingEnabled = true;
-            this.cboestado.Items.AddRange(new object[] {
-            "A",
-            "B"});
-            this.cboestado.Location = new System.Drawing.Point(24, 345);
-            this.cboestado.Name = "cboestado";
-            this.cboestado.Size = new System.Drawing.Size(260, 24);
-            this.cboestado.TabIndex = 120;
-            this.cboestado.Text = "Escoja Estado";
-            // 
-            // cbocliente
-            // 
-            this.cbocliente.BackColor = System.Drawing.Color.DarkGreen;
-            this.cbocliente.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbocliente.ForeColor = System.Drawing.SystemColors.Menu;
-            this.cbocliente.FormattingEnabled = true;
-            this.cbocliente.Items.AddRange(new object[] {
-            "D",
-            "E"});
-            this.cbocliente.Location = new System.Drawing.Point(24, 466);
-            this.cbocliente.Name = "cbocliente";
-            this.cbocliente.Size = new System.Drawing.Size(260, 24);
-            this.cbocliente.TabIndex = 121;
-            this.cbocliente.Text = "Escoja Tipo de Cliente";
             // 
             // FormMantCliente
             // 
@@ -1336,17 +1318,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
             this.ClientSize = new System.Drawing.Size(1014, 661);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.bunifuThinButton21);
             this.Controls.Add(this.bunifuThinButton22);
             this.Controls.Add(this.bunifuCards2);
             this.Controls.Add(this.bunifuCards1);
-            this.Controls.Add(this.panel2);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormMantCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "rtetert";
+            this.Text = "Modificar datos de Cliente ";
             this.Load += new System.EventHandler(this.FormMantCliente_Load);
             this.bunifuCards1.ResumeLayout(false);
             this.bunifuCards2.ResumeLayout(false);
@@ -1355,8 +1334,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel2;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton3;
         private Bunifu.Framework.UI.BunifuDropdown cbTipoDocumento;
@@ -1401,7 +1378,6 @@
         private Bunifu.Framework.UI.BunifuMaterialTextbox bmnivel;
         private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton22;
         private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton21;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox cbocliente;
         private System.Windows.Forms.ComboBox cboestado;
         private System.Windows.Forms.ComboBox cbodocumento;

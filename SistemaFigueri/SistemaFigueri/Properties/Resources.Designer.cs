@@ -353,6 +353,16 @@ namespace SistemaFigueri.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap resta {
+            get {
+                object obj = ResourceManager.GetObject("resta", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Settings_48px {
             get {
                 object obj = ResourceManager.GetObject("Settings_48px", resourceCulture);
@@ -366,6 +376,16 @@ namespace SistemaFigueri.Properties {
         internal static System.Drawing.Bitmap shut_down {
             get {
                 object obj = ResourceManager.GetObject("shut-down", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap suma {
+            get {
+                object obj = ResourceManager.GetObject("suma", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -20,7 +20,7 @@ namespace SistemaFigueri
 
         public Busqueda_clinete()
         {
-            cnn = new SqlConnection("Data Source=.;Initial Catalog=DBFIGUE2;Integrated Security=True");
+            cnn = new SqlConnection("Data Source=192.168.21.5;Initial Catalog=DBFIGUE2;User ID=sa;Password=123");
             cnn.Open();
         }
 
