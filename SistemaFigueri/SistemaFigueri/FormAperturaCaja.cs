@@ -16,5 +16,10 @@ namespace SistemaFigueri
         {
             InitializeComponent();
         }
+
+        private void bunifuDatepicker2_onValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

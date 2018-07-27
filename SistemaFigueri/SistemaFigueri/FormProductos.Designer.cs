@@ -205,6 +205,7 @@
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.Size = new System.Drawing.Size(999, 388);
             this.dgvProductos.TabIndex = 33;
+            this.dgvProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellClick);
             this.dgvProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // bunifuCards3
@@ -257,9 +258,9 @@
         private Bunifu.Framework.UI.BunifuTileButton bunifuTileButton2;
         private Bunifu.Framework.UI.BunifuTileButton btnNuevoProducto;
         private Bunifu.Framework.UI.BunifuCards bunifuCards2;
-        private System.Windows.Forms.DataGridView dgvProductos;
         private Bunifu.Framework.UI.BunifuCards bunifuCards3;
         private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox1;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
+        public System.Windows.Forms.DataGridView dgvProductos;
     }
 }
