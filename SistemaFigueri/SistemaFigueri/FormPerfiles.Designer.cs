@@ -28,17 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPerfiles));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bunifuCards3 = new Bunifu.Framework.UI.BunifuCards();
             this.label1 = new System.Windows.Forms.Label();
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
-            this.bunifuMaterialTextbox1 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.dgvPerfiles = new System.Windows.Forms.DataGridView();
-            this.bunifuCards2 = new Bunifu.Framework.UI.BunifuCards();
             this.btneliminar = new Bunifu.Framework.UI.BunifuTileButton();
             this.bunifuTileButton2 = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnNuevoProducto = new Bunifu.Framework.UI.BunifuTileButton();
+            this.txtSearch = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.dgvPerfiles = new System.Windows.Forms.DataGridView();
+            this.bunifuCards2 = new Bunifu.Framework.UI.BunifuCards();
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuCards3.SuspendLayout();
             this.bunifuCards1.SuspendLayout();
@@ -91,69 +91,6 @@
             this.bunifuCards1.ShadowDepth = 20;
             this.bunifuCards1.Size = new System.Drawing.Size(293, 109);
             this.bunifuCards1.TabIndex = 36;
-            // 
-            // bunifuMaterialTextbox1
-            // 
-            this.bunifuMaterialTextbox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuMaterialTextbox1.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
-            this.bunifuMaterialTextbox1.ForeColor = System.Drawing.Color.White;
-            this.bunifuMaterialTextbox1.HintForeColor = System.Drawing.Color.White;
-            this.bunifuMaterialTextbox1.HintText = "Buscar Usuario";
-            this.bunifuMaterialTextbox1.isPassword = false;
-            this.bunifuMaterialTextbox1.LineFocusedColor = System.Drawing.Color.Red;
-            this.bunifuMaterialTextbox1.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
-            this.bunifuMaterialTextbox1.LineMouseHoverColor = System.Drawing.Color.SandyBrown;
-            this.bunifuMaterialTextbox1.LineThickness = 5;
-            this.bunifuMaterialTextbox1.Location = new System.Drawing.Point(198, 16);
-            this.bunifuMaterialTextbox1.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuMaterialTextbox1.Name = "bunifuMaterialTextbox1";
-            this.bunifuMaterialTextbox1.Size = new System.Drawing.Size(512, 44);
-            this.bunifuMaterialTextbox1.TabIndex = 57;
-            this.bunifuMaterialTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // dgvPerfiles
-            // 
-            this.dgvPerfiles.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvPerfiles.BackgroundColor = System.Drawing.Color.Teal;
-            this.dgvPerfiles.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvPerfiles.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
-            this.dgvPerfiles.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPerfiles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvPerfiles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPerfiles.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dgvPerfiles.GridColor = System.Drawing.SystemColors.MenuHighlight;
-            this.dgvPerfiles.Location = new System.Drawing.Point(6, 71);
-            this.dgvPerfiles.Name = "dgvPerfiles";
-            this.dgvPerfiles.RowHeadersVisible = false;
-            this.dgvPerfiles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPerfiles.Size = new System.Drawing.Size(1030, 395);
-            this.dgvPerfiles.TabIndex = 33;
-            // 
-            // bunifuCards2
-            // 
-            this.bunifuCards2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.bunifuCards2.AutoSize = true;
-            this.bunifuCards2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
-            this.bunifuCards2.BorderRadius = 5;
-            this.bunifuCards2.BottomSahddow = true;
-            this.bunifuCards2.color = System.Drawing.Color.Tomato;
-            this.bunifuCards2.Controls.Add(this.bunifuImageButton1);
-            this.bunifuCards2.Controls.Add(this.bunifuMaterialTextbox1);
-            this.bunifuCards2.Controls.Add(this.dgvPerfiles);
-            this.bunifuCards2.LeftSahddow = false;
-            this.bunifuCards2.Location = new System.Drawing.Point(8, 126);
-            this.bunifuCards2.Name = "bunifuCards2";
-            this.bunifuCards2.RightSahddow = true;
-            this.bunifuCards2.ShadowDepth = 20;
-            this.bunifuCards2.Size = new System.Drawing.Size(1044, 479);
-            this.bunifuCards2.TabIndex = 37;
             // 
             // btneliminar
             // 
@@ -213,6 +150,70 @@
             this.btnNuevoProducto.TabIndex = 33;
             this.btnNuevoProducto.Click += new System.EventHandler(this.btnNuevoProducto_Click);
             // 
+            // txtSearch
+            // 
+            this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearch.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
+            this.txtSearch.ForeColor = System.Drawing.Color.White;
+            this.txtSearch.HintForeColor = System.Drawing.Color.White;
+            this.txtSearch.HintText = "Buscar Usuario";
+            this.txtSearch.isPassword = false;
+            this.txtSearch.LineFocusedColor = System.Drawing.Color.Red;
+            this.txtSearch.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
+            this.txtSearch.LineMouseHoverColor = System.Drawing.Color.SandyBrown;
+            this.txtSearch.LineThickness = 5;
+            this.txtSearch.Location = new System.Drawing.Point(198, 16);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(512, 44);
+            this.txtSearch.TabIndex = 57;
+            this.txtSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearch_KeyPress);
+            // 
+            // dgvPerfiles
+            // 
+            this.dgvPerfiles.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvPerfiles.BackgroundColor = System.Drawing.Color.Teal;
+            this.dgvPerfiles.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvPerfiles.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            this.dgvPerfiles.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPerfiles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvPerfiles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPerfiles.Cursor = System.Windows.Forms.Cursors.Default;
+            this.dgvPerfiles.GridColor = System.Drawing.SystemColors.MenuHighlight;
+            this.dgvPerfiles.Location = new System.Drawing.Point(6, 71);
+            this.dgvPerfiles.Name = "dgvPerfiles";
+            this.dgvPerfiles.RowHeadersVisible = false;
+            this.dgvPerfiles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPerfiles.Size = new System.Drawing.Size(1030, 395);
+            this.dgvPerfiles.TabIndex = 33;
+            // 
+            // bunifuCards2
+            // 
+            this.bunifuCards2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.bunifuCards2.AutoSize = true;
+            this.bunifuCards2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            this.bunifuCards2.BorderRadius = 5;
+            this.bunifuCards2.BottomSahddow = true;
+            this.bunifuCards2.color = System.Drawing.Color.Tomato;
+            this.bunifuCards2.Controls.Add(this.bunifuImageButton1);
+            this.bunifuCards2.Controls.Add(this.txtSearch);
+            this.bunifuCards2.Controls.Add(this.dgvPerfiles);
+            this.bunifuCards2.LeftSahddow = false;
+            this.bunifuCards2.Location = new System.Drawing.Point(8, 126);
+            this.bunifuCards2.Name = "bunifuCards2";
+            this.bunifuCards2.RightSahddow = true;
+            this.bunifuCards2.ShadowDepth = 20;
+            this.bunifuCards2.Size = new System.Drawing.Size(1044, 479);
+            this.bunifuCards2.TabIndex = 37;
+            // 
             // bunifuImageButton1
             // 
             this.bunifuImageButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
@@ -260,7 +261,7 @@
         private Bunifu.Framework.UI.BunifuTileButton bunifuTileButton2;
         private Bunifu.Framework.UI.BunifuTileButton btnNuevoProducto;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox1;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox txtSearch;
         private System.Windows.Forms.DataGridView dgvPerfiles;
         private Bunifu.Framework.UI.BunifuCards bunifuCards2;
     }

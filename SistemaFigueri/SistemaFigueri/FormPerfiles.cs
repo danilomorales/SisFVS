@@ -18,6 +18,7 @@ namespace SistemaFigueri
         {
             InitializeComponent();
         }
+        DataTable tabla = new DataTable();
 
         public void cargarPerfiles(DataGridView dgv)
         {
@@ -25,7 +26,7 @@ namespace SistemaFigueri
             {
                 CNUsuario objUsuario = new CNUsuario();
                 SqlDataAdapter adapter = objUsuario.cargarPerfiles();
-                DataTable tabla = new DataTable();
+                
                 adapter.Fill(tabla);
                 dgv.DataSource = tabla;
             } catch (Exception ex) {
@@ -49,6 +50,14 @@ namespace SistemaFigueri
         {
             FormNuevoPerfil formMC = new FormNuevoPerfil();
             formMC.ShowDialog();
+        }
+
+        private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
+        {
+           
+                DataView dv = tabla.DefaultView;
+                dv.RowFilter = string.Format("Login like '%{0}%' or Nombres like '%{0}%' or ApellidoPaterno like '%{0}%' or nomRol like '%{0}%'", txtSearch.Text);
+         
         }
     }
 }

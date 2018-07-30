@@ -15,6 +15,10 @@ namespace SistemaFigueri
         public FormNuevoPerfil()
         {
             InitializeComponent();
+            MaterialSkin.MaterialSkinManager skinManager = MaterialSkin.MaterialSkinManager.Instance;
+            skinManager.AddFormToManage(this);
+            skinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.DARK;
+            skinManager.ColorScheme = new MaterialSkin.ColorScheme(MaterialSkin.Primary.Green600, MaterialSkin.Primary.BlueGrey900, MaterialSkin.Primary.Blue500, MaterialSkin.Accent.Orange700, MaterialSkin.TextShade.WHITE);
         }
     }
 }
