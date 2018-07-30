@@ -36,7 +36,7 @@ namespace SistemaFigueri
 
         private void btnNuevoProducto_Click(object sender, EventArgs e)
         {
-            FormMantCliente formMC = new FormMantCliente();
+            FormInsert formMC = new FormMantCliente();
             formMC.ShowDialog();
         }
 

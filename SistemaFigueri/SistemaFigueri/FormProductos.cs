@@ -120,6 +120,16 @@ namespace SistemaFigueri
         {         
             
         }
+
+        private void bunifuMaterialTextbox1_OnValueChanged(object sender, EventArgs e , String nombre)
+        {
+            cp.SearchProduct(nombre);
+        }
+
+        public void BuscarProducto(String nombre)
+        {
+            //bmBuscar.Text = cp.SearchProduct(nombre);
+        }
     }
    
 }

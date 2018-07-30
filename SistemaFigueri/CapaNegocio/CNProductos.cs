@@ -67,5 +67,10 @@ namespace CapaNegocio
             pro.EliminarProducto(idProducto);
         }
 
+        public void SearchProduct(String nombre)
+        {
+            pro.BuscarCliente(nombre);
+        }
+
     }
 }
