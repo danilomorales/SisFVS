@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace SistemaFigueri
 {
-    public partial class FormAperturaCaja : Form
+    public partial class FormInsertCliente : Form
     {
-        public FormAperturaCaja()
+        public FormInsertCliente()
         {
             InitializeComponent();
-        }
-
-        private void bunifuDatepicker2_onValueChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

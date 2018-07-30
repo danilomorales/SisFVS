@@ -37,7 +37,7 @@
             this.btnNuevoProducto = new Bunifu.Framework.UI.BunifuTileButton();
             this.bunifuCards2 = new Bunifu.Framework.UI.BunifuCards();
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bunifuMaterialTextbox1 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.bmBuscar = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.bunifuCards3 = new Bunifu.Framework.UI.BunifuCards();
             this.bunifuCards1.SuspendLayout();
@@ -145,7 +145,7 @@
             this.bunifuCards2.BottomSahddow = true;
             this.bunifuCards2.color = System.Drawing.Color.Tomato;
             this.bunifuCards2.Controls.Add(this.bunifuImageButton1);
-            this.bunifuCards2.Controls.Add(this.bunifuMaterialTextbox1);
+            this.bunifuCards2.Controls.Add(this.bmBuscar);
             this.bunifuCards2.Controls.Add(this.dgvProductos);
             this.bunifuCards2.LeftSahddow = false;
             this.bunifuCards2.Location = new System.Drawing.Point(12, 105);
@@ -170,24 +170,25 @@
             this.bunifuImageButton1.TabStop = false;
             this.bunifuImageButton1.Zoom = 10;
             // 
-            // bunifuMaterialTextbox1
+            // bmBuscar
             // 
-            this.bunifuMaterialTextbox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuMaterialTextbox1.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
-            this.bunifuMaterialTextbox1.ForeColor = System.Drawing.Color.White;
-            this.bunifuMaterialTextbox1.HintForeColor = System.Drawing.Color.White;
-            this.bunifuMaterialTextbox1.HintText = "Buscar Producto";
-            this.bunifuMaterialTextbox1.isPassword = false;
-            this.bunifuMaterialTextbox1.LineFocusedColor = System.Drawing.Color.Red;
-            this.bunifuMaterialTextbox1.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
-            this.bunifuMaterialTextbox1.LineMouseHoverColor = System.Drawing.Color.SandyBrown;
-            this.bunifuMaterialTextbox1.LineThickness = 5;
-            this.bunifuMaterialTextbox1.Location = new System.Drawing.Point(184, 16);
-            this.bunifuMaterialTextbox1.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuMaterialTextbox1.Name = "bunifuMaterialTextbox1";
-            this.bunifuMaterialTextbox1.Size = new System.Drawing.Size(512, 44);
-            this.bunifuMaterialTextbox1.TabIndex = 55;
-            this.bunifuMaterialTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bmBuscar.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.bmBuscar.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
+            this.bmBuscar.ForeColor = System.Drawing.Color.White;
+            this.bmBuscar.HintForeColor = System.Drawing.Color.White;
+            this.bmBuscar.HintText = "Buscar Producto";
+            this.bmBuscar.isPassword = false;
+            this.bmBuscar.LineFocusedColor = System.Drawing.Color.Red;
+            this.bmBuscar.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
+            this.bmBuscar.LineMouseHoverColor = System.Drawing.Color.SandyBrown;
+            this.bmBuscar.LineThickness = 5;
+            this.bmBuscar.Location = new System.Drawing.Point(184, 16);
+            this.bmBuscar.Margin = new System.Windows.Forms.Padding(4);
+            this.bmBuscar.Name = "bmBuscar";
+            this.bmBuscar.Size = new System.Drawing.Size(512, 44);
+            this.bmBuscar.TabIndex = 55;
+            this.bmBuscar.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bmBuscar.OnValueChanged += new System.EventHandler(this.bunifuMaterialTextbox1_OnValueChanged);
             // 
             // dgvProductos
             // 
@@ -205,6 +206,7 @@
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.Size = new System.Drawing.Size(999, 388);
             this.dgvProductos.TabIndex = 33;
+            this.dgvProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellClick);
             this.dgvProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // bunifuCards3
@@ -257,9 +259,9 @@
         private Bunifu.Framework.UI.BunifuTileButton bunifuTileButton2;
         private Bunifu.Framework.UI.BunifuTileButton btnNuevoProducto;
         private Bunifu.Framework.UI.BunifuCards bunifuCards2;
-        private System.Windows.Forms.DataGridView dgvProductos;
         private Bunifu.Framework.UI.BunifuCards bunifuCards3;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox1;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox bmBuscar;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
+        public System.Windows.Forms.DataGridView dgvProductos;
     }
 }

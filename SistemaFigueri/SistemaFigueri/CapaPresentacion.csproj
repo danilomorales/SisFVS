@@ -116,12 +116,6 @@
     <Compile Include="FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormMantCliente.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormMantCliente.Designer.cs">
-      <DependentUpon>FormMantCliente.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormMenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,9 +169,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormMantCliente.resx">
-      <DependentUpon>FormMantCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMenuPrincipal.resx">
       <DependentUpon>FormMenuPrincipal.cs</DependentUpon>
