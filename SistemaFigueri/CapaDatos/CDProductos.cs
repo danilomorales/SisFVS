@@ -69,6 +69,15 @@ namespace CapaDatos
             conexion.CerrarConexion();
         }
 
+        //BUSCAR PRODUCTO
+        public void BuscarCliente(String nombre)
+        {
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "select * from caja.PRODUCTO where Alias like '%" + nombre + "%'";
+            comando.CommandType = CommandType.Text;
+            comando.ExecuteNonQuery();
+            conexion.CerrarConexion();
+        }
 
         //Llenar ComboBox CATEGORIA
         public DataTable ListarCategoria()
