@@ -188,7 +188,7 @@
             this.bmBuscar.Size = new System.Drawing.Size(512, 44);
             this.bmBuscar.TabIndex = 55;
             this.bmBuscar.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.bmBuscar.OnValueChanged += new System.EventHandler(this.bunifuMaterialTextbox1_OnValueChanged);
+            //this.bmBuscar.OnValueChanged += new System.EventHandler(this.bunifuMaterialTextbox1_OnValueChanged);
             // 
             // dgvProductos
             // 
