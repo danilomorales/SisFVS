@@ -137,7 +137,7 @@
             this.bunifuMetroTextbox8.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
             this.bunifuMetroTextbox8.ForeColor = System.Drawing.Color.White;
             this.bunifuMetroTextbox8.isPassword = false;
-            this.bunifuMetroTextbox8.Location = new System.Drawing.Point(151, 256);
+            this.bunifuMetroTextbox8.Location = new System.Drawing.Point(164, 198);
             this.bunifuMetroTextbox8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bunifuMetroTextbox8.Name = "bunifuMetroTextbox8";
             this.bunifuMetroTextbox8.Size = new System.Drawing.Size(128, 23);
@@ -155,7 +155,7 @@
             this.bunifuMetroTextbox7.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
             this.bunifuMetroTextbox7.ForeColor = System.Drawing.Color.White;
             this.bunifuMetroTextbox7.isPassword = false;
-            this.bunifuMetroTextbox7.Location = new System.Drawing.Point(151, 109);
+            this.bunifuMetroTextbox7.Location = new System.Drawing.Point(164, 51);
             this.bunifuMetroTextbox7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bunifuMetroTextbox7.Name = "bunifuMetroTextbox7";
             this.bunifuMetroTextbox7.Size = new System.Drawing.Size(128, 23);
@@ -173,7 +173,7 @@
             this.bunifuMetroTextbox6.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
             this.bunifuMetroTextbox6.ForeColor = System.Drawing.Color.White;
             this.bunifuMetroTextbox6.isPassword = false;
-            this.bunifuMetroTextbox6.Location = new System.Drawing.Point(151, 145);
+            this.bunifuMetroTextbox6.Location = new System.Drawing.Point(164, 87);
             this.bunifuMetroTextbox6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bunifuMetroTextbox6.Name = "bunifuMetroTextbox6";
             this.bunifuMetroTextbox6.Size = new System.Drawing.Size(128, 23);
@@ -191,7 +191,7 @@
             this.bunifuMetroTextbox5.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
             this.bunifuMetroTextbox5.ForeColor = System.Drawing.Color.White;
             this.bunifuMetroTextbox5.isPassword = false;
-            this.bunifuMetroTextbox5.Location = new System.Drawing.Point(151, 182);
+            this.bunifuMetroTextbox5.Location = new System.Drawing.Point(164, 124);
             this.bunifuMetroTextbox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bunifuMetroTextbox5.Name = "bunifuMetroTextbox5";
             this.bunifuMetroTextbox5.Size = new System.Drawing.Size(128, 24);
@@ -209,7 +209,7 @@
             this.bunifuMetroTextbox4.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
             this.bunifuMetroTextbox4.ForeColor = System.Drawing.Color.White;
             this.bunifuMetroTextbox4.isPassword = false;
-            this.bunifuMetroTextbox4.Location = new System.Drawing.Point(151, 219);
+            this.bunifuMetroTextbox4.Location = new System.Drawing.Point(164, 161);
             this.bunifuMetroTextbox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bunifuMetroTextbox4.Name = "bunifuMetroTextbox4";
             this.bunifuMetroTextbox4.Size = new System.Drawing.Size(128, 23);
@@ -258,7 +258,7 @@
             this.bunifuCustomLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.bunifuCustomLabel1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bunifuCustomLabel1.Font = new System.Drawing.Font("Century Gothic", 11F);
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(42, 145);
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(55, 87);
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
             this.bunifuCustomLabel1.Size = new System.Drawing.Size(109, 23);
             this.bunifuCustomLabel1.TabIndex = 197;
@@ -272,7 +272,7 @@
             this.bunifuCustomLabel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.bunifuCustomLabel13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bunifuCustomLabel13.Font = new System.Drawing.Font("Century Gothic", 11F);
-            this.bunifuCustomLabel13.Location = new System.Drawing.Point(42, 219);
+            this.bunifuCustomLabel13.Location = new System.Drawing.Point(55, 161);
             this.bunifuCustomLabel13.Name = "bunifuCustomLabel13";
             this.bunifuCustomLabel13.Size = new System.Drawing.Size(110, 23);
             this.bunifuCustomLabel13.TabIndex = 193;
@@ -286,7 +286,7 @@
             this.bunifuCustomLabel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.bunifuCustomLabel12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bunifuCustomLabel12.Font = new System.Drawing.Font("Century Gothic", 11F);
-            this.bunifuCustomLabel12.Location = new System.Drawing.Point(42, 183);
+            this.bunifuCustomLabel12.Location = new System.Drawing.Point(55, 125);
             this.bunifuCustomLabel12.Name = "bunifuCustomLabel12";
             this.bunifuCustomLabel12.Size = new System.Drawing.Size(112, 23);
             this.bunifuCustomLabel12.TabIndex = 192;
@@ -300,7 +300,7 @@
             this.bunifuCustomLabel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.bunifuCustomLabel11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bunifuCustomLabel11.Font = new System.Drawing.Font("Century Gothic", 11F);
-            this.bunifuCustomLabel11.Location = new System.Drawing.Point(42, 256);
+            this.bunifuCustomLabel11.Location = new System.Drawing.Point(55, 198);
             this.bunifuCustomLabel11.Name = "bunifuCustomLabel11";
             this.bunifuCustomLabel11.Size = new System.Drawing.Size(112, 23);
             this.bunifuCustomLabel11.TabIndex = 191;
@@ -314,7 +314,7 @@
             this.bunifuCustomLabel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.bunifuCustomLabel9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bunifuCustomLabel9.Font = new System.Drawing.Font("Century Gothic", 11F);
-            this.bunifuCustomLabel9.Location = new System.Drawing.Point(42, 109);
+            this.bunifuCustomLabel9.Location = new System.Drawing.Point(55, 51);
             this.bunifuCustomLabel9.Name = "bunifuCustomLabel9";
             this.bunifuCustomLabel9.Size = new System.Drawing.Size(109, 23);
             this.bunifuCustomLabel9.TabIndex = 189;
