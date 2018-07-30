@@ -17,7 +17,7 @@ namespace SistemaFigueri
 {
     public partial class FormVenta : Form
     {
-        CNBuscarCliente objCN = new CNBuscarCliente();
+        CNBusqueda objCN = new CNBusqueda();
         public FormVenta()
 
         {
@@ -83,7 +83,7 @@ namespace SistemaFigueri
             MostrarClientes();
             Busqueda_clinete bu = new Busqueda_clinete();
             bu.autoCompletar(tbBuscaClienteRece);
-            bu.autocompletaPro(tbBuscaProducto);
+           
             var aux = new Busqueda_Cliente();
             aux.Lista(dgvProductos);
 
@@ -203,15 +203,15 @@ namespace SistemaFigueri
         private void btnAgregaCarro_Click(object sender, EventArgs e)
         {
 
-            SqlConnection cnn = new SqlConnection("Data Source=192.168.21.5;Initial Catalog=DBFIGUE2;User ID=sa;Password=123");
-            String cadcone = "select * from Producto where Alias='" + tbBuscaProducto.Text + "'";
-            SqlCommand cm = new SqlCommand(cadcone, cnn);
-            cnn.Open();
+            //SqlConnection cnn = new SqlConnection("Data Source=192.168.21.5;Initial Catalog=DBFIGUE2;User ID=sa;Password=123");
+            //String cadcone = "select * from Producto where Alias='" + tbBuscaProducto.Text + "'";
+            //SqlCommand cm = new SqlCommand(cadcone, cnn);
+            //cnn.Open();
 
 
 
-            String AliasProducto = tbBuscaProducto.Text;
-            MessageBox.Show(AliasProducto);
+            //String AliasProducto = tbBuscaProducto.Text;
+            //MessageBox.Show(AliasProducto);
         }
 
         private void btnSumaCan_Click(object sender, EventArgs e)
@@ -246,6 +246,17 @@ namespace SistemaFigueri
 
         }
 
+        private void Venta_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBuscaProducto_Click(object sender, EventArgs e)
+        {
+            FormBuscarProducto formBuscarPro = new FormBuscarProducto();
+            formBuscarPro.ShowDialog();
+        }
+
 
         //private void tbBuscaClienteReceptor_Enter_1(object sender, EventArgs e)
         //{
@@ -266,6 +277,9 @@ namespace SistemaFigueri
         //        tbBuscaClienteReceptor.ForeColor = Color.DimGray;
         //        tbBuscaClienteReceptor.UseSystemPasswordChar = false;
         //    }
+
+
+
     }
 
 }

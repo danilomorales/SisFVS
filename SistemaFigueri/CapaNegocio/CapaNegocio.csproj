@@ -40,7 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CNBuscarCliente.cs" />
+    <Compile Include="CNBusqueda.cs" />
     <Compile Include="CNClientes.cs" />
     <Compile Include="CNProductos.cs" />
     <Compile Include="CNUsuario.cs" />

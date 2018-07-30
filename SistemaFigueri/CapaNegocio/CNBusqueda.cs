@@ -11,7 +11,7 @@ using CapaDatos;
 
 namespace CapaNegocio
 {
-   public class CNBuscarCliente
+   public class CNBusqueda
     {
         private CDBusqueda objCD = new CDBusqueda();
         public DataTable MostrarResultadoCliente()
@@ -28,10 +28,15 @@ namespace CapaNegocio
             tab = ojAuto.autocompletar();
             return tab;
         }
-
-
         //comando.Parameters.Add("@filtro", SqlDbType.VarChar, 50).Value = MostrarResultado;
 
+        public SqlDataAdapter BuscaProducto()
+        {
+            SqlDataAdapter productos;
+            productos = objCD.BusquedaProductos();
+            return productos;
+        }
 
-   }
+
+    }
 }
