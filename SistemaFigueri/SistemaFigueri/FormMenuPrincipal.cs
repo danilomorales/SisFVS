@@ -260,6 +260,11 @@ namespace SistemaFigueri
             label1.Text = "Carlos Romero";*/
         }
 
+        private void bunifuFlatButton2_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new FormPerfiles());
+        }
+
         //rectagulo en la parte inferior
         protected override void OnSizeChanged(EventArgs e)
         {
