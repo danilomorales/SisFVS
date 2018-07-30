@@ -52,6 +52,13 @@ namespace CapaNegocio
             return perfil;
         }
 
+        public SqlDataAdapter cargarPerfiles()
+        {
+            SqlDataAdapter perfil;
+            perfil = objDato.cargarPerfiles();
+            return perfil;
+        }
+
 
 
 

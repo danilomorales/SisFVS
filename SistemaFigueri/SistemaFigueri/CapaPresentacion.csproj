@@ -80,6 +80,24 @@
     <Compile Include="FormInsertProducto.Designer.cs">
       <DependentUpon>FormInsertProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormMantCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMantCliente.Designer.cs">
+      <DependentUpon>FormMantCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormNuevoPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNuevoPerfil.Designer.cs">
+      <DependentUpon>FormNuevoPerfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPerfiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPerfiles.Designer.cs">
+      <DependentUpon>FormPerfiles.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormUpdateCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,8 +176,17 @@
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormMantCliente.resx">
+      <DependentUpon>FormMantCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMenuPrincipal.resx">
       <DependentUpon>FormMenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNuevoPerfil.resx">
+      <DependentUpon>FormNuevoPerfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPerfiles.resx">
+      <DependentUpon>FormPerfiles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPrincipalPage.resx">
       <DependentUpon>FormPrincipalPage.cs</DependentUpon>
@@ -169,6 +196,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormRegistroCobro.resx">
       <DependentUpon>FormRegistroCobro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTipoDeCambio.resx">
+      <DependentUpon>FormTipoDeCambio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormUpdateCliente.resx">
       <DependentUpon>FormUpdateCliente.cs</DependentUpon>

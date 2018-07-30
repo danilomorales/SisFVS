@@ -21,12 +21,6 @@ namespace SistemaFigueri
         public FormMantCliente()
         {
             InitializeComponent();
-
-            MaterialSkin.MaterialSkinManager ManejoSki = MaterialSkin.MaterialSkinManager.Instance;
-            ManejoSki.AddFormToManage(this);
-            ManejoSki.Theme = MaterialSkin.MaterialSkinManager.Themes.DARK;
-            ManejoSki.ColorScheme = new MaterialSkin.ColorScheme(MaterialSkin.Primary.LightBlue600, MaterialSkin.Primary.Blue100, MaterialSkin.Primary.BlueGrey900, MaterialSkin.Accent.Orange100, MaterialSkin.TextShade.WHITE);
-
         }
 
         private void btnCancelarMant_Click(object sender, EventArgs e)
@@ -54,9 +48,8 @@ namespace SistemaFigueri
             LlenarItems li = new LlenarItems();
             li.llenarTienda(cbotienda);
             li.llenarSector(cbosector);
-            li.llenarTipoDoc(cbodocumento);
-
-       }       
+            li.llenarTipoDoc(cbodocumento); 
+        }       
 
 
         private void cbotienda_SelectedIndexChanged(object sender, EventArgs e)
