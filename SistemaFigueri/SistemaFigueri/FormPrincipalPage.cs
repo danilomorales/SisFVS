@@ -28,6 +28,9 @@ namespace SistemaFigueri
             //lblHora.Text = DateTime.Now.ToString("HH:mm:ssss");
         }
 
+        private void materialFlatButton1_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }
