@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMantCliente));
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuFlatButton3 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton4 = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -76,8 +75,8 @@
             this.bmnivel = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bmobservacion = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuFlatButton11 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.bunifuThinButton22 = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.cancelaMant = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnGuardamantClien = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuCards1.SuspendLayout();
             this.bunifuCards2.SuspendLayout();
             this.SuspendLayout();
@@ -637,7 +636,7 @@
             this.bunifuCards1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
             this.bunifuCards1.BorderRadius = 5;
             this.bunifuCards1.BottomSahddow = true;
-            this.bunifuCards1.color = System.Drawing.Color.Green;
+            this.bunifuCards1.color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
             this.bunifuCards1.Controls.Add(this.cbocliente);
             this.bunifuCards1.Controls.Add(this.cboestado);
             this.bunifuCards1.Controls.Add(this.cbodocumento);
@@ -835,7 +834,7 @@
             this.bunifuCards2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
             this.bunifuCards2.BorderRadius = 5;
             this.bunifuCards2.BottomSahddow = true;
-            this.bunifuCards2.color = System.Drawing.Color.Green;
+            this.bunifuCards2.color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
             this.bunifuCards2.Controls.Add(this.bunifuFlatButton27);
             this.bunifuCards2.Controls.Add(this.bmpromedioventas);
             this.bunifuCards2.Controls.Add(this.bunifuFlatButton24);
@@ -869,7 +868,7 @@
             this.bunifuCards2.Controls.Add(this.bunifuFlatButton10);
             this.bunifuCards2.Controls.Add(this.bmtelefono);
             this.bunifuCards2.LeftSahddow = false;
-            this.bunifuCards2.Location = new System.Drawing.Point(14, 67);
+            this.bunifuCards2.Location = new System.Drawing.Point(12, 67);
             this.bunifuCards2.Name = "bunifuCards2";
             this.bunifuCards2.RightSahddow = true;
             this.bunifuCards2.ShadowDepth = 20;
@@ -1261,56 +1260,74 @@
             this.bunifuFlatButton11.Textcolor = System.Drawing.Color.White;
             this.bunifuFlatButton11.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
-            // bunifuThinButton22
+            // cancelaMant
             // 
-            this.bunifuThinButton22.ActiveBorderThickness = 1;
-            this.bunifuThinButton22.ActiveCornerRadius = 20;
-            this.bunifuThinButton22.ActiveFillColor = System.Drawing.Color.Maroon;
-            this.bunifuThinButton22.ActiveForecolor = System.Drawing.Color.White;
-            this.bunifuThinButton22.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
-            this.bunifuThinButton22.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton22.BackgroundImage")));
-            this.bunifuThinButton22.ButtonText = "CANCELAR";
-            this.bunifuThinButton22.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuThinButton22.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuThinButton22.ForeColor = System.Drawing.Color.White;
-            this.bunifuThinButton22.IdleBorderThickness = 1;
-            this.bunifuThinButton22.IdleCornerRadius = 20;
-            this.bunifuThinButton22.IdleFillColor = System.Drawing.Color.Maroon;
-            this.bunifuThinButton22.IdleForecolor = System.Drawing.Color.White;
-            this.bunifuThinButton22.IdleLineColor = System.Drawing.Color.SteelBlue;
-            this.bunifuThinButton22.Location = new System.Drawing.Point(761, 601);
-            this.bunifuThinButton22.Margin = new System.Windows.Forms.Padding(5);
-            this.bunifuThinButton22.Name = "bunifuThinButton22";
-            this.bunifuThinButton22.Size = new System.Drawing.Size(181, 41);
-            this.bunifuThinButton22.TabIndex = 110;
-            this.bunifuThinButton22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuThinButton22.Click += new System.EventHandler(this.bunifuThinButton22_Click);
+            this.cancelaMant.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cancelaMant.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(101)))), ((int)(((byte)(192)))));
+            this.cancelaMant.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.cancelaMant.BorderRadius = 0;
+            this.cancelaMant.ButtonText = "CANCELAR";
+            this.cancelaMant.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cancelaMant.DisabledColor = System.Drawing.Color.Maroon;
+            this.cancelaMant.Iconcolor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.cancelaMant.Iconimage = global::SistemaFigueri.Properties.Resources.quitar;
+            this.cancelaMant.Iconimage_right = null;
+            this.cancelaMant.Iconimage_right_Selected = null;
+            this.cancelaMant.Iconimage_Selected = null;
+            this.cancelaMant.IconMarginLeft = 0;
+            this.cancelaMant.IconMarginRight = 0;
+            this.cancelaMant.IconRightVisible = true;
+            this.cancelaMant.IconRightZoom = 0D;
+            this.cancelaMant.IconVisible = true;
+            this.cancelaMant.IconZoom = 100D;
+            this.cancelaMant.IsTab = false;
+            this.cancelaMant.Location = new System.Drawing.Point(598, 608);
+            this.cancelaMant.Name = "cancelaMant";
+            this.cancelaMant.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(101)))), ((int)(((byte)(192)))));
+            this.cancelaMant.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            this.cancelaMant.OnHoverTextColor = System.Drawing.Color.White;
+            this.cancelaMant.selected = true;
+            this.cancelaMant.Size = new System.Drawing.Size(240, 41);
+            this.cancelaMant.TabIndex = 113;
+            this.cancelaMant.Text = "CANCELAR";
+            this.cancelaMant.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.cancelaMant.Textcolor = System.Drawing.Color.White;
+            this.cancelaMant.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancelaMant.Click += new System.EventHandler(this.cancelaMant_Click);
             // 
-            // bunifuThinButton21
+            // btnGuardamantClien
             // 
-            this.bunifuThinButton21.ActiveBorderThickness = 1;
-            this.bunifuThinButton21.ActiveCornerRadius = 20;
-            this.bunifuThinButton21.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.bunifuThinButton21.ActiveForecolor = System.Drawing.Color.White;
-            this.bunifuThinButton21.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
-            this.bunifuThinButton21.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton21.BackgroundImage")));
-            this.bunifuThinButton21.ButtonText = "GUARDAR";
-            this.bunifuThinButton21.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuThinButton21.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuThinButton21.ForeColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton21.IdleBorderThickness = 1;
-            this.bunifuThinButton21.IdleCornerRadius = 20;
-            this.bunifuThinButton21.IdleFillColor = System.Drawing.Color.Green;
-            this.bunifuThinButton21.IdleForecolor = System.Drawing.Color.White;
-            this.bunifuThinButton21.IdleLineColor = System.Drawing.Color.SteelBlue;
-            this.bunifuThinButton21.Location = new System.Drawing.Point(351, 606);
-            this.bunifuThinButton21.Margin = new System.Windows.Forms.Padding(5);
-            this.bunifuThinButton21.Name = "bunifuThinButton21";
-            this.bunifuThinButton21.Size = new System.Drawing.Size(181, 41);
-            this.bunifuThinButton21.TabIndex = 111;
-            this.bunifuThinButton21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnGuardamantClien.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnGuardamantClien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(101)))), ((int)(((byte)(192)))));
+            this.btnGuardamantClien.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnGuardamantClien.BorderRadius = 0;
+            this.btnGuardamantClien.ButtonText = "GUARDAR";
+            this.btnGuardamantClien.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGuardamantClien.DisabledColor = System.Drawing.Color.Maroon;
+            this.btnGuardamantClien.Iconcolor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.btnGuardamantClien.Iconimage = global::SistemaFigueri.Properties.Resources.GUARDA;
+            this.btnGuardamantClien.Iconimage_right = null;
+            this.btnGuardamantClien.Iconimage_right_Selected = null;
+            this.btnGuardamantClien.Iconimage_Selected = null;
+            this.btnGuardamantClien.IconMarginLeft = 0;
+            this.btnGuardamantClien.IconMarginRight = 0;
+            this.btnGuardamantClien.IconRightVisible = true;
+            this.btnGuardamantClien.IconRightZoom = 0D;
+            this.btnGuardamantClien.IconVisible = true;
+            this.btnGuardamantClien.IconZoom = 100D;
+            this.btnGuardamantClien.IsTab = false;
+            this.btnGuardamantClien.Location = new System.Drawing.Point(160, 608);
+            this.btnGuardamantClien.Name = "btnGuardamantClien";
+            this.btnGuardamantClien.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(101)))), ((int)(((byte)(192)))));
+            this.btnGuardamantClien.OnHovercolor = System.Drawing.Color.SeaGreen;
+            this.btnGuardamantClien.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnGuardamantClien.selected = true;
+            this.btnGuardamantClien.Size = new System.Drawing.Size(240, 41);
+            this.btnGuardamantClien.TabIndex = 113;
+            this.btnGuardamantClien.Text = "GUARDAR";
+            this.btnGuardamantClien.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnGuardamantClien.Textcolor = System.Drawing.Color.White;
+            this.btnGuardamantClien.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // FormMantCliente
             // 
@@ -1320,8 +1337,8 @@
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
             this.ClientSize = new System.Drawing.Size(1014, 661);
-            this.Controls.Add(this.bunifuThinButton21);
-            this.Controls.Add(this.bunifuThinButton22);
+            this.Controls.Add(this.cancelaMant);
+            this.Controls.Add(this.btnGuardamantClien);
             this.Controls.Add(this.bunifuCards2);
             this.Controls.Add(this.bunifuCards1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -1381,12 +1398,12 @@
         private Bunifu.Framework.UI.BunifuMaterialTextbox bmtipocompra;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton14;
         private Bunifu.Framework.UI.BunifuMaterialTextbox bmnivel;
-        private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton22;
-        private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton21;
         private System.Windows.Forms.ComboBox cbocliente;
         private System.Windows.Forms.ComboBox cboestado;
         private System.Windows.Forms.ComboBox cbodocumento;
         private System.Windows.Forms.ComboBox cbosector;
         private System.Windows.Forms.ComboBox cbotienda;
+        private Bunifu.Framework.UI.BunifuFlatButton cancelaMant;
+        private Bunifu.Framework.UI.BunifuFlatButton btnGuardamantClien;
     }
 }
