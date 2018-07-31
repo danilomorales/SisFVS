@@ -9,9 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using CapaNegocio;
-using BunifuAnimatorNS;
-using Bunifu.Framework.Lib;
-using Bunifu.Framework.UI;
+using CapaDatos;
 
 
 namespace SistemaFigueri
@@ -22,20 +20,11 @@ namespace SistemaFigueri
         {
             InitializeComponent();
         }
-
+        CNClientes cli = new CNClientes();
+        FormCliente formCliente = new FormCliente();
         private void btnCancelarMant_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void bunifuMaterialTextbox11_OnValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bunifuFlatButton12_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void bunifuThinButton22_Click(object sender, EventArgs e)
@@ -45,16 +34,70 @@ namespace SistemaFigueri
 
         private void FormMantCliente_Load(object sender, EventArgs e)
         {
-            LlenarItems li = new LlenarItems();
-            li.llenarTienda(cbotienda);
-            li.llenarSector(cbosector);
-            li.llenarTipoDoc(cbodocumento); 
+            listarTienda();
+            listarSector();
+            listarDocumento();
+        }
+
+        //ACTIVAR TEXTBOX
+        private void cbocliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbocliente.SelectedItem.Equals("Cliente Juridica"))
+            {
+                bfruc.Visible = true;
+                bmruc.Visible = true;
+            }
+            else
+            {
+                bfruc.Visible = false;
+                bmruc.Visible = false;
+            }
         }       
 
-
-        private void cbotienda_SelectedIndexChanged(object sender, EventArgs e)
+        //GUARDAR NUEVO CLIENTE
+        private void bmGuardar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                cli.InsertClient(cbotienda.SelectedValue.ToString(),cbosector.SelectedValue.ToString(),bmempresa.Text,bmdireccion.Text,
+                    bmnombreCliente.Text,bmtelefono.Text,bmfax.Text,bmruc.Text,bmcorreo.Text,cbodocumento.SelectedValue.ToString(),
+                    bmnumerodoc.Text,bmobservacion.Text,dateInscripcion.Text,cboestado.SelectedValue.ToString(),bmctacte.Text,bmnivel.Text,dateNacimiento.Text,
+                    bmtipocompra.Text,bmcredito.Text,bmqueja.Text,bmsaldo.Text,bmordencliente.Text,cbocliente.SelectedValue.ToString(),bmpromedioventas.Text,bmctacte.Text);
+                MessageBox.Show("Se inserto cliente correctamente");
+                this.Close();
+                formCliente.MostrarClientes();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("No se creo nuevo cliente" + ex);
+            }
+        }
 
+        //LISTAR TIENDA
+        private void listarTienda()
+        {
+            CDCliente cdcli = new CDCliente();
+            cbotienda.DataSource = cdcli.ListarTienda();
+            cbotienda.DisplayMember = "NombreTienda";
+            cbotienda.ValueMember = "IdTienda";
+        }
+
+        //LISTAR SECTOR
+        private void listarSector()
+        {
+            CDCliente cdcli = new CDCliente();
+            cbosector.DataSource = cdcli.ListarSector();
+            cbosector.DisplayMember = "DescripcionSector";
+            cbosector.ValueMember = "IdSector";
+        }
+
+        //LISTAR DOCUMENTO
+        private void listarDocumento()
+        {
+            CDCliente cdcli = new CDCliente();
+            cbodocumento.DataSource = cdcli.ListarDocumento();
+            cbodocumento.DisplayMember = "Descripcion";
+            cbodocumento.ValueMember = "IdTipoDocIdent";
         }
     }
 }

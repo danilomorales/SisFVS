@@ -152,7 +152,6 @@
     <Compile Include="FormTipoDeCambio.Designer.cs">
       <DependentUpon>FormTipoDeCambio.cs</DependentUpon>
     </Compile>
-    <Compile Include="LlenarItems.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FormVenta.cs">

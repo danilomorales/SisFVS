@@ -22,7 +22,7 @@ namespace CapaNegocio
             return table;
         }
 
-        //INSERT PRODUCT
+        //CREATE PRODUCT
         public void InsertProduct(String alias, String id_categoria, String id_medida, String descripcion, String tiempo, String stock,
             String stockMax, String stockMin, String valor_uni, String precio1, String precio2, String precioOferta, String nota, String factor,
             String estado, String item, String stockIni, String cta_vnt, String vigente)
@@ -42,7 +42,7 @@ namespace CapaNegocio
 
         }
 
-        //UPDATE PRODUC
+        //UPDATE PRODUCT
         public void UpdateProduct(String idProducto,String alias, String id_categoria, String id_medida, String descripcion, String tiempo, String stock,
             String stockMax, String stockMin, String valor_uni, String precio1, String precio2, String precioOferta, String nota, String factor,
             String estado, String item, String stockIni, String cta_vnt, String vigente)
@@ -65,11 +65,6 @@ namespace CapaNegocio
         public void DeleteProduct(String idProducto)
         {
             pro.EliminarProducto(idProducto);
-        }
-
-        public void SearchProduct(String nombre)
-        {
-            pro.BuscarCliente(nombre);
         }
 
     }
