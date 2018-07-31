@@ -68,6 +68,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormBuscarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBuscarProducto.Designer.cs">
+      <DependentUpon>FormBuscarProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -350,6 +356,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\resta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GUARDA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\estock_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clienteico.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\descuento.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

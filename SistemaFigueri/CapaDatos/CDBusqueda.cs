@@ -17,6 +17,7 @@ namespace CapaDatos
         SqlConnection cnn;
         SqlCommand cmd;
         SqlDataReader dr;
+        private SqlDataAdapter sqladapter;
 
 
         SqlCommand comando = new SqlCommand();
@@ -55,6 +56,13 @@ namespace CapaDatos
             tab.Load(leer);
             Conexion.CerrarConexion();
             return tab;
+        }
+
+        public SqlDataAdapter BusquedaProductos()
+        {
+            string comandosql = "select Alias, DescripcionProducto,Valor_Unitario from Caja.PRODUCTO";
+            sqladapter = new SqlDataAdapter(comandosql, Conexion.AbrirConexion());
+            return sqladapter;
         }
         
     
