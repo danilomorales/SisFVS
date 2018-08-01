@@ -43,6 +43,12 @@
     <Reference Include="Microsoft.VisualBasic.Compatibility.Data" />
     <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.VisualC" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -59,14 +65,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Busqueda_Cliente.cs" />
-    <Compile Include="Busqueda_clinete.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBuscaCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBuscaCliente.Designer.cs">
+      <DependentUpon>FormBuscaCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="FormBuscarProducto.cs">
       <SubType>Form</SubType>
@@ -158,6 +167,12 @@
     <Compile Include="FormTipoDeCambio.Designer.cs">
       <DependentUpon>FormTipoDeCambio.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormVentaMDI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVentaMDI.Designer.cs">
+      <DependentUpon>FormVentaMDI.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FormVenta.cs">
@@ -210,6 +225,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormUpdateProducto.resx">
       <DependentUpon>FormUpdateProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormVentaMDI.resx">
+      <DependentUpon>FormVentaMDI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -368,6 +386,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\descuento.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\PagedList.css" />
+    <None Include="Resources\search.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

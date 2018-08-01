@@ -81,8 +81,7 @@ namespace SistemaFigueri
         {
             var cards = new Bunifu.Framework.UI.BunifuCards();
             MostrarClientes();
-            Busqueda_clinete bu = new Busqueda_clinete();
-            bu.autoCompletar(tbBuscaClienteRece);
+            //bu.autoCompletar(tbBuscaClienteRece);
            
             var aux = new Busqueda_Cliente();
             aux.Lista(dgvProductos);
