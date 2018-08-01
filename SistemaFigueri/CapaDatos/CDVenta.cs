@@ -12,7 +12,7 @@ namespace CapaDatos
     {
         private int _IdVenta;
         private int _IdCliente;
-        private int _IdUsuario;
+        private int _IdUsuario;  
         private int _IdPersona;
         private int _IdResponsable;
         private int _IdTipoDoc;
