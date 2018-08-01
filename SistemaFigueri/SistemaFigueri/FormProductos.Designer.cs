@@ -154,7 +154,6 @@
             this.bunifuCards2.ShadowDepth = 20;
             this.bunifuCards2.Size = new System.Drawing.Size(1018, 483);
             this.bunifuCards2.TabIndex = 33;
-            this.bunifuCards2.Paint += new System.Windows.Forms.PaintEventHandler(this.bunifuCards2_Paint);
             // 
             // bunifuImageButton1
             // 
@@ -188,7 +187,8 @@
             this.bmBuscar.Size = new System.Drawing.Size(512, 44);
             this.bmBuscar.TabIndex = 55;
             this.bmBuscar.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            //this.bmBuscar.OnValueChanged += new System.EventHandler(this.bunifuMaterialTextbox1_OnValueChanged);
+            this.bmBuscar.OnValueChanged += new System.EventHandler(this.bmBuscar_OnValueChanged);
+            this.bmBuscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.bmBuscar_KeyUp);
             // 
             // dgvProductos
             // 
@@ -206,8 +206,6 @@
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.Size = new System.Drawing.Size(999, 388);
             this.dgvProductos.TabIndex = 33;
-            this.dgvProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellClick);
-            this.dgvProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // bunifuCards3
             // 
