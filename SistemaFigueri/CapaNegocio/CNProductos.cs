@@ -25,11 +25,11 @@ namespace CapaNegocio
         //CREATE PRODUCT
         public void InsertProduct(String alias, String id_categoria, String id_medida, String descripcion, String tiempo, String stock,
             String stockMax, String stockMin, String valor_uni, String precio1, String precio2, String precioOferta, String nota, String factor,
-            String estado, String item, String stockIni, String cta_vnt, String vigente)
+            String estado, String item, String stockIni, String cta_vnt)
         {
             Console.WriteLine( "Sera pues ..."+alias+" "+  id_categoria+" "+  id_medida + " " + descripcion + " " + tiempo + " " + stock + " " +
              stockMax + " " + stockMin + " " + valor_uni + " " + precio1 + " " + precio2 + " " + precioOferta + " " + nota + " " + factor + " " +
-             estado + " " + item + " " + stockIni + " " + cta_vnt + " " + vigente);
+             estado + " " + item + " " + stockIni + " " + cta_vnt );
             pro.InsertarProductos(alias,
                 id_categoria, id_medida,
                 descripcion, Convert.ToInt32(tiempo), 
@@ -37,19 +37,18 @@ namespace CapaNegocio
                 Convert.ToInt32(stockMin), Convert.ToDouble(valor_uni), 
                 Convert.ToDouble(precio1), Convert.ToDouble(precio2), 
                 Convert.ToDouble(precioOferta), nota, Convert.ToDouble(factor), estado,
-                Convert.ToInt32(item), Convert.ToDouble(stockIni), cta_vnt, 
-                Convert.ToInt32(vigente));
+                Convert.ToInt32(item), Convert.ToDouble(stockIni), cta_vnt);
 
         }
 
         //UPDATE PRODUCT
         public void UpdateProduct(String idProducto,String alias, String id_categoria, String id_medida, String descripcion, String tiempo, String stock,
             String stockMax, String stockMin, String valor_uni, String precio1, String precio2, String precioOferta, String nota, String factor,
-            String estado, String item, String stockIni, String cta_vnt, String vigente)
+            String estado, String item, String stockIni, String cta_vnt)
         {
             Console.WriteLine("Sera pues ..." + alias + " " + id_categoria + " " + id_medida + " " + descripcion + " " + tiempo + " " + stock + " " +
              stockMax + " " + stockMin + " " + valor_uni + " " + precio1 + " " + precio2 + " " + precioOferta + " " + nota + " " + factor + " " +
-             estado + " " + item + " " + stockIni + " " + cta_vnt + " " + vigente +"   "+idProducto);
+             estado + " " + item + " " + stockIni + " " + cta_vnt + " " +idProducto);
             pro.EditarProducto(idProducto,alias,
               id_categoria, id_medida,
                 descripcion,Convert.ToInt32(tiempo),
@@ -57,8 +56,7 @@ namespace CapaNegocio
                 Convert.ToInt32(stockMin), Convert.ToDouble(valor_uni),
                 Convert.ToDouble(precio1), Convert.ToDouble(precio2),
                 Convert.ToDouble(precioOferta), nota, Convert.ToDouble(factor), estado,
-                Convert.ToInt32(item), Convert.ToDouble(stockIni), cta_vnt,
-                Convert.ToInt32(vigente));
+                Convert.ToInt32(item), Convert.ToDouble(stockIni), cta_vnt);
         }
 
         //DELETE PRODUCT
