@@ -25,6 +25,10 @@ namespace CapaNegocio
             String idtipo_doc, String nroDocumento, String observacion, String inscripcion, String estado, String saldocta, String nivel, String fechaNac, String tipoCompra,
             String credito, String queja, String saldo_Inicial, String ordenCliente, String tipoCliente, String promedio_ventas, String cta_cli)
         {
+            Console.WriteLine("Sera pues ..." + idtienda + " " + idsector + " " + nombre_Empresa + " " + direccion + " " + contacto + " " + telefono + " " +
+            fax + " " + ruc + " " + email + " " + idtipo_doc + " " + nroDocumento + " " + observacion + " " + inscripcion + " " + estado + " " +
+            saldocta + " " + nivel + " " + fechaNac + " " + tipoCompra + " " + credito + "   " + queja + " " + saldo_Inicial + "   " + ordenCliente + "   "
+            +tipoCliente + "   " + promedio_ventas + "   " + cta_cli );
             cli.InsertarCliente(idtienda, idsector,nombre_Empresa,direccion,contacto,telefono,fax,ruc,email,idtipo_doc,nroDocumento,observacion,
                 Convert.ToDateTime(inscripcion),estado,Convert.ToDouble(saldocta),nivel,
                 Convert.ToDateTime(fechaNac),tipoCompra,Convert.ToDouble(credito),queja,saldo_Inicial,

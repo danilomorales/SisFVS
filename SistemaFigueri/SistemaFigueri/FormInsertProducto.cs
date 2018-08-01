@@ -19,6 +19,7 @@ namespace SistemaFigueri
     {
         CNProductos pro = new CNProductos();
         FormProductos formPro = new FormProductos();
+        CDProductos cdpro = new CDProductos();
 
         public FormInsertProducto()
         {
@@ -37,10 +38,11 @@ namespace SistemaFigueri
 
                 pro.InsertProduct(bmnombre.Text, cbocategoria.SelectedValue.ToString(), cbomedida.SelectedValue.ToString(), bmdescripcion.Text, bmtiempo.Text, bmstock.Text,
               bmaximo.Text, bminimo.Text, bmvalorunitario.Text, bmprecio1.Text, bmprecio2.Text, bmoferta.Text, bmnota.Text,
-              bmfactor.Text, cboestado.Text, bmitem.Text, bminicial.Text, bmcta.Text, bmvigente.Text);
+              bmfactor.Text, cboestado.Text, bmitem.Text, bminicial.Text, bmcta.Text);
                 MessageBox.Show("Se inserto correctamente");
                 this.Close();
-                formPro.mostarProductos();
+                cdpro.listarProductos();
+                //formPro.mostarProductos();
                 limpiarForm();
             }
             catch (Exception ex)
@@ -96,7 +98,149 @@ namespace SistemaFigueri
             bmitem.Text = "";
             bminicial.Text = "";
             bmcta.Text = "";
-            bmvigente.Text="";
+        }
+
+        //VALIDAR SOLO LETRAS
+        public static void SoloLetras(KeyPressEventArgs V)
+        {
+            if (char.IsLetter(V.KeyChar))
+            {
+                V.Handled = false;
+            }
+            else if (char.IsSeparator(V.KeyChar))
+            {
+                V.Handled = false;
+            }
+            else if (char.IsControl(V.KeyChar))
+            {
+                V.Handled = false;
+            }
+            else
+            {
+                V.Handled = true;
+            }
+        }
+
+        //VALIDAR SOLO NUMEROS
+        public static void SoloNumeros(KeyPressEventArgs V)
+        {
+            if (char.IsDigit(V.KeyChar))
+            {
+                V.Handled = false;
+            }
+            else if (char.IsSeparator(V.KeyChar))
+            {
+                V.Handled = false;
+            }
+            else if (char.IsControl(V.KeyChar))
+            {
+                V.Handled = false;
+            }
+            else
+            {
+                V.Handled = true;
+            }
+        }
+
+        //VALIDAR SOLO DECIMALES
+        public static void SoloDecimales(KeyPressEventArgs V)
+        {
+            if (char.IsDigit(V.KeyChar))
+            {
+                V.Handled = false;
+            }
+            else if (char.IsSeparator(V.KeyChar))
+            {
+                V.Handled = false;
+            }
+            else if (char.IsControl(V.KeyChar))
+            {
+                V.Handled = false;
+            }
+            else if(V.KeyChar.ToString().Equals("."))
+            {
+                V.Handled = true;
+            }
+        }
+
+        private void bmnombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            SoloLetras(e);
+        }
+
+        private void bmdescripcion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            SoloLetras(e);
+        }
+
+        private void bmtiempo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            SoloNumeros(e);
+        }
+
+        private void bmstock_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            SoloNumeros(e);
+        }
+
+        private void bmaximo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            SoloNumeros(e);
+        }
+
+        private void bminimo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            SoloNumeros(e);
+        }
+
+        private void bmvalorunitario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            SoloDecimales(e);
+        }
+
+        private void bmprecio1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            SoloDecimales(e);
+        }
+
+        private void bmprecio2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            SoloDecimales(e);
+        }
+
+        private void bmoferta_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            SoloDecimales(e);
+        }
+
+        private void bmnota_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            SoloLetras(e);
+        }
+
+        private void bmfactor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            SoloNumeros(e);
+        }
+
+        private void bmitem_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            SoloNumeros(e);
+        }
+
+        private void bminicial_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            SoloNumeros(e);
+        }
+
+        private void bmvigente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            SoloNumeros(e);
+        }
+
+        private void bmcta_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            SoloLetras(e);
         }
     }
 }

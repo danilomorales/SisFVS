@@ -59,5 +59,10 @@ namespace SistemaFigueri
                 dv.RowFilter = string.Format("Login like '%{0}%' or Nombres like '%{0}%' or ApellidoPaterno like '%{0}%' or nomRol like '%{0}%'", txtSearch.Text);
          
         }
+
+        private void txtSearch_OnValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

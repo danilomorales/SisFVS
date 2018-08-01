@@ -21,8 +21,8 @@ namespace SistemaFigueri
             InitializeComponent();
             SetStyle(ControlStyles.ResizeRedraw, true);
         }
-               
-    
+
+        CDProductos cdpro = new CDProductos();
         //arrastrar formulario
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -40,11 +40,14 @@ namespace SistemaFigueri
             {
                 cnProd.UpdateProduct(idProducto.ToString(), bmedinombre.Text, cboedicategoria.SelectedValue.ToString(), cboedimedida.SelectedValue.ToString(), bmedidescripcion.Text, bmeditiempo.Text, bmedistock.Text,
              bmedistockmax.Text, bmedistockmini.Text, bmedivalos_unitario.Text, bmediprecio1.Text, bmediprecio2.Text, bmediprecioOferta.Text, bmedinota.Text,
-             bmedifactor.Text, cboediestado.Text, bmediItem.Text, bmedinicial.Text, bmedicta.Text, bmedivigente.Text);
+             bmedifactor.Text, cboediestado.Text, bmediItem.Text, bmedinicial.Text, bmedicta.Text);
                 MessageBox.Show("Se edito correctamente");
-                formPro.mostarProductos();
+                //formPro.mostarProductos();               
                 this.Close();
-                
+                //cdpro.listarProductos();
+                formPro.dgvProductos.Update();
+                formPro.dgvProductos.Refresh();
+
             }
             catch (Exception ex)
             {
@@ -56,11 +59,6 @@ namespace SistemaFigueri
         private void bunifuThinButton23_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void FormUpdateProducto_Load(object sender, EventArgs e)
-        {
-
         }
 
         //LLENAR COMBOBOX DE CATEGORIA
@@ -83,19 +81,142 @@ namespace SistemaFigueri
 
         }
 
-        private void bunifuMaterialTextbox1_OnValueChanged(object sender, EventArgs e)
+        //VALIDAR SOLO LETRAS
+        public static void SoloLetras(KeyPressEventArgs V)
         {
-
+            if (char.IsLetter(V.KeyChar))
+            {
+                V.Handled = false;
+            }
+            else if (char.IsSeparator(V.KeyChar))
+            {
+                V.Handled = false;
+            }
+            else if (char.IsControl(V.KeyChar))
+            {
+                V.Handled = false;
+            }
+            else
+            {
+                V.Handled = true;
+            }
         }
 
-        private void bmedinombre_OnValueChanged(object sender, EventArgs e)
+        //VALIDAR SOLO NUMEROS
+        public static void SoloNumeros(KeyPressEventArgs V)
         {
-
+            if (char.IsDigit(V.KeyChar))
+            {
+                V.Handled = false;
+            }
+            else if (char.IsSeparator(V.KeyChar))
+            {
+                V.Handled = false;
+            }
+            else if (char.IsControl(V.KeyChar))
+            {
+                V.Handled = false;
+            }
+            else
+            {
+                V.Handled = true;
+            }
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
+        //VALIDAR SOLO DECIMALES
+        public static void SoloDecimales(KeyPressEventArgs V)
         {
+            if (char.IsDigit(V.KeyChar))
+            {
+                V.Handled = false;
+            }
+            else if (char.IsSeparator(V.KeyChar))
+            {
+                V.Handled = false;
+            }
+            else if (char.IsControl(V.KeyChar))
+            {
+                V.Handled = false;
+            }
+            else if (V.KeyChar.ToString().Equals("."))
+            {
+                V.Handled = true;
+            }
+        }
 
+        private void bmedinombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            SoloLetras(e);
+        }
+
+        private void bmedidescripcion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            SoloLetras(e);
+        }
+
+        private void bmeditiempo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            SoloNumeros(e);
+        }
+
+        private void bmedistock_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            SoloNumeros(e);
+        }
+
+        private void bmedistockmax_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            SoloNumeros(e);
+        }
+
+        private void bmedistockmini_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            SoloNumeros(e);
+        }
+
+        private void bmedivalos_unitario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            SoloDecimales(e);
+        }
+
+        private void bmediprecio1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            SoloDecimales(e);
+        }
+
+        private void bmediprecio2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            SoloDecimales(e);
+        }
+
+        private void bmediprecioOferta_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            SoloDecimales(e);
+        }
+
+        private void bmedinota_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            SoloLetras(e);
+        }
+
+        private void bmedifactor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            SoloNumeros(e);
+        }
+
+        private void bmediItem_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            SoloNumeros(e);
+        }
+
+        private void bmedinicial_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            SoloNumeros(e);
+        }
+
+        private void bmedicta_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            SoloLetras(e);
         }
     }
 }

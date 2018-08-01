@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaNegocio;
 using System.Data.SqlClient;
+using CapaDatos;
 
 namespace SistemaFigueri
 {
@@ -16,6 +17,8 @@ namespace SistemaFigueri
     {
        
         CNProductos cp = new CNProductos();
+        CDProductos cdpro = new CDProductos();
+        DataTable tabla = new DataTable();
         public FormProductos()
         {
             InitializeComponent();
@@ -64,9 +67,11 @@ namespace SistemaFigueri
                     formUP.bmediItem.Text = dgvProductos.CurrentRow.Cells[16].Value.ToString();
                     formUP.bmedinicial.Text = dgvProductos.CurrentRow.Cells[17].Value.ToString();
                     formUP.bmedicta.Text = dgvProductos.CurrentRow.Cells[18].Value.ToString();
-                    formUP.bmedivigente.Text = dgvProductos.CurrentRow.Cells[19].Value.ToString();
                     formUP.ShowDialog();
+                    
+                    cdpro.listarProductos();
                     mostarProductos();
+
 
                 }
                 else
@@ -89,6 +94,9 @@ namespace SistemaFigueri
                // formUP.idProducto = dgvProductos.CurrentRow.Cells["IdProducto"].Value.ToString();
                 cp.DeleteProduct(dgvProductos.CurrentRow.Cells[0].Value.ToString());
                 MessageBox.Show("¿Estas seguro de eliminar este producto?");
+                //mostarProductos();
+                dgvProductos.Update();
+                dgvProductos.Refresh();
                 mostarProductos();
                 
             }
@@ -109,7 +117,11 @@ namespace SistemaFigueri
             Conexion.Open();
             SqlCommand cmd = Conexion.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from caja.PRODUCTO where Alias like('" + bmBuscar.Text + "%')";
+            cmd.CommandText = "select * from caja.PRODUCTO where Alias like('" + bmBuscar.Text + "%') or DescripcionProducto like('" + bmBuscar.Text + "')or TiempoDuracion like('" + bmBuscar.Text + "')" +
+                "or Stock like('" + bmBuscar.Text + "')or StockMaximo like('" + bmBuscar.Text + "') or StockMinimo like('" + bmBuscar.Text + "')or Valor_Unitario like('" + bmBuscar.Text + "')" +
+                "or PrecioVenta1 like('" + bmBuscar.Text + "')or PrecioVenta2 like('" + bmBuscar.Text + "') or PrecioOferta like('" + bmBuscar.Text + "')or Nota like('" + bmBuscar.Text + "')" +
+                "or Factor like('" + bmBuscar.Text + "')or Estado like('" + bmBuscar.Text + "')or Item like('" + bmBuscar.Text + "') or StockInicial like('" + bmBuscar.Text + "')" +
+                "or cta_vnt like('" + bmBuscar.Text + "')or Vigente like('" + bmBuscar.Text + "')";
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -121,6 +133,26 @@ namespace SistemaFigueri
         private void bmBuscar_OnValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void dgvProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //actualizar();
+           
+        }
+        public void actualizar()
+        {
+            SqlDataAdapter dataAdapter = new SqlDataAdapter();
+            DataTable dataset = new DataTable();
+            dataset.Clear();
+            dataAdapter.Fill(dataset);
+            dgvProductos.DataSource = cp.MostarProductos();
+        }
+
+        private void bmBuscar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //DataView dv = tabla.DefaultView;
+            //dv.RowFilter = string.Format("Stock like '%{0}%' or Nota like '%{0}%' or Factor like '%{0}%' or Estado like '%{0}%'", bmBuscar.Text);
         }
     }
    
