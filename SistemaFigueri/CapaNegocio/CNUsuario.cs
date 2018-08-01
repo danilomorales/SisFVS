@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using CapaDatos;
 using System.Data.SqlClient;
 using System.Data;
+using System.Windows.Forms;
 
 namespace CapaNegocio
 {
@@ -57,6 +58,19 @@ namespace CapaNegocio
             SqlDataAdapter perfil;
             perfil = objDato.cargarPerfiles();
             return perfil;
+        }
+
+        public SqlDataReader cargarCombo()
+        {
+            SqlDataReader perfil;
+            perfil = objDato.comboRol();
+            return perfil;
+        }
+
+        public int insertarUsuario(String nombres, String paterno, String materno, String dni, String direccion, String user, String pass, int idrol, String url)
+        {
+            Console.WriteLine("Llegando .."+nombres+" "+ paterno + " " +  materno + " " + dni + " " + direccion +" " + user + " " + pass + " " + idrol + " " + url);
+            return objDato.InsertarUsuario(nombres, paterno, materno, dni, direccion, user, pass, idrol, url);
         }
 
 

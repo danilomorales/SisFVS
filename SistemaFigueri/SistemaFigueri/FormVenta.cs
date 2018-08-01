@@ -251,7 +251,8 @@ namespace SistemaFigueri
 
         }
 
-        private void btnBuscaProducto_Click(object sender, EventArgs e)
+
+        private void btnBuscaProcto_Click(object sender, EventArgs e)
         {
             FormBuscarProducto formBuscarPro = new FormBuscarProducto();
             formBuscarPro.ShowDialog();
