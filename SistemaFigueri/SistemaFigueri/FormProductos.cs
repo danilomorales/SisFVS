@@ -8,11 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaNegocio;
+using System.Data.SqlClient;
 
 namespace SistemaFigueri
 {
     public partial class FormProductos : Form
     {
+       
         CNProductos cp = new CNProductos();
         public FormProductos()
         {
@@ -24,11 +26,6 @@ namespace SistemaFigueri
         {
             FormInsertProducto formMP = new FormInsertProducto();
             formMP.ShowDialog();
-        }
-
-        private void bunifuCustomDataGrid1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void FormProductos_Load(object sender, EventArgs e)
@@ -98,37 +95,32 @@ namespace SistemaFigueri
             else
                 MessageBox.Show("Selecciones una fila por favor");
 
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-           
-        }
+        }       
 
         public void mostarProductos()
         {
             dgvProductos.DataSource = cp.MostarProductos();           
             
         }
-
-        private void bunifuCards2_Paint(object sender, PaintEventArgs e)
+         
+        private void bmBuscar_KeyUp(object sender, KeyEventArgs e)
         {
-
+            SqlConnection Conexion = new SqlConnection("Data Source=192.168.21.5;Initial Catalog=DBFIGUE2;User ID=sa;Password=123;MultipleActiveResultSets=true;");
+            Conexion.Open();
+            SqlCommand cmd = Conexion.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select * from caja.PRODUCTO where Alias like('" + bmBuscar.Text + "%')";
+            cmd.ExecuteNonQuery();
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            dgvProductos.DataSource = dt;
+            Conexion.Close();
         }
 
-        private void dgvProductos_CellClick(object sender, DataGridViewCellEventArgs e)
-        {         
-            
-        }
-
-        private void bunifuMaterialTextbox1_OnValueChanged(object sender, EventArgs e , String nombre)
+        private void bmBuscar_OnValueChanged(object sender, EventArgs e)
         {
-            cp.SearchProduct(nombre);
-        }
 
-        public void BuscarProducto(String nombre)
-        {
-            //bmBuscar.Text = cp.SearchProduct(nombre);
         }
     }
    

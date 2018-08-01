@@ -31,16 +31,16 @@ namespace CapaDatos
             return tabla;
         }
 
+        //INSERTAR PRODUCTO
         public void InsertarProductos(String alias, String id_categoria, String id_medida, String descripcion, int tiempo, double stock,
             double stockMax,int stockMin,double valor_uni, double precio1, double precio2, double precioOferta, String nota, double factor,
             String estado, int item, double stockIni, String cta_vnt,int vigente)
         {
             comando.Connection = conexion.AbrirConexion();
-            //comando.CommandText = "InsertarProductos";
-            comando.CommandText = "insert into caja.PRODUCTO (Alias,IdCategoria,IdMedida,DescripcionProducto,TiempoDuracion,Stock,StockMaximo,StockMinimo,Valor_Unitario,PrecioVenta1,PrecioVenta2,PrecioOferta,Nota,Factor,Estado,Item,StockInicial,cta_vnt,Vigente) values('" + alias + "','" + id_categoria + "','" + id_medida + "','" + descripcion + "','" + tiempo + "','" + stock + "','" + stockMax + "','" + stockMin + "'," +
+            comando.CommandText = "insert into caja.PRODUCTO (Alias,IdCategoria,IdMedida,DescripcionProducto,TiempoDuracion,Stock,StockMaximo,StockMinimo,Valor_Unitario,PrecioVenta1,PrecioVenta2,PrecioOferta,Nota,Factor,Estado,Item,StockInicial,cta_vnt,Vigente) " +
+                "values('" + alias + "','" + id_categoria + "','" + id_medida + "','" + descripcion + "','" + tiempo + "','" + stock + "','" + stockMax + "','" + stockMin + "'," +
                 "'" + valor_uni + "','" + precio1 + "','" + precio2 + "','" + precioOferta + "','" + nota + "','" + factor + "','" + estado + "','" + item + "','" + stockIni + "','" + cta_vnt + "','" + vigente + "')";
             comando.CommandType = CommandType.Text;
- 
             comando.ExecuteNonQuery();
         }
 
@@ -64,16 +64,6 @@ namespace CapaDatos
         {
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "delete from caja.PRODUCTO where IdProducto='" + idProducto + "'";
-            comando.CommandType = CommandType.Text;
-            comando.ExecuteNonQuery();
-            conexion.CerrarConexion();
-        }
-
-        //BUSCAR PRODUCTO
-        public void BuscarCliente(String nombre)
-        {
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "select * from caja.PRODUCTO where Alias like '%" + nombre + "%'";
             comando.CommandType = CommandType.Text;
             comando.ExecuteNonQuery();
             conexion.CerrarConexion();

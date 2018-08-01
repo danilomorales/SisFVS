@@ -38,7 +38,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.bunifuCards2 = new Bunifu.Framework.UI.BunifuCards();
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bunifuMaterialTextbox1 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.bmBuscar = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuCards3 = new Bunifu.Framework.UI.BunifuCards();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.bunifuCards1.SuspendLayout();
@@ -165,7 +165,7 @@
             this.bunifuCards2.BottomSahddow = true;
             this.bunifuCards2.color = System.Drawing.Color.Tomato;
             this.bunifuCards2.Controls.Add(this.bunifuImageButton1);
-            this.bunifuCards2.Controls.Add(this.bunifuMaterialTextbox1);
+            this.bunifuCards2.Controls.Add(this.bmBuscar);
             this.bunifuCards2.Controls.Add(this.dgvCliente);
             this.bunifuCards2.LeftSahddow = false;
             this.bunifuCards2.Location = new System.Drawing.Point(12, 142);
@@ -190,24 +190,25 @@
             this.bunifuImageButton1.TabStop = false;
             this.bunifuImageButton1.Zoom = 10;
             // 
-            // bunifuMaterialTextbox1
+            // bmBuscar
             // 
-            this.bunifuMaterialTextbox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuMaterialTextbox1.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
-            this.bunifuMaterialTextbox1.ForeColor = System.Drawing.Color.White;
-            this.bunifuMaterialTextbox1.HintForeColor = System.Drawing.Color.White;
-            this.bunifuMaterialTextbox1.HintText = "Buscar Cliente";
-            this.bunifuMaterialTextbox1.isPassword = false;
-            this.bunifuMaterialTextbox1.LineFocusedColor = System.Drawing.Color.Red;
-            this.bunifuMaterialTextbox1.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
-            this.bunifuMaterialTextbox1.LineMouseHoverColor = System.Drawing.Color.SandyBrown;
-            this.bunifuMaterialTextbox1.LineThickness = 5;
-            this.bunifuMaterialTextbox1.Location = new System.Drawing.Point(198, 16);
-            this.bunifuMaterialTextbox1.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuMaterialTextbox1.Name = "bunifuMaterialTextbox1";
-            this.bunifuMaterialTextbox1.Size = new System.Drawing.Size(512, 44);
-            this.bunifuMaterialTextbox1.TabIndex = 57;
-            this.bunifuMaterialTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bmBuscar.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.bmBuscar.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
+            this.bmBuscar.ForeColor = System.Drawing.Color.White;
+            this.bmBuscar.HintForeColor = System.Drawing.Color.White;
+            this.bmBuscar.HintText = "Buscar Cliente";
+            this.bmBuscar.isPassword = false;
+            this.bmBuscar.LineFocusedColor = System.Drawing.Color.Red;
+            this.bmBuscar.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
+            this.bmBuscar.LineMouseHoverColor = System.Drawing.Color.SandyBrown;
+            this.bmBuscar.LineThickness = 5;
+            this.bmBuscar.Location = new System.Drawing.Point(198, 16);
+            this.bmBuscar.Margin = new System.Windows.Forms.Padding(4);
+            this.bmBuscar.Name = "bmBuscar";
+            this.bmBuscar.Size = new System.Drawing.Size(512, 44);
+            this.bmBuscar.TabIndex = 57;
+            this.bmBuscar.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bmBuscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.bmBuscar_KeyUp);
             // 
             // bunifuCards3
             // 
@@ -258,6 +259,6 @@
         private Bunifu.Framework.UI.BunifuCards bunifuCards2;
         private Bunifu.Framework.UI.BunifuCards bunifuCards3;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox1;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox bmBuscar;
     }
 }
