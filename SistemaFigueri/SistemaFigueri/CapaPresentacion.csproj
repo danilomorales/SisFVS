@@ -43,6 +43,9 @@
     <Reference Include="Microsoft.VisualBasic.Compatibility.Data" />
     <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.VisualC" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -351,6 +354,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\resta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pass1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

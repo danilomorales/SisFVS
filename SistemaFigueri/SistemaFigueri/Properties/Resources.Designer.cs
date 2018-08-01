@@ -193,6 +193,26 @@ namespace SistemaFigueri.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap logon {
+            get {
+                object obj = ResourceManager.GetObject("logon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logon1 {
+            get {
+                object obj = ResourceManager.GetObject("logon1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap maximize2 {
             get {
                 object obj = ResourceManager.GetObject("maximize2", resourceCulture);
@@ -266,6 +286,16 @@ namespace SistemaFigueri.Properties {
         internal static System.Drawing.Bitmap pago {
             get {
                 object obj = ResourceManager.GetObject("pago", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pass1 {
+            get {
+                object obj = ResourceManager.GetObject("pass1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
