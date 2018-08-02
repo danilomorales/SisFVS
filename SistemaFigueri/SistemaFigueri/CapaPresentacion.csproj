@@ -59,7 +59,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Busqueda_Cliente.cs" />
-    <Compile Include="Busqueda_clinete.cs" />
     <Compile Include="FormBuscarProducto.cs">
       <SubType>Form</SubType>
     </Compile>
