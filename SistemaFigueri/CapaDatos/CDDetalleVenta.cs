@@ -8,7 +8,7 @@ using System.Data;
 
 namespace CapaDatos
 {
-    class CDDetalleVenta
+    public class CDDetalleVenta
     {
         private string _IdDetalleVenta;
         private string _IdTienda;
