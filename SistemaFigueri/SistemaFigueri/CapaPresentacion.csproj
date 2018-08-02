@@ -384,8 +384,5 @@
   <ItemGroup>
     <None Include="Resources\descuento.ico" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\sector.png" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
