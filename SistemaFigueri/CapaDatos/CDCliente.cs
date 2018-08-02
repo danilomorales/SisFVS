@@ -29,6 +29,8 @@ namespace CapaDatos
             tabla.Load(leer);
             conexion.CerrarConexion();
             return tabla;
+
+
         }
 
         //INSERTAR CLIENTE
