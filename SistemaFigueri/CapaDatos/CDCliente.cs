@@ -31,6 +31,8 @@ namespace CapaDatos
             return tabla;
 
 
+
+
         }
 
         //INSERTAR CLIENTE
