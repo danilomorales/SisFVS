@@ -39,7 +39,7 @@ namespace CapaDatos
         }
 
         //EDITAR SECTOR
-        public void EditarSector(String idSector,String descripcion, String nota)
+        public void EditarSector(String idSector, String descripcion, String nota)
         {
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "update caja.SECTOR set DescripcionSector='" + descripcion + "',Nota='" + nota + "' where IdSector='" + idSector + "'";
