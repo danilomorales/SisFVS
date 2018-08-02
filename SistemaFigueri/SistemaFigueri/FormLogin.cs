@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using CapaNegocio;
 using System.Data.SqlClient;
-using System.Data;
 using Bunifu.Framework.UI;
 
 namespace SistemaFigueri
@@ -21,6 +20,8 @@ namespace SistemaFigueri
         public static string patUsu;
         public static string matUsu;
         public static string rol;
+        public static string privilegio;
+        public static List<String>liston;
         public FormLogin()
         {
             InitializeComponent();
@@ -58,6 +59,7 @@ namespace SistemaFigueri
                 if (Loguear.Read() == true)
                 {
                     Perfil = objUsuario.UsuarioPerfil();
+                    liston = new List<string>();
                     FormMenuPrincipal objPPrincipal = new FormMenuPrincipal();
                     try
                     {
@@ -70,7 +72,10 @@ namespace SistemaFigueri
                             objPPrincipal.label1.Text = nomUsu;
                             objPPrincipal.label2.Text = patUsu + " " + matUsu;
                             objPPrincipal.label3.Text = rol;
+                            
+                            liston.Add(Perfil["descripcion"].ToString());
                         }
+                        Console.WriteLine(liston[0].ToString()+ " .. "+ liston[1].ToString());
                         Hide();
                         Loguear.Close();
                         /*Label label = new Label();

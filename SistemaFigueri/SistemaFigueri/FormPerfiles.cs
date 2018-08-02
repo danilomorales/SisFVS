@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaNegocio;
 using System.Data.SqlClient;
-using PagedList;
 
 
 namespace SistemaFigueri
@@ -19,8 +18,6 @@ namespace SistemaFigueri
         int pageNumber = 1;
         public List<DataRow> list { get; set; }
      
-
-
         public FormPerfiles()
         {
             InitializeComponent();
@@ -52,7 +49,7 @@ namespace SistemaFigueri
 
         }
 
-        public async Task<IPagedList>
+        
 
         private void FormPerfiles_Load(object sender, EventArgs e)
         {
