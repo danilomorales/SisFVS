@@ -45,9 +45,11 @@
     <Compile Include="CDBusqueda.cs" />
     <Compile Include="CDCliente.cs" />
     <Compile Include="CDConexion.cs" />
+    <Compile Include="CDDetalleVenta.cs" />
     <Compile Include="CDProductos.cs" />
     <Compile Include="CDSector.cs" />
     <Compile Include="CDUsuario.cs" />
+    <Compile Include="CDVenta.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

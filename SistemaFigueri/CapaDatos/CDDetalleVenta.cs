@@ -17,8 +17,8 @@ namespace CapaDatos
         private int _Cantidad;
         private decimal _Devolucion;
         private decimal _Malogrados;
-        private decimal _Total ;
-        private decimal _Costo ;
+        private decimal _Total;
+        private decimal _Costo;
         private int _IdVenta;
         private decimal _Descuento;
 
@@ -50,7 +50,7 @@ namespace CapaDatos
             this.Devolucion = devolucion;
             this.Malogrados = malogrado;
             this.Total = total;
-            this.Costo = costo;  
+            this.Costo = costo;
             this.IdDetalleVenta = iddetalleventa;
             this.IdVenta = idventa;
             this.Descuento = descuento;
@@ -121,7 +121,7 @@ namespace CapaDatos
                 ParTotal.SqlDbType = SqlDbType.Float;
                 ParTotal.Value = DetalleVenta.Total;
                 SqlCmd.Parameters.Add(ParTotal);
-                
+
                 SqlParameter ParCosto = new SqlParameter();
                 ParCosto.ParameterName = "@Costo";
                 ParCosto.SqlDbType = SqlDbType.Float;
@@ -145,8 +145,8 @@ namespace CapaDatos
             }
             return rpta;
         }
-       
+
     }
 
-  
+
 }
