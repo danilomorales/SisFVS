@@ -492,7 +492,7 @@
             this.bunifuCustomLabel20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bunifuCustomLabel20.Font = new System.Drawing.Font("Century Gothic", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel20.ForeColor = System.Drawing.Color.White;
-            this.bunifuCustomLabel20.Image = global::SistemaFigueri.Properties.Resources.descuento;
+            //this.bunifuCustomLabel20.Image = global::SistemaFigueri.Properties.Resources.descuento;
             this.bunifuCustomLabel20.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bunifuCustomLabel20.Location = new System.Drawing.Point(207, 111);
             this.bunifuCustomLabel20.Name = "bunifuCustomLabel20";
@@ -554,7 +554,7 @@
             this.bunifuCustomLabel16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bunifuCustomLabel16.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel16.ForeColor = System.Drawing.Color.White;
-            this.bunifuCustomLabel16.Image = global::SistemaFigueri.Properties.Resources.estock_32;
+            //this.bunifuCustomLabel16.Image = global::SistemaFigueri.Properties.Resources.estock_32;
             this.bunifuCustomLabel16.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bunifuCustomLabel16.Location = new System.Drawing.Point(488, 6);
             this.bunifuCustomLabel16.Name = "bunifuCustomLabel16";
@@ -615,7 +615,7 @@
             this.btnBuscaProducto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuscaProducto.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold);
             this.btnBuscaProducto.ForeColor = System.Drawing.Color.White;
-            this.btnBuscaProducto.Image = global::SistemaFigueri.Properties.Resources.busca1;
+            //this.btnBuscaProducto.Image = global::SistemaFigueri.Properties.Resources.busca1;
             this.btnBuscaProducto.ImagePosition = -2;
             this.btnBuscaProducto.ImageZoom = 50;
             this.btnBuscaProducto.LabelPosition = 15;
@@ -1159,7 +1159,7 @@
             this.bunifuCustomLabel5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bunifuCustomLabel5.Font = new System.Drawing.Font("Century Gothic", 11F);
             this.bunifuCustomLabel5.ForeColor = System.Drawing.Color.White;
-            this.bunifuCustomLabel5.Image = global::SistemaFigueri.Properties.Resources.clienteico;
+            //this.bunifuCustomLabel5.Image = global::SistemaFigueri.Properties.Resources.clienteico;
             this.bunifuCustomLabel5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bunifuCustomLabel5.Location = new System.Drawing.Point(21, 88);
             this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
