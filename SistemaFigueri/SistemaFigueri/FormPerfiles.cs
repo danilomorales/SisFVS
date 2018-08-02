@@ -52,8 +52,6 @@ namespace SistemaFigueri
 
         }
 
-        public async Task<IPagedList>
-
         private void FormPerfiles_Load(object sender, EventArgs e)
         {
             /*dgvPerfiles.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;

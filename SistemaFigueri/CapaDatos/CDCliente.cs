@@ -20,7 +20,11 @@ namespace CapaDatos
         public DataTable listarClientes()
         {
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "select * from caja.ClienteReceptor";
+            comando.CommandText = "select c.IdClienteReceptor,c.Nombres,c.ApellidoPaterno as 'Apellido Paterno',c.ApellidoMaterno as 'Apellido Materno',p.Descripcion as 'Tipo de Persona'," +
+                "t.Descripcion as 'Tipo de Documento',c.NroDocIdentidad as 'Nro de Documento',c.NumeroRuc as 'Nro de RUC',c.RazonSocial as 'Razón Social',c.NombreComercial as 'Nombre Comercial'," +
+                "c.Correo,c.Direccion as 'Dirección',c.Fax,c.Fijo,c.Telefono,c.FechaNacimiento as 'Fecha de Nacimiento',c.Departamento,c.Provincia,c.Distrito,c.Estado,c.UsuarioRegistra as 'Usuario Registra'," +
+                "c.FechaRegistro as 'Fecha de Registro',c.UsuarioModifica as 'Usuario Modifica',c.FechaModifica as 'Fecha Modifica',s.DescripcionSector as 'Sector'" +
+                "from caja.ClienteReceptor c,caja.TipoPersona p, caja.SECTOR s, dbo.TIPO_DOC_IDENT t where c.IdTipoPersona = p.IdTipoPersona and c.IdSector = s.IdSector and c.IdDocIdentidad = t.IdTipoDocIdent";
             leer = comando.ExecuteReader();
             tabla.Load(leer);
             conexion.CerrarConexion();
