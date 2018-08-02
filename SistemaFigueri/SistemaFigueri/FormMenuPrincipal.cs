@@ -46,8 +46,8 @@ namespace SistemaFigueri
             sh = this.Size.Height;
             this.Size = Screen.PrimaryScreen.WorkingArea.Size;
             this.Location = Screen.PrimaryScreen.WorkingArea.Location;
-            btnMaximiza.Visible = false;
-            btnNormal.Visible = true;
+            /*btnMaximiza.Visible = false;
+            btnNormal.Visible = true;*/
         }
 
        
@@ -55,8 +55,8 @@ namespace SistemaFigueri
         {
             this.Size = new Size(sw, sh);
             this.Location = new Point(lx, ly);
-            btnNormal.Visible = false;
-            btnMaximiza.Visible = true;
+           /* btnNormal.Visible = false;
+            btnMaximiza.Visible = true;*/
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -117,6 +117,7 @@ namespace SistemaFigueri
         private void MostrarFormInicio()
         {
             AbrirFormEnPanel(new FormPrincipalPage());
+            
         }
 
         private void FormMenuPrincipal_Load(object sender, EventArgs e)
@@ -258,6 +259,40 @@ namespace SistemaFigueri
             btnProductos.selected = true;
             /*label1.Text = "";
             label1.Text = "Carlos Romero";*/
+            lx = this.Location.X;
+            ly = this.Location.Y;
+            sw = this.Size.Width;
+            sh = this.Size.Height;
+            this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+            this.Location = Screen.PrimaryScreen.WorkingArea.Location;
+            /*btnMaximiza.Visible = false;
+            btnNormal.Visible = true;*/
+            List<String> listonazo = FormLogin.liston;
+
+            List<Bunifu.Framework.UI.BunifuFlatButton> lstBtnCalc = new List<Bunifu.Framework.UI.BunifuFlatButton>
+            {
+                btnProductos,btnClientes,btnCaja,btnSector,btnReportes,btnVentas,btnPromociones,btnPerfiles
+            };
+
+            
+                //MessageBox.Show(listonazo[i].ToString());
+                //MessageBox.Show(boton.Name);
+
+                for (int j = 0; j < lstBtnCalc.Capacity-1; j++)
+                {
+                    for (int i = 0; i < listonazo.Capacity - 1; i++)
+                    {
+                        if (lstBtnCalc[j].Name== listonazo[i].ToString())
+                        {
+                            if (lstBtnCalc[j].Visible == false)
+                            {
+                                lstBtnCalc[j].Visible = true;
+                            }
+                        }
+
+                    }
+
+                }
         }
 
         private void bunifuFlatButton2_Click(object sender, EventArgs e)

@@ -33,42 +33,41 @@
             this.panel1ContenedorPrincipal = new System.Windows.Forms.Panel();
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.btnPerfiles = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnSector = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.pbPerfil = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lbFechadia = new System.Windows.Forms.Label();
-            this.lbHora1 = new System.Windows.Forms.Label();
-            this.BarraTitulo = new System.Windows.Forms.Panel();
-            this.tmOcultarMenu = new System.Windows.Forms.Timer(this.components);
-            this.tmMostrarMenu = new System.Windows.Forms.Timer(this.components);
-            this.tmFechaHora = new System.Windows.Forms.Timer(this.components);
-            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.pbPerfil = new System.Windows.Forms.PictureBox();
             this.btnCaja = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnReportes = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnPromociones = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnProveedores = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnClientes = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnVentas = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnMenu = new System.Windows.Forms.PictureBox();
             this.btnProductos = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lbFechadia = new System.Windows.Forms.Label();
+            this.lbHora1 = new System.Windows.Forms.Label();
+            this.BarraTitulo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.btnNormal = new System.Windows.Forms.Button();
             this.btnMinimiza = new System.Windows.Forms.Button();
-            this.btnMaximiza = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
+            this.tmOcultarMenu = new System.Windows.Forms.Timer(this.components);
+            this.tmMostrarMenu = new System.Windows.Forms.Timer(this.components);
+            this.tmFechaHora = new System.Windows.Forms.Timer(this.components);
+            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1ContenedorPrincipal.SuspendLayout();
             this.panelMenu.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.BarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPerfil)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.BarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1ContenedorPrincipal
@@ -98,20 +97,12 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(57)))), ((int)(((byte)(80)))));
-            this.panelMenu.Controls.Add(this.bunifuFlatButton2);
-            this.panelMenu.Controls.Add(this.bunifuFlatButton1);
+            this.panelMenu.Controls.Add(this.panel2);
             this.panelMenu.Controls.Add(this.pbPerfil);
             this.panelMenu.Controls.Add(this.label3);
             this.panelMenu.Controls.Add(this.label2);
             this.panelMenu.Controls.Add(this.label1);
-            this.panelMenu.Controls.Add(this.btnCaja);
-            this.panelMenu.Controls.Add(this.btnReportes);
-            this.panelMenu.Controls.Add(this.btnPromociones);
-            this.panelMenu.Controls.Add(this.btnProveedores);
-            this.panelMenu.Controls.Add(this.btnClientes);
-            this.panelMenu.Controls.Add(this.btnVentas);
             this.panelMenu.Controls.Add(this.btnMenu);
-            this.panelMenu.Controls.Add(this.btnProductos);
             this.panelMenu.Controls.Add(this.panel1);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 43);
@@ -119,6 +110,89 @@
             this.panelMenu.Size = new System.Drawing.Size(240, 657);
             this.panelMenu.TabIndex = 2;
             this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenu_Paint);
+            // 
+            // btnPerfiles
+            // 
+            this.btnPerfiles.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnPerfiles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnPerfiles.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPerfiles.BorderRadius = 0;
+            this.btnPerfiles.ButtonText = "PERFILES";
+            this.btnPerfiles.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPerfiles.DisabledColor = System.Drawing.Color.Gray;
+            this.btnPerfiles.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPerfiles.Iconcolor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.btnPerfiles.Iconimage = global::SistemaFigueri.Properties.Resources.Settings_48px;
+            this.btnPerfiles.Iconimage_right = null;
+            this.btnPerfiles.Iconimage_right_Selected = null;
+            this.btnPerfiles.Iconimage_Selected = null;
+            this.btnPerfiles.IconMarginLeft = 15;
+            this.btnPerfiles.IconMarginRight = 0;
+            this.btnPerfiles.IconRightVisible = true;
+            this.btnPerfiles.IconRightZoom = 0D;
+            this.btnPerfiles.IconVisible = true;
+            this.btnPerfiles.IconZoom = 100D;
+            this.btnPerfiles.IsTab = false;
+            this.btnPerfiles.Location = new System.Drawing.Point(0, 294);
+            this.btnPerfiles.Name = "btnPerfiles";
+            this.btnPerfiles.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnPerfiles.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnPerfiles.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnPerfiles.Padding = new System.Windows.Forms.Padding(0, 8, 0, 8);
+            this.btnPerfiles.selected = true;
+            this.btnPerfiles.Size = new System.Drawing.Size(243, 42);
+            this.btnPerfiles.TabIndex = 28;
+            this.btnPerfiles.Text = "PERFILES";
+            this.btnPerfiles.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnPerfiles.Textcolor = System.Drawing.Color.White;
+            this.btnPerfiles.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPerfiles.Visible = false;
+            this.btnPerfiles.Click += new System.EventHandler(this.bunifuFlatButton2_Click);
+            // 
+            // btnSector
+            // 
+            this.btnSector.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnSector.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnSector.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSector.BorderRadius = 0;
+            this.btnSector.ButtonText = "SECTORES";
+            this.btnSector.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSector.DisabledColor = System.Drawing.Color.Gray;
+            this.btnSector.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSector.Iconcolor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.btnSector.Iconimage = global::SistemaFigueri.Properties.Resources.sector;
+            this.btnSector.Iconimage_right = null;
+            this.btnSector.Iconimage_right_Selected = null;
+            this.btnSector.Iconimage_Selected = null;
+            this.btnSector.IconMarginLeft = 15;
+            this.btnSector.IconMarginRight = 0;
+            this.btnSector.IconRightVisible = true;
+            this.btnSector.IconRightZoom = 0D;
+            this.btnSector.IconVisible = true;
+            this.btnSector.IconZoom = 100D;
+            this.btnSector.IsTab = false;
+            this.btnSector.Location = new System.Drawing.Point(0, 168);
+            this.btnSector.Name = "btnSector";
+            this.btnSector.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnSector.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnSector.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnSector.selected = true;
+            this.btnSector.Size = new System.Drawing.Size(243, 42);
+            this.btnSector.TabIndex = 27;
+            this.btnSector.Text = "SECTORES";
+            this.btnSector.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnSector.Textcolor = System.Drawing.Color.White;
+            this.btnSector.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSector.Visible = false;
+            // 
+            // pbPerfil
+            // 
+            this.pbPerfil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbPerfil.Location = new System.Drawing.Point(10, 52);
+            this.pbPerfil.Name = "pbPerfil";
+            this.pbPerfil.Size = new System.Drawing.Size(60, 75);
+            this.pbPerfil.TabIndex = 26;
+            this.pbPerfil.TabStop = false;
             // 
             // label3
             // 
@@ -153,6 +227,242 @@
             this.label1.Size = new System.Drawing.Size(38, 16);
             this.label1.TabIndex = 23;
             this.label1.Text = "user";
+            // 
+            // btnCaja
+            // 
+            this.btnCaja.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnCaja.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnCaja.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCaja.BorderRadius = 0;
+            this.btnCaja.ButtonText = "CAJA APERTURA";
+            this.btnCaja.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCaja.DisabledColor = System.Drawing.Color.Gray;
+            this.btnCaja.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCaja.Iconcolor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.btnCaja.Iconimage = global::SistemaFigueri.Properties.Resources.Receipt_48px;
+            this.btnCaja.Iconimage_right = null;
+            this.btnCaja.Iconimage_right_Selected = null;
+            this.btnCaja.Iconimage_Selected = null;
+            this.btnCaja.IconMarginLeft = 15;
+            this.btnCaja.IconMarginRight = 0;
+            this.btnCaja.IconRightVisible = true;
+            this.btnCaja.IconRightZoom = 0D;
+            this.btnCaja.IconVisible = true;
+            this.btnCaja.IconZoom = 100D;
+            this.btnCaja.IsTab = false;
+            this.btnCaja.Location = new System.Drawing.Point(0, 0);
+            this.btnCaja.Margin = new System.Windows.Forms.Padding(3, 3, 3, 8);
+            this.btnCaja.Name = "btnCaja";
+            this.btnCaja.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnCaja.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnCaja.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnCaja.selected = true;
+            this.btnCaja.Size = new System.Drawing.Size(243, 42);
+            this.btnCaja.TabIndex = 22;
+            this.btnCaja.Text = "CAJA APERTURA";
+            this.btnCaja.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnCaja.Textcolor = System.Drawing.Color.White;
+            this.btnCaja.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCaja.Visible = false;
+            this.btnCaja.Click += new System.EventHandler(this.btnCaja_Click);
+            // 
+            // btnReportes
+            // 
+            this.btnReportes.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnReportes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnReportes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnReportes.BorderRadius = 0;
+            this.btnReportes.ButtonText = "REPORTES";
+            this.btnReportes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReportes.DisabledColor = System.Drawing.Color.Gray;
+            this.btnReportes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnReportes.Iconcolor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.btnReportes.Iconimage = global::SistemaFigueri.Properties.Resources.reporte;
+            this.btnReportes.Iconimage_right = null;
+            this.btnReportes.Iconimage_right_Selected = null;
+            this.btnReportes.Iconimage_Selected = null;
+            this.btnReportes.IconMarginLeft = 15;
+            this.btnReportes.IconMarginRight = 0;
+            this.btnReportes.IconRightVisible = true;
+            this.btnReportes.IconRightZoom = 0D;
+            this.btnReportes.IconVisible = true;
+            this.btnReportes.IconZoom = 100D;
+            this.btnReportes.IsTab = false;
+            this.btnReportes.Location = new System.Drawing.Point(0, 210);
+            this.btnReportes.Name = "btnReportes";
+            this.btnReportes.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnReportes.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnReportes.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnReportes.selected = true;
+            this.btnReportes.Size = new System.Drawing.Size(243, 42);
+            this.btnReportes.TabIndex = 21;
+            this.btnReportes.Text = "REPORTES";
+            this.btnReportes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnReportes.Textcolor = System.Drawing.Color.White;
+            this.btnReportes.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReportes.Visible = false;
+            this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
+            // 
+            // btnPromociones
+            // 
+            this.btnPromociones.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnPromociones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnPromociones.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPromociones.BorderRadius = 0;
+            this.btnPromociones.ButtonText = "PROMOCIONES";
+            this.btnPromociones.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPromociones.DisabledColor = System.Drawing.Color.Gray;
+            this.btnPromociones.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPromociones.Iconcolor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.btnPromociones.Iconimage = global::SistemaFigueri.Properties.Resources.promociones;
+            this.btnPromociones.Iconimage_right = null;
+            this.btnPromociones.Iconimage_right_Selected = null;
+            this.btnPromociones.Iconimage_Selected = null;
+            this.btnPromociones.IconMarginLeft = 15;
+            this.btnPromociones.IconMarginRight = 0;
+            this.btnPromociones.IconRightVisible = true;
+            this.btnPromociones.IconRightZoom = 0D;
+            this.btnPromociones.IconVisible = true;
+            this.btnPromociones.IconZoom = 100D;
+            this.btnPromociones.IsTab = false;
+            this.btnPromociones.Location = new System.Drawing.Point(0, 84);
+            this.btnPromociones.Name = "btnPromociones";
+            this.btnPromociones.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnPromociones.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnPromociones.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnPromociones.selected = true;
+            this.btnPromociones.Size = new System.Drawing.Size(243, 42);
+            this.btnPromociones.TabIndex = 20;
+            this.btnPromociones.Text = "PROMOCIONES";
+            this.btnPromociones.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnPromociones.Textcolor = System.Drawing.Color.White;
+            this.btnPromociones.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPromociones.Visible = false;
+            this.btnPromociones.Click += new System.EventHandler(this.btnPromociones_Click);
+            // 
+            // btnClientes
+            // 
+            this.btnClientes.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnClientes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnClientes.BorderRadius = 0;
+            this.btnClientes.ButtonText = "CLIENTES";
+            this.btnClientes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClientes.DisabledColor = System.Drawing.Color.Gray;
+            this.btnClientes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnClientes.Iconcolor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.btnClientes.Iconimage = global::SistemaFigueri.Properties.Resources.clientesprincipal;
+            this.btnClientes.Iconimage_right = null;
+            this.btnClientes.Iconimage_right_Selected = null;
+            this.btnClientes.Iconimage_Selected = null;
+            this.btnClientes.IconMarginLeft = 15;
+            this.btnClientes.IconMarginRight = 0;
+            this.btnClientes.IconRightVisible = true;
+            this.btnClientes.IconRightZoom = 0D;
+            this.btnClientes.IconVisible = true;
+            this.btnClientes.IconZoom = 100D;
+            this.btnClientes.IsTab = false;
+            this.btnClientes.Location = new System.Drawing.Point(0, 42);
+            this.btnClientes.Name = "btnClientes";
+            this.btnClientes.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnClientes.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnClientes.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnClientes.selected = true;
+            this.btnClientes.Size = new System.Drawing.Size(243, 42);
+            this.btnClientes.TabIndex = 18;
+            this.btnClientes.Text = "CLIENTES";
+            this.btnClientes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnClientes.Textcolor = System.Drawing.Color.White;
+            this.btnClientes.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClientes.Visible = false;
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
+            // 
+            // btnVentas
+            // 
+            this.btnVentas.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnVentas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnVentas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnVentas.BorderRadius = 0;
+            this.btnVentas.ButtonText = "VENTAS";
+            this.btnVentas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVentas.DisabledColor = System.Drawing.Color.Gray;
+            this.btnVentas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnVentas.Iconcolor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.btnVentas.Iconimage = global::SistemaFigueri.Properties.Resources.ventas;
+            this.btnVentas.Iconimage_right = null;
+            this.btnVentas.Iconimage_right_Selected = null;
+            this.btnVentas.Iconimage_Selected = null;
+            this.btnVentas.IconMarginLeft = 15;
+            this.btnVentas.IconMarginRight = 0;
+            this.btnVentas.IconRightVisible = true;
+            this.btnVentas.IconRightZoom = 0D;
+            this.btnVentas.IconVisible = true;
+            this.btnVentas.IconZoom = 100D;
+            this.btnVentas.IsTab = false;
+            this.btnVentas.Location = new System.Drawing.Point(0, 126);
+            this.btnVentas.Name = "btnVentas";
+            this.btnVentas.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnVentas.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnVentas.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnVentas.selected = true;
+            this.btnVentas.Size = new System.Drawing.Size(243, 42);
+            this.btnVentas.TabIndex = 17;
+            this.btnVentas.Text = "VENTAS";
+            this.btnVentas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnVentas.Textcolor = System.Drawing.Color.White;
+            this.btnVentas.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVentas.Visible = false;
+            this.btnVentas.Click += new System.EventHandler(this.btnVentas_Click);
+            // 
+            // btnMenu
+            // 
+            this.btnMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMenu.Image = global::SistemaFigueri.Properties.Resources.menu_round_512;
+            this.btnMenu.Location = new System.Drawing.Point(189, 6);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(45, 45);
+            this.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnMenu.TabIndex = 12;
+            this.btnMenu.TabStop = false;
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
+            // 
+            // btnProductos
+            // 
+            this.btnProductos.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnProductos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnProductos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnProductos.BorderRadius = 0;
+            this.btnProductos.ButtonText = "PRODUCTOS";
+            this.btnProductos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnProductos.DisabledColor = System.Drawing.Color.Maroon;
+            this.btnProductos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnProductos.Iconcolor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.btnProductos.Iconimage = global::SistemaFigueri.Properties.Resources.Productos;
+            this.btnProductos.Iconimage_right = null;
+            this.btnProductos.Iconimage_right_Selected = null;
+            this.btnProductos.Iconimage_Selected = null;
+            this.btnProductos.IconMarginLeft = 15;
+            this.btnProductos.IconMarginRight = 0;
+            this.btnProductos.IconRightVisible = true;
+            this.btnProductos.IconRightZoom = 0D;
+            this.btnProductos.IconVisible = true;
+            this.btnProductos.IconZoom = 100D;
+            this.btnProductos.IsTab = false;
+            this.btnProductos.Location = new System.Drawing.Point(0, 252);
+            this.btnProductos.Name = "btnProductos";
+            this.btnProductos.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnProductos.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnProductos.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnProductos.selected = true;
+            this.btnProductos.Size = new System.Drawing.Size(243, 42);
+            this.btnProductos.TabIndex = 16;
+            this.btnProductos.Text = "PRODUCTOS";
+            this.btnProductos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnProductos.Textcolor = System.Drawing.Color.White;
+            this.btnProductos.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProductos.Visible = false;
+            this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
             // 
             // panel1
             // 
@@ -199,9 +509,7 @@
             this.BarraTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(96)))), ((int)(((byte)(100)))));
             this.BarraTitulo.Controls.Add(this.pictureBox1);
             this.BarraTitulo.Controls.Add(this.pictureBox8);
-            this.BarraTitulo.Controls.Add(this.btnNormal);
             this.BarraTitulo.Controls.Add(this.btnMinimiza);
-            this.BarraTitulo.Controls.Add(this.btnMaximiza);
             this.BarraTitulo.Controls.Add(this.btnCerrar);
             this.BarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.BarraTitulo.Location = new System.Drawing.Point(0, 0);
@@ -210,359 +518,6 @@
             this.BarraTitulo.TabIndex = 1;
             this.BarraTitulo.Paint += new System.Windows.Forms.PaintEventHandler(this.BarraTitulo_Paint);
             this.BarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BarraTitulo_MouseDown);
-            // 
-            // tmOcultarMenu
-            // 
-            this.tmOcultarMenu.Tick += new System.EventHandler(this.tmOcultarMenu_Tick);
-            // 
-            // tmMostrarMenu
-            // 
-            this.tmMostrarMenu.Tick += new System.EventHandler(this.tmMostrarMenu_Tick);
-            // 
-            // tmFechaHora
-            // 
-            this.tmFechaHora.Tick += new System.EventHandler(this.tmFechaHora_Tick);
-            // 
-            // bunifuElipse1
-            // 
-            this.bunifuElipse1.ElipseRadius = 15;
-            this.bunifuElipse1.TargetControl = this;
-            // 
-            // bunifuFlatButton2
-            // 
-            this.bunifuFlatButton2.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuFlatButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFlatButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFlatButton2.BorderRadius = 0;
-            this.bunifuFlatButton2.ButtonText = "PERFILES";
-            this.bunifuFlatButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuFlatButton2.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton2.Iconcolor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.bunifuFlatButton2.Iconimage = global::SistemaFigueri.Properties.Resources.Settings_48px;
-            this.bunifuFlatButton2.Iconimage_right = null;
-            this.bunifuFlatButton2.Iconimage_right_Selected = null;
-            this.bunifuFlatButton2.Iconimage_Selected = null;
-            this.bunifuFlatButton2.IconMarginLeft = 15;
-            this.bunifuFlatButton2.IconMarginRight = 0;
-            this.bunifuFlatButton2.IconRightVisible = true;
-            this.bunifuFlatButton2.IconRightZoom = 0D;
-            this.bunifuFlatButton2.IconVisible = true;
-            this.bunifuFlatButton2.IconZoom = 100D;
-            this.bunifuFlatButton2.IsTab = false;
-            this.bunifuFlatButton2.Location = new System.Drawing.Point(0, 513);
-            this.bunifuFlatButton2.Name = "bunifuFlatButton2";
-            this.bunifuFlatButton2.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFlatButton2.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.bunifuFlatButton2.OnHoverTextColor = System.Drawing.Color.White;
-            this.bunifuFlatButton2.selected = true;
-            this.bunifuFlatButton2.Size = new System.Drawing.Size(240, 42);
-            this.bunifuFlatButton2.TabIndex = 28;
-            this.bunifuFlatButton2.Text = "PERFILES";
-            this.bunifuFlatButton2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuFlatButton2.Textcolor = System.Drawing.Color.White;
-            this.bunifuFlatButton2.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuFlatButton2.Click += new System.EventHandler(this.bunifuFlatButton2_Click);
-            // 
-            // bunifuFlatButton1
-            // 
-            this.bunifuFlatButton1.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuFlatButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFlatButton1.BorderRadius = 0;
-            this.bunifuFlatButton1.ButtonText = "CAJA";
-            this.bunifuFlatButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuFlatButton1.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton1.Iconcolor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.bunifuFlatButton1.Iconimage = global::SistemaFigueri.Properties.Resources.caja;
-            this.bunifuFlatButton1.Iconimage_right = null;
-            this.bunifuFlatButton1.Iconimage_right_Selected = null;
-            this.bunifuFlatButton1.Iconimage_Selected = null;
-            this.bunifuFlatButton1.IconMarginLeft = 15;
-            this.bunifuFlatButton1.IconMarginRight = 0;
-            this.bunifuFlatButton1.IconRightVisible = true;
-            this.bunifuFlatButton1.IconRightZoom = 0D;
-            this.bunifuFlatButton1.IconVisible = true;
-            this.bunifuFlatButton1.IconZoom = 100D;
-            this.bunifuFlatButton1.IsTab = false;
-            this.bunifuFlatButton1.Location = new System.Drawing.Point(0, 424);
-            this.bunifuFlatButton1.Name = "bunifuFlatButton1";
-            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.White;
-            this.bunifuFlatButton1.selected = true;
-            this.bunifuFlatButton1.Size = new System.Drawing.Size(240, 42);
-            this.bunifuFlatButton1.TabIndex = 27;
-            this.bunifuFlatButton1.Text = "CAJA";
-            this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuFlatButton1.Textcolor = System.Drawing.Color.White;
-            this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // pbPerfil
-            // 
-            this.pbPerfil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbPerfil.Location = new System.Drawing.Point(10, 52);
-            this.pbPerfil.Name = "pbPerfil";
-            this.pbPerfil.Size = new System.Drawing.Size(60, 75);
-            this.pbPerfil.TabIndex = 26;
-            this.pbPerfil.TabStop = false;
-            // 
-            // btnCaja
-            // 
-            this.btnCaja.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnCaja.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnCaja.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCaja.BorderRadius = 0;
-            this.btnCaja.ButtonText = "CAJA APERTURA";
-            this.btnCaja.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCaja.DisabledColor = System.Drawing.Color.Gray;
-            this.btnCaja.Iconcolor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.btnCaja.Iconimage = global::SistemaFigueri.Properties.Resources.Receipt_48px;
-            this.btnCaja.Iconimage_right = null;
-            this.btnCaja.Iconimage_right_Selected = null;
-            this.btnCaja.Iconimage_Selected = null;
-            this.btnCaja.IconMarginLeft = 15;
-            this.btnCaja.IconMarginRight = 0;
-            this.btnCaja.IconRightVisible = true;
-            this.btnCaja.IconRightZoom = 0D;
-            this.btnCaja.IconVisible = true;
-            this.btnCaja.IconZoom = 100D;
-            this.btnCaja.IsTab = false;
-            this.btnCaja.Location = new System.Drawing.Point(0, 378);
-            this.btnCaja.Name = "btnCaja";
-            this.btnCaja.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnCaja.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnCaja.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnCaja.selected = true;
-            this.btnCaja.Size = new System.Drawing.Size(240, 42);
-            this.btnCaja.TabIndex = 22;
-            this.btnCaja.Text = "CAJA APERTURA";
-            this.btnCaja.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnCaja.Textcolor = System.Drawing.Color.White;
-            this.btnCaja.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCaja.Click += new System.EventHandler(this.btnCaja_Click);
-            // 
-            // btnReportes
-            // 
-            this.btnReportes.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnReportes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnReportes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnReportes.BorderRadius = 0;
-            this.btnReportes.ButtonText = "REPORTES";
-            this.btnReportes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReportes.DisabledColor = System.Drawing.Color.Gray;
-            this.btnReportes.Iconcolor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.btnReportes.Iconimage = global::SistemaFigueri.Properties.Resources.reporte;
-            this.btnReportes.Iconimage_right = null;
-            this.btnReportes.Iconimage_right_Selected = null;
-            this.btnReportes.Iconimage_Selected = null;
-            this.btnReportes.IconMarginLeft = 15;
-            this.btnReportes.IconMarginRight = 0;
-            this.btnReportes.IconRightVisible = true;
-            this.btnReportes.IconRightZoom = 0D;
-            this.btnReportes.IconVisible = true;
-            this.btnReportes.IconZoom = 100D;
-            this.btnReportes.IsTab = false;
-            this.btnReportes.Location = new System.Drawing.Point(0, 468);
-            this.btnReportes.Name = "btnReportes";
-            this.btnReportes.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnReportes.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnReportes.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnReportes.selected = true;
-            this.btnReportes.Size = new System.Drawing.Size(240, 42);
-            this.btnReportes.TabIndex = 21;
-            this.btnReportes.Text = "REPORTES";
-            this.btnReportes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnReportes.Textcolor = System.Drawing.Color.White;
-            this.btnReportes.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
-            // 
-            // btnPromociones
-            // 
-            this.btnPromociones.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnPromociones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnPromociones.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnPromociones.BorderRadius = 0;
-            this.btnPromociones.ButtonText = "PROMOCIONES";
-            this.btnPromociones.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPromociones.DisabledColor = System.Drawing.Color.Gray;
-            this.btnPromociones.Iconcolor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.btnPromociones.Iconimage = global::SistemaFigueri.Properties.Resources.promociones;
-            this.btnPromociones.Iconimage_right = null;
-            this.btnPromociones.Iconimage_right_Selected = null;
-            this.btnPromociones.Iconimage_Selected = null;
-            this.btnPromociones.IconMarginLeft = 15;
-            this.btnPromociones.IconMarginRight = 0;
-            this.btnPromociones.IconRightVisible = true;
-            this.btnPromociones.IconRightZoom = 0D;
-            this.btnPromociones.IconVisible = true;
-            this.btnPromociones.IconZoom = 100D;
-            this.btnPromociones.IsTab = false;
-            this.btnPromociones.Location = new System.Drawing.Point(0, 334);
-            this.btnPromociones.Name = "btnPromociones";
-            this.btnPromociones.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnPromociones.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnPromociones.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnPromociones.selected = true;
-            this.btnPromociones.Size = new System.Drawing.Size(240, 42);
-            this.btnPromociones.TabIndex = 20;
-            this.btnPromociones.Text = "PROMOCIONES";
-            this.btnPromociones.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnPromociones.Textcolor = System.Drawing.Color.White;
-            this.btnPromociones.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPromociones.Click += new System.EventHandler(this.btnPromociones_Click);
-            // 
-            // btnProveedores
-            // 
-            this.btnProveedores.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnProveedores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnProveedores.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnProveedores.BorderRadius = 0;
-            this.btnProveedores.ButtonText = "PROVEEDORES";
-            this.btnProveedores.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnProveedores.DisabledColor = System.Drawing.Color.Gray;
-            this.btnProveedores.Iconcolor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.btnProveedores.Iconimage = global::SistemaFigueri.Properties.Resources.proveedor;
-            this.btnProveedores.Iconimage_right = null;
-            this.btnProveedores.Iconimage_right_Selected = null;
-            this.btnProveedores.Iconimage_Selected = null;
-            this.btnProveedores.IconMarginLeft = 15;
-            this.btnProveedores.IconMarginRight = 0;
-            this.btnProveedores.IconRightVisible = true;
-            this.btnProveedores.IconRightZoom = 0D;
-            this.btnProveedores.IconVisible = true;
-            this.btnProveedores.IconZoom = 100D;
-            this.btnProveedores.IsTab = false;
-            this.btnProveedores.Location = new System.Drawing.Point(0, 289);
-            this.btnProveedores.Name = "btnProveedores";
-            this.btnProveedores.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnProveedores.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnProveedores.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnProveedores.selected = true;
-            this.btnProveedores.Size = new System.Drawing.Size(240, 42);
-            this.btnProveedores.TabIndex = 19;
-            this.btnProveedores.Text = "PROVEEDORES";
-            this.btnProveedores.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnProveedores.Textcolor = System.Drawing.Color.White;
-            this.btnProveedores.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProveedores.Click += new System.EventHandler(this.btnProveedores_Click);
-            // 
-            // btnClientes
-            // 
-            this.btnClientes.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnClientes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnClientes.BorderRadius = 0;
-            this.btnClientes.ButtonText = "CLIENTES";
-            this.btnClientes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClientes.DisabledColor = System.Drawing.Color.Gray;
-            this.btnClientes.Iconcolor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.btnClientes.Iconimage = global::SistemaFigueri.Properties.Resources.clientesprincipal;
-            this.btnClientes.Iconimage_right = null;
-            this.btnClientes.Iconimage_right_Selected = null;
-            this.btnClientes.Iconimage_Selected = null;
-            this.btnClientes.IconMarginLeft = 15;
-            this.btnClientes.IconMarginRight = 0;
-            this.btnClientes.IconRightVisible = true;
-            this.btnClientes.IconRightZoom = 0D;
-            this.btnClientes.IconVisible = true;
-            this.btnClientes.IconZoom = 100D;
-            this.btnClientes.IsTab = false;
-            this.btnClientes.Location = new System.Drawing.Point(0, 243);
-            this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnClientes.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnClientes.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnClientes.selected = true;
-            this.btnClientes.Size = new System.Drawing.Size(240, 42);
-            this.btnClientes.TabIndex = 18;
-            this.btnClientes.Text = "CLIENTES";
-            this.btnClientes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnClientes.Textcolor = System.Drawing.Color.White;
-            this.btnClientes.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
-            // 
-            // btnVentas
-            // 
-            this.btnVentas.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnVentas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnVentas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnVentas.BorderRadius = 0;
-            this.btnVentas.ButtonText = "VENTAS";
-            this.btnVentas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVentas.DisabledColor = System.Drawing.Color.Gray;
-            this.btnVentas.Iconcolor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.btnVentas.Iconimage = global::SistemaFigueri.Properties.Resources.ventas;
-            this.btnVentas.Iconimage_right = null;
-            this.btnVentas.Iconimage_right_Selected = null;
-            this.btnVentas.Iconimage_Selected = null;
-            this.btnVentas.IconMarginLeft = 15;
-            this.btnVentas.IconMarginRight = 0;
-            this.btnVentas.IconRightVisible = true;
-            this.btnVentas.IconRightZoom = 0D;
-            this.btnVentas.IconVisible = true;
-            this.btnVentas.IconZoom = 100D;
-            this.btnVentas.IsTab = false;
-            this.btnVentas.Location = new System.Drawing.Point(0, 197);
-            this.btnVentas.Name = "btnVentas";
-            this.btnVentas.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnVentas.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnVentas.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnVentas.selected = true;
-            this.btnVentas.Size = new System.Drawing.Size(240, 42);
-            this.btnVentas.TabIndex = 17;
-            this.btnVentas.Text = "VENTAS";
-            this.btnVentas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnVentas.Textcolor = System.Drawing.Color.White;
-            this.btnVentas.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVentas.Click += new System.EventHandler(this.btnVentas_Click);
-            // 
-            // btnMenu
-            // 
-            this.btnMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMenu.Image = global::SistemaFigueri.Properties.Resources.menu_round_512;
-            this.btnMenu.Location = new System.Drawing.Point(189, 6);
-            this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(45, 45);
-            this.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnMenu.TabIndex = 12;
-            this.btnMenu.TabStop = false;
-            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
-            // 
-            // btnProductos
-            // 
-            this.btnProductos.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnProductos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnProductos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnProductos.BorderRadius = 0;
-            this.btnProductos.ButtonText = "PRODUCTOS";
-            this.btnProductos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnProductos.DisabledColor = System.Drawing.Color.Maroon;
-            this.btnProductos.Iconcolor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.btnProductos.Iconimage = global::SistemaFigueri.Properties.Resources.Productos;
-            this.btnProductos.Iconimage_right = null;
-            this.btnProductos.Iconimage_right_Selected = null;
-            this.btnProductos.Iconimage_Selected = null;
-            this.btnProductos.IconMarginLeft = 15;
-            this.btnProductos.IconMarginRight = 0;
-            this.btnProductos.IconRightVisible = true;
-            this.btnProductos.IconRightZoom = 0D;
-            this.btnProductos.IconVisible = true;
-            this.btnProductos.IconZoom = 100D;
-            this.btnProductos.IsTab = false;
-            this.btnProductos.Location = new System.Drawing.Point(0, 150);
-            this.btnProductos.Name = "btnProductos";
-            this.btnProductos.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnProductos.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnProductos.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnProductos.selected = true;
-            this.btnProductos.Size = new System.Drawing.Size(240, 42);
-            this.btnProductos.TabIndex = 16;
-            this.btnProductos.Text = "PRODUCTOS";
-            this.btnProductos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnProductos.Textcolor = System.Drawing.Color.White;
-            this.btnProductos.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
             // 
             // pictureBox1
             // 
@@ -587,21 +542,6 @@
             this.pictureBox8.TabStop = false;
             this.pictureBox8.Click += new System.EventHandler(this.pictureBox8_Click);
             // 
-            // btnNormal
-            // 
-            this.btnNormal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNormal.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNormal.FlatAppearance.BorderSize = 0;
-            this.btnNormal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNormal.Image = global::SistemaFigueri.Properties.Resources.Normal;
-            this.btnNormal.Location = new System.Drawing.Point(1216, -3);
-            this.btnNormal.Name = "btnNormal";
-            this.btnNormal.Size = new System.Drawing.Size(43, 43);
-            this.btnNormal.TabIndex = 3;
-            this.btnNormal.UseVisualStyleBackColor = true;
-            this.btnNormal.Visible = false;
-            this.btnNormal.Click += new System.EventHandler(this.btnNormal_Click);
-            // 
             // btnMinimiza
             // 
             this.btnMinimiza.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -609,26 +549,12 @@
             this.btnMinimiza.FlatAppearance.BorderSize = 0;
             this.btnMinimiza.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimiza.Image = global::SistemaFigueri.Properties.Resources.Minimize;
-            this.btnMinimiza.Location = new System.Drawing.Point(1167, -2);
+            this.btnMinimiza.Location = new System.Drawing.Point(1214, 0);
             this.btnMinimiza.Name = "btnMinimiza";
             this.btnMinimiza.Size = new System.Drawing.Size(43, 43);
             this.btnMinimiza.TabIndex = 2;
             this.btnMinimiza.UseVisualStyleBackColor = true;
             this.btnMinimiza.Click += new System.EventHandler(this.btnMinimiza_Click);
-            // 
-            // btnMaximiza
-            // 
-            this.btnMaximiza.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMaximiza.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMaximiza.FlatAppearance.BorderSize = 0;
-            this.btnMaximiza.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaximiza.Image = global::SistemaFigueri.Properties.Resources.maximize3;
-            this.btnMaximiza.Location = new System.Drawing.Point(1216, 0);
-            this.btnMaximiza.Name = "btnMaximiza";
-            this.btnMaximiza.Size = new System.Drawing.Size(43, 43);
-            this.btnMaximiza.TabIndex = 1;
-            this.btnMaximiza.UseVisualStyleBackColor = true;
-            this.btnMaximiza.Click += new System.EventHandler(this.btnMaximiza_Click);
             // 
             // btnCerrar
             // 
@@ -647,6 +573,39 @@
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
+            // tmOcultarMenu
+            // 
+            this.tmOcultarMenu.Tick += new System.EventHandler(this.tmOcultarMenu_Tick);
+            // 
+            // tmMostrarMenu
+            // 
+            this.tmMostrarMenu.Tick += new System.EventHandler(this.tmMostrarMenu_Tick);
+            // 
+            // tmFechaHora
+            // 
+            this.tmFechaHora.Tick += new System.EventHandler(this.tmFechaHora_Tick);
+            // 
+            // bunifuElipse1
+            // 
+            this.bunifuElipse1.ElipseRadius = 15;
+            this.bunifuElipse1.TargetControl = this;
+            // 
+            // panel2
+            // 
+            this.panel2.AutoSize = true;
+            this.panel2.Controls.Add(this.btnPerfiles);
+            this.panel2.Controls.Add(this.btnProductos);
+            this.panel2.Controls.Add(this.btnReportes);
+            this.panel2.Controls.Add(this.btnSector);
+            this.panel2.Controls.Add(this.btnVentas);
+            this.panel2.Controls.Add(this.btnPromociones);
+            this.panel2.Controls.Add(this.btnClientes);
+            this.panel2.Controls.Add(this.btnCaja);
+            this.panel2.Location = new System.Drawing.Point(0, 142);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(243, 433);
+            this.panel2.TabIndex = 27;
+            // 
             // FormMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -664,13 +623,14 @@
             this.panel1ContenedorPrincipal.ResumeLayout(false);
             this.panelMenu.ResumeLayout(false);
             this.panelMenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPerfil)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.BarraTitulo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbPerfil)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -682,9 +642,7 @@
         private System.Windows.Forms.PictureBox btnMenu;
         private System.Windows.Forms.Panel BarraTitulo;
         private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.Button btnNormal;
         private System.Windows.Forms.Button btnMinimiza;
-        private System.Windows.Forms.Button btnMaximiza;
         private System.Windows.Forms.Button btnCerrar;
         private Bunifu.Framework.UI.BunifuFlatButton btnProductos;
         private System.Windows.Forms.Timer tmOcultarMenu;
@@ -693,7 +651,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton btnCaja;
         private Bunifu.Framework.UI.BunifuFlatButton btnReportes;
         private Bunifu.Framework.UI.BunifuFlatButton btnPromociones;
-        private Bunifu.Framework.UI.BunifuFlatButton btnProveedores;
         private Bunifu.Framework.UI.BunifuFlatButton btnClientes;
         private Bunifu.Framework.UI.BunifuFlatButton btnVentas;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -706,7 +663,8 @@
         public System.Windows.Forms.Label label2;
         public System.Windows.Forms.PictureBox pbPerfil;
         public System.Windows.Forms.Label label3;
-        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
-        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton2;
+        private Bunifu.Framework.UI.BunifuFlatButton btnSector;
+        private Bunifu.Framework.UI.BunifuFlatButton btnPerfiles;
+        private System.Windows.Forms.Panel panel2;
     }
 }
