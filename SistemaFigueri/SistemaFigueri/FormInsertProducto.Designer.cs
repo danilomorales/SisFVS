@@ -30,8 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormInsertProducto));
             this.bmcta = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.bminicial = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bmitem = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.cboestado = new System.Windows.Forms.ComboBox();
@@ -54,7 +52,6 @@
             this.bunifuFlatButton16 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnguardarPro = new Bunifu.Framework.UI.BunifuThinButton2();
             this.bunifuThinButton22 = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.bunifuFlatButton15 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton14 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton13 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton12 = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -69,8 +66,6 @@
             this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton3 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.bmvigente = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.bunifuFlatButton17 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.SuspendLayout();
             // 
             // bmcta
@@ -91,28 +86,7 @@
             this.bmcta.Size = new System.Drawing.Size(120, 28);
             this.bmcta.TabIndex = 136;
             this.bmcta.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(791, 412);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(39, 17);
-            this.radioButton2.TabIndex = 131;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "No";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(750, 412);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(35, 17);
-            this.radioButton1.TabIndex = 130;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "SI";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.bmcta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bmcta_KeyPress);
             // 
             // bminicial
             // 
@@ -132,6 +106,7 @@
             this.bminicial.Size = new System.Drawing.Size(129, 28);
             this.bminicial.TabIndex = 129;
             this.bminicial.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bminicial.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bminicial_KeyPress);
             // 
             // bmitem
             // 
@@ -151,6 +126,7 @@
             this.bmitem.Size = new System.Drawing.Size(129, 28);
             this.bmitem.TabIndex = 127;
             this.bmitem.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bmitem.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bmitem_KeyPress);
             // 
             // cboestado
             // 
@@ -185,6 +161,7 @@
             this.bmfactor.Size = new System.Drawing.Size(158, 28);
             this.bmfactor.TabIndex = 124;
             this.bmfactor.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bmfactor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bmfactor_KeyPress);
             // 
             // bmoferta
             // 
@@ -204,6 +181,7 @@
             this.bmoferta.Size = new System.Drawing.Size(129, 28);
             this.bmoferta.TabIndex = 122;
             this.bmoferta.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bmoferta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bmoferta_KeyPress);
             // 
             // bmprecio2
             // 
@@ -223,6 +201,7 @@
             this.bmprecio2.Size = new System.Drawing.Size(129, 28);
             this.bmprecio2.TabIndex = 120;
             this.bmprecio2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bmprecio2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bmprecio2_KeyPress);
             // 
             // bmprecio1
             // 
@@ -242,6 +221,7 @@
             this.bmprecio1.Size = new System.Drawing.Size(129, 28);
             this.bmprecio1.TabIndex = 118;
             this.bmprecio1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bmprecio1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bmprecio1_KeyPress);
             // 
             // bmvalorunitario
             // 
@@ -261,6 +241,7 @@
             this.bmvalorunitario.Size = new System.Drawing.Size(129, 28);
             this.bmvalorunitario.TabIndex = 116;
             this.bmvalorunitario.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bmvalorunitario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bmvalorunitario_KeyPress);
             // 
             // bminimo
             // 
@@ -280,6 +261,7 @@
             this.bminimo.Size = new System.Drawing.Size(129, 28);
             this.bminimo.TabIndex = 114;
             this.bminimo.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bminimo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bminimo_KeyPress);
             // 
             // bmtiempo
             // 
@@ -299,6 +281,7 @@
             this.bmtiempo.Size = new System.Drawing.Size(144, 29);
             this.bmtiempo.TabIndex = 112;
             this.bmtiempo.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bmtiempo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bmtiempo_KeyPress);
             // 
             // cbomedida
             // 
@@ -342,6 +325,7 @@
             this.bmdescripcion.Size = new System.Drawing.Size(294, 29);
             this.bmdescripcion.TabIndex = 108;
             this.bmdescripcion.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bmdescripcion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bmdescripcion_KeyPress);
             // 
             // bmstock
             // 
@@ -361,6 +345,7 @@
             this.bmstock.Size = new System.Drawing.Size(129, 29);
             this.bmstock.TabIndex = 106;
             this.bmstock.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bmstock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bmstock_KeyPress);
             // 
             // bmaximo
             // 
@@ -380,6 +365,7 @@
             this.bmaximo.Size = new System.Drawing.Size(129, 28);
             this.bmaximo.TabIndex = 104;
             this.bmaximo.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bmaximo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bmaximo_KeyPress);
             // 
             // bmnota
             // 
@@ -396,9 +382,10 @@
             this.bmnota.Location = new System.Drawing.Point(133, 365);
             this.bmnota.Margin = new System.Windows.Forms.Padding(4);
             this.bmnota.Name = "bmnota";
-            this.bmnota.Size = new System.Drawing.Size(491, 29);
+            this.bmnota.Size = new System.Drawing.Size(631, 29);
             this.bmnota.TabIndex = 102;
             this.bmnota.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bmnota.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bmnota_KeyPress);
             // 
             // bmnombre
             // 
@@ -418,6 +405,7 @@
             this.bmnombre.Size = new System.Drawing.Size(294, 29);
             this.bmnombre.TabIndex = 100;
             this.bmnombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bmnombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bmnombre_KeyPress);
             // 
             // panel2
             // 
@@ -522,42 +510,6 @@
             this.bunifuThinButton22.TabIndex = 133;
             this.bunifuThinButton22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuThinButton22.Click += new System.EventHandler(this.bunifuThinButton22_Click);
-            // 
-            // bunifuFlatButton15
-            // 
-            this.bunifuFlatButton15.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFlatButton15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFlatButton15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.bunifuFlatButton15.BorderRadius = 0;
-            this.bunifuFlatButton15.ButtonText = "Producto Vigente";
-            this.bunifuFlatButton15.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.bunifuFlatButton15.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuFlatButton15.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton15.Iconimage = null;
-            this.bunifuFlatButton15.Iconimage_right = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton15.Iconimage_right")));
-            this.bunifuFlatButton15.Iconimage_right_Selected = null;
-            this.bunifuFlatButton15.Iconimage_Selected = null;
-            this.bunifuFlatButton15.IconMarginLeft = 0;
-            this.bunifuFlatButton15.IconMarginRight = 0;
-            this.bunifuFlatButton15.IconRightVisible = true;
-            this.bunifuFlatButton15.IconRightZoom = 0D;
-            this.bunifuFlatButton15.IconVisible = true;
-            this.bunifuFlatButton15.IconZoom = 40D;
-            this.bunifuFlatButton15.IsTab = false;
-            this.bunifuFlatButton15.Location = new System.Drawing.Point(704, 366);
-            this.bunifuFlatButton15.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.bunifuFlatButton15.Name = "bunifuFlatButton15";
-            this.bunifuFlatButton15.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFlatButton15.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.bunifuFlatButton15.OnHoverTextColor = System.Drawing.Color.White;
-            this.bunifuFlatButton15.selected = false;
-            this.bunifuFlatButton15.Size = new System.Drawing.Size(158, 29);
-            this.bunifuFlatButton15.TabIndex = 132;
-            this.bunifuFlatButton15.Text = "Producto Vigente";
-            this.bunifuFlatButton15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuFlatButton15.Textcolor = System.Drawing.Color.White;
-            this.bunifuFlatButton15.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // bunifuFlatButton14
             // 
@@ -1063,76 +1015,16 @@
             this.bunifuFlatButton3.Textcolor = System.Drawing.Color.White;
             this.bunifuFlatButton3.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
-            // bmvigente
-            // 
-            this.bmvigente.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bmvigente.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.bmvigente.ForeColor = System.Drawing.Color.White;
-            this.bmvigente.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.bmvigente.HintText = "vigente";
-            this.bmvigente.isPassword = false;
-            this.bmvigente.LineFocusedColor = System.Drawing.Color.Blue;
-            this.bmvigente.LineIdleColor = System.Drawing.Color.SeaGreen;
-            this.bmvigente.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.bmvigente.LineThickness = 5;
-            this.bmvigente.Location = new System.Drawing.Point(962, 367);
-            this.bmvigente.Margin = new System.Windows.Forms.Padding(4);
-            this.bmvigente.Name = "bmvigente";
-            this.bmvigente.Size = new System.Drawing.Size(120, 28);
-            this.bmvigente.TabIndex = 138;
-            this.bmvigente.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // bunifuFlatButton17
-            // 
-            this.bunifuFlatButton17.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFlatButton17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFlatButton17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.bunifuFlatButton17.BorderRadius = 0;
-            this.bunifuFlatButton17.ButtonText = "Vigente:";
-            this.bunifuFlatButton17.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.bunifuFlatButton17.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuFlatButton17.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton17.Iconimage = null;
-            this.bunifuFlatButton17.Iconimage_right = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton17.Iconimage_right")));
-            this.bunifuFlatButton17.Iconimage_right_Selected = null;
-            this.bunifuFlatButton17.Iconimage_Selected = null;
-            this.bunifuFlatButton17.IconMarginLeft = 0;
-            this.bunifuFlatButton17.IconMarginRight = 0;
-            this.bunifuFlatButton17.IconRightVisible = true;
-            this.bunifuFlatButton17.IconRightZoom = 0D;
-            this.bunifuFlatButton17.IconVisible = true;
-            this.bunifuFlatButton17.IconZoom = 40D;
-            this.bunifuFlatButton17.IsTab = false;
-            this.bunifuFlatButton17.Location = new System.Drawing.Point(876, 366);
-            this.bunifuFlatButton17.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.bunifuFlatButton17.Name = "bunifuFlatButton17";
-            this.bunifuFlatButton17.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFlatButton17.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.bunifuFlatButton17.OnHoverTextColor = System.Drawing.Color.White;
-            this.bunifuFlatButton17.selected = false;
-            this.bunifuFlatButton17.Size = new System.Drawing.Size(87, 29);
-            this.bunifuFlatButton17.TabIndex = 137;
-            this.bunifuFlatButton17.Text = "Vigente:";
-            this.bunifuFlatButton17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuFlatButton17.Textcolor = System.Drawing.Color.White;
-            this.bunifuFlatButton17.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
             // FormInsertProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.ClientSize = new System.Drawing.Size(1095, 571);
-            this.Controls.Add(this.bmvigente);
-            this.Controls.Add(this.bunifuFlatButton17);
             this.Controls.Add(this.bmcta);
             this.Controls.Add(this.bunifuFlatButton16);
             this.Controls.Add(this.btnguardarPro);
             this.Controls.Add(this.bunifuThinButton22);
-            this.Controls.Add(this.bunifuFlatButton15);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.bminicial);
             this.Controls.Add(this.bunifuFlatButton14);
             this.Controls.Add(this.bmitem);
@@ -1171,7 +1063,6 @@
             this.Text = "FormInsertProducto";
             this.Load += new System.EventHandler(this.FormInsertProducto_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -1181,9 +1072,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton16;
         private Bunifu.Framework.UI.BunifuThinButton2 btnguardarPro;
         private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton22;
-        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton15;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
         private Bunifu.Framework.UI.BunifuMaterialTextbox bminicial;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton14;
         private Bunifu.Framework.UI.BunifuMaterialTextbox bmitem;
@@ -1215,8 +1103,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox bmvigente;
-        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton17;
         public Bunifu.Framework.UI.BunifuMaterialTextbox bmaximo;
         public Bunifu.Framework.UI.BunifuMaterialTextbox bmnombre;
     }
