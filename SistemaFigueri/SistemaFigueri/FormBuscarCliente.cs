@@ -46,11 +46,20 @@ namespace SistemaFigueri
         {
             dataListado.DataSource = cli.MostarClientes();
         }
+        private void BuscaApellido()
+        {
+            //this.dataListado.DataSource = CNCliente.BuscarApellidos(this.txtBuscar.Text);
+            //this.OcultarColumnas();
+            //lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
+        }
 
         private void tbFiltra_KeyUp(object sender, KeyEventArgs e)
         {
+            if(tbFiltra.Text.Equals("Apellidos"))
+            {
+                this
+            }
 
-     
         }
     }
 }
