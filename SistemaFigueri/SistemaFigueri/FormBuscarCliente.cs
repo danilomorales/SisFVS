@@ -57,7 +57,7 @@ namespace SistemaFigueri
         {
             if(tbFiltra.Text.Equals("Apellidos"))
             {
-                this
+                
             }
 
         }
