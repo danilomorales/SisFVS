@@ -67,10 +67,10 @@ namespace CapaNegocio
             return perfil;
         }
 
-        public int insertarUsuario(String nombres, String paterno, String materno, String dni, String direccion, String user, String pass, int idrol, String url)
+        public int insertarUsuario(String nombres, String paterno, String materno, String dni, String direccion, String user, String pass, String url)
         {
-            Console.WriteLine("Llegando .."+nombres+" "+ paterno + " " +  materno + " " + dni + " " + direccion +" " + user + " " + pass + " " + idrol + " " + url);
-            return objDato.InsertarUsuario(nombres, paterno, materno, dni, direccion, user, pass, idrol, url);
+            Console.WriteLine("Llegando .."+nombres+" "+ paterno + " " +  materno + " " + dni + " " + direccion +" " + user + " " + pass + " "  + " " + url);
+            return objDato.InsertarUsuario(nombres, paterno, materno, dni, direccion, user, pass, url);
         }
 
 

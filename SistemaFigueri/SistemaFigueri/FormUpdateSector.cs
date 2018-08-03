@@ -18,7 +18,7 @@ namespace SistemaFigueri
             InitializeComponent();
         }
 
-        /*CNSector cnsec = new CNSector();
+        CNSector cnsec = new CNSector();
         public string idSector;
         private void bunifuThinButton21_Click(object sender, EventArgs e)
         {
@@ -73,6 +73,6 @@ namespace SistemaFigueri
         private void bmedinota_KeyPress(object sender, KeyPressEventArgs e)
         {
             SoloLetras(e);
-        }*/
+        }
     }
 }

@@ -22,7 +22,7 @@ namespace SistemaFigueri
             MaterialSkin.MaterialSkinManager skinManager = MaterialSkin.MaterialSkinManager.Instance;
             skinManager.AddFormToManage(this);
             skinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.DARK;
-            skinManager.ColorScheme = new MaterialSkin.ColorScheme(MaterialSkin.Primary.Green600, MaterialSkin.Primary.BlueGrey900, MaterialSkin.Primary.Blue500, MaterialSkin.Accent.Orange700, MaterialSkin.TextShade.WHITE);
+            skinManager.ColorScheme = new MaterialSkin.ColorScheme(MaterialSkin.Primary.Blue600, MaterialSkin.Primary.BlueGrey900, MaterialSkin.Primary.Blue500, MaterialSkin.Accent.Orange700, MaterialSkin.TextShade.WHITE);
         }
 
         private void btnfoto_Click(object sender, EventArgs e)
@@ -44,12 +44,12 @@ namespace SistemaFigueri
 
         private void FormNuevoPerfil_Load(object sender, EventArgs e)
         {
-            DataTable tb = new DataTable();
+            /*DataTable tb = new DataTable();
             SqlDataReader adapter = objUsuario.cargarCombo();
             tb.Load(adapter);
             cboroles.DisplayMember = "nomRol";
             cboroles.ValueMember = "IdRol";
-            cboroles.DataSource = tb;
+            cboroles.DataSource = tb;*/
         }
 
         private void insertarUsuario()
@@ -65,8 +65,7 @@ namespace SistemaFigueri
                 txtdni.Text,
                 txtdireccion.Text,
                 txtusuario.Text,
-                txtclave.Text,
-                int.Parse(cboroles.SelectedValue.ToString()),
+                txtclave.Text,              
                 imgUrl) == 1)
             {
                 MessageBox.Show("Se inserto correctamente");
