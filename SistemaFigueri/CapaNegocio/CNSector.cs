@@ -17,7 +17,7 @@ namespace CapaNegocio
         {
             DataTable table = new DataTable();
             table = sec.listarSector();
-            return table;
+            return table;  
         }
 
         //CREATE SECTOR
