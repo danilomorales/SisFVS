@@ -20,7 +20,7 @@ namespace CapaNegocio
         private String _Pass;
 
         //Get y Set
-
+           
         public String Usuario
         {
             set

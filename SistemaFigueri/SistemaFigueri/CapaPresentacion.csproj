@@ -59,6 +59,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Busqueda_Cliente.cs" />
+    <Compile Include="FormBuscarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBuscarCliente.Designer.cs">
+      <DependentUpon>FormBuscarCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormBuscarProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,12 +100,6 @@
     </Compile>
     <Compile Include="FormNuevoPerfil.Designer.cs">
       <DependentUpon>FormNuevoPerfil.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormNuevoUsuarioRol.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormNuevoUsuarioRol.Designer.cs">
-      <DependentUpon>FormNuevoUsuarioRol.cs</DependentUpon>
     </Compile>
     <Compile Include="FormPerfiles.cs">
       <SubType>Form</SubType>
@@ -184,6 +184,9 @@
     <EmbeddedResource Include="FormAperturaCaja.resx">
       <DependentUpon>FormAperturaCaja.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormBuscarCliente.resx">
+      <DependentUpon>FormBuscarCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCliente.resx">
       <DependentUpon>FormCliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -204,9 +207,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormNuevoPerfil.resx">
       <DependentUpon>FormNuevoPerfil.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormNuevoUsuarioRol.resx">
-      <DependentUpon>FormNuevoUsuarioRol.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPerfiles.resx">
       <DependentUpon>FormPerfiles.cs</DependentUpon>
@@ -394,22 +394,10 @@
     <None Include="Resources\descuento.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\imageE.png" />
+    <None Include="Resources\trash.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\usus.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\role.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\privi.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\user_group.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\rol2.png" />
+    <None Include="Resources\borra.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
