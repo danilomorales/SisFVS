@@ -17,7 +17,7 @@ namespace SistemaFigueri
         {
             InitializeComponent();
         }
-        /*CNSector cnsec = new CNSector();
+        CNSector cnsec = new CNSector();
         FormSector forsec = new FormSector();
         private void bmCancelarSec_Click(object sender, EventArgs e)
         {
@@ -78,6 +78,6 @@ namespace SistemaFigueri
         private void bmnota_KeyPress(object sender, KeyPressEventArgs e)
         {
             SoloLetras(e);
-        }*/
+        }
     }
 }

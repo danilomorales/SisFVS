@@ -11,6 +11,7 @@ using System.Runtime.InteropServices;
 using CapaNegocio;
 using System.Data.SqlClient;
 using Bunifu.Framework.UI;
+using System.IO;
 
 namespace SistemaFigueri
 {
@@ -22,6 +23,7 @@ namespace SistemaFigueri
         public static string rol;
         public static string privilegio;
         public static List<String>liston;
+        public static byte[] picture;
         public FormLogin()
         {
             InitializeComponent();
@@ -66,16 +68,23 @@ namespace SistemaFigueri
                         while (Perfil.Read())
                         {
                             nomUsu = Perfil["Nombres"].ToString();
-                            matUsu = Perfil["ApellidoPaterno"].ToString();
-                            patUsu = Perfil["ApellidoMaterno"].ToString();
+                            patUsu = Perfil["ApellidoPaterno"].ToString();
+                            matUsu = Perfil["ApellidoMaterno"].ToString();
                             rol = Perfil["nomRol"].ToString();
+                            if (Perfil["foto"].ToString() != "")
+                            {
+                                picture = (byte[])(Perfil["foto"]);
+                                MemoryStream ms = new MemoryStream(picture);
+                                objPPrincipal.pbPerfil.Image = Image.FromStream(ms);
+                            }
+                            
                             objPPrincipal.label1.Text = nomUsu;
                             objPPrincipal.label2.Text = patUsu + " " + matUsu;
                             objPPrincipal.label3.Text = rol;
                             
                             liston.Add(Perfil["descripcion"].ToString());
                         }
-                        Console.WriteLine(liston[0].ToString()+ " .. "+ liston[1].ToString());
+                        //Console.WriteLine(liston[0].ToString()+ " .. "+ liston[1].ToString());
                         Hide();
                         Loguear.Close();
                         /*Label label = new Label();
@@ -89,7 +98,7 @@ namespace SistemaFigueri
                         objPPrincipal.Show();
                     }
                     catch(Exception e){
-                        MessageBox.Show("Error en el login"+e);
+                        MessageBox.Show("Error en el loginForm"+e);
                     }
 
 

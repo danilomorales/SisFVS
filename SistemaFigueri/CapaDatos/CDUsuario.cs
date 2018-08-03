@@ -50,13 +50,13 @@ namespace CapaDatos
 
         public SqlDataAdapter cargarPerfiles()
         {
-            String sql = "SELECT usu.IdUsuario,per.IdPersona,rol.IdRol,usu.Login,per.Nombres,per.ApellidoPaterno,per.ApellidoMaterno,per.DNI,per.Direccion,rol.nomRol,usu.foto " +
-                " FROM Caja.Usuario usu LEFT JOIN Caja.Persona per ON usu.IdPersona =per.IdPersona LEFT JOIN dbo.CajaRol rol on usu.idRol=rol.idRol;";
+            String sql = "SELECT usu.IdUsuario,per.IdPersona,usu.Login,per.Nombres,per.ApellidoPaterno,per.ApellidoMaterno,per.DNI,per.Direccion,usu.foto " +
+                " FROM Caja.Usuario usu LEFT JOIN Caja.Persona per ON usu.IdPersona =per.IdPersona ;";
             adapter = new SqlDataAdapter(sql, Conexion.AbrirConexion());
             return adapter;
         }
 
-        public int InsertarUsuario(String nombres, String paterno, String materno, String dni, String direccion, String user, String pass, int idrol,String url)
+        public int InsertarUsuario(String nombres, String paterno, String materno, String dni, String direccion, String user, String pass,String url)
         {
             int count = 0;
             try
@@ -71,7 +71,6 @@ namespace CapaDatos
                 comando.Parameters.AddWithValue("@vDireccion", direccion);
                 comando.Parameters.AddWithValue("@vUser", user);
                 comando.Parameters.AddWithValue("@vPass", pass);
-                comando.Parameters.AddWithValue("@vIdRol", idrol);
                 byte[] img = null;
                 FileStream fs = new FileStream(url, FileMode.Open, FileAccess.Read);
                 BinaryReader br = new BinaryReader(fs);

@@ -19,7 +19,7 @@ namespace SistemaFigueri
         {
             InitializeComponent();
         }
-        /*CNSector cnsec = new CNSector();
+        CNSector cnsec = new CNSector();
         CDSector cdsec = new CDSector();
         private void btneliminar_Click(object sender, EventArgs e)
         {
@@ -94,6 +94,6 @@ namespace SistemaFigueri
             da.Fill(dt);
             dgvSector.DataSource = dt;
             Conexion.Close();
-        }*/
+        }
     }
 }
