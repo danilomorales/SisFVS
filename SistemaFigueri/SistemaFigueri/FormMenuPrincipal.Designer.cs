@@ -160,7 +160,7 @@
             this.btnSector.DisabledColor = System.Drawing.Color.Gray;
             this.btnSector.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSector.Iconcolor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.btnSector.Iconimage = global::SistemaFigueri.Properties.Resources.sector;
+            //this.btnSector.Iconimage = global::SistemaFigueri.Properties.Resources.sector;
             this.btnSector.Iconimage_right = null;
             this.btnSector.Iconimage_right_Selected = null;
             this.btnSector.Iconimage_Selected = null;

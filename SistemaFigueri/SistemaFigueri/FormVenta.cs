@@ -17,8 +17,40 @@ namespace SistemaFigueri
 {
     public partial class FormVenta : Form
     {
-        CNBusqueda objCN = new CNBusqueda();
+        public int IdUsuario;
+        private DataTable dtDetalle;
+        private decimal totalPagado = 0;
+        private static FormVenta _instancia;
+
+
+
+        public static FormVenta GetInstancia()
+        {
+            if (_instancia ==null)
+            {
+                _instancia = new FormVenta();
+            }
+            else
+            {
+                return _instancia;
+            }
+            return _instancia;
+        }
+        public void SetCliente(String nombre)
+        {
+            this.tbClienteNombre.Text = nombre;
+        }
+        public void SetProducto (string alias,string descripcion, decimal precioventa, int stock, DateTime fecha_Vencimiento)
+        {
+            this.tbAlias.Text = alias;
+            this.tbDesProducto.Text = descripcion;
+            this.tbPrecio.Text = Convert.ToString(precioventa);
+            this.tbStock.Text = Convert.ToString(stock);
+            this.dtFechaVence.Value = fecha_Vencimiento;
+
+        }
         public FormVenta()
+
 
         {
             InitializeComponent();
@@ -82,7 +114,7 @@ namespace SistemaFigueri
             var cards = new Bunifu.Framework.UI.BunifuCards();
             MostrarClientes();
             //bu.autoCompletar(tbBuscaClienteRece);
-           
+
             var aux = new Busqueda_Cliente();
             aux.Lista(dgvProductos);
 
@@ -98,6 +130,7 @@ namespace SistemaFigueri
         public void MostrarClientes()
         {
             //ListaCliente.DataSource = objCN.MostrarResultadoCliente();
+            
 
         }
 
@@ -133,22 +166,12 @@ namespace SistemaFigueri
 
         private void tbBuscaClienteRece_Enter(object sender, EventArgs e)
         {
-            if (tbBuscaClienteRece.Text == "Buscar Cliente Receptor")
-            {
-                tbBuscaClienteRece.Text = "";
-                tbBuscaClienteRece.ForeColor = Color.White;
-                
-            }
+      
         }
 
         private void tbBuscaClienteRece_Leave(object sender, EventArgs e)
         {
-            if (tbBuscaClienteRece.Text == "")
-            {
-                tbBuscaClienteRece.Text = "Buscar Cliente Receptor";
-                tbBuscaClienteRece.ForeColor = Color.FromArgb (236, 240, 241); 
-
-            }
+          
 
         }
 
@@ -160,28 +183,7 @@ namespace SistemaFigueri
 
         private void tbBuscaClienteRece_TextChanged(object sender, EventArgs e)
         {
-            SqlConnection cnn = new SqlConnection("Data Source=192.168.21.5;Initial Catalog=DBFIGUE2;User ID=sa;Password=123");
-            String cadcone = "select * from CLIENTE where NombreEmpresa='" + tbBuscaClienteRece.Text + "'";
-            SqlCommand cm = new SqlCommand(cadcone, cnn);
-            cnn.Open();
-
-            SqlDataReader leer = cm.ExecuteReader();
-            if(leer.Read()==true)
-            {
-                tlClienteNombres.Text = leer["NombreEmpresa"].ToString();
-                tlRuc.Text = leer["RUC"].ToString();
-                tlDocumento.Text = leer["NroDocumento"].ToString();
-
-            }
-            else
-            {
-                
-                tlClienteNombres.Text = " ";
-                tlRuc.Text = " ";
-                tlDocumento.Text = "";
-                
-            }
-            cnn.Close();
+           
         }
 
         private void tbBuscaProducto_TextAlignChanged(object sender, EventArgs e)
@@ -257,29 +259,16 @@ namespace SistemaFigueri
             formBuscarPro.ShowDialog();
         }
 
+        private void FormVenta_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            _instancia = null;
+        }
 
-        //private void tbBuscaClienteReceptor_Enter_1(object sender, EventArgs e)
-        //{
-        //    if (tbBuscaClienteReceptor.Text == "BUSCAR CLIENTE RECEPTOR")
-        //    {
-        //        tbBuscaClienteReceptor.Text = "";
-        //        tbBuscaClienteReceptor.ForeColor = Color.WhiteSmoke;
-        //        tbBuscaClienteReceptor.UseSystemPasswordChar = true;
-        //    }
-        //}
-
-        //private void tbBuscaClienteReceptor_Leave_1(object sender, EventArgs e)
-        //{
-
-        //    if (tbBuscaClienteReceptor.Text == "")
-        //    {
-        //        tbBuscaClienteReceptor.Text = "BUSCAR CLIENTE RECEPTOR";
-        //        tbBuscaClienteReceptor.ForeColor = Color.DimGray;
-        //        tbBuscaClienteReceptor.UseSystemPasswordChar = false;
-        //    }
-
-
-
+        private void ListaCLiente_Click(object sender, EventArgs e)
+        {
+            FormBuscarCliente formMP = new FormBuscarCliente();
+            formMP.ShowDialog();
+        }
     }
 
 }

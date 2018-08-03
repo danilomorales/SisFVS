@@ -79,7 +79,7 @@
             this.bmedinota.Size = new System.Drawing.Size(294, 29);
             this.bmedinota.TabIndex = 144;
             this.bmedinota.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.bmedinota.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bmedinota_KeyPress);
+            //this.bmedinota.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bmedinota_KeyPress);
             // 
             // panel1
             // 
@@ -107,7 +107,7 @@
             this.bmedidescripcion.Size = new System.Drawing.Size(294, 29);
             this.bmedidescripcion.TabIndex = 140;
             this.bmedidescripcion.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.bmedidescripcion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bmedidescripcion_KeyPress);
+            //this.bmedidescripcion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bmedidescripcion_KeyPress);
             // 
             // doubleBitmapControl1
             // 
@@ -214,7 +214,7 @@
             this.bunifuThinButton21.Size = new System.Drawing.Size(181, 41);
             this.bunifuThinButton21.TabIndex = 148;
             this.bunifuThinButton21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuThinButton21.Click += new System.EventHandler(this.bunifuThinButton21_Click);
+            //this.bunifuThinButton21.Click += new System.EventHandler(this.bunifuThinButton21_Click);
             // 
             // bunifuThinButton22
             // 
@@ -240,7 +240,7 @@
             this.bunifuThinButton22.Size = new System.Drawing.Size(181, 41);
             this.bunifuThinButton22.TabIndex = 149;
             this.bunifuThinButton22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuThinButton22.Click += new System.EventHandler(this.bunifuThinButton22_Click);
+            //this.bunifuThinButton22.Click += new System.EventHandler(this.bunifuThinButton22_Click);
             // 
             // FormUpdateSector
             // 

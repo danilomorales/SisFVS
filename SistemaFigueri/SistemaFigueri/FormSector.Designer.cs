@@ -131,7 +131,7 @@
             this.bmBuscar.Size = new System.Drawing.Size(512, 44);
             this.bmBuscar.TabIndex = 57;
             this.bmBuscar.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.bmBuscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.bmBuscar_KeyUp_1);
+            //this.bmBuscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.bmBuscar_KeyUp_1);
             // 
             // bunifuCards3
             // 
@@ -166,7 +166,7 @@
             this.btneliminar.Name = "btneliminar";
             this.btneliminar.Size = new System.Drawing.Size(80, 84);
             this.btneliminar.TabIndex = 37;
-            this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click);
+            //this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click);
             // 
             // bmEditar
             // 
@@ -186,7 +186,7 @@
             this.bmEditar.Name = "bmEditar";
             this.bmEditar.Size = new System.Drawing.Size(80, 84);
             this.bmEditar.TabIndex = 36;
-            this.bmEditar.Click += new System.EventHandler(this.bmEditar_Click);
+            //this.bmEditar.Click += new System.EventHandler(this.bmEditar_Click);
             // 
             // btnNuevoSector
             // 
@@ -206,7 +206,7 @@
             this.btnNuevoSector.Name = "btnNuevoSector";
             this.btnNuevoSector.Size = new System.Drawing.Size(80, 84);
             this.btnNuevoSector.TabIndex = 33;
-            this.btnNuevoSector.Click += new System.EventHandler(this.btnNuevoSector_Click);
+            //this.btnNuevoSector.Click += new System.EventHandler(this.btnNuevoSector_Click);
             // 
             // bunifuImageButton1
             // 
@@ -235,7 +235,7 @@
             this.Name = "FormSector";
             this.RightToLeftLayout = true;
             this.Text = "FormSector";
-            this.Load += new System.EventHandler(this.FormSector_Load);
+            //this.Load += new System.EventHandler(this.FormSector_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSector)).EndInit();
             this.bunifuCards1.ResumeLayout(false);
             this.bunifuCards2.ResumeLayout(false);

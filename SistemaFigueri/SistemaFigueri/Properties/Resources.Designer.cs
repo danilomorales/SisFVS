@@ -83,6 +83,16 @@ namespace SistemaFigueri.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap borra {
+            get {
+                object obj = ResourceManager.GetObject("borra", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap busca {
             get {
                 object obj = ResourceManager.GetObject("busca", resourceCulture);
@@ -386,6 +396,16 @@ namespace SistemaFigueri.Properties {
         internal static System.Drawing.Bitmap resta {
             get {
                 object obj = ResourceManager.GetObject("resta", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sector {
+            get {
+                object obj = ResourceManager.GetObject("sector", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
