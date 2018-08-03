@@ -24,7 +24,7 @@ namespace CapaNegocio
         public void InsertSector(String descripcion, String nota)
         {
             Console.WriteLine("Sera pues ..." + descripcion + " " + nota);
-           sec.InsertarSector( nota,descripcion);
+            sec.InsertarSector(nota, descripcion);
 
         }
 
@@ -32,7 +32,7 @@ namespace CapaNegocio
         public void UpdateSector(String idSector, String descripcion, String nota)
         {
             Console.WriteLine("Sera pues ..." + idSector + " " + descripcion + " " + nota);
-            sec.EditarSector(idSector, descripcion,nota);
+            sec.EditarSector(idSector, descripcion, nota);
         }
 
         //DELETE SECTOR
