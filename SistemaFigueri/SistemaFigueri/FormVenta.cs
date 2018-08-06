@@ -36,13 +36,13 @@ namespace SistemaFigueri
             }
             return _instancia;
         }
-        public void SetCliente(String nombre)
+        public void SetCliente(String Nombres)
         {
-            this.tbClienteNombre.Text = nombre;
+            this.tbClienteNombre.Text = Nombres;
         }
-        public void SetProducto (string alias,string descripcion, decimal precioventa, int stock, DateTime fecha_Vencimiento)
+        public void SetProducto (string Nombre, string descripcion, decimal precioventa, int stock, DateTime fecha_Vencimiento)
         {
-            this.tbAlias.Text = alias;
+            this.tbAlias.Text = Nombre;
             this.tbDesProducto.Text = descripcion;
             this.tbPrecio.Text = Convert.ToString(precioventa);
             this.tbStock.Text = Convert.ToString(stock);

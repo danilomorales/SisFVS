@@ -51,6 +51,7 @@
     <Compile Include="CDUsuario.cs" />
     <Compile Include="CDVenta.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="Conexion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
