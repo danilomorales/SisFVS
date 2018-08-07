@@ -64,7 +64,7 @@ namespace CapaDatos
                 SqlCommand SqlCmd = new SqlCommand();
                 SqlCmd.Connection = sqlCo;
                 SqlCmd.Transaction = SqlTra;
-                SqlCmd.CommandText = "SP_InsertaDetalle_Venta";
+                SqlCmd.CommandText = "Caja.SP_InsertaDetalle_Venta";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
 

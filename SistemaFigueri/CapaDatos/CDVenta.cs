@@ -11,8 +11,6 @@ namespace CapaDatos
     public class CDVenta
     {
 
-        private CDConexion conexion = new CDConexion();
-
         private int _IdVenta;
         private int _IdCliente;
         private int _IdUsuario;
@@ -63,13 +61,12 @@ namespace CapaDatos
             SqlConnection sqlCon = new SqlConnection();
             try
             {
-                
-                sqlCon = conexion.AbrirConexion();
-                sqlCon.Open();
 
+                sqlCon.ConnectionString = Conexion.Cn;
+                sqlCon.Open();
                 SqlCommand SqlCmd = new SqlCommand();
                 SqlCmd.Connection = sqlCon;
-                SqlCmd.CommandText = "SP_DisminuyeStock";
+                SqlCmd.CommandText = "Caja.SP_DisminuyeStock";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
                 SqlParameter ParIdProducto = new SqlParameter();
@@ -83,8 +80,7 @@ namespace CapaDatos
                 Parcantidad.SqlDbType = SqlDbType.Int;
                 Parcantidad.Value = cantidad;
                 SqlCmd.Parameters.Add(Parcantidad);
-
-
+                
 
                 // comando
                 rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "No Se actualizó estock";
@@ -96,7 +92,7 @@ namespace CapaDatos
             }
             return rpta;
         }
-
+        //
         public string Insertar(CDVenta Venta, List<CDDetalleVenta> Detalle)
         {
             string rpta = "";
@@ -104,7 +100,7 @@ namespace CapaDatos
             try
             {
                 //Código
-                SqlCon = conexion.AbrirConexion();
+                SqlCon.ConnectionString = Conexion.Cn;
                 SqlCon.Open();
                 //trns 
                 SqlTransaction SqlTra = SqlCon.BeginTransaction();
@@ -112,7 +108,7 @@ namespace CapaDatos
                 SqlCommand SqlCmd = new SqlCommand();
                 SqlCmd.Connection = SqlCon;
                 SqlCmd.Transaction = SqlTra;
-                SqlCmd.CommandText = "SP_InsertaVenta";
+                SqlCmd.CommandText = "Caja.SP_InsertaVenta";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
                 //Par
@@ -236,7 +232,7 @@ namespace CapaDatos
             return rpta;
 
         }
-
+        //
         public string Eliminar(CDVenta Venta)
         {
             string rpta = "";
@@ -244,13 +240,13 @@ namespace CapaDatos
             try
             {
                 //Código
-                SqlCon = conexion.AbrirConexion();
+                SqlCon.ConnectionString = Conexion.Cn;
                 SqlCon.Open();
 
                 //Esaa
                 SqlCommand SqlCmd = new SqlCommand();
                 SqlCmd.Connection = SqlCon;
-                SqlCmd.CommandText = "SPEliminarVenta";
+                SqlCmd.CommandText = "Caja.SPEliminarVenta";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
                 SqlParameter ParIdventa = new SqlParameter();
@@ -273,48 +269,48 @@ namespace CapaDatos
             }
             return rpta;
         }
-        //Disminuir Stock
-        public string DisminuirStock(int iddetalle_ingreso, int cantidad)
-        {
-            string rpta = "";
-            SqlConnection SqlCon = new SqlConnection();
-            try
-            {
-                //Código
-                SqlCon = conexion.AbrirConexion();
-                SqlCon.Open();
-                //Establecer el Comando
-                SqlCommand SqlCmd = new SqlCommand();
-                SqlCmd.Connection = SqlCon;
-                SqlCmd.CommandText = "SP_DisminuyeStock";
-                SqlCmd.CommandType = CommandType.StoredProcedure;
+        ////Disminuir Stock
+        //public string DisminuirStock(int iddetalle_ingreso, int cantidad)
+        //{
+        //    string rpta = "";
+        //    SqlConnection SqlCon = new SqlConnection();
+        //    try
+        //    {
+        //        //Código
+        //        SqlCon.ConnectionString = Conexion.Cn;
+        //        SqlCon.Open();
+        //        //Establecer el Comando
+        //        SqlCommand SqlCmd = new SqlCommand();
+        //        SqlCmd.Connection = SqlCon;
+        //        SqlCmd.CommandText = "SP_DisminuyeStock";
+        //        SqlCmd.CommandType = CommandType.StoredProcedure;
 
-                SqlParameter ParIdProducto = new SqlParameter();
-                ParIdProducto.ParameterName = "@IdProducto";
-                ParIdProducto.SqlDbType = SqlDbType.Int;
-                ParIdProducto.Value = iddetalle_ingreso;
-                SqlCmd.Parameters.Add(ParIdProducto);
+        //        SqlParameter ParIdProducto = new SqlParameter();
+        //        ParIdProducto.ParameterName = "@IdProducto";
+        //        ParIdProducto.SqlDbType = SqlDbType.Int;
+        //        ParIdProducto.Value = iddetalle_ingreso;
+        //        SqlCmd.Parameters.Add(ParIdProducto);
 
-                SqlParameter ParCantidad = new SqlParameter();
-                ParCantidad.ParameterName = "@cantidad";
-                ParCantidad.SqlDbType = SqlDbType.Int;
-                ParCantidad.Value = cantidad;
-                SqlCmd.Parameters.Add(ParCantidad);
-                //Ejecutamos nuestro comando
+        //        SqlParameter ParCantidad = new SqlParameter();
+        //        ParCantidad.ParameterName = "@cantidad";
+        //        ParCantidad.SqlDbType = SqlDbType.Int;
+        //        ParCantidad.Value = cantidad;
+        //        SqlCmd.Parameters.Add(ParCantidad);
+        //        //Ejecutamos nuestro comando
 
-                rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "Se actualizó el Stock";
+        //        rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "Se actualizó el Stock";
 
-            }
-            catch (Exception ex)
-            {
-                rpta = ex.Message;
-            }
-            finally
-            {
-                if (SqlCon.State == ConnectionState.Open) SqlCon.Close();
-            }
-            return rpta;
-        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        rpta = ex.Message;
+        //    }
+        //    finally
+        //    {
+        //        if (SqlCon.State == ConnectionState.Open) SqlCon.Close();
+        //    }
+        //    return rpta;
+        //}
 
 
         //Método Mostrar
@@ -324,10 +320,10 @@ namespace CapaDatos
             SqlConnection SqlCon = new SqlConnection();
             try
             {
-                SqlCon = conexion.AbrirConexion();
+                SqlCon.ConnectionString = Conexion.Cn;
                 SqlCommand SqlCmd = new SqlCommand();
                 SqlCmd.Connection = SqlCon;
-                SqlCmd.CommandText = "SP_MostrarVentas";
+                SqlCmd.CommandText = "Caja.SP_MostrarVentas";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
                 SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
@@ -350,10 +346,10 @@ namespace CapaDatos
             SqlConnection SqlCon = new SqlConnection();
             try
             {
-                SqlCon = conexion.AbrirConexion();
+               SqlCon.ConnectionString = Conexion.Cn;
                 SqlCommand SqlCmd = new SqlCommand();
                 SqlCmd.Connection = SqlCon;
-                SqlCmd.CommandText = "SP_BuscarVenta_fecha";
+                SqlCmd.CommandText = "Caja.SP_BuscarVenta_fecha";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
                 SqlParameter ParTextoBuscar = new SqlParameter();
@@ -389,10 +385,10 @@ namespace CapaDatos
             SqlConnection SqlCon = new SqlConnection();
             try
             {
-                SqlCon = conexion.AbrirConexion();
+                SqlCon.ConnectionString = Conexion.Cn;
                 SqlCommand SqlCmd = new SqlCommand();
                 SqlCmd.Connection = SqlCon;
-                SqlCmd.CommandText = "SP_MuestraDetalleVenta";
+                SqlCmd.CommandText = "caja.SP_MuestraDetalleVenta";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
                 SqlParameter ParTextoBuscar = new SqlParameter();
@@ -419,10 +415,10 @@ namespace CapaDatos
             SqlConnection SqlCon = new SqlConnection();
             try
             {
-                SqlCon = conexion.AbrirConexion();
+                SqlCon.ConnectionString = Conexion.Cn;
                 SqlCommand SqlCmd = new SqlCommand();
                 SqlCmd.Connection = SqlCon;
-                SqlCmd.CommandText = "SP_BuscaProducto_Nombre";
+                SqlCmd.CommandText = "Caja.SP_BuscaProducto_Nombre";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
                 SqlParameter ParTextoBuscar = new SqlParameter();
@@ -449,10 +445,11 @@ namespace CapaDatos
             SqlConnection SqlCon = new SqlConnection();
             try
             {
-                SqlCon = conexion.AbrirConexion();
+                SqlCon.ConnectionString = Conexion.Cn;
+
                 SqlCommand SqlCmd = new SqlCommand();
                 SqlCmd.Connection = SqlCon;
-                SqlCmd.CommandText = "SP_BuscaProducto_Codigo";
+                SqlCmd.CommandText = "Caja.SP_BuscaProducto_Codigo";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
                 SqlParameter ParTextoBuscar = new SqlParameter();

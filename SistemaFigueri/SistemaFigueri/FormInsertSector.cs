@@ -29,10 +29,10 @@ namespace SistemaFigueri
             try
             {
 
-                cnsec.InsertSector(bmdescripcion.Text,bmnota.Text);
-                MessageBox.Show("Se inserto correctamente");
+                cnsec.InsertSector(bmdescripcion.Text, bmnota.Text);
+                MessageBox.Show("Se inserto correctamente el Sector");
                 this.Close();
-                // cdpro.listarProductos();
+               // cdpro.listarProductos();
                 forsec.mostarSector();
                 limpiarForm();
             }
@@ -42,7 +42,7 @@ namespace SistemaFigueri
             }
         }
 
-        //LIMPIAR FORMULARIO
+       // LIMPIAR FORMULARIO
         private void limpiarForm()
         {
             bmdescripcion.Text = "";

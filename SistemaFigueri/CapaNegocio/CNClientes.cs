@@ -51,5 +51,20 @@ namespace CapaNegocio
         {
             cli.EliminarCliente(idCliente);
         }
+
+        //busca Cliente
+        public static DataTable BuscarApellidos(string textobuscar)
+        {
+            CDCliente Obj = new CDCliente();
+            Obj.Textobuscar = textobuscar;
+            return Obj.BuscarApellidos(Obj);
+        }
+        //busca cod
+        public static DataTable BuscarNum_Documento(string textobuscar)
+        {
+            CDCliente Obj = new CDCliente();
+            Obj.Textobuscar = textobuscar;
+            return Obj.BuscarNum_Documento(Obj);
+        }
     }
 }

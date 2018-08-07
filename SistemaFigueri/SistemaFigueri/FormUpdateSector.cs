@@ -29,13 +29,13 @@ namespace SistemaFigueri
         {
             try
             {
-                cnsec.UpdateSector(idSector.ToString(), bmedidescripcion.Text,bmedinota.Text);
+                cnsec.UpdateSector(idSector.ToString(), bmedidescripcion.Text, bmedinota.Text);
                 MessageBox.Show("Se edito correctamente el Sector");
-                //formPro.mostarProductos();               
+                //formPro.mostarProductos();
                 this.Close();
-                //cdpro.listarProductos();
-                //formPro.dgvProductos.Update();
-                //formPro.dgvProductos.Refresh();
+               // cdpro.listarProductos();
+               // formPro.dgvProductos.Update();
+               // formPro.dgvProductos.Refresh();
 
             }
             catch (Exception ex)

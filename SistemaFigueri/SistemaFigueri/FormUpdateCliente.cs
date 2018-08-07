@@ -34,13 +34,13 @@ namespace SistemaFigueri
         }
 
         //LISTAR TIENDA
-        public void listarTienda()
-        {
-            CDCliente cdcli = new CDCliente();
-            cboeditienda.DataSource = cdcli.ListarTienda();
-            cboeditienda.DisplayMember = "NombreTienda";
-            cboeditienda.ValueMember = "IdTienda";
-        }
+        //public void listarTienda()
+        //{
+        //    CDCliente cdcli = new CDCliente();
+        //    cboeditienda.DataSource = cdcli.ListarTienda();
+        //    cboeditienda.DisplayMember = "NombreTienda";
+        //    cboeditienda.ValueMember = "IdTienda";
+        //}
 
         //LISTAR SECTOR
         public void listarSector()
