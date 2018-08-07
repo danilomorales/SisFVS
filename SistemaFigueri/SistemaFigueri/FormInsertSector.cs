@@ -17,7 +17,7 @@ namespace SistemaFigueri
         {
             InitializeComponent();
         }
-        /*CNSector cnsec = new CNSector();
+        CNSector cnsec = new CNSector();
         FormSector forsec = new FormSector();
         private void bmCancelarSec_Click(object sender, EventArgs e)
         {
@@ -29,10 +29,10 @@ namespace SistemaFigueri
             try
             {
 
-                cnsec.InsertSector(bmdescripcion.Text,bmnota.Text);
-                MessageBox.Show("Se inserto correctamente");
+                cnsec.InsertSector(bmdescripcion.Text, bmnota.Text);
+                MessageBox.Show("Se inserto correctamente el Sector");
                 this.Close();
-                // cdpro.listarProductos();
+               // cdpro.listarProductos();
                 forsec.mostarSector();
                 limpiarForm();
             }
@@ -42,7 +42,7 @@ namespace SistemaFigueri
             }
         }
 
-        //LIMPIAR FORMULARIO
+       // LIMPIAR FORMULARIO
         private void limpiarForm()
         {
             bmdescripcion.Text = "";
@@ -78,6 +78,6 @@ namespace SistemaFigueri
         private void bmnota_KeyPress(object sender, KeyPressEventArgs e)
         {
             SoloLetras(e);
-        }*/
+        }
     }
 }

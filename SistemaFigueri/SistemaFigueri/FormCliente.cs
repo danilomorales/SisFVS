@@ -48,7 +48,7 @@ namespace SistemaFigueri
                 if (dgvCliente.SelectedRows.Count > 0)
                 {
                     FormUpdateCliente formUP = new FormUpdateCliente();
-                    formUP.listarTienda();
+                    //formUP.listarTienda();
                     formUP.listarSector();
                     formUP.listarDocumento();
                     formUP.idCliente = dgvCliente.CurrentRow.Cells["IdCliente"].Value.ToString();

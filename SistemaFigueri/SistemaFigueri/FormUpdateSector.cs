@@ -18,7 +18,7 @@ namespace SistemaFigueri
             InitializeComponent();
         }
 
-        /*CNSector cnsec = new CNSector();
+        CNSector cnsec = new CNSector();
         public string idSector;
         private void bunifuThinButton21_Click(object sender, EventArgs e)
         {
@@ -29,13 +29,13 @@ namespace SistemaFigueri
         {
             try
             {
-                cnsec.UpdateSector(idSector.ToString(), bmedidescripcion.Text,bmedinota.Text);
+                cnsec.UpdateSector(idSector.ToString(), bmedidescripcion.Text, bmedinota.Text);
                 MessageBox.Show("Se edito correctamente el Sector");
-                //formPro.mostarProductos();               
+                //formPro.mostarProductos();
                 this.Close();
-                //cdpro.listarProductos();
-                //formPro.dgvProductos.Update();
-                //formPro.dgvProductos.Refresh();
+               // cdpro.listarProductos();
+               // formPro.dgvProductos.Update();
+               // formPro.dgvProductos.Refresh();
 
             }
             catch (Exception ex)
@@ -73,6 +73,6 @@ namespace SistemaFigueri
         private void bmedinota_KeyPress(object sender, KeyPressEventArgs e)
         {
             SoloLetras(e);
-        }*/
+        }
     }
 }

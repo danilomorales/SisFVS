@@ -19,19 +19,19 @@ namespace SistemaFigueri
         {
             InitializeComponent();
         }
-        /*CNSector cnsec = new CNSector();
+        CNSector cnsec = new CNSector();
         CDSector cdsec = new CDSector();
         private void btneliminar_Click(object sender, EventArgs e)
         {
             if (dgvSector.SelectedRows.Count > 0)
             {
-                FormUpdateProducto formUP = new FormUpdateProducto();
-                // formUP.idProducto = dgvProductos.CurrentRow.Cells["IdProducto"].Value.ToString();
+                FormUpdateSector formUP = new FormUpdateSector();
+                formUP.idSector = dgvSector.CurrentRow.Cells["IdProducto"].Value.ToString();
                 cnsec.DeleteSector(dgvSector.CurrentRow.Cells[0].Value.ToString());
-                MessageBox.Show("¿Estas seguro de eliminar este producto?");
+                MessageBox.Show("¿Estas seguro de eliminar este Sector?");
                 //mostarProductos();
-                //dgvSector.Update();
-                //dgvSector.Refresh();
+                dgvSector.Update();
+                dgvSector.Refresh();
                 mostarSector();
 
             }
@@ -39,7 +39,7 @@ namespace SistemaFigueri
                 MessageBox.Show("Selecciones una fila por favor");
         }
 
-     
+
         private void FormSector_Load(object sender, EventArgs e)
         {
             mostarSector();
@@ -87,13 +87,13 @@ namespace SistemaFigueri
             Conexion.Open();
             SqlCommand cmd = Conexion.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from caja.SECTOR where DescripcionSector like('" + bmBuscar.Text + "%')or Nota like ('"+bmBuscar.Text+"%')";
+            cmd.CommandText = "select * from caja.SECTOR where DescripcionSector like('" + bmBuscar.Text + "%')or Nota like ('" + bmBuscar.Text + "%')";
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             dgvSector.DataSource = dt;
             Conexion.Close();
-        }*/
+        }
     }
 }

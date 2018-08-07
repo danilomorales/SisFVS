@@ -1,4 +1,7 @@
-﻿namespace SistemaFigueri
+﻿using System;
+using System.Windows.Forms;
+
+namespace SistemaFigueri
 {
     partial class FormInsertSector
     {
@@ -250,6 +253,7 @@
             this.ResumeLayout(false);
 
         }
+
 
         #endregion
 
