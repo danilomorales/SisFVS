@@ -11,12 +11,10 @@ namespace CapaNegocio
 {
     public class CNVenta
     {
-
-        public class NVenta
-        {
-           
             //llama insertar de la CapaDatos
-            public static string Insertar(int idventa, int idcliente, int idusuario, int idpersona, int idresponsable, int tipodoc, int idtipopago, DateTime fechaventa, string notita, string serie, float igv, DataTable dtDetalles)
+            public static string Insertar(int idventa, int idcliente, int idusuario, int idpersona, 
+                int idresponsable, int tipodoc, int idtipopago, DateTime fechaventa, string notita, 
+                string serie, float igv, DataTable dtDetalles)
             {
                 CDVenta Obj = new CDVenta();
                 Obj.IdVenta = idventa;
@@ -41,7 +39,6 @@ namespace CapaNegocio
                     detalles.Add(detalle);
 
                 }
-
 
                 return Obj.Insertar(Obj, detalles);
             }
@@ -81,7 +78,8 @@ namespace CapaNegocio
                 CDVenta Obj = new CDVenta();
                 return Obj.BuscaProductoPorcodigo(textobuscar);
             }
-        }
+
     }
+    
 
 }

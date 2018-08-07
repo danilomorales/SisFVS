@@ -274,25 +274,25 @@ namespace SistemaFigueri
                 btnProductos,btnClientes,btnCaja,btnSector,btnReportes,btnVentas,btnPromociones,btnPerfiles
             };
 
-            
+
+            //MessageBox.Show(listonazo[i].ToString());
+            //MessageBox.Show(boton.Name);
+            for (int i = 0; i < listonazo.Count; i++)
+            {
                 //MessageBox.Show(listonazo[i].ToString());
-                //MessageBox.Show(boton.Name);
+                for (int j = 0; j < lstBtnCalc.Count; j++)
+                {
 
-                //for (int j = 0; j < lstBtnCalc.Capacity-1; j++)
-                //{
-                //    for (int i = 0; i < listonazo.Capacity - 1; i++)
-                //    {
-                //        if (lstBtnCalc[j].Name== listonazo[i].ToString())
-                //        {
-                //            if (lstBtnCalc[j].Visible == false)
-                //            {
-                //                lstBtnCalc[j].Visible = true;
-                //            }
-                //        }
-
-                //    }
-
-                //}
+                    if (lstBtnCalc[j].Name == listonazo[i].ToString())
+                    {
+                        if (lstBtnCalc[j].Visible == false)
+                        {
+                            lstBtnCalc[j].Visible = true;
+                        }
+                    }
+                }
+            }
+                
         }
 
         private void bunifuFlatButton2_Click(object sender, EventArgs e)

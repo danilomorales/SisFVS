@@ -17,12 +17,13 @@ namespace SistemaFigueri
     {
         int pageNumber = 1;
         public List<DataRow> list { get; set; }
-     
+        DataTable tabla = new DataTable();
         public FormPerfiles()
         {
             InitializeComponent();
+
         }
-        DataTable tabla = new DataTable();
+
 
         public void cargarPerfiles(DataGridView dgv)
         {
@@ -38,6 +39,7 @@ namespace SistemaFigueri
                 //plist = new PagedList<DataRow>(list);
                 adapter.Fill(tabla);
                 dgv.DataSource = tabla;
+                dgvPerfiles.Columns["foto"].Width = 60;
                 dgvPerfiles.RowTemplate.Height = 120;
                 DataGridViewImageColumn imagen = new DataGridViewImageColumn();
                 imagen = (DataGridViewImageColumn)dgvPerfiles.Columns["foto"];
@@ -59,13 +61,12 @@ namespace SistemaFigueri
             dgvPerfiles.Columns[0].Visible = false;
             dgvPerfiles.Columns[1].Visible = false;
             dgvPerfiles.Columns[2].Visible = false;
-            dgvPerfiles.Columns["Nombres"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                        dgvPerfiles.Columns["Nombres"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvPerfiles.Columns["ApellidoPaterno"].DefaultCellStyle.Alignment= DataGridViewContentAlignment.MiddleCenter;
             dgvPerfiles.Columns["ApellidoMaterno"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvPerfiles.Columns["DNI"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvPerfiles.Columns["Login"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvPerfiles.Columns["Direccion"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvPerfiles.Columns["nomRol"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             //((DataGridViewImageColumn)dgvPerfiles.Columns[8]).ImageLayout = DataGridViewImageCellLayout.Stretch;
             int cellnum = 0;
@@ -83,6 +84,7 @@ namespace SistemaFigueri
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
             this.dgvPerfiles.Columns.Add("Nº", "Nº");
+            this.dgvPerfiles.Columns["Nº"].Width = 20;
             this.dgvPerfiles.Columns["Nº"].DisplayIndex = 0;
             dgvPerfiles.Columns["Nº"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             
@@ -90,17 +92,12 @@ namespace SistemaFigueri
 
         }
 
-        private void btnNuevoProducto_Click(object sender, EventArgs e)
-        {
-            FormNuevoPerfil formMC = new FormNuevoPerfil();
-            formMC.ShowDialog();
-        }
 
         private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
            
                 DataView dv = tabla.DefaultView;
-                dv.RowFilter = string.Format("Login like '%{0}%' or Nombres like '%{0}%' or ApellidoPaterno like '%{0}%' or nomRol like '%{0}%'", txtSearch.Text);
+                dv.RowFilter = string.Format("Login like '%{0}%' or Nombres like '%{0}%' or ApellidoPaterno like '%{0}%'", txtSearch.Text);
          
         }
 
@@ -109,6 +106,43 @@ namespace SistemaFigueri
             
             this.dgvPerfiles.Rows[e.RowIndex].Cells["Nº"].Value = (e.RowIndex + 1).ToString();
 
+        }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            tabPerfiles.SelectTab(pgUsuarios);
+        }
+
+        private void btnRoles_Click(object sender, EventArgs e)
+        {
+            tabPerfiles.SelectTab(pgRoles);
+        }
+
+        private void btnPrivilegios_Click(object sender, EventArgs e)
+        {
+            tabPerfiles.SelectTab(pgPrivilegios);
+        }
+        
+
+        private void btnUsuarios_Click_1(object sender, EventArgs e)
+        {
+            tabPerfiles.SelectTab(pgUsuarios);
+        }
+
+        private void btnRoles_Click_1(object sender, EventArgs e)
+        {
+            tabPerfiles.SelectTab(pgRoles);
+        }
+
+        private void btnPrivilegios_Click_1(object sender, EventArgs e)
+        {
+            tabPerfiles.SelectTab(pgPrivilegios);
+        }
+
+        private void btnUsuario_Click(object sender, EventArgs e)
+        {
+            FormNuevoPerfil formMC = new FormNuevoPerfil();
+            formMC.ShowDialog();
         }
     }
 }

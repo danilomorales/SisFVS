@@ -70,7 +70,7 @@ namespace SistemaFigueri
             this.bmdescripcion.Size = new System.Drawing.Size(294, 29);
             this.bmdescripcion.TabIndex = 102;
             this.bmdescripcion.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.bmdescripcion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bmdescripcion_KeyPress);
+            //this.bmdescripcion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bmdescripcion_KeyPress);
             // 
             // panel1
             // 
@@ -98,7 +98,7 @@ namespace SistemaFigueri
             this.bmnota.Size = new System.Drawing.Size(294, 29);
             this.bmnota.TabIndex = 110;
             this.bmnota.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.bmnota.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bmnota_KeyPress);
+            //this.bmnota.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bmnota_KeyPress);
             // 
             // panel2
             // 
@@ -132,7 +132,7 @@ namespace SistemaFigueri
             this.btnguardarSec.Size = new System.Drawing.Size(181, 41);
             this.btnguardarSec.TabIndex = 136;
             this.btnguardarSec.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnguardarSec.Click += new System.EventHandler(this.btnguardarSec_Click);
+            //this.btnguardarSec.Click += new System.EventHandler(this.btnguardarSec_Click);
             // 
             // bmCancelarSec
             // 
@@ -158,7 +158,7 @@ namespace SistemaFigueri
             this.bmCancelarSec.Size = new System.Drawing.Size(181, 41);
             this.bmCancelarSec.TabIndex = 135;
             this.bmCancelarSec.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bmCancelarSec.Click += new System.EventHandler(this.bmCancelarSec_Click);
+            //this.bmCancelarSec.Click += new System.EventHandler(this.bmCancelarSec_Click);
             // 
             // bunifuFlatButton5
             // 

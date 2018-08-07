@@ -16,6 +16,86 @@ namespace CapaDatos
         DataTable tabla = new DataTable();
         SqlCommand comando = new SqlCommand();
 
+
+        //var
+        private string _Textobuscar;
+
+        public string Textobuscar { get => _Textobuscar; set => _Textobuscar = value; }
+        public CDCliente()
+        {
+
+        }
+        public CDCliente(string textobuscar)
+        {
+            this.Textobuscar = textobuscar;
+        }
+
+        public DataTable BuscarApellidos(CDCliente cliente)
+        {
+            DataTable dtResultado = new DataTable("cliente");
+            SqlConnection sqlCon = new SqlConnection();
+            try
+            {
+                sqlCon = conexion.AbrirConexion();
+                sqlCon.Open();
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = sqlCon;
+                SqlCmd.CommandText = "SP_BuscaClienteApellidos";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter ParTextoBuscar = new SqlParameter();
+                ParTextoBuscar.ParameterName = "@txtBusca";
+                ParTextoBuscar.SqlDbType = SqlDbType.VarChar;
+                ParTextoBuscar.Size = 50;
+                ParTextoBuscar.Value = cliente.Textobuscar;
+                SqlCmd.Parameters.Add(ParTextoBuscar);
+
+                SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
+                SqlDat.Fill(dtResultado);
+
+
+            }
+            catch (Exception ex)
+
+            {
+                dtResultado = null;
+
+            }
+            return dtResultado;
+        }
+
+        public DataTable BuscarNum_Documento(CDCliente Cliente)
+        {
+            DataTable DtResultado = new DataTable("cliente");
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                SqlCon = conexion.AbrirConexion();
+                SqlCon.Open();
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "SP_BuscaClienteDocumento";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter ParTextoBuscar = new SqlParameter();
+                ParTextoBuscar.ParameterName = "@txtBusca";
+                ParTextoBuscar.SqlDbType = SqlDbType.VarChar;
+                ParTextoBuscar.Size = 50;
+                ParTextoBuscar.Value = Cliente.Textobuscar;
+                SqlCmd.Parameters.Add(ParTextoBuscar);
+
+                SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
+                SqlDat.Fill(DtResultado);
+
+            }
+            catch (Exception ex)
+            {
+                DtResultado = null;
+            }
+            return DtResultado;
+
+        }
+
         //LISTAR CLIENTE
         public DataTable listarClientes()
         {
