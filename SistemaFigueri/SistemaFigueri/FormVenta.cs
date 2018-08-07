@@ -17,6 +17,8 @@ namespace SistemaFigueri
 {
     public partial class FormVenta : Form
     {
+
+
         public int IdUsuario;
         private DataTable dtDetalle;
         private decimal totalPagado = 0;
@@ -36,55 +38,438 @@ namespace SistemaFigueri
             }
             return _instancia;
         }
-        public void SetCliente(String Nombres)
+        public void SetCliente(String nombre)
         {
-            this.tbClienteNombre.Text = Nombres;
+            this.tbClienteNombre.Text = nombre;
         }
-        public void SetProducto (string Nombre, string descripcion, decimal precioventa, int stock, DateTime fecha_Vencimiento)
+        public void SetProducto (string Alias, string DescripcionProducto, 
+            decimal Valor_Unitario, int Stock, DateTime TiempoDuracion )
         {
-            this.tbAlias.Text = Nombre;
-            this.tbDesProducto.Text = descripcion;
-            this.tbPrecio.Text = Convert.ToString(precioventa);
-            this.tbStock.Text = Convert.ToString(stock);
-            this.dtFechaVence.Value = fecha_Vencimiento;
-
+            this.tbAlias.Text = Alias;
+            this.tbDesProducto.Text = DescripcionProducto;
+            this.tbPrecioV.Text = Convert.ToString(Valor_Unitario);
+            this.tbStock.Text = Convert.ToString(Stock);
+            this.dtFechaVence.Value = TiempoDuracion;
+            this.tbAlias.ReadOnly = true;
+            this.tbDesProducto.ReadOnly = true;
+            this.dtFechaVence.Enabled = false;
+            this.tbStock.ReadOnly = true;
+            this.tbigv.ReadOnly = true;
+            this.tbPrecioV.ReadOnly = true;
+            this.tbDescuento.ReadOnly = false;
         }
         public FormVenta()
-
-
         {
             InitializeComponent();
+            this.toolTip1.SetToolTip(this.ListaCLiente, "Seleccione un cliente");
+
         }
+        //Mostrar Mensaje de Confirmación
+        private void MensajeOk(string mensaje)
+        {
+            MessageBox.Show(mensaje, "Sistema de Ventas", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+
+
+        //Mostrar Mensaje de Error
+        private void MensajeError(string mensaje)
+        {
+            MessageBox.Show(mensaje, "Sistema de Ventas", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        //Limpiar todos los controles del formulario
+        private void Limpiar()
+        {
+            this.tbClienteNombre.Text = string.Empty;
+            this.tbAlias.Text = string.Empty;
+            this.tbDesProducto.Text = string.Empty;
+            this.tbRuc.Text = string.Empty;
+            this.tbDocumento.Text = string.Empty;
+            this.tbigv.Text = "18";
+            this.tbimporteT.Text = "0,0";
+            this.tbDescuento.Text = "0";
+            this.crearTabla();
+
+        }
+
+        private void limpiarDetalle()
+        {
+
+            this.tbDesProducto.Text = string.Empty;
+            this.tbCantidad.Text = string.Empty;
+            this.tbPrecioV.Text = string.Empty;
+            this.tbStock.Text = String.Empty;
+            this.tbDescuento.Text = "0";
+        }
+
+        //Habilitar los controles del formulario
+        //private void Habilitar(bool valor)
+        ////{
+        ////    this.tbClienteNombre.ReadOnly = !valor;
+        ////    this.tbAlias.ReadOnly = !valor;
+        ////    this.txtCorrelativo.ReadOnly = !valor;
+        ////    this.txtIgv.Enabled = valor;
+        ////    this.dtFecha.Enabled = valor;
+        ////    this.cbTipo_Comprobante.Enabled = valor;
+        ////    this.txtCantidad.ReadOnly = !valor;
+        ////    this.txtPrecio_Compra.ReadOnly = !valor;
+        ////    this.txtPrecio_Venta.ReadOnly = !valor;
+        ////    this.dtFecha_Vencimiento.Enabled = valor;
+        ////    this.btnAgregar.Enabled = valor;
+        ////    this.btnQuitar.Enabled = valor;
+        ////    this.btnBuscarProveedor.Enabled = valor;
+        ////    this.btnBuscarArticulo.Enabled = valor;
+        ////}
+
+        //Habilitar los botones
+        //private void Botones()
+        //{
+        //    if (this.IsNuevo) //Alt + 124
+        //    {
+        //        this.Habilitar(true);
+        //        this.btnNuevo.Enabled = false;
+        //        this.btnGuardar.Enabled = true;
+        //        this.btnCancelar.Enabled = true;
+        //    }
+        //    else
+        //    {
+        //        this.Habilitar(false);
+        //        this.btnNuevo.Enabled = true;
+        //        this.btnGuardar.Enabled = false;
+        //        this.btnCancelar.Enabled = false;
+        //    }
+
+        //}
+
+        //Método para ocultar columnas
+        private void OcultarColumnas()
+        {
+            this.dataVentas.Columns[0].Visible = false;
+            this.dataVentas.Columns[1].Visible = false;
+        }
+
+        //Método Mostrar
+        private void Mostrar()
+        {
+            this.dataVentas.DataSource = CNVenta.Mostrar();
+            this.OcultarColumnas();
+            //lblTotal.Text = "Total de Registros: " + Convert.ToString(dataListado.Rows.Count);
+        }
+
+        //Método BuscarFecha
+        private void BuscarFechas()
+        {
+            //this.dataVentas.DataSource = CNVenta.BuscarFechas(this.dpFechaInicio.Value.ToString("dd/MM/yyyy"), this.dpFechafin.Value.ToString("dd/MM/yyyy"));
+            this.OcultarColumnas();
+            //lblTotal.Text = "Total de Registros: " + Convert.ToString(dataListado.Rows.Count);
+
+        }
+
+        //Método BuscarDetalles
+        private void MostrarDetalles()
+        {
+            this.dataVentas.DataSource = CNVenta.MostrarDetalle(this.tbIdVenta.Text);
+            this.OcultarColumnas();
+            //lblTotal.Text = "Total de Registros: " + Convert.ToString(dataListado.Rows.Count);
+            this.dataVentas.AutoGenerateColumns = false;
+        }
+
+        //Crea la tabla de Detalle 
+        private void crearTabla()
+        {
+            //Crea la tabla con el nombre de Detalle
+            this.dtDetalle = new DataTable("dataVentas");
+            //Agrega las columnas que tendra la tabla
+            this.dtDetalle.Columns.Add("Producto", System.Type.GetType("System.Int32"));
+            this.dtDetalle.Columns.Add("articulo", System.Type.GetType("System.String"));
+            this.dtDetalle.Columns.Add("cantidad", System.Type.GetType("System.Int32"));
+            this.dtDetalle.Columns.Add("precio_venta", System.Type.GetType("System.Decimal"));
+            this.dtDetalle.Columns.Add("descuento", System.Type.GetType("System.Decimal"));
+            this.dtDetalle.Columns.Add("subtotal", System.Type.GetType("System.Decimal"));
+            //Relacionamos nuestro datagridview con nuestro datatable
+            this.dataVentas.DataSource = this.dtDetalle;
+
+        }
+        //private void FrmVenta_Load(object sender, EventArgs e)
+        //{
+        //    //Para ubicar al formulario en la parte superior del contenedor
+        //    this.Top = 0;
+        //    this.Left = 0;
+        //    //Mostrar
+        //    this.Mostrar();
+        //    //Deshabilita los controles
+        //    this.Habilitar(false);
+        //    //Establece los botones
+        //    this.Botones();
+        //    this.crearTabla();
+
+        //}
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            this.BuscarFechas();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult Opcion;
+                Opcion = MessageBox.Show("Realmente Desea Eliminar la(s) venta(s)", "Figueri", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+                if (Opcion == DialogResult.OK)
+                {
+                    string Codigo;
+                    string Rpta = "";
+
+                    foreach (DataGridViewRow row in dataVentas.Rows)
+                    {
+                        if (Convert.ToBoolean(row.Cells[0].Value))
+                        {
+                            Codigo = Convert.ToString(row.Cells[1].Value);
+                            Rpta = CNVenta.Eliminar(Convert.ToInt32(Codigo));
+
+                            if (Rpta.Equals("OK"))
+                            {
+                                this.MensajeOk("Se Anuló Correctamente el registro");
+                            }
+                            else
+                            {
+                                this.MensajeError(Rpta);
+                            }
+
+                        }
+                    }
+                    this.Mostrar();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        //private void dataListado_DoubleClick(object sender, EventArgs e)
+        //{
+
+        //    this.txtIdventa.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["idventa"].Value);
+        //    this.txtCliente.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["cliente"].Value);
+        //    this.dtFecha.Value = Convert.ToDateTime(this.dataListado.CurrentRow.Cells["fecha"].Value);
+        //    this.cbTipo_Comprobante.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["tipo_comprobante"].Value);
+        //    this.txtSerie.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["serie"].Value);
+        //    this.txtCorrelativo.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["correlativo"].Value);
+        //    this.lblTotalPagado.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Total"].Value);
+        //    this.MostrarDetalles();
+        //    this.tabControl1.SelectedIndex = 1;
+
+        //}
+
+        private void chkEliminar_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbEliminar.Checked)
+            {
+                this.dataVentas.Columns[0].Visible = true;
+            }
+            else
+            {
+                this.dataVentas.Columns[0].Visible = false;
+            }
+        }
+
+        //private void dataListado_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        //{
+        //    if (e.ColumnIndex == dataListado.Columns["Eliminar"].Index)
+        //    {
+        //        DataGridViewCheckBoxCell ChkEliminar =
+        //            (DataGridViewCheckBoxCell)dataListado.Rows[e.RowIndex].Cells["Eliminar"];
+        //        ChkEliminar.Value = !Convert.ToBoolean(ChkEliminar.Value);
+        //    }
+        //}
+
+        //private void btnNuevo_Click(object sender, EventArgs e)
+        //{
+        //    this.IsNuevo = true;
+        //    this.Botones();
+        //    this.Limpiar();
+        //    this.limpiarDetalle();
+        //    this.Habilitar(true);
+        //    this.txtSerie.Focus();
+        ////}
+
+        //private void btnCancelar_Click(object sender, EventArgs e)
+        //{
+        //    this.IsNuevo = false;
+        //    this.Botones();
+        //    this.Limpiar();
+        //    this.Limpiar();
+        //    this.txtIdventa.Text = string.Empty;
+
+        //}
+
+        //private void btnGuardar_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+
+        //        //La variable que almacena si se inserto 
+        //        //o se modifico la tabla
+        //        string Rpta = "";
+        //        if (this.txtIdcliente.Text == string.Empty || this.txtSerie.Text == string.Empty || txtCorrelativo.Text == string.Empty || txtIgv.Text == string.Empty)
+        //        {
+        //            MensajeError("Falta ingresar algunos datos, serán remarcados");
+        //            errorIcono.SetError(txtCliente, "Seleccione un Proveedor");
+        //            errorIcono.SetError(txtSerie, "Ingrese la serie del comprobante");
+        //            errorIcono.SetError(txtCorrelativo, "Ingrese el número del comprobante");
+        //            errorIcono.SetError(txtIgv, "Ingrese el porcentaje de IGV");
+        //        }
+        //        else
+        //        {
+        //            if (this.IsNuevo)
+        //            {
+        //                //Vamos a insertar un Ingreso 
+        //                Rpta = NVenta.Insertar(Convert.ToInt32(txtIdcliente.Text),
+        //                    Idtrabajador,
+        //                dtFecha.Value, cbTipo_Comprobante.Text,
+        //                txtSerie.Text, txtCorrelativo.Text,
+        //                Convert.ToDecimal(txtIgv.Text), "EMITIDO", dtDetalle);
+
+        //            }
+
+        //            //Si la respuesta fue OK, fue porque se  
+        //            //o inserto la venta
+        //            //de forma correcta
+        //            if (Rpta.Equals("OK"))
+        //            {
+
+        //                this.MensajeOk("Se insertó de forma correcta el registro");
+
+
+        //            }
+        //            else
+        //            {
+        //                //Mostramos el mensaje de error
+        //                this.MensajeError(Rpta);
+        //            }
+        //            this.IsNuevo = false;
+        //            this.Botones();
+        //            this.Limpiar();
+        //            this.limpiarDetalle();
+        //            this.Mostrar();
+
+        //        }
+        //    }
+
+        //    catch (Exception ex)
+        //    {
+
+        //        MessageBox.Show(ex.Message + ex.StackTrace);
+        //    }
+        //}
+
+        //private void btnAgregar_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+
+        //        if (this.txtIddetalle_ingreso.Text == string.Empty || this.txtCantidad.Text == string.Empty || txtPrecio_Venta.Text == string.Empty)
+        //        {
+        //            MensajeError("Falta ingresar algunos datos, serán remarcados");
+        //            errorIcono.SetError(txtArticulo, "Seleccione un Artículo");
+        //            errorIcono.SetError(txtCantidad, "Ingrese el stock inicial");
+        //            errorIcono.SetError(txtPrecio_Venta, "Ingrese el precio de Venta");
+        //        }
+        //        else
+        //        {
+        //            //Variable que va a indicar si podemos registrar el detalle
+        //            bool registrar = true;
+        //            foreach (DataRow row in dtDetalle.Rows)
+        //            {
+        //                if (Convert.ToInt32(row["iddetalle_ingreso"]) == Convert.ToInt32(this.txtIddetalle_ingreso.Text))
+        //                {
+        //                    registrar = false;
+        //                    this.MensajeError("Ya se encuentra el artículo en el detalle");
+        //                }
+        //            }
+        //            //Si podemos registrar el producto en el detalle
+        //            if (registrar = true && Convert.ToInt32(this.txtCantidad.Text) <= Convert.ToInt32(this.txtStock.Text))
+        //            {
+        //                //Calculamos el sub total del detalle sin descuento
+        //                decimal subTotal = Convert.ToDecimal(this.txtPrecio_Venta.Text) * Convert.ToDecimal(txtCantidad.Text) - Convert.ToDecimal(txtDescuento.Text);
+        //                totalPagado = totalPagado + subTotal;
+        //                this.lblTotalPagado.Text = totalPagado.ToString("#0.00#");
+        //                //Agregamos al fila a nuestro datatable
+        //                DataRow row = this.dtDetalle.NewRow();
+        //                row["iddetalle_ingreso"] = Convert.ToInt32(this.txtIddetalle_ingreso.Text);
+        //                row["articulo"] = this.txtArticulo.Text;
+        //                row["cantidad"] = Convert.ToInt32(this.txtCantidad.Text);
+        //                row["precio_venta"] = Convert.ToDecimal(this.txtPrecio_Venta.Text);
+        //                row["descuento"] = Convert.ToDecimal(this.txtDescuento.Text);
+        //                row["subTotal"] = subTotal;
+        //                this.dtDetalle.Rows.Add(row);
+        //                this.limpiarDetalle();
+        //            }
+        //            else
+        //            {
+        //                this.MensajeError("No hay Stock Disponible");
+        //            }
+        //        }
+        //    }
+
+        //    catch (Exception ex)
+        //    {
+
+        //        MessageBox.Show(ex.Message + ex.StackTrace);
+        //    }
+        //}
+
+        //private void btnQuitar_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        //Indice dila actualmente seleccionado y que vamos a eliminar
+        //        int indiceFila = this.datalistadoDetalle.CurrentCell.RowIndex;
+        //        //Fila que vamos a eliminar
+        //        DataRow row = this.dtDetalle.Rows[indiceFila];
+        //        //Disminuimos el total a pagar
+        //        this.totalPagado = this.totalPagado - Convert.ToDecimal(row["subTotal"].ToString());
+        //        this.lblTotalPagado.Text = totalPagado.ToString("#0.00#");
+        //        //Removemos la fila
+        //        this.dtDetalle.Rows.Remove(row);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MensajeError("No hay fila para remover");
+        //    }
+        //}
+
+        private void FrmVenta_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            _instancia = null;
+        }
+
+        //private void btnBuscarProveedor_Click(object sender, EventArgs e)
+        //{
+        //    FrmVistaCliente_Venta vista = new FrmVistaCliente_Venta();
+        //    vista.ShowDialog();
+        //}
+
+        //private void btnBuscarArticulo_Click(object sender, EventArgs e)
+        //{
+        //    FrmVistaArticulo_Venta vista = new FrmVistaArticulo_Venta();
+        //    vista.ShowDialog();
+        //}
 
         private void btnVenCerrar_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-       
-        private void tbBuscarcliente_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnFinalizar_Click(object sender, EventArgs e)
         {
             FormRegistroCobro formRp = new FormRegistroCobro();
             formRp.ShowDialog();
-        }
-
-        private void bunifuDropdown6_onItemSelected(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bunifuTileButton4_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnCerrarVenta_Click(object sender, EventArgs e)
@@ -98,10 +483,6 @@ namespace SistemaFigueri
             formMP.ShowDialog();
         }
 
-        private void bunifuDropdown4_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnRegistrarCobro_Click(object sender, EventArgs e)
         {
@@ -113,10 +494,11 @@ namespace SistemaFigueri
         {
             var cards = new Bunifu.Framework.UI.BunifuCards();
             MostrarClientes();
+            this.crearTabla();
             //bu.autoCompletar(tbBuscaClienteRece);
 
-            var aux = new Busqueda_Cliente();
-            aux.Lista(dgvProductos);
+            //var aux = new Busqueda_Cliente();
+            //aux.Lista(dgvProductos);
 
         }
 
@@ -139,41 +521,6 @@ namespace SistemaFigueri
             
         }
 
-        private void ListaCliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void tbBuscaClientes_OnValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tbBuscaClienteReceptor_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tbBuscaClienteReceptor_Leave(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tbBuscaClienteReceptor_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tbBuscaClienteRece_Enter(object sender, EventArgs e)
-        {
-      
-        }
-
-        private void tbBuscaClienteRece_Leave(object sender, EventArgs e)
-        {
-          
-
-        }
 
         private void btnAgregarCliente_Click(object sender, EventArgs e)
         {
@@ -194,12 +541,7 @@ namespace SistemaFigueri
         {
 
         }
-        private void tbBuscaProducto_TextChanged(object sender, EventArgs e)
-        {
-           
-                   
-            
-        }
+
 
         private void btnAgregaCarro_Click(object sender, EventArgs e)
         {
@@ -268,6 +610,21 @@ namespace SistemaFigueri
         {
             FormBuscarCliente formMP = new FormBuscarCliente();
             formMP.ShowDialog();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void tbPrecio_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

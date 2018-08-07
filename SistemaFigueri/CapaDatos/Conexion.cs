@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace CapaDatos
 {
-    class Conexion
+    public class Conexion
     {
-        public static string Cn = "Data Source=192.168.21.5;Initial Catalog=DBFIGUE2;User ID=sa;Password=123;MultipleActiveResultSets=true;";
+        public static string Cn = Properties.Settings.Default.cn;
     }
 }

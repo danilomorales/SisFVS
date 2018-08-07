@@ -43,11 +43,12 @@ namespace SistemaFigueri
             Conexion.Open();
             SqlCommand cmd = Conexion.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from caja.PRODUCTO where Alias like('" + tbFiltra.Text + "%') or DescripcionProducto like('" + tbFiltra.Text + "')or TiempoDuracion like('" + tbFiltra.Text + "')" +
+            cmd.CommandText = "select * from caja.PRODUCTO where Alias like('" + tbFiltra.Text + "%')  or DescripcionProducto like('" + tbFiltra.Text + "')or TiempoDuracion like('" + tbFiltra.Text + "')" +
                 "or Stock like('" + tbFiltra.Text + "')or StockMaximo like('" + tbFiltra.Text + "') or StockMinimo like('" + tbFiltra.Text + "')or Valor_Unitario like('" + tbFiltra.Text + "')" +
                 "or PrecioVenta1 like('" + tbFiltra.Text + "')or PrecioVenta2 like('" + tbFiltra.Text + "') or PrecioOferta like('" + tbFiltra.Text + "')or Nota like('" + tbFiltra.Text + "')" +
                 "or Factor like('" + tbFiltra.Text + "')or Estado like('" + tbFiltra.Text + "')or Item like('" + tbFiltra.Text + "') or StockInicial like('" + tbFiltra.Text + "')" +
                 "or cta_vnt like('" + tbFiltra.Text + "')or Vigente like('" + tbFiltra.Text + "')";
+
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(cmd);

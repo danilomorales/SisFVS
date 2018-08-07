@@ -133,9 +133,9 @@
             this.dtaListaPro.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtaListaPro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtaListaPro.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dtaListaPro.Location = new System.Drawing.Point(60, 122);
+            this.dtaListaPro.Location = new System.Drawing.Point(56, 122);
             this.dtaListaPro.Name = "dtaListaPro";
-            this.dtaListaPro.Size = new System.Drawing.Size(842, 322);
+            this.dtaListaPro.Size = new System.Drawing.Size(808, 322);
             this.dtaListaPro.TabIndex = 215;
             this.dtaListaPro.DoubleClick += new System.EventHandler(this.dtaListaPro_DoubleClick);
             // 
