@@ -18,7 +18,9 @@ namespace SistemaFigueri
         int cellnum = 0;
         int rownum = 0;
         public List<DataRow> list { get; set; }
+        public String usuario { get; set; }
         DataTable tabla = new DataTable();
+        
         public FormBuscarUsuario()
         {
             InitializeComponent();
@@ -38,6 +40,7 @@ namespace SistemaFigueri
             cargarPerfiles(dgvUsuarios);
             dgvUsuarios.Columns[0].Visible = false;
             dgvUsuarios.Columns[1].Visible = false;
+            dgvUsuarios.Columns["foto"].Visible = false;
             dgvUsuarios.Columns["Nombres"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvUsuarios.Columns["ApellidoPaterno"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvUsuarios.Columns["ApellidoMaterno"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -53,14 +56,14 @@ namespace SistemaFigueri
             this.dgvUsuarios.Columns["Nº"].Width = 30;
             this.dgvUsuarios.Columns["Nº"].DisplayIndex = 0;
             dgvUsuarios.Columns["Nº"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            foreach (DataGridViewRow row in dgvUsuarios.Rows)
+            /*foreach (DataGridViewRow row in dgvUsuarios.Rows)
             {
                 cellnum = cellnum + 1;
 
                 dgvUsuarios.Rows[rownum].Cells["Nº"].Value = rownum.ToString();
                 rownum = rownum + 1;
             }
-            Console.WriteLine("Filas " + rownum);
+            Console.WriteLine("Filas " + rownum);*/
 
         }
 
@@ -78,12 +81,12 @@ namespace SistemaFigueri
                 //plist = new PagedList<DataRow>(list);
                 adapter.Fill(tabla);
                 dgv.DataSource = tabla;
-                dgvUsuarios.Columns["foto"].Width = 60;
+                /*dgvUsuarios.Columns["foto"].Width = 60;
                 dgvUsuarios.RowTemplate.Height = 120;
                 DataGridViewImageColumn imagen = new DataGridViewImageColumn();
                 ((DataGridViewImageColumn)this.dgvUsuarios.Columns["foto"]).DefaultCellStyle.NullValue = null;
                 imagen = (DataGridViewImageColumn)dgvUsuarios.Columns["foto"];
-                imagen.ImageLayout = DataGridViewImageCellLayout.Stretch;
+                imagen.ImageLayout = DataGridViewImageCellLayout.Stretch;*/
                 adapter.Dispose();
             }
             catch (Exception ex)
@@ -102,14 +105,16 @@ namespace SistemaFigueri
         private void dgvUsuarios_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             FormPerfiles perfiles = new FormPerfiles();
-            this.Close();
+            
             String nombres = dgvUsuarios.Rows[e.RowIndex].Cells["Nombres"].Value.ToString();
             String pat = dgvUsuarios.Rows[e.RowIndex].Cells["ApellidoPaterno"].Value.ToString();
             String mat = dgvUsuarios.Rows[e.RowIndex].Cells["ApellidoMaterno"].Value.ToString();
             String usu = dgvUsuarios.Rows[e.RowIndex].Cells["Login"].Value.ToString();
             String id = dgvUsuarios.Rows[e.RowIndex].Cells[0].Value.ToString();
-            perfiles.tbrolsearch.Text = String.Format("Whatever default text there is {0}", nombres);
-            MessageBox.Show("Valor: " + String.Format("Whatever default text there is {0}", nombres));
+            //usuario = String.Format("Whatever default text there is {0}", nombres);
+            usuario = nombres + " " + pat + " " + mat + "  - usuario: " + usu;
+            this.DialogResult = DialogResult.OK;
+            this.Close();
             /*MessageBox.Show("Valor: " + pat);
             MessageBox.Show("Valor: " + mat);
             MessageBox.Show("Valor: " + usu);

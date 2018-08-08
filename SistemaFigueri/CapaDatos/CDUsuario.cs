@@ -85,5 +85,23 @@ namespace CapaDatos
             }
             return count;
         }
+
+        public SqlDataReader rolSegunIdUsuario(int id )
+        {
+            String sql = "select rol.IdRol,rol.nomRol,usu.IdUsuario from dbo.ROL rol " +
+                "LEFT JOIN dbo.USUARIO_ROL usurol ON rol.IdRol = usurol.IdRol " +
+                "LEFT JOIN caja.Usuario usu ON usurol.IdUsuario = usu.IdUsuario " +
+                "WHERE usu.IdUsuario = @id; ";
+            String sql2 = "select * from dbo.ROL";
+            SqlCommand comando = new SqlCommand(sql, Conexion.AbrirConexion());
+            comando.Parameters.AddWithValue("@id", id);
+            lector = comando.ExecuteReader();
+            if (lector["nomRol"] != DBNull.Value)
+            {
+                somestring.Text = "NotNull";
+            }
+            return lector;
+        }
+
     }
 }
