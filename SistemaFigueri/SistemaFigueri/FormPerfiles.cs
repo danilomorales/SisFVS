@@ -21,7 +21,6 @@ namespace SistemaFigueri
         int rownum = 0;
         public List<DataRow> list { get; set; }
         DataTable tabla = new DataTable();
-        public String usuario { get; set; }
         public FormPerfiles()
         {
             InitializeComponent();
@@ -195,8 +194,17 @@ namespace SistemaFigueri
 
         private void btnrolsearch_Click(object sender, EventArgs e)
         {
-            FormBuscarUsuario formMC = new FormBuscarUsuario();
-            formMC.ShowDialog();
+            /*FormBuscarUsuario formMC = new FormBuscarUsuario();
+            formMC.ShowDialog();*/
+            using (FormBuscarUsuario form = new FormBuscarUsuario())
+            {
+                if (form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    tbrolsearch.Text = form.usuario;
+                }
+               
+
+            }
         }
 
         private void tbrolsearch_DoubleClick(object sender, EventArgs e)

@@ -18,6 +18,7 @@ namespace SistemaFigueri
         int cellnum = 0;
         int rownum = 0;
         public List<DataRow> list { get; set; }
+        public String usuario { get; set; }
         DataTable tabla = new DataTable();
         
         public FormBuscarUsuario()
@@ -110,15 +111,8 @@ namespace SistemaFigueri
             String mat = dgvUsuarios.Rows[e.RowIndex].Cells["ApellidoMaterno"].Value.ToString();
             String usu = dgvUsuarios.Rows[e.RowIndex].Cells["Login"].Value.ToString();
             String id = dgvUsuarios.Rows[e.RowIndex].Cells[0].Value.ToString();      
-            //usuario = String.Format("Whatever default text there is {0}", nombres);
-            using (FormPerfiles form = new FormPerfiles())
-            {
-
-                form.usuario = nombres;
-
-            }
-
-
+            usuario = String.Format("Whatever default text there is {0}", nombres);
+            
             MessageBox.Show("Valor: " + String.Format("Whatever default text there is {0}", nombres));
             this.Close();
             /*MessageBox.Show("Valor: " + pat);
