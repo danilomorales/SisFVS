@@ -110,10 +110,10 @@ namespace SistemaFigueri
             String pat = dgvUsuarios.Rows[e.RowIndex].Cells["ApellidoPaterno"].Value.ToString();
             String mat = dgvUsuarios.Rows[e.RowIndex].Cells["ApellidoMaterno"].Value.ToString();
             String usu = dgvUsuarios.Rows[e.RowIndex].Cells["Login"].Value.ToString();
-            String id = dgvUsuarios.Rows[e.RowIndex].Cells[0].Value.ToString();      
-            usuario = String.Format("Whatever default text there is {0}", nombres);
-            
-            MessageBox.Show("Valor: " + String.Format("Whatever default text there is {0}", nombres));
+            String id = dgvUsuarios.Rows[e.RowIndex].Cells[0].Value.ToString();
+            //usuario = String.Format("Whatever default text there is {0}", nombres);
+            usuario = nombres + " " + pat + " " + mat + "  - usuario: " + usu;
+            this.DialogResult = DialogResult.OK;
             this.Close();
             /*MessageBox.Show("Valor: " + pat);
             MessageBox.Show("Valor: " + mat);
