@@ -11,15 +11,27 @@ using CapaNegocio;
 using System.Data.SqlClient;
 
 
+
 namespace SistemaFigueri
 {
-    public partial class FormPerfiles : Form
+    public partial class FormPerfiles : MaterialSkin.Controls.MaterialForm
     {
         int pageNumber = 1;
         int cellnum = 0;
         int rownum = 0;
         public List<DataRow> list { get; set; }
         DataTable tabla = new DataTable();
+        public String usuario { get; set; }
+        public FormPerfiles()
+        {
+            InitializeComponent();
+            MaterialSkin.MaterialSkinManager skinManager = MaterialSkin.MaterialSkinManager.Instance;
+            skinManager.AddFormToManage(this);
+            skinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.DARK;
+            skinManager.ColorScheme = new MaterialSkin.ColorScheme(MaterialSkin.Primary.Blue600, MaterialSkin.Primary.BlueGrey900, MaterialSkin.Primary.Blue500, MaterialSkin.Accent.Orange700, MaterialSkin.TextShade.WHITE);
+        }
+
+        
     
         public void cargarPerfiles(DataGridView dgv)
         {
@@ -35,12 +47,12 @@ namespace SistemaFigueri
                 //plist = new PagedList<DataRow>(list);
                 adapter.Fill(tabla);
                 dgv.DataSource = tabla;
-                dgvPerfiles.Columns["foto"].Width = 60;
+                /*dgvPerfiles.Columns["foto"].Width = 60;
                 dgvPerfiles.RowTemplate.Height = 120;
                 DataGridViewImageColumn imagen = new DataGridViewImageColumn();
                 ((DataGridViewImageColumn)this.dgvPerfiles.Columns["foto"]).DefaultCellStyle.NullValue = null;
                 imagen = (DataGridViewImageColumn)dgvPerfiles.Columns["foto"];
-                imagen.ImageLayout = DataGridViewImageCellLayout.Stretch;
+                imagen.ImageLayout = DataGridViewImageCellLayout.Stretch;*/
                 adapter.Dispose();
             } catch (Exception ex) {
                 MessageBox.Show("No se pudo llenar la tabla usuario perfil: " + ex.ToString());
@@ -52,11 +64,13 @@ namespace SistemaFigueri
 
         private void FormPerfiles_Load(object sender, EventArgs e)
         {
+              
             /*dgvPerfiles.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvPerfiles.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;*/
             cargarPerfiles(dgvPerfiles);
             dgvPerfiles.Columns[0].Visible = false;
             dgvPerfiles.Columns[1].Visible = false;
+            dgvPerfiles.Columns["foto"].Visible = false;
             dgvPerfiles.Columns["Nombres"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvPerfiles.Columns["ApellidoPaterno"].DefaultCellStyle.Alignment= DataGridViewContentAlignment.MiddleCenter;
             dgvPerfiles.Columns["ApellidoMaterno"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -144,12 +158,6 @@ namespace SistemaFigueri
             formMC.ShowDialog();
         }
 
-        public FormPerfiles()
-        {
-            InitializeComponent();
-
-        }
-
         private void FormPerfiles_Resize(object sender, EventArgs e)
         {
             //panelUsuRol.Width = Convert.ToInt32(this.Width*0.8);
@@ -195,6 +203,17 @@ namespace SistemaFigueri
         {
             FormBuscarUsuario formMC = new FormBuscarUsuario();
             formMC.ShowDialog();
+        }
+
+        private void dgvPerfiles_RowPostPaint_1(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            this.dgvPerfiles.Rows[e.RowIndex].Cells["Nº"].Value = (e.RowIndex + 1).ToString();
+        }
+
+        private void cardprisearch_Resize(object sender, EventArgs e)
+        {
+            panelprisearch.Location = new Point(
+            cardprisearch.Width / 2 - panelprisearch.Size.Width / 2, cardprisearch.Height / 2 - panelprisearch.Size.Height / 2);
         }
     }
 }
