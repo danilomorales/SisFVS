@@ -14,7 +14,7 @@ namespace CapaNegocio
             //llama insertar de la CapaDatos
             public static string Insertar(int idventa, int idcliente, int idusuario, int idpersona, 
                 int idresponsable, int tipodoc, int idtipopago, DateTime fechaventa, string notita, 
-                string serie, float igv, DataTable dtDetalles)
+                string serie, float igv, DataTable dtDetalle)
             {
                 CDVenta Obj = new CDVenta();
                 Obj.IdVenta = idventa;
@@ -29,7 +29,7 @@ namespace CapaNegocio
                 Obj.Serie = serie;
                 Obj.IGV = igv;
                 List <CDDetalleVenta> detalles = new List<CDDetalleVenta>();
-                foreach (DataRow row in dtDetalles.Rows)
+                foreach (DataRow row in dtDetalle.Rows)
                 {
                     CDDetalleVenta detalle = new CDDetalleVenta();
                     //detalle.IdProducto = Convert.ToInt32(row["IdProducto"].ToString());
