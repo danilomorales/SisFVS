@@ -96,10 +96,6 @@ namespace CapaDatos
             SqlCommand comando = new SqlCommand(sql, Conexion.AbrirConexion());
             comando.Parameters.AddWithValue("@id", id);
             lector = comando.ExecuteReader();
-            if (lector["nomRol"] != DBNull.Value)
-            {
-                somestring.Text = "NotNull";
-            }
             return lector;
         }
 
