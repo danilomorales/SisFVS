@@ -205,14 +205,23 @@ namespace SistemaFigueri
                     CNUsuario objUsuario = new CNUsuario();
                     idusuario = form.idusuario;
                     SqlDataReader reader = objUsuario.rolSegunIdUsuario(idusuario);
+                    SqlDataReader reader2 = objUsuario.rolSegunIdUsuario2(idusuario);
                     List<SomeData> data = new List<SomeData>();
+                    List<SomeData> data2 = new List<SomeData>();
                     while (reader.Read())
                     {
                         //MessageBox.Show(reader["nomRol"].ToString());
                         data.Add(new SomeData() { Value = reader["IdRol"].ToString(), Text = reader["nomRol"].ToString() });
                     }
+                    while (reader2.Read())
+                    {
+                        //MessageBox.Show(reader["nomRol"].ToString());
+                        data2.Add(new SomeData() { Value2 = reader2["IdRol"].ToString(), Text2 = reader2["nomRol"].ToString() });
+                    }
                     lbRoles1.DisplayMember = "Text";
                     lbRoles1.DataSource = data;
+                    lbRoles2.DisplayMember = "Text2";
+                    lbRoles2.DataSource = data2;
                 }
                
 
