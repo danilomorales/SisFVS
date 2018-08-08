@@ -88,11 +88,22 @@ namespace CapaDatos
 
         public SqlDataReader rolSegunIdUsuario(int id )
         {
-            String sql = "select rol.IdRol,rol.nomRol,usu.IdUsuario from dbo.ROL rol " +
+            String sql = "SELECT*FROM dbo.ROL WHERE IdRol NOT IN(select rol.IdRol from dbo.ROL rol " +
                 "LEFT JOIN dbo.USUARIO_ROL usurol ON rol.IdRol = usurol.IdRol " +
                 "LEFT JOIN caja.Usuario usu ON usurol.IdUsuario = usu.IdUsuario " +
-                "WHERE usu.IdUsuario = @id; ";
-            String sql2 = "select * from dbo.ROL";
+                "WHERE usurol.IdUsuario = @id); ";
+            SqlCommand comando = new SqlCommand(sql, Conexion.AbrirConexion());
+            comando.Parameters.AddWithValue("@id", id);
+            lector = comando.ExecuteReader();
+            return lector;
+        }
+
+        public SqlDataReader rolSegunIdUsuario2(int id)
+        {
+            String sql = "select rol.IdRol,rol.nomRol from dbo.ROL rol " +
+                "LEFT JOIN dbo.USUARIO_ROL usurol ON rol.IdRol = usurol.IdRol " +
+                "LEFT JOIN caja.Usuario usu ON usurol.IdUsuario = usu.IdUsuario " +
+                "WHERE usurol.IdUsuario = @id; ";
             SqlCommand comando = new SqlCommand(sql, Conexion.AbrirConexion());
             comando.Parameters.AddWithValue("@id", id);
             lector = comando.ExecuteReader();
