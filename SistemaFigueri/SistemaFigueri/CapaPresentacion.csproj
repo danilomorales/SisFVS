@@ -187,6 +187,7 @@
     <Compile Include="FormVenta.Designer.cs">
       <DependentUpon>FormVenta.cs</DependentUpon>
     </Compile>
+    <Compile Include="SomeData.cs" />
     <EmbeddedResource Include="FormAperturaCaja.resx">
       <DependentUpon>FormAperturaCaja.cs</DependentUpon>
     </EmbeddedResource>

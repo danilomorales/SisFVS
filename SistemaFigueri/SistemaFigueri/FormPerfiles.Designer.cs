@@ -31,8 +31,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPerfiles));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabPerfiles = new MaterialSkin.Controls.MaterialTabControl();
             this.pgUsuarios = new System.Windows.Forms.TabPage();
             this.bunifuCards2 = new Bunifu.Framework.UI.BunifuCards();
@@ -60,6 +60,7 @@
             this.lbRoles2 = new System.Windows.Forms.ListBox();
             this.cardrolsearch = new Bunifu.Framework.UI.BunifuCards();
             this.panelusersearch = new System.Windows.Forms.Panel();
+            this.tbrolsearch = new System.Windows.Forms.TextBox();
             this.btnrolsearch = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuCards6 = new Bunifu.Framework.UI.BunifuCards();
             this.label2 = new System.Windows.Forms.Label();
@@ -85,7 +86,6 @@
             this.bunifuCards9 = new Bunifu.Framework.UI.BunifuCards();
             this.label3 = new System.Windows.Forms.Label();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
-            this.tbrolsearch = new System.Windows.Forms.TextBox();
             this.tabPerfiles.SuspendLayout();
             this.pgUsuarios.SuspendLayout();
             this.bunifuCards2.SuspendLayout();
@@ -357,24 +357,24 @@
             this.dgvPerfiles.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvPerfiles.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dgvPerfiles.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("NewsGoth Lt BT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPerfiles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("NewsGoth Lt BT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPerfiles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPerfiles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPerfiles.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("NewsGoth BT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPerfiles.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("NewsGoth BT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPerfiles.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvPerfiles.GridColor = System.Drawing.SystemColors.MenuHighlight;
             this.dgvPerfiles.Location = new System.Drawing.Point(22, 233);
             this.dgvPerfiles.Name = "dgvPerfiles";
@@ -518,7 +518,7 @@
             // lbRoles1
             // 
             this.lbRoles1.FormattingEnabled = true;
-            this.lbRoles1.Location = new System.Drawing.Point(499, 19);
+            this.lbRoles1.Location = new System.Drawing.Point(31, 15);
             this.lbRoles1.Margin = new System.Windows.Forms.Padding(50, 3, 50, 3);
             this.lbRoles1.MaximumSize = new System.Drawing.Size(650, 1400);
             this.lbRoles1.Name = "lbRoles1";
@@ -528,7 +528,7 @@
             // lbRoles2
             // 
             this.lbRoles2.FormattingEnabled = true;
-            this.lbRoles2.Location = new System.Drawing.Point(42, 19);
+            this.lbRoles2.Location = new System.Drawing.Point(502, 19);
             this.lbRoles2.MaximumSize = new System.Drawing.Size(650, 1400);
             this.lbRoles2.Name = "lbRoles2";
             this.lbRoles2.Size = new System.Drawing.Size(233, 524);
@@ -561,6 +561,16 @@
             this.panelusersearch.Name = "panelusersearch";
             this.panelusersearch.Size = new System.Drawing.Size(764, 64);
             this.panelusersearch.TabIndex = 1;
+            // 
+            // tbrolsearch
+            // 
+            this.tbrolsearch.Enabled = false;
+            this.tbrolsearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbrolsearch.Location = new System.Drawing.Point(31, 10);
+            this.tbrolsearch.Multiline = true;
+            this.tbrolsearch.Name = "tbrolsearch";
+            this.tbrolsearch.Size = new System.Drawing.Size(647, 44);
+            this.tbrolsearch.TabIndex = 70;
             // 
             // btnrolsearch
             // 
@@ -937,16 +947,6 @@
             this.materialTabSelector1.Size = new System.Drawing.Size(1124, 46);
             this.materialTabSelector1.TabIndex = 0;
             this.materialTabSelector1.Text = "materialTabSelector1";
-            // 
-            // tbrolsearch
-            // 
-            this.tbrolsearch.Enabled = false;
-            this.tbrolsearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbrolsearch.Location = new System.Drawing.Point(31, 10);
-            this.tbrolsearch.Multiline = true;
-            this.tbrolsearch.Name = "tbrolsearch";
-            this.tbrolsearch.Size = new System.Drawing.Size(647, 44);
-            this.tbrolsearch.TabIndex = 70;
             // 
             // FormPerfiles
             // 

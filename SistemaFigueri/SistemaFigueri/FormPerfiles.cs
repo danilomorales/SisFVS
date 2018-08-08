@@ -20,7 +20,10 @@ namespace SistemaFigueri
         int cellnum = 0;
         int rownum = 0;
         public List<DataRow> list { get; set; }
+        public List<String> liston { get; set; }
         DataTable tabla = new DataTable();
+        DataTable tablaRol1 = new DataTable();
+        public int idusuario;
         public FormPerfiles()
         {
             InitializeComponent();
@@ -30,8 +33,6 @@ namespace SistemaFigueri
             skinManager.ColorScheme = new MaterialSkin.ColorScheme(MaterialSkin.Primary.Blue600, MaterialSkin.Primary.BlueGrey900, MaterialSkin.Primary.Blue500, MaterialSkin.Accent.Orange700, MaterialSkin.TextShade.WHITE);
         }
 
-        
-    
         public void cargarPerfiles(DataGridView dgv)
         {
             try
@@ -201,6 +202,17 @@ namespace SistemaFigueri
                 if (form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
                     tbrolsearch.Text = form.usuario;
+                    CNUsuario objUsuario = new CNUsuario();
+                    idusuario = form.idusuario;
+                    SqlDataReader reader = objUsuario.rolSegunIdUsuario(idusuario);
+                    List<SomeData> data = new List<SomeData>();
+                    while (reader.Read())
+                    {
+                        //MessageBox.Show(reader["nomRol"].ToString());
+                        data.Add(new SomeData() { Value = reader["IdRol"].ToString(), Text = reader["nomRol"].ToString() });
+                    }
+                    lbRoles1.DisplayMember = "Text";
+                    lbRoles1.DataSource = data;
                 }
                
 
