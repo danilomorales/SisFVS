@@ -458,6 +458,7 @@
             // btnrolsave
             // 
             this.btnrolsave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            this.btnrolsave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnrolsave.Enabled = false;
             this.btnrolsave.Image = global::SistemaFigueri.Properties.Resources.save;
             this.btnrolsave.ImageActive = null;
@@ -468,6 +469,7 @@
             this.btnrolsave.TabIndex = 122;
             this.btnrolsave.TabStop = false;
             this.btnrolsave.Zoom = 10;
+            this.btnrolsave.Click += new System.EventHandler(this.btnrolsave_Click);
             // 
             // btnrolleft2
             // 
