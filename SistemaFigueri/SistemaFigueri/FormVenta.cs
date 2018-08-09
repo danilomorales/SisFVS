@@ -103,7 +103,8 @@ namespace SistemaFigueri
             this.tbDescuento.Text = "0";
         }
 
-        //Habilitar los controles del formulario
+        //Habilitar los controles 
+
         //private void Habilitar(bool valor)
         ////{
         ////    this.tbClienteNombre.ReadOnly = !valor;
