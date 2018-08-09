@@ -23,6 +23,9 @@ namespace SistemaFigueri
         public List<String> liston { get; set; }
         DataTable tabla = new DataTable();
         DataTable tablaRol1 = new DataTable();
+        DataTable tablaRol2 = new DataTable();
+        List<SomeData> data = new List<SomeData>();
+        List<SomeData> data2 = new List<SomeData>();
         public int idusuario;
         public FormPerfiles()
         {
@@ -201,13 +204,26 @@ namespace SistemaFigueri
             {
                 if (form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
+                    btnrolright.Enabled = true;
+                    btnrolright2.Enabled = true;
+                    btnrolleft.Enabled = true;
+                    btnrolleft2.Enabled = true;
+                    btnrolsave.Enabled = true;
                     tbrolsearch.Text = form.usuario;
                     CNUsuario objUsuario = new CNUsuario();
                     idusuario = form.idusuario;
                     SqlDataReader reader = objUsuario.rolSegunIdUsuario(idusuario);
                     SqlDataReader reader2 = objUsuario.rolSegunIdUsuario2(idusuario);
-                    List<SomeData> data = new List<SomeData>();
-                    List<SomeData> data2 = new List<SomeData>();
+                    /*tablaRol1.Reset();
+                    tablaRol1.Load(reader);
+                    tablaRol2.Reset();
+                    tablaRol2.Load(reader2);
+                    lbRoles1.DataSource = tablaRol1;
+                    lbRoles1.DisplayMember = "nomRol";
+                    lbRoles1.ValueMember = "IdRol";
+                    lbRoles2.DataSource = tablaRol2;
+                    lbRoles2.DisplayMember = "nomRol";
+                    lbRoles2.ValueMember = "IdRol";*/
                     while (reader.Read())
                     {
                         //MessageBox.Show(reader["nomRol"].ToString());
@@ -247,13 +263,89 @@ namespace SistemaFigueri
 
         private void btnrolright_Click(object sender, EventArgs e)
         {
-            for (int i = lbRoles1.SelectedItems.Count - 1; i >= 0; i--)
+            int index = lbRoles1.SelectedIndex; //Or wherever else you want to get the index from.
+            if (index < 0)
             {
-                lbRoles2.Items.Add(lbRoles1.SelectedItems[i]);
-                lbRoles1.Items.Remove(lbRoles1.SelectedItems[i]); 
-                lbRoles2.Refresh();
-                lbRoles1.Refresh();
+                MessageBox.Show("Elija primero un elemento");
             }
+            else
+            {
+                int id = Int32.Parse((lbRoles1.SelectedItem as SomeData).Value);
+                String rol = String.Format((lbRoles1.SelectedItem as SomeData).Text);
+                //MessageBox.Show(rol);
+                data2.Add(new SomeData() { Value2 = id.ToString(), Text2 = rol });
+                data.RemoveAt(index);
+
+                lbRoles1.DataSource = null;
+                lbRoles1.DataSource = data;
+                lbRoles1.DisplayMember = "Text";
+                lbRoles2.DataSource = null;
+                lbRoles2.DataSource = data2;
+                lbRoles2.DisplayMember = "Text2";
+                if (lbRoles1.Items.Count > 0)
+                {
+                    //MessageBox.Show("vacío");
+                    btnrolright.Enabled = true;
+                }
+                else
+                {
+                    btnrolright.Enabled = false;
+                }
+                if (lbRoles2.Items.Count > 0)
+                {
+                    //MessageBox.Show("vacío");
+                    btnrolleft.Enabled = true;
+                }
+            }
+        
+
+        }
+
+
+        private void lbRoles1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnrolleft_Click(object sender, EventArgs e)
+        {
+            int index = lbRoles2.SelectedIndex; //Or wherever else you want to get the index from.
+            if (index < 0)
+            {
+                MessageBox.Show("Elija primero un elemento");
+               
+            }
+            else
+            {
+                int id = Int32.Parse((lbRoles2.SelectedItem as SomeData).Value2);
+                String rol = String.Format((lbRoles2.SelectedItem as SomeData).Text2);
+                //MessageBox.Show(rol);
+                data.Add(new SomeData() { Value = id.ToString(), Text = rol });
+                data2.RemoveAt(index);
+
+                lbRoles1.DataSource = null;
+                lbRoles1.DataSource = data;
+                lbRoles1.DisplayMember = "Text";
+                lbRoles2.DataSource = null;
+                lbRoles2.DataSource = data2;
+                lbRoles2.DisplayMember = "Text2";
+                //MessageBox.Show(lbRoles2.Items.Count.ToString());
+                if (lbRoles2.Items.Count > 0)
+                {
+                    //MessageBox.Show("vacío");
+                    btnrolleft.Enabled = true;
+                }
+                else
+                {
+                    btnrolleft.Enabled = false;
+                }
+                if (lbRoles1.Items.Count > 0)
+                {
+                    //MessageBox.Show("vacío");
+                    btnrolright.Enabled = true;
+                }
+            }
+            
         }
     }
 }
