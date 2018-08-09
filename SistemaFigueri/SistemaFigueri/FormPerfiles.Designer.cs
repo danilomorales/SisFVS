@@ -30,9 +30,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPerfiles));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabPerfiles = new MaterialSkin.Controls.MaterialTabControl();
             this.pgUsuarios = new System.Windows.Forms.TabPage();
             this.bunifuCards2 = new Bunifu.Framework.UI.BunifuCards();
@@ -86,6 +87,8 @@
             this.bunifuCards9 = new Bunifu.Framework.UI.BunifuCards();
             this.label3 = new System.Windows.Forms.Label();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
+            this.bindingRoles1 = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingRoles2 = new System.Windows.Forms.BindingSource(this.components);
             this.tabPerfiles.SuspendLayout();
             this.pgUsuarios.SuspendLayout();
             this.bunifuCards2.SuspendLayout();
@@ -120,6 +123,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnpriright)).BeginInit();
             this.bunifuCards8.SuspendLayout();
             this.bunifuCards9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingRoles1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingRoles2)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPerfiles
@@ -357,24 +362,24 @@
             this.dgvPerfiles.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvPerfiles.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dgvPerfiles.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("NewsGoth Lt BT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPerfiles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPerfiles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPerfiles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPerfiles.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("NewsGoth BT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPerfiles.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPerfiles.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvPerfiles.GridColor = System.Drawing.SystemColors.MenuHighlight;
             this.dgvPerfiles.Location = new System.Drawing.Point(22, 233);
             this.dgvPerfiles.Name = "dgvPerfiles";
@@ -453,6 +458,7 @@
             // btnrolsave
             // 
             this.btnrolsave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            this.btnrolsave.Enabled = false;
             this.btnrolsave.Image = global::SistemaFigueri.Properties.Resources.save;
             this.btnrolsave.ImageActive = null;
             this.btnrolsave.Location = new System.Drawing.Point(357, 489);
@@ -466,6 +472,8 @@
             // btnrolleft2
             // 
             this.btnrolleft2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            this.btnrolleft2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnrolleft2.Enabled = false;
             this.btnrolleft2.Image = global::SistemaFigueri.Properties.Resources.left2;
             this.btnrolleft2.ImageActive = null;
             this.btnrolleft2.Location = new System.Drawing.Point(357, 332);
@@ -479,6 +487,8 @@
             // btnrolright2
             // 
             this.btnrolright2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            this.btnrolright2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnrolright2.Enabled = false;
             this.btnrolright2.Image = global::SistemaFigueri.Properties.Resources.right2;
             this.btnrolright2.ImageActive = null;
             this.btnrolright2.Location = new System.Drawing.Point(357, 224);
@@ -492,6 +502,8 @@
             // btnrolleft
             // 
             this.btnrolleft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            this.btnrolleft.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnrolleft.Enabled = false;
             this.btnrolleft.Image = global::SistemaFigueri.Properties.Resources.left;
             this.btnrolleft.ImageActive = null;
             this.btnrolleft.Location = new System.Drawing.Point(357, 121);
@@ -501,10 +513,13 @@
             this.btnrolleft.TabIndex = 119;
             this.btnrolleft.TabStop = false;
             this.btnrolleft.Zoom = 10;
+            this.btnrolleft.Click += new System.EventHandler(this.btnrolleft_Click);
             // 
             // btnrolright
             // 
             this.btnrolright.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            this.btnrolright.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnrolright.Enabled = false;
             this.btnrolright.Image = global::SistemaFigueri.Properties.Resources.right;
             this.btnrolright.ImageActive = null;
             this.btnrolright.Location = new System.Drawing.Point(357, 19);
@@ -514,6 +529,7 @@
             this.btnrolright.TabIndex = 118;
             this.btnrolright.TabStop = false;
             this.btnrolright.Zoom = 10;
+            this.btnrolright.Click += new System.EventHandler(this.btnrolright_Click);
             // 
             // lbRoles1
             // 
@@ -526,6 +542,7 @@
             this.lbRoles1.Name = "lbRoles1";
             this.lbRoles1.Size = new System.Drawing.Size(229, 524);
             this.lbRoles1.TabIndex = 112;
+            this.lbRoles1.SelectedIndexChanged += new System.EventHandler(this.lbRoles1_SelectedIndexChanged);
             // 
             // lbRoles2
             // 
@@ -1009,6 +1026,8 @@
             this.bunifuCards8.ResumeLayout(false);
             this.bunifuCards9.ResumeLayout(false);
             this.bunifuCards9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingRoles1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingRoles2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1068,5 +1087,7 @@
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton2;
         public Bunifu.Framework.UI.BunifuMaterialTextbox tbprivi;
         public System.Windows.Forms.TextBox tbrolsearch;
+        private System.Windows.Forms.BindingSource bindingRoles1;
+        private System.Windows.Forms.BindingSource bindingRoles2;
     }
 }
