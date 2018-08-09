@@ -15,6 +15,7 @@ namespace SistemaFigueri
     public partial class FormCliente : Form
     {
         CNClientes cli = new CNClientes();
+        DataTable tabla = new DataTable();
         public FormCliente()
         {
             InitializeComponent();
@@ -48,35 +49,38 @@ namespace SistemaFigueri
                 if (dgvCliente.SelectedRows.Count > 0)
                 {
                     FormUpdateCliente formUP = new FormUpdateCliente();
-                    //formUP.listarTienda();
+
+                    formUP.listarPersona();
                     formUP.listarSector();
                     formUP.listarDocumento();
-                    formUP.idCliente = dgvCliente.CurrentRow.Cells["IdCliente"].Value.ToString();
-                    formUP.cboeditienda.Text = dgvCliente.CurrentRow.Cells[1].Value.ToString();
-                    formUP.cboedisector.Text = dgvCliente.CurrentRow.Cells[2].Value.ToString();
-                    formUP.bmediempresa.Text = dgvCliente.CurrentRow.Cells[3].Value.ToString();
-                    formUP.bmedidireccion.Text = dgvCliente.CurrentRow.Cells[4].Value.ToString();
-                    formUP.bmedinombreCliente.Text = dgvCliente.CurrentRow.Cells[5].Value.ToString();
-                    formUP.bmeditelefono.Text = dgvCliente.CurrentRow.Cells[6].Value.ToString();
-                    formUP.bmedifax.Text = dgvCliente.CurrentRow.Cells[7].Value.ToString();
-                    formUP.bmediruc.Text = dgvCliente.CurrentRow.Cells[8].Value.ToString();
-                    formUP.bmedicorreo.Text = dgvCliente.CurrentRow.Cells[9].Value.ToString();
-                    formUP.cboedidocumento.Text = dgvCliente.CurrentRow.Cells[10].Value.ToString();
-                    formUP.bmedinumerodoc.Text = dgvCliente.CurrentRow.Cells[11].Value.ToString();
-                    formUP.bmediobservacion.Text = dgvCliente.CurrentRow.Cells[12].Value.ToString();
-                    formUP.datediInscripcion.Text = dgvCliente.CurrentRow.Cells[13].Value.ToString();
-                    formUP.cboediestado.Text = dgvCliente.CurrentRow.Cells[14].Value.ToString();
-                    formUP.bmedictacte.Text = dgvCliente.CurrentRow.Cells[15].Value.ToString();
-                    formUP.bmedinivel.Text = dgvCliente.CurrentRow.Cells[16].Value.ToString();
-                    formUP.datediNacimiento.Text = dgvCliente.CurrentRow.Cells[17].Value.ToString();
-                    formUP.bmeditipocompra.Text = dgvCliente.CurrentRow.Cells[18].Value.ToString();
-                    formUP.bmedicredito.Text = dgvCliente.CurrentRow.Cells[19].Value.ToString();
-                    formUP.bmediqueja.Text = dgvCliente.CurrentRow.Cells[20].Value.ToString();
-                    formUP.bmedisaldo.Text = dgvCliente.CurrentRow.Cells[21].Value.ToString();
-                    formUP.bmediordencliente.Text = dgvCliente.CurrentRow.Cells[22].Value.ToString();
-                    formUP.cboedicliente.Text = dgvCliente.CurrentRow.Cells[23].Value.ToString();
-                    formUP.bmedipromedioventas.Text = dgvCliente.CurrentRow.Cells[24].Value.ToString();
-                    formUP.bmedicta_cli.Text = dgvCliente.CurrentRow.Cells[25].Value.ToString();
+                    //formUP.ListarDepartamento();
+                    //formUP.ListarProvincia("depa");
+                    //formUP.ListarDistrito("provi");   
+                    formUP.idRecpCliente = dgvCliente.CurrentRow.Cells["IdClienteReceptor"].Value.ToString();
+                    formUP.cboedidocumento.Text = dgvCliente.CurrentRow.Cells["Tipo de Documento"].Value.ToString();
+                    formUP.cboediPersona.Text = dgvCliente.CurrentRow.Cells["Tipo de Persona"].Value.ToString();
+                    formUP.bmedinumerodoc.Text = dgvCliente.CurrentRow.Cells["Nro de Documento"].Value.ToString();
+                    formUP.bmediruc.Text = dgvCliente.CurrentRow.Cells["Nro de RUC"].Value.ToString();
+                    formUP.bmedirazonSocial.Text = dgvCliente.CurrentRow.Cells["Razón Social"].Value.ToString();
+                    formUP.bmedinombreComercial.Text = dgvCliente.CurrentRow.Cells["Nombre Comercial"].Value.ToString();
+                    formUP.bmedinombreCliente.Text = dgvCliente.CurrentRow.Cells["Nombres"].Value.ToString();
+                    formUP.bmediapellidoP.Text = dgvCliente.CurrentRow.Cells["Apellido Paterno"].Value.ToString();
+                    formUP.bmediapellidoM.Text = dgvCliente.CurrentRow.Cells["Apellido Materno"].Value.ToString();                                                                                                       
+                    formUP.bmedicorreo.Text = dgvCliente.CurrentRow.Cells["Correo"].Value.ToString();
+                    formUP.bmedidireccion.Text = dgvCliente.CurrentRow.Cells["Dirección"].Value.ToString();
+                    formUP.bmedifax.Text = dgvCliente.CurrentRow.Cells["Fax"].Value.ToString();
+                    formUP.bmedifijo.Text = dgvCliente.CurrentRow.Cells["Fijo"].Value.ToString();
+                    formUP.bmeditelefono.Text = dgvCliente.CurrentRow.Cells["Telefono"].Value.ToString();
+                    formUP.dateediNacimiento.Text = dgvCliente.CurrentRow.Cells["Fecha de Nacimiento"].Value.ToString();
+                    formUP.cboedidepartamento.Text = dgvCliente.CurrentRow.Cells["Departamento"].Value.ToString();
+                    formUP.cboediprovincia.Text = dgvCliente.CurrentRow.Cells["Provincia"].Value.ToString();
+                    formUP.cboedidistrito.Text = dgvCliente.CurrentRow.Cells["Distrito"].Value.ToString();
+                    formUP.bmediUsuRegistra.Text = dgvCliente.CurrentRow.Cells["Usuario Registra"].Value.ToString();
+                    formUP.dateediInscripcion.Text = dgvCliente.CurrentRow.Cells["Fecha de Registro"].Value.ToString();
+                    formUP.bmediUserModifica.Text = dgvCliente.CurrentRow.Cells["Usuario Modifica"].Value.ToString();
+                    formUP.dtedifechaModifica.Text = dgvCliente.CurrentRow.Cells["Fecha Modifica"].Value.ToString();
+                    formUP.cboedisector.Text = dgvCliente.CurrentRow.Cells["Sector"].Value.ToString();
+                    formUP.bmediobservacion.Text = dgvCliente.CurrentRow.Cells["Observación"].Value.ToString();
                     formUP.ShowDialog();
                     MostrarClientes();
 
@@ -84,9 +88,9 @@ namespace SistemaFigueri
                 else
                     MessageBox.Show("Selecciones una fila por favor");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show("no mostro nada" + ex);
+                MessageBox.Show("no mostro nada" + ex.ToString());
             }
             //FormUpdateCliente forUC = new FormUpdateCliente();
             //forUC.ShowDialog();
@@ -100,6 +104,8 @@ namespace SistemaFigueri
                 // formUP.idProducto = dgvProductos.CurrentRow.Cells["IdProducto"].Value.ToString();
                 cli.DeleteClient(dgvCliente.CurrentRow.Cells[0].Value.ToString());
                 MessageBox.Show("¿Estas seguro de eliminar este Cliente?");
+                //this.Close();
+                Refresh();
                 MostrarClientes();
 
             }
@@ -123,13 +129,29 @@ namespace SistemaFigueri
             Conexion.Open();
             SqlCommand cmd = Conexion.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = " select * from caja.CLIENTE where NombreEmpresa like('" + bmBuscar.Text + "%')";
+            cmd.CommandText = " select * from Caja.ClienteReceptor where Nombres like('" + bmBuscar.Text + "%')";
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             dgvCliente.DataSource = dt;
             Conexion.Close();
+          
+        }
+
+        public void actualizar()
+        {
+            SqlDataAdapter dataAdapter = new SqlDataAdapter();
+            DataTable dataset = new DataTable();
+            dataset.Clear();
+            dataAdapter.Fill(dataset);
+            
+        }
+
+        private void bmBuscar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //DataView dv = tabla.DefaultView;
+            //dv.RowFilter = string.Format("'Nombres' like '%{0}%' or ' Correo' like '%{0}%' or 'Telefono' like '%{0}%'", bmBuscar.Text);
         }
     }
 }
