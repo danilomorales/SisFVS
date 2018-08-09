@@ -244,5 +244,16 @@ namespace SistemaFigueri
             panelprisearch.Location = new Point(
             cardprisearch.Width / 2 - panelprisearch.Size.Width / 2, cardprisearch.Height / 2 - panelprisearch.Size.Height / 2);
         }
+
+        private void btnrolright_Click(object sender, EventArgs e)
+        {
+            for (int i = lbRoles1.SelectedItems.Count - 1; i >= 0; i--)
+            {
+                lbRoles2.Items.Add(lbRoles1.SelectedItems[i]);
+                lbRoles1.Items.Remove(lbRoles1.SelectedItems[i]); 
+                lbRoles2.Refresh();
+                lbRoles1.Refresh();
+            }
+        }
     }
 }
