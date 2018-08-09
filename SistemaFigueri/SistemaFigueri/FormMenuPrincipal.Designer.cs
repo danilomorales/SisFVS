@@ -702,7 +702,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbFechadia;
         private System.Windows.Forms.Label lbHora1;
-        private System.Windows.Forms.Panel panelContenedor;
         public System.Windows.Forms.Label label1;
         public System.Windows.Forms.Label label2;
         public System.Windows.Forms.PictureBox pbPerfil;
@@ -713,5 +712,6 @@
         private MaterialSkin.Controls.MaterialDivider materialDivider1;
         private MaterialSkin.Controls.MaterialDivider materialDivider2;
         private System.Windows.Forms.Panel panel3;
+        public System.Windows.Forms.Panel panelContenedor;
     }
 }

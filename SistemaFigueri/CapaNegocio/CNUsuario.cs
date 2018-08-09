@@ -67,6 +67,20 @@ namespace CapaNegocio
             return perfil;
         }
 
+        public SqlDataReader rolSegunIdUsuario(int id)
+        {
+            SqlDataReader perfil;
+            perfil = objDato.rolSegunIdUsuario(id);
+            return perfil;
+        }
+
+        public SqlDataReader rolSegunIdUsuario2(int id)
+        {
+            SqlDataReader perfil;
+            perfil = objDato.rolSegunIdUsuario2(id);
+            return perfil;
+        }
+
         public int insertarUsuario(String nombres, String paterno, String materno, String dni, String direccion, String user, String pass, String url)
         {
             Console.WriteLine("Llegando .."+nombres+" "+ paterno + " " +  materno + " " + dni + " " + direccion +" " + user + " " + pass + " "  + " " + url);

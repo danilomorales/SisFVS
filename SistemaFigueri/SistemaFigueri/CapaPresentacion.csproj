@@ -71,6 +71,12 @@
     <Compile Include="FormBuscarProducto.Designer.cs">
       <DependentUpon>FormBuscarProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormBuscarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBuscarUsuario.Designer.cs">
+      <DependentUpon>FormBuscarUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,14 +187,15 @@
     <Compile Include="FormVenta.Designer.cs">
       <DependentUpon>FormVenta.cs</DependentUpon>
     </Compile>
+    <Compile Include="SomeData.cs" />
     <EmbeddedResource Include="FormAperturaCaja.resx">
       <DependentUpon>FormAperturaCaja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormBuscarCliente.resx">
       <DependentUpon>FormBuscarCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormBuscarProducto.resx">
-      <DependentUpon>FormBuscarProducto.cs</DependentUpon>
+    <EmbeddedResource Include="FormBuscarUsuario.resx">
+      <DependentUpon>FormBuscarUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCliente.resx">
       <DependentUpon>FormCliente.cs</DependentUpon>
@@ -403,7 +410,19 @@
     <None Include="Resources\borra.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\productoo.png" />
+    <None Include="Resources\right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\left2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\right2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
