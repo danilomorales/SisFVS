@@ -40,6 +40,17 @@ namespace CapaDatos
             return lector;
         }
 
+        public SqlDataReader controlUsuarioRol(int idusuario,int idrol)
+        {
+            String sql = "SPControlUsuarioRol";
+            SqlCommand comandon = new SqlCommand(sql, Conexion.AbrirConexion());
+            comandon.CommandType = CommandType.StoredProcedure;
+            comandon.Parameters.AddWithValue("@id", idusuario);
+            comandon.Parameters.AddWithValue("@idrol", idusuario);
+            lector = comandon.ExecuteReader();
+            return lector;
+        }
+
         public SqlDataReader comboRol()
         {
             String sql = "select * from dbo.CajaRol";

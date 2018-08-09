@@ -48,7 +48,7 @@
             this.cbodistrito = new System.Windows.Forms.ComboBox();
             this.dateNacimiento = new System.Windows.Forms.DateTimePicker();
             this.bunifuFlatButton12 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.dateInscripcion = new System.Windows.Forms.DateTimePicker();
+            this.dateRegistro = new System.Windows.Forms.DateTimePicker();
             this.cbodepartamento = new System.Windows.Forms.ComboBox();
             this.cboPersona = new System.Windows.Forms.ComboBox();
             this.cboprovincia = new System.Windows.Forms.ComboBox();
@@ -58,6 +58,8 @@
             this.bmrazonSocial = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuFlatButton20 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuCards2 = new Bunifu.Framework.UI.BunifuCards();
+            this.bmruc = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.bfruc = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton3 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bmfijo = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bmdireccion = new Bunifu.Framework.UI.BunifuMaterialTextbox();
@@ -77,8 +79,10 @@
             this.bunifuFlatButton11 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bmCancelar = new Bunifu.Framework.UI.BunifuThinButton2();
             this.bmGuardar = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.bmruc = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.bfruc = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.dtfechaModifica = new System.Windows.Forms.DateTimePicker();
+            this.bunifuFlatButton9 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bunifuFlatButton22 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bmUserModifica = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuCards1.SuspendLayout();
             this.bunifuCards2.SuspendLayout();
             this.SuspendLayout();
@@ -296,6 +300,8 @@
             this.bunifuCards1.BorderRadius = 5;
             this.bunifuCards1.BottomSahddow = true;
             this.bunifuCards1.color = System.Drawing.Color.Green;
+            this.bunifuCards1.Controls.Add(this.dtfechaModifica);
+            this.bunifuCards1.Controls.Add(this.bunifuFlatButton9);
             this.bunifuCards1.Controls.Add(this.bunifuFlatButton19);
             this.bunifuCards1.Controls.Add(this.bunifuFlatButton18);
             this.bunifuCards1.Controls.Add(this.bunifuFlatButton13);
@@ -305,7 +311,7 @@
             this.bunifuCards1.Controls.Add(this.cbodistrito);
             this.bunifuCards1.Controls.Add(this.dateNacimiento);
             this.bunifuCards1.Controls.Add(this.bunifuFlatButton12);
-            this.bunifuCards1.Controls.Add(this.dateInscripcion);
+            this.bunifuCards1.Controls.Add(this.dateRegistro);
             this.bunifuCards1.Controls.Add(this.cbodepartamento);
             this.bunifuCards1.Controls.Add(this.cboPersona);
             this.bunifuCards1.Controls.Add(this.cboprovincia);
@@ -526,6 +532,8 @@
             // 
             this.dateNacimiento.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.dateNacimiento.CalendarTitleBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.dateNacimiento.CustomFormat = "dd-MM-yyyy";
+            this.dateNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateNacimiento.Location = new System.Drawing.Point(123, 313);
             this.dateNacimiento.Name = "dateNacimiento";
             this.dateNacimiento.Size = new System.Drawing.Size(200, 20);
@@ -567,14 +575,16 @@
             this.bunifuFlatButton12.Textcolor = System.Drawing.Color.White;
             this.bunifuFlatButton12.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
-            // dateInscripcion
+            // dateRegistro
             // 
-            this.dateInscripcion.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.dateInscripcion.CalendarTitleBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.dateInscripcion.Location = new System.Drawing.Point(123, 384);
-            this.dateInscripcion.Name = "dateInscripcion";
-            this.dateInscripcion.Size = new System.Drawing.Size(200, 20);
-            this.dateInscripcion.TabIndex = 112;
+            this.dateRegistro.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.dateRegistro.CalendarTitleBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.dateRegistro.CustomFormat = "dd-MM-yyyy";
+            this.dateRegistro.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateRegistro.Location = new System.Drawing.Point(123, 384);
+            this.dateRegistro.Name = "dateRegistro";
+            this.dateRegistro.Size = new System.Drawing.Size(200, 20);
+            this.dateRegistro.TabIndex = 112;
             // 
             // cbodepartamento
             // 
@@ -613,6 +623,7 @@
             this.cboprovincia.Size = new System.Drawing.Size(249, 24);
             this.cboprovincia.TabIndex = 117;
             this.cboprovincia.Text = "Escoja Provincia";
+            this.cboprovincia.SelectedIndexChanged += new System.EventHandler(this.cboprovincia_SelectedIndexChanged);
             // 
             // cbodocumento
             // 
@@ -742,6 +753,8 @@
             this.bunifuCards2.BorderRadius = 5;
             this.bunifuCards2.BottomSahddow = true;
             this.bunifuCards2.color = System.Drawing.Color.Green;
+            this.bunifuCards2.Controls.Add(this.bunifuFlatButton22);
+            this.bunifuCards2.Controls.Add(this.bmUserModifica);
             this.bunifuCards2.Controls.Add(this.bmruc);
             this.bunifuCards2.Controls.Add(this.bfruc);
             this.bunifuCards2.Controls.Add(this.bunifuFlatButton3);
@@ -779,6 +792,62 @@
             this.bunifuCards2.ShadowDepth = 20;
             this.bunifuCards2.Size = new System.Drawing.Size(612, 470);
             this.bunifuCards2.TabIndex = 109;
+            // 
+            // bmruc
+            // 
+            this.bmruc.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.bmruc.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
+            this.bmruc.ForeColor = System.Drawing.Color.White;
+            this.bmruc.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.bmruc.HintText = "N° Ruc";
+            this.bmruc.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.bmruc.isPassword = false;
+            this.bmruc.LineFocusedColor = System.Drawing.Color.Red;
+            this.bmruc.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
+            this.bmruc.LineMouseHoverColor = System.Drawing.Color.SandyBrown;
+            this.bmruc.LineThickness = 5;
+            this.bmruc.Location = new System.Drawing.Point(423, 426);
+            this.bmruc.Margin = new System.Windows.Forms.Padding(4);
+            this.bmruc.Name = "bmruc";
+            this.bmruc.Size = new System.Drawing.Size(151, 30);
+            this.bmruc.TabIndex = 155;
+            this.bmruc.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // bfruc
+            // 
+            this.bfruc.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.bfruc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.bfruc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bfruc.BorderRadius = 0;
+            this.bfruc.ButtonText = "Numero Ruc:";
+            this.bfruc.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.bfruc.DisabledColor = System.Drawing.Color.Gray;
+            this.bfruc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bfruc.Iconcolor = System.Drawing.Color.Transparent;
+            this.bfruc.Iconimage = null;
+            this.bfruc.Iconimage_right = null;
+            this.bfruc.Iconimage_right_Selected = null;
+            this.bfruc.Iconimage_Selected = null;
+            this.bfruc.IconMarginLeft = 0;
+            this.bfruc.IconMarginRight = 0;
+            this.bfruc.IconRightVisible = true;
+            this.bfruc.IconRightZoom = 0D;
+            this.bfruc.IconVisible = true;
+            this.bfruc.IconZoom = 40D;
+            this.bfruc.IsTab = false;
+            this.bfruc.Location = new System.Drawing.Point(315, 426);
+            this.bfruc.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.bfruc.Name = "bfruc";
+            this.bfruc.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.bfruc.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.bfruc.OnHoverTextColor = System.Drawing.Color.White;
+            this.bfruc.selected = false;
+            this.bfruc.Size = new System.Drawing.Size(109, 31);
+            this.bfruc.TabIndex = 154;
+            this.bfruc.Text = "Numero Ruc:";
+            this.bfruc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bfruc.Textcolor = System.Drawing.Color.White;
+            this.bfruc.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // bunifuFlatButton3
             // 
@@ -1309,61 +1378,107 @@
             this.bmGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bmGuardar.Click += new System.EventHandler(this.bmGuardar_Click);
             // 
-            // bmruc
+            // dtfechaModifica
             // 
-            this.bmruc.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bmruc.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
-            this.bmruc.ForeColor = System.Drawing.Color.White;
-            this.bmruc.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.bmruc.HintText = "N° Ruc";
-            this.bmruc.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.bmruc.isPassword = false;
-            this.bmruc.LineFocusedColor = System.Drawing.Color.Red;
-            this.bmruc.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
-            this.bmruc.LineMouseHoverColor = System.Drawing.Color.SandyBrown;
-            this.bmruc.LineThickness = 5;
-            this.bmruc.Location = new System.Drawing.Point(423, 426);
-            this.bmruc.Margin = new System.Windows.Forms.Padding(4);
-            this.bmruc.Name = "bmruc";
-            this.bmruc.Size = new System.Drawing.Size(151, 30);
-            this.bmruc.TabIndex = 155;
-            this.bmruc.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.dtfechaModifica.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.dtfechaModifica.CalendarTitleBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.dtfechaModifica.CustomFormat = "dd-MM-yyyy";
+            this.dtfechaModifica.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtfechaModifica.Location = new System.Drawing.Point(124, 435);
+            this.dtfechaModifica.Name = "dtfechaModifica";
+            this.dtfechaModifica.Size = new System.Drawing.Size(200, 20);
+            this.dtfechaModifica.TabIndex = 154;
             // 
-            // bfruc
+            // bunifuFlatButton9
             // 
-            this.bfruc.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bfruc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bfruc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bfruc.BorderRadius = 0;
-            this.bfruc.ButtonText = "Numero Ruc:";
-            this.bfruc.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.bfruc.DisabledColor = System.Drawing.Color.Gray;
-            this.bfruc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bfruc.Iconcolor = System.Drawing.Color.Transparent;
-            this.bfruc.Iconimage = null;
-            this.bfruc.Iconimage_right = null;
-            this.bfruc.Iconimage_right_Selected = null;
-            this.bfruc.Iconimage_Selected = null;
-            this.bfruc.IconMarginLeft = 0;
-            this.bfruc.IconMarginRight = 0;
-            this.bfruc.IconRightVisible = true;
-            this.bfruc.IconRightZoom = 0D;
-            this.bfruc.IconVisible = true;
-            this.bfruc.IconZoom = 40D;
-            this.bfruc.IsTab = false;
-            this.bfruc.Location = new System.Drawing.Point(315, 426);
-            this.bfruc.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.bfruc.Name = "bfruc";
-            this.bfruc.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bfruc.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.bfruc.OnHoverTextColor = System.Drawing.Color.White;
-            this.bfruc.selected = false;
-            this.bfruc.Size = new System.Drawing.Size(109, 31);
-            this.bfruc.TabIndex = 154;
-            this.bfruc.Text = "Numero Ruc:";
-            this.bfruc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bfruc.Textcolor = System.Drawing.Color.White;
-            this.bfruc.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton9.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.bunifuFlatButton9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.bunifuFlatButton9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuFlatButton9.BorderRadius = 0;
+            this.bunifuFlatButton9.ButtonText = "Fecha Modifica:";
+            this.bunifuFlatButton9.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.bunifuFlatButton9.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuFlatButton9.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton9.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuFlatButton9.Iconimage = null;
+            this.bunifuFlatButton9.Iconimage_right = null;
+            this.bunifuFlatButton9.Iconimage_right_Selected = null;
+            this.bunifuFlatButton9.Iconimage_Selected = null;
+            this.bunifuFlatButton9.IconMarginLeft = 0;
+            this.bunifuFlatButton9.IconMarginRight = 0;
+            this.bunifuFlatButton9.IconRightVisible = true;
+            this.bunifuFlatButton9.IconRightZoom = 0D;
+            this.bunifuFlatButton9.IconVisible = true;
+            this.bunifuFlatButton9.IconZoom = 90D;
+            this.bunifuFlatButton9.IsTab = false;
+            this.bunifuFlatButton9.Location = new System.Drawing.Point(6, 424);
+            this.bunifuFlatButton9.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.bunifuFlatButton9.Name = "bunifuFlatButton9";
+            this.bunifuFlatButton9.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.bunifuFlatButton9.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.bunifuFlatButton9.OnHoverTextColor = System.Drawing.Color.White;
+            this.bunifuFlatButton9.selected = false;
+            this.bunifuFlatButton9.Size = new System.Drawing.Size(119, 32);
+            this.bunifuFlatButton9.TabIndex = 153;
+            this.bunifuFlatButton9.Text = "Fecha Modifica:";
+            this.bunifuFlatButton9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuFlatButton9.Textcolor = System.Drawing.Color.White;
+            this.bunifuFlatButton9.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
+            // bunifuFlatButton22
+            // 
+            this.bunifuFlatButton22.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.bunifuFlatButton22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.bunifuFlatButton22.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuFlatButton22.BorderRadius = 0;
+            this.bunifuFlatButton22.ButtonText = "Usuario Modifica:";
+            this.bunifuFlatButton22.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.bunifuFlatButton22.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuFlatButton22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton22.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuFlatButton22.Iconimage = null;
+            this.bunifuFlatButton22.Iconimage_right = null;
+            this.bunifuFlatButton22.Iconimage_right_Selected = null;
+            this.bunifuFlatButton22.Iconimage_Selected = null;
+            this.bunifuFlatButton22.IconMarginLeft = 0;
+            this.bunifuFlatButton22.IconMarginRight = 0;
+            this.bunifuFlatButton22.IconRightVisible = true;
+            this.bunifuFlatButton22.IconRightZoom = 0D;
+            this.bunifuFlatButton22.IconVisible = true;
+            this.bunifuFlatButton22.IconZoom = 40D;
+            this.bunifuFlatButton22.IsTab = false;
+            this.bunifuFlatButton22.Location = new System.Drawing.Point(4, 424);
+            this.bunifuFlatButton22.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.bunifuFlatButton22.Name = "bunifuFlatButton22";
+            this.bunifuFlatButton22.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.bunifuFlatButton22.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.bunifuFlatButton22.OnHoverTextColor = System.Drawing.Color.White;
+            this.bunifuFlatButton22.selected = false;
+            this.bunifuFlatButton22.Size = new System.Drawing.Size(131, 30);
+            this.bunifuFlatButton22.TabIndex = 156;
+            this.bunifuFlatButton22.Text = "Usuario Modifica:";
+            this.bunifuFlatButton22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuFlatButton22.Textcolor = System.Drawing.Color.White;
+            this.bunifuFlatButton22.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
+            // bmUserModifica
+            // 
+            this.bmUserModifica.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.bmUserModifica.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
+            this.bmUserModifica.ForeColor = System.Drawing.Color.White;
+            this.bmUserModifica.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.bmUserModifica.HintText = "U.Modifica";
+            this.bmUserModifica.isPassword = false;
+            this.bmUserModifica.LineFocusedColor = System.Drawing.Color.Red;
+            this.bmUserModifica.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
+            this.bmUserModifica.LineMouseHoverColor = System.Drawing.Color.SandyBrown;
+            this.bmUserModifica.LineThickness = 5;
+            this.bmUserModifica.Location = new System.Drawing.Point(133, 423);
+            this.bmUserModifica.Margin = new System.Windows.Forms.Padding(4);
+            this.bmUserModifica.Name = "bmUserModifica";
+            this.bmUserModifica.Size = new System.Drawing.Size(131, 30);
+            this.bmUserModifica.TabIndex = 157;
+            this.bmUserModifica.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // FormMantCliente
             // 
@@ -1413,7 +1528,7 @@
         private Bunifu.Framework.UI.BunifuThinButton2 bmGuardar;
         private System.Windows.Forms.ComboBox cboprovincia;
         private System.Windows.Forms.ComboBox cboPersona;
-        private System.Windows.Forms.DateTimePicker dateInscripcion;
+        private System.Windows.Forms.DateTimePicker dateRegistro;
         private Bunifu.Framework.UI.BunifuFlatButton bmdoc;
         private Bunifu.Framework.UI.BunifuMaterialTextbox bmnumerodoc;
         private System.Windows.Forms.ComboBox cbodepartamento;
@@ -1442,5 +1557,9 @@
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton12;
         private Bunifu.Framework.UI.BunifuMaterialTextbox bmruc;
         private Bunifu.Framework.UI.BunifuFlatButton bfruc;
+        private System.Windows.Forms.DateTimePicker dtfechaModifica;
+        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton9;
+        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton22;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox bmUserModifica;
     }
 }

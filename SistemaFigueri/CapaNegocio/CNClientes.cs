@@ -10,7 +10,7 @@ namespace CapaNegocio
 {
    public class CNClientes
     {
-        private CDCliente cli = new CDCliente();
+         CDCliente cli = new CDCliente();
 
         //READ CLIENT
         public DataTable MostarClientes()
@@ -21,35 +21,40 @@ namespace CapaNegocio
         }
 
         //CREATE CLIENT
-        public void InsertClient(String idtienda, String idsector, String nombre_Empresa, String direccion, String contacto, String telefono, String fax, String ruc, String email,
-            String idtipo_doc, String nroDocumento, String observacion, String inscripcion, String estado, String saldocta, String nivel, String fechaNac, String tipoCompra,
-            String credito, String queja, String saldo_Inicial, String ordenCliente, String tipoCliente, String promedio_ventas, String cta_cli)
+        public void InsertClient(String idDocIdentidad, String idTipoPersona, String nDocIdentidad, String numeroRuc, String razonSocial, String nombreComercial,
+            String nombre, String paterno, String materno, String correo, String direccion, String fax, String fijo, String telefono, String fechaNacimiento, 
+            String depa, String provi, String distri, String usuarioRegistra, String fechaRegistro, String usuarioModifica, String fechaModifica, 
+            String idSector, String observacion)
         {
-            Console.WriteLine("Sera pues ..." + idtienda + " " + idsector + " " + nombre_Empresa + " " + direccion + " " + contacto + " " + telefono + " " +
-            fax + " " + ruc + " " + email + " " + idtipo_doc + " " + nroDocumento + " " + observacion + " " + inscripcion + " " + estado + " " +
-            saldocta + " " + nivel + " " + fechaNac + " " + tipoCompra + " " + credito + "   " + queja + " " + saldo_Inicial + "   " + ordenCliente + "   "
-            +tipoCliente + "   " + promedio_ventas + "   " + cta_cli );
-            cli.InsertarCliente(idtienda, idsector,nombre_Empresa,direccion,contacto,telefono,fax,ruc,email,idtipo_doc,nroDocumento,observacion,
-                Convert.ToDateTime(inscripcion),estado,Convert.ToDouble(saldocta),nivel,
-                Convert.ToDateTime(fechaNac),tipoCompra,Convert.ToDouble(credito),queja,saldo_Inicial,
-                Convert.ToInt32(ordenCliente),tipoCliente,Convert.ToDouble(promedio_ventas),cta_cli);
+            Console.WriteLine("Sera pues ..." + idDocIdentidad + " " + idTipoPersona + " " + nDocIdentidad + " " + direccion + " " + numeroRuc + " " + razonSocial + " " +
+            nombreComercial + " " + nombre + " " + paterno + " " + materno + " " + correo + " " + observacion + " " + direccion + " " + fax + " " +
+            fijo + " " + telefono + " " + fechaNacimiento + " " + depa + " " + provi + "   " + distri + " "  + usuarioRegistra + "   "
+            + fechaRegistro + "   " + usuarioModifica + "   " + fechaModifica + "   " + idSector + "   " + observacion);
+            cli.InsertarCliente(Convert.ToInt32(idDocIdentidad),Convert.ToInt32(idTipoPersona),nDocIdentidad,numeroRuc,razonSocial,nombreComercial,
+                nombre,paterno,materno,correo,direccion,fax,fijo,telefono,fechaNacimiento,depa,provi,distri,Convert.ToInt32(usuarioRegistra),fechaRegistro,
+                Convert.ToInt32(usuarioModifica),fechaModifica,idSector,observacion);
         }
 
         //UPDATE CLIENT
-        public void UpdateClient(String idCliente, String idtienda, String idsector, String nombre_Empresa, String direccion, String contacto, String telefono, String fax, String ruc,
-            String email,String idtipo_doc, String nroDocumento, String observacion, String inscripcion, String estado, String saldocta, String nivel, String fechaNac,
-            String tipoCompra,String credito, String queja, String saldo_Inicial, String ordenCliente, String tipoCliente, String promedio_ventas, String cta_cli)
+        public void UpdateClient(String idRecpCliente, String idDocIdentidad, String idTipoPersona, String nDocIdentidad, String numeroRuc, String razonSocial,String nombreComercial,
+            String nombre, String paterno, String materno, String correo, String direccion, String fax, String fijo, String telefono, String fechaNacimiento,
+            String depa, String provi, String distri, String usuarioRegistra, String fechaRegistro, String usuarioModifica, String fechaModifica,
+            String idSector, String observacion)
         {
-            cli.EditarProducto(idCliente,idtienda, idsector, nombre_Empresa, direccion, contacto, telefono, fax, ruc, email, idtipo_doc, nroDocumento, observacion,
-                Convert.ToDateTime(inscripcion), estado, Convert.ToDouble(saldocta), nivel,
-                Convert.ToDateTime(fechaNac), tipoCompra, Convert.ToDouble(credito), queja, saldo_Inicial,
-                Convert.ToInt32(ordenCliente), tipoCliente, Convert.ToDouble(promedio_ventas), cta_cli);
+            Console.WriteLine("EDITACIONNNNNN ..." + idDocIdentidad + " " + idTipoPersona + " " + nDocIdentidad + " " + numeroRuc + " " + razonSocial + " " +
+            nombreComercial + " " + nombre + " " + paterno + " " + materno + " " + correo + " " + direccion + " " + fax + " " +
+            fijo + " " + telefono + " " + fechaNacimiento + " " + depa + " " + provi + "   " + distri + " " + usuarioRegistra + "   "
+            + fechaRegistro + "   " + usuarioModifica + "   " + fechaModifica + "   " + idSector + "   " + observacion+"  "+ idRecpCliente);
+
+            cli.EditarCliente(Convert.ToInt32(idRecpCliente), Convert.ToInt32(idDocIdentidad), Convert.ToInt32(idTipoPersona), nDocIdentidad, numeroRuc, razonSocial, nombreComercial,
+                nombre, paterno, materno, correo, direccion, fax, fijo, telefono, fechaNacimiento, depa, provi, distri, Convert.ToInt32(usuarioRegistra), fechaRegistro,
+                Convert.ToInt32(usuarioModifica), fechaModifica, idSector, observacion);
         }
 
         //DELETE CLIENT
-        public void DeleteClient(String idCliente)
+        public void DeleteClient(String idRecpCliente)
         {
-            cli.EliminarCliente(idCliente);
+            cli.EliminarCliente(idRecpCliente);
         }
 
         //busca Cliente

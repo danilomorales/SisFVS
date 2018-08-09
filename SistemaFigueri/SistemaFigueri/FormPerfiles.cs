@@ -24,8 +24,8 @@ namespace SistemaFigueri
         DataTable tabla = new DataTable();
         DataTable tablaRol1 = new DataTable();
         DataTable tablaRol2 = new DataTable();
-        List<SomeData> data = new List<SomeData>();
-        List<SomeData> data2 = new List<SomeData>();
+        List<SomeData> data;
+        List<SomeData> data2;
         public int idusuario;
         public FormPerfiles()
         {
@@ -224,6 +224,8 @@ namespace SistemaFigueri
                     lbRoles2.DataSource = tablaRol2;
                     lbRoles2.DisplayMember = "nomRol";
                     lbRoles2.ValueMember = "IdRol";*/
+                    data = new List<SomeData>();
+                    data2 = new List<SomeData>();
                     while (reader.Read())
                     {
                         //MessageBox.Show(reader["nomRol"].ToString());
@@ -234,10 +236,13 @@ namespace SistemaFigueri
                         //MessageBox.Show(reader["nomRol"].ToString());
                         data2.Add(new SomeData() { Value2 = reader2["IdRol"].ToString(), Text2 = reader2["nomRol"].ToString() });
                     }
-                    lbRoles1.DisplayMember = "Text";
+                    
                     lbRoles1.DataSource = data;
-                    lbRoles2.DisplayMember = "Text2";
+                    lbRoles1.DisplayMember = "Text";
+                    
                     lbRoles2.DataSource = data2;
+                    lbRoles2.DisplayMember = "Text2";
+                    
                 }
                
 
@@ -346,6 +351,26 @@ namespace SistemaFigueri
                 }
             }
             
+        }
+
+        private void btnrolsave_Click(object sender, EventArgs e)
+        {
+           CNUsuario objUsuario = new CNUsuario();
+            MessageBox.Show(idusuario.ToString());
+            foreach (SomeData item in data2)
+            {
+                if (item.Value2.ToString() == "")
+                {
+                    SqlDataReader reader = objUsuario.controlUsuarioRol(idusuario, 0);
+                }
+                else
+                {
+                    SqlDataReader reader = objUsuario.controlUsuarioRol(idusuario, Int32.Parse(item.Value2));
+                }
+                
+                //MessageBox.Show(item.Value2); // /n to print each item on new line or you omit /n to print text on same line
+            }
+            MessageBox.Show("Se han actualizado los datos");
         }
     }
 }

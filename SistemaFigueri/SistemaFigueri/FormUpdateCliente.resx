@@ -118,23 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="bmediGuardar.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAALUAAAApCAYAAABz92iRAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKNSURBVHhe7dzPSxRhHMfxJaIICSki++HJKE8hYdrurLO7
-        hQlhRAT9ItoSNbIOWZYlbjPPmFAdKqOoPCQhBh06dOj/+7afZ2Jy2W8edZ6Hz+EFHp5dL+9dnp2Z71M4
-        ea4uRD5h1OQdRk3eYdTkHUZN3mHU5J2Nox4dk+BmQ8KH76X6bFlOR99lZOE30aZDe2gwnPkowa1YBs6P
-        6802/Tfq0vVZ+0Ynonk5kFRkb3JcdpkuKZgC0aZDe2hwf1KUvnhWavGalG4/V9ttixqfgHD6nQxEL2Wn
-        2aP+A6Kttt10SF/0VCpPPsnghTstDbdEjaCrja9y2Iyob0SUN/uSfgkbX2Tw4pQeNb6hGTS5BtsS7Lfb
-        osYeGlsO7UVEedcbT0h58sW6qEfH7I9C7qHJVdvMDgmjZTl16X4aNS6R4BeltpjIFT3migxNvU6jxrU/
-        XCrRFhK5Yrfpkdr8Shp1rbEqHaZbXUjkCmxBzia/0qiHzU973U9bSOQS3H20Uds/lAVErmHU5B1GTd5h
-        1OQdRk3eYdTkHUZN3mHU5J0satyFwd0YbRGRS7Ko8YQeR7XIB1nUGInBBIG2iMgVeH4JzzHZqMuTi3LM
-        jKsLiVxxKBmW8MFSGjXmuyrxCvfV5LT+aEGCG3Np1BDcXZSjUV1dTJR3B01Nhh4ttc4oYqSrMvdZOk2v
-        +iKivMIYYjX6lh1w8y/qJsx3Yc6LAwPkCgRdit5K6dpM1nFL1FC8PG3P/jgSX1XfhCgvuuLAfkOvDxra
-        oraaW5HyvVdSjN/YX5ScMqe8wIQWjsHDcXjh4w/qmXp61H/hE4BLJGfiH/aiNtFWw+ghDizFwaVas7Bh
-        1EQuYtTkHUZN3mHU5B1GTZ6pyx+xmtZXXeIN+QAAAABJRU5ErkJggg==
-</value>
-  </data>
   <data name="bmediCancelar.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAALUAAAApCAYAAABz92iRAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -152,7 +135,21 @@
         cXCp1izsGDWRiRg1WYdRk3UYNVmHUZNl8vIPWRXWVUowAs8AAAAASUVORK5CYII=
 </value>
   </data>
-  <metadata name="bunifuElipse1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
+  <data name="bmediGuardar.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAALUAAAApCAYAAABz92iRAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKNSURBVHhe7dzPSxRhHMfxJaIICSki++HJKE8hYdrurLO7
+        hQlhRAT9ItoSNbIOWZYlbjPPmFAdKqOoPCQhBh06dOj/+7afZ2Jy2W8edZ6Hz+EFHp5dL+9dnp2Z71M4
+        ea4uRD5h1OQdRk3eYdTkHUZN3mHU5J2Nox4dk+BmQ8KH76X6bFlOR99lZOE30aZDe2gwnPkowa1YBs6P
+        6802/Tfq0vVZ+0Ynonk5kFRkb3JcdpkuKZgC0aZDe2hwf1KUvnhWavGalG4/V9ttixqfgHD6nQxEL2Wn
+        2aP+A6Kttt10SF/0VCpPPsnghTstDbdEjaCrja9y2Iyob0SUN/uSfgkbX2Tw4pQeNb6hGTS5BtsS7Lfb
+        osYeGlsO7UVEedcbT0h58sW6qEfH7I9C7qHJVdvMDgmjZTl16X4aNS6R4BeltpjIFT3migxNvU6jxrU/
+        XCrRFhK5Yrfpkdr8Shp1rbEqHaZbXUjkCmxBzia/0qiHzU973U9bSOQS3H20Uds/lAVErmHU5B1GTd5h
+        1OQdRk3eYdTkHUZN3mHU5J0satyFwd0YbRGRS7Ko8YQeR7XIB1nUGInBBIG2iMgVeH4JzzHZqMuTi3LM
+        jKsLiVxxKBmW8MFSGjXmuyrxCvfV5LT+aEGCG3Np1BDcXZSjUV1dTJR3B01Nhh4ttc4oYqSrMvdZOk2v
+        +iKivMIYYjX6lh1w8y/qJsx3Yc6LAwPkCgRdit5K6dpM1nFL1FC8PG3P/jgSX1XfhCgvuuLAfkOvDxra
+        oraaW5HyvVdSjN/YX5ScMqe8wIQWjsHDcXjh4w/qmXp61H/hE4BLJGfiH/aiNtFWw+ghDizFwaVas7Bh
+        1EQuYtTkHUZN3mHU5B1GTZ6pyx+xmtZXXeIN+QAAAABJRU5ErkJggg==
+</value>
+  </data>
 </root>

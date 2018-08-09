@@ -54,32 +54,32 @@ namespace SistemaFigueri
         //GUARDAR NUEVO CLIENTE
         private void bmGuardar_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    cli.InsertClient(cboprovincia.SelectedValue.ToString(),cbosector.SelectedValue.ToString(),bmrazonSocial.Text,bmdireccion.Text,
-            //        bmnombreCliente.Text,bmtelefono.Text,bmfax.Text,bmruc.Text,bmcorreo.Text,cbodocumento.SelectedValue.ToString(),
-            //        bmnumerodoc.Text,bmobservacion.Text,dateInscripcion.Text,cbodepartamento.SelectedValue.ToString(),bmUsuRegistra.Text,bmnivel.Text,dateNacimiento.Text,
-            //        bmnombreComercial.Text,bmcredito.Text,bmqueja.Text,bmsaldo.Text,bmordencliente.Text,cboPersona.SelectedValue.ToString(),bmpromedioventas.Text,bmUsuRegistra.Text);
-            //    MessageBox.Show("Se inserto cliente correctamente");
-            //    this.Close();
-            //    formCliente.MostrarClientes();
-            //}
-            //catch(Exception ex)
-            //{
-            //    MessageBox.Show("No se creo nuevo cliente" + ex);
-            //}
+            try
+            {
+                cli.InsertClient(cbodocumento.SelectedValue.ToString(), cboPersona.SelectedValue.ToString(), bmnumerodoc.Text, bmruc.Text, bmrazonSocial.Text, bmnombreComercial.Text,
+                    bmnombreCliente.Text, bmapellidoP.Text, bmapellidoM.Text, bmcorreo.Text, bmdireccion.Text, bmfax.Text, bmfijo.Text, bmtelefono.Text, dateNacimiento.Text,
+                    cbodepartamento.SelectedValue.ToString(), cboprovincia.SelectedValue.ToString(), cbodistrito.SelectedValue.ToString(), bmUsuRegistra.Text, dateRegistro.Text, bmUserModifica.Text,
+                    dtfechaModifica.Text, cbosector.SelectedValue.ToString(), bmobservacion.Text);
+                MessageBox.Show("SE  registro CLIENTE");
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se registro CLIENTE"+ex.ToString());
+            }
         }
 
-        //LISTAR TIENDA
+        //LISTAR DOCUMENTO
         private void listarDocumento()
         {
             CDCliente cdcli = new CDCliente();
             cbodocumento.DataSource = cdcli.ListarDocumento();
             cbodocumento.DisplayMember = "Nombre";
             cbodocumento.ValueMember = "IdDocIdentidad";
+
         }
 
-        //LISTAR SECTOR
+        //LISTAR PERSONA
         private void listarPersona()
         {
             CDCliente cdcli = new CDCliente();
@@ -88,7 +88,7 @@ namespace SistemaFigueri
             cboPersona.ValueMember = "IdTipoPersona";
         }
 
-        //LISTAR DOCUMENTO
+        //LISTAR SECTOR
         private void listarSector()
         {
             CDCliente cdcli = new CDCliente();
@@ -135,7 +135,7 @@ namespace SistemaFigueri
             fila["Departamento"] = "Selecciona Departamento";
             dt.Rows.InsertAt(fila, 0);
 
-            cbodepartamento.ValueMember = "IdUbigeo";
+            cbodepartamento.ValueMember = "Departamento";
             cbodepartamento.DisplayMember = "Departamento";
             cbodepartamento.DataSource = dt;
 
@@ -155,10 +155,29 @@ namespace SistemaFigueri
             fila["Provincia"] = "Selecciona Provincia";
             dt.Rows.InsertAt(fila, 0);
 
-            cboprovincia.ValueMember = "IdUbigeo";
+            cboprovincia.ValueMember = "Provincia";
             cboprovincia.DisplayMember = "Provincia";
             cboprovincia.DataSource = dt;
 
+        }
+        
+        public void ListarDistrito(String provincia)
+        {
+            Con.Open();
+            SqlCommand cmd = new SqlCommand("select Distrito from caja.Ubigeo u where u.Provincia=@provincia group by Distrito", Con);
+            cmd.Parameters.AddWithValue("Provincia", provincia);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            Con.Close();
+
+            DataRow fila = dt.NewRow();
+            fila["Distrito"] = "Selecciona Distrito";
+            dt.Rows.InsertAt(fila, 0);
+
+            cbodistrito.ValueMember = "Distrito";
+            cbodistrito.DisplayMember = "Distrito";
+            cbodistrito.DataSource = dt;
         }
 
         private void cbodepartamento_SelectedIndexChanged(object sender, EventArgs e)
@@ -167,6 +186,17 @@ namespace SistemaFigueri
             {
                 string Departamento = cbodepartamento.SelectedValue.ToString();
                 ListarProvincia(Departamento);
+                //MessageBox.Show("sfsfds" + Departamento);
+            }
+        }
+
+        private void cboprovincia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboprovincia.SelectedValue.ToString() !=null)
+            {
+                string Provincia = cboprovincia.SelectedValue.ToString();
+                ListarDistrito(Provincia);
+
             }
         }
     }
