@@ -20,7 +20,13 @@ namespace SistemaFigueri
         int cellnum = 0;
         int rownum = 0;
         public List<DataRow> list { get; set; }
+        public List<String> liston { get; set; }
         DataTable tabla = new DataTable();
+        DataTable tablaRol1 = new DataTable();
+        DataTable tablaRol2 = new DataTable();
+        List<SomeData> data = new List<SomeData>();
+        List<SomeData> data2 = new List<SomeData>();
+        public int idusuario;
         public FormPerfiles()
         {
             InitializeComponent();
@@ -30,8 +36,6 @@ namespace SistemaFigueri
             skinManager.ColorScheme = new MaterialSkin.ColorScheme(MaterialSkin.Primary.Blue600, MaterialSkin.Primary.BlueGrey900, MaterialSkin.Primary.Blue500, MaterialSkin.Accent.Orange700, MaterialSkin.TextShade.WHITE);
         }
 
-        
-    
         public void cargarPerfiles(DataGridView dgv)
         {
             try
@@ -200,7 +204,40 @@ namespace SistemaFigueri
             {
                 if (form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
+                    btnrolright.Enabled = true;
+                    btnrolright2.Enabled = true;
+                    btnrolleft.Enabled = true;
+                    btnrolleft2.Enabled = true;
+                    btnrolsave.Enabled = true;
                     tbrolsearch.Text = form.usuario;
+                    CNUsuario objUsuario = new CNUsuario();
+                    idusuario = form.idusuario;
+                    SqlDataReader reader = objUsuario.rolSegunIdUsuario(idusuario);
+                    SqlDataReader reader2 = objUsuario.rolSegunIdUsuario2(idusuario);
+                    /*tablaRol1.Reset();
+                    tablaRol1.Load(reader);
+                    tablaRol2.Reset();
+                    tablaRol2.Load(reader2);
+                    lbRoles1.DataSource = tablaRol1;
+                    lbRoles1.DisplayMember = "nomRol";
+                    lbRoles1.ValueMember = "IdRol";
+                    lbRoles2.DataSource = tablaRol2;
+                    lbRoles2.DisplayMember = "nomRol";
+                    lbRoles2.ValueMember = "IdRol";*/
+                    while (reader.Read())
+                    {
+                        //MessageBox.Show(reader["nomRol"].ToString());
+                        data.Add(new SomeData() { Value = reader["IdRol"].ToString(), Text = reader["nomRol"].ToString() });
+                    }
+                    while (reader2.Read())
+                    {
+                        //MessageBox.Show(reader["nomRol"].ToString());
+                        data2.Add(new SomeData() { Value2 = reader2["IdRol"].ToString(), Text2 = reader2["nomRol"].ToString() });
+                    }
+                    lbRoles1.DisplayMember = "Text";
+                    lbRoles1.DataSource = data;
+                    lbRoles2.DisplayMember = "Text2";
+                    lbRoles2.DataSource = data2;
                 }
                
 
@@ -222,6 +259,93 @@ namespace SistemaFigueri
         {
             panelprisearch.Location = new Point(
             cardprisearch.Width / 2 - panelprisearch.Size.Width / 2, cardprisearch.Height / 2 - panelprisearch.Size.Height / 2);
+        }
+
+        private void btnrolright_Click(object sender, EventArgs e)
+        {
+            int index = lbRoles1.SelectedIndex; //Or wherever else you want to get the index from.
+            if (index < 0)
+            {
+                MessageBox.Show("Elija primero un elemento");
+            }
+            else
+            {
+                int id = Int32.Parse((lbRoles1.SelectedItem as SomeData).Value);
+                String rol = String.Format((lbRoles1.SelectedItem as SomeData).Text);
+                //MessageBox.Show(rol);
+                data2.Add(new SomeData() { Value2 = id.ToString(), Text2 = rol });
+                data.RemoveAt(index);
+
+                lbRoles1.DataSource = null;
+                lbRoles1.DataSource = data;
+                lbRoles1.DisplayMember = "Text";
+                lbRoles2.DataSource = null;
+                lbRoles2.DataSource = data2;
+                lbRoles2.DisplayMember = "Text2";
+                if (lbRoles1.Items.Count > 0)
+                {
+                    //MessageBox.Show("vacío");
+                    btnrolright.Enabled = true;
+                }
+                else
+                {
+                    btnrolright.Enabled = false;
+                }
+                if (lbRoles2.Items.Count > 0)
+                {
+                    //MessageBox.Show("vacío");
+                    btnrolleft.Enabled = true;
+                }
+            }
+        
+
+        }
+
+
+        private void lbRoles1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnrolleft_Click(object sender, EventArgs e)
+        {
+            int index = lbRoles2.SelectedIndex; //Or wherever else you want to get the index from.
+            if (index < 0)
+            {
+                MessageBox.Show("Elija primero un elemento");
+               
+            }
+            else
+            {
+                int id = Int32.Parse((lbRoles2.SelectedItem as SomeData).Value2);
+                String rol = String.Format((lbRoles2.SelectedItem as SomeData).Text2);
+                //MessageBox.Show(rol);
+                data.Add(new SomeData() { Value = id.ToString(), Text = rol });
+                data2.RemoveAt(index);
+
+                lbRoles1.DataSource = null;
+                lbRoles1.DataSource = data;
+                lbRoles1.DisplayMember = "Text";
+                lbRoles2.DataSource = null;
+                lbRoles2.DataSource = data2;
+                lbRoles2.DisplayMember = "Text2";
+                //MessageBox.Show(lbRoles2.Items.Count.ToString());
+                if (lbRoles2.Items.Count > 0)
+                {
+                    //MessageBox.Show("vacío");
+                    btnrolleft.Enabled = true;
+                }
+                else
+                {
+                    btnrolleft.Enabled = false;
+                }
+                if (lbRoles1.Items.Count > 0)
+                {
+                    //MessageBox.Show("vacío");
+                    btnrolright.Enabled = true;
+                }
+            }
+            
         }
     }
 }

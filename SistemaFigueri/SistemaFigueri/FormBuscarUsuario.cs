@@ -19,6 +19,7 @@ namespace SistemaFigueri
         int rownum = 0;
         public List<DataRow> list { get; set; }
         public String usuario { get; set; }
+        public int idusuario { get; set; }
         DataTable tabla = new DataTable();
         
         public FormBuscarUsuario()
@@ -112,7 +113,9 @@ namespace SistemaFigueri
             String usu = dgvUsuarios.Rows[e.RowIndex].Cells["Login"].Value.ToString();
             String id = dgvUsuarios.Rows[e.RowIndex].Cells[0].Value.ToString();
             //usuario = String.Format("Whatever default text there is {0}", nombres);
+            //MessageBox.Show(id);
             usuario = nombres + " " + pat + " " + mat + "  - usuario: " + usu;
+            idusuario = Int32.Parse(id);
             this.DialogResult = DialogResult.OK;
             this.Close();
             /*MessageBox.Show("Valor: " + pat);
