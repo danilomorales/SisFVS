@@ -67,8 +67,7 @@ namespace SistemaFigueri
                     formUP.bmediItem.Text = dgvProductos.CurrentRow.Cells[16].Value.ToString();
                     formUP.bmedinicial.Text = dgvProductos.CurrentRow.Cells[17].Value.ToString();
                     formUP.bmedicta.Text = dgvProductos.CurrentRow.Cells[18].Value.ToString();
-                    formUP.ShowDialog();
-                    
+                    formUP.ShowDialog();                   
                     cdpro.listarProductos();
                     mostarProductos();
 
