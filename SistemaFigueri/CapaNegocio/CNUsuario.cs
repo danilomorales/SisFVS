@@ -67,6 +67,13 @@ namespace CapaNegocio
             return perfil;
         }
 
+        public SqlDataReader controlUsuarioRol(int idusuario,int idrol)
+        {
+            SqlDataReader perfil;
+            perfil = objDato.controlUsuarioRol(idusuario,idrol);
+            return perfil;
+        }
+
         public SqlDataReader rolSegunIdUsuario(int id)
         {
             SqlDataReader perfil;
