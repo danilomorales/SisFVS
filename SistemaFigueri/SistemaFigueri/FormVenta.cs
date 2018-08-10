@@ -600,6 +600,15 @@ namespace SistemaFigueri
 
         private void btnBuscaProcto_Click(object sender, EventArgs e)
         {
+
+            try
+            {
+                int intento = Conexion.
+            }
+            catch
+            {
+
+            }
             FormBuscarProducto formBuscarPro = new FormBuscarProducto();
             formBuscarPro.ShowDialog();
         }
