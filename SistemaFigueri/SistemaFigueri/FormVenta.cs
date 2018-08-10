@@ -254,6 +254,8 @@ namespace SistemaFigueri
         //private void dataListado_DoubleClick(object sender, EventArgs e)
         //{
 
+
+
         //    this.txtIdventa.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["idventa"].Value);
         //    this.txtCliente.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["cliente"].Value);
         //    this.dtFecha.Value = Convert.ToDateTime(this.dataListado.CurrentRow.Cells["fecha"].Value);
@@ -598,6 +600,15 @@ namespace SistemaFigueri
 
         private void btnBuscaProcto_Click(object sender, EventArgs e)
         {
+
+            try
+            {
+                int intento = Conexion.
+            }
+            catch
+            {
+
+            }
             FormBuscarProducto formBuscarPro = new FormBuscarProducto();
             formBuscarPro.ShowDialog();
         }
