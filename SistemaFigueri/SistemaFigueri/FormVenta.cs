@@ -600,7 +600,6 @@ namespace SistemaFigueri
 
         private void btnBuscaProcto_Click(object sender, EventArgs e)
         {
-
             try
             {
                
@@ -640,6 +639,11 @@ namespace SistemaFigueri
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvDetalleNotaVenta_KeyUp(object sender, KeyEventArgs e)
         {
 
         }

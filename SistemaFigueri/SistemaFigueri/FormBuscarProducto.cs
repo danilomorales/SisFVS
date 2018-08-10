@@ -59,18 +59,27 @@ namespace SistemaFigueri
 
         private void dtaListaPro_DoubleClick(object sender, EventArgs e)
         {
-            FormVenta form = FormVenta.GetInstancia();
-            string par1, par2;
-            Decimal par3;
-            int par5;
-            DateTime par6;
-            par1 = Convert.ToString(this.dtaListaPro.CurrentRow.Cells["Alias"].Value);
-            par2 = Convert.ToString(this.dtaListaPro.CurrentRow.Cells["DescripcionProducto"].Value);
-            par3 = Convert.ToDecimal(this.dtaListaPro.CurrentRow.Cells["Valor_Unitario"].Value);
-            par5 = Convert.ToInt32(this.dtaListaPro.CurrentRow.Cells["Stock"].Value);
-            par6 = Convert.ToDateTime(this.dtaListaPro.CurrentRow.Cells["TiempoDuracion"].Value);
-            form.SetProducto(par1, par2, par3, par5, par6);
-            this.Hide();
+            //Program. = Convert.ToInt32(dtaListaPro.CurrentRow.Cells[0].Value.ToString());
+            //Program. = dtaListaPro.CurrentRow.Cells[2].Value.ToString();
+            //Program. = dtaListaPro.CurrentRow.Cells[3].Value.ToString();
+            //Program. = Convert.ToDecimal(dtaListaPro.CurrentRow.Cells[5].Value.ToString());
+            //Program. = Convert.ToInt32(dtaListaPro.CurrentRow.Cells[6].Value.ToString());
+            this.Close();
+
+
+
+            //FormVenta form = FormVenta.GetInstancia();
+            //string par1, par2;
+            //Decimal par3;
+            //int par5;
+            //DateTime par6;
+            //par1 = Convert.ToString(this.dtaListaPro.CurrentRow.Cells["Alias"].Value);
+            //par2 = Convert.ToString(this.dtaListaPro.CurrentRow.Cells["DescripcionProducto"].Value);
+            //par3 = Convert.ToDecimal(this.dtaListaPro.CurrentRow.Cells["Valor_Unitario"].Value);
+            //par5 = Convert.ToInt32(this.dtaListaPro.CurrentRow.Cells["Stock"].Value);
+            //par6 = Convert.ToDateTime(this.dtaListaPro.CurrentRow.Cells["TiempoDuracion"].Value);
+            //form.SetProducto(par1, par2, par3, par5, par6);
+            //this.Hide();
         }
     }
 }
