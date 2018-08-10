@@ -242,7 +242,7 @@ namespace SistemaFigueri
                     
                     lbRoles2.DataSource = data2;
                     lbRoles2.DisplayMember = "Text2";
-                    
+                    btnrolsearch.Focus();
                 }
                
 
@@ -291,15 +291,18 @@ namespace SistemaFigueri
                 {
                     //MessageBox.Show("vacío");
                     btnrolright.Enabled = true;
+                    btnrolright2.Enabled = true;
                 }
                 else
                 {
                     btnrolright.Enabled = false;
+                    btnrolright2.Enabled = false;
                 }
                 if (lbRoles2.Items.Count > 0)
                 {
                     //MessageBox.Show("vacío");
                     btnrolleft.Enabled = true;
+                    btnrolleft2.Enabled = true;
                 }
             }
         
@@ -339,15 +342,18 @@ namespace SistemaFigueri
                 {
                     //MessageBox.Show("vacío");
                     btnrolleft.Enabled = true;
+                    btnrolleft2.Enabled = true;
                 }
                 else
                 {
                     btnrolleft.Enabled = false;
+                    btnrolleft2.Enabled = false;
                 }
                 if (lbRoles1.Items.Count > 0)
                 {
                     //MessageBox.Show("vacío");
                     btnrolright.Enabled = true;
+                    btnrolright2.Enabled = true;
                 }
             }
             
@@ -386,14 +392,18 @@ namespace SistemaFigueri
         {
             try
             {
-                int count = 0;
-                foreach (SomeData item in data)
+                int cantidadItems = lbRoles1.Items.Count;
+                //MessageBox.Show(cantidadItems.ToString());
+                for (int n = cantidadItems - 1; n >= 0; --n)
                 {
-                    data2.Add(new SomeData() { Value2 = item.Value, Text2 = item.Text });
-                    data.RemoveAt(count);
-                    count++;
+                    String idrol = ((SomeData)lbRoles1.Items[n]).Value.ToString();
+                    String nomrol = ((SomeData)lbRoles1.Items[n]).Text.ToString();
+                    data2.Add(new SomeData() { Value2 = idrol, Text2 = nomrol });
+                    //MessageBox.Show("zz" + n + " " + idrol + " " + nomrol);
+                    data.RemoveAt(n);
+                    
                 }
-
+                //MessageBox.Show(count.ToString());
                 lbRoles1.DataSource = null;
                 lbRoles1.DataSource = data;
                 lbRoles1.DisplayMember = "Text";
@@ -404,15 +414,18 @@ namespace SistemaFigueri
                 {
                     //MessageBox.Show("vacío");
                     btnrolright.Enabled = true;
+                    btnrolright2.Enabled = true;
                 }
                 else
                 {
                     btnrolright.Enabled = false;
+                    btnrolright2.Enabled = false;
                 }
                 if (lbRoles2.Items.Count > 0)
                 {
-                    //MessageBox.Show("vacío");
+                    //MessageBox.Show("no vacío");
                     btnrolleft.Enabled = true;
+                    btnrolleft2.Enabled = true;
                 }
             }
             catch(Exception ex)
@@ -420,6 +433,52 @@ namespace SistemaFigueri
                 MessageBox.Show("Error btnrolright2 " + ex);
             }
             
+        }
+
+        private void btnrolleft2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int cantidadItems = lbRoles2.Items.Count;
+                //MessageBox.Show(cantidadItems.ToString());
+                for (int n = cantidadItems - 1; n >= 0; --n)
+                {
+                    String idrol = ((SomeData)lbRoles2.Items[n]).Value.ToString();
+                    String nomrol = ((SomeData)lbRoles2.Items[n]).Text.ToString();
+                    data.Add(new SomeData() { Value = idrol, Text = nomrol });
+                    //MessageBox.Show("zz" + n + " " + idrol + " " + nomrol);
+                    data2.RemoveAt(n);
+
+                }
+                //MessageBox.Show(count.ToString());
+                lbRoles1.DataSource = null;
+                lbRoles1.DataSource = data;
+                lbRoles1.DisplayMember = "Text";
+                lbRoles2.DataSource = null;
+                lbRoles2.DataSource = data2;
+                lbRoles2.DisplayMember = "Text2";
+                if (lbRoles1.Items.Count > 0)
+                {
+                    //MessageBox.Show("vacío");
+                    btnrolright.Enabled = true;
+                    btnrolright2.Enabled = true;
+                }
+                else
+                {
+                    btnrolright.Enabled = false;
+                    btnrolright2.Enabled = false;
+                }
+                if (lbRoles2.Items.Count > 0)
+                {
+                    //MessageBox.Show("no vacío");
+                    btnrolleft.Enabled = true;
+                    btnrolleft2.Enabled = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error btnrolright2 " + ex);
+            }
         }
     }
 }
