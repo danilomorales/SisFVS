@@ -603,7 +603,7 @@ namespace SistemaFigueri
 
             try
             {
-                int intento = Conexion.
+                //int intento = Conexion.
             }
             catch
             {

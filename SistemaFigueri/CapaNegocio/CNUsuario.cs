@@ -94,7 +94,10 @@ namespace CapaNegocio
             return objDato.InsertarUsuario(nombres, paterno, materno, dni, direccion, user, pass, url);
         }
 
-
+        public void eliminarUsuarioRol(int idusuario)
+        {
+            objDato.eliminarUsuarioRol(idusuario);
+        }
 
 
     }

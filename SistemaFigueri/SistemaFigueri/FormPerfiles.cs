@@ -361,13 +361,15 @@ namespace SistemaFigueri
             {
                 if (lbRoles2.Items.Count==0)
                 {
-                    MessageBox.Show("estoy vacío");
+                    //MessageBox.Show("estoy vacío");
                     SqlDataReader reader = objUsuario.controlUsuarioRol(idusuario, 0);
+                    objUsuario.eliminarUsuarioRol(idusuario);
                     MessageBox.Show("Se ha actualizado los datos");
                 }
                 else
                 {
-                    MessageBox.Show("No estoy vacío");
+                    //MessageBox.Show("No estoy vacío");
+                    objUsuario.eliminarUsuarioRol(idusuario);
                     foreach (SomeData item in data2)
                     {
                         SqlDataReader reader = objUsuario.controlUsuarioRol(idusuario, Int32.Parse(item.Value2));

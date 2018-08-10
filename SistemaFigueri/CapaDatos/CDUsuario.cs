@@ -121,5 +121,14 @@ namespace CapaDatos
             return lector;
         }
 
+        public void eliminarUsuarioRol(int idusuario)
+        {
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = Conexion.AbrirConexion();
+            comando.CommandText = "delete from dbo.USUARIO_ROL WHERE IdUsuario=" + idusuario + "";
+            comando.CommandType = CommandType.Text;
+            comando.ExecuteNonQuery();
+            Conexion.CerrarConexion();
+        }
     }
 }
