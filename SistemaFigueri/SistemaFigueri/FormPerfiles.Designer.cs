@@ -32,8 +32,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPerfiles));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabPerfiles = new MaterialSkin.Controls.MaterialTabControl();
             this.pgUsuarios = new System.Windows.Forms.TabPage();
             this.bunifuCards2 = new Bunifu.Framework.UI.BunifuCards();
@@ -89,6 +89,8 @@
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.bindingRoles1 = new System.Windows.Forms.BindingSource(this.components);
             this.bindingRoles2 = new System.Windows.Forms.BindingSource(this.components);
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.tabPerfiles.SuspendLayout();
             this.pgUsuarios.SuspendLayout();
             this.bunifuCards2.SuspendLayout();
@@ -362,24 +364,24 @@
             this.dgvPerfiles.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvPerfiles.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dgvPerfiles.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPerfiles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPerfiles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvPerfiles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPerfiles.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPerfiles.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPerfiles.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvPerfiles.GridColor = System.Drawing.SystemColors.MenuHighlight;
             this.dgvPerfiles.Location = new System.Drawing.Point(22, 233);
             this.dgvPerfiles.Name = "dgvPerfiles";
@@ -443,16 +445,18 @@
             // 
             // panelUsuRol
             // 
+            this.panelUsuRol.Controls.Add(this.label5);
             this.panelUsuRol.Controls.Add(this.btnrolsave);
+            this.panelUsuRol.Controls.Add(this.label4);
             this.panelUsuRol.Controls.Add(this.btnrolleft2);
             this.panelUsuRol.Controls.Add(this.btnrolright2);
             this.panelUsuRol.Controls.Add(this.btnrolleft);
             this.panelUsuRol.Controls.Add(this.btnrolright);
             this.panelUsuRol.Controls.Add(this.lbRoles1);
             this.panelUsuRol.Controls.Add(this.lbRoles2);
-            this.panelUsuRol.Location = new System.Drawing.Point(12, 31);
+            this.panelUsuRol.Location = new System.Drawing.Point(12, 7);
             this.panelUsuRol.Name = "panelUsuRol";
-            this.panelUsuRol.Size = new System.Drawing.Size(764, 542);
+            this.panelUsuRol.Size = new System.Drawing.Size(764, 566);
             this.panelUsuRol.TabIndex = 1;
             // 
             // btnrolsave
@@ -538,11 +542,11 @@
             this.lbRoles1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbRoles1.FormattingEnabled = true;
             this.lbRoles1.ItemHeight = 20;
-            this.lbRoles1.Location = new System.Drawing.Point(31, 15);
+            this.lbRoles1.Location = new System.Drawing.Point(31, 35);
             this.lbRoles1.Margin = new System.Windows.Forms.Padding(50, 3, 50, 3);
             this.lbRoles1.MaximumSize = new System.Drawing.Size(650, 1400);
             this.lbRoles1.Name = "lbRoles1";
-            this.lbRoles1.Size = new System.Drawing.Size(229, 524);
+            this.lbRoles1.Size = new System.Drawing.Size(229, 504);
             this.lbRoles1.TabIndex = 112;
             this.lbRoles1.SelectedIndexChanged += new System.EventHandler(this.lbRoles1_SelectedIndexChanged);
             // 
@@ -551,10 +555,10 @@
             this.lbRoles2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbRoles2.FormattingEnabled = true;
             this.lbRoles2.ItemHeight = 20;
-            this.lbRoles2.Location = new System.Drawing.Point(502, 19);
+            this.lbRoles2.Location = new System.Drawing.Point(502, 35);
             this.lbRoles2.MaximumSize = new System.Drawing.Size(650, 1400);
             this.lbRoles2.Name = "lbRoles2";
-            this.lbRoles2.Size = new System.Drawing.Size(233, 524);
+            this.lbRoles2.Size = new System.Drawing.Size(233, 504);
             this.lbRoles2.TabIndex = 109;
             // 
             // cardrolsearch
@@ -971,6 +975,28 @@
             this.materialTabSelector1.TabIndex = 0;
             this.materialTabSelector1.Text = "materialTabSelector1";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label4.Location = new System.Drawing.Point(46, 12);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(190, 20);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "ROLES SIN ASIGNAR";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label5.Location = new System.Drawing.Point(528, 12);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(180, 20);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "ROLES ASIGNADOS";
+            // 
             // FormPerfiles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1000,6 +1026,7 @@
             this.cardRoles.PerformLayout();
             this.cardUsuRol.ResumeLayout(false);
             this.panelUsuRol.ResumeLayout(false);
+            this.panelUsuRol.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnrolsave)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnrolleft2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnrolright2)).EndInit();
@@ -1091,5 +1118,7 @@
         public System.Windows.Forms.TextBox tbrolsearch;
         private System.Windows.Forms.BindingSource bindingRoles1;
         private System.Windows.Forms.BindingSource bindingRoles2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
     }
 }
