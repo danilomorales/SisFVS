@@ -8,13 +8,13 @@ namespace SistemaFigueri
 {
     class LocalBD
     {
-        //        #region singleton
-        //        private static readonly LocalBD _intancia = new LocalBD();
-        //        public static LocalBD Instancia
-        //        {
-        //            get { return LocalBD._intancia; }
-        //        }
-        //        #endregion singleton
+           #region singleton
+           private static readonly LocalBD _intancia = new LocalBD();
+           public static LocalBD Instancia
+            {                  
+            get { return LocalBD._intancia; }
+            }
+            #endregion singleton
 
         //        #region metodos
         //        int Iidcliente = 0, idClienteNV = 0;
