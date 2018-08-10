@@ -355,22 +355,29 @@ namespace SistemaFigueri
 
         private void btnrolsave_Click(object sender, EventArgs e)
         {
-           CNUsuario objUsuario = new CNUsuario();
-            MessageBox.Show(idusuario.ToString());
-            foreach (SomeData item in data2)
+            CNUsuario objUsuario = new CNUsuario();
+            int index = lbRoles2.SelectedIndex;
+            if (MessageBox.Show("¿Está seguro(a) de actualizar los roles de este usuario?", "Confirmar acción", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes)
             {
-                if (item.Value2.ToString() == "")
+                if (lbRoles2.Items.Count==0)
                 {
+                    MessageBox.Show("estoy vacío");
                     SqlDataReader reader = objUsuario.controlUsuarioRol(idusuario, 0);
+                    MessageBox.Show("Se ha actualizado los datos");
                 }
                 else
                 {
-                    SqlDataReader reader = objUsuario.controlUsuarioRol(idusuario, Int32.Parse(item.Value2));
+                    MessageBox.Show("No estoy vacío");
+                    foreach (SomeData item in data2)
+                    {
+                        SqlDataReader reader = objUsuario.controlUsuarioRol(idusuario, Int32.Parse(item.Value2));
+                        
+                    }
+                    MessageBox.Show("Se ha actualizado los datos");
+
                 }
-                
-                //MessageBox.Show(item.Value2); // /n to print each item on new line or you omit /n to print text on same line
-            }
-            MessageBox.Show("Se han actualizado los datos");
+            }            
+            
         }
     }
 }

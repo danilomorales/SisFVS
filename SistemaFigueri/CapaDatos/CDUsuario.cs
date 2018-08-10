@@ -46,7 +46,7 @@ namespace CapaDatos
             SqlCommand comandon = new SqlCommand(sql, Conexion.AbrirConexion());
             comandon.CommandType = CommandType.StoredProcedure;
             comandon.Parameters.AddWithValue("@id", idusuario);
-            comandon.Parameters.AddWithValue("@idrol", idusuario);
+            comandon.Parameters.AddWithValue("@idrol", idrol);
             lector = comandon.ExecuteReader();
             return lector;
         }
