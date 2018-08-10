@@ -184,6 +184,7 @@
             this.tabPage1.Size = new System.Drawing.Size(1296, 683);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Venta";
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // panel9
             // 
@@ -205,7 +206,7 @@
             this.panel9.Controls.Add(this.panel10);
             this.panel9.Location = new System.Drawing.Point(724, 500);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(452, 177);
+            this.panel9.Size = new System.Drawing.Size(471, 177);
             this.panel9.TabIndex = 214;
             // 
             // bunifuMetroTextbox8
@@ -305,7 +306,7 @@
             this.bunifuImageButton2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuImageButton2.Image = global::SistemaFigueri.Properties.Resources.imprime;
             this.bunifuImageButton2.ImageActive = null;
-            this.bunifuImageButton2.Location = new System.Drawing.Point(261, 116);
+            this.bunifuImageButton2.Location = new System.Drawing.Point(270, 116);
             this.bunifuImageButton2.Name = "bunifuImageButton2";
             this.bunifuImageButton2.Size = new System.Drawing.Size(96, 55);
             this.bunifuImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -327,7 +328,7 @@
             this.btnCerrarVenta.ImageZoom = 20;
             this.btnCerrarVenta.LabelPosition = 20;
             this.btnCerrarVenta.LabelText = "Salir";
-            this.btnCerrarVenta.Location = new System.Drawing.Point(370, 136);
+            this.btnCerrarVenta.Location = new System.Drawing.Point(379, 136);
             this.btnCerrarVenta.Margin = new System.Windows.Forms.Padding(4);
             this.btnCerrarVenta.Name = "btnCerrarVenta";
             this.btnCerrarVenta.Size = new System.Drawing.Size(65, 35);
@@ -416,7 +417,7 @@
             this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel10.Location = new System.Drawing.Point(0, 0);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(452, 25);
+            this.panel10.Size = new System.Drawing.Size(471, 25);
             this.panel10.TabIndex = 2;
             // 
             // label5
@@ -514,7 +515,7 @@
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Location = new System.Drawing.Point(724, 368);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(452, 126);
+            this.panel4.Size = new System.Drawing.Size(471, 126);
             this.panel4.TabIndex = 213;
             // 
             // btnRegistrarCobro
@@ -580,7 +581,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(452, 25);
+            this.panel5.Size = new System.Drawing.Size(471, 25);
             this.panel5.TabIndex = 2;
             // 
             // label2
