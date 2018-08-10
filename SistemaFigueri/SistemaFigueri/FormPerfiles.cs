@@ -381,5 +381,45 @@ namespace SistemaFigueri
             }            
             
         }
+
+        private void btnrolright2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int count = 0;
+                foreach (SomeData item in data)
+                {
+                    data2.Add(new SomeData() { Value2 = item.Value, Text2 = item.Text });
+                    data.RemoveAt(count);
+                    count++;
+                }
+
+                lbRoles1.DataSource = null;
+                lbRoles1.DataSource = data;
+                lbRoles1.DisplayMember = "Text";
+                lbRoles2.DataSource = null;
+                lbRoles2.DataSource = data2;
+                lbRoles2.DisplayMember = "Text2";
+                if (lbRoles1.Items.Count > 0)
+                {
+                    //MessageBox.Show("vacío");
+                    btnrolright.Enabled = true;
+                }
+                else
+                {
+                    btnrolright.Enabled = false;
+                }
+                if (lbRoles2.Items.Count > 0)
+                {
+                    //MessageBox.Show("vacío");
+                    btnrolleft.Enabled = true;
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error btnrolright2 " + ex);
+            }
+            
+        }
     }
 }

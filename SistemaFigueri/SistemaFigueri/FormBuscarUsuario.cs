@@ -114,7 +114,7 @@ namespace SistemaFigueri
             String id = dgvUsuarios.Rows[e.RowIndex].Cells[0].Value.ToString();
             //usuario = String.Format("Whatever default text there is {0}", nombres);
             //MessageBox.Show(id);
-            usuario = nombres + " " + pat + " " + mat + "  - usuario: " + usu;
+            usuario = "  "+nombres + " " + pat + " " + mat + "  - usuario: " + usu;
             idusuario = Int32.Parse(id);
             this.DialogResult = DialogResult.OK;
             this.Close();
