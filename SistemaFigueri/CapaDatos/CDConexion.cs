@@ -12,7 +12,7 @@ namespace CapaDatos
     public class CDConexion
     {
         
-        public SqlConnection Conexion = new SqlConnection("Data Source=192.168.21.5;Initial Catalog=DBFIGUE2;User ID=sa;Password=123;MultipleActiveResultSets=true;");
+        public SqlConnection Conexion = new SqlConnection("Data Source=192.168.0.101;Initial Catalog=DBFIGUE2;User ID=sa;Password=123;MultipleActiveResultSets=true;");
         
         public SqlConnection AbrirConexion()
         {

@@ -72,7 +72,6 @@
             this.cardprisearch = new Bunifu.Framework.UI.BunifuCards();
             this.panelprisearch = new System.Windows.Forms.Panel();
             this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.tbprivi = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.cardRolPrivilegio = new Bunifu.Framework.UI.BunifuCards();
             this.panelRolPrivilegio = new System.Windows.Forms.Panel();
             this.btnprisave = new Bunifu.Framework.UI.BunifuImageButton();
@@ -82,15 +81,12 @@
             this.btnpriright = new Bunifu.Framework.UI.BunifuImageButton();
             this.lbPrivi2 = new System.Windows.Forms.ListBox();
             this.lbPrivi1 = new System.Windows.Forms.ListBox();
-            this.bunifuCards8 = new Bunifu.Framework.UI.BunifuCards();
-            this.bunifuTileButton5 = new Bunifu.Framework.UI.BunifuTileButton();
-            this.bunifuTileButton6 = new Bunifu.Framework.UI.BunifuTileButton();
-            this.bunifuTileButton7 = new Bunifu.Framework.UI.BunifuTileButton();
             this.bunifuCards9 = new Bunifu.Framework.UI.BunifuCards();
             this.label3 = new System.Windows.Forms.Label();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.bindingRoles1 = new System.Windows.Forms.BindingSource(this.components);
             this.bindingRoles2 = new System.Windows.Forms.BindingSource(this.components);
+            this.tbprivisearch = new System.Windows.Forms.TextBox();
             this.tabPerfiles.SuspendLayout();
             this.pgUsuarios.SuspendLayout();
             this.bunifuCards2.SuspendLayout();
@@ -123,7 +119,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnpriright2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnprileft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnpriright)).BeginInit();
-            this.bunifuCards8.SuspendLayout();
             this.bunifuCards9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingRoles1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingRoles2)).BeginInit();
@@ -693,7 +688,6 @@
             this.bunifuCards7.color = System.Drawing.Color.Tomato;
             this.bunifuCards7.Controls.Add(this.cardprisearch);
             this.bunifuCards7.Controls.Add(this.cardRolPrivilegio);
-            this.bunifuCards7.Controls.Add(this.bunifuCards8);
             this.bunifuCards7.Controls.Add(this.bunifuCards9);
             this.bunifuCards7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bunifuCards7.LeftSahddow = false;
@@ -725,8 +719,8 @@
             // 
             // panelprisearch
             // 
+            this.panelprisearch.Controls.Add(this.tbprivisearch);
             this.panelprisearch.Controls.Add(this.bunifuImageButton2);
-            this.panelprisearch.Controls.Add(this.tbprivi);
             this.panelprisearch.Location = new System.Drawing.Point(12, 9);
             this.panelprisearch.Name = "panelprisearch";
             this.panelprisearch.Size = new System.Drawing.Size(764, 64);
@@ -739,35 +733,13 @@
             this.bunifuImageButton2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuImageButton2.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton2.Image")));
             this.bunifuImageButton2.ImageActive = null;
-            this.bunifuImageButton2.Location = new System.Drawing.Point(675, 10);
+            this.bunifuImageButton2.Location = new System.Drawing.Point(680, 10);
             this.bunifuImageButton2.Name = "bunifuImageButton2";
             this.bunifuImageButton2.Size = new System.Drawing.Size(44, 44);
             this.bunifuImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bunifuImageButton2.TabIndex = 69;
             this.bunifuImageButton2.TabStop = false;
             this.bunifuImageButton2.Zoom = 10;
-            // 
-            // tbprivi
-            // 
-            this.tbprivi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbprivi.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbprivi.Enabled = false;
-            this.tbprivi.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
-            this.tbprivi.ForeColor = System.Drawing.Color.White;
-            this.tbprivi.HintForeColor = System.Drawing.Color.White;
-            this.tbprivi.HintText = "Buscar Rol";
-            this.tbprivi.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.tbprivi.isPassword = false;
-            this.tbprivi.LineFocusedColor = System.Drawing.Color.Red;
-            this.tbprivi.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
-            this.tbprivi.LineMouseHoverColor = System.Drawing.Color.SandyBrown;
-            this.tbprivi.LineThickness = 5;
-            this.tbprivi.Location = new System.Drawing.Point(46, 10);
-            this.tbprivi.Margin = new System.Windows.Forms.Padding(4);
-            this.tbprivi.Name = "tbprivi";
-            this.tbprivi.Size = new System.Drawing.Size(631, 44);
-            this.tbprivi.TabIndex = 68;
-            this.tbprivi.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // cardRolPrivilegio
             // 
@@ -887,82 +859,6 @@
             this.lbPrivi1.Size = new System.Drawing.Size(254, 524);
             this.lbPrivi1.TabIndex = 109;
             // 
-            // bunifuCards8
-            // 
-            this.bunifuCards8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuCards8.AutoSize = true;
-            this.bunifuCards8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
-            this.bunifuCards8.BorderRadius = 5;
-            this.bunifuCards8.BottomSahddow = false;
-            this.bunifuCards8.color = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
-            this.bunifuCards8.Controls.Add(this.bunifuTileButton5);
-            this.bunifuCards8.Controls.Add(this.bunifuTileButton6);
-            this.bunifuCards8.Controls.Add(this.bunifuTileButton7);
-            this.bunifuCards8.LeftSahddow = false;
-            this.bunifuCards8.Location = new System.Drawing.Point(554, 43);
-            this.bunifuCards8.Name = "bunifuCards8";
-            this.bunifuCards8.RightSahddow = false;
-            this.bunifuCards8.ShadowDepth = 20;
-            this.bunifuCards8.Size = new System.Drawing.Size(534, 101);
-            this.bunifuCards8.TabIndex = 62;
-            // 
-            // bunifuTileButton5
-            // 
-            this.bunifuTileButton5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
-            this.bunifuTileButton5.color = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
-            this.bunifuTileButton5.colorActive = System.Drawing.Color.MediumSeaGreen;
-            this.bunifuTileButton5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuTileButton5.Font = new System.Drawing.Font("Century Gothic", 14F);
-            this.bunifuTileButton5.ForeColor = System.Drawing.Color.White;
-            this.bunifuTileButton5.Image = ((System.Drawing.Image)(resources.GetObject("bunifuTileButton5.Image")));
-            this.bunifuTileButton5.ImagePosition = 18;
-            this.bunifuTileButton5.ImageZoom = 40;
-            this.bunifuTileButton5.LabelPosition = 28;
-            this.bunifuTileButton5.LabelText = "Eliminar";
-            this.bunifuTileButton5.Location = new System.Drawing.Point(425, 11);
-            this.bunifuTileButton5.Margin = new System.Windows.Forms.Padding(6);
-            this.bunifuTileButton5.Name = "bunifuTileButton5";
-            this.bunifuTileButton5.Size = new System.Drawing.Size(80, 84);
-            this.bunifuTileButton5.TabIndex = 37;
-            // 
-            // bunifuTileButton6
-            // 
-            this.bunifuTileButton6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(155)))), ((int)(((byte)(31)))));
-            this.bunifuTileButton6.color = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(155)))), ((int)(((byte)(31)))));
-            this.bunifuTileButton6.colorActive = System.Drawing.Color.MediumSeaGreen;
-            this.bunifuTileButton6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuTileButton6.Font = new System.Drawing.Font("Century Gothic", 15.75F);
-            this.bunifuTileButton6.ForeColor = System.Drawing.Color.White;
-            this.bunifuTileButton6.Image = ((System.Drawing.Image)(resources.GetObject("bunifuTileButton6.Image")));
-            this.bunifuTileButton6.ImagePosition = 20;
-            this.bunifuTileButton6.ImageZoom = 40;
-            this.bunifuTileButton6.LabelPosition = 30;
-            this.bunifuTileButton6.LabelText = "Editar";
-            this.bunifuTileButton6.Location = new System.Drawing.Point(300, 11);
-            this.bunifuTileButton6.Margin = new System.Windows.Forms.Padding(6);
-            this.bunifuTileButton6.Name = "bunifuTileButton6";
-            this.bunifuTileButton6.Size = new System.Drawing.Size(80, 84);
-            this.bunifuTileButton6.TabIndex = 36;
-            // 
-            // bunifuTileButton7
-            // 
-            this.bunifuTileButton7.BackColor = System.Drawing.Color.SeaGreen;
-            this.bunifuTileButton7.color = System.Drawing.Color.SeaGreen;
-            this.bunifuTileButton7.colorActive = System.Drawing.Color.MediumSeaGreen;
-            this.bunifuTileButton7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuTileButton7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuTileButton7.ForeColor = System.Drawing.Color.White;
-            this.bunifuTileButton7.Image = ((System.Drawing.Image)(resources.GetObject("bunifuTileButton7.Image")));
-            this.bunifuTileButton7.ImagePosition = 18;
-            this.bunifuTileButton7.ImageZoom = 40;
-            this.bunifuTileButton7.LabelPosition = 26;
-            this.bunifuTileButton7.LabelText = "Nuevo Usuario";
-            this.bunifuTileButton7.Location = new System.Drawing.Point(166, 10);
-            this.bunifuTileButton7.Margin = new System.Windows.Forms.Padding(6);
-            this.bunifuTileButton7.Name = "bunifuTileButton7";
-            this.bunifuTileButton7.Size = new System.Drawing.Size(84, 84);
-            this.bunifuTileButton7.TabIndex = 33;
-            // 
             // bunifuCards9
             // 
             this.bunifuCards9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -977,7 +873,7 @@
             this.bunifuCards9.Name = "bunifuCards9";
             this.bunifuCards9.RightSahddow = false;
             this.bunifuCards9.ShadowDepth = 20;
-            this.bunifuCards9.Size = new System.Drawing.Size(509, 101);
+            this.bunifuCards9.Size = new System.Drawing.Size(1060, 101);
             this.bunifuCards9.TabIndex = 63;
             // 
             // label3
@@ -1003,6 +899,21 @@
             this.materialTabSelector1.Size = new System.Drawing.Size(1124, 46);
             this.materialTabSelector1.TabIndex = 0;
             this.materialTabSelector1.Text = "materialTabSelector1";
+            // 
+            // tbprivisearch
+            // 
+            this.tbprivisearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(126)))), ((int)(((byte)(176)))));
+            this.tbprivisearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbprivisearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbprivisearch.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.tbprivisearch.Location = new System.Drawing.Point(38, 10);
+            this.tbprivisearch.Multiline = true;
+            this.tbprivisearch.Name = "tbprivisearch";
+            this.tbprivisearch.ReadOnly = true;
+            this.tbprivisearch.Size = new System.Drawing.Size(646, 44);
+            this.tbprivisearch.TabIndex = 71;
+            this.tbprivisearch.Text = "  Elija el rol para asignarle privilegios";
+            this.tbprivisearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // FormPerfiles
             // 
@@ -1051,6 +962,7 @@
             this.bunifuCards7.PerformLayout();
             this.cardprisearch.ResumeLayout(false);
             this.panelprisearch.ResumeLayout(false);
+            this.panelprisearch.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).EndInit();
             this.cardRolPrivilegio.ResumeLayout(false);
             this.panelRolPrivilegio.ResumeLayout(false);
@@ -1059,7 +971,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnpriright2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnprileft)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnpriright)).EndInit();
-            this.bunifuCards8.ResumeLayout(false);
             this.bunifuCards9.ResumeLayout(false);
             this.bunifuCards9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingRoles1)).EndInit();
@@ -1088,10 +999,6 @@
         private System.Windows.Forms.TabPage pgPrivilegios;
         private MaterialSkin.Controls.MaterialTabSelector materialTabSelector1;
         private Bunifu.Framework.UI.BunifuCards bunifuCards7;
-        private Bunifu.Framework.UI.BunifuCards bunifuCards8;
-        private Bunifu.Framework.UI.BunifuTileButton bunifuTileButton5;
-        private Bunifu.Framework.UI.BunifuTileButton bunifuTileButton6;
-        private Bunifu.Framework.UI.BunifuTileButton bunifuTileButton7;
         private Bunifu.Framework.UI.BunifuCards bunifuCards9;
         private System.Windows.Forms.Label label3;
         private Bunifu.Framework.UI.BunifuCards bunifuCards6;
@@ -1121,11 +1028,11 @@
         private Bunifu.Framework.UI.BunifuCards cardprisearch;
         private System.Windows.Forms.Panel panelprisearch;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton2;
-        public Bunifu.Framework.UI.BunifuMaterialTextbox tbprivi;
         public System.Windows.Forms.TextBox tbrolsearch;
         private System.Windows.Forms.BindingSource bindingRoles1;
         private System.Windows.Forms.BindingSource bindingRoles2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
+        public System.Windows.Forms.TextBox tbprivisearch;
     }
 }
