@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProductos));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
             this.btneliminar = new Bunifu.Framework.UI.BunifuTileButton();
@@ -74,7 +74,7 @@
             this.bunifuCards1.Name = "bunifuCards1";
             this.bunifuCards1.RightSahddow = true;
             this.bunifuCards1.ShadowDepth = 20;
-            this.bunifuCards1.Size = new System.Drawing.Size(302, 97);
+            this.bunifuCards1.Size = new System.Drawing.Size(473, 132);
             this.bunifuCards1.TabIndex = 32;
             // 
             // btneliminar
@@ -90,10 +90,10 @@
             this.btneliminar.ImageZoom = 40;
             this.btneliminar.LabelPosition = 28;
             this.btneliminar.LabelText = "Eliminar";
-            this.btneliminar.Location = new System.Drawing.Point(209, 12);
+            this.btneliminar.Location = new System.Drawing.Point(302, 12);
             this.btneliminar.Margin = new System.Windows.Forms.Padding(6);
             this.btneliminar.Name = "btneliminar";
-            this.btneliminar.Size = new System.Drawing.Size(80, 79);
+            this.btneliminar.Size = new System.Drawing.Size(132, 97);
             this.btneliminar.TabIndex = 37;
             this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click);
             // 
@@ -110,10 +110,10 @@
             this.bunifuTileButton2.ImageZoom = 40;
             this.bunifuTileButton2.LabelPosition = 30;
             this.bunifuTileButton2.LabelText = "Editar";
-            this.bunifuTileButton2.Location = new System.Drawing.Point(112, 9);
+            this.bunifuTileButton2.Location = new System.Drawing.Point(160, 12);
             this.bunifuTileButton2.Margin = new System.Windows.Forms.Padding(6);
             this.bunifuTileButton2.Name = "bunifuTileButton2";
-            this.bunifuTileButton2.Size = new System.Drawing.Size(80, 82);
+            this.bunifuTileButton2.Size = new System.Drawing.Size(130, 97);
             this.bunifuTileButton2.TabIndex = 36;
             this.bunifuTileButton2.Click += new System.EventHandler(this.bunifuTileButton2_Click);
             // 
@@ -133,7 +133,7 @@
             this.btnNuevoProducto.Location = new System.Drawing.Point(20, 9);
             this.btnNuevoProducto.Margin = new System.Windows.Forms.Padding(6);
             this.btnNuevoProducto.Name = "btnNuevoProducto";
-            this.btnNuevoProducto.Size = new System.Drawing.Size(80, 82);
+            this.btnNuevoProducto.Size = new System.Drawing.Size(128, 100);
             this.btnNuevoProducto.TabIndex = 33;
             this.btnNuevoProducto.Click += new System.EventHandler(this.btnNuevoProducto_Click);
             // 
@@ -148,11 +148,11 @@
             this.bunifuCards2.Controls.Add(this.bmBuscar);
             this.bunifuCards2.Controls.Add(this.dgvProductos);
             this.bunifuCards2.LeftSahddow = false;
-            this.bunifuCards2.Location = new System.Drawing.Point(12, 105);
+            this.bunifuCards2.Location = new System.Drawing.Point(12, 154);
             this.bunifuCards2.Name = "bunifuCards2";
             this.bunifuCards2.RightSahddow = true;
             this.bunifuCards2.ShadowDepth = 20;
-            this.bunifuCards2.Size = new System.Drawing.Size(1018, 483);
+            this.bunifuCards2.Size = new System.Drawing.Size(1646, 785);
             this.bunifuCards2.TabIndex = 33;
             // 
             // bunifuImageButton1
@@ -193,18 +193,18 @@
             // dgvProductos
             // 
             this.dgvProductos.BackgroundColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProductos.Location = new System.Drawing.Point(11, 81);
             this.dgvProductos.Name = "dgvProductos";
-            this.dgvProductos.Size = new System.Drawing.Size(999, 388);
+            this.dgvProductos.Size = new System.Drawing.Size(1629, 700);
             this.dgvProductos.TabIndex = 33;
             this.dgvProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellContentClick);
             // 
@@ -221,7 +221,7 @@
             this.bunifuCards3.Name = "bunifuCards3";
             this.bunifuCards3.RightSahddow = true;
             this.bunifuCards3.ShadowDepth = 20;
-            this.bunifuCards3.Size = new System.Drawing.Size(710, 76);
+            this.bunifuCards3.Size = new System.Drawing.Size(676, 131);
             this.bunifuCards3.TabIndex = 34;
             // 
             // FormProductos
@@ -229,7 +229,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.ClientSize = new System.Drawing.Size(1041, 600);
+            this.ClientSize = new System.Drawing.Size(1670, 970);
             this.Controls.Add(this.bunifuCards3);
             this.Controls.Add(this.bunifuCards2);
             this.Controls.Add(this.bunifuCards1);

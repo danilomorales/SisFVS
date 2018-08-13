@@ -16,7 +16,7 @@ namespace SistemaFigueri
     public partial class FormProductos : Form
     {
        
-        CNProductos cp = new CNProductos();
+        CNProductos cp = new CNProductos(); 
         CDProductos cdpro = new CDProductos();
         DataTable tabla = new DataTable();
         public FormProductos()
@@ -116,11 +116,11 @@ namespace SistemaFigueri
             Conexion.Open();
             SqlCommand cmd = Conexion.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from caja.PRODUCTO where Alias like('" + bmBuscar.Text + "%') or DescripcionProducto like('" + bmBuscar.Text + "')or TiempoDuracion like('" + bmBuscar.Text + "')" +
-                "or Stock like('" + bmBuscar.Text + "')or StockMaximo like('" + bmBuscar.Text + "') or StockMinimo like('" + bmBuscar.Text + "')or Valor_Unitario like('" + bmBuscar.Text + "')" +
-                "or PrecioVenta1 like('" + bmBuscar.Text + "')or PrecioVenta2 like('" + bmBuscar.Text + "') or PrecioOferta like('" + bmBuscar.Text + "')or Nota like('" + bmBuscar.Text + "')" +
-                "or Factor like('" + bmBuscar.Text + "')or Estado like('" + bmBuscar.Text + "')or Item like('" + bmBuscar.Text + "') or StockInicial like('" + bmBuscar.Text + "')" +
-                "or cta_vnt like('" + bmBuscar.Text + "')or Vigente like('" + bmBuscar.Text + "')";
+            cmd.CommandText = "select p.IdProducto,p.Alias as Nombre,c.Descripcion as Categoria,m.Descripcion as Medida,p.DescripcionProducto as 'Descripcion del producto'," +
+                "p.TiempoDuracion as Duración,p.Stock,p.StockMaximo as 'Stock Maximo', p.StockMinimo as 'Stock Minimo',p.Valor_Unitario as 'Valor Unitario',p.PrecioVenta1 as 'P. Venta 1'," +
+                "p.PrecioVenta2 as 'P. Venta 2',p.PrecioOferta as 'Precio Oferta',p.Nota,p.Factor,p.Estado,p.Item,p.StockInicial as 'Stock Inicial', p.cta_vnt as 'Cta vnt',p.Vigente " +
+                "from caja.PRODUCTO p, dbo.CATEGORIA c, dbo.MEDIDA m " +
+                "where p.IdCategoria = c.IdCategoria  AND p.IdMedida = m.IdMedida and Alias like('%" + bmBuscar.Text + "%')";
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
