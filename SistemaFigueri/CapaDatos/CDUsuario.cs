@@ -102,13 +102,21 @@ namespace CapaDatos
                 comando.Parameters.AddWithValue("@vDireccion", direccion);
                 comando.Parameters.AddWithValue("@vUser", user);
                 comando.Parameters.AddWithValue("@vPass", pass);
-                byte[] img = null;
-                FileStream fs = new FileStream(url, FileMode.Open, FileAccess.Read);
-                BinaryReader br = new BinaryReader(fs);
-                img = br.ReadBytes((int)fs.Length);
-                comando.Parameters.AddWithValue("@vImagen",img);
-                comando.ExecuteNonQuery();
-                count = 1;
+                if (url == ""||url==null)
+                {
+                    comando.Parameters.AddWithValue("@vImagen", DBNull.Value);
+                }
+                else
+                {
+                    byte[] img = null;
+                    FileStream fs = new FileStream(url, FileMode.Open, FileAccess.Read);
+                    BinaryReader br = new BinaryReader(fs);
+                    img = br.ReadBytes((int)fs.Length);
+                    comando.Parameters.AddWithValue("@vImagen", img);
+                    comando.ExecuteNonQuery();
+                    count = 1;
+                }
+                
             }
             catch(SqlException exp)
             {
@@ -137,6 +145,15 @@ namespace CapaDatos
                 "WHERE usurol.IdUsuario = @id; ";
             SqlCommand comando = new SqlCommand(sql, Conexion.AbrirConexion());
             comando.Parameters.AddWithValue("@id", id);
+            lector = comando.ExecuteReader();
+            return lector;
+        }
+
+        public SqlDataReader existeUsuario(String login)
+        {
+            String sql = "select Login from Caja.Usuario where Login=@login ";
+            SqlCommand comando = new SqlCommand(sql, Conexion.AbrirConexion());
+            comando.Parameters.AddWithValue("@login", login);
             lector = comando.ExecuteReader();
             return lector;
         }

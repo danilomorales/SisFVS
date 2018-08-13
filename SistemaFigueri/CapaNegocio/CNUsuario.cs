@@ -116,6 +116,13 @@ namespace CapaNegocio
             return perfil;
         }
 
+        public SqlDataReader existeUsuario(String login)
+        {
+            SqlDataReader perfil;
+            perfil = objDato.existeUsuario(login);
+            return perfil;
+        }
+
         public int insertarUsuario(String nombres, String paterno, String materno, String dni, String direccion, String user, String pass, String url)
         {
             Console.WriteLine("Llegando .."+nombres+" "+ paterno + " " +  materno + " " + dni + " " + direccion +" " + user + " " + pass + " "  + " " + url);
