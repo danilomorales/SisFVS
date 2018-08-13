@@ -58,6 +58,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormBuscarRoles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBuscarRoles.Designer.cs">
+      <DependentUpon>FormBuscarRoles.cs</DependentUpon>
+    </Compile>
     <Compile Include="LocalBD.cs" />
     <Compile Include="Busqueda_Cliente.cs" />
     <Compile Include="FormBuscarCliente.cs">
@@ -194,6 +200,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormBuscarCliente.resx">
       <DependentUpon>FormBuscarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBuscarRoles.resx">
+      <DependentUpon>FormBuscarRoles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormBuscarUsuario.resx">
       <DependentUpon>FormBuscarUsuario.cs</DependentUpon>

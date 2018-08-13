@@ -105,8 +105,7 @@ namespace SistemaFigueri
 
         private void dgvUsuarios_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            FormPerfiles perfiles = new FormPerfiles();
-            
+ 
             String nombres = dgvUsuarios.Rows[e.RowIndex].Cells["Nombres"].Value.ToString();
             String pat = dgvUsuarios.Rows[e.RowIndex].Cells["ApellidoPaterno"].Value.ToString();
             String mat = dgvUsuarios.Rows[e.RowIndex].Cells["ApellidoMaterno"].Value.ToString();

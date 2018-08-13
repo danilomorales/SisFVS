@@ -32,8 +32,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPerfiles));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabPerfiles = new MaterialSkin.Controls.MaterialTabControl();
             this.pgUsuarios = new System.Windows.Forms.TabPage();
             this.bunifuCards2 = new Bunifu.Framework.UI.BunifuCards();
@@ -71,7 +71,8 @@
             this.bunifuCards7 = new Bunifu.Framework.UI.BunifuCards();
             this.cardprisearch = new Bunifu.Framework.UI.BunifuCards();
             this.panelprisearch = new System.Windows.Forms.Panel();
-            this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.tbprivisearch = new System.Windows.Forms.TextBox();
+            this.btnprivisearch = new Bunifu.Framework.UI.BunifuImageButton();
             this.cardRolPrivilegio = new Bunifu.Framework.UI.BunifuCards();
             this.panelRolPrivilegio = new System.Windows.Forms.Panel();
             this.btnprisave = new Bunifu.Framework.UI.BunifuImageButton();
@@ -86,7 +87,8 @@
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.bindingRoles1 = new System.Windows.Forms.BindingSource(this.components);
             this.bindingRoles2 = new System.Windows.Forms.BindingSource(this.components);
-            this.tbprivisearch = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.tabPerfiles.SuspendLayout();
             this.pgUsuarios.SuspendLayout();
             this.bunifuCards2.SuspendLayout();
@@ -111,7 +113,7 @@
             this.bunifuCards7.SuspendLayout();
             this.cardprisearch.SuspendLayout();
             this.panelprisearch.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnprivisearch)).BeginInit();
             this.cardRolPrivilegio.SuspendLayout();
             this.panelRolPrivilegio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnprisave)).BeginInit();
@@ -359,24 +361,24 @@
             this.dgvPerfiles.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvPerfiles.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dgvPerfiles.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPerfiles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPerfiles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvPerfiles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPerfiles.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPerfiles.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPerfiles.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvPerfiles.GridColor = System.Drawing.SystemColors.MenuHighlight;
             this.dgvPerfiles.Location = new System.Drawing.Point(22, 233);
             this.dgvPerfiles.Name = "dgvPerfiles";
@@ -720,26 +722,42 @@
             // panelprisearch
             // 
             this.panelprisearch.Controls.Add(this.tbprivisearch);
-            this.panelprisearch.Controls.Add(this.bunifuImageButton2);
+            this.panelprisearch.Controls.Add(this.btnprivisearch);
             this.panelprisearch.Location = new System.Drawing.Point(12, 9);
             this.panelprisearch.Name = "panelprisearch";
             this.panelprisearch.Size = new System.Drawing.Size(764, 64);
             this.panelprisearch.TabIndex = 1;
             // 
-            // bunifuImageButton2
+            // tbprivisearch
             // 
-            this.bunifuImageButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuImageButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
-            this.bunifuImageButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuImageButton2.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton2.Image")));
-            this.bunifuImageButton2.ImageActive = null;
-            this.bunifuImageButton2.Location = new System.Drawing.Point(680, 10);
-            this.bunifuImageButton2.Name = "bunifuImageButton2";
-            this.bunifuImageButton2.Size = new System.Drawing.Size(44, 44);
-            this.bunifuImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton2.TabIndex = 69;
-            this.bunifuImageButton2.TabStop = false;
-            this.bunifuImageButton2.Zoom = 10;
+            this.tbprivisearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(126)))), ((int)(((byte)(176)))));
+            this.tbprivisearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbprivisearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbprivisearch.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.tbprivisearch.Location = new System.Drawing.Point(38, 10);
+            this.tbprivisearch.Multiline = true;
+            this.tbprivisearch.Name = "tbprivisearch";
+            this.tbprivisearch.ReadOnly = true;
+            this.tbprivisearch.Size = new System.Drawing.Size(646, 44);
+            this.tbprivisearch.TabIndex = 71;
+            this.tbprivisearch.Text = "  Elija el rol para asignarle privilegios";
+            this.tbprivisearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btnprivisearch
+            // 
+            this.btnprivisearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnprivisearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
+            this.btnprivisearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnprivisearch.Image = ((System.Drawing.Image)(resources.GetObject("btnprivisearch.Image")));
+            this.btnprivisearch.ImageActive = null;
+            this.btnprivisearch.Location = new System.Drawing.Point(680, 10);
+            this.btnprivisearch.Name = "btnprivisearch";
+            this.btnprivisearch.Size = new System.Drawing.Size(44, 44);
+            this.btnprivisearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnprivisearch.TabIndex = 69;
+            this.btnprivisearch.TabStop = false;
+            this.btnprivisearch.Zoom = 10;
+            this.btnprivisearch.Click += new System.EventHandler(this.btnprivisearch_Click);
             // 
             // cardRolPrivilegio
             // 
@@ -763,6 +781,8 @@
             // 
             // panelRolPrivilegio
             // 
+            this.panelRolPrivilegio.Controls.Add(this.label6);
+            this.panelRolPrivilegio.Controls.Add(this.label7);
             this.panelRolPrivilegio.Controls.Add(this.btnprisave);
             this.panelRolPrivilegio.Controls.Add(this.btnprileft2);
             this.panelRolPrivilegio.Controls.Add(this.btnpriright2);
@@ -778,85 +798,95 @@
             // btnprisave
             // 
             this.btnprisave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            this.btnprisave.Enabled = false;
             this.btnprisave.Image = global::SistemaFigueri.Properties.Resources.save;
             this.btnprisave.ImageActive = null;
-            this.btnprisave.Location = new System.Drawing.Point(365, 478);
+            this.btnprisave.Location = new System.Drawing.Point(365, 493);
             this.btnprisave.Name = "btnprisave";
             this.btnprisave.Size = new System.Drawing.Size(50, 50);
             this.btnprisave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnprisave.TabIndex = 117;
             this.btnprisave.TabStop = false;
             this.btnprisave.Zoom = 10;
+            this.btnprisave.Click += new System.EventHandler(this.btnprisave_Click);
             // 
             // btnprileft2
             // 
             this.btnprileft2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            this.btnprileft2.Enabled = false;
             this.btnprileft2.Image = global::SistemaFigueri.Properties.Resources.left2;
             this.btnprileft2.ImageActive = null;
-            this.btnprileft2.Location = new System.Drawing.Point(365, 332);
+            this.btnprileft2.Location = new System.Drawing.Point(365, 341);
             this.btnprileft2.Name = "btnprileft2";
             this.btnprileft2.Size = new System.Drawing.Size(50, 50);
             this.btnprileft2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnprileft2.TabIndex = 116;
             this.btnprileft2.TabStop = false;
             this.btnprileft2.Zoom = 10;
+            this.btnprileft2.Click += new System.EventHandler(this.btnprileft2_Click);
             // 
             // btnpriright2
             // 
             this.btnpriright2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            this.btnpriright2.Enabled = false;
             this.btnpriright2.Image = global::SistemaFigueri.Properties.Resources.right2;
             this.btnpriright2.ImageActive = null;
-            this.btnpriright2.Location = new System.Drawing.Point(365, 224);
+            this.btnpriright2.Location = new System.Drawing.Point(365, 243);
             this.btnpriright2.Name = "btnpriright2";
             this.btnpriright2.Size = new System.Drawing.Size(50, 50);
             this.btnpriright2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnpriright2.TabIndex = 115;
             this.btnpriright2.TabStop = false;
             this.btnpriright2.Zoom = 10;
+            this.btnpriright2.Click += new System.EventHandler(this.btnpriright2_Click);
             // 
             // btnprileft
             // 
             this.btnprileft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            this.btnprileft.Enabled = false;
             this.btnprileft.Image = global::SistemaFigueri.Properties.Resources.left;
             this.btnprileft.ImageActive = null;
-            this.btnprileft.Location = new System.Drawing.Point(365, 121);
+            this.btnprileft.Location = new System.Drawing.Point(365, 145);
             this.btnprileft.Name = "btnprileft";
             this.btnprileft.Size = new System.Drawing.Size(50, 50);
             this.btnprileft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnprileft.TabIndex = 114;
             this.btnprileft.TabStop = false;
             this.btnprileft.Zoom = 10;
+            this.btnprileft.Click += new System.EventHandler(this.btnprileft_Click);
             // 
             // btnpriright
             // 
             this.btnpriright.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            this.btnpriright.Enabled = false;
             this.btnpriright.Image = global::SistemaFigueri.Properties.Resources.right;
             this.btnpriright.ImageActive = null;
-            this.btnpriright.Location = new System.Drawing.Point(365, 19);
+            this.btnpriright.Location = new System.Drawing.Point(365, 45);
             this.btnpriright.Name = "btnpriright";
             this.btnpriright.Size = new System.Drawing.Size(50, 50);
             this.btnpriright.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnpriright.TabIndex = 113;
             this.btnpriright.TabStop = false;
             this.btnpriright.Zoom = 10;
+            this.btnpriright.Click += new System.EventHandler(this.btnpriright_Click);
             // 
             // lbPrivi2
             // 
             this.lbPrivi2.FormattingEnabled = true;
-            this.lbPrivi2.Location = new System.Drawing.Point(486, 19);
+            this.lbPrivi2.Location = new System.Drawing.Point(486, 45);
             this.lbPrivi2.Margin = new System.Windows.Forms.Padding(50, 3, 50, 3);
             this.lbPrivi2.MaximumSize = new System.Drawing.Size(650, 1400);
             this.lbPrivi2.Name = "lbPrivi2";
-            this.lbPrivi2.Size = new System.Drawing.Size(242, 524);
+            this.lbPrivi2.Size = new System.Drawing.Size(242, 498);
             this.lbPrivi2.TabIndex = 112;
             // 
             // lbPrivi1
             // 
             this.lbPrivi1.FormattingEnabled = true;
-            this.lbPrivi1.Location = new System.Drawing.Point(42, 19);
+            this.lbPrivi1.Location = new System.Drawing.Point(42, 45);
             this.lbPrivi1.MaximumSize = new System.Drawing.Size(650, 1400);
             this.lbPrivi1.Name = "lbPrivi1";
-            this.lbPrivi1.Size = new System.Drawing.Size(254, 524);
+            this.lbPrivi1.Size = new System.Drawing.Size(254, 498);
             this.lbPrivi1.TabIndex = 109;
             // 
             // bunifuCards9
@@ -900,20 +930,27 @@
             this.materialTabSelector1.TabIndex = 0;
             this.materialTabSelector1.Text = "materialTabSelector1";
             // 
-            // tbprivisearch
+            // label6
             // 
-            this.tbprivisearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(126)))), ((int)(((byte)(176)))));
-            this.tbprivisearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbprivisearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbprivisearch.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.tbprivisearch.Location = new System.Drawing.Point(38, 10);
-            this.tbprivisearch.Multiline = true;
-            this.tbprivisearch.Name = "tbprivisearch";
-            this.tbprivisearch.ReadOnly = true;
-            this.tbprivisearch.Size = new System.Drawing.Size(646, 44);
-            this.tbprivisearch.TabIndex = 71;
-            this.tbprivisearch.Text = "  Elija el rol para asignarle privilegios";
-            this.tbprivisearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label6.Location = new System.Drawing.Point(469, 17);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(292, 25);
+            this.label6.TabIndex = 119;
+            this.label6.Text = "PRIVILEGIOS ASIGNADOS";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label7.Location = new System.Drawing.Point(16, 17);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(304, 25);
+            this.label7.TabIndex = 118;
+            this.label7.Text = "PRIVILEGIOS SIN ASIGNAR";
             // 
             // FormPerfiles
             // 
@@ -963,9 +1000,10 @@
             this.cardprisearch.ResumeLayout(false);
             this.panelprisearch.ResumeLayout(false);
             this.panelprisearch.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnprivisearch)).EndInit();
             this.cardRolPrivilegio.ResumeLayout(false);
             this.panelRolPrivilegio.ResumeLayout(false);
+            this.panelRolPrivilegio.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnprisave)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnprileft2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnpriright2)).EndInit();
@@ -1027,12 +1065,14 @@
         private Bunifu.Framework.UI.BunifuImageButton btnprisave;
         private Bunifu.Framework.UI.BunifuCards cardprisearch;
         private System.Windows.Forms.Panel panelprisearch;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton2;
+        private Bunifu.Framework.UI.BunifuImageButton btnprivisearch;
         public System.Windows.Forms.TextBox tbrolsearch;
         private System.Windows.Forms.BindingSource bindingRoles1;
         private System.Windows.Forms.BindingSource bindingRoles2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         public System.Windows.Forms.TextBox tbprivisearch;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
     }
 }
