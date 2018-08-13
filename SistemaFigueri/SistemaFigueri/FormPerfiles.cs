@@ -26,7 +26,9 @@ namespace SistemaFigueri
         DataTable tablaRol2 = new DataTable();
         List<SomeData> data;
         List<SomeData> data2;
-        public int idusuario;
+        List<SomeData> data3;
+        List<SomeData> data4;
+        public int idusuario; public int idrol;
         public FormPerfiles()
         {
             InitializeComponent();
@@ -242,17 +244,11 @@ namespace SistemaFigueri
                     
                     lbRoles2.DataSource = data2;
                     lbRoles2.DisplayMember = "Text2";
-                    
+                    btnrolsearch.Focus();
                 }
                
 
             }
-        }
-
-        private void tbrolsearch_DoubleClick(object sender, EventArgs e)
-        {
-            FormBuscarUsuario formMC = new FormBuscarUsuario();
-            formMC.ShowDialog();
         }
 
         private void dgvPerfiles_RowPostPaint_1(object sender, DataGridViewRowPostPaintEventArgs e)
@@ -291,15 +287,18 @@ namespace SistemaFigueri
                 {
                     //MessageBox.Show("vacío");
                     btnrolright.Enabled = true;
+                    btnrolright2.Enabled = true;
                 }
                 else
                 {
                     btnrolright.Enabled = false;
+                    btnrolright2.Enabled = false;
                 }
                 if (lbRoles2.Items.Count > 0)
                 {
                     //MessageBox.Show("vacío");
                     btnrolleft.Enabled = true;
+                    btnrolleft2.Enabled = true;
                 }
             }
         
@@ -339,15 +338,18 @@ namespace SistemaFigueri
                 {
                     //MessageBox.Show("vacío");
                     btnrolleft.Enabled = true;
+                    btnrolleft2.Enabled = true;
                 }
                 else
                 {
                     btnrolleft.Enabled = false;
+                    btnrolleft2.Enabled = false;
                 }
                 if (lbRoles1.Items.Count > 0)
                 {
                     //MessageBox.Show("vacío");
                     btnrolright.Enabled = true;
+                    btnrolright2.Enabled = true;
                 }
             }
             
@@ -386,14 +388,18 @@ namespace SistemaFigueri
         {
             try
             {
-                int count = 0;
-                foreach (SomeData item in data)
+                int cantidadItems = lbRoles1.Items.Count;
+                //MessageBox.Show(cantidadItems.ToString());
+                for (int n = cantidadItems - 1; n >= 0; --n)
                 {
-                    data2.Add(new SomeData() { Value2 = item.Value, Text2 = item.Text });
-                    data.RemoveAt(count);
-                    count++;
+                    String idrol = ((SomeData)lbRoles1.Items[n]).Value.ToString();
+                    String nomrol = ((SomeData)lbRoles1.Items[n]).Text.ToString();
+                    data2.Add(new SomeData() { Value2 = idrol, Text2 = nomrol });
+                    //MessageBox.Show("zz" + n + " " + idrol + " " + nomrol);
+                    data.RemoveAt(n);
+                    
                 }
-
+                //MessageBox.Show(count.ToString());
                 lbRoles1.DataSource = null;
                 lbRoles1.DataSource = data;
                 lbRoles1.DisplayMember = "Text";
@@ -404,15 +410,18 @@ namespace SistemaFigueri
                 {
                     //MessageBox.Show("vacío");
                     btnrolright.Enabled = true;
+                    btnrolright2.Enabled = true;
                 }
                 else
                 {
                     btnrolright.Enabled = false;
+                    btnrolright2.Enabled = false;
                 }
                 if (lbRoles2.Items.Count > 0)
                 {
-                    //MessageBox.Show("vacío");
+                    //MessageBox.Show("no vacío");
                     btnrolleft.Enabled = true;
+                    btnrolleft2.Enabled = true;
                 }
             }
             catch(Exception ex)
@@ -420,6 +429,317 @@ namespace SistemaFigueri
                 MessageBox.Show("Error btnrolright2 " + ex);
             }
             
+        }
+
+        private void btnrolleft2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int cantidadItems = lbRoles2.Items.Count;
+                //MessageBox.Show(cantidadItems.ToString());
+                for (int n = cantidadItems - 1; n >= 0; --n)
+                {
+                    String idrol = ((SomeData)lbRoles2.Items[n]).Value2.ToString();
+                    String nomrol = ((SomeData)lbRoles2.Items[n]).Text2.ToString();
+                    data.Add(new SomeData() { Value = idrol, Text = nomrol });
+                    //MessageBox.Show("zz" + n + " " + idrol + " " + nomrol);
+                    data2.RemoveAt(n);
+
+                }
+                //MessageBox.Show(count.ToString());
+                lbRoles1.DataSource = null;
+                lbRoles1.DataSource = data;
+                lbRoles1.DisplayMember = "Text";
+                lbRoles2.DataSource = null;
+                lbRoles2.DataSource = data2;
+                lbRoles2.DisplayMember = "Text2";
+                if (lbRoles2.Items.Count > 0)
+                {
+                    //MessageBox.Show("vacío");
+                    
+                    btnrolleft.Enabled = true;
+                    btnrolleft2.Enabled = true;
+                }
+                else
+                {
+                    btnrolleft.Enabled = false;
+                    btnrolleft2.Enabled = false;
+                }
+                if (lbRoles1.Items.Count > 0)
+                {
+                    //MessageBox.Show("no vacío");
+                    btnrolright.Enabled = true;
+                    btnrolright2.Enabled = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error btnrolright2 " + ex);
+            }
+        }
+
+        private void btnprivisearch_Click(object sender, EventArgs e)
+        {
+            using (FormBuscarRoles form = new FormBuscarRoles())
+            {
+                if (form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    tbprivisearch.Text = form.nomRol;
+                    CNUsuario objUsuario = new CNUsuario();
+                    idrol = form.idrol;
+                    SqlDataReader reader = objUsuario.privSegunIdRol(idrol);
+                    SqlDataReader reader2 = objUsuario.privSegunIdRol2(idrol);
+                    data3 = new List<SomeData>();
+                    data4 = new List<SomeData>();
+                    while (reader.Read())
+                    {
+                        //MessageBox.Show(reader["nomRol"].ToString());
+                        data3.Add(new SomeData() { Value3 = reader["IdPrivilegio"].ToString(), Text3 = reader["nombre"].ToString() });
+                    }
+                    while (reader2.Read())
+                    {
+                        //MessageBox.Show(reader["nomRol"].ToString());
+                        data4.Add(new SomeData() { Value4 = reader2["IdPrivilegio"].ToString(), Text4 = reader2["nombre"].ToString() });
+                    }
+
+                    lbPrivi1.DataSource = data3;
+                    lbPrivi1.DisplayMember = "Text3";
+
+                    lbPrivi2.DataSource = data4;
+                    lbPrivi2.DisplayMember = "Text4";
+                    btnprivisearch.Focus();
+
+                    if (lbPrivi2.Items.Count > 0)
+                    {
+                        //MessageBox.Show("vacío");
+
+                        btnprileft.Enabled = true;
+                        btnprileft2.Enabled = true;
+                    }
+                    else
+                    {
+                        btnprileft.Enabled = false;
+                        btnprileft2.Enabled = false;
+                    }
+                    if (lbPrivi1.Items.Count > 0)
+                    {
+                        //MessageBox.Show("no vacío");
+                        btnpriright.Enabled = true;
+                        btnpriright2.Enabled = true;
+                    }
+                    else{
+                        btnpriright.Enabled = false;
+                        btnpriright2.Enabled = false;
+                    }
+                }
+
+
+            }
+        }
+
+        private void btnpriright_Click(object sender, EventArgs e)
+        {
+            int index = lbPrivi1.SelectedIndex; //Or wherever else you want to get the index from.
+            if (index < 0)
+            {
+                MessageBox.Show("Elija primero un elemento");
+            }
+            else
+            {
+                int id = Int32.Parse((lbPrivi1.SelectedItem as SomeData).Value3);
+                String rol = String.Format((lbPrivi1.SelectedItem as SomeData).Text3);
+                //MessageBox.Show(rol);
+                data4.Add(new SomeData() { Value4 = id.ToString(), Text4 = rol });
+                data3.RemoveAt(index);
+
+                lbPrivi1.DataSource = null;
+                lbPrivi1.DataSource = data3;
+                lbPrivi1.DisplayMember = "Text3";
+                lbPrivi2.DataSource = null;
+                lbPrivi2.DataSource = data4;
+                lbPrivi2.DisplayMember = "Text4";
+                if (lbPrivi1.Items.Count > 0)
+                {
+                    //MessageBox.Show("vacío");
+                    btnpriright.Enabled = true;
+                    btnpriright2.Enabled = true;
+                }
+                else
+                {
+                    btnpriright.Enabled = false;
+                    btnpriright2.Enabled = false;
+                }
+                if (lbPrivi2.Items.Count > 0)
+                {
+                    //MessageBox.Show("vacío");
+                    btnprileft.Enabled = true;
+                    btnprileft2.Enabled = true;
+                }
+            }
+        }
+
+        private void btnprileft_Click(object sender, EventArgs e)
+        {
+            int index = lbPrivi2.SelectedIndex; //Or wherever else you want to get the index from.
+            if (index < 0)
+            {
+                MessageBox.Show("Elija primero un elemento");
+
+            }
+            else
+            {
+                int id = Int32.Parse((lbPrivi2.SelectedItem as SomeData).Value4);
+                String rol = String.Format((lbPrivi2.SelectedItem as SomeData).Text4);
+                //MessageBox.Show(rol);
+                data3.Add(new SomeData() { Value3 = id.ToString(), Text3 = rol });
+                data4.RemoveAt(index);
+
+                lbPrivi1.DataSource = null;
+                lbPrivi1.DataSource = data3;
+                lbPrivi1.DisplayMember = "Text3";
+                lbPrivi2.DataSource = null;
+                lbPrivi2.DataSource = data4;
+                lbPrivi2.DisplayMember = "Text4";
+                //MessageBox.Show(lbRoles2.Items.Count.ToString());
+                if (lbPrivi2.Items.Count > 0)
+                {
+                    //MessageBox.Show("vacío");
+                    btnprileft.Enabled = true;
+                    btnprileft2.Enabled = true;
+                }
+                else
+                {
+                    btnprileft.Enabled = false;
+                    btnprileft2.Enabled = false;
+                }
+                if (lbPrivi1.Items.Count > 0)
+                {
+                    //MessageBox.Show("vacío");
+                    btnpriright.Enabled = true;
+                    btnpriright2.Enabled = true;
+                }
+            }
+        }
+
+        private void btnpriright2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int cantidadItems = lbPrivi1.Items.Count;
+                //MessageBox.Show(cantidadItems.ToString());
+                for (int n = cantidadItems - 1; n >= 0; --n)
+                {
+                    String idrol = ((SomeData)lbPrivi1.Items[n]).Value3.ToString();
+                    String nomrol = ((SomeData)lbPrivi1.Items[n]).Text3.ToString();
+                    data4.Add(new SomeData() { Value4 = idrol, Text4 = nomrol });
+                    //MessageBox.Show("zz" + n + " " + idrol + " " + nomrol);
+                    data3.RemoveAt(n);
+                    
+                }
+                //MessageBox.Show(count.ToString());
+                lbPrivi1.DataSource = null;
+                lbPrivi1.DataSource = data3;
+                lbPrivi1.DisplayMember = "Text3";
+                lbPrivi2.DataSource = null;
+                lbPrivi2.DataSource = data4;
+                lbPrivi2.DisplayMember = "Text4";
+                if (lbPrivi1.Items.Count > 0)
+                {
+                    //MessageBox.Show("vacío");
+                    btnpriright.Enabled = true;
+                    btnpriright2.Enabled = true;
+                }
+                else
+                {
+                    btnpriright.Enabled = false;
+                    btnpriright2.Enabled = false;
+                }
+                if (lbPrivi2.Items.Count > 0)
+                {
+                    //MessageBox.Show("no vacío");
+                    btnprileft.Enabled = true;
+                    btnprileft2.Enabled = true;
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error btnpriright2 " + ex);
+            }
+        }
+
+        private void btnprileft2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int cantidadItems = lbPrivi2.Items.Count;
+                //MessageBox.Show(cantidadItems.ToString());
+                for (int n = cantidadItems - 1; n >= 0; --n)
+                {
+                    String idrol = ((SomeData)lbPrivi2.Items[n]).Value4.ToString();
+                    String nomrol = ((SomeData)lbPrivi2.Items[n]).Text4.ToString();
+                    data3.Add(new SomeData() { Value3 = idrol, Text3 = nomrol });
+                    //MessageBox.Show("zz" + n + " " + idrol + " " + nomrol);
+                    data4.RemoveAt(n);
+
+                }
+                //MessageBox.Show(count.ToString());
+                lbPrivi1.DataSource = null;
+                lbPrivi1.DataSource = data3;
+                lbPrivi1.DisplayMember = "Text3";
+                lbPrivi2.DataSource = null;
+                lbPrivi2.DataSource = data4;
+                lbPrivi2.DisplayMember = "Text4";
+                if (lbPrivi2.Items.Count > 0)
+                {
+                    //MessageBox.Show("vacío");
+
+                    btnprileft.Enabled = true;
+                    btnprileft2.Enabled = true;
+                }
+                else
+                {
+                    btnprileft.Enabled = false;
+                    btnprileft2.Enabled = false;
+                }
+                if (lbPrivi1.Items.Count > 0)
+                {
+                    //MessageBox.Show("no vacío");
+                    btnpriright.Enabled = true;
+                    btnpriright2.Enabled = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error btnrolright2 " + ex);
+            }
+        }
+
+        private void btnprisave_Click(object sender, EventArgs e)
+        {
+            CNUsuario objUsuario = new CNUsuario();
+            int index = lbPrivi2.SelectedIndex;
+            if (MessageBox.Show("¿Está seguro(a) de actualizar los privilegios de este rol?", "Confirmar acción", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes)
+            {
+                if (lbPrivi2.Items.Count == 0)
+                {
+                    //MessageBox.Show("estoy vacío");
+                    SqlDataReader reader = objUsuario.controlRolPrivilegio(idrol, 0);
+                    objUsuario.eliminarRolPrivilegio(idrol);
+                    MessageBox.Show("Se ha actualizado los datos");
+                }
+                else
+                {
+                    //MessageBox.Show("No estoy vacío");
+                    objUsuario.eliminarRolPrivilegio(idrol);
+                    foreach (SomeData item in data4)
+                    {
+                        SqlDataReader reader = objUsuario.controlRolPrivilegio(idrol, Int32.Parse(item.Value4));
+
+                    }
+                    MessageBox.Show("Se ha actualizado los datos");
+
+                }
+            }
         }
     }
 }

@@ -51,12 +51,22 @@ namespace CapaDatos
             return lector;
         }
 
-        public SqlDataReader comboRol()
+        public SqlDataReader controlPriRol(int idrol, int idprivilegio)
         {
-            String sql = "select * from dbo.CajaRol";
-            SqlCommand comando = new SqlCommand(sql, Conexion.AbrirConexion());
-            lector = comando.ExecuteReader();
+            String sql = "insert into dbo.ROL_PRIVILEGIO (IdRol,IdPrivilegio) values(@idrol,@idprivilegio)";
+            SqlCommand comandon = new SqlCommand(sql, Conexion.AbrirConexion());
+            comandon.CommandType = CommandType.StoredProcedure;
+            comandon.Parameters.AddWithValue("@idrol", idrol);
+            comandon.Parameters.AddWithValue("@idprivilegio", idprivilegio);
+            lector = comandon.ExecuteReader();
             return lector;
+        }
+
+        public SqlDataAdapter listarRoles()
+        {
+            String sql = "select * from dbo.ROL";
+            adapter = new SqlDataAdapter(sql, Conexion.AbrirConexion());
+            return adapter;
         }
 
         public SqlDataAdapter cargarPerfiles()
@@ -121,11 +131,45 @@ namespace CapaDatos
             return lector;
         }
 
+        public SqlDataReader privSegunIdRol(int id)
+        {
+            String sql = "SELECT*FROM dbo.PRIVILEGIO WHERE IdPrivilegio NOT IN (select pri.IdPrivilegio from dbo.PRIVILEGIO pri " +
+                "LEFT JOIN dbo.ROL_PRIVILEGIO rolpri ON pri.IdPrivilegio = rolpri.IdPrivilegio " +
+                "LEFT JOIN dbo.ROL rol ON rolpri.IdRol = rol.IdRol " +
+                "WHERE rolpri.IdRol = @id);";
+            SqlCommand comando = new SqlCommand(sql, Conexion.AbrirConexion());
+            comando.Parameters.AddWithValue("@id", id);
+            lector = comando.ExecuteReader();
+            return lector;
+        }
+
+        public SqlDataReader privSegunIdRol2(int id)
+        {
+            String sql = "select pri.IdPrivilegio,pri.nombre from dbo.PRIVILEGIO pri " +
+                "LEFT JOIN dbo.ROL_PRIVILEGIO rolpri ON pri.IdPrivilegio = rolpri.IdPrivilegio " +
+                "LEFT JOIN dbo.ROL rol ON rolpri.IdRol = rol.IdRol " +
+                "WHERE rolpri.IdRol = @id";
+            SqlCommand comando = new SqlCommand(sql, Conexion.AbrirConexion());
+            comando.Parameters.AddWithValue("@id", id);
+            lector = comando.ExecuteReader();
+            return lector;
+        }
+
         public void eliminarUsuarioRol(int idusuario)
         {
             SqlCommand comando = new SqlCommand();
             comando.Connection = Conexion.AbrirConexion();
             comando.CommandText = "delete from dbo.USUARIO_ROL WHERE IdUsuario=" + idusuario + "";
+            comando.CommandType = CommandType.Text;
+            comando.ExecuteNonQuery();
+            Conexion.CerrarConexion();
+        }
+
+        public void eliminarRolPrivilegio(int idrol)
+        {
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = Conexion.AbrirConexion();
+            comando.CommandText = "delete from dbo.ROL_PRIVILEGIO WHERE IdRol=" + idrol + "";
             comando.CommandType = CommandType.Text;
             comando.ExecuteNonQuery();
             Conexion.CerrarConexion();
