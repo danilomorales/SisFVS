@@ -191,7 +191,7 @@ namespace SistemaFigueri
             //Relacionamos nuestro datagridview con nuestro datatable
             this.dataVentas.DataSource = this.dtDetalle;
 
-        }
+        }   
         //private void FrmVenta_Load(object sender, EventArgs e)
         //{
         //    //Para ubicar al formulario en la parte superior del contenedor
