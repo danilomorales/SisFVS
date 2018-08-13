@@ -191,7 +191,7 @@ namespace SistemaFigueri
             //Relacionamos nuestro datagridview con nuestro datatable
             this.dataVentas.DataSource = this.dtDetalle;
 
-        }
+        }   
         //private void FrmVenta_Load(object sender, EventArgs e)
         //{
         //    //Para ubicar al formulario en la parte superior del contenedor
@@ -253,6 +253,8 @@ namespace SistemaFigueri
 
         //private void dataListado_DoubleClick(object sender, EventArgs e)
         //{
+
+
 
         //    this.txtIdventa.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["idventa"].Value);
         //    this.txtCliente.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["cliente"].Value);
@@ -598,6 +600,14 @@ namespace SistemaFigueri
 
         private void btnBuscaProcto_Click(object sender, EventArgs e)
         {
+            try
+            {
+               
+            }
+            catch
+            {
+
+            }
             FormBuscarProducto formBuscarPro = new FormBuscarProducto();
             formBuscarPro.ShowDialog();
         }
@@ -624,6 +634,16 @@ namespace SistemaFigueri
         }
 
         private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvDetalleNotaVenta_KeyUp(object sender, KeyEventArgs e)
         {
 
         }

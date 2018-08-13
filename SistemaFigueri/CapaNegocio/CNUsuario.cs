@@ -60,10 +60,31 @@ namespace CapaNegocio
             return perfil;
         }
 
-        public SqlDataReader cargarCombo()
+        public SqlDataAdapter listarRoles()
+        {
+            SqlDataAdapter perfil;
+            perfil = objDato.listarRoles();
+            return perfil;
+        }
+
+        public SqlDataReader controlUsuarioRol(int idusuario,int idrol)
         {
             SqlDataReader perfil;
-            perfil = objDato.comboRol();
+            perfil = objDato.controlUsuarioRol(idusuario,idrol);
+            return perfil;
+        }
+
+        public SqlDataReader buscarPerfil(int id)
+        {
+            SqlDataReader perfil;
+            perfil = objDato.buscarPerfil(id);
+            return perfil;
+        }
+
+        public SqlDataReader controlRolPrivilegio(int idrol, int idprivilegio)
+        {
+            SqlDataReader perfil;
+            perfil = objDato.controlPriRol(idrol, idprivilegio);
             return perfil;
         }
 
@@ -80,6 +101,20 @@ namespace CapaNegocio
             perfil = objDato.rolSegunIdUsuario2(id);
             return perfil;
         }
+    
+        public SqlDataReader privSegunIdRol(int id)
+        {
+            SqlDataReader perfil;
+            perfil = objDato.privSegunIdRol(id);
+            return perfil;
+        }
+
+        public SqlDataReader privSegunIdRol2(int id)
+        {
+            SqlDataReader perfil;
+            perfil = objDato.privSegunIdRol2(id);
+            return perfil;
+        }
 
         public int insertarUsuario(String nombres, String paterno, String materno, String dni, String direccion, String user, String pass, String url)
         {
@@ -87,7 +122,15 @@ namespace CapaNegocio
             return objDato.InsertarUsuario(nombres, paterno, materno, dni, direccion, user, pass, url);
         }
 
+        public void eliminarUsuarioRol(int idusuario)
+        {
+            objDato.eliminarUsuarioRol(idusuario);
+        }
 
+        public void eliminarRolPrivilegio(int idusuario)
+        {
+            objDato.eliminarRolPrivilegio(idusuario);
+        }
 
 
     }

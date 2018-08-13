@@ -30,101 +30,95 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPerfiles));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabPerfiles = new MaterialSkin.Controls.MaterialTabControl();
             this.pgUsuarios = new System.Windows.Forms.TabPage();
             this.bunifuCards2 = new Bunifu.Framework.UI.BunifuCards();
             this.btnatras = new MaterialSkin.Controls.MaterialFlatButton();
             this.btnsiguiente = new MaterialSkin.Controls.MaterialFlatButton();
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
-            this.btneliminar = new Bunifu.Framework.UI.BunifuTileButton();
-            this.bunifuTileButton2 = new Bunifu.Framework.UI.BunifuTileButton();
-            this.btnUsuario = new Bunifu.Framework.UI.BunifuTileButton();
             this.bunifuCards3 = new Bunifu.Framework.UI.BunifuCards();
             this.label1 = new System.Windows.Forms.Label();
-            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.txtSearch = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.dgvPerfiles = new System.Windows.Forms.DataGridView();
             this.pgRoles = new System.Windows.Forms.TabPage();
             this.cardRoles = new Bunifu.Framework.UI.BunifuCards();
             this.cardUsuRol = new Bunifu.Framework.UI.BunifuCards();
             this.panelUsuRol = new System.Windows.Forms.Panel();
-            this.btnrolsave = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnrolleft2 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnrolright2 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnrolleft = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnrolright = new Bunifu.Framework.UI.BunifuImageButton();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.lbRoles1 = new System.Windows.Forms.ListBox();
             this.lbRoles2 = new System.Windows.Forms.ListBox();
             this.cardrolsearch = new Bunifu.Framework.UI.BunifuCards();
             this.panelusersearch = new System.Windows.Forms.Panel();
             this.tbrolsearch = new System.Windows.Forms.TextBox();
-            this.btnrolsearch = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuCards6 = new Bunifu.Framework.UI.BunifuCards();
             this.label2 = new System.Windows.Forms.Label();
             this.pgPrivilegios = new System.Windows.Forms.TabPage();
             this.bunifuCards7 = new Bunifu.Framework.UI.BunifuCards();
             this.cardprisearch = new Bunifu.Framework.UI.BunifuCards();
             this.panelprisearch = new System.Windows.Forms.Panel();
-            this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.tbprivi = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.tbprivisearch = new System.Windows.Forms.TextBox();
             this.cardRolPrivilegio = new Bunifu.Framework.UI.BunifuCards();
             this.panelRolPrivilegio = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lbPrivi2 = new System.Windows.Forms.ListBox();
+            this.lbPrivi1 = new System.Windows.Forms.ListBox();
+            this.bunifuCards9 = new Bunifu.Framework.UI.BunifuCards();
+            this.label3 = new System.Windows.Forms.Label();
+            this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
+            this.btneliminar = new Bunifu.Framework.UI.BunifuTileButton();
+            this.btnusueditar = new Bunifu.Framework.UI.BunifuTileButton();
+            this.btnUsuario = new Bunifu.Framework.UI.BunifuTileButton();
+            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnrolsave = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnrolleft2 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnrolright2 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnrolleft = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnrolright = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnrolsearch = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnprivisearch = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnprisave = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnprileft2 = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnpriright2 = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnprileft = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnpriright = new Bunifu.Framework.UI.BunifuImageButton();
-            this.lbPrivi2 = new System.Windows.Forms.ListBox();
-            this.lbPrivi1 = new System.Windows.Forms.ListBox();
-            this.bunifuCards8 = new Bunifu.Framework.UI.BunifuCards();
-            this.bunifuTileButton5 = new Bunifu.Framework.UI.BunifuTileButton();
-            this.bunifuTileButton6 = new Bunifu.Framework.UI.BunifuTileButton();
-            this.bunifuTileButton7 = new Bunifu.Framework.UI.BunifuTileButton();
-            this.bunifuCards9 = new Bunifu.Framework.UI.BunifuCards();
-            this.label3 = new System.Windows.Forms.Label();
-            this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
-            this.bindingRoles1 = new System.Windows.Forms.BindingSource(this.components);
-            this.bindingRoles2 = new System.Windows.Forms.BindingSource(this.components);
             this.tabPerfiles.SuspendLayout();
             this.pgUsuarios.SuspendLayout();
             this.bunifuCards2.SuspendLayout();
             this.bunifuCards1.SuspendLayout();
             this.bunifuCards3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPerfiles)).BeginInit();
             this.pgRoles.SuspendLayout();
             this.cardRoles.SuspendLayout();
             this.cardUsuRol.SuspendLayout();
             this.panelUsuRol.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnrolsave)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnrolleft2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnrolright2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnrolleft)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnrolright)).BeginInit();
             this.cardrolsearch.SuspendLayout();
             this.panelusersearch.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnrolsearch)).BeginInit();
             this.bunifuCards6.SuspendLayout();
             this.pgPrivilegios.SuspendLayout();
             this.bunifuCards7.SuspendLayout();
             this.cardprisearch.SuspendLayout();
             this.panelprisearch.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
             this.cardRolPrivilegio.SuspendLayout();
             this.panelRolPrivilegio.SuspendLayout();
+            this.bunifuCards9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnrolsave)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnrolleft2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnrolright2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnrolleft)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnrolright)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnrolsearch)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnprivisearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnprisave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnprileft2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnpriright2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnprileft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnpriright)).BeginInit();
-            this.bunifuCards8.SuspendLayout();
-            this.bunifuCards9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingRoles1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingRoles2)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPerfiles
@@ -218,7 +212,7 @@
             this.bunifuCards1.BottomSahddow = false;
             this.bunifuCards1.color = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
             this.bunifuCards1.Controls.Add(this.btneliminar);
-            this.bunifuCards1.Controls.Add(this.bunifuTileButton2);
+            this.bunifuCards1.Controls.Add(this.btnusueditar);
             this.bunifuCards1.Controls.Add(this.btnUsuario);
             this.bunifuCards1.LeftSahddow = false;
             this.bunifuCards1.Location = new System.Drawing.Point(554, 43);
@@ -227,64 +221,6 @@
             this.bunifuCards1.ShadowDepth = 20;
             this.bunifuCards1.Size = new System.Drawing.Size(534, 101);
             this.bunifuCards1.TabIndex = 62;
-            // 
-            // btneliminar
-            // 
-            this.btneliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
-            this.btneliminar.color = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
-            this.btneliminar.colorActive = System.Drawing.Color.MediumSeaGreen;
-            this.btneliminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btneliminar.Font = new System.Drawing.Font("Century Gothic", 14F);
-            this.btneliminar.ForeColor = System.Drawing.Color.White;
-            this.btneliminar.Image = ((System.Drawing.Image)(resources.GetObject("btneliminar.Image")));
-            this.btneliminar.ImagePosition = 18;
-            this.btneliminar.ImageZoom = 40;
-            this.btneliminar.LabelPosition = 28;
-            this.btneliminar.LabelText = "Eliminar";
-            this.btneliminar.Location = new System.Drawing.Point(425, 11);
-            this.btneliminar.Margin = new System.Windows.Forms.Padding(6);
-            this.btneliminar.Name = "btneliminar";
-            this.btneliminar.Size = new System.Drawing.Size(80, 84);
-            this.btneliminar.TabIndex = 37;
-            // 
-            // bunifuTileButton2
-            // 
-            this.bunifuTileButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(155)))), ((int)(((byte)(31)))));
-            this.bunifuTileButton2.color = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(155)))), ((int)(((byte)(31)))));
-            this.bunifuTileButton2.colorActive = System.Drawing.Color.MediumSeaGreen;
-            this.bunifuTileButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuTileButton2.Font = new System.Drawing.Font("Century Gothic", 15.75F);
-            this.bunifuTileButton2.ForeColor = System.Drawing.Color.White;
-            this.bunifuTileButton2.Image = ((System.Drawing.Image)(resources.GetObject("bunifuTileButton2.Image")));
-            this.bunifuTileButton2.ImagePosition = 20;
-            this.bunifuTileButton2.ImageZoom = 40;
-            this.bunifuTileButton2.LabelPosition = 30;
-            this.bunifuTileButton2.LabelText = "Editar";
-            this.bunifuTileButton2.Location = new System.Drawing.Point(300, 11);
-            this.bunifuTileButton2.Margin = new System.Windows.Forms.Padding(6);
-            this.bunifuTileButton2.Name = "bunifuTileButton2";
-            this.bunifuTileButton2.Size = new System.Drawing.Size(80, 84);
-            this.bunifuTileButton2.TabIndex = 36;
-            // 
-            // btnUsuario
-            // 
-            this.btnUsuario.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnUsuario.color = System.Drawing.Color.SeaGreen;
-            this.btnUsuario.colorActive = System.Drawing.Color.MediumSeaGreen;
-            this.btnUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUsuario.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUsuario.ForeColor = System.Drawing.Color.White;
-            this.btnUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnUsuario.Image")));
-            this.btnUsuario.ImagePosition = 18;
-            this.btnUsuario.ImageZoom = 40;
-            this.btnUsuario.LabelPosition = 26;
-            this.btnUsuario.LabelText = "Nuevo Usuario";
-            this.btnUsuario.Location = new System.Drawing.Point(166, 10);
-            this.btnUsuario.Margin = new System.Windows.Forms.Padding(6);
-            this.btnUsuario.Name = "btnUsuario";
-            this.btnUsuario.Size = new System.Drawing.Size(84, 84);
-            this.btnUsuario.TabIndex = 33;
-            this.btnUsuario.Click += new System.EventHandler(this.btnUsuario_Click);
             // 
             // bunifuCards3
             // 
@@ -315,21 +251,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "USUARIOS";
             // 
-            // bunifuImageButton1
-            // 
-            this.bunifuImageButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuImageButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
-            this.bunifuImageButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
-            this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.Location = new System.Drawing.Point(974, 151);
-            this.bunifuImageButton1.Name = "bunifuImageButton1";
-            this.bunifuImageButton1.Size = new System.Drawing.Size(41, 44);
-            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton1.TabIndex = 65;
-            this.bunifuImageButton1.TabStop = false;
-            this.bunifuImageButton1.Zoom = 10;
-            // 
             // txtSearch
             // 
             this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -349,6 +270,7 @@
             this.txtSearch.Size = new System.Drawing.Size(587, 44);
             this.txtSearch.TabIndex = 64;
             this.txtSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearch_KeyPress_1);
             // 
             // dgvPerfiles
             // 
@@ -362,24 +284,24 @@
             this.dgvPerfiles.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvPerfiles.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dgvPerfiles.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPerfiles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPerfiles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPerfiles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPerfiles.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPerfiles.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPerfiles.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvPerfiles.GridColor = System.Drawing.SystemColors.MenuHighlight;
             this.dgvPerfiles.Location = new System.Drawing.Point(22, 233);
             this.dgvPerfiles.Name = "dgvPerfiles";
@@ -443,104 +365,52 @@
             // 
             // panelUsuRol
             // 
+            this.panelUsuRol.Controls.Add(this.label5);
             this.panelUsuRol.Controls.Add(this.btnrolsave);
+            this.panelUsuRol.Controls.Add(this.label4);
             this.panelUsuRol.Controls.Add(this.btnrolleft2);
             this.panelUsuRol.Controls.Add(this.btnrolright2);
             this.panelUsuRol.Controls.Add(this.btnrolleft);
             this.panelUsuRol.Controls.Add(this.btnrolright);
             this.panelUsuRol.Controls.Add(this.lbRoles1);
             this.panelUsuRol.Controls.Add(this.lbRoles2);
-            this.panelUsuRol.Location = new System.Drawing.Point(12, 31);
+            this.panelUsuRol.Location = new System.Drawing.Point(12, 7);
             this.panelUsuRol.Name = "panelUsuRol";
-            this.panelUsuRol.Size = new System.Drawing.Size(764, 542);
+            this.panelUsuRol.Size = new System.Drawing.Size(764, 566);
             this.panelUsuRol.TabIndex = 1;
             // 
-            // btnrolsave
+            // label5
             // 
-            this.btnrolsave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
-            this.btnrolsave.Enabled = false;
-            this.btnrolsave.Image = global::SistemaFigueri.Properties.Resources.save;
-            this.btnrolsave.ImageActive = null;
-            this.btnrolsave.Location = new System.Drawing.Point(357, 489);
-            this.btnrolsave.Name = "btnrolsave";
-            this.btnrolsave.Size = new System.Drawing.Size(50, 50);
-            this.btnrolsave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnrolsave.TabIndex = 122;
-            this.btnrolsave.TabStop = false;
-            this.btnrolsave.Zoom = 10;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label5.Location = new System.Drawing.Point(508, 7);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(227, 25);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "ROLES ASIGNADOS";
             // 
-            // btnrolleft2
+            // label4
             // 
-            this.btnrolleft2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
-            this.btnrolleft2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnrolleft2.Enabled = false;
-            this.btnrolleft2.Image = global::SistemaFigueri.Properties.Resources.left2;
-            this.btnrolleft2.ImageActive = null;
-            this.btnrolleft2.Location = new System.Drawing.Point(357, 332);
-            this.btnrolleft2.Name = "btnrolleft2";
-            this.btnrolleft2.Size = new System.Drawing.Size(50, 50);
-            this.btnrolleft2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnrolleft2.TabIndex = 121;
-            this.btnrolleft2.TabStop = false;
-            this.btnrolleft2.Zoom = 10;
-            // 
-            // btnrolright2
-            // 
-            this.btnrolright2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
-            this.btnrolright2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnrolright2.Enabled = false;
-            this.btnrolright2.Image = global::SistemaFigueri.Properties.Resources.right2;
-            this.btnrolright2.ImageActive = null;
-            this.btnrolright2.Location = new System.Drawing.Point(357, 224);
-            this.btnrolright2.Name = "btnrolright2";
-            this.btnrolright2.Size = new System.Drawing.Size(50, 50);
-            this.btnrolright2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnrolright2.TabIndex = 120;
-            this.btnrolright2.TabStop = false;
-            this.btnrolright2.Zoom = 10;
-            // 
-            // btnrolleft
-            // 
-            this.btnrolleft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
-            this.btnrolleft.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnrolleft.Enabled = false;
-            this.btnrolleft.Image = global::SistemaFigueri.Properties.Resources.left;
-            this.btnrolleft.ImageActive = null;
-            this.btnrolleft.Location = new System.Drawing.Point(357, 121);
-            this.btnrolleft.Name = "btnrolleft";
-            this.btnrolleft.Size = new System.Drawing.Size(50, 50);
-            this.btnrolleft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnrolleft.TabIndex = 119;
-            this.btnrolleft.TabStop = false;
-            this.btnrolleft.Zoom = 10;
-            this.btnrolleft.Click += new System.EventHandler(this.btnrolleft_Click);
-            // 
-            // btnrolright
-            // 
-            this.btnrolright.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
-            this.btnrolright.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnrolright.Enabled = false;
-            this.btnrolright.Image = global::SistemaFigueri.Properties.Resources.right;
-            this.btnrolright.ImageActive = null;
-            this.btnrolright.Location = new System.Drawing.Point(357, 19);
-            this.btnrolright.Name = "btnrolright";
-            this.btnrolright.Size = new System.Drawing.Size(50, 50);
-            this.btnrolright.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnrolright.TabIndex = 118;
-            this.btnrolright.TabStop = false;
-            this.btnrolright.Zoom = 10;
-            this.btnrolright.Click += new System.EventHandler(this.btnrolright_Click);
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label4.Location = new System.Drawing.Point(21, 7);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(239, 25);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "ROLES SIN ASIGNAR";
             // 
             // lbRoles1
             // 
             this.lbRoles1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbRoles1.FormattingEnabled = true;
             this.lbRoles1.ItemHeight = 20;
-            this.lbRoles1.Location = new System.Drawing.Point(31, 15);
+            this.lbRoles1.Location = new System.Drawing.Point(31, 35);
             this.lbRoles1.Margin = new System.Windows.Forms.Padding(50, 3, 50, 3);
             this.lbRoles1.MaximumSize = new System.Drawing.Size(650, 1400);
             this.lbRoles1.Name = "lbRoles1";
-            this.lbRoles1.Size = new System.Drawing.Size(229, 524);
+            this.lbRoles1.Size = new System.Drawing.Size(229, 504);
             this.lbRoles1.TabIndex = 112;
             this.lbRoles1.SelectedIndexChanged += new System.EventHandler(this.lbRoles1_SelectedIndexChanged);
             // 
@@ -549,10 +419,10 @@
             this.lbRoles2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbRoles2.FormattingEnabled = true;
             this.lbRoles2.ItemHeight = 20;
-            this.lbRoles2.Location = new System.Drawing.Point(502, 19);
+            this.lbRoles2.Location = new System.Drawing.Point(502, 35);
             this.lbRoles2.MaximumSize = new System.Drawing.Size(650, 1400);
             this.lbRoles2.Name = "lbRoles2";
-            this.lbRoles2.Size = new System.Drawing.Size(233, 524);
+            this.lbRoles2.Size = new System.Drawing.Size(233, 504);
             this.lbRoles2.TabIndex = 109;
             // 
             // cardrolsearch
@@ -585,29 +455,18 @@
             // 
             // tbrolsearch
             // 
-            this.tbrolsearch.Enabled = false;
-            this.tbrolsearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbrolsearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(126)))), ((int)(((byte)(176)))));
+            this.tbrolsearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbrolsearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbrolsearch.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.tbrolsearch.Location = new System.Drawing.Point(31, 10);
             this.tbrolsearch.Multiline = true;
             this.tbrolsearch.Name = "tbrolsearch";
+            this.tbrolsearch.ReadOnly = true;
             this.tbrolsearch.Size = new System.Drawing.Size(647, 44);
             this.tbrolsearch.TabIndex = 70;
-            // 
-            // btnrolsearch
-            // 
-            this.btnrolsearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnrolsearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
-            this.btnrolsearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnrolsearch.Image = ((System.Drawing.Image)(resources.GetObject("btnrolsearch.Image")));
-            this.btnrolsearch.ImageActive = null;
-            this.btnrolsearch.Location = new System.Drawing.Point(675, 10);
-            this.btnrolsearch.Name = "btnrolsearch";
-            this.btnrolsearch.Size = new System.Drawing.Size(44, 44);
-            this.btnrolsearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnrolsearch.TabIndex = 69;
-            this.btnrolsearch.TabStop = false;
-            this.btnrolsearch.Zoom = 10;
-            this.btnrolsearch.Click += new System.EventHandler(this.btnrolsearch_Click);
+            this.tbrolsearch.Text = "  Elija al usuario para asignarle sus roles";
+            this.tbrolsearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // bunifuCards6
             // 
@@ -658,7 +517,6 @@
             this.bunifuCards7.color = System.Drawing.Color.Tomato;
             this.bunifuCards7.Controls.Add(this.cardprisearch);
             this.bunifuCards7.Controls.Add(this.cardRolPrivilegio);
-            this.bunifuCards7.Controls.Add(this.bunifuCards8);
             this.bunifuCards7.Controls.Add(this.bunifuCards9);
             this.bunifuCards7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bunifuCards7.LeftSahddow = false;
@@ -690,49 +548,27 @@
             // 
             // panelprisearch
             // 
-            this.panelprisearch.Controls.Add(this.bunifuImageButton2);
-            this.panelprisearch.Controls.Add(this.tbprivi);
+            this.panelprisearch.Controls.Add(this.tbprivisearch);
+            this.panelprisearch.Controls.Add(this.btnprivisearch);
             this.panelprisearch.Location = new System.Drawing.Point(12, 9);
             this.panelprisearch.Name = "panelprisearch";
             this.panelprisearch.Size = new System.Drawing.Size(764, 64);
             this.panelprisearch.TabIndex = 1;
             // 
-            // bunifuImageButton2
+            // tbprivisearch
             // 
-            this.bunifuImageButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuImageButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
-            this.bunifuImageButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuImageButton2.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton2.Image")));
-            this.bunifuImageButton2.ImageActive = null;
-            this.bunifuImageButton2.Location = new System.Drawing.Point(675, 10);
-            this.bunifuImageButton2.Name = "bunifuImageButton2";
-            this.bunifuImageButton2.Size = new System.Drawing.Size(44, 44);
-            this.bunifuImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton2.TabIndex = 69;
-            this.bunifuImageButton2.TabStop = false;
-            this.bunifuImageButton2.Zoom = 10;
-            // 
-            // tbprivi
-            // 
-            this.tbprivi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbprivi.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbprivi.Enabled = false;
-            this.tbprivi.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
-            this.tbprivi.ForeColor = System.Drawing.Color.White;
-            this.tbprivi.HintForeColor = System.Drawing.Color.White;
-            this.tbprivi.HintText = "Buscar Rol";
-            this.tbprivi.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.tbprivi.isPassword = false;
-            this.tbprivi.LineFocusedColor = System.Drawing.Color.Red;
-            this.tbprivi.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
-            this.tbprivi.LineMouseHoverColor = System.Drawing.Color.SandyBrown;
-            this.tbprivi.LineThickness = 5;
-            this.tbprivi.Location = new System.Drawing.Point(46, 10);
-            this.tbprivi.Margin = new System.Windows.Forms.Padding(4);
-            this.tbprivi.Name = "tbprivi";
-            this.tbprivi.Size = new System.Drawing.Size(631, 44);
-            this.tbprivi.TabIndex = 68;
-            this.tbprivi.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.tbprivisearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(126)))), ((int)(((byte)(176)))));
+            this.tbprivisearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbprivisearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbprivisearch.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.tbprivisearch.Location = new System.Drawing.Point(38, 10);
+            this.tbprivisearch.Multiline = true;
+            this.tbprivisearch.Name = "tbprivisearch";
+            this.tbprivisearch.ReadOnly = true;
+            this.tbprivisearch.Size = new System.Drawing.Size(646, 44);
+            this.tbprivisearch.TabIndex = 71;
+            this.tbprivisearch.Text = "  Elija el rol para asignarle privilegios";
+            this.tbprivisearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // cardRolPrivilegio
             // 
@@ -750,12 +586,14 @@
             this.cardRolPrivilegio.Name = "cardRolPrivilegio";
             this.cardRolPrivilegio.RightSahddow = false;
             this.cardRolPrivilegio.ShadowDepth = 20;
-            this.cardRolPrivilegio.Size = new System.Drawing.Size(804, 599);
+            this.cardRolPrivilegio.Size = new System.Drawing.Size(804, 608);
             this.cardRolPrivilegio.TabIndex = 69;
             this.cardRolPrivilegio.Resize += new System.EventHandler(this.cardRolPrivilegio_Resize);
             // 
             // panelRolPrivilegio
             // 
+            this.panelRolPrivilegio.Controls.Add(this.label6);
+            this.panelRolPrivilegio.Controls.Add(this.label7);
             this.panelRolPrivilegio.Controls.Add(this.btnprisave);
             this.panelRolPrivilegio.Controls.Add(this.btnprileft2);
             this.panelRolPrivilegio.Controls.Add(this.btnpriright2);
@@ -765,78 +603,37 @@
             this.panelRolPrivilegio.Controls.Add(this.lbPrivi1);
             this.panelRolPrivilegio.Location = new System.Drawing.Point(17, 11);
             this.panelRolPrivilegio.Name = "panelRolPrivilegio";
-            this.panelRolPrivilegio.Size = new System.Drawing.Size(764, 560);
+            this.panelRolPrivilegio.Size = new System.Drawing.Size(764, 583);
             this.panelRolPrivilegio.TabIndex = 1;
             // 
-            // btnprisave
+            // label6
             // 
-            this.btnprisave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
-            this.btnprisave.Image = global::SistemaFigueri.Properties.Resources.save;
-            this.btnprisave.ImageActive = null;
-            this.btnprisave.Location = new System.Drawing.Point(365, 478);
-            this.btnprisave.Name = "btnprisave";
-            this.btnprisave.Size = new System.Drawing.Size(50, 50);
-            this.btnprisave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnprisave.TabIndex = 117;
-            this.btnprisave.TabStop = false;
-            this.btnprisave.Zoom = 10;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label6.Location = new System.Drawing.Point(469, 17);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(292, 25);
+            this.label6.TabIndex = 119;
+            this.label6.Text = "PRIVILEGIOS ASIGNADOS";
             // 
-            // btnprileft2
+            // label7
             // 
-            this.btnprileft2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
-            this.btnprileft2.Image = global::SistemaFigueri.Properties.Resources.left2;
-            this.btnprileft2.ImageActive = null;
-            this.btnprileft2.Location = new System.Drawing.Point(365, 332);
-            this.btnprileft2.Name = "btnprileft2";
-            this.btnprileft2.Size = new System.Drawing.Size(50, 50);
-            this.btnprileft2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnprileft2.TabIndex = 116;
-            this.btnprileft2.TabStop = false;
-            this.btnprileft2.Zoom = 10;
-            // 
-            // btnpriright2
-            // 
-            this.btnpriright2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
-            this.btnpriright2.Image = global::SistemaFigueri.Properties.Resources.right2;
-            this.btnpriright2.ImageActive = null;
-            this.btnpriright2.Location = new System.Drawing.Point(365, 224);
-            this.btnpriright2.Name = "btnpriright2";
-            this.btnpriright2.Size = new System.Drawing.Size(50, 50);
-            this.btnpriright2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnpriright2.TabIndex = 115;
-            this.btnpriright2.TabStop = false;
-            this.btnpriright2.Zoom = 10;
-            // 
-            // btnprileft
-            // 
-            this.btnprileft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
-            this.btnprileft.Image = global::SistemaFigueri.Properties.Resources.left;
-            this.btnprileft.ImageActive = null;
-            this.btnprileft.Location = new System.Drawing.Point(365, 121);
-            this.btnprileft.Name = "btnprileft";
-            this.btnprileft.Size = new System.Drawing.Size(50, 50);
-            this.btnprileft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnprileft.TabIndex = 114;
-            this.btnprileft.TabStop = false;
-            this.btnprileft.Zoom = 10;
-            // 
-            // btnpriright
-            // 
-            this.btnpriright.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
-            this.btnpriright.Image = global::SistemaFigueri.Properties.Resources.right;
-            this.btnpriright.ImageActive = null;
-            this.btnpriright.Location = new System.Drawing.Point(365, 19);
-            this.btnpriright.Name = "btnpriright";
-            this.btnpriright.Size = new System.Drawing.Size(50, 50);
-            this.btnpriright.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnpriright.TabIndex = 113;
-            this.btnpriright.TabStop = false;
-            this.btnpriright.Zoom = 10;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label7.Location = new System.Drawing.Point(16, 17);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(304, 25);
+            this.label7.TabIndex = 118;
+            this.label7.Text = "PRIVILEGIOS SIN ASIGNAR";
             // 
             // lbPrivi2
             // 
+            this.lbPrivi2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPrivi2.FormattingEnabled = true;
-            this.lbPrivi2.Location = new System.Drawing.Point(486, 19);
+            this.lbPrivi2.ItemHeight = 20;
+            this.lbPrivi2.Location = new System.Drawing.Point(486, 45);
             this.lbPrivi2.Margin = new System.Windows.Forms.Padding(50, 3, 50, 3);
             this.lbPrivi2.MaximumSize = new System.Drawing.Size(650, 1400);
             this.lbPrivi2.Name = "lbPrivi2";
@@ -845,88 +642,14 @@
             // 
             // lbPrivi1
             // 
+            this.lbPrivi1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPrivi1.FormattingEnabled = true;
-            this.lbPrivi1.Location = new System.Drawing.Point(42, 19);
+            this.lbPrivi1.ItemHeight = 20;
+            this.lbPrivi1.Location = new System.Drawing.Point(42, 45);
             this.lbPrivi1.MaximumSize = new System.Drawing.Size(650, 1400);
             this.lbPrivi1.Name = "lbPrivi1";
             this.lbPrivi1.Size = new System.Drawing.Size(254, 524);
             this.lbPrivi1.TabIndex = 109;
-            // 
-            // bunifuCards8
-            // 
-            this.bunifuCards8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuCards8.AutoSize = true;
-            this.bunifuCards8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
-            this.bunifuCards8.BorderRadius = 5;
-            this.bunifuCards8.BottomSahddow = false;
-            this.bunifuCards8.color = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
-            this.bunifuCards8.Controls.Add(this.bunifuTileButton5);
-            this.bunifuCards8.Controls.Add(this.bunifuTileButton6);
-            this.bunifuCards8.Controls.Add(this.bunifuTileButton7);
-            this.bunifuCards8.LeftSahddow = false;
-            this.bunifuCards8.Location = new System.Drawing.Point(554, 43);
-            this.bunifuCards8.Name = "bunifuCards8";
-            this.bunifuCards8.RightSahddow = false;
-            this.bunifuCards8.ShadowDepth = 20;
-            this.bunifuCards8.Size = new System.Drawing.Size(534, 101);
-            this.bunifuCards8.TabIndex = 62;
-            // 
-            // bunifuTileButton5
-            // 
-            this.bunifuTileButton5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
-            this.bunifuTileButton5.color = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
-            this.bunifuTileButton5.colorActive = System.Drawing.Color.MediumSeaGreen;
-            this.bunifuTileButton5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuTileButton5.Font = new System.Drawing.Font("Century Gothic", 14F);
-            this.bunifuTileButton5.ForeColor = System.Drawing.Color.White;
-            this.bunifuTileButton5.Image = ((System.Drawing.Image)(resources.GetObject("bunifuTileButton5.Image")));
-            this.bunifuTileButton5.ImagePosition = 18;
-            this.bunifuTileButton5.ImageZoom = 40;
-            this.bunifuTileButton5.LabelPosition = 28;
-            this.bunifuTileButton5.LabelText = "Eliminar";
-            this.bunifuTileButton5.Location = new System.Drawing.Point(425, 11);
-            this.bunifuTileButton5.Margin = new System.Windows.Forms.Padding(6);
-            this.bunifuTileButton5.Name = "bunifuTileButton5";
-            this.bunifuTileButton5.Size = new System.Drawing.Size(80, 84);
-            this.bunifuTileButton5.TabIndex = 37;
-            // 
-            // bunifuTileButton6
-            // 
-            this.bunifuTileButton6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(155)))), ((int)(((byte)(31)))));
-            this.bunifuTileButton6.color = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(155)))), ((int)(((byte)(31)))));
-            this.bunifuTileButton6.colorActive = System.Drawing.Color.MediumSeaGreen;
-            this.bunifuTileButton6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuTileButton6.Font = new System.Drawing.Font("Century Gothic", 15.75F);
-            this.bunifuTileButton6.ForeColor = System.Drawing.Color.White;
-            this.bunifuTileButton6.Image = ((System.Drawing.Image)(resources.GetObject("bunifuTileButton6.Image")));
-            this.bunifuTileButton6.ImagePosition = 20;
-            this.bunifuTileButton6.ImageZoom = 40;
-            this.bunifuTileButton6.LabelPosition = 30;
-            this.bunifuTileButton6.LabelText = "Editar";
-            this.bunifuTileButton6.Location = new System.Drawing.Point(300, 11);
-            this.bunifuTileButton6.Margin = new System.Windows.Forms.Padding(6);
-            this.bunifuTileButton6.Name = "bunifuTileButton6";
-            this.bunifuTileButton6.Size = new System.Drawing.Size(80, 84);
-            this.bunifuTileButton6.TabIndex = 36;
-            // 
-            // bunifuTileButton7
-            // 
-            this.bunifuTileButton7.BackColor = System.Drawing.Color.SeaGreen;
-            this.bunifuTileButton7.color = System.Drawing.Color.SeaGreen;
-            this.bunifuTileButton7.colorActive = System.Drawing.Color.MediumSeaGreen;
-            this.bunifuTileButton7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuTileButton7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuTileButton7.ForeColor = System.Drawing.Color.White;
-            this.bunifuTileButton7.Image = ((System.Drawing.Image)(resources.GetObject("bunifuTileButton7.Image")));
-            this.bunifuTileButton7.ImagePosition = 18;
-            this.bunifuTileButton7.ImageZoom = 40;
-            this.bunifuTileButton7.LabelPosition = 26;
-            this.bunifuTileButton7.LabelText = "Nuevo Usuario";
-            this.bunifuTileButton7.Location = new System.Drawing.Point(166, 10);
-            this.bunifuTileButton7.Margin = new System.Windows.Forms.Padding(6);
-            this.bunifuTileButton7.Name = "bunifuTileButton7";
-            this.bunifuTileButton7.Size = new System.Drawing.Size(84, 84);
-            this.bunifuTileButton7.TabIndex = 33;
             // 
             // bunifuCards9
             // 
@@ -942,7 +665,7 @@
             this.bunifuCards9.Name = "bunifuCards9";
             this.bunifuCards9.RightSahddow = false;
             this.bunifuCards9.ShadowDepth = 20;
-            this.bunifuCards9.Size = new System.Drawing.Size(509, 101);
+            this.bunifuCards9.Size = new System.Drawing.Size(1060, 101);
             this.bunifuCards9.TabIndex = 63;
             // 
             // label3
@@ -960,6 +683,7 @@
             // materialTabSelector1
             // 
             this.materialTabSelector1.BaseTabControl = this.tabPerfiles;
+            this.materialTabSelector1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.materialTabSelector1.Depth = 0;
             this.materialTabSelector1.Dock = System.Windows.Forms.DockStyle.Top;
             this.materialTabSelector1.Location = new System.Drawing.Point(0, 0);
@@ -968,6 +692,272 @@
             this.materialTabSelector1.Size = new System.Drawing.Size(1124, 46);
             this.materialTabSelector1.TabIndex = 0;
             this.materialTabSelector1.Text = "materialTabSelector1";
+            // 
+            // btneliminar
+            // 
+            this.btneliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
+            this.btneliminar.color = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
+            this.btneliminar.colorActive = System.Drawing.Color.MediumSeaGreen;
+            this.btneliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btneliminar.Font = new System.Drawing.Font("Century Gothic", 14F);
+            this.btneliminar.ForeColor = System.Drawing.Color.White;
+            this.btneliminar.Image = ((System.Drawing.Image)(resources.GetObject("btneliminar.Image")));
+            this.btneliminar.ImagePosition = 18;
+            this.btneliminar.ImageZoom = 40;
+            this.btneliminar.LabelPosition = 28;
+            this.btneliminar.LabelText = "Eliminar";
+            this.btneliminar.Location = new System.Drawing.Point(425, 11);
+            this.btneliminar.Margin = new System.Windows.Forms.Padding(6);
+            this.btneliminar.Name = "btneliminar";
+            this.btneliminar.Size = new System.Drawing.Size(80, 84);
+            this.btneliminar.TabIndex = 37;
+            // 
+            // btnusueditar
+            // 
+            this.btnusueditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(155)))), ((int)(((byte)(31)))));
+            this.btnusueditar.color = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(155)))), ((int)(((byte)(31)))));
+            this.btnusueditar.colorActive = System.Drawing.Color.MediumSeaGreen;
+            this.btnusueditar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnusueditar.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.btnusueditar.ForeColor = System.Drawing.Color.White;
+            this.btnusueditar.Image = ((System.Drawing.Image)(resources.GetObject("btnusueditar.Image")));
+            this.btnusueditar.ImagePosition = 20;
+            this.btnusueditar.ImageZoom = 40;
+            this.btnusueditar.LabelPosition = 30;
+            this.btnusueditar.LabelText = "Editar";
+            this.btnusueditar.Location = new System.Drawing.Point(300, 11);
+            this.btnusueditar.Margin = new System.Windows.Forms.Padding(6);
+            this.btnusueditar.Name = "btnusueditar";
+            this.btnusueditar.Size = new System.Drawing.Size(80, 84);
+            this.btnusueditar.TabIndex = 36;
+            this.btnusueditar.Click += new System.EventHandler(this.btnusueditar_Click);
+            // 
+            // btnUsuario
+            // 
+            this.btnUsuario.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnUsuario.color = System.Drawing.Color.SeaGreen;
+            this.btnUsuario.colorActive = System.Drawing.Color.MediumSeaGreen;
+            this.btnUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUsuario.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUsuario.ForeColor = System.Drawing.Color.White;
+            this.btnUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnUsuario.Image")));
+            this.btnUsuario.ImagePosition = 18;
+            this.btnUsuario.ImageZoom = 40;
+            this.btnUsuario.LabelPosition = 26;
+            this.btnUsuario.LabelText = "Nuevo Usuario";
+            this.btnUsuario.Location = new System.Drawing.Point(166, 10);
+            this.btnUsuario.Margin = new System.Windows.Forms.Padding(6);
+            this.btnUsuario.Name = "btnUsuario";
+            this.btnUsuario.Size = new System.Drawing.Size(84, 84);
+            this.btnUsuario.TabIndex = 33;
+            this.btnUsuario.Click += new System.EventHandler(this.btnUsuario_Click);
+            // 
+            // bunifuImageButton1
+            // 
+            this.bunifuImageButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuImageButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
+            this.bunifuImageButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
+            this.bunifuImageButton1.ImageActive = null;
+            this.bunifuImageButton1.Location = new System.Drawing.Point(974, 151);
+            this.bunifuImageButton1.Name = "bunifuImageButton1";
+            this.bunifuImageButton1.Size = new System.Drawing.Size(41, 44);
+            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuImageButton1.TabIndex = 65;
+            this.bunifuImageButton1.TabStop = false;
+            this.bunifuImageButton1.Zoom = 10;
+            // 
+            // btnrolsave
+            // 
+            this.btnrolsave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            this.btnrolsave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnrolsave.Enabled = false;
+            this.btnrolsave.Image = global::SistemaFigueri.Properties.Resources.save;
+            this.btnrolsave.ImageActive = null;
+            this.btnrolsave.Location = new System.Drawing.Point(357, 489);
+            this.btnrolsave.Name = "btnrolsave";
+            this.btnrolsave.Size = new System.Drawing.Size(50, 50);
+            this.btnrolsave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnrolsave.TabIndex = 122;
+            this.btnrolsave.TabStop = false;
+            this.btnrolsave.Zoom = 20;
+            this.btnrolsave.Click += new System.EventHandler(this.btnrolsave_Click);
+            // 
+            // btnrolleft2
+            // 
+            this.btnrolleft2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            this.btnrolleft2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnrolleft2.Enabled = false;
+            this.btnrolleft2.Image = global::SistemaFigueri.Properties.Resources.left2;
+            this.btnrolleft2.ImageActive = null;
+            this.btnrolleft2.Location = new System.Drawing.Point(357, 332);
+            this.btnrolleft2.Name = "btnrolleft2";
+            this.btnrolleft2.Size = new System.Drawing.Size(50, 50);
+            this.btnrolleft2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnrolleft2.TabIndex = 121;
+            this.btnrolleft2.TabStop = false;
+            this.btnrolleft2.Zoom = 20;
+            this.btnrolleft2.Click += new System.EventHandler(this.btnrolleft2_Click);
+            // 
+            // btnrolright2
+            // 
+            this.btnrolright2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            this.btnrolright2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnrolright2.Enabled = false;
+            this.btnrolright2.Image = global::SistemaFigueri.Properties.Resources.right2;
+            this.btnrolright2.ImageActive = null;
+            this.btnrolright2.Location = new System.Drawing.Point(357, 224);
+            this.btnrolright2.Name = "btnrolright2";
+            this.btnrolright2.Size = new System.Drawing.Size(50, 50);
+            this.btnrolright2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnrolright2.TabIndex = 120;
+            this.btnrolright2.TabStop = false;
+            this.btnrolright2.Zoom = 20;
+            this.btnrolright2.Click += new System.EventHandler(this.btnrolright2_Click);
+            // 
+            // btnrolleft
+            // 
+            this.btnrolleft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            this.btnrolleft.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnrolleft.Enabled = false;
+            this.btnrolleft.Image = global::SistemaFigueri.Properties.Resources.left;
+            this.btnrolleft.ImageActive = null;
+            this.btnrolleft.Location = new System.Drawing.Point(357, 121);
+            this.btnrolleft.Name = "btnrolleft";
+            this.btnrolleft.Size = new System.Drawing.Size(50, 50);
+            this.btnrolleft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnrolleft.TabIndex = 119;
+            this.btnrolleft.TabStop = false;
+            this.btnrolleft.Zoom = 20;
+            this.btnrolleft.Click += new System.EventHandler(this.btnrolleft_Click);
+            // 
+            // btnrolright
+            // 
+            this.btnrolright.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            this.btnrolright.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnrolright.Enabled = false;
+            this.btnrolright.Image = global::SistemaFigueri.Properties.Resources.right;
+            this.btnrolright.ImageActive = null;
+            this.btnrolright.Location = new System.Drawing.Point(357, 19);
+            this.btnrolright.Name = "btnrolright";
+            this.btnrolright.Size = new System.Drawing.Size(50, 50);
+            this.btnrolright.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnrolright.TabIndex = 118;
+            this.btnrolright.TabStop = false;
+            this.btnrolright.Zoom = 20;
+            this.btnrolright.Click += new System.EventHandler(this.btnrolright_Click);
+            // 
+            // btnrolsearch
+            // 
+            this.btnrolsearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnrolsearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
+            this.btnrolsearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnrolsearch.Image = ((System.Drawing.Image)(resources.GetObject("btnrolsearch.Image")));
+            this.btnrolsearch.ImageActive = null;
+            this.btnrolsearch.Location = new System.Drawing.Point(675, 10);
+            this.btnrolsearch.Name = "btnrolsearch";
+            this.btnrolsearch.Size = new System.Drawing.Size(44, 44);
+            this.btnrolsearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnrolsearch.TabIndex = 69;
+            this.btnrolsearch.TabStop = false;
+            this.btnrolsearch.Zoom = 10;
+            this.btnrolsearch.Click += new System.EventHandler(this.btnrolsearch_Click);
+            // 
+            // btnprivisearch
+            // 
+            this.btnprivisearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnprivisearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
+            this.btnprivisearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnprivisearch.Image = ((System.Drawing.Image)(resources.GetObject("btnprivisearch.Image")));
+            this.btnprivisearch.ImageActive = null;
+            this.btnprivisearch.Location = new System.Drawing.Point(680, 10);
+            this.btnprivisearch.Name = "btnprivisearch";
+            this.btnprivisearch.Size = new System.Drawing.Size(44, 44);
+            this.btnprivisearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnprivisearch.TabIndex = 69;
+            this.btnprivisearch.TabStop = false;
+            this.btnprivisearch.Zoom = 10;
+            this.btnprivisearch.Click += new System.EventHandler(this.btnprivisearch_Click);
+            // 
+            // btnprisave
+            // 
+            this.btnprisave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            this.btnprisave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnprisave.Enabled = false;
+            this.btnprisave.Image = global::SistemaFigueri.Properties.Resources.save;
+            this.btnprisave.ImageActive = null;
+            this.btnprisave.Location = new System.Drawing.Point(365, 519);
+            this.btnprisave.Name = "btnprisave";
+            this.btnprisave.Size = new System.Drawing.Size(50, 50);
+            this.btnprisave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnprisave.TabIndex = 117;
+            this.btnprisave.TabStop = false;
+            this.btnprisave.Zoom = 20;
+            this.btnprisave.Click += new System.EventHandler(this.btnprisave_Click);
+            // 
+            // btnprileft2
+            // 
+            this.btnprileft2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            this.btnprileft2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnprileft2.Enabled = false;
+            this.btnprileft2.Image = global::SistemaFigueri.Properties.Resources.left2;
+            this.btnprileft2.ImageActive = null;
+            this.btnprileft2.Location = new System.Drawing.Point(365, 341);
+            this.btnprileft2.Name = "btnprileft2";
+            this.btnprileft2.Size = new System.Drawing.Size(50, 50);
+            this.btnprileft2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnprileft2.TabIndex = 116;
+            this.btnprileft2.TabStop = false;
+            this.btnprileft2.Zoom = 20;
+            this.btnprileft2.Click += new System.EventHandler(this.btnprileft2_Click);
+            // 
+            // btnpriright2
+            // 
+            this.btnpriright2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            this.btnpriright2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnpriright2.Enabled = false;
+            this.btnpriright2.Image = global::SistemaFigueri.Properties.Resources.right2;
+            this.btnpriright2.ImageActive = null;
+            this.btnpriright2.Location = new System.Drawing.Point(365, 243);
+            this.btnpriright2.Name = "btnpriright2";
+            this.btnpriright2.Size = new System.Drawing.Size(50, 50);
+            this.btnpriright2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnpriright2.TabIndex = 115;
+            this.btnpriright2.TabStop = false;
+            this.btnpriright2.Zoom = 20;
+            this.btnpriright2.Click += new System.EventHandler(this.btnpriright2_Click);
+            // 
+            // btnprileft
+            // 
+            this.btnprileft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            this.btnprileft.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnprileft.Enabled = false;
+            this.btnprileft.Image = global::SistemaFigueri.Properties.Resources.left;
+            this.btnprileft.ImageActive = null;
+            this.btnprileft.Location = new System.Drawing.Point(365, 145);
+            this.btnprileft.Name = "btnprileft";
+            this.btnprileft.Size = new System.Drawing.Size(50, 50);
+            this.btnprileft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnprileft.TabIndex = 114;
+            this.btnprileft.TabStop = false;
+            this.btnprileft.Zoom = 20;
+            this.btnprileft.Click += new System.EventHandler(this.btnprileft_Click);
+            // 
+            // btnpriright
+            // 
+            this.btnpriright.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            this.btnpriright.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnpriright.Enabled = false;
+            this.btnpriright.Image = global::SistemaFigueri.Properties.Resources.right;
+            this.btnpriright.ImageActive = null;
+            this.btnpriright.Location = new System.Drawing.Point(365, 45);
+            this.btnpriright.Name = "btnpriright";
+            this.btnpriright.Size = new System.Drawing.Size(50, 50);
+            this.btnpriright.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnpriright.TabIndex = 113;
+            this.btnpriright.TabStop = false;
+            this.btnpriright.Zoom = 20;
+            this.btnpriright.Click += new System.EventHandler(this.btnpriright_Click);
             // 
             // FormPerfiles
             // 
@@ -990,7 +980,6 @@
             this.bunifuCards1.ResumeLayout(false);
             this.bunifuCards3.ResumeLayout(false);
             this.bunifuCards3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPerfiles)).EndInit();
             this.pgRoles.ResumeLayout(false);
             this.pgRoles.PerformLayout();
@@ -998,15 +987,10 @@
             this.cardRoles.PerformLayout();
             this.cardUsuRol.ResumeLayout(false);
             this.panelUsuRol.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnrolsave)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnrolleft2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnrolright2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnrolleft)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnrolright)).EndInit();
+            this.panelUsuRol.PerformLayout();
             this.cardrolsearch.ResumeLayout(false);
             this.panelusersearch.ResumeLayout(false);
             this.panelusersearch.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnrolsearch)).EndInit();
             this.bunifuCards6.ResumeLayout(false);
             this.bunifuCards6.PerformLayout();
             this.pgPrivilegios.ResumeLayout(false);
@@ -1015,19 +999,25 @@
             this.bunifuCards7.PerformLayout();
             this.cardprisearch.ResumeLayout(false);
             this.panelprisearch.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).EndInit();
+            this.panelprisearch.PerformLayout();
             this.cardRolPrivilegio.ResumeLayout(false);
             this.panelRolPrivilegio.ResumeLayout(false);
+            this.panelRolPrivilegio.PerformLayout();
+            this.bunifuCards9.ResumeLayout(false);
+            this.bunifuCards9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnrolsave)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnrolleft2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnrolright2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnrolleft)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnrolright)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnrolsearch)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnprivisearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnprisave)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnprileft2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnpriright2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnprileft)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnpriright)).EndInit();
-            this.bunifuCards8.ResumeLayout(false);
-            this.bunifuCards9.ResumeLayout(false);
-            this.bunifuCards9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingRoles1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingRoles2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1041,7 +1031,7 @@
         private MaterialSkin.Controls.MaterialFlatButton btnsiguiente;
         private Bunifu.Framework.UI.BunifuCards bunifuCards1;
         private Bunifu.Framework.UI.BunifuTileButton btneliminar;
-        private Bunifu.Framework.UI.BunifuTileButton bunifuTileButton2;
+        private Bunifu.Framework.UI.BunifuTileButton btnusueditar;
         private Bunifu.Framework.UI.BunifuTileButton btnUsuario;
         private Bunifu.Framework.UI.BunifuCards bunifuCards3;
         private System.Windows.Forms.Label label1;
@@ -1052,10 +1042,6 @@
         private System.Windows.Forms.TabPage pgPrivilegios;
         private MaterialSkin.Controls.MaterialTabSelector materialTabSelector1;
         private Bunifu.Framework.UI.BunifuCards bunifuCards7;
-        private Bunifu.Framework.UI.BunifuCards bunifuCards8;
-        private Bunifu.Framework.UI.BunifuTileButton bunifuTileButton5;
-        private Bunifu.Framework.UI.BunifuTileButton bunifuTileButton6;
-        private Bunifu.Framework.UI.BunifuTileButton bunifuTileButton7;
         private Bunifu.Framework.UI.BunifuCards bunifuCards9;
         private System.Windows.Forms.Label label3;
         private Bunifu.Framework.UI.BunifuCards bunifuCards6;
@@ -1084,10 +1070,12 @@
         private Bunifu.Framework.UI.BunifuImageButton btnprisave;
         private Bunifu.Framework.UI.BunifuCards cardprisearch;
         private System.Windows.Forms.Panel panelprisearch;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton2;
-        public Bunifu.Framework.UI.BunifuMaterialTextbox tbprivi;
+        private Bunifu.Framework.UI.BunifuImageButton btnprivisearch;
         public System.Windows.Forms.TextBox tbrolsearch;
-        private System.Windows.Forms.BindingSource bindingRoles1;
-        private System.Windows.Forms.BindingSource bindingRoles2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        public System.Windows.Forms.TextBox tbprivisearch;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
     }
 }
