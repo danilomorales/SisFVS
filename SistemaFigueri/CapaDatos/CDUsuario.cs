@@ -77,6 +77,16 @@ namespace CapaDatos
             return adapter;
         }
 
+        public SqlDataReader buscarPerfil(int id)
+        {
+            String sql = "SELECT usu.IdUsuario,per.IdPersona,usu.Login,usu.Pass,per.Nombres,per.ApellidoPaterno,per.ApellidoMaterno,per.DNI,per.Direccion,usu.foto " +
+                " FROM Caja.Usuario usu LEFT JOIN Caja.Persona per ON usu.IdPersona =per.IdPersona where usu.IdUsuario=@id ;";
+            SqlCommand comandon = new SqlCommand(sql, Conexion.AbrirConexion());
+            comandon.Parameters.AddWithValue("@id", id);
+            lector = comandon.ExecuteReader();
+            return lector;
+        }
+
         public int InsertarUsuario(String nombres, String paterno, String materno, String dni, String direccion, String user, String pass,String url)
         {
             int count = 0;
@@ -117,7 +127,7 @@ namespace CapaDatos
             comando.Parameters.AddWithValue("@id", id);
             lector = comando.ExecuteReader();
             return lector;
-        }
+        }   
 
         public SqlDataReader rolSegunIdUsuario2(int id)
         {

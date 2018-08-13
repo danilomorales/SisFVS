@@ -64,6 +64,12 @@
     <Compile Include="FormBuscarRoles.Designer.cs">
       <DependentUpon>FormBuscarRoles.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormEditarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditarUsuario.Designer.cs">
+      <DependentUpon>FormEditarUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="LocalBD.cs" />
     <Compile Include="Busqueda_Cliente.cs" />
     <Compile Include="FormBuscarCliente.cs">
@@ -209,6 +215,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormCliente.resx">
       <DependentUpon>FormCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditarUsuario.resx">
+      <DependentUpon>FormEditarUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormInsertProducto.resx">
       <DependentUpon>FormInsertProducto.cs</DependentUpon>

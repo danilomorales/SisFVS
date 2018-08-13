@@ -793,7 +793,7 @@
         gg==
 </value>
   </data>
-  <data name="bunifuTileButton2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnusueditar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAlEFJREFUeF7t
         nQmcHFW1/0fFBX0qi4jIdFXPJICCD1Dcn099T5/bAwFXXEEExF3fQ1x5k2RmkhAgkJBtujssovjg/9wX
@@ -1503,10 +1503,4 @@
         CyOSNzHkuTpmu1+o5fH3L8z3o6reARC0Lc+8ccOMAAAAAElFTkSuQmCC
 </value>
   </data>
-  <metadata name="bindingRoles1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="bindingRoles2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>146, 17</value>
-  </metadata>
 </root>
