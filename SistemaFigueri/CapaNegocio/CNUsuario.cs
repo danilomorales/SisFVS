@@ -74,6 +74,13 @@ namespace CapaNegocio
             return perfil;
         }
 
+        public SqlDataReader buscarPerfil(int id)
+        {
+            SqlDataReader perfil;
+            perfil = objDato.buscarPerfil(id);
+            return perfil;
+        }
+
         public SqlDataReader controlRolPrivilegio(int idrol, int idprivilegio)
         {
             SqlDataReader perfil;
@@ -106,6 +113,13 @@ namespace CapaNegocio
         {
             SqlDataReader perfil;
             perfil = objDato.privSegunIdRol2(id);
+            return perfil;
+        }
+
+        public SqlDataReader existeUsuario(String login)
+        {
+            SqlDataReader perfil;
+            perfil = objDato.existeUsuario(login);
             return perfil;
         }
 

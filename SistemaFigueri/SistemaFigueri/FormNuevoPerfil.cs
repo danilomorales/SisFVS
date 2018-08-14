@@ -44,6 +44,7 @@ namespace SistemaFigueri
 
         private void FormNuevoPerfil_Load(object sender, EventArgs e)
         {
+
             /*DataTable tb = new DataTable();
             SqlDataReader adapter = objUsuario.cargarCombo();
             tb.Load(adapter);
@@ -59,22 +60,52 @@ namespace SistemaFigueri
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (objUsuario.insertarUsuario(txtnombres.Text,
-                txtpaterno.Text,
-                txtmaterno.Text,
-                txtdni.Text,
-                txtdireccion.Text,
-                txtusuario.Text,
-                txtclave.Text,              
-                imgUrl) == 1)
+            if(txtnombres.Text!="" &&
+                    txtpaterno.Text != "" &&
+                    txtmaterno.Text != "" &&
+                    txtdni.Text != "" &&
+                    txtdireccion.Text != "" &&
+                    txtusuario.Text != "" &&
+                    txtclave.Text != "")
             {
-                MessageBox.Show("Se inserto correctamente");
-                this.Close();
+                SqlDataReader reader = objUsuario.existeUsuario(txtusuario.Text);
+                if (reader.Read())
+                {
+                    MessageBox.Show("El usuario ya existe, elija otro por favor");
+                }
+                else
+                {
+                    if (txtclave.Text == txtclave2.Text)
+                    {
+                        if (objUsuario.insertarUsuario(txtnombres.Text,
+                        txtpaterno.Text,
+                        txtmaterno.Text,
+                        txtdni.Text,
+                        txtdireccion.Text,
+                        txtusuario.Text,
+                        txtclave.Text,
+                        imgUrl) == 1)
+                        {
+                            MessageBox.Show("Se inserto correctamente");
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Hubo un error al insertar");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("La clave no coincide");
+                    }
+
+                }
             }
-            else
-            {
-                MessageBox.Show("Hubo un error al insertar");
+            else{
+                MessageBox.Show("Complete el formulario");
             }
+            
+            
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

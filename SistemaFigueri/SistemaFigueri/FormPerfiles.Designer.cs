@@ -30,18 +30,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPerfiles));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabPerfiles = new MaterialSkin.Controls.MaterialTabControl();
             this.pgUsuarios = new System.Windows.Forms.TabPage();
             this.bunifuCards2 = new Bunifu.Framework.UI.BunifuCards();
-            this.btnatras = new MaterialSkin.Controls.MaterialFlatButton();
-            this.btnsiguiente = new MaterialSkin.Controls.MaterialFlatButton();
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
             this.btneliminar = new Bunifu.Framework.UI.BunifuTileButton();
-            this.bunifuTileButton2 = new Bunifu.Framework.UI.BunifuTileButton();
+            this.btnusueditar = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnUsuario = new Bunifu.Framework.UI.BunifuTileButton();
             this.bunifuCards3 = new Bunifu.Framework.UI.BunifuCards();
             this.label1 = new System.Windows.Forms.Label();
@@ -75,6 +72,8 @@
             this.btnprivisearch = new Bunifu.Framework.UI.BunifuImageButton();
             this.cardRolPrivilegio = new Bunifu.Framework.UI.BunifuCards();
             this.panelRolPrivilegio = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.btnprisave = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnprileft2 = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnpriright2 = new Bunifu.Framework.UI.BunifuImageButton();
@@ -85,10 +84,6 @@
             this.bunifuCards9 = new Bunifu.Framework.UI.BunifuCards();
             this.label3 = new System.Windows.Forms.Label();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
-            this.bindingRoles1 = new System.Windows.Forms.BindingSource(this.components);
-            this.bindingRoles2 = new System.Windows.Forms.BindingSource(this.components);
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.tabPerfiles.SuspendLayout();
             this.pgUsuarios.SuspendLayout();
             this.bunifuCards2.SuspendLayout();
@@ -122,8 +117,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnprileft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnpriright)).BeginInit();
             this.bunifuCards9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingRoles1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingRoles2)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPerfiles
@@ -160,8 +153,6 @@
             this.bunifuCards2.BorderRadius = 5;
             this.bunifuCards2.BottomSahddow = false;
             this.bunifuCards2.color = System.Drawing.Color.Tomato;
-            this.bunifuCards2.Controls.Add(this.btnatras);
-            this.bunifuCards2.Controls.Add(this.btnsiguiente);
             this.bunifuCards2.Controls.Add(this.bunifuCards1);
             this.bunifuCards2.Controls.Add(this.bunifuCards3);
             this.bunifuCards2.Controls.Add(this.bunifuImageButton1);
@@ -176,38 +167,6 @@
             this.bunifuCards2.Size = new System.Drawing.Size(1110, 893);
             this.bunifuCards2.TabIndex = 37;
             // 
-            // btnatras
-            // 
-            this.btnatras.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnatras.AutoSize = true;
-            this.btnatras.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnatras.Depth = 0;
-            this.btnatras.Location = new System.Drawing.Point(433, 838);
-            this.btnatras.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.btnatras.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnatras.Name = "btnatras";
-            this.btnatras.Primary = false;
-            this.btnatras.Size = new System.Drawing.Size(66, 36);
-            this.btnatras.TabIndex = 68;
-            this.btnatras.Text = "< Atrás";
-            this.btnatras.UseVisualStyleBackColor = true;
-            // 
-            // btnsiguiente
-            // 
-            this.btnsiguiente.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnsiguiente.AutoSize = true;
-            this.btnsiguiente.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnsiguiente.Depth = 0;
-            this.btnsiguiente.Location = new System.Drawing.Point(575, 838);
-            this.btnsiguiente.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.btnsiguiente.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnsiguiente.Name = "btnsiguiente";
-            this.btnsiguiente.Primary = false;
-            this.btnsiguiente.Size = new System.Drawing.Size(90, 36);
-            this.btnsiguiente.TabIndex = 69;
-            this.btnsiguiente.Text = "Siguiente >";
-            this.btnsiguiente.UseVisualStyleBackColor = true;
-            // 
             // bunifuCards1
             // 
             this.bunifuCards1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -217,7 +176,7 @@
             this.bunifuCards1.BottomSahddow = false;
             this.bunifuCards1.color = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
             this.bunifuCards1.Controls.Add(this.btneliminar);
-            this.bunifuCards1.Controls.Add(this.bunifuTileButton2);
+            this.bunifuCards1.Controls.Add(this.btnusueditar);
             this.bunifuCards1.Controls.Add(this.btnUsuario);
             this.bunifuCards1.LeftSahddow = false;
             this.bunifuCards1.Location = new System.Drawing.Point(554, 43);
@@ -246,24 +205,25 @@
             this.btneliminar.Size = new System.Drawing.Size(80, 84);
             this.btneliminar.TabIndex = 37;
             // 
-            // bunifuTileButton2
+            // btnusueditar
             // 
-            this.bunifuTileButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(155)))), ((int)(((byte)(31)))));
-            this.bunifuTileButton2.color = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(155)))), ((int)(((byte)(31)))));
-            this.bunifuTileButton2.colorActive = System.Drawing.Color.MediumSeaGreen;
-            this.bunifuTileButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuTileButton2.Font = new System.Drawing.Font("Century Gothic", 15.75F);
-            this.bunifuTileButton2.ForeColor = System.Drawing.Color.White;
-            this.bunifuTileButton2.Image = ((System.Drawing.Image)(resources.GetObject("bunifuTileButton2.Image")));
-            this.bunifuTileButton2.ImagePosition = 20;
-            this.bunifuTileButton2.ImageZoom = 40;
-            this.bunifuTileButton2.LabelPosition = 30;
-            this.bunifuTileButton2.LabelText = "Editar";
-            this.bunifuTileButton2.Location = new System.Drawing.Point(300, 11);
-            this.bunifuTileButton2.Margin = new System.Windows.Forms.Padding(6);
-            this.bunifuTileButton2.Name = "bunifuTileButton2";
-            this.bunifuTileButton2.Size = new System.Drawing.Size(80, 84);
-            this.bunifuTileButton2.TabIndex = 36;
+            this.btnusueditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(155)))), ((int)(((byte)(31)))));
+            this.btnusueditar.color = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(155)))), ((int)(((byte)(31)))));
+            this.btnusueditar.colorActive = System.Drawing.Color.MediumSeaGreen;
+            this.btnusueditar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnusueditar.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.btnusueditar.ForeColor = System.Drawing.Color.White;
+            this.btnusueditar.Image = ((System.Drawing.Image)(resources.GetObject("btnusueditar.Image")));
+            this.btnusueditar.ImagePosition = 20;
+            this.btnusueditar.ImageZoom = 40;
+            this.btnusueditar.LabelPosition = 30;
+            this.btnusueditar.LabelText = "Editar";
+            this.btnusueditar.Location = new System.Drawing.Point(300, 11);
+            this.btnusueditar.Margin = new System.Windows.Forms.Padding(6);
+            this.btnusueditar.Name = "btnusueditar";
+            this.btnusueditar.Size = new System.Drawing.Size(80, 84);
+            this.btnusueditar.TabIndex = 36;
+            this.btnusueditar.Click += new System.EventHandler(this.btnusueditar_Click);
             // 
             // btnUsuario
             // 
@@ -348,6 +308,7 @@
             this.txtSearch.Size = new System.Drawing.Size(587, 44);
             this.txtSearch.TabIndex = 64;
             this.txtSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearch_KeyPress_1);
             // 
             // dgvPerfiles
             // 
@@ -361,24 +322,24 @@
             this.dgvPerfiles.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvPerfiles.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dgvPerfiles.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPerfiles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPerfiles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPerfiles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPerfiles.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPerfiles.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPerfiles.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvPerfiles.GridColor = System.Drawing.SystemColors.MenuHighlight;
             this.dgvPerfiles.Location = new System.Drawing.Point(22, 233);
             this.dgvPerfiles.Name = "dgvPerfiles";
@@ -386,7 +347,7 @@
             this.dgvPerfiles.RowHeadersVisible = false;
             this.dgvPerfiles.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvPerfiles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPerfiles.Size = new System.Drawing.Size(1054, 571);
+            this.dgvPerfiles.Size = new System.Drawing.Size(1054, 613);
             this.dgvPerfiles.TabIndex = 61;
             this.dgvPerfiles.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvPerfiles_RowPostPaint_1);
             // 
@@ -480,7 +441,7 @@
             this.btnrolsave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnrolsave.TabIndex = 122;
             this.btnrolsave.TabStop = false;
-            this.btnrolsave.Zoom = 10;
+            this.btnrolsave.Zoom = 20;
             this.btnrolsave.Click += new System.EventHandler(this.btnrolsave_Click);
             // 
             // label4
@@ -507,7 +468,7 @@
             this.btnrolleft2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnrolleft2.TabIndex = 121;
             this.btnrolleft2.TabStop = false;
-            this.btnrolleft2.Zoom = 10;
+            this.btnrolleft2.Zoom = 20;
             this.btnrolleft2.Click += new System.EventHandler(this.btnrolleft2_Click);
             // 
             // btnrolright2
@@ -523,7 +484,7 @@
             this.btnrolright2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnrolright2.TabIndex = 120;
             this.btnrolright2.TabStop = false;
-            this.btnrolright2.Zoom = 10;
+            this.btnrolright2.Zoom = 20;
             this.btnrolright2.Click += new System.EventHandler(this.btnrolright2_Click);
             // 
             // btnrolleft
@@ -539,7 +500,7 @@
             this.btnrolleft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnrolleft.TabIndex = 119;
             this.btnrolleft.TabStop = false;
-            this.btnrolleft.Zoom = 10;
+            this.btnrolleft.Zoom = 20;
             this.btnrolleft.Click += new System.EventHandler(this.btnrolleft_Click);
             // 
             // btnrolright
@@ -555,7 +516,7 @@
             this.btnrolright.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnrolright.TabIndex = 118;
             this.btnrolright.TabStop = false;
-            this.btnrolright.Zoom = 10;
+            this.btnrolright.Zoom = 20;
             this.btnrolright.Click += new System.EventHandler(this.btnrolright_Click);
             // 
             // lbRoles1
@@ -775,7 +736,7 @@
             this.cardRolPrivilegio.Name = "cardRolPrivilegio";
             this.cardRolPrivilegio.RightSahddow = false;
             this.cardRolPrivilegio.ShadowDepth = 20;
-            this.cardRolPrivilegio.Size = new System.Drawing.Size(804, 599);
+            this.cardRolPrivilegio.Size = new System.Drawing.Size(804, 608);
             this.cardRolPrivilegio.TabIndex = 69;
             this.cardRolPrivilegio.Resize += new System.EventHandler(this.cardRolPrivilegio_Resize);
             // 
@@ -792,27 +753,51 @@
             this.panelRolPrivilegio.Controls.Add(this.lbPrivi1);
             this.panelRolPrivilegio.Location = new System.Drawing.Point(17, 11);
             this.panelRolPrivilegio.Name = "panelRolPrivilegio";
-            this.panelRolPrivilegio.Size = new System.Drawing.Size(764, 560);
+            this.panelRolPrivilegio.Size = new System.Drawing.Size(764, 583);
             this.panelRolPrivilegio.TabIndex = 1;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label6.Location = new System.Drawing.Point(469, 17);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(292, 25);
+            this.label6.TabIndex = 119;
+            this.label6.Text = "PRIVILEGIOS ASIGNADOS";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label7.Location = new System.Drawing.Point(16, 17);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(304, 25);
+            this.label7.TabIndex = 118;
+            this.label7.Text = "PRIVILEGIOS SIN ASIGNAR";
             // 
             // btnprisave
             // 
             this.btnprisave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            this.btnprisave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnprisave.Enabled = false;
             this.btnprisave.Image = global::SistemaFigueri.Properties.Resources.save;
             this.btnprisave.ImageActive = null;
-            this.btnprisave.Location = new System.Drawing.Point(365, 493);
+            this.btnprisave.Location = new System.Drawing.Point(365, 519);
             this.btnprisave.Name = "btnprisave";
             this.btnprisave.Size = new System.Drawing.Size(50, 50);
             this.btnprisave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnprisave.TabIndex = 117;
             this.btnprisave.TabStop = false;
-            this.btnprisave.Zoom = 10;
+            this.btnprisave.Zoom = 20;
             this.btnprisave.Click += new System.EventHandler(this.btnprisave_Click);
             // 
             // btnprileft2
             // 
             this.btnprileft2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            this.btnprileft2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnprileft2.Enabled = false;
             this.btnprileft2.Image = global::SistemaFigueri.Properties.Resources.left2;
             this.btnprileft2.ImageActive = null;
@@ -822,12 +807,13 @@
             this.btnprileft2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnprileft2.TabIndex = 116;
             this.btnprileft2.TabStop = false;
-            this.btnprileft2.Zoom = 10;
+            this.btnprileft2.Zoom = 20;
             this.btnprileft2.Click += new System.EventHandler(this.btnprileft2_Click);
             // 
             // btnpriright2
             // 
             this.btnpriright2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            this.btnpriright2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnpriright2.Enabled = false;
             this.btnpriright2.Image = global::SistemaFigueri.Properties.Resources.right2;
             this.btnpriright2.ImageActive = null;
@@ -837,12 +823,13 @@
             this.btnpriright2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnpriright2.TabIndex = 115;
             this.btnpriright2.TabStop = false;
-            this.btnpriright2.Zoom = 10;
+            this.btnpriright2.Zoom = 20;
             this.btnpriright2.Click += new System.EventHandler(this.btnpriright2_Click);
             // 
             // btnprileft
             // 
             this.btnprileft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            this.btnprileft.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnprileft.Enabled = false;
             this.btnprileft.Image = global::SistemaFigueri.Properties.Resources.left;
             this.btnprileft.ImageActive = null;
@@ -852,12 +839,13 @@
             this.btnprileft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnprileft.TabIndex = 114;
             this.btnprileft.TabStop = false;
-            this.btnprileft.Zoom = 10;
+            this.btnprileft.Zoom = 20;
             this.btnprileft.Click += new System.EventHandler(this.btnprileft_Click);
             // 
             // btnpriright
             // 
             this.btnpriright.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            this.btnpriright.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnpriright.Enabled = false;
             this.btnpriright.Image = global::SistemaFigueri.Properties.Resources.right;
             this.btnpriright.ImageActive = null;
@@ -867,26 +855,30 @@
             this.btnpriright.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnpriright.TabIndex = 113;
             this.btnpriright.TabStop = false;
-            this.btnpriright.Zoom = 10;
+            this.btnpriright.Zoom = 20;
             this.btnpriright.Click += new System.EventHandler(this.btnpriright_Click);
             // 
             // lbPrivi2
             // 
+            this.lbPrivi2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPrivi2.FormattingEnabled = true;
+            this.lbPrivi2.ItemHeight = 20;
             this.lbPrivi2.Location = new System.Drawing.Point(486, 45);
             this.lbPrivi2.Margin = new System.Windows.Forms.Padding(50, 3, 50, 3);
             this.lbPrivi2.MaximumSize = new System.Drawing.Size(650, 1400);
             this.lbPrivi2.Name = "lbPrivi2";
-            this.lbPrivi2.Size = new System.Drawing.Size(242, 498);
+            this.lbPrivi2.Size = new System.Drawing.Size(242, 524);
             this.lbPrivi2.TabIndex = 112;
             // 
             // lbPrivi1
             // 
+            this.lbPrivi1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPrivi1.FormattingEnabled = true;
+            this.lbPrivi1.ItemHeight = 20;
             this.lbPrivi1.Location = new System.Drawing.Point(42, 45);
             this.lbPrivi1.MaximumSize = new System.Drawing.Size(650, 1400);
             this.lbPrivi1.Name = "lbPrivi1";
-            this.lbPrivi1.Size = new System.Drawing.Size(254, 498);
+            this.lbPrivi1.Size = new System.Drawing.Size(254, 524);
             this.lbPrivi1.TabIndex = 109;
             // 
             // bunifuCards9
@@ -921,6 +913,7 @@
             // materialTabSelector1
             // 
             this.materialTabSelector1.BaseTabControl = this.tabPerfiles;
+            this.materialTabSelector1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.materialTabSelector1.Depth = 0;
             this.materialTabSelector1.Dock = System.Windows.Forms.DockStyle.Top;
             this.materialTabSelector1.Location = new System.Drawing.Point(0, 0);
@@ -929,28 +922,6 @@
             this.materialTabSelector1.Size = new System.Drawing.Size(1124, 46);
             this.materialTabSelector1.TabIndex = 0;
             this.materialTabSelector1.Text = "materialTabSelector1";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label6.Location = new System.Drawing.Point(469, 17);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(292, 25);
-            this.label6.TabIndex = 119;
-            this.label6.Text = "PRIVILEGIOS ASIGNADOS";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label7.Location = new System.Drawing.Point(16, 17);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(304, 25);
-            this.label7.TabIndex = 118;
-            this.label7.Text = "PRIVILEGIOS SIN ASIGNAR";
             // 
             // FormPerfiles
             // 
@@ -1011,8 +982,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnpriright)).EndInit();
             this.bunifuCards9.ResumeLayout(false);
             this.bunifuCards9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingRoles1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingRoles2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1022,11 +991,9 @@
         private MaterialSkin.Controls.MaterialTabControl tabPerfiles;
         private System.Windows.Forms.TabPage pgUsuarios;
         private Bunifu.Framework.UI.BunifuCards bunifuCards2;
-        private MaterialSkin.Controls.MaterialFlatButton btnatras;
-        private MaterialSkin.Controls.MaterialFlatButton btnsiguiente;
         private Bunifu.Framework.UI.BunifuCards bunifuCards1;
         private Bunifu.Framework.UI.BunifuTileButton btneliminar;
-        private Bunifu.Framework.UI.BunifuTileButton bunifuTileButton2;
+        private Bunifu.Framework.UI.BunifuTileButton btnusueditar;
         private Bunifu.Framework.UI.BunifuTileButton btnUsuario;
         private Bunifu.Framework.UI.BunifuCards bunifuCards3;
         private System.Windows.Forms.Label label1;
@@ -1067,8 +1034,6 @@
         private System.Windows.Forms.Panel panelprisearch;
         private Bunifu.Framework.UI.BunifuImageButton btnprivisearch;
         public System.Windows.Forms.TextBox tbrolsearch;
-        private System.Windows.Forms.BindingSource bindingRoles1;
-        private System.Windows.Forms.BindingSource bindingRoles2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         public System.Windows.Forms.TextBox tbprivisearch;

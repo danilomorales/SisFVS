@@ -77,6 +77,16 @@ namespace CapaDatos
             return adapter;
         }
 
+        public SqlDataReader buscarPerfil(int id)
+        {
+            String sql = "SELECT usu.IdUsuario,per.IdPersona,usu.Login,usu.Pass,per.Nombres,per.ApellidoPaterno,per.ApellidoMaterno,per.DNI,per.Direccion,usu.foto " +
+                " FROM Caja.Usuario usu LEFT JOIN Caja.Persona per ON usu.IdPersona =per.IdPersona where usu.IdUsuario=@id ;";
+            SqlCommand comandon = new SqlCommand(sql, Conexion.AbrirConexion());
+            comandon.Parameters.AddWithValue("@id", id);
+            lector = comandon.ExecuteReader();
+            return lector;
+        }
+
         public int InsertarUsuario(String nombres, String paterno, String materno, String dni, String direccion, String user, String pass,String url)
         {
             int count = 0;
@@ -92,12 +102,24 @@ namespace CapaDatos
                 comando.Parameters.AddWithValue("@vDireccion", direccion);
                 comando.Parameters.AddWithValue("@vUser", user);
                 comando.Parameters.AddWithValue("@vPass", pass);
-                byte[] img = null;
-                FileStream fs = new FileStream(url, FileMode.Open, FileAccess.Read);
-                BinaryReader br = new BinaryReader(fs);
-                img = br.ReadBytes((int)fs.Length);
-                comando.Parameters.AddWithValue("@vImagen",img);
-                comando.ExecuteNonQuery();
+                if (url == ""||url==null)
+                {
+                    SqlParameter imageParameter = new SqlParameter("@vImagen", SqlDbType.Image);
+                    imageParameter.Value = DBNull.Value;
+                    comando.Parameters.Add(imageParameter);
+                    comando.ExecuteNonQuery();
+                   
+                }
+                else
+                {
+                    byte[] img = null;
+                    FileStream fs = new FileStream(url, FileMode.Open, FileAccess.Read);
+                    BinaryReader br = new BinaryReader(fs);
+                    img = br.ReadBytes((int)fs.Length);
+                    comando.Parameters.AddWithValue("@vImagen", img);
+                    comando.ExecuteNonQuery();
+                    
+                }
                 count = 1;
             }
             catch(SqlException exp)
@@ -117,7 +139,7 @@ namespace CapaDatos
             comando.Parameters.AddWithValue("@id", id);
             lector = comando.ExecuteReader();
             return lector;
-        }
+        }   
 
         public SqlDataReader rolSegunIdUsuario2(int id)
         {
@@ -127,6 +149,15 @@ namespace CapaDatos
                 "WHERE usurol.IdUsuario = @id; ";
             SqlCommand comando = new SqlCommand(sql, Conexion.AbrirConexion());
             comando.Parameters.AddWithValue("@id", id);
+            lector = comando.ExecuteReader();
+            return lector;
+        }
+
+        public SqlDataReader existeUsuario(String login)
+        {
+            String sql = "select Login from Caja.Usuario where Login=@login ";
+            SqlCommand comando = new SqlCommand(sql, Conexion.AbrirConexion());
+            comando.Parameters.AddWithValue("@login", login);
             lector = comando.ExecuteReader();
             return lector;
         }

@@ -69,9 +69,11 @@ namespace SistemaFigueri
 
         private void FormPerfiles_Load(object sender, EventArgs e)
         {
-              
+
             /*dgvPerfiles.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvPerfiles.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;*/
+            dgvPerfiles.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
+            dgvPerfiles.AllowUserToResizeRows = false;
             cargarPerfiles(dgvPerfiles);
             dgvPerfiles.Columns[0].Visible = false;
             dgvPerfiles.Columns[1].Visible = false;
@@ -108,15 +110,6 @@ namespace SistemaFigueri
             //panelbotonUR.Anchor = AnchorStyles.None;
             panelUsuRol.Location = new Point(
             cardUsuRol.Width / 2 - panelUsuRol.Size.Width / 2, cardUsuRol.Height / 2 - panelUsuRol.Size.Height / 2);
-        }
-
-
-        private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
-        {
-           
-                DataView dv = tabla.DefaultView;
-                dv.RowFilter = string.Format("Login like '%{0}%' or Nombres like '%{0}%' or ApellidoPaterno like '%{0}%'", txtSearch.Text);
-         
         }
 
         private void dgvPerfiles_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
@@ -206,10 +199,6 @@ namespace SistemaFigueri
             {
                 if (form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-                    btnrolright.Enabled = true;
-                    btnrolright2.Enabled = true;
-                    btnrolleft.Enabled = true;
-                    btnrolleft2.Enabled = true;
                     btnrolsave.Enabled = true;
                     tbrolsearch.Text = form.usuario;
                     CNUsuario objUsuario = new CNUsuario();
@@ -245,6 +234,29 @@ namespace SistemaFigueri
                     lbRoles2.DataSource = data2;
                     lbRoles2.DisplayMember = "Text2";
                     btnrolsearch.Focus();
+
+                    if (lbRoles2.Items.Count > 0)
+                    {
+                        //MessageBox.Show("vacío");
+                        btnrolleft.Enabled = true;
+                        btnrolleft2.Enabled = true;
+                    }
+                    else
+                    {
+                        btnrolleft.Enabled = false;
+                        btnrolleft2.Enabled = false;
+                    }
+                    if (lbRoles1.Items.Count > 0)
+                    {
+                        //MessageBox.Show("vacío");
+                        btnrolright.Enabled = true;
+                        btnrolright2.Enabled = true;
+                    }
+                    else
+                    {
+                        btnrolright.Enabled = false;
+                        btnrolright2.Enabled = false;
+                    }
                 }
                
 
@@ -484,6 +496,7 @@ namespace SistemaFigueri
             {
                 if (form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
+                    btnprisave.Enabled = true;
                     tbprivisearch.Text = form.nomRol;
                     CNUsuario objUsuario = new CNUsuario();
                     idrol = form.idrol;
@@ -710,7 +723,7 @@ namespace SistemaFigueri
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error btnrolright2 " + ex);
+                MessageBox.Show("Error btnpriright2 " + ex);
             }
         }
 
@@ -739,6 +752,32 @@ namespace SistemaFigueri
                     MessageBox.Show("Se ha actualizado los datos");
 
                 }
+            }
+        }
+
+        private void txtSearch_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            DataView dv = tabla.DefaultView;
+            dv.RowFilter = string.Format("Login like '%{0}%' or Nombres like '%{0}%' or ApellidoPaterno like '%{0}%' or ApellidoMaterno like '%{0}% or DNI like '%{0}%'", txtSearch.Text);
+        }
+
+        private void btnusueditar_Click(object sender, EventArgs e)
+        {
+            if (dgvPerfiles.SelectedRows.Count > 0)
+            {
+                int index = dgvPerfiles.CurrentCell.RowIndex;
+                int value = Int32.Parse(dgvPerfiles.Rows[index].Cells["IdUsuario"].Value.ToString());
+                //MessageBox.Show("id: " + value);
+                using (FormEditarUsuario obj = new FormEditarUsuario())
+                {
+                    
+                    obj.idusu = value;
+                    obj.ShowDialog();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una fila");
             }
         }
     }
