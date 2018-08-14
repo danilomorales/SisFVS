@@ -53,11 +53,6 @@ namespace SistemaFigueri
             cboroles.DataSource = tb;*/
         }
 
-        private void insertarUsuario()
-        {
-            
-        }
-
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             if(txtnombres.Text!="" &&
@@ -86,23 +81,24 @@ namespace SistemaFigueri
                         txtclave.Text,
                         imgUrl) == 1)
                         {
-                            MessageBox.Show("Se inserto correctamente");
+                            MessageBox.Show("Se insertó correctamente");
+                            this.DialogResult = DialogResult.OK;
                             this.Close();
                         }
                         else
                         {
-                            MessageBox.Show("Hubo un error al insertar");
+                            MessageBox.Show("Ha ocurrido un error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     else
                     {
-                        MessageBox.Show("La clave no coincide");
+                        MessageBox.Show("La clave no coincide", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
                 }
             }
-            else{
-                MessageBox.Show("Complete el formulario");
+            else{              
+                MessageBox.Show("Complete el formulario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
             
