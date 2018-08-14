@@ -486,7 +486,6 @@ namespace SistemaFigueri
             formMP.ShowDialog();
         }
 
-
         private void btnRegistrarCobro_Click(object sender, EventArgs e)
         {
             FormRegistroCobro frmRegCobro = new FormRegistroCobro();
@@ -645,6 +644,15 @@ namespace SistemaFigueri
 
         private void dgvDetalleNotaVenta_KeyUp(object sender, KeyEventArgs e)
         {
+
+        }
+
+        private void FormVenta_Activated(object sender, EventArgs e)
+        {
+            tbRuc.Text = Program.NumeroRuc;
+            tbDocumento.Text = Program.NroDocIdentidad;
+            tbClienteNombre.Text = Program.ApellidoPaterno + "," + Program.ApellidoMaterno + "," + Program.Nombres;
+
 
         }
     }
