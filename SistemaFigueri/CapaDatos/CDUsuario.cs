@@ -104,7 +104,11 @@ namespace CapaDatos
                 comando.Parameters.AddWithValue("@vPass", pass);
                 if (url == ""||url==null)
                 {
-                    comando.Parameters.AddWithValue("@vImagen", DBNull.Value);
+                    SqlParameter imageParameter = new SqlParameter("@vImagen", SqlDbType.Image);
+                    imageParameter.Value = DBNull.Value;
+                    comando.Parameters.Add(imageParameter);
+                    comando.ExecuteNonQuery();
+                   
                 }
                 else
                 {
@@ -114,9 +118,9 @@ namespace CapaDatos
                     img = br.ReadBytes((int)fs.Length);
                     comando.Parameters.AddWithValue("@vImagen", img);
                     comando.ExecuteNonQuery();
-                    count = 1;
+                    
                 }
-                
+                count = 1;
             }
             catch(SqlException exp)
             {

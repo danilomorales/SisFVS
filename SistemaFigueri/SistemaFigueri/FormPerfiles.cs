@@ -69,9 +69,11 @@ namespace SistemaFigueri
 
         private void FormPerfiles_Load(object sender, EventArgs e)
         {
-              
+
             /*dgvPerfiles.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvPerfiles.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;*/
+            dgvPerfiles.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
+            dgvPerfiles.AllowUserToResizeRows = false;
             cargarPerfiles(dgvPerfiles);
             dgvPerfiles.Columns[0].Visible = false;
             dgvPerfiles.Columns[1].Visible = false;
@@ -756,7 +758,7 @@ namespace SistemaFigueri
         private void txtSearch_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             DataView dv = tabla.DefaultView;
-            dv.RowFilter = string.Format("Login like '%{0}%' or Nombres like '%{0}%' or ApellidoPaterno like '%{0}%' or ApellidoMaterno like '%{0}%'", txtSearch.Text);
+            dv.RowFilter = string.Format("Login like '%{0}%' or Nombres like '%{0}%' or ApellidoPaterno like '%{0}%' or ApellidoMaterno like '%{0}% or DNI like '%{0}%'", txtSearch.Text);
         }
 
         private void btnusueditar_Click(object sender, EventArgs e)

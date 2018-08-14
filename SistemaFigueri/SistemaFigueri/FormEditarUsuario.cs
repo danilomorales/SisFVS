@@ -17,6 +17,7 @@ namespace SistemaFigueri
     {
         CNUsuario objUsuario = new CNUsuario();
         public int idusu { get; set; }
+        public int idpersona { get; set; }
         String imgUrl = "";
         public FormEditarUsuario()
         {
@@ -71,6 +72,11 @@ namespace SistemaFigueri
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

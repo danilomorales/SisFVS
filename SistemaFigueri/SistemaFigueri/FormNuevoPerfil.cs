@@ -75,7 +75,7 @@ namespace SistemaFigueri
                 }
                 else
                 {
-                    if (txtclave == txtclave2)
+                    if (txtclave.Text == txtclave2.Text)
                     {
                         if (objUsuario.insertarUsuario(txtnombres.Text,
                         txtpaterno.Text,
