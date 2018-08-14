@@ -8,6 +8,16 @@ namespace SistemaFigueri
 {
     static class Program
     {
+        //Cliente Receptor
+        public static int IdClienteReceptor;
+        public static int IdDocIdentidad;
+        public static String NroDocIdentidad;
+        public static String RazonSocial;
+        public static String NombreComercial;
+        public static String NumeroRuc;
+        public static String Nombres;
+        public static String ApellidoPaterno;
+        public static String ApellidoMaterno;
 
         public static string IdProducto;
         public static String DescripcionProducto;

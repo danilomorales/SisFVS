@@ -10,28 +10,20 @@ using CapaDatos;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using CapaDatos;
+
 
 namespace SistemaFigueri
 {
     public partial class FormBuscarCliente : Form
     {
-        CNClientes cli = new CNClientes();
+        private CNClienteReceptor C = new CNClienteReceptor();
+
+        int Listado = 0;
+
         public FormBuscarCliente()
         {
             InitializeComponent();
         }
-        private void OcultarColumnas()
-        {
-            this.dataListado.Columns[0].Visible = false;
-            this.dataListado.Columns[1].Visible = false;
-        }
-        //public DataTable MostarClientes()
-        //{
-        //    DataTable table = new DataTable();
-        //    table = cli.listarClientes();
-        //    return table;
-        //}
 
 
         private void bunifuCards2_Paint(object sender, PaintEventArgs e)
@@ -41,55 +33,120 @@ namespace SistemaFigueri
 
         private void FormBuscarCliente_Load(object sender, EventArgs e)
         {
-            MostrarClientes();
+            timer1.Start();
+            timer1.Interval = 5000;
+            ListarClientes();
+            dgvCliente.ClearSelection();
         }
-
-        public void MostrarClientes()
+        private void ListarClientes()
         {
-            dataListado.DataSource = cli.MostarClientes();
-        }
-        private void BuscaApellido()
-        {
-            this.dataListado.DataSource = CNClientes.BuscarApellidos(this.tbFiltra.Text);
-            this.OcultarColumnas();
-            lbtotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
-        }
-
-        private void BuscarNum_Documento()
-        {
-            this.dataListado.DataSource = CNClientes.BuscarNum_Documento(this.tbFiltra.Text);
-            this.OcultarColumnas();
-            lbtotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
-        }
-
-        private void tbFiltra_KeyUp(object sender, KeyEventArgs e)
-        {
-            SqlConnection Conexion = new SqlConnection("Data Source=192.168.21.5;Initial Catalog=DBFIGUE2;User ID=sa;Password=123;MultipleActiveResultSets=true;");
-            Conexion.Open();
-            SqlCommand cmd = Conexion.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = " select * from caja.CLIENTE where NombreEmpresa like('" + tbFiltra.Text + "%')";
-            cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-            dataListado.DataSource = dt;
-            Conexion.Close();
-
-
-
+            dt = C.Listado();
+            try
+            {
+                dgvCliente.Rows.Clear();
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    dgvCliente.Rows.Add(dt.Rows[i][0]);
+                    dgvCliente.Rows[i].Cells[0].Value = dt.Rows[i][0].ToString();
+                    dgvCliente.Rows[i].Cells[1].Value = dt.Rows[i][1].ToString();
+                    dgvCliente.Rows[i].Cells[2].Value = dt.Rows[i][2].ToString();
+                    dgvCliente.Rows[i].Cells[3].Value = dt.Rows[i][3].ToString();
+                    dgvCliente.Rows[i].Cells[4].Value = dt.Rows[i][4].ToString();
+                    dgvCliente.Rows[i].Cells[5].Value = dt.Rows[i][5].ToString();
+                    dgvCliente.Rows[i].Cells[6].Value = dt.Rows[i][6].ToString();
+                    dgvCliente.Rows[i].Cells[7].Value = dt.Rows[i][7].ToString();
+                }
+                dgvCliente.ClearSelection();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
-        private void dataListado_DoubleClick(object sender, EventArgs e)
+
+        private void btnCerrarFiltro_Click(object sender, EventArgs e)
         {
-            FormVenta form = FormVenta.GetInstancia();
-            string par1, par2;
-            //par1 = Convert.ToString(this.dataListado.CurrentRow.Cells["Nro de Documento"].Value);
-            par2 = Convert.ToString(this.dataListado.CurrentRow.Cells["Apellido Paterno"].Value) + " " + Convert.ToString(this.dataListado.CurrentRow.Cells["Nombres"].Value);
-            form.SetCliente(par2);
-            this.Hide();
+            this.Close();
         }
 
+        private void tbFiltraCliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            dgvCliente.ClearSelection();
+            if (e.KeyChar == 13)
+            {
+                DataTable dt = new DataTable();
+                C.NroDocIdentidad = tbFiltraCliente.Text;
+                dt = C.BuscaClienteReceptor(C.NroDocIdentidad);
+                try
+                {
+                    if (dgvCliente.Columns.Count > 0)
+                    {
+                        dgvCliente.Columns[0].Visible = false;
+                    }
+                    dgvCliente.Rows.Clear();
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        dgvCliente.Rows.Add(dt.Rows[i][0]);
+                        dgvCliente.Rows[i].Cells[0].Value = dt.Rows[i][0].ToString();
+                        dgvCliente.Rows[i].Cells[1].Value = dt.Rows[i][1].ToString();
+                        dgvCliente.Rows[i].Cells[2].Value = dt.Rows[i][2].ToString();
+                        dgvCliente.Rows[i].Cells[3].Value = dt.Rows[i][3].ToString();
+                        dgvCliente.Rows[i].Cells[4].Value = dt.Rows[i][4].ToString();
+                        dgvCliente.Rows[i].Cells[5].Value = dt.Rows[i][5].ToString();
+                        dgvCliente.Rows[i].Cells[6].Value = dt.Rows[i][6].ToString();
+                        dgvCliente.Rows[i].Cells[7].Value = dt.Rows[i][7].ToString();
+                    }
+                    dgvCliente.ClearSelection();
+                    timer1.Stop();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                ListarClientes();
+                timer1.Start();
+            }
+        }
 
+        private void dgvCliente_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvCliente.Rows.Count > 0)
+            {
+                dgvCliente.Rows[dgvCliente.CurrentRow.Index].Selected = true;
+                timer1.Stop();
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            switch (Listado)
+            {
+                case 0: ListarClientes(); break;
+            }
+        }
+
+        private void dgvCliente_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvCliente_DoubleClick(object sender, EventArgs e)
+        {
+            Program.IdClienteReceptor = Convert.ToInt32(dgvCliente.CurrentRow.Cells[0].Value.ToString());
+            Program.NroDocIdentidad = dgvCliente.CurrentRow.Cells[1].Value.ToString();
+            Program.NumeroRuc = dgvCliente.CurrentRow.Cells[2].Value.ToString();
+            Program.RazonSocial = dgvCliente.CurrentRow.Cells[3].Value.ToString();
+            Program.NombreComercial = dgvCliente.CurrentRow.Cells[4].Value.ToString();
+            Program.Nombres = dgvCliente.CurrentRow.Cells[5].Value.ToString();
+            Program.ApellidoPaterno = dgvCliente.CurrentRow.Cells[6].Value.ToString();
+            Program.ApellidoMaterno = dgvCliente.CurrentRow.Cells[7].Value.ToString();
+          
+            this.Close();
+        }
     }
 
 

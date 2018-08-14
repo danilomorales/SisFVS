@@ -71,7 +71,7 @@
       <DependentUpon>FormEditarUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="LocalBD.cs" />
-    <Compile Include="Busqueda_Cliente.cs" />
+    <Compile Include="Venta.cs" />
     <Compile Include="FormBuscarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
