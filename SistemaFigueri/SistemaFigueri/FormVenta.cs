@@ -52,7 +52,7 @@ namespace SistemaFigueri
         public FormVenta()
         {
             InitializeComponent();
-            this.toolTip1.SetToolTip(this.ListaCLiente, "Seleccione un cliente");
+            //this.toolTip1.SetToolTip(this.btnCargaCliente, "Seleccione un cliente");
 
         }
         //Mostrar Mensaje de Confirmación
@@ -715,6 +715,23 @@ namespace SistemaFigueri
 
                 }
             }
+        }
+
+        private void btnCargaCliente_Click(object sender, EventArgs e)
+        {
+            using (FormBuscarClienteR form = new FormBuscarClienteR())
+            {
+                if (form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    tbClienteNombre.Text = form.cliente;
+                    tbRuc.Text = form.ruc;
+                    tbDocumento.Text = form.dni;
+                    CNProductos objProducto = new CNProductos();
+
+                }
+
+            }
+
         }
     }
 
