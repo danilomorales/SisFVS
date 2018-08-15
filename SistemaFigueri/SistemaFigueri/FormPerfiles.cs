@@ -21,7 +21,7 @@ namespace SistemaFigueri
         int rownum = 0;
         public List<DataRow> list { get; set; }
         public List<String> liston { get; set; }
-        DataTable tabla = new DataTable();
+        DataTable tabla;
         DataTable tablaRol1 = new DataTable();
         DataTable tablaRol2 = new DataTable();
         List<SomeData> data;
@@ -44,6 +44,7 @@ namespace SistemaFigueri
             {
                 CNUsuario objUsuario = new CNUsuario();
                 SqlDataAdapter adapter = objUsuario.cargarPerfiles();
+                tabla = new DataTable();
                 foreach (DataRow row in tabla.Rows)
                 {
                     list.Add((DataRow)row);
@@ -60,7 +61,7 @@ namespace SistemaFigueri
                 imagen.ImageLayout = DataGridViewImageCellLayout.Stretch;*/
                 adapter.Dispose();
             } catch (Exception ex) {
-                MessageBox.Show("No se pudo llenar la tabla usuario perfil: " + ex.ToString());
+                Console.WriteLine("No se pudo llenar la tabla usuario perfil: " + ex.ToString());
             }
 
         }
@@ -69,9 +70,11 @@ namespace SistemaFigueri
 
         private void FormPerfiles_Load(object sender, EventArgs e)
         {
-              
+
             /*dgvPerfiles.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvPerfiles.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;*/
+            dgvPerfiles.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
+            dgvPerfiles.AllowUserToResizeRows = false;
             cargarPerfiles(dgvPerfiles);
             dgvPerfiles.Columns[0].Visible = false;
             dgvPerfiles.Columns[1].Visible = false;
@@ -150,8 +153,16 @@ namespace SistemaFigueri
 
         private void btnUsuario_Click(object sender, EventArgs e)
         {
-            FormNuevoPerfil formMC = new FormNuevoPerfil();
-            formMC.ShowDialog();
+            /*FormNuevoPerfil formMC = new FormNuevoPerfil();
+            formMC.ShowDialog();*/
+            using (FormNuevoPerfil form = new FormNuevoPerfil())
+            {
+                if (form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    cargarPerfiles(dgvPerfiles);
+                }
+            }
+
         }
 
         private void FormPerfiles_Resize(object sender, EventArgs e)
@@ -756,7 +767,7 @@ namespace SistemaFigueri
         private void txtSearch_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             DataView dv = tabla.DefaultView;
-            dv.RowFilter = string.Format("Login like '%{0}%' or Nombres like '%{0}%' or ApellidoPaterno like '%{0}%' or ApellidoMaterno like '%{0}%'", txtSearch.Text);
+            dv.RowFilter = string.Format("Login like '%{0}%' or Nombres like '%{0}%' or ApellidoPaterno like '%{0}%' or ApellidoMaterno like '%{0}% or DNI like '%{0}%'", txtSearch.Text);
         }
 
         private void btnusueditar_Click(object sender, EventArgs e)
@@ -768,14 +779,32 @@ namespace SistemaFigueri
                 //MessageBox.Show("id: " + value);
                 using (FormEditarUsuario obj = new FormEditarUsuario())
                 {
-                    
                     obj.idusu = value;
-                    obj.ShowDialog();
+                    if (obj.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                    {
+                        cargarPerfiles(dgvPerfiles);
+                    }
+                    
+                    
+                    //obj.ShowDialog();
                 }
             }
             else
             {
                 MessageBox.Show("Seleccione una fila");
+            }
+        }
+
+        private void btneliminar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Está seguro(a) de eliminar este usuario?", "Confirmar acción", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes)
+            {
+                CNUsuario objUsuario = new CNUsuario();
+                int index = dgvPerfiles.CurrentCell.RowIndex;
+                int idusuario = Int32.Parse(dgvPerfiles.Rows[index].Cells["IdUsuario"].Value.ToString());
+                objUsuario.eliminarUsuario(idusuario);
+                MessageBox.Show("Se ha eliminado el usuario");
+                cargarPerfiles(dgvPerfiles);
             }
         }
     }

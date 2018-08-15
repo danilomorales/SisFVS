@@ -17,6 +17,7 @@ namespace SistemaFigueri
     {
         CNUsuario objUsuario = new CNUsuario();
         public int idusu { get; set; }
+        public int idpersona { get; set; }
         String imgUrl = "";
         public FormEditarUsuario()
         {
@@ -34,6 +35,7 @@ namespace SistemaFigueri
             while (reader.Read())
             {
                 //MessageBox.Show(reader["nomRol"].ToString());
+                idpersona = Int32.Parse(reader["IdPersona"].ToString());
                 String login = reader["Login"].ToString();
                 //MessageBox.Show(login);
                 txtnombres.Text= reader["Nombres"].ToString();
@@ -71,6 +73,39 @@ namespace SistemaFigueri
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            if (txtclave.Text == txtclave2.Text)
+            {
+                if (MessageBox.Show("¿Está seguro(a) de actualizar los datos del usuario?", "Confirmar acción", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes)
+                {
+                    if (objUsuario.EditarUsuario(idusu, idpersona, txtnombres.Text, txtpaterno.Text, txtmaterno.Text,
+                        txtdni.Text, txtdireccion.Text, txtusuario.Text, txtclave.Text, imgUrl) == 1)
+                    {
+                        MessageBox.Show("Se ha actualizado los datos del usuario");
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ha ocurrido un error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        //this.Close();
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Los campos de clave no coinciden", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
+                
         }
     }
 }

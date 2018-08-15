@@ -33,7 +33,11 @@ namespace CapaDatos
             get { return m_TipoDato; }
             set { m_TipoDato = value; }
         }
-
+        public int Tamaño
+        {
+            get { return m_Tamaño; }
+            set { m_Tamaño = value; }
+        }
 
         public ParameterDirection Direccion
         {
@@ -42,12 +46,12 @@ namespace CapaDatos
         }
 
 
-        public int Tamaño
-        {
-            get { return m_Tamaño; }
-            set { m_Tamaño = value; }
-        }
-
+        //public int Tamaño
+        //{
+        //    get { return m_Tamaño; }
+        //    set { m_Tamaño = value; }
+        //}
+        
         public clParametro(String objNombre, Object objValor)
         {
             m_Nombre = objNombre;

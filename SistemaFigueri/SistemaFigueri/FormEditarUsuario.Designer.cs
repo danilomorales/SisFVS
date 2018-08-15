@@ -71,6 +71,7 @@
             this.btnCancelar.TabIndex = 143;
             this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnGuardar
             // 
@@ -87,6 +88,7 @@
             this.btnGuardar.TabIndex = 142;
             this.btnGuardar.Text = "GUARDAR";
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // bunifuCards1
             // 
@@ -636,6 +638,7 @@
             this.Controls.Add(this.bunifuCards1);
             this.Controls.Add(this.bunifuCards2);
             this.Name = "FormEditarUsuario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormEditarUsuario";
             this.Load += new System.EventHandler(this.FormEditarUsuario_Load);
             this.bunifuCards1.ResumeLayout(false);

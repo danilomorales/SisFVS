@@ -42,12 +42,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CNClienteReceptor.cs" />
     <Compile Include="CNClientes.cs" />
-    <Compile Include="CNKardex.cs" />
+    <Compile Include="CNDetalleVenta.cs" />
+    <Compile Include="CNPedidos.cs" />
     <Compile Include="CNProductos.cs" />
     <Compile Include="CNSector.cs" />
     <Compile Include="CNUsuario.cs" />
-    <Compile Include="CNVenta.cs" />
     <Compile Include="CNVentas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

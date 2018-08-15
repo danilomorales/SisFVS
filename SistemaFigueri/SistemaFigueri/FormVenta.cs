@@ -42,22 +42,12 @@ namespace SistemaFigueri
         {
             this.tbClienteNombre.Text = nombre;
         }
-        public void SetProducto (string Alias, string DescripcionProducto, 
+        public void producto (string Alias, string DescripcionProducto, 
             decimal Valor_Unitario, int Stock, DateTime TiempoDuracion )
         {
-            this.tbAlias.Text = Alias;
-            this.tbDesProducto.Text = DescripcionProducto;
-            this.tbPrecioV.Text = Convert.ToString(Valor_Unitario);
-            this.tbStock.Text = Convert.ToString(Stock);
-            this.dtFechaVence.Value = TiempoDuracion;
-            this.tbAlias.ReadOnly = true;
-            this.tbDesProducto.ReadOnly = true;
-            this.dtFechaVence.Enabled = false;
-            this.tbStock.ReadOnly = true;
-            this.tbigv.ReadOnly = true;
-            this.tbPrecioV.ReadOnly = true;
-            this.tbDescuento.ReadOnly = false;
+           
         }
+
         public FormVenta()
         {
             InitializeComponent();
@@ -83,7 +73,7 @@ namespace SistemaFigueri
         {
             this.tbClienteNombre.Text = string.Empty;
             this.tbAlias.Text = string.Empty;
-            this.tbDesProducto.Text = string.Empty;
+            //this.tbDesProducto.Text = string.Empty;
             this.tbRuc.Text = string.Empty;
             this.tbDocumento.Text = string.Empty;
             this.tbigv.Text = "18";
@@ -96,12 +86,13 @@ namespace SistemaFigueri
         private void limpiarDetalle()
         {
 
-            this.tbDesProducto.Text = string.Empty;
+            ///*this*/.tbDesProducto.Text = string.Empty;
             this.tbCantidad.Text = string.Empty;
             this.tbPrecioV.Text = string.Empty;
             this.tbStock.Text = String.Empty;
             this.tbDescuento.Text = "0";
         }
+
 
         //Habilitar los controles 
 
@@ -153,7 +144,7 @@ namespace SistemaFigueri
         //Método Mostrar
         private void Mostrar()
         {
-            this.dataVentas.DataSource = CNVenta.Mostrar();
+            //this.dataVentas.DataSource = CNVenta.Mostrar();
             this.OcultarColumnas();
             //lblTotal.Text = "Total de Registros: " + Convert.ToString(dataListado.Rows.Count);
         }
@@ -170,7 +161,7 @@ namespace SistemaFigueri
         //Método BuscarDetalles
         private void MostrarDetalles()
         {
-            this.dataVentas.DataSource = CNVenta.MostrarDetalle(this.tbIdVenta.Text);
+            //this.dataVentas.DataSource = CNVenta.MostrarDetalle(this.tbIdVenta.Text);
             this.OcultarColumnas();
             //lblTotal.Text = "Total de Registros: " + Convert.ToString(dataListado.Rows.Count);
             this.dataVentas.AutoGenerateColumns = false;
@@ -214,41 +205,7 @@ namespace SistemaFigueri
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                DialogResult Opcion;
-                Opcion = MessageBox.Show("Realmente Desea Eliminar la(s) venta(s)", "Figueri", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-
-                if (Opcion == DialogResult.OK)
-                {
-                    string Codigo;
-                    string Rpta = "";
-
-                    foreach (DataGridViewRow row in dataVentas.Rows)
-                    {
-                        if (Convert.ToBoolean(row.Cells[0].Value))
-                        {
-                            Codigo = Convert.ToString(row.Cells[1].Value);
-                            Rpta = CNVenta.Eliminar(Convert.ToInt32(Codigo));
-
-                            if (Rpta.Equals("OK"))
-                            {
-                                this.MensajeOk("Se Anuló Correctamente el registro");
-                            }
-                            else
-                            {
-                                this.MensajeError(Rpta);
-                            }
-
-                        }
-                    }
-                    this.Mostrar();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message + ex.StackTrace);
-            }
+         
         }
 
         //private void dataListado_DoubleClick(object sender, EventArgs e)
@@ -486,7 +443,6 @@ namespace SistemaFigueri
             formMP.ShowDialog();
         }
 
-
         private void btnRegistrarCobro_Click(object sender, EventArgs e)
         {
             FormRegistroCobro frmRegCobro = new FormRegistroCobro();
@@ -600,16 +556,16 @@ namespace SistemaFigueri
 
         private void btnBuscaProcto_Click(object sender, EventArgs e)
         {
-            try
+            using (FormBuscarProducto form = new FormBuscarProducto())
             {
-               
-            }
-            catch
-            {
+                if (form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    tbAlias.Text = form.producto;
+                    CNProductos objProducto = new CNProductos();
+
+                }
 
             }
-            FormBuscarProducto formBuscarPro = new FormBuscarProducto();
-            formBuscarPro.ShowDialog();
         }
 
         private void FormVenta_FormClosing(object sender, FormClosingEventArgs e)
@@ -646,6 +602,26 @@ namespace SistemaFigueri
         private void dgvDetalleNotaVenta_KeyUp(object sender, KeyEventArgs e)
         {
 
+        }
+
+        private void FormVenta_Activated(object sender, EventArgs e)
+        {
+            tbRuc.Text = Program.NumeroRuc;
+            tbDocumento.Text = Program.NroDocIdentidad;
+            tbClienteNombre.Text = Program.ApellidoPaterno + "," + Program.ApellidoMaterno + "," + Program.Nombres;
+
+
+        }
+
+        private void btnpedido_Click(object sender, EventArgs e)
+        {
+            using (FormBuscarPedidos form = new FormBuscarPedidos())
+            {
+                if(form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                   
+                }
+            }
         }
     }
 

@@ -116,10 +116,28 @@ namespace CapaNegocio
             return perfil;
         }
 
+        public SqlDataReader existeUsuario(String login)
+        {
+            SqlDataReader perfil;
+            perfil = objDato.existeUsuario(login);
+            return perfil;
+        }
+
         public int insertarUsuario(String nombres, String paterno, String materno, String dni, String direccion, String user, String pass, String url)
         {
-            Console.WriteLine("Llegando .."+nombres+" "+ paterno + " " +  materno + " " + dni + " " + direccion +" " + user + " " + pass + " "  + " " + url);
+            Console.WriteLine("Llegando al DAO .."+nombres+" "+ paterno + " " +  materno + " " + dni + " " + direccion +" " + user + " " + pass + " "  + " " + url);
             return objDato.InsertarUsuario(nombres, paterno, materno, dni, direccion, user, pass, url);
+        }
+
+        public int EditarUsuario(int idusuario,int idpersona,String nombres, String paterno, String materno, String dni, String direccion, String user, String pass, String url)
+        {
+            Console.WriteLine("Llegando al DAO.." + idusuario+" "+idpersona+" "+nombres + " " + paterno + " " + materno + " " + dni + " " + direccion + " " + user + " " + pass + " " + " " + url);
+            return objDato.EditarUsuario(idusuario,idpersona,nombres, paterno, materno, dni, direccion, user, pass, url);
+        }
+
+        public void eliminarUsuario(int idusuario)
+        {
+            objDato.eliminarUsuario(idusuario);
         }
 
         public void eliminarUsuarioRol(int idusuario)
