@@ -20,7 +20,12 @@ namespace SistemaFigueri
         CNProductos cp = new CNProductos();
         CDProductos cdpro = new CDProductos();
         DataTable tProducto = new DataTable();
-        public String producto { get; set; }
+        public String alias { get; set; }
+        public String descripcion { get; set; }
+        public String stock { get; set; }
+        public String fechavencimiento { get; set; }
+        public String precio{ get; set; }
+        public String oferta { get; set; }
         public int idproducto { get; set; }
 
         public FormBuscarProducto()
@@ -90,16 +95,25 @@ namespace SistemaFigueri
 
         private void dgvlListaProducto_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            FormVenta fv = new FormVenta();
-            //fv.tbAlias.Text
-            //String alias = dgvlListaProducto.Rows[e.RowIndex].Cells["Alias"].Value.ToString(); 
-            //String producto = dgvlListaProducto.Rows[e.RowIndex].Cells["Descripción"].Value.ToString(); 
-            //String stock = dgvlListaProducto.Rows[e.RowIndex].Cells["Stock"].Value.ToString();
-            //String id = dgvlListaProducto.Rows[e.RowIndex].Cells[0].Value.ToString();
-            //producto = " " + alias + " " + producto + " " + stock;
-            //idproducto = Int32.Parse(id);
-            //this.DialogResult = DialogResult.OK;
+            //FormVenta fv = new FormVenta();
+            //fv.tbAlias.Text = this.dgvlListaProducto.CurrentRow.Cells["Alias"].Value.ToString();
+            String Alias = dgvlListaProducto.Rows[e.RowIndex].Cells["Alias"].Value.ToString();
+            String Producto = dgvlListaProducto.Rows[e.RowIndex].Cells["Descripción"].Value.ToString();
+            String Stock = dgvlListaProducto.Rows[e.RowIndex].Cells["Stock"].Value.ToString();
+            String Fechav = dgvlListaProducto.Rows[e.RowIndex].Cells["TiempoDuracion"].Value.ToString();
+            String Precio = dgvlListaProducto.Rows[e.RowIndex].Cells["Precio"].Value.ToString();
+            String PreOferta = dgvlListaProducto.Rows[e.RowIndex].Cells["PrecioOferta"].Value.ToString();
+            String Id = dgvlListaProducto.Rows[e.RowIndex].Cells[0].Value.ToString();
+            alias = Alias;
+            descripcion = Producto;
+            stock = Stock;
+            fechavencimiento = Fechav;
+            precio = Precio;
+            oferta = PreOferta;
+            idproducto = Int32.Parse(Id);
+            this.DialogResult = DialogResult.OK;
             this.Close();
+            //fv.Close();
         }
     }
 }

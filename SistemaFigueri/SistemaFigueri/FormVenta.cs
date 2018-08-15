@@ -23,6 +23,7 @@ namespace SistemaFigueri
         private DataTable dtDetalle;
         private decimal totalPagado = 0;
         private static FormVenta _instancia;
+        private List<Venta> lst = new List<Venta>();
 
 
 
@@ -69,28 +70,16 @@ namespace SistemaFigueri
         }
 
         //Limpiar todos los controles del formulario
-        private void Limpiar()
-        {
-            this.tbClienteNombre.Text = string.Empty;
-            this.tbAlias.Text = string.Empty;
-            //this.tbDesProducto.Text = string.Empty;
-            this.tbRuc.Text = string.Empty;
-            this.tbDocumento.Text = string.Empty;
-            this.tbigv.Text = "18";
-            this.tbimporteT.Text = "0,0";
-            this.tbDescuento.Text = "0";
-            this.crearTabla();
 
-        }
 
         private void limpiarDetalle()
         {
 
-            ///*this*/.tbDesProducto.Text = string.Empty;
-            this.tbCantidad.Text = string.Empty;
-            this.tbPrecioV.Text = string.Empty;
-            this.tbStock.Text = String.Empty;
-            this.tbDescuento.Text = "0";
+            /////*this*/.tbDesProducto.Text = string.Empty;
+            //this.tbCantidad.Text = string.Empty;
+            //this.tbPrecioV.Text = string.Empty;
+            //this.tbStock.Text = String.Empty;
+            //this.tbDescuento.Text = "0";
         }
 
 
@@ -560,7 +549,12 @@ namespace SistemaFigueri
             {
                 if (form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-                    tbAlias.Text = form.producto;
+                    tbAlias.Text = form.alias;
+                    tbDescripcion.Text = form.descripcion;
+                    tbStock.Text = form.stock;
+                    dtFechaV.Text = form.fechavencimiento;
+                    tbPrecio.Text = form.precio;
+
                     CNProductos objProducto = new CNProductos();
 
                 }
@@ -606,12 +600,115 @@ namespace SistemaFigueri
 
         private void FormVenta_Activated(object sender, EventArgs e)
         {
-            tbRuc.Text = Program.NumeroRuc;
-            tbDocumento.Text = Program.NroDocIdentidad;
-            tbClienteNombre.Text = Program.ApellidoPaterno + "," + Program.ApellidoMaterno + "," + Program.Nombres;
+            //tbRuc.Text = Program.NumeroRuc;
+            //tbDocumento.Text = Program.NroDocIdentidad;
+            //tbClienteNombre.Text = Program.ApellidoPaterno + "," + Program.ApellidoMaterno + "," + Program.Nombres;
 
 
         }
+
+        private void btnAgregaCarro_Click_1(object sender, EventArgs e)
+        {
+            Venta ven = new Venta();
+            Decimal Porcentaje = 0; Decimal SubTotal;
+            if(this.tbClienteNombre.Text.Trim() != "")
+            {
+                if (tbCantidad.Text.Trim() != "")
+                {
+                    if (Convert.ToInt32(tbCantidad.Text) >= 0)
+                    {
+                        if (Convert.ToInt32(tbCantidad.Text) <= Convert.ToInt32(tbStock.Text))
+                        {
+                            if (tbIgv.Text.Trim() != "")
+                            {
+
+                                //ven.IdVenta = Convert.ToInt32(txtIdVenta.Text);
+                                ven.Descripcion = tbAlias.Text + " - " + tbDescripcion.Text;
+                                ven.Cantidad = Convert.ToInt32(tbCantidad.Text);
+                                ven.PrecioVenta = Convert.ToDecimal(tbPrecio.Text);
+                                Porcentaje = (Convert.ToDecimal(tbIgv.Text) / 100) + 1;
+                                SubTotal = ((Convert.ToDecimal(tbPrecio.Text) * Convert.ToInt32(tbCantidad.Text)) / Porcentaje);
+                                ven.Igv = Math.Round(Convert.ToDecimal(SubTotal) * (Convert.ToDecimal(tbIgv.Text) / (100)), 2);
+                                ven.SubTotal = Math.Round(SubTotal, 2);
+                                lst.Add(ven);
+                                LlenarGrilla();
+                                Limpiar();
+                            }
+                            else
+                            {
+                               
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Stock Insuficiente para Realizar la Venta.", "Sistema de Ventas.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+                        }
+                    }
+                    else
+                    {
+
+                    }
+                    {
+                        MessageBox.Show("Cantidad Ingresada no Válida.", "Sistema de Ventas.", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        tbCantidad.Clear();
+                        tbCantidad.Focus();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Por Favor Ingrese Cantidad a Vender.", "Figueri", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                    tbCantidad.Focus();
+                }
+                
+            }
+            else
+            {
+                MessageBox.Show("Por Favor Busque el Cliente a Vender.", "Figueri", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            }
+        }
+
+        private void LlenarGrilla()
+        {
+            Decimal SumaSubTotal = 0; Decimal SumaIgv = 0; Decimal SumaTotal = 0;
+            dgvVenta.Rows.Clear();
+            for (int i = 0; i < lst.Count; i++)
+            {
+                dgvVenta.Rows.Add();
+                dgvVenta.Rows[i].Cells[0].Value = lst[i].IdVenta;
+                dgvVenta.Rows[i].Cells[1].Value = lst[i].Cantidad;
+                dgvVenta.Rows[i].Cells[2].Value = lst[i].Descripcion;
+                dgvVenta.Rows[i].Cells[3].Value = lst[i].PrecioVenta;
+                dgvVenta.Rows[i].Cells[4].Value = lst[i].SubTotal;
+                dgvVenta.Rows[i].Cells[5].Value = lst[i].IdProducto;
+                dgvVenta.Rows[i].Cells[6].Value = lst[i].Igv;
+                SumaSubTotal += Convert.ToDecimal(dgvVenta.Rows[i].Cells[4].Value);
+                SumaIgv += Convert.ToDecimal(dgvVenta.Rows[i].Cells[6].Value);
+            }
+            dgvVenta.Rows.Add();
+            dgvVenta.Rows.Add();
+            dgvVenta.Rows[lst.Count + 1].Cells[3].Value = "SUB-TOTAL  S/.";
+            dgvVenta.Rows[lst.Count + 1].Cells[4].Value = SumaSubTotal;
+            dgvVenta.Rows.Add();
+            dgvVenta.Rows[lst.Count + 2].Cells[3].Value = "      I.G.V.        %";
+            dgvVenta.Rows[lst.Count + 2].Cells[4].Value = SumaIgv;
+            dgvVenta.Rows.Add();
+            dgvVenta.Rows[lst.Count + 3].Cells[3].Value = "     TOTAL     S/.";
+            SumaTotal += SumaSubTotal + SumaIgv;
+            dgvVenta.Rows[lst.Count + 3].Cells[4].Value = SumaTotal;
+            dgvVenta.ClearSelection();
+        }
+        private void Limpiar()
+        {
+            tbDescripcion.Clear();
+            tbCantidad.Focus();
+            tbPrecio.Focus();
+            tbStock.Clear();
+            Program.DescripcionProducto = "";
+            Program.Stock = 0;
+            Program.Alias = "";
+            Program.PrecioVenta = 0;
+        }
+
     }
 
 }
