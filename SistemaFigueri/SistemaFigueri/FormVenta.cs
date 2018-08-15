@@ -693,9 +693,10 @@ namespace SistemaFigueri
             dgvVenta.Rows[lst.Count + 3].Cells[4].Value = SumaTotal;
             dgvVenta.ClearSelection();
         }
+        //otr csa
         private void Limpiar()
         {
-            tbDescripcion.Clear();
+            //tbDescripcion.Clear();
             tbCantidad.Focus();
             tbPrecio.Focus();
             tbStock.Clear();
