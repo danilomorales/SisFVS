@@ -29,20 +29,20 @@ namespace CapaDatos
         }
 
         //INSERTAR SECTOR
-        public void InsertarSector(String descripcion, String nota)
+        public void InsertarSector(String descripcion, String nota,double porcentaje)
         {
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "insert into caja.SECTOR(DescripcionSector,Nota) values('" + descripcion + "','" + nota + "')";
+            comando.CommandText = "insert into caja.SECTOR(DescripcionSector,Nota,Porcentaje) values('" + descripcion + "','" + nota + "','" + porcentaje + "')";
             comando.CommandType = CommandType.Text;
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
         }
 
         //EDITAR SECTOR
-        public void EditarSector(String idSector, String descripcion, String nota)
+        public void EditarSector(String idSector, String descripcion, String nota, double porcentaje)
         {
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "update caja.SECTOR set DescripcionSector='" + descripcion + "',Nota='" + nota + "' where IdSector='" + idSector + "'";
+            comando.CommandText = "update caja.SECTOR set DescripcionSector='" + descripcion + "',Nota='" + nota + "',Porcentaje=" + porcentaje + " where IdSector='" + idSector + "'";
             comando.CommandType = CommandType.Text;
             comando.ExecuteNonQuery();
             conexion.CerrarConexion();

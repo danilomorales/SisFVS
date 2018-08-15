@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CNClientes.cs" />
+    <Compile Include="CNKardex.cs" />
     <Compile Include="CNProductos.cs" />
     <Compile Include="CNSector.cs" />
     <Compile Include="CNUsuario.cs" />

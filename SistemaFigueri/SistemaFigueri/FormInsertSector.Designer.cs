@@ -41,6 +41,8 @@ namespace SistemaFigueri
             this.bmCancelarSec = new Bunifu.Framework.UI.BunifuThinButton2();
             this.bunifuFlatButton5 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton3 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bmporcentaje = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.SuspendLayout();
             // 
             // doubleBitmapControl1
@@ -70,7 +72,6 @@ namespace SistemaFigueri
             this.bmdescripcion.Size = new System.Drawing.Size(294, 29);
             this.bmdescripcion.TabIndex = 102;
             this.bmdescripcion.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            //this.bmdescripcion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bmdescripcion_KeyPress);
             // 
             // panel1
             // 
@@ -98,7 +99,6 @@ namespace SistemaFigueri
             this.bmnota.Size = new System.Drawing.Size(294, 29);
             this.bmnota.TabIndex = 110;
             this.bmnota.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            //this.bmnota.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bmnota_KeyPress);
             // 
             // panel2
             // 
@@ -126,13 +126,13 @@ namespace SistemaFigueri
             this.btnguardarSec.IdleFillColor = System.Drawing.Color.Green;
             this.btnguardarSec.IdleForecolor = System.Drawing.Color.White;
             this.btnguardarSec.IdleLineColor = System.Drawing.Color.SteelBlue;
-            this.btnguardarSec.Location = new System.Drawing.Point(127, 228);
+            this.btnguardarSec.Location = new System.Drawing.Point(128, 263);
             this.btnguardarSec.Margin = new System.Windows.Forms.Padding(5);
             this.btnguardarSec.Name = "btnguardarSec";
             this.btnguardarSec.Size = new System.Drawing.Size(181, 41);
             this.btnguardarSec.TabIndex = 136;
             this.btnguardarSec.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            //this.btnguardarSec.Click += new System.EventHandler(this.btnguardarSec_Click);
+            this.btnguardarSec.Click += new System.EventHandler(this.btnguardarSec_Click_1);
             // 
             // bmCancelarSec
             // 
@@ -152,13 +152,13 @@ namespace SistemaFigueri
             this.bmCancelarSec.IdleFillColor = System.Drawing.Color.Maroon;
             this.bmCancelarSec.IdleForecolor = System.Drawing.Color.White;
             this.bmCancelarSec.IdleLineColor = System.Drawing.Color.SteelBlue;
-            this.bmCancelarSec.Location = new System.Drawing.Point(357, 228);
+            this.bmCancelarSec.Location = new System.Drawing.Point(358, 263);
             this.bmCancelarSec.Margin = new System.Windows.Forms.Padding(5);
             this.bmCancelarSec.Name = "bmCancelarSec";
             this.bmCancelarSec.Size = new System.Drawing.Size(181, 41);
             this.bmCancelarSec.TabIndex = 135;
             this.bmCancelarSec.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            //this.bmCancelarSec.Click += new System.EventHandler(this.bmCancelarSec_Click);
+            this.bmCancelarSec.Click += new System.EventHandler(this.bmCancelarSec_Click_1);
             // 
             // bunifuFlatButton5
             // 
@@ -232,12 +232,69 @@ namespace SistemaFigueri
             this.bunifuFlatButton3.Textcolor = System.Drawing.Color.White;
             this.bunifuFlatButton3.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
+            // bmporcentaje
+            // 
+            this.bmporcentaje.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.bmporcentaje.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
+            this.bmporcentaje.ForeColor = System.Drawing.Color.White;
+            this.bmporcentaje.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.bmporcentaje.HintText = "Porcentaje";
+            this.bmporcentaje.isPassword = false;
+            this.bmporcentaje.LineFocusedColor = System.Drawing.Color.Blue;
+            this.bmporcentaje.LineIdleColor = System.Drawing.Color.SeaGreen;
+            this.bmporcentaje.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.bmporcentaje.LineThickness = 5;
+            this.bmporcentaje.Location = new System.Drawing.Point(323, 196);
+            this.bmporcentaje.Margin = new System.Windows.Forms.Padding(4);
+            this.bmporcentaje.Name = "bmporcentaje";
+            this.bmporcentaje.Size = new System.Drawing.Size(117, 29);
+            this.bmporcentaje.TabIndex = 138;
+            this.bmporcentaje.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // bunifuFlatButton1
+            // 
+            this.bunifuFlatButton1.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.bunifuFlatButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.bunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuFlatButton1.BorderRadius = 0;
+            this.bunifuFlatButton1.ButtonText = "Porcentaje:";
+            this.bunifuFlatButton1.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.bunifuFlatButton1.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuFlatButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton1.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuFlatButton1.Iconimage = null;
+            this.bunifuFlatButton1.Iconimage_right = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton1.Iconimage_right")));
+            this.bunifuFlatButton1.Iconimage_right_Selected = null;
+            this.bunifuFlatButton1.Iconimage_Selected = null;
+            this.bunifuFlatButton1.IconMarginLeft = 0;
+            this.bunifuFlatButton1.IconMarginRight = 0;
+            this.bunifuFlatButton1.IconRightVisible = true;
+            this.bunifuFlatButton1.IconRightZoom = 0D;
+            this.bunifuFlatButton1.IconVisible = true;
+            this.bunifuFlatButton1.IconZoom = 40D;
+            this.bunifuFlatButton1.IsTab = false;
+            this.bunifuFlatButton1.Location = new System.Drawing.Point(199, 197);
+            this.bunifuFlatButton1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.bunifuFlatButton1.Name = "bunifuFlatButton1";
+            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.White;
+            this.bunifuFlatButton1.selected = false;
+            this.bunifuFlatButton1.Size = new System.Drawing.Size(125, 29);
+            this.bunifuFlatButton1.TabIndex = 137;
+            this.bunifuFlatButton1.Text = "Porcentaje:";
+            this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuFlatButton1.Textcolor = System.Drawing.Color.White;
+            this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
             // FormInsertSector
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.ClientSize = new System.Drawing.Size(809, 364);
+            this.Controls.Add(this.bmporcentaje);
+            this.Controls.Add(this.bunifuFlatButton1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnguardarSec);
             this.Controls.Add(this.bmCancelarSec);
@@ -266,5 +323,7 @@ namespace SistemaFigueri
         private Bunifu.Framework.UI.BunifuThinButton2 btnguardarSec;
         private Bunifu.Framework.UI.BunifuThinButton2 bmCancelarSec;
         private System.Windows.Forms.Panel panel2;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox bmporcentaje;
+        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
     }
 }

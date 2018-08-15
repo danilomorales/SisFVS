@@ -70,6 +70,12 @@
     <Compile Include="FormEditarUsuario.Designer.cs">
       <DependentUpon>FormEditarUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormKardex.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormKardex.Designer.cs">
+      <DependentUpon>FormKardex.cs</DependentUpon>
+    </Compile>
     <Compile Include="LocalBD.cs" />
     <Compile Include="Busqueda_Cliente.cs" />
     <Compile Include="FormBuscarCliente.cs">
@@ -200,6 +206,11 @@
     <Compile Include="FormVenta.Designer.cs">
       <DependentUpon>FormVenta.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="SomeData.cs" />
     <EmbeddedResource Include="FormAperturaCaja.resx">
       <DependentUpon>FormAperturaCaja.cs</DependentUpon>
@@ -224,6 +235,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormInsertSector.resx">
       <DependentUpon>FormInsertSector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormKardex.resx">
+      <DependentUpon>FormKardex.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
@@ -278,11 +292,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>

@@ -148,10 +148,26 @@ namespace SistemaFigueri
             dgvProductos.DataSource = cp.MostarProductos();
         }
 
-        private void bmBuscar_KeyPress(object sender, KeyPressEventArgs e)
+        private void bunKardex_Click(object sender, EventArgs e)
         {
-            //DataView dv = tabla.DefaultView;
-            //dv.RowFilter = string.Format("Stock like '%{0}%' or Nota like '%{0}%' or Factor like '%{0}%' or Estado like '%{0}%'", bmBuscar.Text);
+            try
+            {
+                if (dgvProductos.SelectedRows.Count > 0)
+                {
+                    FormKardex formUP = new FormKardex();
+
+                    formUP.idProducto = dgvProductos.CurrentRow.Cells["idProducto"].Value.ToString();                 
+                    formUP.bmproducto.Text = dgvProductos.CurrentRow.Cells["Nombre"].Value.ToString();
+                    formUP.bmcategoria.Text = dgvProductos.CurrentRow.Cells["Categoria"].Value.ToString();
+                    formUP.ShowDialog();
+                }
+                else
+                    MessageBox.Show("Selecciones una fila por favor para observar kardex");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se obtuvo los datos:" + ex.ToString());
+            }
         }
     }
    
