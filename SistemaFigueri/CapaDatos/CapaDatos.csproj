@@ -45,8 +45,7 @@
   <ItemGroup>
     <Compile Include="CDCliente.cs" />
     <Compile Include="CDConexion.cs" />
-    <Compile Include="CDKardex.cs" />
-    <Compile Include="CDPedidos.cs" />
+    <Compile Include="CDDetalleVenta.cs" />
     <Compile Include="CDProductos.cs" />
     <Compile Include="CDSector.cs" />
     <Compile Include="CDUsuario.cs" />
