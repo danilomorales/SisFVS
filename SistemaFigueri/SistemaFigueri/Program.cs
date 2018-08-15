@@ -33,7 +33,7 @@ namespace SistemaFigueri
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormVenta());
+            Application.Run(new FormLogin());
         }
     }
 }
