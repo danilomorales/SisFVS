@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CapaDatos;
 using System.Data;
+using System.Data.SqlClient;
 
 namespace CapaNegocio
 {
@@ -70,6 +71,15 @@ namespace CapaNegocio
             CDCliente Obj = new CDCliente();
             Obj.Textobuscar = textobuscar;
             return Obj.BuscarNum_Documento(Obj);
+        }
+
+        //Carga Cliente Filtro Venta
+
+        public SqlDataAdapter CargaProductoFiltro()
+        {
+            SqlDataAdapter cliente;
+            cliente = cli.CargaClienteRedeptor();
+            return cliente;
         }
     }
 }

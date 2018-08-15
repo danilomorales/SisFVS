@@ -569,7 +569,7 @@ namespace SistemaFigueri
 
         private void ListaCLiente_Click(object sender, EventArgs e)
         {
-            FormBuscarCliente formMP = new FormBuscarCliente();
+            FormBuscarClienteR formMP = new FormBuscarClienteR();
             formMP.ShowDialog();
         }
 

@@ -15,6 +15,7 @@ namespace CapaDatos
         SqlDataReader leer;
         DataTable tabla = new DataTable();
         SqlCommand comando = new SqlCommand();
+        private SqlDataAdapter adapter;
 
 
         //var
@@ -188,6 +189,13 @@ namespace CapaDatos
             leer.Close();
             conexion.CerrarConexion();
             return table;
+        }
+        public SqlDataAdapter CargaClienteRedeptor()
+        {
+            String sql = "select top 100 (td.Nombre) as Documento, (cr.NroDocIdentidad) as DNI, (cr.NumeroRuc) as RUC, cr.Nombres, (cr.ApellidoPaterno +' '+cr.ApellidoMaterno) as Apellidos, tp.Descripcion as Tipo, s.Nota from  Caja.ClienteReceptor cr inner join Caja.DocIdentidad td on cr.IdDocIdentidad = td.IdDocIdentidad inner join Caja.TipoPersona tp on cr.IdTipoPersona=tp.IdTipoPersona inner join Caja.SECTOR s on cr.IdSector=s.IdSector order by cr.IdClienteReceptor desc";
+            adapter = new SqlDataAdapter(sql, conexion.AbrirConexion());
+            return adapter;
+
         }
 
         ////Llenar ComboBox DEPARTAMENTO

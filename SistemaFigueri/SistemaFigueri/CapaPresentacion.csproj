@@ -84,11 +84,11 @@
     </Compile>
     <Compile Include="LocalBD.cs" />
     <Compile Include="Venta.cs" />
-    <Compile Include="FormBuscarCliente.cs">
+    <Compile Include="FormBuscarClienteR.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormBuscarCliente.Designer.cs">
-      <DependentUpon>FormBuscarCliente.cs</DependentUpon>
+    <Compile Include="FormBuscarClienteR.Designer.cs">
+      <DependentUpon>FormBuscarClienteR.cs</DependentUpon>
     </Compile>
     <Compile Include="FormBuscarProducto.cs">
       <SubType>Form</SubType>
@@ -221,11 +221,14 @@
     <EmbeddedResource Include="FormAperturaCaja.resx">
       <DependentUpon>FormAperturaCaja.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormBuscarCliente.resx">
-      <DependentUpon>FormBuscarCliente.cs</DependentUpon>
+    <EmbeddedResource Include="FormBuscarClienteR.resx">
+      <DependentUpon>FormBuscarClienteR.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormBuscarPedidos.resx">
       <DependentUpon>FormBuscarPedidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBuscarProducto.resx">
+      <DependentUpon>FormBuscarProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormBuscarRoles.resx">
       <DependentUpon>FormBuscarRoles.cs</DependentUpon>
