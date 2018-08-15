@@ -34,7 +34,7 @@ namespace SistemaFigueri
         private void FormBuscarCliente_Load(object sender, EventArgs e)
         {
             timer1.Start();
-            timer1.Interval = 5000;
+            timer1.Interval = 20000;
             ListarClientes();
             dgvCliente.ClearSelection();
         }
@@ -73,7 +73,7 @@ namespace SistemaFigueri
         private void tbFiltraCliente_KeyPress(object sender, KeyPressEventArgs e)
         {
             dgvCliente.ClearSelection();
-            if (e.KeyChar == 13)
+            if (e.KeyChar == 30)
             {
                 DataTable dt = new DataTable();
                 C.NroDocIdentidad = tbFiltraCliente.Text;

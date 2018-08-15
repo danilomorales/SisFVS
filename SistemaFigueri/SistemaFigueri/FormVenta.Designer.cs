@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormVenta));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.Venta = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -51,10 +51,8 @@
             this.panel10 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnRegistrarCobro = new Bunifu.Framework.UI.BunifuTileButton();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
@@ -75,19 +73,24 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.dgvVenta = new System.Windows.Forms.DataGridView();
+            this.IdD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.tbimporteT = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.tbAlias = new System.Windows.Forms.TextBox();
             this.tbigv = new System.Windows.Forms.TextBox();
             this.tbStock = new System.Windows.Forms.TextBox();
             this.bunifuCustomLabel15 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel16 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel10 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.dtFechaVence = new Bunifu.Framework.UI.BunifuDatepicker();
-            this.tbDesProducto = new System.Windows.Forms.TextBox();
             this.btnBuscaProcto = new Bunifu.Framework.UI.BunifuTileButton();
             this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel14 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -122,14 +125,9 @@
             this.bunifuTileButton2 = new Bunifu.Framework.UI.BunifuTileButton();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.IdD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.tbDescripcion = new System.Windows.Forms.TextBox();
+            this.tbAlias = new System.Windows.Forms.TextBox();
             this.Venta.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -142,6 +140,7 @@
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVenta)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnAgregaCarro)).BeginInit();
@@ -153,7 +152,6 @@
             this.panel13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminarVenta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // materialTabSelector1
@@ -448,31 +446,11 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
-            this.panel2.Controls.Add(this.comboBox2);
             this.panel2.Controls.Add(this.panel3);
-            this.panel2.Controls.Add(this.comboBox1);
             this.panel2.Location = new System.Drawing.Point(721, 266);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(474, 92);
             this.panel2.TabIndex = 212;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.ImeMode = System.Windows.Forms.ImeMode.Katakana;
-            this.comboBox2.Items.AddRange(new object[] {
-            "sdsdsdsds",
-            "sd",
-            "s",
-            "ds",
-            "s",
-            "sd"});
-            this.comboBox2.Location = new System.Drawing.Point(286, 36);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 3;
             // 
             // panel3
             // 
@@ -497,24 +475,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "DATOS DE COMPROBANTE ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.ImeMode = System.Windows.Forms.ImeMode.Katakana;
-            this.comboBox1.Items.AddRange(new object[] {
-            "sdsdsdsds",
-            "sd",
-            "s",
-            "ds",
-            "s",
-            "sd"});
-            this.comboBox1.Location = new System.Drawing.Point(18, 36);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 0;
             // 
             // panel4
             // 
@@ -543,7 +503,7 @@
             this.btnRegistrarCobro.ImageZoom = 60;
             this.btnRegistrarCobro.LabelPosition = 16;
             this.btnRegistrarCobro.LabelText = "Multi pago";
-            this.btnRegistrarCobro.Location = new System.Drawing.Point(349, 30);
+            this.btnRegistrarCobro.Location = new System.Drawing.Point(374, 41);
             this.btnRegistrarCobro.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnRegistrarCobro.Name = "btnRegistrarCobro";
             this.btnRegistrarCobro.Size = new System.Drawing.Size(70, 52);
@@ -562,7 +522,7 @@
             "ds",
             "s",
             "sd"});
-            this.comboBox5.Location = new System.Drawing.Point(25, 61);
+            this.comboBox5.Location = new System.Drawing.Point(12, 41);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(121, 21);
             this.comboBox5.TabIndex = 4;
@@ -580,7 +540,7 @@
             "ds",
             "s",
             "sd"});
-            this.comboBox4.Location = new System.Drawing.Point(155, 61);
+            this.comboBox4.Location = new System.Drawing.Point(155, 41);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(121, 21);
             this.comboBox4.TabIndex = 3;
@@ -809,7 +769,7 @@
             this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
-            this.panel8.Controls.Add(this.dataGridView1);
+            this.panel8.Controls.Add(this.dgvVenta);
             this.panel8.Controls.Add(this.textBox2);
             this.panel8.Controls.Add(this.tbimporteT);
             this.panel8.Controls.Add(this.panel1);
@@ -830,6 +790,82 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(678, 669);
             this.panel8.TabIndex = 207;
+            // 
+            // dgvVenta
+            // 
+            this.dgvVenta.AllowUserToAddRows = false;
+            this.dgvVenta.BackgroundColor = System.Drawing.Color.White;
+            this.dgvVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvVenta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdD,
+            this.dataGridViewTextBoxColumn1,
+            this.Column2,
+            this.Column4,
+            this.Column3,
+            this.Column5,
+            this.Column6});
+            this.dgvVenta.GridColor = System.Drawing.Color.DimGray;
+            this.dgvVenta.Location = new System.Drawing.Point(9, 231);
+            this.dgvVenta.Name = "dgvVenta";
+            this.dgvVenta.Size = new System.Drawing.Size(662, 352);
+            this.dgvVenta.TabIndex = 218;
+            // 
+            // IdD
+            // 
+            this.IdD.HeaderText = "IdV";
+            this.IdD.Name = "IdD";
+            this.IdD.ReadOnly = true;
+            this.IdD.Visible = false;
+            this.IdD.Width = 30;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "CANTIDAD";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 70;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "DESCRIPCIÓN";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 330;
+            // 
+            // Column4
+            // 
+            dataGridViewCellStyle3.Format = "C2";
+            dataGridViewCellStyle3.NullValue = null;
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Column4.HeaderText = "PRECIO U.";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Width = 91;
+            // 
+            // Column3
+            // 
+            dataGridViewCellStyle4.Format = "C2";
+            dataGridViewCellStyle4.NullValue = null;
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Column3.HeaderText = "IMPORTE";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 90;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "IdP";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Visible = false;
+            this.Column5.Width = 30;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "IGV";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Visible = false;
             // 
             // textBox2
             // 
@@ -863,16 +899,16 @@
             // 
             this.panel1.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            this.panel1.Controls.Add(this.tbAlias);
+            this.panel1.Controls.Add(this.tbDescripcion);
+            this.panel1.Controls.Add(this.dateTimePicker1);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.bunifuCustomLabel3);
-            this.panel1.Controls.Add(this.tbAlias);
             this.panel1.Controls.Add(this.tbigv);
             this.panel1.Controls.Add(this.tbStock);
             this.panel1.Controls.Add(this.bunifuCustomLabel15);
             this.panel1.Controls.Add(this.bunifuCustomLabel16);
             this.panel1.Controls.Add(this.bunifuCustomLabel10);
-            this.panel1.Controls.Add(this.dtFechaVence);
-            this.panel1.Controls.Add(this.tbDesProducto);
             this.panel1.Controls.Add(this.btnBuscaProcto);
             this.panel1.Controls.Add(this.bunifuCustomLabel8);
             this.panel1.Controls.Add(this.bunifuCustomLabel14);
@@ -911,20 +947,6 @@
             this.bunifuCustomLabel3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.bunifuCustomLabel3.UseCompatibleTextRendering = true;
             // 
-            // tbAlias
-            // 
-            this.tbAlias.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.tbAlias.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.tbAlias.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(112)))), ((int)(((byte)(147)))));
-            this.tbAlias.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbAlias.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbAlias.ForeColor = System.Drawing.Color.White;
-            this.tbAlias.Location = new System.Drawing.Point(153, 7);
-            this.tbAlias.Name = "tbAlias";
-            this.tbAlias.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbAlias.Size = new System.Drawing.Size(270, 20);
-            this.tbAlias.TabIndex = 216;
-            // 
             // tbigv
             // 
             this.tbigv.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
@@ -947,7 +969,7 @@
             this.tbStock.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbStock.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbStock.ForeColor = System.Drawing.Color.White;
-            this.tbStock.Location = new System.Drawing.Point(491, 7);
+            this.tbStock.Location = new System.Drawing.Point(488, 6);
             this.tbStock.Name = "tbStock";
             this.tbStock.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tbStock.Size = new System.Drawing.Size(61, 23);
@@ -999,34 +1021,6 @@
             this.bunifuCustomLabel10.Text = "F. de Vencimineto";
             this.bunifuCustomLabel10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuCustomLabel10.UseCompatibleTextRendering = true;
-            // 
-            // dtFechaVence
-            // 
-            this.dtFechaVence.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(112)))), ((int)(((byte)(147)))));
-            this.dtFechaVence.BorderRadius = 0;
-            this.dtFechaVence.ForeColor = System.Drawing.Color.White;
-            this.dtFechaVence.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dtFechaVence.FormatCustom = null;
-            this.dtFechaVence.Location = new System.Drawing.Point(146, 81);
-            this.dtFechaVence.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dtFechaVence.Name = "dtFechaVence";
-            this.dtFechaVence.Size = new System.Drawing.Size(239, 23);
-            this.dtFechaVence.TabIndex = 189;
-            this.dtFechaVence.Value = new System.DateTime(2018, 7, 19, 0, 0, 0, 0);
-            // 
-            // tbDesProducto
-            // 
-            this.tbDesProducto.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.tbDesProducto.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.tbDesProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(112)))), ((int)(((byte)(147)))));
-            this.tbDesProducto.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbDesProducto.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbDesProducto.ForeColor = System.Drawing.Color.White;
-            this.tbDesProducto.Location = new System.Drawing.Point(191, 41);
-            this.tbDesProducto.Name = "tbDesProducto";
-            this.tbDesProducto.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbDesProducto.Size = new System.Drawing.Size(442, 20);
-            this.tbDesProducto.TabIndex = 207;
             // 
             // btnBuscaProcto
             // 
@@ -1554,81 +1548,38 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // dataGridView1
+            // dateTimePicker1
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IdD,
-            this.dataGridViewTextBoxColumn1,
-            this.Column2,
-            this.Column4,
-            this.Column3,
-            this.Column5,
-            this.Column6});
-            this.dataGridView1.GridColor = System.Drawing.Color.DimGray;
-            this.dataGridView1.Location = new System.Drawing.Point(9, 231);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(662, 352);
-            this.dataGridView1.TabIndex = 218;
+            this.dateTimePicker1.Location = new System.Drawing.Point(144, 81);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 221;
             // 
-            // IdD
+            // tbDescripcion
             // 
-            this.IdD.HeaderText = "IdV";
-            this.IdD.Name = "IdD";
-            this.IdD.ReadOnly = true;
-            this.IdD.Visible = false;
-            this.IdD.Width = 30;
+            this.tbDescripcion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(112)))), ((int)(((byte)(147)))));
+            this.tbDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbDescripcion.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.tbDescripcion.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbDescripcion.ForeColor = System.Drawing.Color.White;
+            this.tbDescripcion.Location = new System.Drawing.Point(196, 41);
+            this.tbDescripcion.Name = "tbDescripcion";
+            this.tbDescripcion.ReadOnly = true;
+            this.tbDescripcion.Size = new System.Drawing.Size(322, 20);
+            this.tbDescripcion.TabIndex = 222;
             // 
-            // dataGridViewTextBoxColumn1
+            // tbAlias
             // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "CANTIDAD";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 70;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "DESCRIPCIÓN";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 330;
-            // 
-            // Column4
-            // 
-            dataGridViewCellStyle7.Format = "C2";
-            dataGridViewCellStyle7.NullValue = null;
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle7;
-            this.Column4.HeaderText = "PRECIO U.";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Width = 91;
-            // 
-            // Column3
-            // 
-            dataGridViewCellStyle8.Format = "C2";
-            dataGridViewCellStyle8.NullValue = null;
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle8;
-            this.Column3.HeaderText = "IMPORTE";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 90;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "IdP";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Visible = false;
-            this.Column5.Width = 30;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "IGV";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Visible = false;
+            this.tbAlias.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(112)))), ((int)(((byte)(147)))));
+            this.tbAlias.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbAlias.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.tbAlias.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAlias.ForeColor = System.Drawing.Color.White;
+            this.tbAlias.Location = new System.Drawing.Point(158, 7);
+            this.tbAlias.Name = "tbAlias";
+            this.tbAlias.ReadOnly = true;
+            this.tbAlias.Size = new System.Drawing.Size(258, 20);
+            this.tbAlias.TabIndex = 223;
             // 
             // FormVenta
             // 
@@ -1663,6 +1614,7 @@
             this.panel7.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVenta)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel11.ResumeLayout(false);
@@ -1679,7 +1631,6 @@
             this.panel13.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminarVenta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1722,10 +1673,8 @@
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Panel panel4;
         private Bunifu.Framework.UI.BunifuTileButton btnRegistrarCobro;
         private System.Windows.Forms.ComboBox comboBox5;
@@ -1749,7 +1698,6 @@
         private System.Windows.Forms.TextBox tbRuc;
         private System.Windows.Forms.TextBox tbimporteT;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox tbAlias;
         private System.Windows.Forms.TextBox tbigv;
         private System.Windows.Forms.TextBox tbStock;
         private System.Windows.Forms.TextBox tbPrecioV;
@@ -1759,8 +1707,6 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel15;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel16;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel10;
-        private Bunifu.Framework.UI.BunifuDatepicker dtFechaVence;
-        private System.Windows.Forms.TextBox tbDesProducto;
         private Bunifu.Framework.UI.BunifuTileButton btnBuscaProcto;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel8;
@@ -1775,7 +1721,7 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvVenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdD;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
@@ -1783,5 +1729,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        public System.Windows.Forms.TextBox tbAlias;
+        public System.Windows.Forms.TextBox tbDescripcion;
     }
 }

@@ -207,6 +207,9 @@
     <EmbeddedResource Include="FormBuscarCliente.resx">
       <DependentUpon>FormBuscarCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormBuscarProducto.resx">
+      <DependentUpon>FormBuscarProducto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormBuscarRoles.resx">
       <DependentUpon>FormBuscarRoles.cs</DependentUpon>
     </EmbeddedResource>
