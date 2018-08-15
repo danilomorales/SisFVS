@@ -129,6 +129,53 @@ namespace CapaDatos
             return count;
         }
 
+        public int EditarUsuario(int idusuario,int idpersona,String nombres, String paterno, String materno, String dni, String direccion, String user, String pass, String url)
+        {
+            int count = 0;
+            try
+            {
+                String sql = "UPDATE Caja.Persona SET Nombres=@vNombres,ApellidoPaterno=@vApellidoPaterno,ApellidoMaterno=@vApellidoMaterno, " +
+                    "DNI=@vDNI,Direccion=@vDireccion where IdPersona=@vIdPersona ";
+                String sql2 ="UPDATE Caja.Usuario SET Login=@vUser,Pass=@vPass,foto=@vImagen WHERE IdUsuario=@vIdUsuario";
+                SqlCommand comando = new SqlCommand(sql, Conexion.AbrirConexion());
+                SqlCommand comandon = new SqlCommand(sql2, Conexion.AbrirConexion());
+                comando.Parameters.AddWithValue("@vIdPersona ", idpersona);
+                comando.Parameters.AddWithValue("@vNombres ", nombres);
+                comando.Parameters.AddWithValue("@vApellidoPaterno", paterno);
+                comando.Parameters.AddWithValue("@vApellidoMaterno", materno);
+                comando.Parameters.AddWithValue("@vDNI", dni);
+                comando.Parameters.AddWithValue("@vDireccion", direccion);
+                comando.ExecuteNonQuery();
+                comandon.Parameters.AddWithValue("@vIdUsuario ", idusuario);
+                comandon.Parameters.AddWithValue("@vUser", user);
+                comandon.Parameters.AddWithValue("@vPass", pass);
+                if (url == "" || url == null)
+                {
+                    SqlParameter imageParameter = new SqlParameter("@vImagen", SqlDbType.Image);
+                    imageParameter.Value = DBNull.Value;
+                    comandon.Parameters.Add(imageParameter);
+                    comandon.ExecuteNonQuery();
+
+                }
+                else
+                {
+                    byte[] img = null;
+                    FileStream fs = new FileStream(url, FileMode.Open, FileAccess.Read);
+                    BinaryReader br = new BinaryReader(fs);
+                    img = br.ReadBytes((int)fs.Length);
+                    comandon.Parameters.AddWithValue("@vImagen", img);
+                    comandon.ExecuteNonQuery();
+
+                }
+                count = 1;
+            }
+            catch (SqlException exp)
+            {
+                Console.WriteLine("Error insertando usuario" + exp.ToString());
+            }
+            return count;
+        }
+
         public SqlDataReader rolSegunIdUsuario(int id )
         {
             String sql = "SELECT*FROM dbo.ROL WHERE IdRol NOT IN(select rol.IdRol from dbo.ROL rol " +
@@ -184,6 +231,16 @@ namespace CapaDatos
             comando.Parameters.AddWithValue("@id", id);
             lector = comando.ExecuteReader();
             return lector;
+        }
+
+        public void eliminarUsuario(int idusuario)
+        {
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = Conexion.AbrirConexion();
+            comando.CommandText = "delete from Caja.Usuario WHERE IdUsuario=" + idusuario + "";
+            comando.CommandType = CommandType.Text;
+            comando.ExecuteNonQuery();
+            Conexion.CerrarConexion();
         }
 
         public void eliminarUsuarioRol(int idusuario)
