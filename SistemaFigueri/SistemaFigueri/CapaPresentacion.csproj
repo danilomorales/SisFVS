@@ -58,6 +58,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormBuscarPedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBuscarPedidos.Designer.cs">
+      <DependentUpon>FormBuscarPedidos.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormBuscarRoles.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,6 +212,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormBuscarCliente.resx">
       <DependentUpon>FormBuscarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBuscarPedidos.resx">
+      <DependentUpon>FormBuscarPedidos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormBuscarRoles.resx">
       <DependentUpon>FormBuscarRoles.cs</DependentUpon>
@@ -442,6 +451,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pedido.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -35,7 +35,6 @@ namespace CapaDatos
         public int IdUsuario { get => _IdUsuario; set => _IdUsuario = value; }
         public int IdCliente { get => _IdCliente; set => _IdCliente = value; }
         public int IdVenta { get => _IdVenta; set => _IdVenta = value; }
-
         public CDVenta() { }
 
         //
@@ -439,6 +438,8 @@ namespace CapaDatos
             return DtResultado;
 
         }
+
+        
         public DataTable BuscaProductoPorcodigo(String TextoBuscar)
         {
             DataTable DtResultado = new DataTable("dtProducto");

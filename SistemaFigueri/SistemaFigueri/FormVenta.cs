@@ -655,6 +655,17 @@ namespace SistemaFigueri
 
 
         }
+
+        private void btnpedido_Click(object sender, EventArgs e)
+        {
+            using (FormBuscarPedidos form = new FormBuscarPedidos())
+            {
+                if(form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                   
+                }
+            }
+        }
     }
 
 }
