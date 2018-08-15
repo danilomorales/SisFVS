@@ -15,7 +15,8 @@ namespace CapaDatos
         SqlDataReader leer;
         DataTable tabla = new DataTable();
         SqlCommand comando = new SqlCommand();
-      
+        private SqlDataAdapter adapter;
+
         //LISTAR PRODUCTOS
         public DataTable listarProductos()
         {
@@ -94,6 +95,20 @@ namespace CapaDatos
             leer.Close();
             conexion.CerrarConexion();
             return table;
+        }
+
+        //ListaProductos paraFiltrar Venta
+
+        public SqlDataAdapter Cargaproductos()
+        {
+            String sql = "select top 1000(p.IdProducto) as Código, p.Alias,p.Nota, p.DescripcionProducto as Descripción, p.TiempoDuracion, p.Stock, p.Valor_Unitario as Precio, p.PrecioOferta, p.Vigente, c.Descripcion as Ctaegoría, m.Descripcion as Medida from Caja.PRODUCTO p inner join dbo.MEDIDA m on p.IdMedida = m.IdMedida inner join dbo.CATEGORIA c on p.IdCategoria = c.IdCategoria order by p.IdProducto desc";
+            adapter = new SqlDataAdapter(sql, conexion.AbrirConexion());
+            return adapter;
+
+            //SqlCommand comando = new SqlCommand("", conexion.AbrirConexion());
+            //comando.CommandType = CommandType.StoredProcedure;
+            //leer = comando.ExecuteReader();
+            //return leer();
         }
     }
 }

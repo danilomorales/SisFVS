@@ -14,6 +14,7 @@ namespace CapaNegocio
         private CDConexion C = new CDConexion();
 
         private String _NroDocIdentidad;
+        private String _NumeroRuc;
         private String _RazonSocial;
         private String _NombreComercial;
         private String _Nombres;
@@ -26,7 +27,14 @@ namespace CapaNegocio
             get { return _NroDocIdentidad;}
             set { _NroDocIdentidad = value; }
         }
+    
+         public String NumeroRuc
+        {
+            get { return _NumeroRuc; }
+            set { _NumeroRuc = value; }
+         }
 
+      
         public String RazonSocial
         {
             get { return _RazonSocial; }

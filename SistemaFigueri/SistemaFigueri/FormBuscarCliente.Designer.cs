@@ -38,13 +38,13 @@
             this.bunifuCustomLabel22 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.cboestado = new System.Windows.Forms.ComboBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Teléfono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Dirección = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Dirección = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Teléfono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bunifuCards2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.SuspendLayout();
@@ -81,7 +81,7 @@
             this.tbFiltraCliente.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tbFiltraCliente.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbFiltraCliente.ForeColor = System.Drawing.Color.White;
-            this.tbFiltraCliente.Location = new System.Drawing.Point(143, 61);
+            this.tbFiltraCliente.Location = new System.Drawing.Point(143, 58);
             this.tbFiltraCliente.Name = "tbFiltraCliente";
             this.tbFiltraCliente.Size = new System.Drawing.Size(465, 30);
             this.tbFiltraCliente.TabIndex = 218;
@@ -198,34 +198,12 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // Column2
+            // Column1
             // 
-            this.Column2.HeaderText = "Column2";
-            this.Column2.Name = "Column2";
-            // 
-            // Teléfono
-            // 
-            this.Teléfono.HeaderText = "Teléfono";
-            this.Teléfono.Name = "Teléfono";
-            this.Teléfono.ReadOnly = true;
-            // 
-            // Dirección
-            // 
-            this.Dirección.HeaderText = "Dirección";
-            this.Dirección.Name = "Dirección";
-            this.Dirección.ReadOnly = true;
-            // 
-            // Nombres
-            // 
-            this.Nombres.HeaderText = "Nombres";
-            this.Nombres.Name = "Nombres";
-            this.Nombres.ReadOnly = true;
-            // 
-            // Apellidos
-            // 
-            this.Apellidos.HeaderText = "Apellidos";
-            this.Apellidos.Name = "Apellidos";
-            this.Apellidos.ReadOnly = true;
+            this.Column1.HeaderText = "IdC";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Visible = false;
             // 
             // DNI
             // 
@@ -233,12 +211,34 @@
             this.DNI.Name = "DNI";
             this.DNI.ReadOnly = true;
             // 
-            // Column1
+            // Apellidos
             // 
-            this.Column1.HeaderText = "IdC";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Visible = false;
+            this.Apellidos.HeaderText = "Apellidos";
+            this.Apellidos.Name = "Apellidos";
+            this.Apellidos.ReadOnly = true;
+            // 
+            // Nombres
+            // 
+            this.Nombres.HeaderText = "Nombres";
+            this.Nombres.Name = "Nombres";
+            this.Nombres.ReadOnly = true;
+            // 
+            // Dirección
+            // 
+            this.Dirección.HeaderText = "Dirección";
+            this.Dirección.Name = "Dirección";
+            this.Dirección.ReadOnly = true;
+            // 
+            // Teléfono
+            // 
+            this.Teléfono.HeaderText = "Teléfono";
+            this.Teléfono.Name = "Teléfono";
+            this.Teléfono.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "dad";
+            this.Column2.Name = "Column2";
             // 
             // FormBuscarCliente
             // 
