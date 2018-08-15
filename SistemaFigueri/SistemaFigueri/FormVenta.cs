@@ -537,11 +537,7 @@ namespace SistemaFigueri
 
         }
 
-        private void Venta_Click(object sender, EventArgs e)
-        {
-
-        }
-
+    
 
         private void btnBuscaProcto_Click(object sender, EventArgs e)
         {
@@ -709,6 +705,16 @@ namespace SistemaFigueri
             Program.PrecioVenta = 0;
         }
 
+        private void btnpedidos_Click(object sender, EventArgs e)
+        {
+            using (FormBuscarPedidos form = new FormBuscarPedidos())
+            {
+                if (form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+
+                }
+            }
+        }
     }
 
 }

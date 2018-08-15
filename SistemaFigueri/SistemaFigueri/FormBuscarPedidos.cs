@@ -44,5 +44,11 @@ namespace SistemaFigueri
             dgvPedidos.DataSource = tabla;
      
         }
+
+        private void tbpedidos_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            DataView dv = tabla.DefaultView;
+            dv.RowFilter = string.Format("Responsable like '%{0}%' or NombreEmpresa like '%{0}%'", tbpedidos.Text);
+        }
     }
 }
