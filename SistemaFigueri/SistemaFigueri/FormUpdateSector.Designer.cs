@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormUpdateSector));
             this.panel2 = new System.Windows.Forms.Panel();
-            this.cboeditienda = new System.Windows.Forms.ComboBox();
             this.bmedinota = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.bmedidescripcion = new Bunifu.Framework.UI.BunifuMaterialTextbox();
@@ -39,6 +38,8 @@
             this.bunifuFlatButton3 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
             this.bunifuThinButton22 = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.bmediporcentaje = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.SuspendLayout();
             // 
             // panel2
@@ -48,18 +49,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(797, 26);
             this.panel2.TabIndex = 142;
-            // 
-            // cboeditienda
-            // 
-            this.cboeditienda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.cboeditienda.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboeditienda.ForeColor = System.Drawing.Color.MintCream;
-            this.cboeditienda.FormattingEnabled = true;
-            this.cboeditienda.Location = new System.Drawing.Point(482, 49);
-            this.cboeditienda.Name = "cboeditienda";
-            this.cboeditienda.Size = new System.Drawing.Size(242, 24);
-            this.cboeditienda.TabIndex = 147;
-            this.cboeditienda.Text = "Escoja Tienda";
             // 
             // bmedinota
             // 
@@ -79,7 +68,6 @@
             this.bmedinota.Size = new System.Drawing.Size(294, 29);
             this.bmedinota.TabIndex = 144;
             this.bmedinota.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            //this.bmedinota.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bmedinota_KeyPress);
             // 
             // panel1
             // 
@@ -107,7 +95,6 @@
             this.bmedidescripcion.Size = new System.Drawing.Size(294, 29);
             this.bmedidescripcion.TabIndex = 140;
             this.bmedidescripcion.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            //this.bmedidescripcion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bmedidescripcion_KeyPress);
             // 
             // doubleBitmapControl1
             // 
@@ -214,7 +201,7 @@
             this.bunifuThinButton21.Size = new System.Drawing.Size(181, 41);
             this.bunifuThinButton21.TabIndex = 148;
             this.bunifuThinButton21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            //this.bunifuThinButton21.Click += new System.EventHandler(this.bunifuThinButton21_Click);
+            this.bunifuThinButton21.Click += new System.EventHandler(this.bunifuThinButton21_Click);
             // 
             // bunifuThinButton22
             // 
@@ -240,7 +227,62 @@
             this.bunifuThinButton22.Size = new System.Drawing.Size(181, 41);
             this.bunifuThinButton22.TabIndex = 149;
             this.bunifuThinButton22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            //this.bunifuThinButton22.Click += new System.EventHandler(this.bunifuThinButton22_Click);
+            this.bunifuThinButton22.Click += new System.EventHandler(this.bunifuThinButton22_Click_1);
+            // 
+            // bmediporcentaje
+            // 
+            this.bmediporcentaje.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.bmediporcentaje.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
+            this.bmediporcentaje.ForeColor = System.Drawing.Color.White;
+            this.bmediporcentaje.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.bmediporcentaje.HintText = "Porcentaje";
+            this.bmediporcentaje.isPassword = false;
+            this.bmediporcentaje.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.bmediporcentaje.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.bmediporcentaje.LineMouseHoverColor = System.Drawing.Color.Red;
+            this.bmediporcentaje.LineThickness = 5;
+            this.bmediporcentaje.Location = new System.Drawing.Point(563, 51);
+            this.bmediporcentaje.Margin = new System.Windows.Forms.Padding(4);
+            this.bmediporcentaje.Name = "bmediporcentaje";
+            this.bmediporcentaje.Size = new System.Drawing.Size(118, 29);
+            this.bmediporcentaje.TabIndex = 151;
+            this.bmediporcentaje.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // bunifuFlatButton1
+            // 
+            this.bunifuFlatButton1.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.bunifuFlatButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.bunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuFlatButton1.BorderRadius = 0;
+            this.bunifuFlatButton1.ButtonText = "Porcentaje:";
+            this.bunifuFlatButton1.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.bunifuFlatButton1.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuFlatButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton1.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuFlatButton1.Iconimage = null;
+            this.bunifuFlatButton1.Iconimage_right = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton1.Iconimage_right")));
+            this.bunifuFlatButton1.Iconimage_right_Selected = null;
+            this.bunifuFlatButton1.Iconimage_Selected = null;
+            this.bunifuFlatButton1.IconMarginLeft = 0;
+            this.bunifuFlatButton1.IconMarginRight = 0;
+            this.bunifuFlatButton1.IconRightVisible = true;
+            this.bunifuFlatButton1.IconRightZoom = 0D;
+            this.bunifuFlatButton1.IconVisible = true;
+            this.bunifuFlatButton1.IconZoom = 40D;
+            this.bunifuFlatButton1.IsTab = false;
+            this.bunifuFlatButton1.Location = new System.Drawing.Point(439, 52);
+            this.bunifuFlatButton1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.bunifuFlatButton1.Name = "bunifuFlatButton1";
+            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.bunifuFlatButton1.selected = false;
+            this.bunifuFlatButton1.Size = new System.Drawing.Size(125, 29);
+            this.bunifuFlatButton1.TabIndex = 150;
+            this.bunifuFlatButton1.Text = "Porcentaje:";
+            this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuFlatButton1.Textcolor = System.Drawing.Color.White;
+            this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // FormUpdateSector
             // 
@@ -248,10 +290,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.ClientSize = new System.Drawing.Size(796, 333);
+            this.Controls.Add(this.bmediporcentaje);
+            this.Controls.Add(this.bunifuFlatButton1);
             this.Controls.Add(this.bunifuThinButton22);
             this.Controls.Add(this.bunifuThinButton21);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.cboeditienda);
             this.Controls.Add(this.bmedinota);
             this.Controls.Add(this.bunifuFlatButton5);
             this.Controls.Add(this.panel1);
@@ -275,7 +318,8 @@
         private BunifuAnimatorNS.DoubleBitmapControl doubleBitmapControl1;
         private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton21;
         private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton22;
-        public System.Windows.Forms.ComboBox cboeditienda;
         public Bunifu.Framework.UI.BunifuMaterialTextbox bmedinota;
+        public Bunifu.Framework.UI.BunifuMaterialTextbox bmediporcentaje;
+        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
     }
 }

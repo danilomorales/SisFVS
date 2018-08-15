@@ -58,6 +58,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormBuscarPedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBuscarPedidos.Designer.cs">
+      <DependentUpon>FormBuscarPedidos.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormBuscarRoles.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +75,12 @@
     </Compile>
     <Compile Include="FormEditarUsuario.Designer.cs">
       <DependentUpon>FormEditarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormKardex.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormKardex.Designer.cs">
+      <DependentUpon>FormKardex.cs</DependentUpon>
     </Compile>
     <Compile Include="LocalBD.cs" />
     <Compile Include="Venta.cs" />
@@ -200,6 +212,11 @@
     <Compile Include="FormVenta.Designer.cs">
       <DependentUpon>FormVenta.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="SomeData.cs" />
     <EmbeddedResource Include="FormAperturaCaja.resx">
       <DependentUpon>FormAperturaCaja.cs</DependentUpon>
@@ -207,8 +224,8 @@
     <EmbeddedResource Include="FormBuscarCliente.resx">
       <DependentUpon>FormBuscarCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormBuscarProducto.resx">
-      <DependentUpon>FormBuscarProducto.cs</DependentUpon>
+    <EmbeddedResource Include="FormBuscarPedidos.resx">
+      <DependentUpon>FormBuscarPedidos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormBuscarRoles.resx">
       <DependentUpon>FormBuscarRoles.cs</DependentUpon>
@@ -227,6 +244,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormInsertSector.resx">
       <DependentUpon>FormInsertSector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormKardex.resx">
+      <DependentUpon>FormKardex.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
@@ -281,11 +301,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -445,6 +460,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pedido.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -21,18 +21,18 @@ namespace CapaNegocio
         }
 
         //CREATE SECTOR
-        public void InsertSector(String descripcion, String nota)
+        public void InsertSector(String descripcion, String nota,String porcentaje)
         {
             Console.WriteLine("Sera pues ..." + descripcion + " " + nota);
-            sec.InsertarSector(nota, descripcion);
+            sec.InsertarSector(nota, descripcion,Convert.ToDouble(porcentaje));
 
         }
 
         //UPDATE SECTOR
-        public void UpdateSector(String idSector, String descripcion, String nota)
+        public void UpdateSector(String idSector, String descripcion, String nota, String porcentaje)
         {
             Console.WriteLine("Sera pues ..." + idSector + " " + descripcion + " " + nota);
-            sec.EditarSector(idSector, descripcion, nota);
+            sec.EditarSector(idSector, descripcion, nota,Convert.ToDouble(porcentaje));
         }
 
         //DELETE SECTOR

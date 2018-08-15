@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
+            this.bunKardex = new Bunifu.Framework.UI.BunifuTileButton();
             this.btneliminar = new Bunifu.Framework.UI.BunifuTileButton();
             this.bunifuTileButton2 = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnNuevoProducto = new Bunifu.Framework.UI.BunifuTileButton();
@@ -66,6 +67,7 @@
             this.bunifuCards1.BorderRadius = 5;
             this.bunifuCards1.BottomSahddow = true;
             this.bunifuCards1.color = System.Drawing.Color.Tomato;
+            this.bunifuCards1.Controls.Add(this.bunKardex);
             this.bunifuCards1.Controls.Add(this.btneliminar);
             this.bunifuCards1.Controls.Add(this.bunifuTileButton2);
             this.bunifuCards1.Controls.Add(this.btnNuevoProducto);
@@ -74,8 +76,28 @@
             this.bunifuCards1.Name = "bunifuCards1";
             this.bunifuCards1.RightSahddow = true;
             this.bunifuCards1.ShadowDepth = 20;
-            this.bunifuCards1.Size = new System.Drawing.Size(473, 132);
+            this.bunifuCards1.Size = new System.Drawing.Size(599, 132);
             this.bunifuCards1.TabIndex = 32;
+            // 
+            // bunKardex
+            // 
+            this.bunKardex.BackColor = System.Drawing.Color.Blue;
+            this.bunKardex.color = System.Drawing.Color.Blue;
+            this.bunKardex.colorActive = System.Drawing.Color.MediumSeaGreen;
+            this.bunKardex.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunKardex.Font = new System.Drawing.Font("Century Gothic", 14F);
+            this.bunKardex.ForeColor = System.Drawing.Color.White;
+            this.bunKardex.Image = ((System.Drawing.Image)(resources.GetObject("bunKardex.Image")));
+            this.bunKardex.ImagePosition = 18;
+            this.bunKardex.ImageZoom = 40;
+            this.bunKardex.LabelPosition = 28;
+            this.bunKardex.LabelText = "Kardex";
+            this.bunKardex.Location = new System.Drawing.Point(446, 12);
+            this.bunKardex.Margin = new System.Windows.Forms.Padding(6);
+            this.bunKardex.Name = "bunKardex";
+            this.bunKardex.Size = new System.Drawing.Size(131, 97);
+            this.bunKardex.TabIndex = 38;
+            this.bunKardex.Click += new System.EventHandler(this.bunKardex_Click);
             // 
             // btneliminar
             // 
@@ -187,7 +209,6 @@
             this.bmBuscar.Size = new System.Drawing.Size(512, 44);
             this.bmBuscar.TabIndex = 55;
             this.bmBuscar.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.bmBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bmBuscar_KeyPress);
             this.bmBuscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.bmBuscar_KeyUp);
             // 
             // dgvProductos
@@ -262,5 +283,6 @@
         private Bunifu.Framework.UI.BunifuMaterialTextbox bmBuscar;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
         public System.Windows.Forms.DataGridView dgvProductos;
+        private Bunifu.Framework.UI.BunifuTileButton bunKardex;
     }
 }

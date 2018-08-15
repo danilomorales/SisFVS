@@ -32,19 +32,19 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSector));
             this.dgvSector = new System.Windows.Forms.DataGridView();
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
-            this.label1 = new System.Windows.Forms.Label();
-            this.bunifuCards2 = new Bunifu.Framework.UI.BunifuCards();
-            this.bmBuscar = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.bunifuCards3 = new Bunifu.Framework.UI.BunifuCards();
             this.btneliminar = new Bunifu.Framework.UI.BunifuTileButton();
             this.bmEditar = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnNuevoSector = new Bunifu.Framework.UI.BunifuTileButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.bunifuCards2 = new Bunifu.Framework.UI.BunifuCards();
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.bmBuscar = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.bunifuCards3 = new Bunifu.Framework.UI.BunifuCards();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSector)).BeginInit();
             this.bunifuCards1.SuspendLayout();
             this.bunifuCards2.SuspendLayout();
-            this.bunifuCards3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
+            this.bunifuCards3.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvSector
@@ -82,6 +82,66 @@
             this.bunifuCards1.Size = new System.Drawing.Size(293, 109);
             this.bunifuCards1.TabIndex = 36;
             // 
+            // btneliminar
+            // 
+            this.btneliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
+            this.btneliminar.color = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
+            this.btneliminar.colorActive = System.Drawing.Color.MediumSeaGreen;
+            this.btneliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btneliminar.Font = new System.Drawing.Font("Century Gothic", 14F);
+            this.btneliminar.ForeColor = System.Drawing.Color.White;
+            this.btneliminar.Image = ((System.Drawing.Image)(resources.GetObject("btneliminar.Image")));
+            this.btneliminar.ImagePosition = 18;
+            this.btneliminar.ImageZoom = 40;
+            this.btneliminar.LabelPosition = 28;
+            this.btneliminar.LabelText = "Eliminar";
+            this.btneliminar.Location = new System.Drawing.Point(204, 13);
+            this.btneliminar.Margin = new System.Windows.Forms.Padding(6);
+            this.btneliminar.Name = "btneliminar";
+            this.btneliminar.Size = new System.Drawing.Size(80, 84);
+            this.btneliminar.TabIndex = 37;
+            this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click_1);
+            // 
+            // bmEditar
+            // 
+            this.bmEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(155)))), ((int)(((byte)(31)))));
+            this.bmEditar.color = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(155)))), ((int)(((byte)(31)))));
+            this.bmEditar.colorActive = System.Drawing.Color.MediumSeaGreen;
+            this.bmEditar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bmEditar.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.bmEditar.ForeColor = System.Drawing.Color.White;
+            this.bmEditar.Image = ((System.Drawing.Image)(resources.GetObject("bmEditar.Image")));
+            this.bmEditar.ImagePosition = 20;
+            this.bmEditar.ImageZoom = 40;
+            this.bmEditar.LabelPosition = 30;
+            this.bmEditar.LabelText = "Editar";
+            this.bmEditar.Location = new System.Drawing.Point(112, 12);
+            this.bmEditar.Margin = new System.Windows.Forms.Padding(6);
+            this.bmEditar.Name = "bmEditar";
+            this.bmEditar.Size = new System.Drawing.Size(80, 84);
+            this.bmEditar.TabIndex = 36;
+            this.bmEditar.Click += new System.EventHandler(this.bmEditar_Click_1);
+            // 
+            // btnNuevoSector
+            // 
+            this.btnNuevoSector.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnNuevoSector.color = System.Drawing.Color.SeaGreen;
+            this.btnNuevoSector.colorActive = System.Drawing.Color.MediumSeaGreen;
+            this.btnNuevoSector.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNuevoSector.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.btnNuevoSector.ForeColor = System.Drawing.Color.White;
+            this.btnNuevoSector.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevoSector.Image")));
+            this.btnNuevoSector.ImagePosition = 20;
+            this.btnNuevoSector.ImageZoom = 40;
+            this.btnNuevoSector.LabelPosition = 30;
+            this.btnNuevoSector.LabelText = "Nuevo";
+            this.btnNuevoSector.Location = new System.Drawing.Point(20, 11);
+            this.btnNuevoSector.Margin = new System.Windows.Forms.Padding(6);
+            this.btnNuevoSector.Name = "btnNuevoSector";
+            this.btnNuevoSector.Size = new System.Drawing.Size(80, 84);
+            this.btnNuevoSector.TabIndex = 33;
+            this.btnNuevoSector.Click += new System.EventHandler(this.btnNuevoSector_Click_1);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -113,6 +173,20 @@
             this.bunifuCards2.Size = new System.Drawing.Size(1044, 479);
             this.bunifuCards2.TabIndex = 37;
             // 
+            // bunifuImageButton1
+            // 
+            this.bunifuImageButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
+            this.bunifuImageButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
+            this.bunifuImageButton1.ImageActive = null;
+            this.bunifuImageButton1.Location = new System.Drawing.Point(710, 30);
+            this.bunifuImageButton1.Name = "bunifuImageButton1";
+            this.bunifuImageButton1.Size = new System.Drawing.Size(30, 30);
+            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuImageButton1.TabIndex = 58;
+            this.bunifuImageButton1.TabStop = false;
+            this.bunifuImageButton1.Zoom = 10;
+            // 
             // bmBuscar
             // 
             this.bmBuscar.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -131,7 +205,7 @@
             this.bmBuscar.Size = new System.Drawing.Size(512, 44);
             this.bmBuscar.TabIndex = 57;
             this.bmBuscar.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            //this.bmBuscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.bmBuscar_KeyUp_1);
+            this.bmBuscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.bmBuscar_KeyUp);
             // 
             // bunifuCards3
             // 
@@ -148,80 +222,6 @@
             this.bunifuCards3.Size = new System.Drawing.Size(621, 82);
             this.bunifuCards3.TabIndex = 38;
             // 
-            // btneliminar
-            // 
-            this.btneliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
-            this.btneliminar.color = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
-            this.btneliminar.colorActive = System.Drawing.Color.MediumSeaGreen;
-            this.btneliminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btneliminar.Font = new System.Drawing.Font("Century Gothic", 14F);
-            this.btneliminar.ForeColor = System.Drawing.Color.White;
-            this.btneliminar.Image = ((System.Drawing.Image)(resources.GetObject("btneliminar.Image")));
-            this.btneliminar.ImagePosition = 18;
-            this.btneliminar.ImageZoom = 40;
-            this.btneliminar.LabelPosition = 28;
-            this.btneliminar.LabelText = "Eliminar";
-            this.btneliminar.Location = new System.Drawing.Point(204, 13);
-            this.btneliminar.Margin = new System.Windows.Forms.Padding(6);
-            this.btneliminar.Name = "btneliminar";
-            this.btneliminar.Size = new System.Drawing.Size(80, 84);
-            this.btneliminar.TabIndex = 37;
-            //this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click);
-            // 
-            // bmEditar
-            // 
-            this.bmEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(155)))), ((int)(((byte)(31)))));
-            this.bmEditar.color = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(155)))), ((int)(((byte)(31)))));
-            this.bmEditar.colorActive = System.Drawing.Color.MediumSeaGreen;
-            this.bmEditar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bmEditar.Font = new System.Drawing.Font("Century Gothic", 15.75F);
-            this.bmEditar.ForeColor = System.Drawing.Color.White;
-            this.bmEditar.Image = ((System.Drawing.Image)(resources.GetObject("bmEditar.Image")));
-            this.bmEditar.ImagePosition = 20;
-            this.bmEditar.ImageZoom = 40;
-            this.bmEditar.LabelPosition = 30;
-            this.bmEditar.LabelText = "Editar";
-            this.bmEditar.Location = new System.Drawing.Point(112, 12);
-            this.bmEditar.Margin = new System.Windows.Forms.Padding(6);
-            this.bmEditar.Name = "bmEditar";
-            this.bmEditar.Size = new System.Drawing.Size(80, 84);
-            this.bmEditar.TabIndex = 36;
-            //this.bmEditar.Click += new System.EventHandler(this.bmEditar_Click);
-            // 
-            // btnNuevoSector
-            // 
-            this.btnNuevoSector.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnNuevoSector.color = System.Drawing.Color.SeaGreen;
-            this.btnNuevoSector.colorActive = System.Drawing.Color.MediumSeaGreen;
-            this.btnNuevoSector.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNuevoSector.Font = new System.Drawing.Font("Century Gothic", 15.75F);
-            this.btnNuevoSector.ForeColor = System.Drawing.Color.White;
-            this.btnNuevoSector.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevoSector.Image")));
-            this.btnNuevoSector.ImagePosition = 20;
-            this.btnNuevoSector.ImageZoom = 40;
-            this.btnNuevoSector.LabelPosition = 30;
-            this.btnNuevoSector.LabelText = "Nuevo";
-            this.btnNuevoSector.Location = new System.Drawing.Point(20, 11);
-            this.btnNuevoSector.Margin = new System.Windows.Forms.Padding(6);
-            this.btnNuevoSector.Name = "btnNuevoSector";
-            this.btnNuevoSector.Size = new System.Drawing.Size(80, 84);
-            this.btnNuevoSector.TabIndex = 33;
-            //this.btnNuevoSector.Click += new System.EventHandler(this.btnNuevoSector_Click);
-            // 
-            // bunifuImageButton1
-            // 
-            this.bunifuImageButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
-            this.bunifuImageButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
-            this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.Location = new System.Drawing.Point(710, 30);
-            this.bunifuImageButton1.Name = "bunifuImageButton1";
-            this.bunifuImageButton1.Size = new System.Drawing.Size(30, 30);
-            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton1.TabIndex = 58;
-            this.bunifuImageButton1.TabStop = false;
-            this.bunifuImageButton1.Zoom = 10;
-            // 
             // FormSector
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -235,13 +235,13 @@
             this.Name = "FormSector";
             this.RightToLeftLayout = true;
             this.Text = "FormSector";
-            //this.Load += new System.EventHandler(this.FormSector_Load);
+            this.Load += new System.EventHandler(this.FormSector_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSector)).EndInit();
             this.bunifuCards1.ResumeLayout(false);
             this.bunifuCards2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             this.bunifuCards3.ResumeLayout(false);
             this.bunifuCards3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
