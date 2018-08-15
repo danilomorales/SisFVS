@@ -31,21 +31,21 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bunifuCards2 = new Bunifu.Framework.UI.BunifuCards();
-            this.tbpedidos = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.dgvPedidos = new System.Windows.Forms.DataGridView();
-            this.dpdesde = new Bunifu.Framework.UI.BunifuDatepicker();
-            this.dphasta = new Bunifu.Framework.UI.BunifuDatepicker();
-            this.btnCerrar = new Bunifu.Framework.UI.BunifuTileButton();
-            this.btnbuscarpedido = new Bunifu.Framework.UI.BunifuImageButton();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.bunifuCards3 = new Bunifu.Framework.UI.BunifuCards();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.btnbuscarpedido = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnCerrar = new Bunifu.Framework.UI.BunifuTileButton();
+            this.dphasta = new Bunifu.Framework.UI.BunifuDatepicker();
+            this.dpdesde = new Bunifu.Framework.UI.BunifuDatepicker();
+            this.tbpedidos = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.dgvPedidos = new System.Windows.Forms.DataGridView();
             this.bunifuCards2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPedidos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnbuscarpedido)).BeginInit();
             this.bunifuCards3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnbuscarpedido)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPedidos)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuCards2
@@ -74,6 +74,132 @@
             this.bunifuCards2.Size = new System.Drawing.Size(1204, 848);
             this.bunifuCards2.TabIndex = 37;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label4.Location = new System.Drawing.Point(63, 182);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(247, 23);
+            this.label4.TabIndex = 222;
+            this.label4.Text = "Seleccione (doble click): ";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label3.Location = new System.Drawing.Point(61, 98);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(121, 36);
+            this.label3.TabIndex = 221;
+            this.label3.Text = "Desde: ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(586, 98);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(111, 36);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Hasta: ";
+            // 
+            // bunifuCards3
+            // 
+            this.bunifuCards3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuCards3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(126)))), ((int)(((byte)(176)))));
+            this.bunifuCards3.BorderRadius = 10;
+            this.bunifuCards3.BottomSahddow = false;
+            this.bunifuCards3.color = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            this.bunifuCards3.Controls.Add(this.label1);
+            this.bunifuCards3.LeftSahddow = false;
+            this.bunifuCards3.Location = new System.Drawing.Point(48, 12);
+            this.bunifuCards3.Name = "bunifuCards3";
+            this.bunifuCards3.RightSahddow = false;
+            this.bunifuCards3.ShadowDepth = 20;
+            this.bunifuCards3.Size = new System.Drawing.Size(1099, 68);
+            this.bunifuCards3.TabIndex = 220;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(38, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(336, 38);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "PEDIDOS PENDIENTES";
+            // 
+            // btnbuscarpedido
+            // 
+            this.btnbuscarpedido.BackColor = System.Drawing.Color.CadetBlue;
+            this.btnbuscarpedido.Image = global::SistemaFigueri.Properties.Resources.busca;
+            this.btnbuscarpedido.ImageActive = null;
+            this.btnbuscarpedido.Location = new System.Drawing.Point(1078, 98);
+            this.btnbuscarpedido.Name = "btnbuscarpedido";
+            this.btnbuscarpedido.Size = new System.Drawing.Size(55, 46);
+            this.btnbuscarpedido.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnbuscarpedido.TabIndex = 219;
+            this.btnbuscarpedido.TabStop = false;
+            this.btnbuscarpedido.Zoom = 10;
+            this.btnbuscarpedido.Click += new System.EventHandler(this.btnbuscarpedido_Click);
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
+            this.btnCerrar.color = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
+            this.btnCerrar.colorActive = System.Drawing.Color.MediumSeaGreen;
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrar.ForeColor = System.Drawing.Color.White;
+            this.btnCerrar.Image = null;
+            this.btnCerrar.ImagePosition = 4;
+            this.btnCerrar.ImageZoom = 20;
+            this.btnCerrar.LabelPosition = 30;
+            this.btnCerrar.LabelText = "Salir";
+            this.btnCerrar.Location = new System.Drawing.Point(1108, 802);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(65, 33);
+            this.btnCerrar.TabIndex = 218;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
+            // dphasta
+            // 
+            this.dphasta.BackColor = System.Drawing.Color.OrangeRed;
+            this.dphasta.BorderRadius = 0;
+            this.dphasta.ForeColor = System.Drawing.Color.White;
+            this.dphasta.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.dphasta.FormatCustom = null;
+            this.dphasta.Location = new System.Drawing.Point(715, 98);
+            this.dphasta.Name = "dphasta";
+            this.dphasta.Size = new System.Drawing.Size(357, 46);
+            this.dphasta.TabIndex = 60;
+            this.dphasta.Value = new System.DateTime(2018, 8, 14, 17, 43, 27, 569);
+            // 
+            // dpdesde
+            // 
+            this.dpdesde.BackColor = System.Drawing.Color.OrangeRed;
+            this.dpdesde.BorderRadius = 0;
+            this.dpdesde.ForeColor = System.Drawing.Color.White;
+            this.dpdesde.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.dpdesde.FormatCustom = null;
+            this.dpdesde.Location = new System.Drawing.Point(188, 98);
+            this.dpdesde.Name = "dpdesde";
+            this.dpdesde.Size = new System.Drawing.Size(357, 46);
+            this.dpdesde.TabIndex = 59;
+            this.dpdesde.Value = new System.DateTime(2018, 8, 14, 17, 43, 27, 569);
+            // 
             // tbpedidos
             // 
             this.tbpedidos.BackColor = System.Drawing.Color.Silver;
@@ -93,6 +219,7 @@
             this.tbpedidos.Size = new System.Drawing.Size(512, 44);
             this.tbpedidos.TabIndex = 57;
             this.tbpedidos.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.tbpedidos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbpedidos_KeyPress);
             // 
             // dgvPedidos
             // 
@@ -130,132 +257,6 @@
             this.dgvPedidos.Size = new System.Drawing.Size(1099, 564);
             this.dgvPedidos.TabIndex = 33;
             // 
-            // dpdesde
-            // 
-            this.dpdesde.BackColor = System.Drawing.Color.OrangeRed;
-            this.dpdesde.BorderRadius = 0;
-            this.dpdesde.ForeColor = System.Drawing.Color.White;
-            this.dpdesde.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dpdesde.FormatCustom = null;
-            this.dpdesde.Location = new System.Drawing.Point(188, 98);
-            this.dpdesde.Name = "dpdesde";
-            this.dpdesde.Size = new System.Drawing.Size(357, 46);
-            this.dpdesde.TabIndex = 59;
-            this.dpdesde.Value = new System.DateTime(2018, 8, 14, 17, 43, 27, 569);
-            // 
-            // dphasta
-            // 
-            this.dphasta.BackColor = System.Drawing.Color.OrangeRed;
-            this.dphasta.BorderRadius = 0;
-            this.dphasta.ForeColor = System.Drawing.Color.White;
-            this.dphasta.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dphasta.FormatCustom = null;
-            this.dphasta.Location = new System.Drawing.Point(715, 98);
-            this.dphasta.Name = "dphasta";
-            this.dphasta.Size = new System.Drawing.Size(357, 46);
-            this.dphasta.TabIndex = 60;
-            this.dphasta.Value = new System.DateTime(2018, 8, 14, 17, 43, 27, 569);
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
-            this.btnCerrar.color = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
-            this.btnCerrar.colorActive = System.Drawing.Color.MediumSeaGreen;
-            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCerrar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrar.ForeColor = System.Drawing.Color.White;
-            this.btnCerrar.Image = null;
-            this.btnCerrar.ImagePosition = 4;
-            this.btnCerrar.ImageZoom = 20;
-            this.btnCerrar.LabelPosition = 30;
-            this.btnCerrar.LabelText = "Salir";
-            this.btnCerrar.Location = new System.Drawing.Point(1108, 802);
-            this.btnCerrar.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(65, 33);
-            this.btnCerrar.TabIndex = 218;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
-            // 
-            // btnbuscarpedido
-            // 
-            this.btnbuscarpedido.BackColor = System.Drawing.Color.CadetBlue;
-            this.btnbuscarpedido.Image = global::SistemaFigueri.Properties.Resources.busca;
-            this.btnbuscarpedido.ImageActive = null;
-            this.btnbuscarpedido.Location = new System.Drawing.Point(1078, 98);
-            this.btnbuscarpedido.Name = "btnbuscarpedido";
-            this.btnbuscarpedido.Size = new System.Drawing.Size(55, 46);
-            this.btnbuscarpedido.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnbuscarpedido.TabIndex = 219;
-            this.btnbuscarpedido.TabStop = false;
-            this.btnbuscarpedido.Zoom = 10;
-            this.btnbuscarpedido.Click += new System.EventHandler(this.btnbuscarpedido_Click);
-            // 
-            // bunifuCards3
-            // 
-            this.bunifuCards3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuCards3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(126)))), ((int)(((byte)(176)))));
-            this.bunifuCards3.BorderRadius = 10;
-            this.bunifuCards3.BottomSahddow = false;
-            this.bunifuCards3.color = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
-            this.bunifuCards3.Controls.Add(this.label1);
-            this.bunifuCards3.LeftSahddow = false;
-            this.bunifuCards3.Location = new System.Drawing.Point(48, 12);
-            this.bunifuCards3.Name = "bunifuCards3";
-            this.bunifuCards3.RightSahddow = false;
-            this.bunifuCards3.ShadowDepth = 20;
-            this.bunifuCards3.Size = new System.Drawing.Size(1099, 68);
-            this.bunifuCards3.TabIndex = 220;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(38, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(336, 38);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "PEDIDOS PENDIENTES";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(586, 98);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(111, 36);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Hasta: ";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(61, 98);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(121, 36);
-            this.label3.TabIndex = 221;
-            this.label3.Text = "Desde: ";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Location = new System.Drawing.Point(63, 182);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(247, 23);
-            this.label4.TabIndex = 222;
-            this.label4.Text = "Seleccione (doble click): ";
-            // 
             // FormBuscarPedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -268,10 +269,10 @@
             this.Text = "FormBuscarPedidos";
             this.bunifuCards2.ResumeLayout(false);
             this.bunifuCards2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPedidos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnbuscarpedido)).EndInit();
             this.bunifuCards3.ResumeLayout(false);
             this.bunifuCards3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnbuscarpedido)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPedidos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
