@@ -22,16 +22,35 @@ namespace SistemaFigueri
         DataTable tbCliente = new DataTable();
 
         public String dni { get; set; }
-        public String nombres { get; set; }
-        public String apellidos { get; set; }
-        public String stock { get; set; }
-        int Listado = 0;
+        public String cliente { get; set; }
+        public String ruc { get; set; }
+  
 
         public FormBuscarClienteR()
         {
             InitializeComponent();
         }
+        public void MostrarCliente(DataGridView dgvProducto)
+        {
+            try
+            {
+                CNClientes objProducto = new CNClientes();
+                SqlDataAdapter adapter = objProducto.CargaProductoFiltro();
+                foreach (DataRow row in tbCliente.Rows)
+                {
+                    lista.Add((DataRow)row);
+                }
+                adapter.Fill(tbCliente);
+                dgvProducto.DataSource = tbCliente;
+                adapter.Dispose();
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Carga fallida:" + ex.ToString());
+
+            }
+        }
 
         private void bunifuCards2_Paint(object sender, PaintEventArgs e)
         {
@@ -40,7 +59,22 @@ namespace SistemaFigueri
 
         private void FormBuscarCliente_Load(object sender, EventArgs e)
         {
-        
+            dgvCliente.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
+            dgvCliente.AllowUserToResizeRows = false;
+            MostrarCliente(dgvCliente);
+            //dgvlListaProducto.Columns[0].Visible = false;
+            dgvCliente.Columns["Documento"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvCliente.Columns["DNI"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvCliente.Columns["RUC"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvCliente.Columns["Nombres"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvCliente.Columns["Apellidos"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvCliente.Columns["NombreEmpresa"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvCliente.Columns["TipoCliente"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvCliente.Columns["Sector"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+           foreach (DataGridViewColumn column in dgvCliente.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
         }
         private void ListarClientes()
         {
@@ -81,6 +115,28 @@ namespace SistemaFigueri
             Program.ApellidoMaterno = dgvCliente.CurrentRow.Cells[7].Value.ToString();
           
             this.Close();
+        }
+
+        private void tbFiltraCliente_KeyUp(object sender, KeyEventArgs e)
+        {
+            DataView dc = tbCliente.DefaultView;
+            dc.RowFilter = string.Format("Documento like '%{0}%' or DNI like '%{0}%' or DNI like '%{0}%' or Nombres like '%{0}%' or Apellidos like '%{0}%' ", tbFiltraCliente.Text);
+
+
+        }
+
+        private void dgvCliente_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            String Dni = dgvCliente.Rows[e.RowIndex].Cells["DNI"].Value.ToString();
+            String Nombres = dgvCliente.Rows[e.RowIndex].Cells["Nombres"].Value.ToString();
+            String Apellidos = dgvCliente.Rows[e.RowIndex].Cells["Apellidos"].Value.ToString();
+            String Ruc = dgvCliente.Rows[e.RowIndex].Cells["RUC"].Value.ToString();
+            dni = Dni;
+            cliente = "" +""+Nombres+""+Apellidos;
+            ruc = Ruc;
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+
         }
     }
 

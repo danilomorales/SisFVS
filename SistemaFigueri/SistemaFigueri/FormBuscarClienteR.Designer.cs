@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bunifuCards2 = new Bunifu.Framework.UI.BunifuCards();
+            this.dgvCliente = new System.Windows.Forms.DataGridView();
+            this.tbFiltraCliente = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.btnCerrarFiltro = new Bunifu.Framework.UI.BunifuTileButton();
             this.bunifuCustomLabel15 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lbtotal = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel22 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.cboestado = new System.Windows.Forms.ComboBox();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.dgvCliente = new System.Windows.Forms.DataGridView();
-            this.tbFiltraCliente = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuCards2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.SuspendLayout();
@@ -59,15 +59,71 @@
             this.bunifuCards2.Controls.Add(this.lbtotal);
             this.bunifuCards2.Controls.Add(this.bunifuCustomLabel22);
             this.bunifuCards2.Controls.Add(this.cboestado);
-            this.bunifuCards2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bunifuCards2.LeftSahddow = false;
-            this.bunifuCards2.Location = new System.Drawing.Point(0, 0);
+            this.bunifuCards2.Location = new System.Drawing.Point(0, 35);
             this.bunifuCards2.Name = "bunifuCards2";
             this.bunifuCards2.RightSahddow = true;
             this.bunifuCards2.ShadowDepth = 20;
-            this.bunifuCards2.Size = new System.Drawing.Size(984, 507);
+            this.bunifuCards2.Size = new System.Drawing.Size(984, 472);
             this.bunifuCards2.TabIndex = 35;
-            this.bunifuCards2.Paint += new System.Windows.Forms.PaintEventHandler(this.bunifuCards2_Paint);
+            // 
+            // dgvCliente
+            // 
+            this.dgvCliente.AllowUserToAddRows = false;
+            this.dgvCliente.AllowUserToDeleteRows = false;
+            this.dgvCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvCliente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvCliente.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(126)))), ((int)(((byte)(176)))));
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCliente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCliente.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCliente.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvCliente.Location = new System.Drawing.Point(16, 112);
+            this.dgvCliente.Name = "dgvCliente";
+            this.dgvCliente.ReadOnly = true;
+            this.dgvCliente.RowHeadersVisible = false;
+            this.dgvCliente.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvCliente.Size = new System.Drawing.Size(926, 273);
+            this.dgvCliente.TabIndex = 224;
+            this.dgvCliente.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCliente_CellDoubleClick_1);
+            // 
+            // tbFiltraCliente
+            // 
+            this.tbFiltraCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.tbFiltraCliente.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbFiltraCliente.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.tbFiltraCliente.ForeColor = System.Drawing.Color.White;
+            this.tbFiltraCliente.HintForeColor = System.Drawing.Color.White;
+            this.tbFiltraCliente.HintText = "Buscar Cliente";
+            this.tbFiltraCliente.isPassword = false;
+            this.tbFiltraCliente.LineFocusedColor = System.Drawing.Color.Red;
+            this.tbFiltraCliente.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
+            this.tbFiltraCliente.LineMouseHoverColor = System.Drawing.Color.SandyBrown;
+            this.tbFiltraCliente.LineThickness = 6;
+            this.tbFiltraCliente.Location = new System.Drawing.Point(159, 58);
+            this.tbFiltraCliente.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbFiltraCliente.Name = "tbFiltraCliente";
+            this.tbFiltraCliente.Size = new System.Drawing.Size(492, 31);
+            this.tbFiltraCliente.TabIndex = 223;
+            this.tbFiltraCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.tbFiltraCliente.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbFiltraCliente_KeyUp);
             // 
             // btnCerrarFiltro
             // 
@@ -83,7 +139,7 @@
             this.btnCerrarFiltro.ImageZoom = 20;
             this.btnCerrarFiltro.LabelPosition = 20;
             this.btnCerrarFiltro.LabelText = "Salir";
-            this.btnCerrarFiltro.Location = new System.Drawing.Point(918, 466);
+            this.btnCerrarFiltro.Location = new System.Drawing.Point(918, 431);
             this.btnCerrarFiltro.Margin = new System.Windows.Forms.Padding(4);
             this.btnCerrarFiltro.Name = "btnCerrarFiltro";
             this.btnCerrarFiltro.Size = new System.Drawing.Size(65, 35);
@@ -113,7 +169,7 @@
             this.lbtotal.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbtotal.ForeColor = System.Drawing.Color.White;
             this.lbtotal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbtotal.Location = new System.Drawing.Point(872, 67);
+            this.lbtotal.Location = new System.Drawing.Point(867, 67);
             this.lbtotal.Name = "lbtotal";
             this.lbtotal.Size = new System.Drawing.Size(20, 21);
             this.lbtotal.TabIndex = 214;
@@ -155,62 +211,6 @@
             // 
             this.bunifuElipse1.ElipseRadius = 40;
             this.bunifuElipse1.TargetControl = this;
-            // 
-            // dgvCliente
-            // 
-            this.dgvCliente.AllowUserToAddRows = false;
-            this.dgvCliente.AllowUserToDeleteRows = false;
-            this.dgvCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvCliente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvCliente.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(126)))), ((int)(((byte)(176)))));
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCliente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCliente.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCliente.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvCliente.Location = new System.Drawing.Point(16, 112);
-            this.dgvCliente.Name = "dgvCliente";
-            this.dgvCliente.ReadOnly = true;
-            this.dgvCliente.RowHeadersVisible = false;
-            this.dgvCliente.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgvCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCliente.Size = new System.Drawing.Size(926, 308);
-            this.dgvCliente.TabIndex = 224;
-            // 
-            // tbFiltraCliente
-            // 
-            this.tbFiltraCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.tbFiltraCliente.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbFiltraCliente.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.tbFiltraCliente.ForeColor = System.Drawing.Color.White;
-            this.tbFiltraCliente.HintForeColor = System.Drawing.Color.White;
-            this.tbFiltraCliente.HintText = "Buscar Cliente";
-            this.tbFiltraCliente.isPassword = false;
-            this.tbFiltraCliente.LineFocusedColor = System.Drawing.Color.Red;
-            this.tbFiltraCliente.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
-            this.tbFiltraCliente.LineMouseHoverColor = System.Drawing.Color.SandyBrown;
-            this.tbFiltraCliente.LineThickness = 6;
-            this.tbFiltraCliente.Location = new System.Drawing.Point(159, 58);
-            this.tbFiltraCliente.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tbFiltraCliente.Name = "tbFiltraCliente";
-            this.tbFiltraCliente.Size = new System.Drawing.Size(492, 31);
-            this.tbFiltraCliente.TabIndex = 223;
-            this.tbFiltraCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // FormBuscarClienteR
             // 
