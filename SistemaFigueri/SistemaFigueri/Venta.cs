@@ -12,6 +12,15 @@ namespace SistemaFigueri
     {
         public int IdProducto { get; set; }
         public int IdVenta { get; set; }
+        public int IdUser { get; set; }
+        public int IdCliente { get; set; }
+        public string Serie { get; set; }
+        public string NroNroComprobante { get; set; }
+        public string TipoDocumento { get; set; }
+        public DateTime FechaVenta { get; set; }
+        public decimal Total { get; set; }
+        
+        
         public string Descripcion { get; set; }
         public int Cantidad { get; set; }
         public decimal PrecioVenta { get; set; }

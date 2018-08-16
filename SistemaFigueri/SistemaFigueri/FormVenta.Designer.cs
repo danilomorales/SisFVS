@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormVenta));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.Venta = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -41,7 +41,7 @@
             this.bunifuMetroTextbox6 = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.bunifuMetroTextbox5 = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.bunifuMetroTextbox4 = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btRegistraVenta = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnCerrarVenta = new Bunifu.Framework.UI.BunifuTileButton();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel13 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -80,6 +80,8 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.btnRestaCan = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnSumaCan = new Bunifu.Framework.UI.BunifuFlatButton();
             this.tbIgv = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tbPrecio = new System.Windows.Forms.TextBox();
@@ -105,7 +107,6 @@
             this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel14 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel20 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel19 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel18 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel11 = new System.Windows.Forms.Panel();
@@ -130,12 +131,11 @@
             this.bunifuTileButton2 = new Bunifu.Framework.UI.BunifuTileButton();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.btnSumaCan = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnRestaCan = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.tbIdProducto = new System.Windows.Forms.TextBox();
             this.Venta.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btRegistraVenta)).BeginInit();
             this.panel10.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -209,7 +209,6 @@
             this.panel9.Controls.Add(this.bunifuMetroTextbox6);
             this.panel9.Controls.Add(this.bunifuMetroTextbox5);
             this.panel9.Controls.Add(this.bunifuMetroTextbox4);
-            this.panel9.Controls.Add(this.bunifuImageButton2);
             this.panel9.Controls.Add(this.btnCerrarVenta);
             this.panel9.Controls.Add(this.bunifuCustomLabel1);
             this.panel9.Controls.Add(this.bunifuCustomLabel13);
@@ -219,7 +218,7 @@
             this.panel9.Controls.Add(this.panel10);
             this.panel9.Location = new System.Drawing.Point(8, 474);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(520, 203);
+            this.panel9.Size = new System.Drawing.Size(486, 203);
             this.panel9.TabIndex = 218;
             // 
             // bunifuMetroTextbox8
@@ -312,20 +311,21 @@
             this.bunifuMetroTextbox4.Text = "00000000";
             this.bunifuMetroTextbox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // bunifuImageButton2
+            // btRegistraVenta
             // 
-            this.bunifuImageButton2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.bunifuImageButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
-            this.bunifuImageButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuImageButton2.Image = global::SistemaFigueri.Properties.Resources.imprime;
-            this.bunifuImageButton2.ImageActive = null;
-            this.bunifuImageButton2.Location = new System.Drawing.Point(295, 142);
-            this.bunifuImageButton2.Name = "bunifuImageButton2";
-            this.bunifuImageButton2.Size = new System.Drawing.Size(96, 55);
-            this.bunifuImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton2.TabIndex = 202;
-            this.bunifuImageButton2.TabStop = false;
-            this.bunifuImageButton2.Zoom = 10;
+            this.btRegistraVenta.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btRegistraVenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
+            this.btRegistraVenta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btRegistraVenta.Image = global::SistemaFigueri.Properties.Resources.ventas;
+            this.btRegistraVenta.ImageActive = null;
+            this.btRegistraVenta.Location = new System.Drawing.Point(557, 616);
+            this.btRegistraVenta.Name = "btRegistraVenta";
+            this.btRegistraVenta.Size = new System.Drawing.Size(96, 45);
+            this.btRegistraVenta.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btRegistraVenta.TabIndex = 202;
+            this.btRegistraVenta.TabStop = false;
+            this.btRegistraVenta.Zoom = 10;
+            this.btRegistraVenta.Click += new System.EventHandler(this.btRegistraVenta_Click);
             // 
             // btnCerrarVenta
             // 
@@ -341,7 +341,7 @@
             this.btnCerrarVenta.ImageZoom = 20;
             this.btnCerrarVenta.LabelPosition = 20;
             this.btnCerrarVenta.LabelText = "Salir";
-            this.btnCerrarVenta.Location = new System.Drawing.Point(404, 162);
+            this.btnCerrarVenta.Location = new System.Drawing.Point(406, 164);
             this.btnCerrarVenta.Margin = new System.Windows.Forms.Padding(4);
             this.btnCerrarVenta.Name = "btnCerrarVenta";
             this.btnCerrarVenta.Size = new System.Drawing.Size(65, 35);
@@ -430,7 +430,7 @@
             this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel10.Location = new System.Drawing.Point(0, 0);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(520, 25);
+            this.panel10.Size = new System.Drawing.Size(486, 25);
             this.panel10.TabIndex = 2;
             // 
             // label5
@@ -458,7 +458,7 @@
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Location = new System.Drawing.Point(8, 266);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(520, 202);
+            this.panel2.Size = new System.Drawing.Size(486, 202);
             this.panel2.TabIndex = 216;
             // 
             // bunifuCustomLabel17
@@ -483,7 +483,7 @@
             this.bunifuCustomLabel15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bunifuCustomLabel15.Font = new System.Drawing.Font("Century Gothic", 11F);
             this.bunifuCustomLabel15.ForeColor = System.Drawing.Color.White;
-            this.bunifuCustomLabel15.Location = new System.Drawing.Point(303, 150);
+            this.bunifuCustomLabel15.Location = new System.Drawing.Point(281, 150);
             this.bunifuCustomLabel15.Name = "bunifuCustomLabel15";
             this.bunifuCustomLabel15.Size = new System.Drawing.Size(73, 23);
             this.bunifuCustomLabel15.TabIndex = 190;
@@ -497,7 +497,7 @@
             this.CboMoneda.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CboMoneda.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.CboMoneda.FormattingEnabled = true;
-            this.CboMoneda.Location = new System.Drawing.Point(377, 150);
+            this.CboMoneda.Location = new System.Drawing.Point(355, 150);
             this.CboMoneda.Name = "CboMoneda";
             this.CboMoneda.Size = new System.Drawing.Size(109, 23);
             this.CboMoneda.TabIndex = 26;
@@ -521,7 +521,7 @@
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(9, 32);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(277, 101);
+            this.groupBox1.Size = new System.Drawing.Size(255, 101);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tipo Documento";
@@ -535,6 +535,7 @@
             this.rbnFactura.TabIndex = 3;
             this.rbnFactura.Text = "Factura";
             this.rbnFactura.UseVisualStyleBackColor = true;
+            this.rbnFactura.CheckedChanged += new System.EventHandler(this.rbnFactura_CheckedChanged);
             // 
             // rbnBoleta
             // 
@@ -547,6 +548,7 @@
             this.rbnBoleta.TabStop = true;
             this.rbnBoleta.Text = "Boleta";
             this.rbnBoleta.UseVisualStyleBackColor = true;
+            this.rbnBoleta.CheckedChanged += new System.EventHandler(this.rbnBoleta_CheckedChanged);
             // 
             // panel14
             // 
@@ -557,7 +559,7 @@
             this.panel14.Controls.Add(this.lblSerie);
             this.panel14.Controls.Add(this.lblTipo);
             this.panel14.ForeColor = System.Drawing.Color.White;
-            this.panel14.Location = new System.Drawing.Point(303, 32);
+            this.panel14.Location = new System.Drawing.Point(281, 32);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(200, 102);
             this.panel14.TabIndex = 3;
@@ -620,7 +622,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(520, 25);
+            this.panel3.Size = new System.Drawing.Size(486, 25);
             this.panel3.TabIndex = 2;
             // 
             // label1
@@ -652,7 +654,7 @@
             this.panel6.Controls.Add(this.panel7);
             this.panel6.Location = new System.Drawing.Point(8, 8);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(520, 252);
+            this.panel6.Size = new System.Drawing.Size(486, 252);
             this.panel6.TabIndex = 215;
             // 
             // tbDocumento
@@ -800,7 +802,7 @@
             this.btnAgregarCliente.ImageZoom = 40;
             this.btnAgregarCliente.LabelPosition = 19;
             this.btnAgregarCliente.LabelText = "Cliente Nuevo";
-            this.btnAgregarCliente.Location = new System.Drawing.Point(410, 32);
+            this.btnAgregarCliente.Location = new System.Drawing.Point(355, 32);
             this.btnAgregarCliente.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAgregarCliente.Name = "btnAgregarCliente";
             this.btnAgregarCliente.Size = new System.Drawing.Size(92, 57);
@@ -814,7 +816,7 @@
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(520, 25);
+            this.panel7.Size = new System.Drawing.Size(486, 25);
             this.panel7.TabIndex = 2;
             // 
             // label3
@@ -842,29 +844,98 @@
             this.panel8.Controls.Add(this.tbIgv);
             this.panel8.Controls.Add(this.textBox1);
             this.panel8.Controls.Add(this.tbPrecio);
+            this.panel8.Controls.Add(this.btRegistraVenta);
             this.panel8.Controls.Add(this.dgvVenta);
             this.panel8.Controls.Add(this.panel1);
             this.panel8.Controls.Add(this.bunifuCustomLabel20);
-            this.panel8.Controls.Add(this.bunifuCustomLabel4);
             this.panel8.Controls.Add(this.bunifuCustomLabel19);
             this.panel8.Controls.Add(this.bunifuCustomLabel18);
             this.panel8.Controls.Add(this.panel11);
             this.panel8.Controls.Add(this.btnAgregaCarro);
             this.panel8.Controls.Add(this.bunifuImageButton4);
             this.panel8.Controls.Add(this.tbCantidad);
-            this.panel8.Location = new System.Drawing.Point(534, 6);
+            this.panel8.Location = new System.Drawing.Point(500, 8);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(754, 669);
+            this.panel8.Size = new System.Drawing.Size(689, 669);
             this.panel8.TabIndex = 207;
+            // 
+            // btnRestaCan
+            // 
+            this.btnRestaCan.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnRestaCan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnRestaCan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnRestaCan.BorderRadius = 0;
+            this.btnRestaCan.ButtonText = "";
+            this.btnRestaCan.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRestaCan.DisabledColor = System.Drawing.Color.Gray;
+            this.btnRestaCan.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnRestaCan.Iconimage = global::SistemaFigueri.Properties.Resources.resta;
+            this.btnRestaCan.Iconimage_right = null;
+            this.btnRestaCan.Iconimage_right_Selected = null;
+            this.btnRestaCan.Iconimage_Selected = null;
+            this.btnRestaCan.IconMarginLeft = 13;
+            this.btnRestaCan.IconMarginRight = 0;
+            this.btnRestaCan.IconRightVisible = true;
+            this.btnRestaCan.IconRightZoom = 0D;
+            this.btnRestaCan.IconVisible = true;
+            this.btnRestaCan.IconZoom = 90D;
+            this.btnRestaCan.IsTab = false;
+            this.btnRestaCan.Location = new System.Drawing.Point(411, 189);
+            this.btnRestaCan.Name = "btnRestaCan";
+            this.btnRestaCan.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnRestaCan.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btnRestaCan.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnRestaCan.selected = false;
+            this.btnRestaCan.Size = new System.Drawing.Size(51, 26);
+            this.btnRestaCan.TabIndex = 227;
+            this.btnRestaCan.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnRestaCan.Textcolor = System.Drawing.Color.White;
+            this.btnRestaCan.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRestaCan.Click += new System.EventHandler(this.btnRestaCan_Click);
+            // 
+            // btnSumaCan
+            // 
+            this.btnSumaCan.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnSumaCan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnSumaCan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSumaCan.BorderRadius = 0;
+            this.btnSumaCan.ButtonText = "";
+            this.btnSumaCan.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSumaCan.DisabledColor = System.Drawing.Color.Gray;
+            this.btnSumaCan.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnSumaCan.Iconimage = global::SistemaFigueri.Properties.Resources.suma;
+            this.btnSumaCan.Iconimage_right = null;
+            this.btnSumaCan.Iconimage_right_Selected = null;
+            this.btnSumaCan.Iconimage_Selected = null;
+            this.btnSumaCan.IconMarginLeft = 13;
+            this.btnSumaCan.IconMarginRight = 0;
+            this.btnSumaCan.IconRightVisible = true;
+            this.btnSumaCan.IconRightZoom = 0D;
+            this.btnSumaCan.IconVisible = true;
+            this.btnSumaCan.IconZoom = 90D;
+            this.btnSumaCan.IsTab = false;
+            this.btnSumaCan.Location = new System.Drawing.Point(498, 189);
+            this.btnSumaCan.Name = "btnSumaCan";
+            this.btnSumaCan.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnSumaCan.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btnSumaCan.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnSumaCan.selected = false;
+            this.btnSumaCan.Size = new System.Drawing.Size(51, 26);
+            this.btnSumaCan.TabIndex = 227;
+            this.btnSumaCan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSumaCan.Textcolor = System.Drawing.Color.White;
+            this.btnSumaCan.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSumaCan.Click += new System.EventHandler(this.btnSumaCan_Click);
             // 
             // tbIgv
             // 
+            this.tbIgv.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.tbIgv.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(112)))), ((int)(((byte)(147)))));
             this.tbIgv.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbIgv.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.tbIgv.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbIgv.ForeColor = System.Drawing.Color.White;
-            this.tbIgv.Location = new System.Drawing.Point(66, 634);
+            this.tbIgv.Location = new System.Drawing.Point(67, 634);
             this.tbIgv.Multiline = true;
             this.tbIgv.Name = "tbIgv";
             this.tbIgv.ReadOnly = true;
@@ -879,7 +950,7 @@
             this.textBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBox1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(342, 188);
+            this.textBox1.Location = new System.Drawing.Point(327, 189);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(62, 25);
@@ -902,6 +973,7 @@
             // dgvVenta
             // 
             this.dgvVenta.AllowUserToAddRows = false;
+            this.dgvVenta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvVenta.BackgroundColor = System.Drawing.Color.White;
             this.dgvVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVenta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -915,7 +987,7 @@
             this.dgvVenta.GridColor = System.Drawing.Color.DimGray;
             this.dgvVenta.Location = new System.Drawing.Point(9, 231);
             this.dgvVenta.Name = "dgvVenta";
-            this.dgvVenta.Size = new System.Drawing.Size(732, 369);
+            this.dgvVenta.Size = new System.Drawing.Size(666, 369);
             this.dgvVenta.TabIndex = 218;
             // 
             // IdD
@@ -924,41 +996,36 @@
             this.IdD.Name = "IdD";
             this.IdD.ReadOnly = true;
             this.IdD.Visible = false;
-            this.IdD.Width = 30;
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.HeaderText = "CANTIDAD";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 70;
             // 
             // Column2
             // 
             this.Column2.HeaderText = "DESCRIPCIÓN";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
-            this.Column2.Width = 330;
             // 
             // Column4
             // 
-            dataGridViewCellStyle3.Format = "C2";
-            dataGridViewCellStyle3.NullValue = null;
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Format = "C2";
+            dataGridViewCellStyle5.NullValue = null;
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle5;
             this.Column4.HeaderText = "PRECIO U.";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
-            this.Column4.Width = 91;
             // 
             // Column3
             // 
-            dataGridViewCellStyle4.Format = "C2";
-            dataGridViewCellStyle4.NullValue = null;
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle6.Format = "C2";
+            dataGridViewCellStyle6.NullValue = null;
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle6;
             this.Column3.HeaderText = "IMPORTE";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
-            this.Column3.Width = 90;
             // 
             // Column5
             // 
@@ -966,7 +1033,6 @@
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
             this.Column5.Visible = false;
-            this.Column5.Width = 30;
             // 
             // Column6
             // 
@@ -979,6 +1045,7 @@
             // 
             this.panel1.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            this.panel1.Controls.Add(this.tbIdProducto);
             this.panel1.Controls.Add(this.dtFechaV);
             this.panel1.Controls.Add(this.bunifuMetroTextbox1);
             this.panel1.Controls.Add(this.tbStock);
@@ -993,7 +1060,7 @@
             this.panel1.Controls.Add(this.bunifuCustomLabel14);
             this.panel1.Location = new System.Drawing.Point(0, 24);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(751, 146);
+            this.panel1.Size = new System.Drawing.Size(688, 146);
             this.panel1.TabIndex = 3;
             // 
             // dtFechaV
@@ -1030,7 +1097,7 @@
             this.tbStock.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.tbStock.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbStock.ForeColor = System.Drawing.Color.White;
-            this.tbStock.Location = new System.Drawing.Point(679, 19);
+            this.tbStock.Location = new System.Drawing.Point(613, 19);
             this.tbStock.Multiline = true;
             this.tbStock.Name = "tbStock";
             this.tbStock.ReadOnly = true;
@@ -1048,7 +1115,7 @@
             this.tbAlias.Multiline = true;
             this.tbAlias.Name = "tbAlias";
             this.tbAlias.ReadOnly = true;
-            this.tbAlias.Size = new System.Drawing.Size(318, 29);
+            this.tbAlias.Size = new System.Drawing.Size(246, 29);
             this.tbAlias.TabIndex = 223;
             // 
             // tbDescripcion
@@ -1062,7 +1129,7 @@
             this.tbDescripcion.Multiline = true;
             this.tbDescripcion.Name = "tbDescripcion";
             this.tbDescripcion.ReadOnly = true;
-            this.tbDescripcion.Size = new System.Drawing.Size(456, 29);
+            this.tbDescripcion.Size = new System.Drawing.Size(390, 29);
             this.tbDescripcion.TabIndex = 222;
             // 
             // bunifuCustomLabel3
@@ -1089,7 +1156,7 @@
             this.bunifuCustomLabel16.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel16.ForeColor = System.Drawing.Color.White;
             this.bunifuCustomLabel16.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuCustomLabel16.Location = new System.Drawing.Point(623, 20);
+            this.bunifuCustomLabel16.Location = new System.Drawing.Point(557, 20);
             this.bunifuCustomLabel16.Name = "bunifuCustomLabel16";
             this.bunifuCustomLabel16.Size = new System.Drawing.Size(55, 25);
             this.bunifuCustomLabel16.TabIndex = 209;
@@ -1190,29 +1257,13 @@
             this.bunifuCustomLabel20.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel20.ForeColor = System.Drawing.Color.White;
             this.bunifuCustomLabel20.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuCustomLabel20.Location = new System.Drawing.Point(245, 188);
+            this.bunifuCustomLabel20.Location = new System.Drawing.Point(230, 189);
             this.bunifuCustomLabel20.Name = "bunifuCustomLabel20";
             this.bunifuCustomLabel20.Size = new System.Drawing.Size(96, 25);
             this.bunifuCustomLabel20.TabIndex = 213;
             this.bunifuCustomLabel20.Text = "Descuento:";
             this.bunifuCustomLabel20.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bunifuCustomLabel20.UseCompatibleTextRendering = true;
-            // 
-            // bunifuCustomLabel4
-            // 
-            this.bunifuCustomLabel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuCustomLabel4.AutoSize = true;
-            this.bunifuCustomLabel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.bunifuCustomLabel4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bunifuCustomLabel4.Font = new System.Drawing.Font("Century Gothic", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel4.ForeColor = System.Drawing.Color.White;
-            this.bunifuCustomLabel4.Location = new System.Drawing.Point(484, 634);
-            this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
-            this.bunifuCustomLabel4.Size = new System.Drawing.Size(98, 19);
-            this.bunifuCustomLabel4.TabIndex = 163;
-            this.bunifuCustomLabel4.Text = "Importe Total";
-            this.bunifuCustomLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // bunifuCustomLabel19
             // 
@@ -1254,7 +1305,7 @@
             this.panel11.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel11.Location = new System.Drawing.Point(0, 0);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(754, 25);
+            this.panel11.Size = new System.Drawing.Size(689, 25);
             this.panel11.TabIndex = 2;
             // 
             // label4
@@ -1290,7 +1341,7 @@
             this.btnAgregaCarro.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAgregaCarro.Image = global::SistemaFigueri.Properties.Resources.compra;
             this.btnAgregaCarro.ImageActive = null;
-            this.btnAgregaCarro.Location = new System.Drawing.Point(577, 176);
+            this.btnAgregaCarro.Location = new System.Drawing.Point(562, 176);
             this.btnAgregaCarro.Name = "btnAgregaCarro";
             this.btnAgregaCarro.Size = new System.Drawing.Size(58, 44);
             this.btnAgregaCarro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1305,7 +1356,7 @@
             this.bunifuImageButton4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuImageButton4.Image = global::SistemaFigueri.Properties.Resources.quitar;
             this.bunifuImageButton4.ImageActive = null;
-            this.bunifuImageButton4.Location = new System.Drawing.Point(646, 176);
+            this.bunifuImageButton4.Location = new System.Drawing.Point(628, 176);
             this.bunifuImageButton4.Name = "bunifuImageButton4";
             this.bunifuImageButton4.Size = new System.Drawing.Size(57, 44);
             this.bunifuImageButton4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1319,7 +1370,7 @@
             this.tbCantidad.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbCantidad.ForeColor = System.Drawing.Color.White;
-            this.tbCantidad.Location = new System.Drawing.Point(477, 189);
+            this.tbCantidad.Location = new System.Drawing.Point(462, 189);
             this.tbCantidad.MaxLength = 3;
             this.tbCantidad.Multiline = true;
             this.tbCantidad.Name = "tbCantidad";
@@ -1526,73 +1577,20 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // btnSumaCan
+            // tbIdProducto
             // 
-            this.btnSumaCan.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnSumaCan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnSumaCan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnSumaCan.BorderRadius = 0;
-            this.btnSumaCan.ButtonText = "";
-            this.btnSumaCan.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSumaCan.DisabledColor = System.Drawing.Color.Gray;
-            this.btnSumaCan.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnSumaCan.Iconimage = global::SistemaFigueri.Properties.Resources.suma;
-            this.btnSumaCan.Iconimage_right = null;
-            this.btnSumaCan.Iconimage_right_Selected = null;
-            this.btnSumaCan.Iconimage_Selected = null;
-            this.btnSumaCan.IconMarginLeft = 13;
-            this.btnSumaCan.IconMarginRight = 0;
-            this.btnSumaCan.IconRightVisible = true;
-            this.btnSumaCan.IconRightZoom = 0D;
-            this.btnSumaCan.IconVisible = true;
-            this.btnSumaCan.IconZoom = 90D;
-            this.btnSumaCan.IsTab = false;
-            this.btnSumaCan.Location = new System.Drawing.Point(513, 189);
-            this.btnSumaCan.Name = "btnSumaCan";
-            this.btnSumaCan.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnSumaCan.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.btnSumaCan.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnSumaCan.selected = false;
-            this.btnSumaCan.Size = new System.Drawing.Size(51, 26);
-            this.btnSumaCan.TabIndex = 227;
-            this.btnSumaCan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSumaCan.Textcolor = System.Drawing.Color.White;
-            this.btnSumaCan.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSumaCan.Click += new System.EventHandler(this.btnSumaCan_Click);
-            // 
-            // btnRestaCan
-            // 
-            this.btnRestaCan.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnRestaCan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnRestaCan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnRestaCan.BorderRadius = 0;
-            this.btnRestaCan.ButtonText = "";
-            this.btnRestaCan.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRestaCan.DisabledColor = System.Drawing.Color.Gray;
-            this.btnRestaCan.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnRestaCan.Iconimage = global::SistemaFigueri.Properties.Resources.resta;
-            this.btnRestaCan.Iconimage_right = null;
-            this.btnRestaCan.Iconimage_right_Selected = null;
-            this.btnRestaCan.Iconimage_Selected = null;
-            this.btnRestaCan.IconMarginLeft = 13;
-            this.btnRestaCan.IconMarginRight = 0;
-            this.btnRestaCan.IconRightVisible = true;
-            this.btnRestaCan.IconRightZoom = 0D;
-            this.btnRestaCan.IconVisible = true;
-            this.btnRestaCan.IconZoom = 90D;
-            this.btnRestaCan.IsTab = false;
-            this.btnRestaCan.Location = new System.Drawing.Point(426, 189);
-            this.btnRestaCan.Name = "btnRestaCan";
-            this.btnRestaCan.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnRestaCan.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.btnRestaCan.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnRestaCan.selected = false;
-            this.btnRestaCan.Size = new System.Drawing.Size(51, 26);
-            this.btnRestaCan.TabIndex = 227;
-            this.btnRestaCan.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnRestaCan.Textcolor = System.Drawing.Color.White;
-            this.btnRestaCan.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRestaCan.Click += new System.EventHandler(this.btnRestaCan_Click);
+            this.tbIdProducto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.tbIdProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(112)))), ((int)(((byte)(147)))));
+            this.tbIdProducto.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbIdProducto.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.tbIdProducto.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbIdProducto.ForeColor = System.Drawing.Color.White;
+            this.tbIdProducto.Location = new System.Drawing.Point(434, 113);
+            this.tbIdProducto.Multiline = true;
+            this.tbIdProducto.Name = "tbIdProducto";
+            this.tbIdProducto.ReadOnly = true;
+            this.tbIdProducto.Size = new System.Drawing.Size(49, 19);
+            this.tbIdProducto.TabIndex = 227;
             // 
             // FormVenta
             // 
@@ -1612,7 +1610,7 @@
             this.tabPage1.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btRegistraVenta)).EndInit();
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -1656,7 +1654,6 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Panel panel8;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel4;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Label label4;
         private Bunifu.Framework.UI.BunifuImageButton btnEliminarVenta;
@@ -1708,7 +1705,7 @@
         private Bunifu.Framework.UI.BunifuMetroTextbox bunifuMetroTextbox6;
         private Bunifu.Framework.UI.BunifuMetroTextbox bunifuMetroTextbox5;
         private Bunifu.Framework.UI.BunifuMetroTextbox bunifuMetroTextbox4;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton2;
+        private Bunifu.Framework.UI.BunifuImageButton btRegistraVenta;
         private Bunifu.Framework.UI.BunifuTileButton btnCerrarVenta;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel13;
@@ -1751,5 +1748,6 @@
         private Bunifu.Framework.UI.BunifuTileButton btnpedidos;
         private Bunifu.Framework.UI.BunifuFlatButton btnRestaCan;
         private Bunifu.Framework.UI.BunifuFlatButton btnSumaCan;
+        public System.Windows.Forms.TextBox tbIdProducto;
     }
 }

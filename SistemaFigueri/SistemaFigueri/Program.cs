@@ -9,7 +9,7 @@ namespace SistemaFigueri
     static class Program
     {
         //Cliente Receptor
-        public static int IdClienteReceptor;
+        public static int IdCliente;
         public static int IdDocIdentidad;
         public static String NroDocIdentidad;
         public static String RazonSocial;
@@ -18,12 +18,17 @@ namespace SistemaFigueri
         public static String Nombres;
         public static String ApellidoPaterno;
         public static String ApellidoMaterno;
+        //
+        public static String UserLogueado;
 
         public static string IdProducto;
         public static String DescripcionProducto;
         public static String Alias;
         public static Int32 Stock;
         public static Decimal PrecioVenta;
+
+
+        
         /// <summary>
         /// Punto de entrada principal para la aplicación.
         /// </summary>

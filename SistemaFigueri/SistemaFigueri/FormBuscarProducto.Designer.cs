@@ -182,10 +182,10 @@
             this.btnCerrarFiltroCliente.ImageZoom = 30;
             this.btnCerrarFiltroCliente.LabelPosition = 20;
             this.btnCerrarFiltroCliente.LabelText = "Salir";
-            this.btnCerrarFiltroCliente.Location = new System.Drawing.Point(965, 470);
+            this.btnCerrarFiltroCliente.Location = new System.Drawing.Point(944, 486);
             this.btnCerrarFiltroCliente.Margin = new System.Windows.Forms.Padding(4);
             this.btnCerrarFiltroCliente.Name = "btnCerrarFiltroCliente";
-            this.btnCerrarFiltroCliente.Size = new System.Drawing.Size(80, 45);
+            this.btnCerrarFiltroCliente.Size = new System.Drawing.Size(152, 48);
             this.btnCerrarFiltroCliente.TabIndex = 221;
             this.btnCerrarFiltroCliente.Click += new System.EventHandler(this.btnCerrarFiltroCliente_Click);
             // 
