@@ -81,10 +81,11 @@ namespace SistemaFigueri
             dgvPedidos.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
             dgvPedidos.AllowUserToResizeRows = false;
             String fecha1 = DateTime.Now.ToString("yyyy-MM-dd");
-            String fecha2 =DateTime.Now.AddDays(-7).ToString("yyyy-MM-dd");
-            dpdesde.Value= DateTime.Today.AddDays(-7);
+            //INTERVALO DE FECHA DESDE EL DIA DOMINGO HASTA LA FECHA ACTUAL
+            String fecha2 =DateTime.Now.AddDays(-(int)DateTime.Now.DayOfWeek).ToString("yyyy-MM-dd");
+            dpdesde.Value= DateTime.Today.AddDays(-(int)DateTime.Now.DayOfWeek);
             dphasta.Value = DateTime.Today;
-            MessageBox.Show(fecha1+" "+ fecha2);
+            //MessageBox.Show(((int)DateTime.Now.DayOfWeek).ToString());
             SqlDataAdapter adapter = obj.buscarPedidos(fecha1, fecha2);
             tabla = new DataTable();
             adapter.Fill(tabla);

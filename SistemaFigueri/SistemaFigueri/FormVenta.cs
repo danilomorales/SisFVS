@@ -706,20 +706,6 @@ namespace SistemaFigueri
             Program.PrecioVenta = 0;
         }
 
-        private void btnpedidos_Click(object sender, EventArgs e)
-        {
-            using (FormBuscarPedidos form = new FormBuscarPedidos())
-            {
-                if (form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                {
-                    tbrazonsocial.Text = form.empresa;
-                    tbClienteNombre.Text = form.cliente;
-                    tbRuc.Text = form.ruc;
-                    tbtipodoc.Text = form.tipodoc;
-                    tbDocumento.Text = form.ndoc;
-                }
-            }
-        }
 
         private void btnCargaCliente_Click(object sender, EventArgs e)
         {
@@ -736,6 +722,115 @@ namespace SistemaFigueri
 
             }
 
+        }
+
+        private void btnpedidos_Click_1(object sender, EventArgs e)
+        {
+            using (FormBuscarPedidos form = new FormBuscarPedidos())
+            {
+                if (form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    tbrazonsocial.Text = form.empresa;
+                    tbClienteNombre.Text = form.cliente;
+                    tbRuc.Text = form.ruc;
+                    tbtipodoc.Text = form.tipodoc;
+                    tbDocumento.Text = form.ndoc;
+                }
+            }
+        }
+
+        private void tbRuc_TextChanged(object sender, EventArgs e)
+        {
+            if (tbRuc.Text=="")
+            {
+                if(chkruc.Checked == true)
+                {
+                    chkruc.Checked = false;
+                }
+            }
+            else
+            {
+                if (chkruc.Checked == false)
+                {
+                    chkruc.Checked = true;
+                }
+            }
+            
+        }
+
+        private void tbrazonsocial_TextChanged(object sender, EventArgs e)
+        {
+            if (tbrazonsocial.Text == "")
+            {
+                if (chkempresa.Checked == true)
+                {
+                    chkempresa.Checked = false;
+                }
+            }
+            else
+            {
+                if (chkempresa.Checked == false)
+                {
+                    chkempresa.Checked = true;
+                }
+            }
+                
+        }
+
+        private void tbClienteNombre_TextChanged(object sender, EventArgs e)
+        {
+            if (tbClienteNombre.Text == "")
+            {
+                if (chkcliente.Checked == true)
+                {
+                    chkcliente.Checked = false;
+                }
+            }
+            else
+            {
+                if (chkcliente.Checked == false)
+                {
+                    chkcliente.Checked = true;
+                }
+            }
+            
+                
+        }
+
+        private void tbDocumento_TextChanged(object sender, EventArgs e)
+        {
+            if (tbDocumento.Text == "")
+            {
+                if (chkndoc.Checked == true)
+                {
+                    chkndoc.Checked = false;
+                }
+            }
+            else
+            {
+                if (chkndoc.Checked == false)
+                {
+                    chkndoc.Checked = true;
+                }
+            }
+        }
+
+        private void tbtipodoc_TextChanged(object sender, EventArgs e)
+        {
+            if (tbtipodoc.Text == "")
+            {
+                if (chktipodoc.Checked == true)
+                {
+                    chktipodoc.Checked = false;
+                }
+            }
+            else
+            {
+                if (chktipodoc.Checked == false)
+                {
+                    chktipodoc.Checked = true;
+                }
+            }
         }
     }
 
