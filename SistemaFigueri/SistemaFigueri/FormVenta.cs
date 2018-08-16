@@ -939,8 +939,6 @@ namespace SistemaFigueri
             //GenerarIdVenta();
             //GenerarNumeroComprobante();
         }
-
-    
     }
 
 }
