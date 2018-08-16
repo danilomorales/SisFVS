@@ -169,6 +169,11 @@ namespace SistemaFigueri
                 MessageBox.Show("No se obtuvo los datos:" + ex.ToString());
             }
         }
+
+        private void bunifuCards1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
    
 }

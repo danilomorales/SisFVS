@@ -479,5 +479,17 @@
   <ItemGroup>
     <None Include="Resources\deli.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addCliente.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addProduct.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addKardex.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\k.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
