@@ -153,15 +153,7 @@ namespace SistemaFigueri
 
         private void btnUsuario_Click(object sender, EventArgs e)
         {
-            /*FormNuevoPerfil formMC = new FormNuevoPerfil();
-            formMC.ShowDialog();*/
-            using (FormNuevoPerfil form = new FormNuevoPerfil())
-            {
-                if (form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                {
-                    cargarPerfiles(dgvPerfiles);
-                }
-            }
+            
 
         }
 
@@ -767,10 +759,33 @@ namespace SistemaFigueri
         private void txtSearch_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             DataView dv = tabla.DefaultView;
-            dv.RowFilter = string.Format("Login like '%{0}%' or Nombres like '%{0}%' or ApellidoPaterno like '%{0}%' or ApellidoMaterno like '%{0}% or DNI like '%{0}%'", txtSearch.Text);
+            dv.RowFilter = string.Format(" Login like '%{0}%' or Nombres like '%{0}%' or ApellidoPaterno like '%{0}%' or ApellidoMaterno like '%{0}%' or DNI like '%{0}%'", txtSearch.Text);
         }
 
         private void btnusueditar_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btneliminar_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void bunifuImageButton2_Click(object sender, EventArgs e)
+        {
+            /*FormNuevoPerfil formMC = new FormNuevoPerfil();
+            formMC.ShowDialog();*/
+            using (FormNuevoPerfil form = new FormNuevoPerfil())
+            {
+                if (form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    cargarPerfiles(dgvPerfiles);
+                }
+            }
+        }
+
+        private void btneditarUsuario_Click(object sender, EventArgs e)
         {
             if (dgvPerfiles.SelectedRows.Count > 0)
             {
@@ -784,8 +799,8 @@ namespace SistemaFigueri
                     {
                         cargarPerfiles(dgvPerfiles);
                     }
-                    
-                    
+
+
                     //obj.ShowDialog();
                 }
             }
@@ -795,7 +810,7 @@ namespace SistemaFigueri
             }
         }
 
-        private void btneliminar_Click(object sender, EventArgs e)
+        private void btnEliminarUsuario_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("¿Está seguro(a) de eliminar este usuario?", "Confirmar acción", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes)
             {

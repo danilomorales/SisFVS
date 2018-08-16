@@ -83,6 +83,16 @@ namespace SistemaFigueri.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap adddddd {
+            get {
+                object obj = ResourceManager.GetObject("adddddd", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap addKardex {
             get {
                 object obj = ResourceManager.GetObject("addKardex", resourceCulture);
@@ -216,6 +226,16 @@ namespace SistemaFigueri.Properties {
         internal static System.Drawing.Bitmap deli {
             get {
                 object obj = ResourceManager.GetObject("deli", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ediiiii {
+            get {
+                object obj = ResourceManager.GetObject("ediiiii", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -596,6 +616,16 @@ namespace SistemaFigueri.Properties {
         internal static System.Drawing.Bitmap suma {
             get {
                 object obj = ResourceManager.GetObject("suma", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap trash {
+            get {
+                object obj = ResourceManager.GetObject("trash", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
