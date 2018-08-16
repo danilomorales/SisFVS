@@ -53,7 +53,7 @@ namespace CapaNegocio
         }
 
         //DELETE CLIENT
-        public void DeleteClient(String idRecpCliente)
+        public void DeleteClient(String idRecpCliente)  
         {
             cli.EliminarCliente(idRecpCliente);
         }

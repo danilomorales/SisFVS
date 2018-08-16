@@ -62,6 +62,8 @@ namespace SistemaFigueri
             dgvCliente.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
             dgvCliente.AllowUserToResizeRows = false;
             MostrarCliente(dgvCliente);
+            //lbtotal.Text = CStr(dgvCliente.RowCount);
+
             //dgvlListaProducto.Columns[0].Visible = false;
             dgvCliente.Columns["Documento"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvCliente.Columns["DNI"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
