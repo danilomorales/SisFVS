@@ -91,7 +91,7 @@
             // 
             // panelContenedor
             // 
-            this.panelContenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.panelContenedor.BackColor = System.Drawing.Color.Moccasin;
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContenedor.Location = new System.Drawing.Point(240, 43);
             this.panelContenedor.Name = "panelContenedor";
@@ -100,7 +100,7 @@
             // 
             // panelMenu
             // 
-            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(57)))), ((int)(((byte)(80)))));
+            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(167)))), ((int)(((byte)(117)))));
             this.panelMenu.Controls.Add(this.materialDivider1);
             this.panelMenu.Controls.Add(this.panel3);
             this.panelMenu.Controls.Add(this.materialDivider2);
@@ -127,7 +127,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel3.BackColor = System.Drawing.Color.Khaki;
             this.panel3.Controls.Add(this.pbPerfil);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.label3);
@@ -215,14 +215,14 @@
             // btnPerfiles
             // 
             this.btnPerfiles.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnPerfiles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnPerfiles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
             this.btnPerfiles.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPerfiles.BorderRadius = 0;
             this.btnPerfiles.ButtonText = "PERFILES";
             this.btnPerfiles.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPerfiles.DisabledColor = System.Drawing.Color.Gray;
             this.btnPerfiles.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnPerfiles.Iconcolor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.btnPerfiles.Iconcolor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
             this.btnPerfiles.Iconimage = global::SistemaFigueri.Properties.Resources.Settings_48px;
             this.btnPerfiles.Iconimage_right = null;
             this.btnPerfiles.Iconimage_right_Selected = null;
@@ -236,8 +236,8 @@
             this.btnPerfiles.IsTab = false;
             this.btnPerfiles.Location = new System.Drawing.Point(0, 294);
             this.btnPerfiles.Name = "btnPerfiles";
-            this.btnPerfiles.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnPerfiles.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnPerfiles.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
+            this.btnPerfiles.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(141)))), ((int)(((byte)(38)))));
             this.btnPerfiles.OnHoverTextColor = System.Drawing.Color.White;
             this.btnPerfiles.Padding = new System.Windows.Forms.Padding(0, 8, 0, 8);
             this.btnPerfiles.selected = true;
@@ -253,14 +253,14 @@
             // btnProductos
             // 
             this.btnProductos.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnProductos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnProductos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
             this.btnProductos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnProductos.BorderRadius = 0;
             this.btnProductos.ButtonText = "PRODUCTOS";
             this.btnProductos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnProductos.DisabledColor = System.Drawing.Color.Maroon;
             this.btnProductos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnProductos.Iconcolor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.btnProductos.Iconcolor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
             this.btnProductos.Iconimage = global::SistemaFigueri.Properties.Resources.Productos;
             this.btnProductos.Iconimage_right = null;
             this.btnProductos.Iconimage_right_Selected = null;
@@ -274,8 +274,8 @@
             this.btnProductos.IsTab = false;
             this.btnProductos.Location = new System.Drawing.Point(0, 252);
             this.btnProductos.Name = "btnProductos";
-            this.btnProductos.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnProductos.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnProductos.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
+            this.btnProductos.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(141)))), ((int)(((byte)(38)))));
             this.btnProductos.OnHoverTextColor = System.Drawing.Color.White;
             this.btnProductos.selected = true;
             this.btnProductos.Size = new System.Drawing.Size(243, 42);
@@ -290,14 +290,14 @@
             // btnReportes
             // 
             this.btnReportes.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnReportes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnReportes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
             this.btnReportes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnReportes.BorderRadius = 0;
             this.btnReportes.ButtonText = "REPORTES";
             this.btnReportes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReportes.DisabledColor = System.Drawing.Color.Gray;
             this.btnReportes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnReportes.Iconcolor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.btnReportes.Iconcolor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
             this.btnReportes.Iconimage = global::SistemaFigueri.Properties.Resources.reporte;
             this.btnReportes.Iconimage_right = null;
             this.btnReportes.Iconimage_right_Selected = null;
@@ -311,8 +311,8 @@
             this.btnReportes.IsTab = false;
             this.btnReportes.Location = new System.Drawing.Point(0, 210);
             this.btnReportes.Name = "btnReportes";
-            this.btnReportes.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnReportes.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnReportes.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
+            this.btnReportes.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(141)))), ((int)(((byte)(38)))));
             this.btnReportes.OnHoverTextColor = System.Drawing.Color.White;
             this.btnReportes.selected = true;
             this.btnReportes.Size = new System.Drawing.Size(243, 42);
@@ -327,14 +327,14 @@
             // btnSector
             // 
             this.btnSector.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnSector.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnSector.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
             this.btnSector.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSector.BorderRadius = 0;
             this.btnSector.ButtonText = "SECTORES";
             this.btnSector.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSector.DisabledColor = System.Drawing.Color.Gray;
             this.btnSector.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSector.Iconcolor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.btnSector.Iconcolor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
             this.btnSector.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnSector.Iconimage")));
             this.btnSector.Iconimage_right = null;
             this.btnSector.Iconimage_right_Selected = null;
@@ -348,8 +348,8 @@
             this.btnSector.IsTab = false;
             this.btnSector.Location = new System.Drawing.Point(0, 168);
             this.btnSector.Name = "btnSector";
-            this.btnSector.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnSector.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnSector.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
+            this.btnSector.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(141)))), ((int)(((byte)(38)))));
             this.btnSector.OnHoverTextColor = System.Drawing.Color.White;
             this.btnSector.selected = true;
             this.btnSector.Size = new System.Drawing.Size(243, 42);
@@ -363,14 +363,14 @@
             // btnVentas
             // 
             this.btnVentas.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnVentas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnVentas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
             this.btnVentas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnVentas.BorderRadius = 0;
             this.btnVentas.ButtonText = "VENTAS";
             this.btnVentas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVentas.DisabledColor = System.Drawing.Color.Gray;
             this.btnVentas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnVentas.Iconcolor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.btnVentas.Iconcolor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
             this.btnVentas.Iconimage = global::SistemaFigueri.Properties.Resources.ventas;
             this.btnVentas.Iconimage_right = null;
             this.btnVentas.Iconimage_right_Selected = null;
@@ -384,8 +384,8 @@
             this.btnVentas.IsTab = false;
             this.btnVentas.Location = new System.Drawing.Point(0, 126);
             this.btnVentas.Name = "btnVentas";
-            this.btnVentas.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnVentas.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnVentas.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
+            this.btnVentas.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(141)))), ((int)(((byte)(38)))));
             this.btnVentas.OnHoverTextColor = System.Drawing.Color.White;
             this.btnVentas.selected = true;
             this.btnVentas.Size = new System.Drawing.Size(243, 42);
@@ -400,14 +400,14 @@
             // btnPromociones
             // 
             this.btnPromociones.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnPromociones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnPromociones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
             this.btnPromociones.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPromociones.BorderRadius = 0;
             this.btnPromociones.ButtonText = "PROMOCIONES";
             this.btnPromociones.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPromociones.DisabledColor = System.Drawing.Color.Gray;
             this.btnPromociones.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnPromociones.Iconcolor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.btnPromociones.Iconcolor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
             this.btnPromociones.Iconimage = global::SistemaFigueri.Properties.Resources.promociones;
             this.btnPromociones.Iconimage_right = null;
             this.btnPromociones.Iconimage_right_Selected = null;
@@ -421,8 +421,8 @@
             this.btnPromociones.IsTab = false;
             this.btnPromociones.Location = new System.Drawing.Point(0, 84);
             this.btnPromociones.Name = "btnPromociones";
-            this.btnPromociones.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnPromociones.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnPromociones.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
+            this.btnPromociones.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(141)))), ((int)(((byte)(38)))));
             this.btnPromociones.OnHoverTextColor = System.Drawing.Color.White;
             this.btnPromociones.selected = true;
             this.btnPromociones.Size = new System.Drawing.Size(243, 42);
@@ -437,14 +437,14 @@
             // btnClientes
             // 
             this.btnClientes.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
             this.btnClientes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnClientes.BorderRadius = 0;
             this.btnClientes.ButtonText = "CLIENTES";
             this.btnClientes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClientes.DisabledColor = System.Drawing.Color.Gray;
             this.btnClientes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnClientes.Iconcolor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.btnClientes.Iconcolor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
             this.btnClientes.Iconimage = global::SistemaFigueri.Properties.Resources.clientesprincipal;
             this.btnClientes.Iconimage_right = null;
             this.btnClientes.Iconimage_right_Selected = null;
@@ -458,8 +458,8 @@
             this.btnClientes.IsTab = false;
             this.btnClientes.Location = new System.Drawing.Point(0, 42);
             this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnClientes.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnClientes.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
+            this.btnClientes.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(141)))), ((int)(((byte)(38)))));
             this.btnClientes.OnHoverTextColor = System.Drawing.Color.White;
             this.btnClientes.selected = true;
             this.btnClientes.Size = new System.Drawing.Size(243, 42);
@@ -474,14 +474,14 @@
             // btnCaja
             // 
             this.btnCaja.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnCaja.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnCaja.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
             this.btnCaja.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCaja.BorderRadius = 0;
             this.btnCaja.ButtonText = "CAJA APERTURA";
             this.btnCaja.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCaja.DisabledColor = System.Drawing.Color.Gray;
             this.btnCaja.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCaja.Iconcolor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.btnCaja.Iconcolor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
             this.btnCaja.Iconimage = global::SistemaFigueri.Properties.Resources.Receipt_48px;
             this.btnCaja.Iconimage_right = null;
             this.btnCaja.Iconimage_right_Selected = null;
@@ -496,8 +496,8 @@
             this.btnCaja.Location = new System.Drawing.Point(0, 0);
             this.btnCaja.Margin = new System.Windows.Forms.Padding(3, 3, 3, 8);
             this.btnCaja.Name = "btnCaja";
-            this.btnCaja.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnCaja.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnCaja.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
+            this.btnCaja.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(141)))), ((int)(((byte)(38)))));
             this.btnCaja.OnHoverTextColor = System.Drawing.Color.White;
             this.btnCaja.selected = true;
             this.btnCaja.Size = new System.Drawing.Size(243, 42);
@@ -525,7 +525,7 @@
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(96)))), ((int)(((byte)(100)))));
+            this.panel1.BackColor = System.Drawing.Color.Khaki;
             this.panel1.Controls.Add(this.lbFechadia);
             this.panel1.Controls.Add(this.lbHora1);
             this.panel1.Location = new System.Drawing.Point(-2, 581);
@@ -539,9 +539,9 @@
             this.lbFechadia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbFechadia.AutoSize = true;
             this.lbFechadia.BackColor = System.Drawing.Color.Transparent;
-            this.lbFechadia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lbFechadia.ForeColor = System.Drawing.Color.White;
-            this.lbFechadia.Location = new System.Drawing.Point(52, 35);
+            this.lbFechadia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFechadia.ForeColor = System.Drawing.Color.Black;
+            this.lbFechadia.Location = new System.Drawing.Point(85, 52);
             this.lbFechadia.Name = "lbFechadia";
             this.lbFechadia.Size = new System.Drawing.Size(119, 15);
             this.lbFechadia.TabIndex = 6;
@@ -555,7 +555,7 @@
             this.lbHora1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(61)))), ((int)(((byte)(69)))));
             this.lbHora1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbHora1.ForeColor = System.Drawing.Color.LightGray;
-            this.lbHora1.Location = new System.Drawing.Point(66, 10);
+            this.lbHora1.Location = new System.Drawing.Point(97, 27);
             this.lbHora1.Name = "lbHora1";
             this.lbHora1.Size = new System.Drawing.Size(90, 25);
             this.lbHora1.TabIndex = 5;
@@ -564,7 +564,7 @@
             // 
             // BarraTitulo
             // 
-            this.BarraTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(96)))), ((int)(((byte)(100)))));
+            this.BarraTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(147)))), ((int)(((byte)(103)))));
             this.BarraTitulo.Controls.Add(this.pictureBox1);
             this.BarraTitulo.Controls.Add(this.pictureBox8);
             this.BarraTitulo.Controls.Add(this.btnMinimiza);

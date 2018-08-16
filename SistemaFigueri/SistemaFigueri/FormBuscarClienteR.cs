@@ -105,7 +105,7 @@ namespace SistemaFigueri
 
         private void dgvCliente_DoubleClick(object sender, EventArgs e)
         {
-            Program.IdClienteReceptor = Convert.ToInt32(dgvCliente.CurrentRow.Cells[0].Value.ToString());
+            //Program.IdClienteReceptor = Convert.ToInt32(dgvCliente.CurrentRow.Cells[0].Value.ToString());
             Program.NroDocIdentidad = dgvCliente.CurrentRow.Cells[1].Value.ToString();
             Program.NumeroRuc = dgvCliente.CurrentRow.Cells[2].Value.ToString();
             Program.RazonSocial = dgvCliente.CurrentRow.Cells[3].Value.ToString();
@@ -132,7 +132,7 @@ namespace SistemaFigueri
             String Apellidos = dgvCliente.Rows[e.RowIndex].Cells["Apellidos"].Value.ToString();
             String Ruc = dgvCliente.Rows[e.RowIndex].Cells["RUC"].Value.ToString();
             dni = Dni;
-            cliente = "" +""+Nombres+""+Apellidos;
+            cliente = "" +""+Nombres+" "+Apellidos;
             ruc = Ruc;
             this.DialogResult = DialogResult.OK;
             this.Close();
