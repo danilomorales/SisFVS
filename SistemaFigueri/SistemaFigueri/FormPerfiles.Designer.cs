@@ -367,7 +367,7 @@
             // cardRoles
             // 
             this.cardRoles.AutoSize = true;
-            this.cardRoles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(126)))), ((int)(((byte)(176)))));
+            this.cardRoles.BackColor = System.Drawing.Color.Moccasin;
             this.cardRoles.BorderRadius = 5;
             this.cardRoles.BottomSahddow = false;
             this.cardRoles.color = System.Drawing.Color.Tomato;
@@ -389,10 +389,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cardUsuRol.AutoSize = true;
-            this.cardUsuRol.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(126)))), ((int)(((byte)(176)))));
+            this.cardUsuRol.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(167)))), ((int)(((byte)(117)))));
             this.cardUsuRol.BorderRadius = 5;
             this.cardUsuRol.BottomSahddow = false;
-            this.cardUsuRol.color = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(126)))), ((int)(((byte)(176)))));
+            this.cardUsuRol.color = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
             this.cardUsuRol.Controls.Add(this.panelUsuRol);
             this.cardUsuRol.LeftSahddow = false;
             this.cardUsuRol.Location = new System.Drawing.Point(162, 247);
@@ -405,6 +405,7 @@
             // 
             // panelUsuRol
             // 
+            this.panelUsuRol.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(167)))), ((int)(((byte)(117)))));
             this.panelUsuRol.Controls.Add(this.label5);
             this.panelUsuRol.Controls.Add(this.btnrolsave);
             this.panelUsuRol.Controls.Add(this.label4);
@@ -423,7 +424,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label5.Location = new System.Drawing.Point(508, 7);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(227, 25);
@@ -450,7 +451,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label4.Location = new System.Drawing.Point(21, 7);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(239, 25);
@@ -459,7 +460,7 @@
             // 
             // btnrolleft2
             // 
-            this.btnrolleft2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            this.btnrolleft2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
             this.btnrolleft2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnrolleft2.Enabled = false;
             this.btnrolleft2.Image = global::SistemaFigueri.Properties.Resources.left2;
@@ -475,7 +476,7 @@
             // 
             // btnrolright2
             // 
-            this.btnrolright2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            this.btnrolright2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
             this.btnrolright2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnrolright2.Enabled = false;
             this.btnrolright2.Image = global::SistemaFigueri.Properties.Resources.right2;
@@ -491,7 +492,7 @@
             // 
             // btnrolleft
             // 
-            this.btnrolleft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            this.btnrolleft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
             this.btnrolleft.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnrolleft.Enabled = false;
             this.btnrolleft.Image = global::SistemaFigueri.Properties.Resources.left;
@@ -507,7 +508,7 @@
             // 
             // btnrolright
             // 
-            this.btnrolright.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            this.btnrolright.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
             this.btnrolright.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnrolright.Enabled = false;
             this.btnrolright.Image = global::SistemaFigueri.Properties.Resources.right;
@@ -550,10 +551,10 @@
             this.cardrolsearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cardrolsearch.AutoSize = true;
-            this.cardrolsearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            this.cardrolsearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(167)))), ((int)(((byte)(117)))));
             this.cardrolsearch.BorderRadius = 5;
             this.cardrolsearch.BottomSahddow = false;
-            this.cardrolsearch.color = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            this.cardrolsearch.color = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
             this.cardrolsearch.Controls.Add(this.panelusersearch);
             this.cardrolsearch.LeftSahddow = false;
             this.cardrolsearch.Location = new System.Drawing.Point(162, 150);
@@ -575,10 +576,10 @@
             // 
             // tbrolsearch
             // 
-            this.tbrolsearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(126)))), ((int)(((byte)(176)))));
+            this.tbrolsearch.BackColor = System.Drawing.Color.Moccasin;
             this.tbrolsearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbrolsearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbrolsearch.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.tbrolsearch.ForeColor = System.Drawing.SystemColors.Desktop;
             this.tbrolsearch.Location = new System.Drawing.Point(31, 10);
             this.tbrolsearch.Multiline = true;
             this.tbrolsearch.Name = "tbrolsearch";
@@ -608,10 +609,10 @@
             // 
             this.bunifuCards6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuCards6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            this.bunifuCards6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(167)))), ((int)(((byte)(117)))));
             this.bunifuCards6.BorderRadius = 5;
             this.bunifuCards6.BottomSahddow = false;
-            this.bunifuCards6.color = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            this.bunifuCards6.color = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
             this.bunifuCards6.Controls.Add(this.label2);
             this.bunifuCards6.LeftSahddow = false;
             this.bunifuCards6.Location = new System.Drawing.Point(22, 43);
@@ -647,7 +648,7 @@
             // bunifuCards7
             // 
             this.bunifuCards7.AutoSize = true;
-            this.bunifuCards7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(126)))), ((int)(((byte)(176)))));
+            this.bunifuCards7.BackColor = System.Drawing.Color.Moccasin;
             this.bunifuCards7.BorderRadius = 5;
             this.bunifuCards7.BottomSahddow = false;
             this.bunifuCards7.color = System.Drawing.Color.Tomato;
@@ -668,10 +669,10 @@
             this.cardprisearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cardprisearch.AutoSize = true;
-            this.cardprisearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            this.cardprisearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(167)))), ((int)(((byte)(117)))));
             this.cardprisearch.BorderRadius = 5;
             this.cardprisearch.BottomSahddow = false;
-            this.cardprisearch.color = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            this.cardprisearch.color = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
             this.cardprisearch.Controls.Add(this.panelprisearch);
             this.cardprisearch.LeftSahddow = false;
             this.cardprisearch.Location = new System.Drawing.Point(168, 150);
@@ -693,10 +694,10 @@
             // 
             // tbprivisearch
             // 
-            this.tbprivisearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(126)))), ((int)(((byte)(176)))));
+            this.tbprivisearch.BackColor = System.Drawing.Color.Moccasin;
             this.tbprivisearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbprivisearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbprivisearch.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.tbprivisearch.ForeColor = System.Drawing.SystemColors.ControlText;
             this.tbprivisearch.Location = new System.Drawing.Point(38, 10);
             this.tbprivisearch.Multiline = true;
             this.tbprivisearch.Name = "tbprivisearch";
@@ -728,10 +729,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cardRolPrivilegio.AutoSize = true;
-            this.cardRolPrivilegio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(126)))), ((int)(((byte)(176)))));
+            this.cardRolPrivilegio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(167)))), ((int)(((byte)(117)))));
             this.cardRolPrivilegio.BorderRadius = 5;
             this.cardRolPrivilegio.BottomSahddow = false;
-            this.cardRolPrivilegio.color = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(126)))), ((int)(((byte)(176)))));
+            this.cardRolPrivilegio.color = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
             this.cardRolPrivilegio.Controls.Add(this.panelRolPrivilegio);
             this.cardRolPrivilegio.LeftSahddow = false;
             this.cardRolPrivilegio.Location = new System.Drawing.Point(159, 238);
@@ -744,6 +745,7 @@
             // 
             // panelRolPrivilegio
             // 
+            this.panelRolPrivilegio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(167)))), ((int)(((byte)(117)))));
             this.panelRolPrivilegio.Controls.Add(this.label6);
             this.panelRolPrivilegio.Controls.Add(this.label7);
             this.panelRolPrivilegio.Controls.Add(this.btnprisave);
@@ -762,7 +764,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label6.Location = new System.Drawing.Point(469, 17);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(292, 25);
@@ -773,7 +775,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label7.Location = new System.Drawing.Point(16, 17);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(304, 25);
@@ -887,10 +889,10 @@
             // 
             this.bunifuCards9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuCards9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            this.bunifuCards9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(167)))), ((int)(((byte)(117)))));
             this.bunifuCards9.BorderRadius = 5;
             this.bunifuCards9.BottomSahddow = false;
-            this.bunifuCards9.color = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            this.bunifuCards9.color = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
             this.bunifuCards9.Controls.Add(this.label3);
             this.bunifuCards9.LeftSahddow = false;
             this.bunifuCards9.Location = new System.Drawing.Point(22, 43);
