@@ -15,10 +15,12 @@ namespace CapaDatos
         private CDConexion Conexion = new CDConexion();
         public SqlDataAdapter buscarPedido(String fecha1,String fecha2)
         {
-            String sql = "select pedido.IdPedidoProducto,cli.IdCliente,cli.NombreEmpresa, ti.NombreTienda,concat(res.Nombres,' ',res.Apellidos) as Responsable,pedido.FechaPedido,pedido.Valor,pedido.IGV,pedido.MontoTotal," +
-                "pedido.Descuento,pedido.IdTipoDoc,pedido.TotalEnviado " +
+            String sql = "select pedido.IdPedidoProducto,cli.IdCliente,cli.NombreEmpresa,concat(cli.Nombres,' ',cli.ApellidoPaterno,' ',cli.ApellidoMaterno) as cliente, " +
+                "cli.RUC, tidoc.Descripcion,cli.NroDocumento, ti.NombreTienda,concat(res.Nombres,' ',res.Apellidos) as Responsable,pedido.FechaPedido,pedido.Valor,pedido.IGV,pedido.MontoTotal," +
+                "pedido.Descuento,pedido.TotalEnviado " +
                 "from PEDIDO_PRODUCTO pedido " +
                 "LEFT JOIN  Caja.CLIENTE cli ON pedido.IdCliente = cli.IdCliente " +
+                "LEFT JOIN dbo.TIPO_DOC_IDENT tidoc ON cli.IdTipoDocIdent=tidoc.IdTipoDocIdent " +
                 "LEFT JOIN dbo.TIENDA ti ON pedido.IdTienda = ti.IdTienda " +
                 "LEFT JOIN dbo.RESPONSABLE res ON pedido.IdResponsable = res.IdResponsable " +
                 "WHERE pedido.FechaPedido >= TRY_PARSE(@FechaPedido1 as datetime using 'es-ES') " +

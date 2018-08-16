@@ -712,7 +712,11 @@ namespace SistemaFigueri
             {
                 if (form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-
+                    tbrazonsocial.Text = form.empresa;
+                    tbClienteNombre.Text = form.cliente;
+                    tbRuc.Text = form.ruc;
+                    tbtipodoc.Text = form.tipodoc;
+                    tbDocumento.Text = form.ndoc;
                 }
             }
         }

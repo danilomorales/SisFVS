@@ -19,6 +19,10 @@ namespace SistemaFigueri
         public List<DataRow> list { get; set; }
         public String IdPedidoProducto { get; set; }
         public String idcliente { get; set; }
+        public String cliente { get; set; }
+        public String ruc { get; set; }
+        public String tipodoc { get; set; }
+        public String ndoc { get; set; }
         public String empresa { get; set; }
         public FormBuscarPedidos()
         {
@@ -62,7 +66,12 @@ namespace SistemaFigueri
             IdPedidoProducto = dgvPedidos.Rows[e.RowIndex].Cells["IdPedidoProducto"].Value.ToString();
             idcliente = dgvPedidos.Rows[e.RowIndex].Cells["IdCliente"].Value.ToString();
             empresa = dgvPedidos.Rows[e.RowIndex].Cells["NombreEmpresa"].Value.ToString();
-
+            cliente = dgvPedidos.Rows[e.RowIndex].Cells["cliente"].Value.ToString();
+            tipodoc =  dgvPedidos.Rows[e.RowIndex].Cells["Descripcion"].Value.ToString();
+            ndoc = dgvPedidos.Rows[e.RowIndex].Cells["NroDocumento"].Value.ToString();
+            ruc = dgvPedidos.Rows[e.RowIndex].Cells["RUC"].Value.ToString();
+            this.DialogResult = DialogResult.OK;
+            this.Close();
             MessageBox.Show("iddp: "+IdPedidoProducto+"id: "+idcliente+" empresa: "+empresa);
                 
         }
