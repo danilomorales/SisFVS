@@ -205,7 +205,7 @@
             this.bmBuscar.Location = new System.Drawing.Point(198, 16);
             this.bmBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.bmBuscar.Name = "bmBuscar";
-            this.bmBuscar.Size = new System.Drawing.Size(512, 44);
+            this.bmBuscar.Size = new System.Drawing.Size(711, 44);
             this.bmBuscar.TabIndex = 57;
             this.bmBuscar.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.bmBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bmBuscar_KeyPress);
