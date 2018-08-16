@@ -30,16 +30,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPerfiles));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPerfiles));
             this.tabPerfiles = new MaterialSkin.Controls.MaterialTabControl();
             this.pgUsuarios = new System.Windows.Forms.TabPage();
             this.bunifuCards2 = new Bunifu.Framework.UI.BunifuCards();
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
-            this.btneliminar = new Bunifu.Framework.UI.BunifuTileButton();
-            this.btnusueditar = new Bunifu.Framework.UI.BunifuTileButton();
-            this.btnUsuario = new Bunifu.Framework.UI.BunifuTileButton();
+            this.btnEliminarUsuario = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btneditarUsuario = new Bunifu.Framework.UI.BunifuImageButton();
+            this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuCards3 = new Bunifu.Framework.UI.BunifuCards();
             this.label1 = new System.Windows.Forms.Label();
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
@@ -88,6 +88,9 @@
             this.pgUsuarios.SuspendLayout();
             this.bunifuCards2.SuspendLayout();
             this.bunifuCards1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEliminarUsuario)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btneditarUsuario)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
             this.bunifuCards3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPerfiles)).BeginInit();
@@ -149,7 +152,7 @@
             // bunifuCards2
             // 
             this.bunifuCards2.AutoSize = true;
-            this.bunifuCards2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(126)))), ((int)(((byte)(176)))));
+            this.bunifuCards2.BackColor = System.Drawing.Color.Moccasin;
             this.bunifuCards2.BorderRadius = 5;
             this.bunifuCards2.BottomSahddow = false;
             this.bunifuCards2.color = System.Drawing.Color.Tomato;
@@ -171,114 +174,99 @@
             // 
             this.bunifuCards1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.bunifuCards1.AutoSize = true;
-            this.bunifuCards1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            this.bunifuCards1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(167)))), ((int)(((byte)(117)))));
             this.bunifuCards1.BorderRadius = 5;
             this.bunifuCards1.BottomSahddow = false;
-            this.bunifuCards1.color = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
-            this.bunifuCards1.Controls.Add(this.btneliminar);
-            this.bunifuCards1.Controls.Add(this.btnusueditar);
-            this.bunifuCards1.Controls.Add(this.btnUsuario);
+            this.bunifuCards1.color = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
+            this.bunifuCards1.Controls.Add(this.btnEliminarUsuario);
+            this.bunifuCards1.Controls.Add(this.btneditarUsuario);
+            this.bunifuCards1.Controls.Add(this.bunifuImageButton2);
             this.bunifuCards1.LeftSahddow = false;
             this.bunifuCards1.Location = new System.Drawing.Point(554, 43);
             this.bunifuCards1.Name = "bunifuCards1";
             this.bunifuCards1.RightSahddow = false;
             this.bunifuCards1.ShadowDepth = 20;
-            this.bunifuCards1.Size = new System.Drawing.Size(534, 101);
+            this.bunifuCards1.Size = new System.Drawing.Size(534, 84);
             this.bunifuCards1.TabIndex = 62;
             // 
-            // btneliminar
+            // btnEliminarUsuario
             // 
-            this.btneliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
-            this.btneliminar.color = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
-            this.btneliminar.colorActive = System.Drawing.Color.MediumSeaGreen;
-            this.btneliminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btneliminar.Font = new System.Drawing.Font("Century Gothic", 14F);
-            this.btneliminar.ForeColor = System.Drawing.Color.White;
-            this.btneliminar.Image = ((System.Drawing.Image)(resources.GetObject("btneliminar.Image")));
-            this.btneliminar.ImagePosition = 18;
-            this.btneliminar.ImageZoom = 40;
-            this.btneliminar.LabelPosition = 28;
-            this.btneliminar.LabelText = "Eliminar";
-            this.btneliminar.Location = new System.Drawing.Point(425, 11);
-            this.btneliminar.Margin = new System.Windows.Forms.Padding(6);
-            this.btneliminar.Name = "btneliminar";
-            this.btneliminar.Size = new System.Drawing.Size(80, 84);
-            this.btneliminar.TabIndex = 37;
-            this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click);
+            this.btnEliminarUsuario.BackColor = System.Drawing.Color.Transparent;
+            this.btnEliminarUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminarUsuario.Image = global::SistemaFigueri.Properties.Resources.trash;
+            this.btnEliminarUsuario.ImageActive = null;
+            this.btnEliminarUsuario.Location = new System.Drawing.Point(394, 12);
+            this.btnEliminarUsuario.Name = "btnEliminarUsuario";
+            this.btnEliminarUsuario.Size = new System.Drawing.Size(58, 62);
+            this.btnEliminarUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnEliminarUsuario.TabIndex = 40;
+            this.btnEliminarUsuario.TabStop = false;
+            this.btnEliminarUsuario.Zoom = 20;
+            this.btnEliminarUsuario.Click += new System.EventHandler(this.btnEliminarUsuario_Click);
             // 
-            // btnusueditar
+            // btneditarUsuario
             // 
-            this.btnusueditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(155)))), ((int)(((byte)(31)))));
-            this.btnusueditar.color = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(155)))), ((int)(((byte)(31)))));
-            this.btnusueditar.colorActive = System.Drawing.Color.MediumSeaGreen;
-            this.btnusueditar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnusueditar.Font = new System.Drawing.Font("Century Gothic", 15.75F);
-            this.btnusueditar.ForeColor = System.Drawing.Color.White;
-            this.btnusueditar.Image = ((System.Drawing.Image)(resources.GetObject("btnusueditar.Image")));
-            this.btnusueditar.ImagePosition = 20;
-            this.btnusueditar.ImageZoom = 40;
-            this.btnusueditar.LabelPosition = 30;
-            this.btnusueditar.LabelText = "Editar";
-            this.btnusueditar.Location = new System.Drawing.Point(300, 11);
-            this.btnusueditar.Margin = new System.Windows.Forms.Padding(6);
-            this.btnusueditar.Name = "btnusueditar";
-            this.btnusueditar.Size = new System.Drawing.Size(80, 84);
-            this.btnusueditar.TabIndex = 36;
-            this.btnusueditar.Click += new System.EventHandler(this.btnusueditar_Click);
+            this.btneditarUsuario.BackColor = System.Drawing.Color.Transparent;
+            this.btneditarUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btneditarUsuario.Image = global::SistemaFigueri.Properties.Resources.ediiiii;
+            this.btneditarUsuario.ImageActive = null;
+            this.btneditarUsuario.Location = new System.Drawing.Point(297, 11);
+            this.btneditarUsuario.Name = "btneditarUsuario";
+            this.btneditarUsuario.Size = new System.Drawing.Size(60, 63);
+            this.btneditarUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btneditarUsuario.TabIndex = 39;
+            this.btneditarUsuario.TabStop = false;
+            this.btneditarUsuario.Zoom = 20;
+            this.btneditarUsuario.Click += new System.EventHandler(this.btneditarUsuario_Click);
             // 
-            // btnUsuario
+            // bunifuImageButton2
             // 
-            this.btnUsuario.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnUsuario.color = System.Drawing.Color.SeaGreen;
-            this.btnUsuario.colorActive = System.Drawing.Color.MediumSeaGreen;
-            this.btnUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUsuario.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUsuario.ForeColor = System.Drawing.Color.White;
-            this.btnUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnUsuario.Image")));
-            this.btnUsuario.ImagePosition = 18;
-            this.btnUsuario.ImageZoom = 40;
-            this.btnUsuario.LabelPosition = 26;
-            this.btnUsuario.LabelText = "Nuevo Usuario";
-            this.btnUsuario.Location = new System.Drawing.Point(166, 10);
-            this.btnUsuario.Margin = new System.Windows.Forms.Padding(6);
-            this.btnUsuario.Name = "btnUsuario";
-            this.btnUsuario.Size = new System.Drawing.Size(84, 84);
-            this.btnUsuario.TabIndex = 33;
-            this.btnUsuario.Click += new System.EventHandler(this.btnUsuario_Click);
+            this.bunifuImageButton2.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuImageButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuImageButton2.Image = global::SistemaFigueri.Properties.Resources.adddddd;
+            this.bunifuImageButton2.ImageActive = null;
+            this.bunifuImageButton2.Location = new System.Drawing.Point(202, 10);
+            this.bunifuImageButton2.Name = "bunifuImageButton2";
+            this.bunifuImageButton2.Size = new System.Drawing.Size(63, 62);
+            this.bunifuImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuImageButton2.TabIndex = 38;
+            this.bunifuImageButton2.TabStop = false;
+            this.bunifuImageButton2.Zoom = 20;
+            this.bunifuImageButton2.Click += new System.EventHandler(this.bunifuImageButton2_Click);
             // 
             // bunifuCards3
             // 
             this.bunifuCards3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuCards3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            this.bunifuCards3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(167)))), ((int)(((byte)(117)))));
             this.bunifuCards3.BorderRadius = 5;
             this.bunifuCards3.BottomSahddow = false;
-            this.bunifuCards3.color = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            this.bunifuCards3.color = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
             this.bunifuCards3.Controls.Add(this.label1);
             this.bunifuCards3.LeftSahddow = false;
             this.bunifuCards3.Location = new System.Drawing.Point(22, 43);
             this.bunifuCards3.Name = "bunifuCards3";
             this.bunifuCards3.RightSahddow = false;
             this.bunifuCards3.ShadowDepth = 20;
-            this.bunifuCards3.Size = new System.Drawing.Size(509, 101);
+            this.bunifuCards3.Size = new System.Drawing.Size(507, 73);
             this.bunifuCards3.TabIndex = 63;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(41, 10);
+            this.label1.Location = new System.Drawing.Point(144, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(195, 44);
+            this.label1.Size = new System.Drawing.Size(169, 39);
             this.label1.TabIndex = 0;
             this.label1.Text = "USUARIOS";
             // 
             // bunifuImageButton1
             // 
             this.bunifuImageButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuImageButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
+            this.bunifuImageButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
             this.bunifuImageButton1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
             this.bunifuImageButton1.ImageActive = null;
@@ -288,19 +276,19 @@
             this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bunifuImageButton1.TabIndex = 65;
             this.bunifuImageButton1.TabStop = false;
-            this.bunifuImageButton1.Zoom = 10;
+            this.bunifuImageButton1.Zoom = 20;
             // 
             // txtSearch
             // 
             this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSearch.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
-            this.txtSearch.ForeColor = System.Drawing.Color.White;
-            this.txtSearch.HintForeColor = System.Drawing.Color.White;
+            this.txtSearch.ForeColor = System.Drawing.Color.Black;
+            this.txtSearch.HintForeColor = System.Drawing.Color.Black;
             this.txtSearch.HintText = "Buscar Usuario";
             this.txtSearch.isPassword = false;
             this.txtSearch.LineFocusedColor = System.Drawing.Color.Red;
-            this.txtSearch.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
+            this.txtSearch.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
             this.txtSearch.LineMouseHoverColor = System.Drawing.Color.SandyBrown;
             this.txtSearch.LineThickness = 5;
             this.txtSearch.Location = new System.Drawing.Point(380, 151);
@@ -319,7 +307,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvPerfiles.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvPerfiles.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            this.dgvPerfiles.BackgroundColor = System.Drawing.Color.White;
             this.dgvPerfiles.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvPerfiles.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dgvPerfiles.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
@@ -433,10 +421,10 @@
             // 
             // btnrolsave
             // 
-            this.btnrolsave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            this.btnrolsave.BackColor = System.Drawing.Color.Transparent;
             this.btnrolsave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnrolsave.Enabled = false;
-            this.btnrolsave.Image = global::SistemaFigueri.Properties.Resources.save;
+            this.btnrolsave.Image = ((System.Drawing.Image)(resources.GetObject("btnrolsave.Image")));
             this.btnrolsave.ImageActive = null;
             this.btnrolsave.Location = new System.Drawing.Point(357, 489);
             this.btnrolsave.Name = "btnrolsave";
@@ -460,10 +448,10 @@
             // 
             // btnrolleft2
             // 
-            this.btnrolleft2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
+            this.btnrolleft2.BackColor = System.Drawing.Color.Transparent;
             this.btnrolleft2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnrolleft2.Enabled = false;
-            this.btnrolleft2.Image = global::SistemaFigueri.Properties.Resources.left2;
+            this.btnrolleft2.Image = ((System.Drawing.Image)(resources.GetObject("btnrolleft2.Image")));
             this.btnrolleft2.ImageActive = null;
             this.btnrolleft2.Location = new System.Drawing.Point(357, 332);
             this.btnrolleft2.Name = "btnrolleft2";
@@ -476,10 +464,10 @@
             // 
             // btnrolright2
             // 
-            this.btnrolright2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
+            this.btnrolright2.BackColor = System.Drawing.Color.Transparent;
             this.btnrolright2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnrolright2.Enabled = false;
-            this.btnrolright2.Image = global::SistemaFigueri.Properties.Resources.right2;
+            this.btnrolright2.Image = ((System.Drawing.Image)(resources.GetObject("btnrolright2.Image")));
             this.btnrolright2.ImageActive = null;
             this.btnrolright2.Location = new System.Drawing.Point(357, 224);
             this.btnrolright2.Name = "btnrolright2";
@@ -492,10 +480,10 @@
             // 
             // btnrolleft
             // 
-            this.btnrolleft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
+            this.btnrolleft.BackColor = System.Drawing.Color.Transparent;
             this.btnrolleft.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnrolleft.Enabled = false;
-            this.btnrolleft.Image = global::SistemaFigueri.Properties.Resources.left;
+            this.btnrolleft.Image = ((System.Drawing.Image)(resources.GetObject("btnrolleft.Image")));
             this.btnrolleft.ImageActive = null;
             this.btnrolleft.Location = new System.Drawing.Point(357, 121);
             this.btnrolleft.Name = "btnrolleft";
@@ -508,10 +496,10 @@
             // 
             // btnrolright
             // 
-            this.btnrolright.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
+            this.btnrolright.BackColor = System.Drawing.Color.Transparent;
             this.btnrolright.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnrolright.Enabled = false;
-            this.btnrolright.Image = global::SistemaFigueri.Properties.Resources.right;
+            this.btnrolright.Image = ((System.Drawing.Image)(resources.GetObject("btnrolright.Image")));
             this.btnrolright.ImageActive = null;
             this.btnrolright.Location = new System.Drawing.Point(357, 19);
             this.btnrolright.Name = "btnrolright";
@@ -592,7 +580,7 @@
             // btnrolsearch
             // 
             this.btnrolsearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnrolsearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
+            this.btnrolsearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
             this.btnrolsearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnrolsearch.Image = ((System.Drawing.Image)(resources.GetObject("btnrolsearch.Image")));
             this.btnrolsearch.ImageActive = null;
@@ -710,7 +698,7 @@
             // btnprivisearch
             // 
             this.btnprivisearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnprivisearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
+            this.btnprivisearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
             this.btnprivisearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnprivisearch.Image = ((System.Drawing.Image)(resources.GetObject("btnprivisearch.Image")));
             this.btnprivisearch.ImageActive = null;
@@ -784,10 +772,10 @@
             // 
             // btnprisave
             // 
-            this.btnprisave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            this.btnprisave.BackColor = System.Drawing.Color.Transparent;
             this.btnprisave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnprisave.Enabled = false;
-            this.btnprisave.Image = global::SistemaFigueri.Properties.Resources.save;
+            this.btnprisave.Image = ((System.Drawing.Image)(resources.GetObject("btnprisave.Image")));
             this.btnprisave.ImageActive = null;
             this.btnprisave.Location = new System.Drawing.Point(365, 519);
             this.btnprisave.Name = "btnprisave";
@@ -800,10 +788,10 @@
             // 
             // btnprileft2
             // 
-            this.btnprileft2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            this.btnprileft2.BackColor = System.Drawing.Color.Transparent;
             this.btnprileft2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnprileft2.Enabled = false;
-            this.btnprileft2.Image = global::SistemaFigueri.Properties.Resources.left2;
+            this.btnprileft2.Image = ((System.Drawing.Image)(resources.GetObject("btnprileft2.Image")));
             this.btnprileft2.ImageActive = null;
             this.btnprileft2.Location = new System.Drawing.Point(365, 341);
             this.btnprileft2.Name = "btnprileft2";
@@ -816,10 +804,10 @@
             // 
             // btnpriright2
             // 
-            this.btnpriright2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            this.btnpriright2.BackColor = System.Drawing.Color.Transparent;
             this.btnpriright2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnpriright2.Enabled = false;
-            this.btnpriright2.Image = global::SistemaFigueri.Properties.Resources.right2;
+            this.btnpriright2.Image = ((System.Drawing.Image)(resources.GetObject("btnpriright2.Image")));
             this.btnpriright2.ImageActive = null;
             this.btnpriright2.Location = new System.Drawing.Point(365, 243);
             this.btnpriright2.Name = "btnpriright2";
@@ -832,10 +820,10 @@
             // 
             // btnprileft
             // 
-            this.btnprileft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            this.btnprileft.BackColor = System.Drawing.Color.Transparent;
             this.btnprileft.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnprileft.Enabled = false;
-            this.btnprileft.Image = global::SistemaFigueri.Properties.Resources.left;
+            this.btnprileft.Image = ((System.Drawing.Image)(resources.GetObject("btnprileft.Image")));
             this.btnprileft.ImageActive = null;
             this.btnprileft.Location = new System.Drawing.Point(365, 145);
             this.btnprileft.Name = "btnprileft";
@@ -848,10 +836,10 @@
             // 
             // btnpriright
             // 
-            this.btnpriright.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            this.btnpriright.BackColor = System.Drawing.Color.Transparent;
             this.btnpriright.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnpriright.Enabled = false;
-            this.btnpriright.Image = global::SistemaFigueri.Properties.Resources.right;
+            this.btnpriright.Image = ((System.Drawing.Image)(resources.GetObject("btnpriright.Image")));
             this.btnpriright.ImageActive = null;
             this.btnpriright.Location = new System.Drawing.Point(365, 45);
             this.btnpriright.Name = "btnpriright";
@@ -946,6 +934,9 @@
             this.bunifuCards2.ResumeLayout(false);
             this.bunifuCards2.PerformLayout();
             this.bunifuCards1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnEliminarUsuario)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btneditarUsuario)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).EndInit();
             this.bunifuCards3.ResumeLayout(false);
             this.bunifuCards3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
@@ -996,9 +987,6 @@
         private System.Windows.Forms.TabPage pgUsuarios;
         private Bunifu.Framework.UI.BunifuCards bunifuCards2;
         private Bunifu.Framework.UI.BunifuCards bunifuCards1;
-        private Bunifu.Framework.UI.BunifuTileButton btneliminar;
-        private Bunifu.Framework.UI.BunifuTileButton btnusueditar;
-        private Bunifu.Framework.UI.BunifuTileButton btnUsuario;
         private Bunifu.Framework.UI.BunifuCards bunifuCards3;
         private System.Windows.Forms.Label label1;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
@@ -1043,5 +1031,8 @@
         public System.Windows.Forms.TextBox tbprivisearch;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton2;
+        private Bunifu.Framework.UI.BunifuImageButton btneditarUsuario;
+        private Bunifu.Framework.UI.BunifuImageButton btnEliminarUsuario;
     }
 }
