@@ -26,7 +26,7 @@ namespace SistemaFigueri
         public String fechavencimiento { get; set; }
         public String precio{ get; set; }
         public String oferta { get; set; }
-        public int idproducto { get; set; }
+        public String idproducto { get; set; }
 
         public FormBuscarProducto()
         {
@@ -97,6 +97,7 @@ namespace SistemaFigueri
         {
             //FormVenta fv = new FormVenta();
             //fv.tbAlias.Text = this.dgvlListaProducto.CurrentRow.Cells["Alias"].Value.ToString();
+            String IdProducto = dgvlListaProducto.Rows[e.RowIndex].Cells["Código"].Value.ToString();
             String Alias = dgvlListaProducto.Rows[e.RowIndex].Cells["Alias"].Value.ToString();
             String Producto = dgvlListaProducto.Rows[e.RowIndex].Cells["Descripción"].Value.ToString();
             String Stock = dgvlListaProducto.Rows[e.RowIndex].Cells["Stock"].Value.ToString();
@@ -110,7 +111,7 @@ namespace SistemaFigueri
             fechavencimiento = Fechav;
             precio = Precio;
             oferta = PreOferta;
-            idproducto = Int32.Parse(Id);
+            idproducto = IdProducto;
             this.DialogResult = DialogResult.OK;
             this.Close();
             //fv.Close();

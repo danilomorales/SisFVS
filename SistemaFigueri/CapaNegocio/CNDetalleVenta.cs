@@ -33,7 +33,7 @@ namespace CapaNegocio
                 lst.Add(new clParametro("@Igv", Igv));
                 lst.Add(new clParametro("@SubTotal", SubTotal));
                 lst.Add(new clParametro("@Mensaje", "", SqlDbType.VarChar, ParameterDirection.Output, 100));
-                C.EjecutarSP("SP_RegistrarDetalleVenta", ref lst);
+                C.EjecutarSP("Caja.SP_RegistrarDetalleVenta", ref lst);
                 Mensaje = lst[6].Valor.ToString();
             }
             catch (Exception ex)
