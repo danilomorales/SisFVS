@@ -51,5 +51,35 @@ namespace SistemaFigueri
         {
 
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnNuevoProducto_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bmnombre_OnValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bmproducto_OnValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuTileButton2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuCards1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
