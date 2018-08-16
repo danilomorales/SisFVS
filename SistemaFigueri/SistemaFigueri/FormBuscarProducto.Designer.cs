@@ -36,9 +36,9 @@
             this.bunifuCustomLabel22 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.cboestado = new System.Windows.Forms.ComboBox();
             this.tbFiltra = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.btnCerrarFiltroCliente = new Bunifu.Framework.UI.BunifuTileButton();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.dgvlListaProducto = new System.Windows.Forms.DataGridView();
+            this.btnCerrarFiltroCliente = new Bunifu.Framework.UI.BunifuTileButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvlListaProducto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -110,7 +110,7 @@
             this.tbFiltra.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.tbFiltra.ForeColor = System.Drawing.Color.White;
             this.tbFiltra.HintForeColor = System.Drawing.Color.White;
-            this.tbFiltra.HintText = "Buscar Cliente";
+            this.tbFiltra.HintText = "Buscar Producto";
             this.tbFiltra.isPassword = false;
             this.tbFiltra.LineFocusedColor = System.Drawing.Color.Red;
             this.tbFiltra.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
@@ -121,30 +121,9 @@
             this.tbFiltra.Name = "tbFiltra";
             this.tbFiltra.Size = new System.Drawing.Size(576, 31);
             this.tbFiltra.TabIndex = 216;
+            this.tbFiltra.Text = "Buscar Cliente";
             this.tbFiltra.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.tbFiltra.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbFiltra_KeyUp);
-            // 
-            // btnCerrarFiltroCliente
-            // 
-            this.btnCerrarFiltroCliente.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnCerrarFiltroCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
-            this.btnCerrarFiltroCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnCerrarFiltroCliente.color = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
-            this.btnCerrarFiltroCliente.colorActive = System.Drawing.Color.MediumSeaGreen;
-            this.btnCerrarFiltroCliente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCerrarFiltroCliente.Font = new System.Drawing.Font("Century Gothic", 8F);
-            this.btnCerrarFiltroCliente.ForeColor = System.Drawing.Color.White;
-            this.btnCerrarFiltroCliente.Image = global::SistemaFigueri.Properties.Resources.quitar;
-            this.btnCerrarFiltroCliente.ImagePosition = 3;
-            this.btnCerrarFiltroCliente.ImageZoom = 30;
-            this.btnCerrarFiltroCliente.LabelPosition = 20;
-            this.btnCerrarFiltroCliente.LabelText = "Salir";
-            this.btnCerrarFiltroCliente.Location = new System.Drawing.Point(965, 470);
-            this.btnCerrarFiltroCliente.Margin = new System.Windows.Forms.Padding(4);
-            this.btnCerrarFiltroCliente.Name = "btnCerrarFiltroCliente";
-            this.btnCerrarFiltroCliente.Size = new System.Drawing.Size(80, 45);
-            this.btnCerrarFiltroCliente.TabIndex = 221;
-            this.btnCerrarFiltroCliente.Click += new System.EventHandler(this.btnCerrarFiltroCliente_Click);
             // 
             // bunifuElipse1
             // 
@@ -187,6 +166,28 @@
             this.dgvlListaProducto.Size = new System.Drawing.Size(1020, 308);
             this.dgvlListaProducto.TabIndex = 222;
             this.dgvlListaProducto.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvlListaProducto_CellDoubleClick);
+            // 
+            // btnCerrarFiltroCliente
+            // 
+            this.btnCerrarFiltroCliente.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnCerrarFiltroCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
+            this.btnCerrarFiltroCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnCerrarFiltroCliente.color = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
+            this.btnCerrarFiltroCliente.colorActive = System.Drawing.Color.MediumSeaGreen;
+            this.btnCerrarFiltroCliente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrarFiltroCliente.Font = new System.Drawing.Font("Century Gothic", 8F);
+            this.btnCerrarFiltroCliente.ForeColor = System.Drawing.Color.White;
+            this.btnCerrarFiltroCliente.Image = global::SistemaFigueri.Properties.Resources.quitar;
+            this.btnCerrarFiltroCliente.ImagePosition = 3;
+            this.btnCerrarFiltroCliente.ImageZoom = 30;
+            this.btnCerrarFiltroCliente.LabelPosition = 20;
+            this.btnCerrarFiltroCliente.LabelText = "Salir";
+            this.btnCerrarFiltroCliente.Location = new System.Drawing.Point(965, 470);
+            this.btnCerrarFiltroCliente.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCerrarFiltroCliente.Name = "btnCerrarFiltroCliente";
+            this.btnCerrarFiltroCliente.Size = new System.Drawing.Size(80, 45);
+            this.btnCerrarFiltroCliente.TabIndex = 221;
+            this.btnCerrarFiltroCliente.Click += new System.EventHandler(this.btnCerrarFiltroCliente_Click);
             // 
             // FormBuscarProducto
             // 

@@ -22,7 +22,6 @@ namespace SistemaFigueri
         public static string IdProducto;
         public static String DescripcionProducto;
         public static String Alias;
-        public static String Marca;
         public static Int32 Stock;
         public static Decimal PrecioVenta;
         /// <summary>

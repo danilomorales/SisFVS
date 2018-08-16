@@ -26,7 +26,7 @@ namespace SistemaFigueri
             PrecioVenta = 0;
             IdVenta = 0;
             IdProducto = 0;
-            Igv = 0;
+            Igv = 18;
             SubTotal = 0;
             Descuento = "";
 

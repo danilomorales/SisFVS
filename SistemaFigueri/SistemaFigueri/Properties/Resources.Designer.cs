@@ -193,6 +193,16 @@ namespace SistemaFigueri.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap deli {
+            get {
+                object obj = ResourceManager.GetObject("deli", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap figu {
             get {
                 object obj = ResourceManager.GetObject("figu", resourceCulture);
