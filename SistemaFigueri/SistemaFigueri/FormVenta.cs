@@ -576,7 +576,7 @@ namespace SistemaFigueri
                     tbStock.Text = form.stock;
                     dtFechaV.Text = form.fechavencimiento;
                     tbPrecio.Text = form.precio;
-                    tbIdProducto.Text = form.idproducto;
+                    //tbIdProducto.Text = form.idproducto;
 
                     CNProductos objProducto = new CNProductos();
 
@@ -644,8 +644,8 @@ namespace SistemaFigueri
                         {
                             if (tbIgv.Text.Trim() != "")
                             {
-                                ven.IdProducto = Convert.ToInt32(tbIdProducto.Text);
-                                ven.IdVenta = Convert.ToInt32(tbIdProducto.Text);
+                                /*ven.IdProducto = Convert.ToInt32(tbIdProducto.Text);
+                                ven.IdVenta = Convert.ToInt32(tbIdProducto.Text);*/
                                 ven.Descripcion = tbAlias.Text + " - " + tbDescripcion.Text;
                                 ven.Cantidad = Convert.ToInt32(tbCantidad.Text);
                                 ven.PrecioVenta = Convert.ToDecimal(tbPrecio.Text);
