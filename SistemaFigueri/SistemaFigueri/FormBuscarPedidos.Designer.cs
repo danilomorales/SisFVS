@@ -51,10 +51,11 @@
             // bunifuCards2
             // 
             this.bunifuCards2.AutoSize = true;
-            this.bunifuCards2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            this.bunifuCards2.BackColor = System.Drawing.Color.NavajoWhite;
             this.bunifuCards2.BorderRadius = 5;
+            this.bunifuCards2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.bunifuCards2.BottomSahddow = true;
-            this.bunifuCards2.color = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(126)))), ((int)(((byte)(176)))));
+            this.bunifuCards2.color = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
             this.bunifuCards2.Controls.Add(this.label4);
             this.bunifuCards2.Controls.Add(this.label3);
             this.bunifuCards2.Controls.Add(this.label2);
@@ -79,8 +80,8 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Location = new System.Drawing.Point(63, 182);
+            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label4.Location = new System.Drawing.Point(63, 192);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(247, 23);
             this.label4.TabIndex = 222;
@@ -90,8 +91,8 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label3.Location = new System.Drawing.Point(61, 98);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(121, 36);
@@ -102,8 +103,8 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label2.Location = new System.Drawing.Point(586, 98);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(111, 36);
@@ -114,17 +115,17 @@
             // 
             this.bunifuCards3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuCards3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(126)))), ((int)(((byte)(176)))));
+            this.bunifuCards3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(117)))), ((int)(((byte)(50)))));
             this.bunifuCards3.BorderRadius = 10;
             this.bunifuCards3.BottomSahddow = false;
-            this.bunifuCards3.color = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            this.bunifuCards3.color = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
             this.bunifuCards3.Controls.Add(this.label1);
             this.bunifuCards3.LeftSahddow = false;
             this.bunifuCards3.Location = new System.Drawing.Point(48, 12);
             this.bunifuCards3.Name = "bunifuCards3";
             this.bunifuCards3.RightSahddow = false;
             this.bunifuCards3.ShadowDepth = 20;
-            this.bunifuCards3.Size = new System.Drawing.Size(1099, 68);
+            this.bunifuCards3.Size = new System.Drawing.Size(1097, 68);
             this.bunifuCards3.TabIndex = 220;
             // 
             // label1
@@ -141,7 +142,8 @@
             // 
             // btnbuscarpedido
             // 
-            this.btnbuscarpedido.BackColor = System.Drawing.Color.CadetBlue;
+            this.btnbuscarpedido.BackColor = System.Drawing.Color.DarkCyan;
+            this.btnbuscarpedido.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnbuscarpedido.Image = global::SistemaFigueri.Properties.Resources.busca;
             this.btnbuscarpedido.ImageActive = null;
             this.btnbuscarpedido.Location = new System.Drawing.Point(1078, 98);
@@ -150,7 +152,7 @@
             this.btnbuscarpedido.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnbuscarpedido.TabIndex = 219;
             this.btnbuscarpedido.TabStop = false;
-            this.btnbuscarpedido.Zoom = 10;
+            this.btnbuscarpedido.Zoom = 20;
             this.btnbuscarpedido.Click += new System.EventHandler(this.btnbuscarpedido_Click);
             // 
             // btnCerrar
@@ -167,7 +169,7 @@
             this.btnCerrar.ImageZoom = 20;
             this.btnCerrar.LabelPosition = 30;
             this.btnCerrar.LabelText = "Salir";
-            this.btnCerrar.Location = new System.Drawing.Point(1108, 802);
+            this.btnCerrar.Location = new System.Drawing.Point(1107, 800);
             this.btnCerrar.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(65, 33);
@@ -210,7 +212,7 @@
             this.tbpedidos.HintText = "Buscar Pedido";
             this.tbpedidos.isPassword = false;
             this.tbpedidos.LineFocusedColor = System.Drawing.Color.Red;
-            this.tbpedidos.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
+            this.tbpedidos.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(117)))), ((int)(((byte)(50)))));
             this.tbpedidos.LineMouseHoverColor = System.Drawing.Color.SandyBrown;
             this.tbpedidos.LineThickness = 5;
             this.tbpedidos.Location = new System.Drawing.Point(635, 171);
@@ -229,7 +231,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvPedidos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvPedidos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(126)))), ((int)(((byte)(176)))));
+            this.dgvPedidos.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -248,14 +250,14 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvPedidos.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvPedidos.Location = new System.Drawing.Point(48, 222);
+            this.dgvPedidos.Location = new System.Drawing.Point(48, 239);
             this.dgvPedidos.MultiSelect = false;
             this.dgvPedidos.Name = "dgvPedidos";
             this.dgvPedidos.ReadOnly = true;
             this.dgvPedidos.RowHeadersVisible = false;
             this.dgvPedidos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvPedidos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPedidos.Size = new System.Drawing.Size(1099, 564);
+            this.dgvPedidos.Size = new System.Drawing.Size(1097, 545);
             this.dgvPedidos.TabIndex = 33;
             this.dgvPedidos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPedidos_CellDoubleClick);
             // 
