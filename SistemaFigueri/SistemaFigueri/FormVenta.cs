@@ -315,17 +315,26 @@ namespace SistemaFigueri
         {
             using (FormBuscarProducto form = new FormBuscarProducto())
             {
-                if (form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                if (this.tbClienteNombre.Text.Trim() != "")
                 {
-                    tbAlias.Text = form.alias;
-                    tbDescripcion.Text = form.descripcion;
-                    tbStock.Text = form.stock;
-                    dtFechaV.Text = form.fechavencimiento;
-                    tbPrecio.Text = form.precio;
-                    //tbIdProducto.Text = form.idproducto;
+                    if (form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                    {
+                        tbAlias.Text = form.alias;
+                        tbDescripcion.Text = form.descripcion;
+                        tbStock.Text = form.stock;
+                        dtFechaV.Text = form.fechavencimiento;
+                        tbPrecio.Text = form.precio;
+                        btnAgregaCarro.Enabled = true;
+                        //tbIdProducto.Text = form.idproducto;
 
-                    CNProductos objProducto = new CNProductos();
+                        CNProductos objProducto = new CNProductos();
 
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Por Favor Busque el Cliente a Vender.", "Figueri", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                
                 }
 
             }
@@ -379,16 +388,16 @@ namespace SistemaFigueri
             Decimal Porcentaje = 0; Decimal SubTotal;
             if(this.tbClienteNombre.Text.Trim() != "")
             {
-                if (tbCantidad.Text.Trim() != "")
+                if (tbDescripcion.Text.Trim() != "")
                 {
-                    if (Convert.ToInt32(tbCantidad.Text) >= 0)
+                    if (tbCantidad.Text.Trim() != "")
                     {
-                        if (Convert.ToInt32(tbCantidad.Text) <= Convert.ToInt32(tbStock.Text))
+                        if (Convert.ToInt32(tbCantidad.Text) >= 0)
                         {
-                            if (tbIgv.Text.Trim() != "")
+                            if (Convert.ToInt32(tbCantidad.Text) <= Convert.ToInt32(tbStock.Text))
                             {
                                 /*ven.IdProducto = Convert.ToInt32(tbIdProducto.Text);
-                                ven.IdVenta = Convert.ToInt32(tbIdProducto.Text);*/
+                                   ven.IdVenta = Convert.ToInt32(tbIdProducto.Text);*/
                                 ven.Descripcion = tbAlias.Text + " - " + tbDescripcion.Text;
                                 ven.Cantidad = Convert.ToInt32(tbCantidad.Text);
                                 ven.PrecioVenta = Convert.ToDecimal(tbPrecio.Text);
@@ -399,31 +408,36 @@ namespace SistemaFigueri
                                 lst.Add(ven);
                                 LlenarGrilla();
                                 Limpiar();
+
                             }
                             else
                             {
-                               
+                                MessageBox.Show("Stock Insuficiente", "Figueri", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
                             }
                         }
                         else
                         {
-                            MessageBox.Show("Stock Insuficiente para Realizar la Venta.", "Sistema de Ventas.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+                            MessageBox.Show("Cantidad Ingresada no es Válida.", "Figueri", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                            tbCantidad.Clear();
+                            tbCantidad.Focus();
+
                         }
+
                     }
                     else
                     {
                         MessageBox.Show("Ingrese Cantidad", "Figeri", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                         tbCantidad.Clear();
-                        tbCantidad.Focus();
                     }
-              
                 }
                 else
                 {
-                    MessageBox.Show("Por Favor Ingrese Cantidad a Vender.", "Figueri", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-                    tbCantidad.Focus();
+                    MessageBox.Show("Busque Producto a Vender", "Figueri", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+
+                    tbPrecio.Focus();
+                    tbDescripcion.Focus();
+                    tbAlias.Focus();
                 }
-                
             }
             else
             {
@@ -465,8 +479,10 @@ namespace SistemaFigueri
         private void Limpiar()
         {
             //tbDescripcion.Clear();
-            tbCantidad.Focus();
-            tbPrecio.Focus();
+            tbCantidad.Clear();
+            tbPrecio.Clear();
+            tbAlias.Clear();
+            tbDescripcion.Clear();
             tbStock.Clear();
             Program.DescripcionProducto = "";
             Program.Stock = 0;
