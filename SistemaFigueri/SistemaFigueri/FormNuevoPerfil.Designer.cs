@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNuevoPerfil));
             this.bunifuCards2 = new Bunifu.Framework.UI.BunifuCards();
             this.txtdireccion = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuFlatButton3 = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -521,7 +522,7 @@
             this.bunifuFlatButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuFlatButton4.Iconcolor = System.Drawing.Color.Transparent;
             this.bunifuFlatButton4.Iconimage = null;
-            this.bunifuFlatButton4.Iconimage_right = global::SistemaFigueri.Properties.Resources.pass1;
+            this.bunifuFlatButton4.Iconimage_right = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton4.Iconimage_right")));
             this.bunifuFlatButton4.Iconimage_right_Selected = null;
             this.bunifuFlatButton4.Iconimage_Selected = null;
             this.bunifuFlatButton4.IconMarginLeft = 0;
@@ -568,7 +569,7 @@
             this.bunifuFlatButton11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuFlatButton11.Iconcolor = System.Drawing.Color.Transparent;
             this.bunifuFlatButton11.Iconimage = null;
-            this.bunifuFlatButton11.Iconimage_right = global::SistemaFigueri.Properties.Resources.pass1;
+            this.bunifuFlatButton11.Iconimage_right = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton11.Iconimage_right")));
             this.bunifuFlatButton11.Iconimage_right_Selected = null;
             this.bunifuFlatButton11.Iconimage_Selected = null;
             this.bunifuFlatButton11.IconMarginLeft = 0;
@@ -604,7 +605,7 @@
             this.bunifuFlatButton7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuFlatButton7.Iconcolor = System.Drawing.Color.Transparent;
             this.bunifuFlatButton7.Iconimage = null;
-            this.bunifuFlatButton7.Iconimage_right = global::SistemaFigueri.Properties.Resources.logon1;
+            this.bunifuFlatButton7.Iconimage_right = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton7.Iconimage_right")));
             this.bunifuFlatButton7.Iconimage_right_Selected = null;
             this.bunifuFlatButton7.Iconimage_Selected = null;
             this.bunifuFlatButton7.IconMarginLeft = 0;
@@ -638,6 +639,7 @@
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.bunifuCards1);
             this.Controls.Add(this.bunifuCards2);
+            this.MaximizeBox = false;
             this.Name = "FormNuevoPerfil";
             this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

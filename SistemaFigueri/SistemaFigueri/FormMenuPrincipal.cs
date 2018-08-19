@@ -24,7 +24,8 @@ namespace SistemaFigueri
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
-        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam); 
+        List<Bunifu.Framework.UI.BunifuFlatButton> lstBtnCalc;
 
         private void BarraTitulo_MouseDown(object sender, MouseEventArgs e)
         {
@@ -146,38 +147,97 @@ namespace SistemaFigueri
 
         //Metodo para mostrar los formularios en contenedor 
         private void btnProductos_Click(object sender, EventArgs e)
-        {           
+        {
+            for (int j = 0; j < lstBtnCalc.Count; j++)
+            {
+                if (lstBtnCalc[j] == btnProductos)
+                {
+                    btnProductos.Normalcolor = Color.FromArgb(202, 141, 38);
+                }
+                else
+                {
+                    lstBtnCalc[j].Normalcolor = Color.FromArgb(231, 52, 52);
+                }
+            }
             AbrirFormEnPanel(new FormProductos());
         }
         private void btnVentas_Click(object sender, EventArgs e)
         {
-           
+            for (int j = 0; j < lstBtnCalc.Count; j++)
+            {
+                if (lstBtnCalc[j] == btnVentas)
+                {
+                    btnVentas.Normalcolor = Color.FromArgb(202, 141, 38);
+                }
+                else
+                {
+                    lstBtnCalc[j].Normalcolor = Color.FromArgb(231, 52, 52);
+                }
+            }
             AbrirFormEnPanel(new FormVenta());
         }
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
+
+            for (int j = 0; j < lstBtnCalc.Count; j++)
+            {
+                if (lstBtnCalc[j] == btnClientes)
+                {
+                    btnClientes.Normalcolor = Color.FromArgb(202, 141, 38);
+                }
+                else
+                {
+                    lstBtnCalc[j].Normalcolor = Color.FromArgb(231, 52, 52);
+                }
+            }
+             
             AbrirFormEnPanel(new FormCliente());
-        }
-
-        private void btnProveedores_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnPromociones_Click(object sender, EventArgs e)
         {
-
+            for (int j = 0; j < lstBtnCalc.Count ; j++)
+            {
+                if (lstBtnCalc[j] == btnPromociones)
+                {
+                    btnPromociones.Normalcolor = Color.FromArgb(202, 141, 38);
+                }
+                else
+                {
+                    lstBtnCalc[j].Normalcolor = Color.FromArgb(231, 52, 52);
+                }
+            }
         }
 
         private void btnCaja_Click(object sender, EventArgs e)
         {
-
+            for (int j = 0; j < lstBtnCalc.Count ; j++)
+            {
+                if (lstBtnCalc[j] == btnCaja)
+                {
+                    btnCaja.Normalcolor = Color.FromArgb(202, 141, 38);
+                }
+                else
+                {
+                    lstBtnCalc[j].Normalcolor = Color.FromArgb(231, 52, 52);
+                }
+            }
         }
 
         private void btnReportes_Click(object sender, EventArgs e)
         {
-
+            for (int j = 0; j < lstBtnCalc.Count; j++)
+            {
+                if (lstBtnCalc[j] == btnReportes)
+                {
+                    btnReportes.Normalcolor = Color.FromArgb(202, 141, 38);
+                }
+                else
+                {
+                    lstBtnCalc[j].Normalcolor = Color.FromArgb(231, 52, 52);
+                }
+            }
         }
 
         //Fecha y HOra 
@@ -269,7 +329,7 @@ namespace SistemaFigueri
             btnNormal.Visible = true;*/
             List<String> listonazo = FormLogin.liston;
 
-            List<Bunifu.Framework.UI.BunifuFlatButton> lstBtnCalc = new List<Bunifu.Framework.UI.BunifuFlatButton>
+             lstBtnCalc = new List<Bunifu.Framework.UI.BunifuFlatButton>
             {
                 btnProductos,btnClientes,btnCaja,btnSector,btnReportes,btnVentas,btnPromociones,btnPerfiles
             };
@@ -291,12 +351,40 @@ namespace SistemaFigueri
                         }
                     }
                 }
-            }
-                
+            } 
+
         }
 
-        private void bunifuFlatButton2_Click(object sender, EventArgs e)
+
+        private void btnSector_Click(object sender, EventArgs e)
         {
+            for (int j = 0; j < lstBtnCalc.Count; j++)
+            {
+                if (lstBtnCalc[j] == btnSector)
+                {
+                    btnSector.Normalcolor = Color.FromArgb(202, 141, 38);
+                }
+                else
+                {
+                    lstBtnCalc[j].Normalcolor = Color.FromArgb(231, 52, 52);
+                }
+            }
+            AbrirFormEnPanel(new FormSector());
+        }
+
+        private void btnPerfiles_Click(object sender, EventArgs e)
+        {
+            for (int j = 0; j < lstBtnCalc.Count; j++)
+            {
+                if (lstBtnCalc[j] == btnPerfiles)
+                {
+                    btnPerfiles.Normalcolor = Color.FromArgb(202, 141, 38);
+                }
+                else
+                {
+                    lstBtnCalc[j].Normalcolor = Color.FromArgb(231, 52, 52);
+                }
+            }
             AbrirFormEnPanel(new FormPerfiles());
         }
 

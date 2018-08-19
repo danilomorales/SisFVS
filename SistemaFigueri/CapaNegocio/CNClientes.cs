@@ -51,8 +51,9 @@ namespace CapaNegocio
                 Convert.ToInt32(usuarioModifica), fechaModifica, idSector, observacion);
         }
 
+
         //DELETE CLIENT
-        public void DeleteClient(String idRecpCliente)
+        public void DeleteClient(String idRecpCliente)  
         {
             cli.EliminarCliente(idRecpCliente);
         }

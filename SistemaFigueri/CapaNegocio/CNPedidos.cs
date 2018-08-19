@@ -16,5 +16,10 @@ namespace CapaNegocio
         {
             return objDato.buscarPedido(fecha1,fecha2);
         }
+
+        public SqlDataAdapter buscarDetallePedido(String idPedido)
+        {
+            return objDato.buscarDetallePedido(idPedido);
+        }
     }
 }

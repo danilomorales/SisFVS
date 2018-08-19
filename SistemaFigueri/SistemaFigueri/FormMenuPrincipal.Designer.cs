@@ -91,7 +91,7 @@
             // 
             // panelContenedor
             // 
-            this.panelContenedor.BackColor = System.Drawing.Color.Moccasin;
+            this.panelContenedor.BackColor = System.Drawing.Color.NavajoWhite;
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContenedor.Location = new System.Drawing.Point(240, 43);
             this.panelContenedor.Name = "panelContenedor";
@@ -140,7 +140,7 @@
             // pbPerfil
             // 
             this.pbPerfil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbPerfil.ErrorImage = global::SistemaFigueri.Properties.Resources.imageE;
+            this.pbPerfil.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pbPerfil.ErrorImage")));
             this.pbPerfil.Location = new System.Drawing.Point(3, 4);
             this.pbPerfil.Name = "pbPerfil";
             this.pbPerfil.Size = new System.Drawing.Size(72, 96);
@@ -153,11 +153,11 @@
             this.label1.AccessibleName = "";
             this.label1.AutoSize = true;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label1.Font = new System.Drawing.Font("Raleway", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label1.Location = new System.Drawing.Point(94, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 15);
+            this.label1.Size = new System.Drawing.Size(34, 16);
             this.label1.TabIndex = 23;
             this.label1.Text = "user";
             // 
@@ -177,11 +177,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label2.Font = new System.Drawing.Font("Raleway", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label2.Location = new System.Drawing.Point(94, 38);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 15);
+            this.label2.Size = new System.Drawing.Size(45, 16);
             this.label2.TabIndex = 24;
             this.label2.Text = "label2";
             // 
@@ -223,7 +223,7 @@
             this.btnPerfiles.DisabledColor = System.Drawing.Color.Gray;
             this.btnPerfiles.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnPerfiles.Iconcolor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
-            this.btnPerfiles.Iconimage = global::SistemaFigueri.Properties.Resources.Settings_48px;
+            this.btnPerfiles.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnPerfiles.Iconimage")));
             this.btnPerfiles.Iconimage_right = null;
             this.btnPerfiles.Iconimage_right_Selected = null;
             this.btnPerfiles.Iconimage_Selected = null;
@@ -248,7 +248,7 @@
             this.btnPerfiles.Textcolor = System.Drawing.Color.White;
             this.btnPerfiles.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPerfiles.Visible = false;
-            this.btnPerfiles.Click += new System.EventHandler(this.bunifuFlatButton2_Click);
+            this.btnPerfiles.Click += new System.EventHandler(this.btnPerfiles_Click);
             // 
             // btnProductos
             // 
@@ -261,7 +261,7 @@
             this.btnProductos.DisabledColor = System.Drawing.Color.Maroon;
             this.btnProductos.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnProductos.Iconcolor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
-            this.btnProductos.Iconimage = global::SistemaFigueri.Properties.Resources.Productos;
+            this.btnProductos.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnProductos.Iconimage")));
             this.btnProductos.Iconimage_right = null;
             this.btnProductos.Iconimage_right_Selected = null;
             this.btnProductos.Iconimage_Selected = null;
@@ -298,7 +298,7 @@
             this.btnReportes.DisabledColor = System.Drawing.Color.Gray;
             this.btnReportes.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnReportes.Iconcolor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
-            this.btnReportes.Iconimage = global::SistemaFigueri.Properties.Resources.reporte;
+            this.btnReportes.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnReportes.Iconimage")));
             this.btnReportes.Iconimage_right = null;
             this.btnReportes.Iconimage_right_Selected = null;
             this.btnReportes.Iconimage_Selected = null;
@@ -359,6 +359,7 @@
             this.btnSector.Textcolor = System.Drawing.Color.White;
             this.btnSector.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSector.Visible = false;
+            this.btnSector.Click += new System.EventHandler(this.btnSector_Click);
             // 
             // btnVentas
             // 
@@ -371,7 +372,7 @@
             this.btnVentas.DisabledColor = System.Drawing.Color.Gray;
             this.btnVentas.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnVentas.Iconcolor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
-            this.btnVentas.Iconimage = global::SistemaFigueri.Properties.Resources.ventas;
+            this.btnVentas.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnVentas.Iconimage")));
             this.btnVentas.Iconimage_right = null;
             this.btnVentas.Iconimage_right_Selected = null;
             this.btnVentas.Iconimage_Selected = null;
@@ -408,7 +409,7 @@
             this.btnPromociones.DisabledColor = System.Drawing.Color.Gray;
             this.btnPromociones.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnPromociones.Iconcolor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
-            this.btnPromociones.Iconimage = global::SistemaFigueri.Properties.Resources.promociones;
+            this.btnPromociones.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnPromociones.Iconimage")));
             this.btnPromociones.Iconimage_right = null;
             this.btnPromociones.Iconimage_right_Selected = null;
             this.btnPromociones.Iconimage_Selected = null;
@@ -445,7 +446,7 @@
             this.btnClientes.DisabledColor = System.Drawing.Color.Gray;
             this.btnClientes.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnClientes.Iconcolor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
-            this.btnClientes.Iconimage = global::SistemaFigueri.Properties.Resources.clientesprincipal;
+            this.btnClientes.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnClientes.Iconimage")));
             this.btnClientes.Iconimage_right = null;
             this.btnClientes.Iconimage_right_Selected = null;
             this.btnClientes.Iconimage_Selected = null;
@@ -482,7 +483,7 @@
             this.btnCaja.DisabledColor = System.Drawing.Color.Gray;
             this.btnCaja.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnCaja.Iconcolor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
-            this.btnCaja.Iconimage = global::SistemaFigueri.Properties.Resources.Receipt_48px;
+            this.btnCaja.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnCaja.Iconimage")));
             this.btnCaja.Iconimage_right = null;
             this.btnCaja.Iconimage_right_Selected = null;
             this.btnCaja.Iconimage_Selected = null;
@@ -513,7 +514,7 @@
             // 
             this.btnMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMenu.Image = global::SistemaFigueri.Properties.Resources.menu_round_512;
+            this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
             this.btnMenu.Location = new System.Drawing.Point(189, 6);
             this.btnMenu.Name = "btnMenu";
             this.btnMenu.Size = new System.Drawing.Size(40, 40);
@@ -552,7 +553,7 @@
             // 
             this.lbHora1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbHora1.AutoSize = true;
-            this.lbHora1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(61)))), ((int)(((byte)(69)))));
+            this.lbHora1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(41)))));
             this.lbHora1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbHora1.ForeColor = System.Drawing.Color.LightGray;
             this.lbHora1.Location = new System.Drawing.Point(97, 27);
@@ -591,7 +592,7 @@
             // 
             // pictureBox8
             // 
-            this.pictureBox8.Image = global::SistemaFigueri.Properties.Resources.figu;
+            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
             this.pictureBox8.Location = new System.Drawing.Point(0, -7);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(60, 60);
@@ -606,7 +607,7 @@
             this.btnMinimiza.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimiza.FlatAppearance.BorderSize = 0;
             this.btnMinimiza.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimiza.Image = global::SistemaFigueri.Properties.Resources.Minimize;
+            this.btnMinimiza.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimiza.Image")));
             this.btnMinimiza.Location = new System.Drawing.Point(1214, 0);
             this.btnMinimiza.Name = "btnMinimiza";
             this.btnMinimiza.Size = new System.Drawing.Size(43, 43);
@@ -623,7 +624,7 @@
             this.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrar.ForeColor = System.Drawing.Color.Transparent;
-            this.btnCerrar.Image = global::SistemaFigueri.Properties.Resources.close;
+            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
             this.btnCerrar.Location = new System.Drawing.Point(1263, 2);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(39, 39);

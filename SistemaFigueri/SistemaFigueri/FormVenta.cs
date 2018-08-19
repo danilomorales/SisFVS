@@ -83,49 +83,8 @@ namespace SistemaFigueri
             //this.tbStock.Text = String.Empty;
             //this.tbDescuento.Text = "0";
         }
+        
 
-
-        //Habilitar los controles 
-
-        //private void Habilitar(bool valor)
-        ////{
-        ////    this.tbClienteNombre.ReadOnly = !valor;
-        ////    this.tbAlias.ReadOnly = !valor;
-        ////    this.txtCorrelativo.ReadOnly = !valor;
-        ////    this.txtIgv.Enabled = valor;
-        ////    this.dtFecha.Enabled = valor;
-        ////    this.cbTipo_Comprobante.Enabled = valor;
-        ////    this.txtCantidad.ReadOnly = !valor;
-        ////    this.txtPrecio_Compra.ReadOnly = !valor;
-        ////    this.txtPrecio_Venta.ReadOnly = !valor;
-        ////    this.dtFecha_Vencimiento.Enabled = valor;
-        ////    this.btnAgregar.Enabled = valor;
-        ////    this.btnQuitar.Enabled = valor;
-        ////    this.btnBuscarProveedor.Enabled = valor;
-        ////    this.btnBuscarArticulo.Enabled = valor;
-        ////}
-
-        //Habilitar los botones
-        //private void Botones()
-        //{
-        //    if (this.IsNuevo) //Alt + 124
-        //    {
-        //        this.Habilitar(true);
-        //        this.btnNuevo.Enabled = false;
-        //        this.btnGuardar.Enabled = true;
-        //        this.btnCancelar.Enabled = true;
-        //    }
-        //    else
-        //    {
-        //        this.Habilitar(false);
-        //        this.btnNuevo.Enabled = true;
-        //        this.btnGuardar.Enabled = false;
-        //        this.btnCancelar.Enabled = false;
-        //    }
-
-        //}
-
-        //Método para ocultar columnas
         private void OcultarColumnas()
         {
             this.dataVentas.Columns[0].Visible = false;
@@ -174,21 +133,7 @@ namespace SistemaFigueri
             this.dataVentas.DataSource = this.dtDetalle;
 
         }   
-        //private void FrmVenta_Load(object sender, EventArgs e)
-        //{
-        //    //Para ubicar al formulario en la parte superior del contenedor
-        //    this.Top = 0;
-        //    this.Left = 0;
-        //    //Mostrar
-        //    this.Mostrar();
-        //    //Deshabilita los controles
-        //    this.Habilitar(false);
-        //    //Establece los botones
-        //    this.Botones();
-        //    this.crearTabla();
-
-        //}
-
+      
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             this.BuscarFechas();
@@ -199,23 +144,7 @@ namespace SistemaFigueri
          
         }
 
-        //private void dataListado_DoubleClick(object sender, EventArgs e)
-        //{
-
-
-
-        //    this.txtIdventa.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["idventa"].Value);
-        //    this.txtCliente.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["cliente"].Value);
-        //    this.dtFecha.Value = Convert.ToDateTime(this.dataListado.CurrentRow.Cells["fecha"].Value);
-        //    this.cbTipo_Comprobante.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["tipo_comprobante"].Value);
-        //    this.txtSerie.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["serie"].Value);
-        //    this.txtCorrelativo.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["correlativo"].Value);
-        //    this.lblTotalPagado.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Total"].Value);
-        //    this.MostrarDetalles();
-        //    this.tabControl1.SelectedIndex = 1;
-
-        //}
-
+      
         private void chkEliminar_CheckedChanged(object sender, EventArgs e)
         {
             if (cbEliminar.Checked)
@@ -228,172 +157,7 @@ namespace SistemaFigueri
             }
         }
 
-        //private void dataListado_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        //{
-        //    if (e.ColumnIndex == dataListado.Columns["Eliminar"].Index)
-        //    {
-        //        DataGridViewCheckBoxCell ChkEliminar =
-        //            (DataGridViewCheckBoxCell)dataListado.Rows[e.RowIndex].Cells["Eliminar"];
-        //        ChkEliminar.Value = !Convert.ToBoolean(ChkEliminar.Value);
-        //    }
-        //}
-
-        //private void btnNuevo_Click(object sender, EventArgs e)
-        //{
-        //    this.IsNuevo = true;
-        //    this.Botones();
-        //    this.Limpiar();
-        //    this.limpiarDetalle();
-        //    this.Habilitar(true);
-        //    this.txtSerie.Focus();
-        ////}
-
-        //private void btnCancelar_Click(object sender, EventArgs e)
-        //{
-        //    this.IsNuevo = false;
-        //    this.Botones();
-        //    this.Limpiar();
-        //    this.Limpiar();
-        //    this.txtIdventa.Text = string.Empty;
-
-        //}
-
-        //private void btnGuardar_Click(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-
-        //        //La variable que almacena si se inserto 
-        //        //o se modifico la tabla
-        //        string Rpta = "";
-        //        if (this.txtIdcliente.Text == string.Empty || this.txtSerie.Text == string.Empty || txtCorrelativo.Text == string.Empty || txtIgv.Text == string.Empty)
-        //        {
-        //            MensajeError("Falta ingresar algunos datos, serán remarcados");
-        //            errorIcono.SetError(txtCliente, "Seleccione un Proveedor");
-        //            errorIcono.SetError(txtSerie, "Ingrese la serie del comprobante");
-        //            errorIcono.SetError(txtCorrelativo, "Ingrese el número del comprobante");
-        //            errorIcono.SetError(txtIgv, "Ingrese el porcentaje de IGV");
-        //        }
-        //        else
-        //        {
-        //            if (this.IsNuevo)
-        //            {
-        //                //Vamos a insertar un Ingreso 
-        //                Rpta = NVenta.Insertar(Convert.ToInt32(txtIdcliente.Text),
-        //                    Idtrabajador,
-        //                dtFecha.Value, cbTipo_Comprobante.Text,
-        //                txtSerie.Text, txtCorrelativo.Text,
-        //                Convert.ToDecimal(txtIgv.Text), "EMITIDO", dtDetalle);
-
-        //            }
-
-        //            //Si la respuesta fue OK, fue porque se  
-        //            //o inserto la venta
-        //            //de forma correcta
-        //            if (Rpta.Equals("OK"))
-        //            {
-
-        //                this.MensajeOk("Se insertó de forma correcta el registro");
-
-
-        //            }
-        //            else
-        //            {
-        //                //Mostramos el mensaje de error
-        //                this.MensajeError(Rpta);
-        //            }
-        //            this.IsNuevo = false;
-        //            this.Botones();
-        //            this.Limpiar();
-        //            this.limpiarDetalle();
-        //            this.Mostrar();
-
-        //        }
-        //    }
-
-        //    catch (Exception ex)
-        //    {
-
-        //        MessageBox.Show(ex.Message + ex.StackTrace);
-        //    }
-        //}
-
-        //private void btnAgregar_Click(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-
-        //        if (this.txtIddetalle_ingreso.Text == string.Empty || this.txtCantidad.Text == string.Empty || txtPrecio_Venta.Text == string.Empty)
-        //        {
-        //            MensajeError("Falta ingresar algunos datos, serán remarcados");
-        //            errorIcono.SetError(txtArticulo, "Seleccione un Artículo");
-        //            errorIcono.SetError(txtCantidad, "Ingrese el stock inicial");
-        //            errorIcono.SetError(txtPrecio_Venta, "Ingrese el precio de Venta");
-        //        }
-        //        else
-        //        {
-        //            //Variable que va a indicar si podemos registrar el detalle
-        //            bool registrar = true;
-        //            foreach (DataRow row in dtDetalle.Rows)
-        //            {
-        //                if (Convert.ToInt32(row["iddetalle_ingreso"]) == Convert.ToInt32(this.txtIddetalle_ingreso.Text))
-        //                {
-        //                    registrar = false;
-        //                    this.MensajeError("Ya se encuentra el artículo en el detalle");
-        //                }
-        //            }
-        //            //Si podemos registrar el producto en el detalle
-        //            if (registrar = true && Convert.ToInt32(this.txtCantidad.Text) <= Convert.ToInt32(this.txtStock.Text))
-        //            {
-        //                //Calculamos el sub total del detalle sin descuento
-        //                decimal subTotal = Convert.ToDecimal(this.txtPrecio_Venta.Text) * Convert.ToDecimal(txtCantidad.Text) - Convert.ToDecimal(txtDescuento.Text);
-        //                totalPagado = totalPagado + subTotal;
-        //                this.lblTotalPagado.Text = totalPagado.ToString("#0.00#");
-        //                //Agregamos al fila a nuestro datatable
-        //                DataRow row = this.dtDetalle.NewRow();
-        //                row["iddetalle_ingreso"] = Convert.ToInt32(this.txtIddetalle_ingreso.Text);
-        //                row["articulo"] = this.txtArticulo.Text;
-        //                row["cantidad"] = Convert.ToInt32(this.txtCantidad.Text);
-        //                row["precio_venta"] = Convert.ToDecimal(this.txtPrecio_Venta.Text);
-        //                row["descuento"] = Convert.ToDecimal(this.txtDescuento.Text);
-        //                row["subTotal"] = subTotal;
-        //                this.dtDetalle.Rows.Add(row);
-        //                this.limpiarDetalle();
-        //            }
-        //            else
-        //            {
-        //                this.MensajeError("No hay Stock Disponible");
-        //            }
-        //        }
-        //    }
-
-        //    catch (Exception ex)
-        //    {
-
-        //        MessageBox.Show(ex.Message + ex.StackTrace);
-        //    }
-        //}
-
-        //private void btnQuitar_Click(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //        //Indice dila actualmente seleccionado y que vamos a eliminar
-        //        int indiceFila = this.datalistadoDetalle.CurrentCell.RowIndex;
-        //        //Fila que vamos a eliminar
-        //        DataRow row = this.dtDetalle.Rows[indiceFila];
-        //        //Disminuimos el total a pagar
-        //        this.totalPagado = this.totalPagado - Convert.ToDecimal(row["subTotal"].ToString());
-        //        this.lblTotalPagado.Text = totalPagado.ToString("#0.00#");
-        //        //Removemos la fila
-        //        this.dtDetalle.Rows.Remove(row);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MensajeError("No hay fila para remover");
-        //    }
-        //}
-
+      
         private void FrmVenta_FormClosing(object sender, FormClosingEventArgs e)
         {
             _instancia = null;
@@ -458,6 +222,7 @@ namespace SistemaFigueri
             MostrarClientes();
             this.crearTabla();
             GenerarNumeroComprobante();
+
             //GenerarIdVenta();
            // GenerarSeriedeDocumento();
             dgvVenta.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -502,11 +267,6 @@ namespace SistemaFigueri
             formMP.ShowDialog();
         }
 
-        private void tbBuscaClienteRece_TextChanged(object sender, EventArgs e)
-        {
-           
-        }
-
         private void tbBuscaProducto_TextAlignChanged(object sender, EventArgs e)
         {
 
@@ -516,20 +276,6 @@ namespace SistemaFigueri
 
         }
 
-
-        private void btnAgregaCarro_Click(object sender, EventArgs e)
-        {
-
-            //SqlConnection cnn = new SqlConnection("Data Source=192.168.21.5;Initial Catalog=DBFIGUE2;User ID=sa;Password=123");
-            //String cadcone = "select * from Producto where Alias='" + tbBuscaProducto.Text + "'";
-            //SqlCommand cm = new SqlCommand(cadcone, cnn);
-            //cnn.Open();
-
-
-
-            //String AliasProducto = tbBuscaProducto.Text;
-            //MessageBox.Show(AliasProducto);
-        }
 
         private void btnSumaCan_Click(object sender, EventArgs e)
         {
@@ -569,17 +315,26 @@ namespace SistemaFigueri
         {
             using (FormBuscarProducto form = new FormBuscarProducto())
             {
-                if (form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                if (this.tbClienteNombre.Text.Trim() != "")
                 {
-                    tbAlias.Text = form.alias;
-                    tbDescripcion.Text = form.descripcion;
-                    tbStock.Text = form.stock;
-                    dtFechaV.Text = form.fechavencimiento;
-                    tbPrecio.Text = form.precio;
-                    //tbIdProducto.Text = form.idproducto;
+                    if (form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                    {
+                        tbAlias.Text = form.alias;
+                        tbDescripcion.Text = form.descripcion;
+                        tbStock.Text = form.stock;
+                        dtFechaV.Text = form.fechavencimiento;
+                        tbPrecio.Text = form.precio;
+                        btnAgregaCarro.Enabled = true;
+                        //tbIdProducto.Text = form.idproducto;
 
-                    CNProductos objProducto = new CNProductos();
+                        CNProductos objProducto = new CNProductos();
 
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Por Favor Busque el Cliente a Vender.", "Figueri", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                
                 }
 
             }
@@ -623,10 +378,7 @@ namespace SistemaFigueri
 
         private void FormVenta_Activated(object sender, EventArgs e)
         {
-            //tbRuc.Text = Program.NumeroRuc;
-            //tbDocumento.Text = Program.NroDocIdentidad;
-            //tbClienteNombre.Text = Program.ApellidoPaterno + "," + Program.ApellidoMaterno + "," + Program.Nombres;
-
+          
 
         }
 
@@ -636,16 +388,16 @@ namespace SistemaFigueri
             Decimal Porcentaje = 0; Decimal SubTotal;
             if(this.tbClienteNombre.Text.Trim() != "")
             {
-                if (tbCantidad.Text.Trim() != "")
+                if (tbDescripcion.Text.Trim() != "")
                 {
-                    if (Convert.ToInt32(tbCantidad.Text) >= 0)
+                    if (tbCantidad.Text.Trim() != "")
                     {
-                        if (Convert.ToInt32(tbCantidad.Text) <= Convert.ToInt32(tbStock.Text))
+                        if (Convert.ToInt32(tbCantidad.Text) >= 0)
                         {
-                            if (tbIgv.Text.Trim() != "")
+                            if (Convert.ToInt32(tbCantidad.Text) <= Convert.ToInt32(tbStock.Text))
                             {
-                                //ven.IdProducto = Convert.ToInt32(tbIdProducto.Text);
-                                //ven.IdVenta = Convert.ToInt32(tbIdProducto.Text);
+                                /*ven.IdProducto = Convert.ToInt32(tbIdProducto.Text);
+                                   ven.IdVenta = Convert.ToInt32(tbIdProducto.Text);*/
                                 ven.Descripcion = tbAlias.Text + " - " + tbDescripcion.Text;
                                 ven.Cantidad = Convert.ToInt32(tbCantidad.Text);
                                 ven.PrecioVenta = Convert.ToDecimal(tbPrecio.Text);
@@ -656,31 +408,36 @@ namespace SistemaFigueri
                                 lst.Add(ven);
                                 LlenarGrilla();
                                 Limpiar();
+
                             }
                             else
                             {
-                               
+                                MessageBox.Show("Stock Insuficiente", "Figueri", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
                             }
                         }
                         else
                         {
-                            MessageBox.Show("Stock Insuficiente para Realizar la Venta.", "Sistema de Ventas.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+                            MessageBox.Show("Cantidad Ingresada no es Válida.", "Figueri", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                            tbCantidad.Clear();
+                            tbCantidad.Focus();
+
                         }
+
                     }
                     else
                     {
                         MessageBox.Show("Ingrese Cantidad", "Figeri", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                         tbCantidad.Clear();
-                        tbCantidad.Focus();
                     }
-              
                 }
                 else
                 {
-                    MessageBox.Show("Por Favor Ingrese Cantidad a Vender.", "Figueri", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-                    tbCantidad.Focus();
+                    MessageBox.Show("Busque Producto a Vender", "Figueri", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+
+                    tbPrecio.Focus();
+                    tbDescripcion.Focus();
+                    tbAlias.Focus();
                 }
-                
             }
             else
             {
@@ -722,8 +479,10 @@ namespace SistemaFigueri
         private void Limpiar()
         {
             //tbDescripcion.Clear();
-            tbCantidad.Focus();
-            tbPrecio.Focus();
+            tbCantidad.Clear();
+            tbPrecio.Clear();
+            tbAlias.Clear();
+            tbDescripcion.Clear();
             tbStock.Clear();
             Program.DescripcionProducto = "";
             Program.Stock = 0;
@@ -939,8 +698,6 @@ namespace SistemaFigueri
             //GenerarIdVenta();
             //GenerarNumeroComprobante();
         }
-
-    
     }
 
 }
