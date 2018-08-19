@@ -124,7 +124,7 @@
             this.btnNuevoProducto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNuevoProducto.Font = new System.Drawing.Font("Century Gothic", 15.75F);
             this.btnNuevoProducto.ForeColor = System.Drawing.Color.White;
-            this.btnNuevoProducto.Image = global::SistemaFigueri.Properties.Resources.addCliente1;
+            //this.btnNuevoProducto.Image = global::SistemaFigueri.Properties.Resources.addCliente1;
             this.btnNuevoProducto.ImagePosition = 0;
             this.btnNuevoProducto.ImageZoom = 60;
             this.btnNuevoProducto.LabelPosition = 5;

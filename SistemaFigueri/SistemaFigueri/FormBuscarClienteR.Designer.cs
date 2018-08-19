@@ -76,7 +76,7 @@
             this.bunifuImageButton2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.bunifuImageButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(147)))), ((int)(((byte)(103)))));
             this.bunifuImageButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuImageButton2.Image = global::SistemaFigueri.Properties.Resources.buscador;
+            //this.bunifuImageButton2.Image = global::SistemaFigueri.Properties.Resources.buscador;
             this.bunifuImageButton2.ImageActive = null;
             this.bunifuImageButton2.Location = new System.Drawing.Point(156, 57);
             this.bunifuImageButton2.Name = "bunifuImageButton2";

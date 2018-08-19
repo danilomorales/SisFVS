@@ -15,24 +15,21 @@ namespace CapaDatos
         SqlDataReader leer;
         DataTable tabla = new DataTable();
         SqlCommand comando = new SqlCommand();
-
+        private SqlDataAdapter adapter;
 
         //LISTAR SECTOR
-        public DataTable listarSector()
+        public SqlDataAdapter listarSector()
         {
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "select * from caja.SECTOR";
-            leer = comando.ExecuteReader();
-            tabla.Load(leer);
-            conexion.CerrarConexion();
-            return tabla;
+            String  sql = "select * from caja.SECTOR";
+            adapter = new SqlDataAdapter(sql, conexion.AbrirConexion());
+            return adapter;
         }
 
         //INSERTAR SECTOR
         public void InsertarSector(String descripcion, String nota,double porcentaje)
         {
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "insert into caja.SECTOR(DescripcionSector,Nota,Porcentaje) values('" + descripcion + "','" + nota + "','" + porcentaje + "')";
+            comando.CommandText = "insert into caja.SECTOR(DescripcionSector,Nota,Porcentaje) values('" + descripcion + "','" + nota + "'," + porcentaje + ")";
             comando.CommandType = CommandType.Text;
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();

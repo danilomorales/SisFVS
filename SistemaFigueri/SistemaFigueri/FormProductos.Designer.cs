@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProductos));
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
+            this.bunKardex = new Bunifu.Framework.UI.BunifuTileButton();
             this.bunifuCards2 = new Bunifu.Framework.UI.BunifuCards();
             this.bmBuscar = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.bunifuCards3 = new Bunifu.Framework.UI.BunifuCards();
             this.label1 = new System.Windows.Forms.Label();
-            this.bunKardex = new Bunifu.Framework.UI.BunifuTileButton();
             this.btneliminar = new Bunifu.Framework.UI.BunifuTileButton();
             this.bunifuTileButton2 = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnNuevoProducto = new Bunifu.Framework.UI.BunifuTileButton();
@@ -67,6 +67,26 @@
             this.bunifuCards1.Size = new System.Drawing.Size(366, 91);
             this.bunifuCards1.TabIndex = 32;
             this.bunifuCards1.Paint += new System.Windows.Forms.PaintEventHandler(this.bunifuCards1_Paint);
+            // 
+            // bunKardex
+            // 
+            this.bunKardex.BackColor = System.Drawing.Color.Transparent;
+            this.bunKardex.color = System.Drawing.Color.Transparent;
+            this.bunKardex.colorActive = System.Drawing.Color.MediumSeaGreen;
+            this.bunKardex.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunKardex.Font = new System.Drawing.Font("Century Gothic", 14F);
+            this.bunKardex.ForeColor = System.Drawing.Color.White;
+            this.bunKardex.Image = global::SistemaFigueri.Properties.Resources.addKardex;
+            this.bunKardex.ImagePosition = 10;
+            this.bunKardex.ImageZoom = 60;
+            this.bunKardex.LabelPosition = 5;
+            this.bunKardex.LabelText = "";
+            this.bunKardex.Location = new System.Drawing.Point(277, 13);
+            this.bunKardex.Margin = new System.Windows.Forms.Padding(6);
+            this.bunKardex.Name = "bunKardex";
+            this.bunKardex.Size = new System.Drawing.Size(83, 68);
+            this.bunKardex.TabIndex = 38;
+            this.bunKardex.Click += new System.EventHandler(this.bunKardex_Click);
             // 
             // bunifuCards2
             // 
@@ -110,14 +130,14 @@
             // dgvProductos
             // 
             this.dgvProductos.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProductos.Location = new System.Drawing.Point(14, 104);
             this.dgvProductos.Name = "dgvProductos";
@@ -151,26 +171,6 @@
             this.label1.Size = new System.Drawing.Size(324, 36);
             this.label1.TabIndex = 0;
             this.label1.Text = "LISTA  DE PRODUCTOS";
-            // 
-            // bunKardex
-            // 
-            this.bunKardex.BackColor = System.Drawing.Color.Transparent;
-            this.bunKardex.color = System.Drawing.Color.Transparent;
-            this.bunKardex.colorActive = System.Drawing.Color.MediumSeaGreen;
-            this.bunKardex.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunKardex.Font = new System.Drawing.Font("Century Gothic", 14F);
-            this.bunKardex.ForeColor = System.Drawing.Color.White;
-            this.bunKardex.Image = global::SistemaFigueri.Properties.Resources.addKardex;
-            this.bunKardex.ImagePosition = 10;
-            this.bunKardex.ImageZoom = 60;
-            this.bunKardex.LabelPosition = 5;
-            this.bunKardex.LabelText = "";
-            this.bunKardex.Location = new System.Drawing.Point(277, 13);
-            this.bunKardex.Margin = new System.Windows.Forms.Padding(6);
-            this.bunKardex.Name = "bunKardex";
-            this.bunKardex.Size = new System.Drawing.Size(83, 68);
-            this.bunKardex.TabIndex = 38;
-            this.bunKardex.Click += new System.EventHandler(this.bunKardex_Click);
             // 
             // btneliminar
             // 
@@ -220,7 +220,7 @@
             this.btnNuevoProducto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNuevoProducto.Font = new System.Drawing.Font("Century Gothic", 15.75F);
             this.btnNuevoProducto.ForeColor = System.Drawing.Color.White;
-            this.btnNuevoProducto.Image = global::SistemaFigueri.Properties.Resources.addProduct;
+            this.btnNuevoProducto.Image = global::SistemaFigueri.Properties.Resources.addProduct2;
             this.btnNuevoProducto.ImagePosition = 10;
             this.btnNuevoProducto.ImageZoom = 60;
             this.btnNuevoProducto.LabelPosition = 5;

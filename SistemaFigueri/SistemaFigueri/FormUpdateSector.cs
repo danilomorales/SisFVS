@@ -55,24 +55,28 @@ namespace SistemaFigueri
         {
             SoloLetras(e);
         }
+        
 
-        private void bunifuThinButton22_Click_1(object sender, EventArgs e)
+        private void btnguardarPro_Click(object sender, EventArgs e)
         {
             try
             {
-                cnsec.UpdateSector(idSector.ToString(), bmedidescripcion.Text, bmedinota.Text,bmediporcentaje.Text);
+                cnsec.UpdateSector(idSector, bmedidescripcion.Text.ToString(), bmedinota.Text.ToString(), bmediporcentaje.Text.ToString());
                 MessageBox.Show("Se edito correctamente el Sector");
-                //formPro.mostarProductos();
+                this.DialogResult = DialogResult.OK;
                 this.Close();
-                // cdpro.listarProductos();
-                // formPro.dgvProductos.Update();
-                // formPro.dgvProductos.Refresh();
+
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show("No se pudo Actualizar los datos por :" + ex.ToString());
             }
+        }
+
+        private void bunifuThinButton22_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

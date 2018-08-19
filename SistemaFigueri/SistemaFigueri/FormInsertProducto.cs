@@ -33,12 +33,13 @@ namespace SistemaFigueri
 
         private void btnguardarPro_Click(object sender, EventArgs e)
         {
+            //String fecha1 = dpduracion.Value.ToString("yyyy-MM-dd");
             try
             {
 
-                pro.InsertProduct(bmnombre.Text, cbocategoria.SelectedValue.ToString(), cbomedida.SelectedValue.ToString(), bmdescripcion.Text, bmtiempo.Text, bmstock.Text,
+                pro.InsertProduct(bmnombre.Text, cbocategoria.SelectedValue.ToString(), cbomedida.SelectedValue.ToString(), bmdescripcion.Text, bmstock.Text,
               bmaximo.Text, bminimo.Text, bmvalorunitario.Text, bmprecio1.Text, bmprecio2.Text, bmoferta.Text, bmnota.Text,
-              bmfactor.Text, cboestado.Text, bmitem.Text, bminicial.Text, bmcta.Text);
+              bmfactor.Text, bmitem.Text, bminicial.Text, bmcta.Text);
                 MessageBox.Show("Se inserto correctamente");
                 this.DialogResult = DialogResult.OK;
                 this.Close();      
@@ -83,7 +84,7 @@ namespace SistemaFigueri
             cbocategoria.Text = "";
             cbomedida.Text = "";
             bmdescripcion.Text = "";
-            bmtiempo.Text = "";
+            //bmtiempo.Text = "";
             bmstock.Text = "";
             bmaximo.Text = "";
             bminimo.Text = "";
@@ -93,7 +94,7 @@ namespace SistemaFigueri
             bmoferta.Text = "";
             bmnota.Text = "";
             bmfactor.Text = "";
-            cboestado.Text = "";
+            //cboestado.Text = "";
             bmitem.Text = "";
             bminicial.Text = "";
             bmcta.Text = "";
@@ -240,6 +241,16 @@ namespace SistemaFigueri
         private void bmcta_KeyPress(object sender, KeyPressEventArgs e)
         {
             SoloLetras(e);
+        }
+
+        private void bunifuFlatButton16_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bmcta_OnValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

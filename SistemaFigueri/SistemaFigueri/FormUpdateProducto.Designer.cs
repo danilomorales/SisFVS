@@ -38,7 +38,6 @@
             this.bmediprecio1 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bmedivalos_unitario = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bmedistockmini = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.bmeditiempo = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.cboedimedida = new System.Windows.Forms.ComboBox();
             this.cboedicategoria = new System.Windows.Forms.ComboBox();
             this.bmedidescripcion = new Bunifu.Framework.UI.BunifuMaterialTextbox();
@@ -54,7 +53,6 @@
             this.bunifuFlatButton9 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton8 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton7 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.bunifuFlatButton6 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton5 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton4 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -62,17 +60,19 @@
             this.bunifuFlatButton3 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_editarProducto = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.btnCancelar = new Bunifu.Framework.UI.BunifuThinButton2();
             this.bmedicta = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuFlatButton17 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.dpediduracion = new Bunifu.Framework.UI.BunifuDatepicker();
+            this.bunifuFlatButton6 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnguardarPro = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.bunifuThinButton22 = new Bunifu.Framework.UI.BunifuThinButton2();
             this.SuspendLayout();
             // 
             // bmedinicial
             // 
             this.bmedinicial.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.bmedinicial.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.bmedinicial.ForeColor = System.Drawing.Color.White;
+            this.bmedinicial.ForeColor = System.Drawing.Color.Black;
             this.bmedinicial.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.bmedinicial.HintText = "";
             this.bmedinicial.isPassword = false;
@@ -92,7 +92,7 @@
             // 
             this.bmediItem.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.bmediItem.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.bmediItem.ForeColor = System.Drawing.Color.White;
+            this.bmediItem.ForeColor = System.Drawing.Color.Black;
             this.bmediItem.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.bmediItem.HintText = "";
             this.bmediItem.isPassword = false;
@@ -127,7 +127,7 @@
             // 
             this.bmedifactor.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.bmedifactor.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.bmedifactor.ForeColor = System.Drawing.Color.White;
+            this.bmedifactor.ForeColor = System.Drawing.Color.Black;
             this.bmedifactor.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.bmedifactor.HintText = "";
             this.bmedifactor.isPassword = false;
@@ -147,7 +147,7 @@
             // 
             this.bmediprecioOferta.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.bmediprecioOferta.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.bmediprecioOferta.ForeColor = System.Drawing.Color.White;
+            this.bmediprecioOferta.ForeColor = System.Drawing.Color.Black;
             this.bmediprecioOferta.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.bmediprecioOferta.HintText = "";
             this.bmediprecioOferta.isPassword = false;
@@ -167,7 +167,7 @@
             // 
             this.bmediprecio2.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.bmediprecio2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.bmediprecio2.ForeColor = System.Drawing.Color.White;
+            this.bmediprecio2.ForeColor = System.Drawing.Color.Black;
             this.bmediprecio2.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.bmediprecio2.HintText = "";
             this.bmediprecio2.isPassword = false;
@@ -187,7 +187,7 @@
             // 
             this.bmediprecio1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.bmediprecio1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.bmediprecio1.ForeColor = System.Drawing.Color.White;
+            this.bmediprecio1.ForeColor = System.Drawing.Color.Black;
             this.bmediprecio1.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.bmediprecio1.HintText = "";
             this.bmediprecio1.isPassword = false;
@@ -207,7 +207,7 @@
             // 
             this.bmedivalos_unitario.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.bmedivalos_unitario.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.bmedivalos_unitario.ForeColor = System.Drawing.Color.White;
+            this.bmedivalos_unitario.ForeColor = System.Drawing.Color.Black;
             this.bmedivalos_unitario.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.bmedivalos_unitario.HintText = "";
             this.bmedivalos_unitario.isPassword = false;
@@ -215,7 +215,7 @@
             this.bmedivalos_unitario.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.bmedivalos_unitario.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.bmedivalos_unitario.LineThickness = 5;
-            this.bmedivalos_unitario.Location = new System.Drawing.Point(907, 131);
+            this.bmedivalos_unitario.Location = new System.Drawing.Point(576, 131);
             this.bmedivalos_unitario.Margin = new System.Windows.Forms.Padding(4);
             this.bmedivalos_unitario.Name = "bmedivalos_unitario";
             this.bmedivalos_unitario.Size = new System.Drawing.Size(129, 28);
@@ -227,7 +227,7 @@
             // 
             this.bmedistockmini.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.bmedistockmini.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.bmedistockmini.ForeColor = System.Drawing.Color.White;
+            this.bmedistockmini.ForeColor = System.Drawing.Color.Black;
             this.bmedistockmini.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.bmedistockmini.HintText = "";
             this.bmedistockmini.isPassword = false;
@@ -242,26 +242,6 @@
             this.bmedistockmini.TabIndex = 111;
             this.bmedistockmini.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.bmedistockmini.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bmedistockmini_KeyPress);
-            // 
-            // bmeditiempo
-            // 
-            this.bmeditiempo.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bmeditiempo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.bmeditiempo.ForeColor = System.Drawing.Color.White;
-            this.bmeditiempo.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.bmeditiempo.HintText = "";
-            this.bmeditiempo.isPassword = false;
-            this.bmeditiempo.LineFocusedColor = System.Drawing.Color.Blue;
-            this.bmeditiempo.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.bmeditiempo.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.bmeditiempo.LineThickness = 5;
-            this.bmeditiempo.Location = new System.Drawing.Point(611, 131);
-            this.bmeditiempo.Margin = new System.Windows.Forms.Padding(4);
-            this.bmeditiempo.Name = "bmeditiempo";
-            this.bmeditiempo.Size = new System.Drawing.Size(144, 29);
-            this.bmeditiempo.TabIndex = 109;
-            this.bmeditiempo.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.bmeditiempo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bmeditiempo_KeyPress);
             // 
             // cboedimedida
             // 
@@ -297,7 +277,7 @@
             // 
             this.bmedidescripcion.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.bmedidescripcion.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.bmedidescripcion.ForeColor = System.Drawing.Color.White;
+            this.bmedidescripcion.ForeColor = System.Drawing.Color.Black;
             this.bmedidescripcion.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.bmedidescripcion.HintText = "";
             this.bmedidescripcion.isPassword = false;
@@ -317,7 +297,7 @@
             // 
             this.bmedistock.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.bmedistock.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.bmedistock.ForeColor = System.Drawing.Color.White;
+            this.bmedistock.ForeColor = System.Drawing.Color.Black;
             this.bmedistock.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.bmedistock.HintText = "";
             this.bmedistock.isPassword = false;
@@ -337,7 +317,7 @@
             // 
             this.bmedistockmax.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.bmedistockmax.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.bmedistockmax.ForeColor = System.Drawing.Color.White;
+            this.bmedistockmax.ForeColor = System.Drawing.Color.Black;
             this.bmedistockmax.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.bmedistockmax.HintText = "";
             this.bmedistockmax.isPassword = false;
@@ -357,7 +337,7 @@
             // 
             this.bmedinota.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.bmedinota.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.bmedinota.ForeColor = System.Drawing.Color.White;
+            this.bmedinota.ForeColor = System.Drawing.Color.Black;
             this.bmedinota.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.bmedinota.HintText = "";
             this.bmedinota.isPassword = false;
@@ -377,7 +357,7 @@
             // 
             this.bmedinombre.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.bmedinombre.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.bmedinombre.ForeColor = System.Drawing.Color.White;
+            this.bmedinombre.ForeColor = System.Drawing.Color.Black;
             this.bmedinombre.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.bmedinombre.HintText = "";
             this.bmedinombre.isPassword = false;
@@ -631,7 +611,7 @@
             this.bunifuFlatButton8.IconVisible = true;
             this.bunifuFlatButton8.IconZoom = 40D;
             this.bunifuFlatButton8.IsTab = false;
-            this.bunifuFlatButton8.Location = new System.Drawing.Point(783, 131);
+            this.bunifuFlatButton8.Location = new System.Drawing.Point(452, 131);
             this.bunifuFlatButton8.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.bunifuFlatButton8.Name = "bunifuFlatButton8";
             this.bunifuFlatButton8.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
@@ -680,42 +660,6 @@
             this.bunifuFlatButton7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuFlatButton7.Textcolor = System.Drawing.Color.White;
             this.bunifuFlatButton7.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // bunifuFlatButton6
-            // 
-            this.bunifuFlatButton6.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.bunifuFlatButton6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.bunifuFlatButton6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFlatButton6.BorderRadius = 0;
-            this.bunifuFlatButton6.ButtonText = "Tiempo de Duración:";
-            this.bunifuFlatButton6.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.bunifuFlatButton6.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuFlatButton6.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton6.Iconimage = null;
-            this.bunifuFlatButton6.Iconimage_right = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton6.Iconimage_right")));
-            this.bunifuFlatButton6.Iconimage_right_Selected = null;
-            this.bunifuFlatButton6.Iconimage_Selected = null;
-            this.bunifuFlatButton6.IconMarginLeft = 0;
-            this.bunifuFlatButton6.IconMarginRight = 0;
-            this.bunifuFlatButton6.IconRightVisible = true;
-            this.bunifuFlatButton6.IconRightZoom = 0D;
-            this.bunifuFlatButton6.IconVisible = true;
-            this.bunifuFlatButton6.IconZoom = 40D;
-            this.bunifuFlatButton6.IsTab = false;
-            this.bunifuFlatButton6.Location = new System.Drawing.Point(487, 121);
-            this.bunifuFlatButton6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.bunifuFlatButton6.Name = "bunifuFlatButton6";
-            this.bunifuFlatButton6.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.bunifuFlatButton6.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.bunifuFlatButton6.OnHoverTextColor = System.Drawing.Color.White;
-            this.bunifuFlatButton6.selected = false;
-            this.bunifuFlatButton6.Size = new System.Drawing.Size(125, 40);
-            this.bunifuFlatButton6.TabIndex = 108;
-            this.bunifuFlatButton6.Text = "Tiempo de Duración:";
-            this.bunifuFlatButton6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuFlatButton6.Textcolor = System.Drawing.Color.White;
-            this.bunifuFlatButton6.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // bunifuFlatButton5
             // 
@@ -899,7 +843,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(147)))), ((int)(((byte)(103)))));
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1165, 26);
@@ -907,69 +851,17 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(147)))), ((int)(((byte)(103)))));
             this.panel1.Location = new System.Drawing.Point(0, 563);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1165, 26);
             this.panel1.TabIndex = 133;
             // 
-            // btn_editarProducto
-            // 
-            this.btn_editarProducto.ActiveBorderThickness = 1;
-            this.btn_editarProducto.ActiveCornerRadius = 20;
-            this.btn_editarProducto.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btn_editarProducto.ActiveForecolor = System.Drawing.Color.White;
-            this.btn_editarProducto.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.btn_editarProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.btn_editarProducto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_editarProducto.BackgroundImage")));
-            this.btn_editarProducto.ButtonText = "ACTUALIZAR";
-            this.btn_editarProducto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_editarProducto.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_editarProducto.ForeColor = System.Drawing.Color.SeaGreen;
-            this.btn_editarProducto.IdleBorderThickness = 1;
-            this.btn_editarProducto.IdleCornerRadius = 20;
-            this.btn_editarProducto.IdleFillColor = System.Drawing.Color.Green;
-            this.btn_editarProducto.IdleForecolor = System.Drawing.Color.White;
-            this.btn_editarProducto.IdleLineColor = System.Drawing.Color.SteelBlue;
-            this.btn_editarProducto.Location = new System.Drawing.Point(354, 473);
-            this.btn_editarProducto.Margin = new System.Windows.Forms.Padding(5);
-            this.btn_editarProducto.Name = "btn_editarProducto";
-            this.btn_editarProducto.Size = new System.Drawing.Size(181, 41);
-            this.btn_editarProducto.TabIndex = 134;
-            this.btn_editarProducto.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btn_editarProducto.Click += new System.EventHandler(this.bunifuThinButton21_Click);
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.ActiveBorderThickness = 1;
-            this.btnCancelar.ActiveCornerRadius = 20;
-            this.btnCancelar.ActiveFillColor = System.Drawing.Color.Red;
-            this.btnCancelar.ActiveForecolor = System.Drawing.Color.White;
-            this.btnCancelar.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.btnCancelar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancelar.BackgroundImage")));
-            this.btnCancelar.ButtonText = "CANCELAR";
-            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.IdleBorderThickness = 1;
-            this.btnCancelar.IdleCornerRadius = 20;
-            this.btnCancelar.IdleFillColor = System.Drawing.Color.Maroon;
-            this.btnCancelar.IdleForecolor = System.Drawing.Color.White;
-            this.btnCancelar.IdleLineColor = System.Drawing.Color.SteelBlue;
-            this.btnCancelar.Location = new System.Drawing.Point(556, 473);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(5);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(181, 41);
-            this.btnCancelar.TabIndex = 136;
-            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnCancelar.Click += new System.EventHandler(this.bunifuThinButton23_Click);
-            // 
             // bmedicta
             // 
             this.bmedicta.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.bmedicta.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.bmedicta.ForeColor = System.Drawing.Color.White;
+            this.bmedicta.ForeColor = System.Drawing.Color.Black;
             this.bmedicta.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.bmedicta.HintText = "";
             this.bmedicta.isPassword = false;
@@ -1021,16 +913,119 @@
             this.bunifuFlatButton17.Textcolor = System.Drawing.Color.White;
             this.bunifuFlatButton17.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
+            // dpediduracion
+            // 
+            this.dpediduracion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.dpediduracion.BorderRadius = 0;
+            this.dpediduracion.ForeColor = System.Drawing.Color.White;
+            this.dpediduracion.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.dpediduracion.FormatCustom = null;
+            this.dpediduracion.Location = new System.Drawing.Point(840, 121);
+            this.dpediduracion.Name = "dpediduracion";
+            this.dpediduracion.Size = new System.Drawing.Size(257, 40);
+            this.dpediduracion.TabIndex = 143;
+            this.dpediduracion.Value = new System.DateTime(2018, 8, 19, 11, 21, 22, 40);
+            // 
+            // bunifuFlatButton6
+            // 
+            this.bunifuFlatButton6.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.bunifuFlatButton6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.bunifuFlatButton6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuFlatButton6.BorderRadius = 0;
+            this.bunifuFlatButton6.ButtonText = "Tiempo de Duración:";
+            this.bunifuFlatButton6.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.bunifuFlatButton6.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuFlatButton6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton6.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuFlatButton6.Iconimage = null;
+            this.bunifuFlatButton6.Iconimage_right = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton6.Iconimage_right")));
+            this.bunifuFlatButton6.Iconimage_right_Selected = null;
+            this.bunifuFlatButton6.Iconimage_Selected = null;
+            this.bunifuFlatButton6.IconMarginLeft = 0;
+            this.bunifuFlatButton6.IconMarginRight = 0;
+            this.bunifuFlatButton6.IconRightVisible = true;
+            this.bunifuFlatButton6.IconRightZoom = 0D;
+            this.bunifuFlatButton6.IconVisible = true;
+            this.bunifuFlatButton6.IconZoom = 40D;
+            this.bunifuFlatButton6.IsTab = false;
+            this.bunifuFlatButton6.Location = new System.Drawing.Point(722, 121);
+            this.bunifuFlatButton6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.bunifuFlatButton6.Name = "bunifuFlatButton6";
+            this.bunifuFlatButton6.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.bunifuFlatButton6.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.bunifuFlatButton6.OnHoverTextColor = System.Drawing.Color.White;
+            this.bunifuFlatButton6.selected = false;
+            this.bunifuFlatButton6.Size = new System.Drawing.Size(119, 40);
+            this.bunifuFlatButton6.TabIndex = 142;
+            this.bunifuFlatButton6.Text = "Tiempo de Duración:";
+            this.bunifuFlatButton6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuFlatButton6.Textcolor = System.Drawing.Color.White;
+            this.bunifuFlatButton6.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
+            // btnguardarPro
+            // 
+            this.btnguardarPro.ActiveBorderThickness = 1;
+            this.btnguardarPro.ActiveCornerRadius = 20;
+            this.btnguardarPro.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnguardarPro.ActiveForecolor = System.Drawing.Color.White;
+            this.btnguardarPro.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.btnguardarPro.BackColor = System.Drawing.Color.Moccasin;
+            this.btnguardarPro.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnguardarPro.BackgroundImage")));
+            this.btnguardarPro.ButtonText = "ACTUALIZAR";
+            this.btnguardarPro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnguardarPro.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnguardarPro.ForeColor = System.Drawing.Color.SeaGreen;
+            this.btnguardarPro.IdleBorderThickness = 1;
+            this.btnguardarPro.IdleCornerRadius = 20;
+            this.btnguardarPro.IdleFillColor = System.Drawing.Color.Green;
+            this.btnguardarPro.IdleForecolor = System.Drawing.Color.White;
+            this.btnguardarPro.IdleLineColor = System.Drawing.Color.SteelBlue;
+            this.btnguardarPro.Location = new System.Drawing.Point(343, 473);
+            this.btnguardarPro.Margin = new System.Windows.Forms.Padding(5);
+            this.btnguardarPro.Name = "btnguardarPro";
+            this.btnguardarPro.Size = new System.Drawing.Size(181, 41);
+            this.btnguardarPro.TabIndex = 144;
+            this.btnguardarPro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnguardarPro.Click += new System.EventHandler(this.btnguardarPro_Click);
+            // 
+            // bunifuThinButton22
+            // 
+            this.bunifuThinButton22.ActiveBorderThickness = 1;
+            this.bunifuThinButton22.ActiveCornerRadius = 20;
+            this.bunifuThinButton22.ActiveFillColor = System.Drawing.Color.Red;
+            this.bunifuThinButton22.ActiveForecolor = System.Drawing.Color.White;
+            this.bunifuThinButton22.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.bunifuThinButton22.BackColor = System.Drawing.Color.Moccasin;
+            this.bunifuThinButton22.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton22.BackgroundImage")));
+            this.bunifuThinButton22.ButtonText = "CANCELAR";
+            this.bunifuThinButton22.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuThinButton22.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuThinButton22.ForeColor = System.Drawing.Color.White;
+            this.bunifuThinButton22.IdleBorderThickness = 1;
+            this.bunifuThinButton22.IdleCornerRadius = 20;
+            this.bunifuThinButton22.IdleFillColor = System.Drawing.Color.Maroon;
+            this.bunifuThinButton22.IdleForecolor = System.Drawing.Color.White;
+            this.bunifuThinButton22.IdleLineColor = System.Drawing.Color.SteelBlue;
+            this.bunifuThinButton22.Location = new System.Drawing.Point(559, 473);
+            this.bunifuThinButton22.Margin = new System.Windows.Forms.Padding(5);
+            this.bunifuThinButton22.Name = "bunifuThinButton22";
+            this.bunifuThinButton22.Size = new System.Drawing.Size(181, 41);
+            this.bunifuThinButton22.TabIndex = 145;
+            this.bunifuThinButton22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuThinButton22.Click += new System.EventHandler(this.bunifuThinButton22_Click);
+            // 
             // FormUpdateProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.BackColor = System.Drawing.Color.Moccasin;
             this.ClientSize = new System.Drawing.Size(1164, 589);
+            this.Controls.Add(this.bunifuThinButton22);
+            this.Controls.Add(this.btnguardarPro);
+            this.Controls.Add(this.dpediduracion);
+            this.Controls.Add(this.bunifuFlatButton6);
             this.Controls.Add(this.bmedicta);
             this.Controls.Add(this.bunifuFlatButton17);
-            this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btn_editarProducto);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.bmedinicial);
@@ -1050,8 +1045,6 @@
             this.Controls.Add(this.bunifuFlatButton8);
             this.Controls.Add(this.bmedistockmini);
             this.Controls.Add(this.bunifuFlatButton7);
-            this.Controls.Add(this.bmeditiempo);
-            this.Controls.Add(this.bunifuFlatButton6);
             this.Controls.Add(this.cboedimedida);
             this.Controls.Add(this.cboedicategoria);
             this.Controls.Add(this.bmedidescripcion);
@@ -1089,8 +1082,6 @@
         public Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton8;
         public Bunifu.Framework.UI.BunifuMaterialTextbox bmedistockmini;
         public Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton7;
-        public Bunifu.Framework.UI.BunifuMaterialTextbox bmeditiempo;
-        public Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton6;
         public System.Windows.Forms.ComboBox cboedimedida;
         public System.Windows.Forms.ComboBox cboedicategoria;
         public Bunifu.Framework.UI.BunifuMaterialTextbox bmedidescripcion;
@@ -1105,9 +1096,11 @@
         public Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton3;
         public System.Windows.Forms.Panel panel2;
         public System.Windows.Forms.Panel panel1;
-        public Bunifu.Framework.UI.BunifuThinButton2 btn_editarProducto;
-        public Bunifu.Framework.UI.BunifuThinButton2 btnCancelar;
         public Bunifu.Framework.UI.BunifuMaterialTextbox bmedicta;
         public Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton17;
+        public Bunifu.Framework.UI.BunifuDatepicker dpediduracion;
+        public Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton6;
+        private Bunifu.Framework.UI.BunifuThinButton2 btnguardarPro;
+        private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton22;
     }
 }

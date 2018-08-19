@@ -25,42 +25,49 @@ namespace CapaDatos
                 "p.StockMinimo as 'Stock Minimo',p.Valor_Unitario as 'Valor Unitario',p.PrecioVenta1 as 'P. Venta 1',p.PrecioVenta2 as 'P. Venta 2'," +
                 "p.PrecioOferta as 'Precio Oferta',p.Nota,p.Factor,p.Estado,p.Item,p.StockInicial as 'Stock Inicial',p.cta_vnt as 'Cta vnt'," +
                 "p.Vigente from caja.PRODUCTO p, dbo.CATEGORIA c, dbo.MEDIDA m where p.IdCategoria = c.IdCategoria AND p.IdMedida = m.IdMedida";
-            //String sql = "select p.IdProducto ,p.Alias as Nombre,c.Descripcion as Categoria,m.Descripcion as Medida,p.DescripcionProducto as 'Descripcion del producto'," +
-            //    "p.TiempoDuracion as Duración,p.Valor_Unitario as 'Valor Unitario',p.PrecioVenta1 as 'P. Venta 1'," +
-            //    "p.PrecioVenta2 as 'P. Venta 2',p.PrecioOferta as 'Precio Oferta',p.Nota,p.Factor,p.Item, p.cta_vnt as 'Cta vnt',p.Vigente " +
-            //    "from caja.PRODUCTO p, dbo.CATEGORIA c, dbo.MEDIDA m " +
-            //    "where p.IdCategoria = c.IdCategoria  AND p.IdMedida = m.IdMedida";
             adapter = new SqlDataAdapter(sql, conexion.AbrirConexion());
             return adapter;
         }
 
         //INSERTAR PRODUCTO
-        public void InsertarProductos(String alias, String id_categoria, String id_medida, String descripcion, int tiempo, double stock,
+        public void InsertarProductos(String alias, String id_categoria, String id_medida, String descripcion, double stock,
             double stockMax,int stockMin,double valor_uni, double precio1, double precio2, double precioOferta, String nota, double factor,
-            String estado, int item, double stockIni, String cta_vnt)
+             int item, double stockIni, String cta_vnt)
         {
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "insert into caja.PRODUCTO (Alias,IdCategoria,IdMedida,DescripcionProducto,TiempoDuracion,Stock,StockMaximo,StockMinimo,Valor_Unitario,PrecioVenta1,PrecioVenta2,PrecioOferta,Nota,Factor,Estado,Item,StockInicial,cta_vnt,Vigente) " +
-                "values('" + alias + "','" + id_categoria + "','" + id_medida + "','" + descripcion + "','" + tiempo + "','" + stock + "','" + stockMax + "','" + stockMin + "'," +
-                "'" + valor_uni + "','" + precio1 + "','" + precio2 + "','" + precioOferta + "','" + nota + "','" + factor + "','" + estado + "','" + item + "','" + stockIni + "','" + cta_vnt + "',1)";
+            comando.CommandText = "insert into caja.PRODUCTO (Alias,IdCategoria,IdMedida,DescripcionProducto,Stock,StockMaximo,StockMinimo,Valor_Unitario,PrecioVenta1,PrecioVenta2,PrecioOferta,Nota,Factor,Estado,Item,StockInicial,cta_vnt,Vigente) " +
+                "values('" + alias + "','" + id_categoria + "','" + id_medida + "','" + descripcion + "','" + stock + "','" + stockMax + "','" + stockMin + "'," +
+                "'" + valor_uni + "','" + precio1 + "','" + precio2 + "','" + precioOferta + "','" + nota + "','" + factor + "','A','" + item + "','" + stockIni + "','" + cta_vnt + "',1)";
             comando.CommandType = CommandType.Text;
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
         }
 
+      
+
         //EDITAR PRODUCTO
-        public void EditarProducto(String idProducto,String alias, String id_categoria, String id_medida, String descripcion, int tiempo, double stock,
+        public void EditarProducto(String idProducto,String alias, String id_categoria, String id_medida, String descripcion, String tiempo, double stock,
             double stockMax, int stockMin, double valor_uni, double precio1, double precio2, double precioOferta, String nota, double factor,
             String estado, int item, double stockIni, String cta_vnt)
         {
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "update caja.PRODUCTO set Alias='" + alias + "',IdCategoria='" + id_categoria + "',IdMedida='" + id_medida + "',DescripcionProducto='" + descripcion + "',TiempoDuracion=" + tiempo + "," +
-                "Stock=" + stock + ",StockMaximo=" + stockMax + ",StockMinimo=" + stockMin + ",Valor_Unitario=" + valor_uni + ",PrecioVenta1=" + precio1 + ",PrecioVenta2=" + precio2 + ",PrecioOferta=" + precioOferta + "," +
-                "Nota='" + nota + "',Factor=" + factor + ",Estado='" + estado + "',Item=" + item + ",StockInicial=" + stockIni + "," +
-                "cta_vnt='" + cta_vnt + "' where IdProducto='" + idProducto+"'";
-            comando.CommandType = CommandType.Text;
-            comando.ExecuteNonQuery();
-            conexion.CerrarConexion();
+            Console.WriteLine("Tiempo" + tiempo);
+            try
+            {
+                comando.Connection = conexion.AbrirConexion();
+                comando.CommandText = "update caja.PRODUCTO set Alias='" + alias + "',IdCategoria='" + id_categoria + "',IdMedida='" + id_medida + "',DescripcionProducto='" + descripcion + "',TiempoDuracion=" + tiempo + "," +
+                    "Stock=" + stock + ",StockMaximo=" + stockMax + ",StockMinimo=" + stockMin + ",Valor_Unitario=" + valor_uni + ",PrecioVenta1=" + precio1 + ",PrecioVenta2=" + precio2 + ",PrecioOferta=" + precioOferta + "," +
+                    "Nota='" + nota + "',Factor=" + factor + ",Estado='" + estado + "',Item=" + item + ",StockInicial=" + stockIni + "," +
+                    "cta_vnt='" + cta_vnt + "' where IdProducto='" + idProducto + "'";
+                comando.CommandType = CommandType.Text;
+                comando.ExecuteNonQuery();
+                conexion.CerrarConexion();
+            }
+            catch(SqlException ex)
+            {
+
+                Console.WriteLine("VIENE DEL CD" +  ex);
+            }
+            
         }
 
         //ELIMINAR PRODUCTO

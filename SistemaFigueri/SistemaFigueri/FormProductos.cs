@@ -49,36 +49,34 @@ namespace SistemaFigueri
             try
             {
                 if (dgvProductos.SelectedRows.Count > 0)
-                {
-                    FormUpdateProducto formUP = new FormUpdateProducto();
-                    formUP.listarCategoria();
-                    formUP.listarMedida();
-                    formUP.idProducto = dgvProductos.CurrentRow.Cells["IdProducto"].Value.ToString();
-                    formUP.bmedinombre.Text = dgvProductos.CurrentRow.Cells[1].Value.ToString();
-                    formUP.cboedicategoria.Text = dgvProductos.CurrentRow.Cells[2].Value.ToString();
-                    formUP.cboedimedida.Text = dgvProductos.CurrentRow.Cells[3].Value.ToString();
-                    formUP.bmedidescripcion.Text = dgvProductos.CurrentRow.Cells[4].Value.ToString();
-                    formUP.bmeditiempo.Text = dgvProductos.CurrentRow.Cells[5].Value.ToString();
-                    formUP.bmedistock.Text = dgvProductos.CurrentRow.Cells[6].Value.ToString();
-                    formUP.bmedistockmax.Text = dgvProductos.CurrentRow.Cells[7].Value.ToString();
-                    formUP.bmedistockmini.Text = dgvProductos.CurrentRow.Cells[8].Value.ToString();
-                    formUP.bmedivalos_unitario.Text = dgvProductos.CurrentRow.Cells[9].Value.ToString();
-                    formUP.bmediprecio1.Text = dgvProductos.CurrentRow.Cells[10].Value.ToString();
-                    formUP.bmediprecio2.Text = dgvProductos.CurrentRow.Cells[11].Value.ToString();
-                    formUP.bmediprecioOferta.Text = dgvProductos.CurrentRow.Cells[12].Value.ToString();
-                    formUP.bmedinota.Text = dgvProductos.CurrentRow.Cells[13].Value.ToString();
-                    formUP.bmedifactor.Text = dgvProductos.CurrentRow.Cells[14].Value.ToString();
-                    formUP.cboediestado.Text = dgvProductos.CurrentRow.Cells[15].Value.ToString();
-                    formUP.bmediItem.Text = dgvProductos.CurrentRow.Cells[16].Value.ToString();
-                    formUP.bmedinicial.Text = dgvProductos.CurrentRow.Cells[17].Value.ToString();
-                    formUP.bmedicta.Text = dgvProductos.CurrentRow.Cells[18].Value.ToString();
-                    //Operacion = "Editar";
-                    using (FormUpdateProducto formU = new FormUpdateProducto())
+                {                  
+                    using (FormUpdateProducto formUP = new FormUpdateProducto())
                     {
-                        
-                        if (formU .ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                        formUP.listarCategoria();
+                        formUP.listarMedida();
+                        formUP.idProducto = dgvProductos.CurrentRow.Cells["IdProducto"].Value.ToString();
+                        //MessageBox.Show("Llego"+ dgvProductos.CurrentRow.Cells["IdProducto"].Value.ToString());
+                        formUP.bmedinombre.Text = dgvProductos.CurrentRow.Cells[1].Value.ToString();
+                        formUP.cboedicategoria.Text = dgvProductos.CurrentRow.Cells[2].Value.ToString();
+                        formUP.cboedimedida.Text = dgvProductos.CurrentRow.Cells[3].Value.ToString();
+                        formUP.bmedidescripcion.Text = dgvProductos.CurrentRow.Cells[4].Value.ToString();
+                        formUP.dpediduracion.Value = DateTime.Parse( dgvProductos.CurrentRow.Cells[5].Value.ToString());
+                        formUP.bmedistock.Text = dgvProductos.CurrentRow.Cells[6].Value.ToString();
+                        formUP.bmedistockmax.Text = dgvProductos.CurrentRow.Cells[7].Value.ToString();
+                        formUP.bmedistockmini.Text = dgvProductos.CurrentRow.Cells[8].Value.ToString();
+                        formUP.bmedivalos_unitario.Text = dgvProductos.CurrentRow.Cells[9].Value.ToString();
+                        formUP.bmediprecio1.Text = dgvProductos.CurrentRow.Cells[10].Value.ToString();
+                        formUP.bmediprecio2.Text = dgvProductos.CurrentRow.Cells[11].Value.ToString();
+                        formUP.bmediprecioOferta.Text = dgvProductos.CurrentRow.Cells[12].Value.ToString();
+                        formUP.bmedinota.Text = dgvProductos.CurrentRow.Cells[13].Value.ToString();
+                        formUP.bmedifactor.Text = dgvProductos.CurrentRow.Cells[14].Value.ToString();
+                        formUP.cboediestado.Text = dgvProductos.CurrentRow.Cells[15].Value.ToString();
+                        formUP.bmediItem.Text = dgvProductos.CurrentRow.Cells[16].Value.ToString();
+                        formUP.bmedinicial.Text = dgvProductos.CurrentRow.Cells[17].Value.ToString();
+                        formUP.bmedicta.Text = dgvProductos.CurrentRow.Cells[18].Value.ToString();
+                        if (formUP.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                         {
-                           
+
                             mostarProductos();
                         }
                     }
@@ -102,7 +100,6 @@ namespace SistemaFigueri
             if (dgvProductos.SelectedRows.Count > 0)
             {
                 FormUpdateProducto formUP = new FormUpdateProducto();
-               // formUP.idProducto = dgvProductos.CurrentRow.Cells["IdProducto"].Value.ToString();
                 cp.DeleteProduct(dgvProductos.CurrentRow.Cells[0].Value.ToString());
                 MessageBox.Show("¿Estas seguro de eliminar este producto?");
                 mostarProductos();
@@ -122,17 +119,9 @@ namespace SistemaFigueri
                 list.Add((DataRow)row);
             }
 
-            //plist = new PagedList<DataRow>(list);
             adapter.Fill(tabla);
             dgvProductos.DataSource = tabla;
-            /*dgvPerfiles.Columns["foto"].Width = 60;
-            dgvPerfiles.RowTemplate.Height = 120;
-            DataGridViewImageColumn imagen = new DataGridViewImageColumn();
-            ((DataGridViewImageColumn)this.dgvPerfiles.Columns["foto"]).DefaultCellStyle.NullValue = null;
-            imagen = (DataGridViewImageColumn)dgvPerfiles.Columns["foto"];
-            imagen.ImageLayout = DataGridViewImageCellLayout.Stretch;*/
             adapter.Dispose();
-            //dgvProductos.Columns[0].Visible = false;
 
         }
          
