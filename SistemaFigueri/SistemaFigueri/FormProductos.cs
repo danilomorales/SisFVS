@@ -19,6 +19,7 @@ namespace SistemaFigueri
         CNProductos cp = new CNProductos(); 
         CDProductos cdpro = new CDProductos();
         DataTable tabla = new DataTable();
+        List<DataRow> list = new List<DataRow>();
         public FormProductos()
         {
             InitializeComponent();
@@ -27,8 +28,13 @@ namespace SistemaFigueri
        
         private void btnNuevoProducto_Click(object sender, EventArgs e)
         {
-            FormInsertProducto formMP = new FormInsertProducto();
-            formMP.ShowDialog();
+            using (FormInsertProducto formMC = new FormInsertProducto())
+            {
+                if (formMC.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    mostarProductos();
+                }
+            }
         }
 
         private void FormProductos_Load(object sender, EventArgs e)
@@ -45,7 +51,6 @@ namespace SistemaFigueri
                 if (dgvProductos.SelectedRows.Count > 0)
                 {
                     FormUpdateProducto formUP = new FormUpdateProducto();
-                    //Operacion = "Editar";
                     formUP.listarCategoria();
                     formUP.listarMedida();
                     formUP.idProducto = dgvProductos.CurrentRow.Cells["IdProducto"].Value.ToString();
@@ -67,9 +72,16 @@ namespace SistemaFigueri
                     formUP.bmediItem.Text = dgvProductos.CurrentRow.Cells[16].Value.ToString();
                     formUP.bmedinicial.Text = dgvProductos.CurrentRow.Cells[17].Value.ToString();
                     formUP.bmedicta.Text = dgvProductos.CurrentRow.Cells[18].Value.ToString();
-                    formUP.ShowDialog();                   
-                    cdpro.listarProductos();
-                    mostarProductos();
+                    //Operacion = "Editar";
+                    using (FormUpdateProducto formU = new FormUpdateProducto())
+                    {
+                        
+                        if (formU .ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                        {
+                           
+                            mostarProductos();
+                        }
+                    }
 
 
                 }
@@ -93,9 +105,6 @@ namespace SistemaFigueri
                // formUP.idProducto = dgvProductos.CurrentRow.Cells["IdProducto"].Value.ToString();
                 cp.DeleteProduct(dgvProductos.CurrentRow.Cells[0].Value.ToString());
                 MessageBox.Show("¿Estas seguro de eliminar este producto?");
-                //mostarProductos();
-                dgvProductos.Update();
-                dgvProductos.Refresh();
                 mostarProductos();
                 
             }
@@ -106,8 +115,25 @@ namespace SistemaFigueri
 
         public void mostarProductos()
         {
-            dgvProductos.DataSource = cp.MostarProductos();           
-            
+            SqlDataAdapter adapter = cp.MostarProductos();
+            tabla = new DataTable();
+            foreach (DataRow row in tabla.Rows)
+            {
+                list.Add((DataRow)row);
+            }
+
+            //plist = new PagedList<DataRow>(list);
+            adapter.Fill(tabla);
+            dgvProductos.DataSource = tabla;
+            /*dgvPerfiles.Columns["foto"].Width = 60;
+            dgvPerfiles.RowTemplate.Height = 120;
+            DataGridViewImageColumn imagen = new DataGridViewImageColumn();
+            ((DataGridViewImageColumn)this.dgvPerfiles.Columns["foto"]).DefaultCellStyle.NullValue = null;
+            imagen = (DataGridViewImageColumn)dgvPerfiles.Columns["foto"];
+            imagen.ImageLayout = DataGridViewImageCellLayout.Stretch;*/
+            adapter.Dispose();
+            //dgvProductos.Columns[0].Visible = false;
+
         }
          
         private void bmBuscar_KeyUp(object sender, KeyEventArgs e)

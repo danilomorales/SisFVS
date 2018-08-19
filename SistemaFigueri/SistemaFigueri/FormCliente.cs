@@ -15,7 +15,8 @@ namespace SistemaFigueri
     public partial class FormCliente : Form
     {
         CNClientes cli = new CNClientes();
-        DataTable tabla = new DataTable();
+        public List<DataRow> list { get; set; }
+        DataTable tabla;
         public FormCliente()
         {
             InitializeComponent();
@@ -38,8 +39,15 @@ namespace SistemaFigueri
 
         private void btnNuevoProducto_Click(object sender, EventArgs e)
         {
-            FormMantCliente formMC = new FormMantCliente();
-            formMC.ShowDialog();
+
+
+            using (FormMantCliente formMC = new FormMantCliente())
+            {
+                if (formMC.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    MostrarClientes();
+                }
+            }
         }
 
         private void bunifuTileButton2_Click(object sender, EventArgs e)
@@ -120,7 +128,25 @@ namespace SistemaFigueri
 
         public void MostrarClientes()
         {
-            dgvCliente.DataSource = cli.MostarClientes();
+            
+            
+            SqlDataAdapter adapter = cli.MostarClientes();
+            tabla = new DataTable();
+            foreach (DataRow row in tabla.Rows)
+            {
+                list.Add((DataRow)row);
+            }
+
+            //plist = new PagedList<DataRow>(list);
+            adapter.Fill(tabla);
+            dgvCliente.DataSource = tabla;
+            /*dgvPerfiles.Columns["foto"].Width = 60;
+            dgvPerfiles.RowTemplate.Height = 120;
+            DataGridViewImageColumn imagen = new DataGridViewImageColumn();
+            ((DataGridViewImageColumn)this.dgvPerfiles.Columns["foto"]).DefaultCellStyle.NullValue = null;
+            imagen = (DataGridViewImageColumn)dgvPerfiles.Columns["foto"];
+            imagen.ImageLayout = DataGridViewImageCellLayout.Stretch;*/
+            adapter.Dispose();
         }
 
         private void bmBuscar_KeyUp(object sender, KeyEventArgs e)

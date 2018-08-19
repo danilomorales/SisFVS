@@ -71,9 +71,9 @@
             // bmcta
             // 
             this.bmcta.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bmcta.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.bmcta.ForeColor = System.Drawing.Color.White;
-            this.bmcta.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.bmcta.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bmcta.ForeColor = System.Drawing.Color.Black;
+            this.bmcta.HintForeColor = System.Drawing.Color.Black;
             this.bmcta.HintText = "cta_vnt";
             this.bmcta.isPassword = false;
             this.bmcta.LineFocusedColor = System.Drawing.Color.Blue;
@@ -91,9 +91,9 @@
             // bminicial
             // 
             this.bminicial.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bminicial.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.bminicial.ForeColor = System.Drawing.Color.White;
-            this.bminicial.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.bminicial.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bminicial.ForeColor = System.Drawing.Color.Black;
+            this.bminicial.HintForeColor = System.Drawing.Color.Black;
             this.bminicial.HintText = "Stock inicial";
             this.bminicial.isPassword = false;
             this.bminicial.LineFocusedColor = System.Drawing.Color.Blue;
@@ -111,9 +111,9 @@
             // bmitem
             // 
             this.bmitem.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bmitem.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.bmitem.ForeColor = System.Drawing.Color.White;
-            this.bmitem.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.bmitem.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bmitem.ForeColor = System.Drawing.Color.Black;
+            this.bmitem.HintForeColor = System.Drawing.Color.Black;
             this.bmitem.HintText = "Introduce Item";
             this.bmitem.isPassword = false;
             this.bmitem.LineFocusedColor = System.Drawing.Color.Blue;
@@ -146,9 +146,9 @@
             // bmfactor
             // 
             this.bmfactor.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bmfactor.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.bmfactor.ForeColor = System.Drawing.Color.White;
-            this.bmfactor.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.bmfactor.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bmfactor.ForeColor = System.Drawing.Color.Black;
+            this.bmfactor.HintForeColor = System.Drawing.Color.Black;
             this.bmfactor.HintText = "Introduce factor";
             this.bmfactor.isPassword = false;
             this.bmfactor.LineFocusedColor = System.Drawing.Color.Blue;
@@ -166,9 +166,9 @@
             // bmoferta
             // 
             this.bmoferta.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bmoferta.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.bmoferta.ForeColor = System.Drawing.Color.White;
-            this.bmoferta.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.bmoferta.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bmoferta.ForeColor = System.Drawing.Color.Black;
+            this.bmoferta.HintForeColor = System.Drawing.Color.Black;
             this.bmoferta.HintText = "Introduce oferta";
             this.bmoferta.isPassword = false;
             this.bmoferta.LineFocusedColor = System.Drawing.Color.Blue;
@@ -186,9 +186,9 @@
             // bmprecio2
             // 
             this.bmprecio2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bmprecio2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.bmprecio2.ForeColor = System.Drawing.Color.White;
-            this.bmprecio2.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.bmprecio2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bmprecio2.ForeColor = System.Drawing.Color.Black;
+            this.bmprecio2.HintForeColor = System.Drawing.Color.Black;
             this.bmprecio2.HintText = "Introduce Precio 2";
             this.bmprecio2.isPassword = false;
             this.bmprecio2.LineFocusedColor = System.Drawing.Color.Blue;
@@ -206,9 +206,9 @@
             // bmprecio1
             // 
             this.bmprecio1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bmprecio1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.bmprecio1.ForeColor = System.Drawing.Color.White;
-            this.bmprecio1.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.bmprecio1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bmprecio1.ForeColor = System.Drawing.Color.Black;
+            this.bmprecio1.HintForeColor = System.Drawing.Color.Black;
             this.bmprecio1.HintText = "Introduce Precio 1";
             this.bmprecio1.isPassword = false;
             this.bmprecio1.LineFocusedColor = System.Drawing.Color.Blue;
@@ -226,9 +226,9 @@
             // bmvalorunitario
             // 
             this.bmvalorunitario.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bmvalorunitario.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.bmvalorunitario.ForeColor = System.Drawing.Color.White;
-            this.bmvalorunitario.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.bmvalorunitario.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bmvalorunitario.ForeColor = System.Drawing.Color.Black;
+            this.bmvalorunitario.HintForeColor = System.Drawing.Color.Black;
             this.bmvalorunitario.HintText = "Valor unitario";
             this.bmvalorunitario.isPassword = false;
             this.bmvalorunitario.LineFocusedColor = System.Drawing.Color.Blue;
@@ -246,9 +246,9 @@
             // bminimo
             // 
             this.bminimo.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bminimo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.bminimo.ForeColor = System.Drawing.Color.White;
-            this.bminimo.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.bminimo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bminimo.ForeColor = System.Drawing.Color.Black;
+            this.bminimo.HintForeColor = System.Drawing.Color.Black;
             this.bminimo.HintText = "Stock minimo";
             this.bminimo.isPassword = false;
             this.bminimo.LineFocusedColor = System.Drawing.Color.Blue;
@@ -266,9 +266,9 @@
             // bmtiempo
             // 
             this.bmtiempo.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bmtiempo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.bmtiempo.ForeColor = System.Drawing.Color.White;
-            this.bmtiempo.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.bmtiempo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bmtiempo.ForeColor = System.Drawing.Color.Black;
+            this.bmtiempo.HintForeColor = System.Drawing.Color.Black;
             this.bmtiempo.HintText = "Introduce el tiempo";
             this.bmtiempo.isPassword = false;
             this.bmtiempo.LineFocusedColor = System.Drawing.Color.Blue;
@@ -310,9 +310,9 @@
             // bmdescripcion
             // 
             this.bmdescripcion.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bmdescripcion.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.bmdescripcion.ForeColor = System.Drawing.Color.White;
-            this.bmdescripcion.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.bmdescripcion.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bmdescripcion.ForeColor = System.Drawing.Color.Black;
+            this.bmdescripcion.HintForeColor = System.Drawing.Color.Black;
             this.bmdescripcion.HintText = "Introduce descripción";
             this.bmdescripcion.isPassword = false;
             this.bmdescripcion.LineFocusedColor = System.Drawing.Color.Blue;
@@ -330,9 +330,9 @@
             // bmstock
             // 
             this.bmstock.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bmstock.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.bmstock.ForeColor = System.Drawing.Color.White;
-            this.bmstock.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.bmstock.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bmstock.ForeColor = System.Drawing.Color.Black;
+            this.bmstock.HintForeColor = System.Drawing.Color.Black;
             this.bmstock.HintText = "Introduce Stock ";
             this.bmstock.isPassword = false;
             this.bmstock.LineFocusedColor = System.Drawing.Color.Blue;
@@ -350,9 +350,9 @@
             // bmaximo
             // 
             this.bmaximo.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bmaximo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.bmaximo.ForeColor = System.Drawing.Color.White;
-            this.bmaximo.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.bmaximo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bmaximo.ForeColor = System.Drawing.Color.Black;
+            this.bmaximo.HintForeColor = System.Drawing.Color.Black;
             this.bmaximo.HintText = "Stock maximo";
             this.bmaximo.isPassword = false;
             this.bmaximo.LineFocusedColor = System.Drawing.Color.Blue;
@@ -370,9 +370,9 @@
             // bmnota
             // 
             this.bmnota.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bmnota.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.bmnota.ForeColor = System.Drawing.Color.White;
-            this.bmnota.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.bmnota.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bmnota.ForeColor = System.Drawing.Color.Black;
+            this.bmnota.HintForeColor = System.Drawing.Color.Black;
             this.bmnota.HintText = "Introduce alguna nota o referencia";
             this.bmnota.isPassword = false;
             this.bmnota.LineFocusedColor = System.Drawing.Color.Blue;
@@ -390,9 +390,9 @@
             // bmnombre
             // 
             this.bmnombre.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bmnombre.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.bmnombre.ForeColor = System.Drawing.Color.White;
-            this.bmnombre.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.bmnombre.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bmnombre.ForeColor = System.Drawing.Color.Black;
+            this.bmnombre.HintForeColor = System.Drawing.Color.Black;
             this.bmnombre.HintText = "Introduce del Nombre del producto ";
             this.bmnombre.isPassword = false;
             this.bmnombre.LineFocusedColor = System.Drawing.Color.Blue;
@@ -409,7 +409,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(147)))), ((int)(((byte)(103)))));
             this.panel2.Location = new System.Drawing.Point(0, 544);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1097, 26);
@@ -417,7 +417,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(147)))), ((int)(((byte)(103)))));
             this.panel1.Location = new System.Drawing.Point(-2, 1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1097, 26);
@@ -466,7 +466,7 @@
             this.btnguardarPro.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnguardarPro.ActiveForecolor = System.Drawing.Color.White;
             this.btnguardarPro.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.btnguardarPro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.btnguardarPro.BackColor = System.Drawing.Color.Moccasin;
             this.btnguardarPro.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnguardarPro.BackgroundImage")));
             this.btnguardarPro.ButtonText = "GUARDAR";
             this.btnguardarPro.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -492,7 +492,7 @@
             this.bunifuThinButton22.ActiveFillColor = System.Drawing.Color.Red;
             this.bunifuThinButton22.ActiveForecolor = System.Drawing.Color.White;
             this.bunifuThinButton22.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.bunifuThinButton22.BackColor = System.Drawing.Color.Moccasin;
             this.bunifuThinButton22.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton22.BackgroundImage")));
             this.bunifuThinButton22.ButtonText = "CANCELAR";
             this.bunifuThinButton22.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -1019,7 +1019,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.BackColor = System.Drawing.Color.Moccasin;
             this.ClientSize = new System.Drawing.Size(1095, 571);
             this.Controls.Add(this.bmcta);
             this.Controls.Add(this.bunifuFlatButton16);

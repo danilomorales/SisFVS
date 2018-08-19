@@ -42,11 +42,9 @@ namespace SistemaFigueri
              bmedistockmax.Text, bmedistockmini.Text, bmedivalos_unitario.Text, bmediprecio1.Text, bmediprecio2.Text, bmediprecioOferta.Text, bmedinota.Text,
              bmedifactor.Text, cboediestado.Text, bmediItem.Text, bmedinicial.Text, bmedicta.Text);
                 MessageBox.Show("Se edito correctamente");
-                //formPro.mostarProductos();               
+                this.DialogResult = DialogResult.OK;
                 this.Close();
-                //cdpro.listarProductos();
-                formPro.dgvProductos.Update();
-                formPro.dgvProductos.Refresh();
+              
 
             }
             catch (Exception ex)

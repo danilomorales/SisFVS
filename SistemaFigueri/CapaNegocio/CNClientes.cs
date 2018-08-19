@@ -14,11 +14,10 @@ namespace CapaNegocio
          CDCliente cli = new CDCliente();
 
         //READ CLIENT
-        public DataTable MostarClientes()
+        public SqlDataAdapter MostarClientes()
         {
-            DataTable table = new DataTable();
-            table = cli.listarClientes();
-            return table;
+            return  cli.listarClientes();
+       
         }
 
         //CREATE CLIENT

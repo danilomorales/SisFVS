@@ -15,11 +15,9 @@ namespace CapaNegocio
         
 
         //READALL PRODUCT
-        public DataTable MostarProductos()
+        public SqlDataAdapter MostarProductos()
         {
-            DataTable table = new DataTable();
-            table = pro.listarProductos();
-            return table;
+            return  pro.listarProductos();
         }
 
         //CREATE PRODUCT

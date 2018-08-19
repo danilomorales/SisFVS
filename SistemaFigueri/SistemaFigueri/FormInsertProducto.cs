@@ -40,9 +40,8 @@ namespace SistemaFigueri
               bmaximo.Text, bminimo.Text, bmvalorunitario.Text, bmprecio1.Text, bmprecio2.Text, bmoferta.Text, bmnota.Text,
               bmfactor.Text, cboestado.Text, bmitem.Text, bminicial.Text, bmcta.Text);
                 MessageBox.Show("Se inserto correctamente");
-                this.Close();
-                cdpro.listarProductos();
-                //formPro.mostarProductos();
+                this.DialogResult = DialogResult.OK;
+                this.Close();      
                 limpiarForm();
             }
             catch (Exception ex)

@@ -18,18 +18,20 @@ namespace CapaDatos
         private SqlDataAdapter adapter;
 
         //LISTAR PRODUCTOS
-        public DataTable listarProductos()
+        public SqlDataAdapter listarProductos()
         {
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "select p.IdProducto,p.Alias as Nombre,c.Descripcion as Categoria,m.Descripcion as Medida,p.DescripcionProducto as 'Descripcion del producto'," +
-                "p.TiempoDuracion as Duración,p.Stock,p.StockMaximo as 'Stock Maximo', p.StockMinimo as 'Stock Minimo',p.Valor_Unitario as 'Valor Unitario',p.PrecioVenta1 as 'P. Venta 1'," +
-                "p.PrecioVenta2 as 'P. Venta 2',p.PrecioOferta as 'Precio Oferta',p.Nota,p.Factor,p.Estado,p.Item,p.StockInicial as 'Stock Inicial', p.cta_vnt as 'Cta vnt',p.Vigente " +
-                "from caja.PRODUCTO p, dbo.CATEGORIA c, dbo.MEDIDA m " +
-                "where p.IdCategoria = c.IdCategoria  AND p.IdMedida = m.IdMedida";
-            leer = comando.ExecuteReader();
-            tabla.Load(leer);
-            conexion.CerrarConexion();
-            return tabla;
+            String sql = "select p.IdProducto,p.Alias as Nombre,c.Descripcion as Categoria,m.Descripcion as Medida," +
+                "p.DescripcionProducto as 'Descripcion del producto',p.TiempoDuracion as Duración,p.Stock,p.StockMaximo as 'Stock Maximo'," +
+                "p.StockMinimo as 'Stock Minimo',p.Valor_Unitario as 'Valor Unitario',p.PrecioVenta1 as 'P. Venta 1',p.PrecioVenta2 as 'P. Venta 2'," +
+                "p.PrecioOferta as 'Precio Oferta',p.Nota,p.Factor,p.Estado,p.Item,p.StockInicial as 'Stock Inicial',p.cta_vnt as 'Cta vnt'," +
+                "p.Vigente from caja.PRODUCTO p, dbo.CATEGORIA c, dbo.MEDIDA m where p.IdCategoria = c.IdCategoria AND p.IdMedida = m.IdMedida";
+            //String sql = "select p.IdProducto ,p.Alias as Nombre,c.Descripcion as Categoria,m.Descripcion as Medida,p.DescripcionProducto as 'Descripcion del producto'," +
+            //    "p.TiempoDuracion as Duración,p.Valor_Unitario as 'Valor Unitario',p.PrecioVenta1 as 'P. Venta 1'," +
+            //    "p.PrecioVenta2 as 'P. Venta 2',p.PrecioOferta as 'Precio Oferta',p.Nota,p.Factor,p.Item, p.cta_vnt as 'Cta vnt',p.Vigente " +
+            //    "from caja.PRODUCTO p, dbo.CATEGORIA c, dbo.MEDIDA m " +
+            //    "where p.IdCategoria = c.IdCategoria  AND p.IdMedida = m.IdMedida";
+            adapter = new SqlDataAdapter(sql, conexion.AbrirConexion());
+            return adapter;
         }
 
         //INSERTAR PRODUCTO
