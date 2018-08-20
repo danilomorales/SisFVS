@@ -497,6 +497,7 @@ namespace SistemaFigueri
                 SumaSubTotal += Convert.ToDecimal(dgvVenta.Rows[i].Cells[4].Value);
                 SumaIgv += Convert.ToDecimal(dgvVenta.Rows[i].Cells[6].Value);
             }
+
             dgvVenta.Rows.Add();
             dgvVenta.Rows.Add();
             dgvVenta.Rows[lst.Count + 1].Cells[3].Value = "SUB-TOTAL  S/.";
