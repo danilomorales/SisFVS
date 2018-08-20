@@ -20,6 +20,8 @@ namespace SistemaFigueri
         CNProductos cp = new CNProductos();
         CDProductos cdpro = new CDProductos();
         DataTable tProducto = new DataTable();
+        CDCliente Dcliente = new CDCliente();
+
         public String alias { get; set; }
         public String descripcion { get; set; }
         public String stock { get; set; }
@@ -32,12 +34,12 @@ namespace SistemaFigueri
         {
             InitializeComponent();
         }
-        public void mostarProductos(DataGridView dgvProducto)
+        public void LIstaProductoFiltro(DataGridView dgvProducto)
         {
             try
             {
                 CNProductos objProducto = new CNProductos();
-                SqlDataAdapter adapter = objProducto.CargaProductoFiltro();
+                SqlDataAdapter adapter = objProducto.ListaProductosFiltro();
                 foreach (DataRow row in tProducto.Rows)
                 {
                     list.Add((DataRow)row);
@@ -46,40 +48,52 @@ namespace SistemaFigueri
                 dgvProducto.DataSource = tProducto;
                 adapter.Dispose();
 
+                //CNProductos objProducto = new CNProductos();
+                
+                //foreach (DataRow row in tProducto.Rows)
+                //{
+                //    list.Add((DataRow)row);
+                //}
+                //dgvProducto.DataSource = tProducto;
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Carga fallida:" + ex.ToString());
 
             }
+
         }
+
+
+
         private void FormBuscarProducto_Load(object sender, EventArgs e)
         {
 
             dgvlListaProducto.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
             dgvlListaProducto.AllowUserToResizeRows = false;
-            mostarProductos(dgvlListaProducto);
-            //dgvlListaProducto.Columns[0].Visible = false;
+            LIstaProductoFiltro(dgvlListaProducto);
+           // dgvlListaProducto.Columns[0].Visible = false;
             dgvlListaProducto.Columns["Código"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvlListaProducto.Columns["DescripcionProducto"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvlListaProducto.Columns["Alias"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvlListaProducto.Columns["Nota"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvlListaProducto.Columns["Descripción"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvlListaProducto.Columns["TiempoDuracion"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvlListaProducto.Columns["Stock"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvlListaProducto.Columns["Precio"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvlListaProducto.Columns["PrecioOferta"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvlListaProducto.Columns["Vigente"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvlListaProducto.Columns["Ctaegoría"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvlListaProducto.Columns["Medida"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+ 
             foreach (DataGridViewColumn column in dgvlListaProducto.Columns)
             {
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
+            lbIdCliente.Text = precio;
+
+
         }
         private void tbFiltra_KeyUp(object sender, KeyEventArgs e)
         {
             DataView dv = tProducto.DefaultView;
-            dv.RowFilter = string.Format("Código like '%{0}%' or Alias like '%{0}%' or Descripción like '%{0}%'", tbFiltra.Text);
+            dv.RowFilter = string.Format("Código like '%{0}%' or Alias like '%{0}%' or DescripcionProducto like '%{0}%'", tbFiltra.Text);
 
         }
 
@@ -98,19 +112,17 @@ namespace SistemaFigueri
             //FormVenta fv = new FormVenta();
             //fv.tbAlias.Text = this.dgvlListaProducto.CurrentRow.Cells["Alias"].Value.ToString();
             String IdProducto = dgvlListaProducto.Rows[e.RowIndex].Cells["Código"].Value.ToString();
+            String Producto = dgvlListaProducto.Rows[e.RowIndex].Cells["DescripcionProducto"].Value.ToString();
             String Alias = dgvlListaProducto.Rows[e.RowIndex].Cells["Alias"].Value.ToString();
-            String Producto = dgvlListaProducto.Rows[e.RowIndex].Cells["Descripción"].Value.ToString();
-            String Stock = dgvlListaProducto.Rows[e.RowIndex].Cells["Stock"].Value.ToString();
             String Fechav = dgvlListaProducto.Rows[e.RowIndex].Cells["TiempoDuracion"].Value.ToString();
             String Precio = dgvlListaProducto.Rows[e.RowIndex].Cells["Precio"].Value.ToString();
-            String PreOferta = dgvlListaProducto.Rows[e.RowIndex].Cells["PrecioOferta"].Value.ToString();
+            String Stock = dgvlListaProducto.Rows[e.RowIndex].Cells["Stock"].Value.ToString();
             String Id = dgvlListaProducto.Rows[e.RowIndex].Cells[0].Value.ToString();
             alias = Alias;
             descripcion = Producto;
             stock = Stock;
             fechavencimiento = Fechav;
             precio = Precio;
-            oferta = PreOferta;
             idproducto = IdProducto;
             this.DialogResult = DialogResult.OK;
             this.Close();

@@ -24,6 +24,9 @@ namespace SistemaFigueri
         public String dni { get; set; }
         public String cliente { get; set; }
         public String ruc { get; set; }
+        public String empresa { get; set; }
+        public String tipodoc { get; set; }
+        public String idcliente { get; set; }
   
 
         public FormBuscarClienteR()
@@ -66,13 +69,17 @@ namespace SistemaFigueri
 
             //dgvlListaProducto.Columns[0].Visible = false;
             dgvCliente.Columns["Documento"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvCliente.Columns["IdCliente"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvCliente.Columns["DNI"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvCliente.Columns["RUC"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvCliente.Columns["Nombres"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvCliente.Columns["Apellidos"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvCliente.Columns["NombreEmpresa"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvCliente.Columns["TipoCliente"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvCliente.Columns["Sector"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            
+            dgvCliente.Columns["Documento"].Visible = false;
+            dgvCliente.Columns["IdCliente"].Visible = false;
+
            foreach (DataGridViewColumn column in dgvCliente.Columns)
             {
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
@@ -133,13 +140,20 @@ namespace SistemaFigueri
             String Nombres = dgvCliente.Rows[e.RowIndex].Cells["Nombres"].Value.ToString();
             String Apellidos = dgvCliente.Rows[e.RowIndex].Cells["Apellidos"].Value.ToString();
             String Ruc = dgvCliente.Rows[e.RowIndex].Cells["RUC"].Value.ToString();
+            String IdCliente = dgvCliente.Rows[e.RowIndex].Cells["IdCliente"].Value.ToString();
+            String Empresa = dgvCliente.Rows[e.RowIndex].Cells["NombreEmpresa"].Value.ToString();
+            String TipoDoc = dgvCliente.Rows[e.RowIndex].Cells["Documento"].Value.ToString();
+
             dni = Dni;
             cliente = "" +""+Nombres+" "+Apellidos;
             ruc = Ruc;
+            idcliente = IdCliente;
+            empresa = Empresa;
+            tipodoc = TipoDoc;
             this.DialogResult = DialogResult.OK;
             this.Close();
-
         }
+
     }
 
 

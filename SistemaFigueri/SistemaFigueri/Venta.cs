@@ -19,8 +19,12 @@ namespace SistemaFigueri
         public string TipoDocumento { get; set; }
         public DateTime FechaVenta { get; set; }
         public decimal Total { get; set; }
-        
-        
+        //Serie
+        public int Id_Serie { get; set; }
+        public String Numero_Serie { get; set; }
+
+
+
         public string Descripcion { get; set; }
         public int Cantidad { get; set; }
         public decimal PrecioVenta { get; set; }

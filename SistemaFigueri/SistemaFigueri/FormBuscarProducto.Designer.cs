@@ -39,16 +39,19 @@
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.dgvlListaProducto = new System.Windows.Forms.DataGridView();
             this.btnCerrarFiltroCliente = new Bunifu.Framework.UI.BunifuTileButton();
+            this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.lbIdCliente = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvlListaProducto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuCustomLabel15
             // 
             this.bunifuCustomLabel15.AutoSize = true;
-            this.bunifuCustomLabel15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.bunifuCustomLabel15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(147)))), ((int)(((byte)(103)))));
             this.bunifuCustomLabel15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bunifuCustomLabel15.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel15.ForeColor = System.Drawing.Color.White;
+            this.bunifuCustomLabel15.ForeColor = System.Drawing.Color.Black;
             this.bunifuCustomLabel15.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bunifuCustomLabel15.Location = new System.Drawing.Point(817, 66);
             this.bunifuCustomLabel15.Name = "bunifuCustomLabel15";
@@ -60,7 +63,7 @@
             // lbtotal
             // 
             this.lbtotal.AutoSize = true;
-            this.lbtotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.lbtotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(147)))), ((int)(((byte)(103)))));
             this.lbtotal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbtotal.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbtotal.ForeColor = System.Drawing.Color.White;
@@ -75,10 +78,10 @@
             // bunifuCustomLabel22
             // 
             this.bunifuCustomLabel22.AutoSize = true;
-            this.bunifuCustomLabel22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.bunifuCustomLabel22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(147)))), ((int)(((byte)(103)))));
             this.bunifuCustomLabel22.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bunifuCustomLabel22.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel22.ForeColor = System.Drawing.Color.White;
+            this.bunifuCustomLabel22.ForeColor = System.Drawing.Color.Black;
             this.bunifuCustomLabel22.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bunifuCustomLabel22.Location = new System.Drawing.Point(56, 45);
             this.bunifuCustomLabel22.Name = "bunifuCustomLabel22";
@@ -89,10 +92,10 @@
             // 
             // cboestado
             // 
-            this.cboestado.BackColor = System.Drawing.Color.DarkGreen;
+            this.cboestado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(147)))), ((int)(((byte)(103)))));
             this.cboestado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboestado.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboestado.ForeColor = System.Drawing.SystemColors.Menu;
+            this.cboestado.ForeColor = System.Drawing.Color.Black;
             this.cboestado.FormattingEnabled = true;
             this.cboestado.Items.AddRange(new object[] {
             "Numero de Doc ",
@@ -105,10 +108,10 @@
             // 
             // tbFiltra
             // 
-            this.tbFiltra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.tbFiltra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(147)))), ((int)(((byte)(103)))));
             this.tbFiltra.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tbFiltra.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.tbFiltra.ForeColor = System.Drawing.Color.White;
+            this.tbFiltra.ForeColor = System.Drawing.Color.Black;
             this.tbFiltra.HintForeColor = System.Drawing.Color.White;
             this.tbFiltra.HintText = "Buscar Producto";
             this.tbFiltra.isPassword = false;
@@ -116,12 +119,11 @@
             this.tbFiltra.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
             this.tbFiltra.LineMouseHoverColor = System.Drawing.Color.SandyBrown;
             this.tbFiltra.LineThickness = 6;
-            this.tbFiltra.Location = new System.Drawing.Point(201, 60);
+            this.tbFiltra.Location = new System.Drawing.Point(287, 56);
             this.tbFiltra.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbFiltra.Name = "tbFiltra";
-            this.tbFiltra.Size = new System.Drawing.Size(576, 31);
+            this.tbFiltra.Size = new System.Drawing.Size(523, 31);
             this.tbFiltra.TabIndex = 216;
-            this.tbFiltra.Text = "Buscar Cliente";
             this.tbFiltra.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.tbFiltra.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbFiltra_KeyUp);
             // 
@@ -170,33 +172,58 @@
             // btnCerrarFiltroCliente
             // 
             this.btnCerrarFiltroCliente.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnCerrarFiltroCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
-            this.btnCerrarFiltroCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnCerrarFiltroCliente.color = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
+            this.btnCerrarFiltroCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnCerrarFiltroCliente.color = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnCerrarFiltroCliente.colorActive = System.Drawing.Color.MediumSeaGreen;
             this.btnCerrarFiltroCliente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCerrarFiltroCliente.Font = new System.Drawing.Font("Century Gothic", 8F);
+            this.btnCerrarFiltroCliente.Font = new System.Drawing.Font("Century Gothic", 16F);
             this.btnCerrarFiltroCliente.ForeColor = System.Drawing.Color.White;
-            this.btnCerrarFiltroCliente.Image = global::SistemaFigueri.Properties.Resources.quitar;
-            this.btnCerrarFiltroCliente.ImagePosition = 3;
-            this.btnCerrarFiltroCliente.ImageZoom = 30;
-            this.btnCerrarFiltroCliente.LabelPosition = 20;
-            this.btnCerrarFiltroCliente.LabelText = "Salir";
-            this.btnCerrarFiltroCliente.Location = new System.Drawing.Point(944, 486);
+            this.btnCerrarFiltroCliente.Image = null;
+            this.btnCerrarFiltroCliente.ImagePosition = 4;
+            this.btnCerrarFiltroCliente.ImageZoom = 20;
+            this.btnCerrarFiltroCliente.LabelPosition = 30;
+            this.btnCerrarFiltroCliente.LabelText = "Cancelar";
+            this.btnCerrarFiltroCliente.Location = new System.Drawing.Point(950, 470);
             this.btnCerrarFiltroCliente.Margin = new System.Windows.Forms.Padding(4);
             this.btnCerrarFiltroCliente.Name = "btnCerrarFiltroCliente";
-            this.btnCerrarFiltroCliente.Size = new System.Drawing.Size(152, 48);
-            this.btnCerrarFiltroCliente.TabIndex = 221;
+            this.btnCerrarFiltroCliente.Size = new System.Drawing.Size(123, 36);
+            this.btnCerrarFiltroCliente.TabIndex = 223;
             this.btnCerrarFiltroCliente.Click += new System.EventHandler(this.btnCerrarFiltroCliente_Click);
+            // 
+            // bunifuImageButton2
+            // 
+            this.bunifuImageButton2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.bunifuImageButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(147)))), ((int)(((byte)(103)))));
+            this.bunifuImageButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuImageButton2.Image = global::SistemaFigueri.Properties.Resources.buscador;
+            this.bunifuImageButton2.ImageActive = null;
+            this.bunifuImageButton2.Location = new System.Drawing.Point(249, 56);
+            this.bunifuImageButton2.Name = "bunifuImageButton2";
+            this.bunifuImageButton2.Size = new System.Drawing.Size(38, 31);
+            this.bunifuImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuImageButton2.TabIndex = 226;
+            this.bunifuImageButton2.TabStop = false;
+            this.bunifuImageButton2.Zoom = 10;
+            // 
+            // lbIdCliente
+            // 
+            this.lbIdCliente.AutoSize = true;
+            this.lbIdCliente.Location = new System.Drawing.Point(164, 456);
+            this.lbIdCliente.Name = "lbIdCliente";
+            this.lbIdCliente.Size = new System.Drawing.Size(30, 13);
+            this.lbIdCliente.TabIndex = 227;
+            this.lbIdCliente.Text = "Clien";
             // 
             // FormBuscarProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(112)))), ((int)(((byte)(147)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(190)))), ((int)(((byte)(154)))));
             this.ClientSize = new System.Drawing.Size(1095, 537);
-            this.Controls.Add(this.dgvlListaProducto);
+            this.Controls.Add(this.lbIdCliente);
+            this.Controls.Add(this.bunifuImageButton2);
             this.Controls.Add(this.btnCerrarFiltroCliente);
+            this.Controls.Add(this.dgvlListaProducto);
             this.Controls.Add(this.bunifuCustomLabel15);
             this.Controls.Add(this.lbtotal);
             this.Controls.Add(this.bunifuCustomLabel22);
@@ -208,6 +235,7 @@
             this.Text = "FormBuscarProducto";
             this.Load += new System.EventHandler(this.FormBuscarProducto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvlListaProducto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -220,8 +248,10 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel22;
         private System.Windows.Forms.ComboBox cboestado;
         private Bunifu.Framework.UI.BunifuMaterialTextbox tbFiltra;
-        private Bunifu.Framework.UI.BunifuTileButton btnCerrarFiltroCliente;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private System.Windows.Forms.DataGridView dgvlListaProducto;
+        private Bunifu.Framework.UI.BunifuTileButton btnCerrarFiltroCliente;
+        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton2;
+        private System.Windows.Forms.Label lbIdCliente;
     }
 }
