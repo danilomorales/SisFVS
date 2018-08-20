@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBuscarProducto));
             this.bunifuCustomLabel15 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lbtotal = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel22 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -40,7 +41,6 @@
             this.dgvlListaProducto = new System.Windows.Forms.DataGridView();
             this.btnCerrarFiltroCliente = new Bunifu.Framework.UI.BunifuTileButton();
             this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.lbIdCliente = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvlListaProducto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
             this.SuspendLayout();
@@ -195,7 +195,7 @@
             this.bunifuImageButton2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.bunifuImageButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(147)))), ((int)(((byte)(103)))));
             this.bunifuImageButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            //this.bunifuImageButton2.Image = global::SistemaFigueri.Properties.Resources.buscador;
+            this.bunifuImageButton2.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton2.Image")));
             this.bunifuImageButton2.ImageActive = null;
             this.bunifuImageButton2.Location = new System.Drawing.Point(249, 56);
             this.bunifuImageButton2.Name = "bunifuImageButton2";
@@ -205,22 +205,12 @@
             this.bunifuImageButton2.TabStop = false;
             this.bunifuImageButton2.Zoom = 10;
             // 
-            // lbIdCliente
-            // 
-            this.lbIdCliente.AutoSize = true;
-            this.lbIdCliente.Location = new System.Drawing.Point(164, 456);
-            this.lbIdCliente.Name = "lbIdCliente";
-            this.lbIdCliente.Size = new System.Drawing.Size(30, 13);
-            this.lbIdCliente.TabIndex = 227;
-            this.lbIdCliente.Text = "Clien";
-            // 
             // FormBuscarProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(190)))), ((int)(((byte)(154)))));
             this.ClientSize = new System.Drawing.Size(1095, 537);
-            this.Controls.Add(this.lbIdCliente);
             this.Controls.Add(this.bunifuImageButton2);
             this.Controls.Add(this.btnCerrarFiltroCliente);
             this.Controls.Add(this.dgvlListaProducto);
@@ -252,6 +242,5 @@
         private System.Windows.Forms.DataGridView dgvlListaProducto;
         private Bunifu.Framework.UI.BunifuTileButton btnCerrarFiltroCliente;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton2;
-        private System.Windows.Forms.Label lbIdCliente;
     }
 }

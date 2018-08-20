@@ -149,6 +149,7 @@
             this.bunifuTileButton2 = new Bunifu.Framework.UI.BunifuTileButton();
             this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.tbIdCliente = new System.Windows.Forms.TextBox();
+            this.Idproducto = new System.Windows.Forms.TextBox();
             this.Venta.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.bunifuCards4.SuspendLayout();
@@ -248,6 +249,7 @@
             // 
             this.panel8.AutoSize = true;
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(190)))), ((int)(((byte)(154)))));
+            this.panel8.Controls.Add(this.Idproducto);
             this.panel8.Controls.Add(this.bunifuFlatButton2);
             this.panel8.Controls.Add(this.panel4);
             this.panel8.Controls.Add(this.tbIdProducto);
@@ -1603,7 +1605,7 @@
             // btnAgregaCarro
             // 
             this.btnAgregaCarro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAgregaCarro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(111)))), ((int)(((byte)(0)))));
+            this.btnAgregaCarro.BackColor = System.Drawing.Color.DarkOrange;
             this.btnAgregaCarro.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAgregaCarro.Image = global::SistemaFigueri.Properties.Resources.compra;
             this.btnAgregaCarro.ImageActive = null;
@@ -1862,17 +1864,33 @@
             // 
             this.tbIdCliente.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.tbIdCliente.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.tbIdCliente.BackColor = System.Drawing.Color.FloralWhite;
+            this.tbIdCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(190)))), ((int)(((byte)(154)))));
             this.tbIdCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbIdCliente.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbIdCliente.ForeColor = System.Drawing.Color.Black;
-            this.tbIdCliente.Location = new System.Drawing.Point(197, 45);
+            this.tbIdCliente.Location = new System.Drawing.Point(179, 35);
             this.tbIdCliente.Name = "tbIdCliente";
             this.tbIdCliente.ReadOnly = true;
             this.tbIdCliente.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tbIdCliente.Size = new System.Drawing.Size(171, 20);
             this.tbIdCliente.TabIndex = 208;
+            this.tbIdCliente.Visible = false;
             this.tbIdCliente.TextChanged += new System.EventHandler(this.tbDocumento_TextChanged);
+            // 
+            // Idproducto
+            // 
+            this.Idproducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(190)))), ((int)(((byte)(154)))));
+            this.Idproducto.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Idproducto.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.Idproducto.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Idproducto.ForeColor = System.Drawing.Color.Black;
+            this.Idproducto.Location = new System.Drawing.Point(533, 204);
+            this.Idproducto.Multiline = true;
+            this.Idproducto.Name = "Idproducto";
+            this.Idproducto.ReadOnly = true;
+            this.Idproducto.Size = new System.Drawing.Size(129, 25);
+            this.Idproducto.TabIndex = 228;
+            this.Idproducto.Visible = false;
             // 
             // FormVenta
             // 
@@ -2059,5 +2077,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
         private System.Windows.Forms.TextBox tbIdCliente;
+        public System.Windows.Forms.TextBox Idproducto;
     }
 }

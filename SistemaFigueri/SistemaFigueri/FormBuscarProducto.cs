@@ -86,7 +86,7 @@ namespace SistemaFigueri
             {
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
-            lbIdCliente.Text = precio;
+            
 
 
         }
@@ -117,7 +117,7 @@ namespace SistemaFigueri
             String Fechav = dgvlListaProducto.Rows[e.RowIndex].Cells["TiempoDuracion"].Value.ToString();
             String Precio = dgvlListaProducto.Rows[e.RowIndex].Cells["Precio"].Value.ToString();
             String Stock = dgvlListaProducto.Rows[e.RowIndex].Cells["Stock"].Value.ToString();
-            String Id = dgvlListaProducto.Rows[e.RowIndex].Cells[0].Value.ToString();
+            //String Id = dgvlListaProducto.Rows[e.RowIndex].Cells[0].Value.ToString();
             alias = Alias;
             descripcion = Producto;
             stock = Stock;

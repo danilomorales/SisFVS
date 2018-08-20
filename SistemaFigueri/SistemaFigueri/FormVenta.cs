@@ -346,8 +346,9 @@ namespace SistemaFigueri
                         dtFechaV.Text = form.fechavencimiento;
                         tbPrecio.Text = form.precio;
                         btnAgregaCarro.Enabled = true;
+                        Idproducto.Text = form.idproducto;
                         
-                        tbIdProducto.Text = form.idproducto;
+                       
 
                         CNProductos objProducto = new CNProductos();
 
@@ -414,53 +415,49 @@ namespace SistemaFigueri
             {
                 if (tbDescripcion.Text.Trim() != "")
                 {
-                    if (tbStock.Text.Trim() != "")
+                    if (tbCantidad.Text.Trim() != "")
                     {
-                        if (tbCantidad.Text.Trim() != "")
-                    {
-                        
-                            if (Convert.ToInt32(tbCantidad.Text) >= 0)
-                            {
-                                if (Convert.ToInt32(tbCantidad.Text) <= Convert.ToInt32(tbStock.Text))
-                                {
-                                    /*ven.IdProducto = Convert.ToInt32(tbIdProducto.Text);
-                                       ven.IdVenta = Convert.ToInt32(tbIdProducto.Text);*/
-                                    ven.Descripcion = tbAlias.Text + " - " + tbDescripcion.Text;
-                                    ven.Cantidad = Convert.ToInt32(tbCantidad.Text);
-                                    ven.PrecioVenta = Convert.ToDecimal(tbPrecio.Text);
-                                    Porcentaje = (Convert.ToDecimal(tbIgv.Text) / 100) + 1;
-                                    SubTotal = ((Convert.ToDecimal(tbPrecio.Text) * Convert.ToInt32(tbCantidad.Text)) / Porcentaje);
-                                    ven.Igv = Math.Round(Convert.ToDecimal(SubTotal) * (Convert.ToDecimal(tbIgv.Text) / (100)), 2);
-                                    ven.SubTotal = Math.Round(SubTotal, 2);
-                                    lst.Add(ven);
-                                    LlenarGrilla();
-                                    Limpiar();
 
-                                }
-                                else
-                                {
-                                    MessageBox.Show("Stock Insuficiente", "Figueri", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
-                                }
+                        if (Convert.ToInt32(tbCantidad.Text) >= 0)
+                        {
+                            if (Convert.ToInt32(tbCantidad.Text) <= Convert.ToInt32(tbStock.Text))
+                            {
+                                //ven.IdProducto = Convert.ToInt32(tbIdProducto.Text);
+                                //ven.IdVenta = Convert.ToInt32(tbIdProducto.Text);
+                                ven.Descripcion = tbAlias.Text + " - " + tbDescripcion.Text;
+                                ven.Cantidad = Convert.ToInt32(tbCantidad.Text);
+                                ven.PrecioVenta = Convert.ToDecimal(tbPrecio.Text);
+                                Porcentaje = (Convert.ToDecimal(tbIgv.Text) / 100) + 1;
+                                SubTotal = ((Convert.ToDecimal(tbPrecio.Text) * Convert.ToInt32(tbCantidad.Text)) / Porcentaje);
+                                ven.Igv = Math.Round(Convert.ToDecimal(SubTotal) * (Convert.ToDecimal(tbIgv.Text) / (100)), 2);
+                                ven.SubTotal = Math.Round(SubTotal, 2);
+                                lst.Add(ven);
+                                LlenarGrilla();
+                                Limpiar();
                             }
                             else
                             {
-                                MessageBox.Show("Cantidad Ingresada no es Válida.", "Figueri", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                                tbCantidad.Clear();
-                                tbCantidad.Focus();
-
+                                MessageBox.Show("Stock Insuficiente", "Figueri", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
                             }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Cantidad Ingresada no es Válida.", "Figueri", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                            tbCantidad.Clear();
+                            tbCantidad.Focus();
+
+                        }
 
                     }
+
                     else
+
                     {
+
                         MessageBox.Show("Ingrese Cantidad", "Figeri", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
                         tbCantidad.Clear();
-                    }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Stock Inválido", "Figueri", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                        tbStock.Focus();
+
                     }
                 }
                 else
@@ -481,13 +478,14 @@ namespace SistemaFigueri
         private void LlenarGrilla()
         {
             var format = (NumberFormatInfo)NumberFormatInfo.CurrentInfo.Clone();
-            format.CurrencySymbol = "";
+            format.CurrencySymbol = "Soles.";
             Decimal SumaSubTotal = 0; Decimal SumaIgv = 0; Decimal SumaTotal = 0;
             dgvVenta.Rows.Clear();
             for (int i = 0; i < lst.Count; i++)
             {
                 dgvVenta.Rows.Add();
                 dgvVenta.Rows[i].Cells[0].Value = lst[i].IdVenta;
+                dgvVenta.Rows[i].DefaultCellStyle.FormatProvider = format;
                 dgvVenta.Rows[i].Cells[1].Value = lst[i].Cantidad;
                 dgvVenta.Rows[i].Cells[2].Value = lst[i].Descripcion;
                 dgvVenta.Rows[i].Cells[3].Value = lst[i].PrecioVenta;
@@ -546,6 +544,7 @@ namespace SistemaFigueri
                     tbDocumento.Text = form.dni;
                     tbtipodoc.Text = form.tipodoc;
                     tbrazonsocial.Text = form.empresa;
+                    tbIdCliente.Text = form.idcliente;
 
                     CNProductos objProducto = new CNProductos();
 
