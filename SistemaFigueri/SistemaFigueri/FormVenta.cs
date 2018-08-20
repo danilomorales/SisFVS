@@ -346,7 +346,7 @@ namespace SistemaFigueri
                         dtFechaV.Text = form.fechavencimiento;
                         tbPrecio.Text = form.precio;
                         btnAgregaCarro.Enabled = true;
-                        Idproducto.Text = form.idproducto;
+                        tbIdProducto.Text = form.idproducto;
                         
                        
 
