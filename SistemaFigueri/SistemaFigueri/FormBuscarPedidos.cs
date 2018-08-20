@@ -25,6 +25,7 @@ namespace SistemaFigueri
         public String ndoc { get; set; }
         public String empresa { get; set; }
         public List<DataRow> listaDetalle { get; set; }
+        public List<Venta> listaVenta { get; set; }
         public FormBuscarPedidos()
         {
             InitializeComponent();
