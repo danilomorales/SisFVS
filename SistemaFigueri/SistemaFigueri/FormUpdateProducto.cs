@@ -32,29 +32,9 @@ namespace SistemaFigueri
         //CDProductos pro = new CDProductos();
         CNProductos cnProd = new CNProductos();
         FormProductos formPro = new FormProductos();
-        public string idProducto;
-        
-        private void bunifuThinButton21_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                cnProd.UpdateProduct(idProducto.ToString(), bmedinombre.Text, cboedicategoria.SelectedValue.ToString(), cboedimedida.SelectedValue.ToString(), bmedidescripcion.Text, bmeditiempo.Text, bmedistock.Text,
-             bmedistockmax.Text, bmedistockmini.Text, bmedivalos_unitario.Text, bmediprecio1.Text, bmediprecio2.Text, bmediprecioOferta.Text, bmedinota.Text,
-             bmedifactor.Text, cboediestado.Text, bmediItem.Text, bmedinicial.Text, bmedicta.Text);
-                MessageBox.Show("Se edito correctamente");
-                //formPro.mostarProductos();               
-                this.Close();
-                //cdpro.listarProductos();
-                formPro.dgvProductos.Update();
-                formPro.dgvProductos.Refresh();
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("No se pudo Actualizar los datos por :" + ex.ToString());
-            }
-
-        }
+        public string idProducto { get; set; }
+        public string fechita { get; set; }
+              
 
         private void bunifuThinButton23_Click(object sender, EventArgs e)
         {
@@ -218,5 +198,35 @@ namespace SistemaFigueri
         {
             SoloLetras(e);
         }
+
+        private void btnguardarPro_Click(object sender, EventArgs e)
+        {
+            String fecha1 = dpediduracion.Value.ToString("yyyy-MM-dd");
+            MessageBox.Show("Formulario" + idProducto);
+            try
+            {
+                cnProd.UpdateProduct(idProducto, bmedinombre.Text.ToString(), cboedicategoria.SelectedValue.ToString(), cboedimedida.SelectedValue.ToString(),
+                    bmedidescripcion.Text.ToString(), fecha1, bmedistock.Text.ToString(), bmedistockmax.Text.ToString(),
+                    bmedistockmini.Text.ToString(), bmedivalos_unitario.Text.ToString(), bmediprecio1.Text.ToString(),
+                    bmediprecio2.Text.ToString(), bmediprecioOferta.Text.ToString(), bmedinota.Text.ToString(), bmedifactor.Text.ToString(),
+                    cboediestado.Text.ToString(), bmediItem.Text.ToString(), bmedinicial.Text.ToString(), bmedicta.Text.ToString());
+                MessageBox.Show("Se edito correctamente");
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("No se pudo Actualizar los datos por :" + ex.ToString());
+            }
+        }
+
+        private void bunifuThinButton22_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
     }
 }

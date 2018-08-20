@@ -12,20 +12,12 @@ using CapaNegocio;
 
 namespace SistemaFigueri
 {
-    public partial class FormKardex : MaterialSkin.Controls.MaterialForm
+    public partial class FormKardex : Form
     {
         public FormKardex()
         {
             InitializeComponent();
-            MaterialSkin.MaterialSkinManager manejoSki = MaterialSkin.MaterialSkinManager.Instance;
-            manejoSki.AddFormToManage(this);
-            manejoSki.Theme = MaterialSkin.MaterialSkinManager.Themes.DARK;
-            manejoSki.ColorScheme = new MaterialSkin.ColorScheme(
-                MaterialSkin.Primary.Blue800,
-                MaterialSkin.Primary.Indigo500,
-                MaterialSkin.Primary.Blue100,
-                MaterialSkin.Accent.Yellow200,
-                MaterialSkin.TextShade.WHITE);
+
         }
         CNKardex car = new CNKardex();
         public string idProducto;
@@ -80,6 +72,11 @@ namespace SistemaFigueri
         private void bunifuCards1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void bunifuThinButton22_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

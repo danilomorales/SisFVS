@@ -193,7 +193,7 @@
             // 
             this.btnEliminarUsuario.BackColor = System.Drawing.Color.Transparent;
             this.btnEliminarUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEliminarUsuario.Image = global::SistemaFigueri.Properties.Resources.trash;
+            //this.btnEliminarUsuario.Image = global::SistemaFigueri.Properties.Resources.trash;
             this.btnEliminarUsuario.ImageActive = null;
             this.btnEliminarUsuario.Location = new System.Drawing.Point(394, 12);
             this.btnEliminarUsuario.Name = "btnEliminarUsuario";
@@ -208,7 +208,7 @@
             // 
             this.btneditarUsuario.BackColor = System.Drawing.Color.Transparent;
             this.btneditarUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btneditarUsuario.Image = global::SistemaFigueri.Properties.Resources.ediiiii;
+            //this.btneditarUsuario.Image = global::SistemaFigueri.Properties.Resources.ediiiii;
             this.btneditarUsuario.ImageActive = null;
             this.btneditarUsuario.Location = new System.Drawing.Point(297, 11);
             this.btneditarUsuario.Name = "btneditarUsuario";
@@ -223,7 +223,7 @@
             // 
             this.bunifuImageButton2.BackColor = System.Drawing.Color.Transparent;
             this.bunifuImageButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuImageButton2.Image = global::SistemaFigueri.Properties.Resources.adddddd;
+            //this.bunifuImageButton2.Image = global::SistemaFigueri.Properties.Resources.adddddd;
             this.bunifuImageButton2.ImageActive = null;
             this.bunifuImageButton2.Location = new System.Drawing.Point(202, 10);
             this.bunifuImageButton2.Name = "bunifuImageButton2";

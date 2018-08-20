@@ -113,6 +113,26 @@ namespace SistemaFigueri.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap addProduct1 {
+            get {
+                object obj = ResourceManager.GetObject("addProduct1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap addProduct2 {
+            get {
+                object obj = ResourceManager.GetObject("addProduct2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap agrega {
             get {
                 object obj = ResourceManager.GetObject("agrega", resourceCulture);
@@ -146,16 +166,6 @@ namespace SistemaFigueri.Properties {
         internal static System.Drawing.Bitmap busca {
             get {
                 object obj = ResourceManager.GetObject("busca", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap buscador {
-            get {
-                object obj = ResourceManager.GetObject("buscador", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

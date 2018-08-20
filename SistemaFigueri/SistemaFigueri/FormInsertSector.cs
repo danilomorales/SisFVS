@@ -57,17 +57,23 @@ namespace SistemaFigueri
         {
             SoloLetras(e);
         }
+      
 
-        private void btnguardarSec_Click_1(object sender, EventArgs e)
+        private void bmCancelarSec_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnguardarPro_Click(object sender, EventArgs e)
         {
             try
             {
 
-                cnsec.InsertSector(bmdescripcion.Text, bmnota.Text,bmporcentaje.Text);
+                cnsec.InsertSector(bmdescripcion.Text, bmnota.Text, bmporcentaje.Text);
                 MessageBox.Show("Se inserto correctamente el Sector");
                 this.Close();
                 // cdpro.listarProductos();
-                forsec.mostarSector();
+                this.DialogResult = DialogResult.OK;
                 limpiarForm();
             }
             catch (Exception ex)
@@ -76,7 +82,7 @@ namespace SistemaFigueri
             }
         }
 
-        private void bmCancelarSec_Click_1(object sender, EventArgs e)
+        private void bunifuThinButton22_Click(object sender, EventArgs e)
         {
             this.Close();
         }

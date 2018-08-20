@@ -21,10 +21,21 @@ namespace SistemaFigueri
         }
         CNSector cnsec = new CNSector();
         CDSector cdsec = new CDSector();
+        DataTable tabla = new DataTable();
+        List<DataRow> list = new List<DataRow>();
 
         public void mostarSector()
         {
-            dgvSector.DataSource = cnsec.MostarSector();
+            SqlDataAdapter adapter = cnsec.MostarSector();
+            tabla = new DataTable();
+            foreach (DataRow row in tabla.Rows)
+            {
+                list.Add((DataRow)row);
+            }
+
+            adapter.Fill(tabla);
+            dgvSector.DataSource = tabla;
+            adapter.Dispose();
 
         }
 
@@ -35,8 +46,15 @@ namespace SistemaFigueri
 
         private void btnNuevoSector_Click_1(object sender, EventArgs e)
         {
-            FormInsertSector fis = new FormInsertSector();
-            fis.ShowDialog();
+         
+            
+            using (FormInsertSector fis = new FormInsertSector())
+            {
+                if (fis.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    mostarSector();
+                }
+            }
         }
 
         private void btneliminar_Click_1(object sender, EventArgs e)
@@ -47,10 +65,8 @@ namespace SistemaFigueri
                 // formUP.idProducto = dgvProductos.CurrentRow.Cells["IdProducto"].Value.ToString();
                 cnsec.DeleteSector(dgvSector.CurrentRow.Cells[0].Value.ToString());
                 MessageBox.Show("¿Estas seguro de eliminar este producto?");
-                //mostarProductos();
-                dgvSector.Update();
-                dgvSector.Refresh();
-                //mostarSector();
+               
+                mostarSector();
 
             }
             else
@@ -63,14 +79,19 @@ namespace SistemaFigueri
             {
                 if (dgvSector.SelectedRows.Count > 0)
                 {
-                    FormUpdateSector formUP = new FormUpdateSector();
-                    //Operacion = "Editar";
-                    formUP.idSector = dgvSector.CurrentRow.Cells["IdSector"].Value.ToString();
-                    formUP.bmedidescripcion.Text = dgvSector.CurrentRow.Cells[1].Value.ToString();
-                    formUP.bmedinota.Text = dgvSector.CurrentRow.Cells[2].Value.ToString();
-                    formUP.bmediporcentaje.Text = dgvSector.CurrentRow.Cells[3].Value.ToString();
-                    formUP.ShowDialog();
-                    // cdpro.listarProductos();
+                    using (FormUpdateSector formUP = new FormUpdateSector())
+                    {
+                        formUP.idSector = dgvSector.CurrentRow.Cells["IdSector"].Value.ToString();
+                        formUP.bmedidescripcion.Text = dgvSector.CurrentRow.Cells[1].Value.ToString();
+                        formUP.bmedinota.Text = dgvSector.CurrentRow.Cells[2].Value.ToString();
+                        formUP.bmediporcentaje.Text = dgvSector.CurrentRow.Cells[3].Value.ToString();
+                        formUP.ShowDialog();
+                        if (formUP.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                        {
+
+                            mostarSector();
+                        }
+                    }                       
                     mostarSector();
                 }
                 else
@@ -95,6 +116,11 @@ namespace SistemaFigueri
             da.Fill(dt);
             dgvSector.DataSource = dt;
             Conexion.Close();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

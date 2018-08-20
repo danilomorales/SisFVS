@@ -61,6 +61,7 @@ namespace SistemaFigueri
                     cbodepartamento.SelectedValue.ToString(), cboprovincia.SelectedValue.ToString(), cbodistrito.SelectedValue.ToString(), bmUsuRegistra.Text, dateRegistro.Text, bmUserModifica.Text,
                     dtfechaModifica.Text, cbosector.SelectedValue.ToString(), bmobservacion.Text);
                 MessageBox.Show("SE  registro CLIENTE");
+                this.DialogResult = DialogResult.OK;
                 this.Close();
             }
             catch (Exception ex)

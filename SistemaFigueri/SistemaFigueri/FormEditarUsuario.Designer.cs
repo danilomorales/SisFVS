@@ -143,7 +143,7 @@
             this.bunifuFlatButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuFlatButton4.Iconcolor = System.Drawing.Color.Transparent;
             this.bunifuFlatButton4.Iconimage = null;
-            this.bunifuFlatButton4.Iconimage_right = global::SistemaFigueri.Properties.Resources.pass1;
+            //this.bunifuFlatButton4.Iconimage_right = global::SistemaFigueri.Properties.Resources.pass1;
             this.bunifuFlatButton4.Iconimage_right_Selected = null;
             this.bunifuFlatButton4.Iconimage_Selected = null;
             this.bunifuFlatButton4.IconMarginLeft = 0;
@@ -246,7 +246,7 @@
             this.bunifuFlatButton11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuFlatButton11.Iconcolor = System.Drawing.Color.Transparent;
             this.bunifuFlatButton11.Iconimage = null;
-            this.bunifuFlatButton11.Iconimage_right = global::SistemaFigueri.Properties.Resources.pass1;
+            //this.bunifuFlatButton11.Iconimage_right = global::SistemaFigueri.Properties.Resources.pass1;
             this.bunifuFlatButton11.Iconimage_right_Selected = null;
             this.bunifuFlatButton11.Iconimage_Selected = null;
             this.bunifuFlatButton11.IconMarginLeft = 0;
@@ -301,7 +301,7 @@
             this.bunifuFlatButton7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuFlatButton7.Iconcolor = System.Drawing.Color.Transparent;
             this.bunifuFlatButton7.Iconimage = null;
-            this.bunifuFlatButton7.Iconimage_right = global::SistemaFigueri.Properties.Resources.logon1;
+            //this.bunifuFlatButton7.Iconimage_right = global::SistemaFigueri.Properties.Resources.logon1;
             this.bunifuFlatButton7.Iconimage_right_Selected = null;
             this.bunifuFlatButton7.Iconimage_Selected = null;
             this.bunifuFlatButton7.IconMarginLeft = 0;
