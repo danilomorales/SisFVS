@@ -22,5 +22,7 @@ namespace CapaEntidades
         private decimal _por_impto_vta_det { get; set; }
         private decimal _imp_precio_vta_det { get; set; }
 
+        //relaciones
+        public CEVenta Venta { get; set; }
     }
 }
