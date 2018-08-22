@@ -28,6 +28,7 @@ namespace SistemaFigueri
         LocalBD serie = new LocalBD();
         CNDetalleVenta Detalle = new CNDetalleVenta();
         private List<Venta> lst = new List<Venta>();
+        CNProductos obj = new CNProductos();
 
 
 
@@ -225,10 +226,13 @@ namespace SistemaFigueri
             var cards = new Bunifu.Framework.UI.BunifuCards();
             MostrarClientes();
             this.crearTabla();
+
             GenerarNumeroComprobante();
+            
+
 
             //GenerarIdVenta();
-           // GenerarSeriedeDocumento();
+            // GenerarSeriedeDocumento();
             dgvVenta.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             //bu.autoCompletar(tbBuscaClienteRece);
@@ -334,8 +338,9 @@ namespace SistemaFigueri
 
         private void btnBuscaProcto_Click(object sender, EventArgs e)
         {
-            using (FormBuscarProducto form = new FormBuscarProducto())
+            FormBuscarProducto form = new FormBuscarProducto();
             {
+                
                 if (this.tbClienteNombre.Text.Trim() != "")
                 {
                     if (form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
@@ -343,15 +348,15 @@ namespace SistemaFigueri
                         tbAlias.Text = form.alias;
                         tbDescripcion.Text = form.descripcion;
                         tbStock.Text = form.stock;
-                        dtFechaV.Text = form.fechavencimiento;
                         tbPrecio.Text = form.precio;
+                        form.tbMIdCliente.Text = tbIdCliente.Text;
+                        form.Show();
                         btnAgregaCarro.Enabled = true;
                         tbIdProducto.Text = form.idproducto;
                         
-                       
 
                         CNProductos objProducto = new CNProductos();
-
+                        
                     }
                 }
                 else
@@ -359,10 +364,10 @@ namespace SistemaFigueri
                     MessageBox.Show("Por Favor Busque el Cliente a Vender.", "Figueri", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                 
                 }
-
+                dtFechaV.Text = form.fechavencimiento;
+               
             }
-
-
+            
         }
 
         private void FormVenta_FormClosing(object sender, FormClosingEventArgs e)
@@ -511,6 +516,7 @@ namespace SistemaFigueri
             dgvVenta.Rows[lst.Count + 3].DefaultCellStyle.FormatProvider = format;
             dgvVenta.Rows[lst.Count + 3].Cells[4].Value = SumaTotal;
             dgvVenta.ClearSelection();
+           
         }
         //otr csa
         private void Limpiar()
@@ -545,6 +551,9 @@ namespace SistemaFigueri
                     tbtipodoc.Text = form.tipodoc;
                     tbrazonsocial.Text = form.empresa;
                     tbIdCliente.Text = form.idcliente;
+                    string idcliente = tbIdCliente.Text.ToString();
+                    string idproducto = Idproducto.Text.ToString();
+                    SqlDataAdapter adapter = obj.buscarclienteProducto(idcliente, idproducto);
 
                     CNProductos objProducto = new CNProductos();
 

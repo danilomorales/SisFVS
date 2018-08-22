@@ -40,5 +40,9 @@ namespace CapaEntidades
         private DateTime ultima_act;
         private String motivo_anulacion;
         private int idsucursal;
+
+        //relaciones 
+        public List<CEDetalleVenta> detalleventa { get; set; }
     }
+
 }
