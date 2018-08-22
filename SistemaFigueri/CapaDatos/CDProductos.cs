@@ -53,6 +53,7 @@ namespace CapaDatos
             Console.WriteLine("Tiempo" + tiempo);
             try
             {
+
                 comando.Connection = conexion.AbrirConexion();
                 comando.CommandText = "update caja.PRODUCTO set Alias='" + alias + "',IdCategoria='" + id_categoria + "',IdMedida='" + id_medida + "',DescripcionProducto='" + descripcion + "',TiempoDuracion=" + tiempo + "," +
                     "Stock=" + stock + ",StockMaximo=" + stockMax + ",StockMinimo=" + stockMin + ",Valor_Unitario=" + valor_uni + ",PrecioVenta1=" + precio1 + ",PrecioVenta2=" + precio2 + ",PrecioOferta=" + precioOferta + "," +

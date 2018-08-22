@@ -13,63 +13,47 @@ using System.Data.SqlClient;
 
 namespace SistemaFigueri
 {
-    public partial class FormUpdateCliente : Form
+    public partial class FormUpdateCliente : MaterialSkin.Controls.MaterialForm
     {
        
         public FormUpdateCliente()
         {
             InitializeComponent();
+            MaterialSkin.MaterialSkinManager manejoSki = MaterialSkin.MaterialSkinManager.Instance;
+            manejoSki.AddFormToManage(this);
+            manejoSki.Theme = MaterialSkin.MaterialSkinManager.Themes.LIGHT;
+            manejoSki.ColorScheme = new MaterialSkin.ColorScheme(
+                MaterialSkin.Primary.Orange100,
+                MaterialSkin.Primary.Orange300,
+                MaterialSkin.Primary.Orange100,
+                MaterialSkin.Accent.Orange100,
+                MaterialSkin.TextShade.BLACK);
         }
-
-        
-        public string idRecpCliente=null;       
+        CNClientes cli = new CNClientes();
+        public string idCliente;       
 
         private void FormUpdateCliente_Load(object sender, EventArgs e)
         {
             //ListarDepartamento();
-        }        
-      
-
-        private void bmCancelar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void bmGuardar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                CNClientes cli = new CNClientes();
-                cli.UpdateClient(idRecpCliente.ToString(),cboedidocumento.SelectedValue.ToString(), cboediPersona.SelectedValue.ToString(), bmedinumerodoc.Text, bmediruc.Text, bmedirazonSocial.Text, bmedinombreComercial.Text,
-                    bmedinombreCliente.Text, bmediapellidoP.Text, bmediapellidoM.Text, bmedicorreo.Text, bmedidireccion.Text, bmedifax.Text, bmedifijo.Text, bmeditelefono.Text, dateediNacimiento.Text,
-                    cboedidepartamento.SelectedValue.ToString(), cboediprovincia.SelectedValue.ToString(), cboedidistrito.SelectedValue.ToString(), bmediUsuRegistra.Text, dateediInscripcion.Text, bmediUserModifica.Text,
-                    dtedifechaModifica.Text, cboedisector.SelectedValue.ToString(), bmediobservacion.Text);
-                MessageBox.Show("Se edito correctamente");
-                this.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("No se pudo actuaizar" + ex.ToString());
-            }
-        }
+        }             
 
         //LISTAR DOCUMENTO
         public void listarDocumento()
         {
             CDCliente cdcli = new CDCliente();
             cboedidocumento.DataSource = cdcli.ListarDocumento();
-            cboedidocumento.DisplayMember = "Nombre";
-            cboedidocumento.ValueMember = "IdDocIdentidad";
+            cboedidocumento.DisplayMember = "Descripcion";
+            cboedidocumento.ValueMember = "IdTipoDocIdent";
 
         }
 
-        //LISTAR PERSONA
-        public void listarPersona()
+        //LISTAR TIENDA
+        public void listarTienda()
         {
             CDCliente cdcli = new CDCliente();
-            cboediPersona.DataSource = cdcli.ListarPersona();
-            cboediPersona.DisplayMember = "Descripcion";
-            cboediPersona.ValueMember = "IdTipoPersona";
+            cboediTienda.DataSource = cdcli.ListarTienda();
+            cboediTienda.DisplayMember = "NombreTienda";
+            cboediTienda.ValueMember = "IdTienda";
         }
 
         //LISTAR SECTOR
@@ -90,11 +74,6 @@ namespace SistemaFigueri
             DataTable dt = new DataTable();
             da.Fill(dt);
             Con.Close();
-
-            //DataRow fila = dt.NewRow();
-            //fila["Departamento"] = "Selecciona Departamento";
-            //dt.Rows.InsertAt(fila, 0);
-
             cboedidepartamento.ValueMember = "Departamento";
             cboedidepartamento.DisplayMember = "Departamento";
             cboedidepartamento.DataSource = dt;
@@ -110,11 +89,6 @@ namespace SistemaFigueri
             DataTable dt = new DataTable();
             da.Fill(dt);
             Con.Close();
-
-            //DataRow fila = dt.NewRow();
-            //fila["Provincia"] = "Selecciona Provincia";
-            //dt.Rows.InsertAt(fila, 0);
-
             cboediprovincia.ValueMember = "Provincia";
             cboediprovincia.DisplayMember = "Provincia";
             cboediprovincia.DataSource = dt;
@@ -130,11 +104,6 @@ namespace SistemaFigueri
             DataTable dt = new DataTable();
             da.Fill(dt);
             Con.Close();
-
-            //DataRow fila = dt.NewRow();
-            //fila["Distrito"] = "Selecciona Distrito";
-            //dt.Rows.InsertAt(fila, 0);
-
             cboedidistrito.ValueMember = "Distrito";
             cboedidistrito.DisplayMember = "Distrito";
             cboedidistrito.DataSource = dt;
@@ -142,44 +111,43 @@ namespace SistemaFigueri
 
         private void cboedidepartamento_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-            //if (cboedidepartamento.SelectedValue.ToString() != null)
-            //{
-            //    string Departamento = cboedidepartamento.SelectedValue.ToString();
-            //    ListarProvincia(Departamento);
-            //    MessageBox.Show("mostro Depa" + Departamento);
-            //}
-            //else
-            
-            //    if (cboedidepartamento.SelectedValue.ToString() == null)
-            //    {
-            //        string Departamento = cboedidepartamento.SelectedValue.ToString();
-            //        ListarProvincia(Departamento);
-            //        MessageBox.Show("no se mostro depa" + Departamento);
-            //    }
             
         }
 
         private void cboediprovincia_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //if (cboediprovincia.SelectedValue.ToString() != null)
-            //{
-            //    string Provincia = cboediprovincia.SelectedValue.ToString();
-            //    ListarDistrito(Provincia);
-            //    MessageBox.Show("mostro Provi" + Provincia);
-            //}
-            //else
             
-            //    if (cboediprovincia.SelectedValue.ToString() == null)
-            //    {
-            //        string Provincia = cboediprovincia.SelectedValue.ToString();
-            //        ListarDistrito(Provincia);
+        }
+         
+        private void bmpromedioVentas_OnValueChanged(object sender, EventArgs e)
+        {
 
-            //        MessageBox.Show("no se mostro pro" + Provincia);
+        }
 
-            //    }
-            
+        private void bunifuThinButton22_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
+        private void buniActualizar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                MessageBox.Show("clientes"+ cli);
+                cli.UpdateClient(idCliente,cboediTienda.SelectedValue.ToString(),cboedisector.SelectedValue.ToString(),bmedinombreEmpresa.Text,
+                    bmedinombreCliente.Text,bmediapellidoP.Text,bmediapellidoM.Text,bmedireccion.Text,bmedicontacto.Text,bmeditelefono.Text,bmedifax.Text,
+                    bmediruc.Text,bmedicorreo.Text,cboedidocumento.SelectedValue.ToString(),bmedinumerodoc.Text,bmediobservacion.Text,datedinscripcion.Text,
+                    bmedicorriente.Text,datediNacimiento.Text,bmeditipoCompra.Text,bmedicredito.Text,bmediqueja.Text,bmediordenCliente.Text,
+                    bmedipromedioVentas.Text,bmedicta_cli.Text,cboedidepartamento.SelectedValue.ToString(),cboediprovincia.SelectedValue.ToString(),
+                    cboedidistrito.SelectedValue.ToString(),bmediuserRegistra.Text,bmediuserModi.Text,datediModificacion.Text);
+                MessageBox.Show("Se edito correctamente el CLIENTE");
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo actuaizar" + ex.ToString());
+            }
         }
     }
 }
