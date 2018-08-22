@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin;
 using MaterialSkin.Controls;
+using System.Globalization;
 
 namespace SistemaFigueri
 {
@@ -24,6 +25,7 @@ namespace SistemaFigueri
         private decimal totalPagado = 0;
         private static FormVenta _instancia;
         Venta Ventas = new Venta();
+        LocalBD serie = new LocalBD();
         CNDetalleVenta Detalle = new CNDetalleVenta();
         private List<Venta> lst = new List<Venta>();
 
@@ -60,7 +62,7 @@ namespace SistemaFigueri
         //Mostrar Mensaje de Confirmación
         private void MensajeOk(string mensaje)
         {
-            MessageBox.Show(mensaje, "Sistema de Ventas", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(mensaje, "Figueri", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
 
@@ -68,7 +70,7 @@ namespace SistemaFigueri
         //Mostrar Mensaje de Error
         private void MensajeError(string mensaje)
         {
-            MessageBox.Show(mensaje, "Sistema de Ventas", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(mensaje, "Figueri", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         //Limpiar todos los controles del formulario
@@ -203,7 +205,7 @@ namespace SistemaFigueri
             FormRegistroCobro frmRegCobro = new FormRegistroCobro();
             frmRegCobro.ShowDialog();
         }
-        private void rbnBoleta_CheckedChanged(object sender, EventArgs e)
+        private void rbnFactura_CheckedChanged(object sender, EventArgs e)
         {
             if (rbnFactura.Checked == true)
                 lblTipo.Text = "FACTURA";
@@ -211,10 +213,12 @@ namespace SistemaFigueri
                 lblTipo.Text = "BOLETA DE VENTA";
         }
 
-        private void rbnFactura_CheckedChanged(object sender, EventArgs e)
+        private void rbnBoleta_CheckedChanged(object sender, EventArgs e)
         {
             GenerarNumeroComprobante();
         }
+
+       
 
         private void FormVenta_Load(object sender, EventArgs e)
         {
@@ -239,6 +243,23 @@ namespace SistemaFigueri
             //    //lblNroCorrelativo.Text = Ventas.NumeroComprobante("Boleta");
             //else
             //   // lblNroCorrelativo.Text = Ventas.NumeroComprobante("Factura");
+        }
+
+        private void cargarSerie()
+        {
+            try
+            {
+                //serie = negVenta.Intancia.CargarSerie(1, 1);
+                //ser = serie.Numero_Serie;
+                //lblSerie.Text = serie.Numero_Serie + "-";
+                //lblCorrelativo.Text = "Nº " + negVenta.Intancia.CargarCorrelativo(1, serie.Numero_Serie);
+                //corr = negVenta.Intancia.CargarCorrelativo(1, serie.Numero_Serie);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         public void filtrar (DataTable data, String buscarnombre)
@@ -325,7 +346,9 @@ namespace SistemaFigueri
                         dtFechaV.Text = form.fechavencimiento;
                         tbPrecio.Text = form.precio;
                         btnAgregaCarro.Enabled = true;
-                        //tbIdProducto.Text = form.idproducto;
+                        tbIdProducto.Text = form.idproducto;
+                        
+                       
 
                         CNProductos objProducto = new CNProductos();
 
@@ -338,6 +361,8 @@ namespace SistemaFigueri
                 }
 
             }
+
+
         }
 
         private void FormVenta_FormClosing(object sender, FormClosingEventArgs e)
@@ -392,12 +417,13 @@ namespace SistemaFigueri
                 {
                     if (tbCantidad.Text.Trim() != "")
                     {
+
                         if (Convert.ToInt32(tbCantidad.Text) >= 0)
                         {
                             if (Convert.ToInt32(tbCantidad.Text) <= Convert.ToInt32(tbStock.Text))
                             {
-                                /*ven.IdProducto = Convert.ToInt32(tbIdProducto.Text);
-                                   ven.IdVenta = Convert.ToInt32(tbIdProducto.Text);*/
+                                //ven.IdProducto = Convert.ToInt32(tbIdProducto.Text);
+                                //ven.IdVenta = Convert.ToInt32(tbIdProducto.Text);
                                 ven.Descripcion = tbAlias.Text + " - " + tbDescripcion.Text;
                                 ven.Cantidad = Convert.ToInt32(tbCantidad.Text);
                                 ven.PrecioVenta = Convert.ToDecimal(tbPrecio.Text);
@@ -408,7 +434,6 @@ namespace SistemaFigueri
                                 lst.Add(ven);
                                 LlenarGrilla();
                                 Limpiar();
-
                             }
                             else
                             {
@@ -424,10 +449,15 @@ namespace SistemaFigueri
                         }
 
                     }
+
                     else
+
                     {
+
                         MessageBox.Show("Ingrese Cantidad", "Figeri", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
                         tbCantidad.Clear();
+
                     }
                 }
                 else
@@ -447,12 +477,15 @@ namespace SistemaFigueri
 
         private void LlenarGrilla()
         {
+            var format = (NumberFormatInfo)NumberFormatInfo.CurrentInfo.Clone();
+            format.CurrencySymbol = "Soles.";
             Decimal SumaSubTotal = 0; Decimal SumaIgv = 0; Decimal SumaTotal = 0;
             dgvVenta.Rows.Clear();
             for (int i = 0; i < lst.Count; i++)
             {
                 dgvVenta.Rows.Add();
                 dgvVenta.Rows[i].Cells[0].Value = lst[i].IdVenta;
+                dgvVenta.Rows[i].DefaultCellStyle.FormatProvider = format;
                 dgvVenta.Rows[i].Cells[1].Value = lst[i].Cantidad;
                 dgvVenta.Rows[i].Cells[2].Value = lst[i].Descripcion;
                 dgvVenta.Rows[i].Cells[3].Value = lst[i].PrecioVenta;
@@ -462,16 +495,20 @@ namespace SistemaFigueri
                 SumaSubTotal += Convert.ToDecimal(dgvVenta.Rows[i].Cells[4].Value);
                 SumaIgv += Convert.ToDecimal(dgvVenta.Rows[i].Cells[6].Value);
             }
+
             dgvVenta.Rows.Add();
             dgvVenta.Rows.Add();
             dgvVenta.Rows[lst.Count + 1].Cells[3].Value = "SUB-TOTAL  S/.";
+            dgvVenta.Rows[lst.Count + 1].DefaultCellStyle.FormatProvider = format;
             dgvVenta.Rows[lst.Count + 1].Cells[4].Value = SumaSubTotal;
             dgvVenta.Rows.Add();
             dgvVenta.Rows[lst.Count + 2].Cells[3].Value = "      I.G.V.        %";
+            dgvVenta.Rows[lst.Count + 2].DefaultCellStyle.FormatProvider = format;
             dgvVenta.Rows[lst.Count + 2].Cells[4].Value = SumaIgv;
             dgvVenta.Rows.Add();
             dgvVenta.Rows[lst.Count + 3].Cells[3].Value = "     TOTAL     S/.";
             SumaTotal += SumaSubTotal + SumaIgv;
+            dgvVenta.Rows[lst.Count + 3].DefaultCellStyle.FormatProvider = format;
             dgvVenta.Rows[lst.Count + 3].Cells[4].Value = SumaTotal;
             dgvVenta.ClearSelection();
         }
@@ -489,6 +526,11 @@ namespace SistemaFigueri
             Program.Alias = "";
             Program.PrecioVenta = 0;
         }
+        private void Carga_FormaPago()
+        {
+
+
+        }
 
 
         private void btnCargaCliente_Click(object sender, EventArgs e)
@@ -500,6 +542,10 @@ namespace SistemaFigueri
                     tbClienteNombre.Text = form.cliente;
                     tbRuc.Text = form.ruc;
                     tbDocumento.Text = form.dni;
+                    tbtipodoc.Text = form.tipodoc;
+                    tbrazonsocial.Text = form.empresa;
+                    tbIdCliente.Text = form.idcliente;
+
                     CNProductos objProducto = new CNProductos();
 
                 }
@@ -629,7 +675,7 @@ namespace SistemaFigueri
                         for (int i = 0; i < dgvVenta.Rows.Count; i++)
                         {
                             Decimal SumaIgv = 0; Decimal SumaSubTotal = 0;
-                            if (Convert.ToString(dgvVenta.Rows[i].Cells[2].Value) != "")
+                            if (Convert.ToString(dgvVenta.Rows[i].Cells[1].Value) != "")
                             {
                                 SumaIgv += Convert.ToDecimal(dgvVenta.Rows[i].Cells[6].Value);
                                 SumaSubTotal += Convert.ToDecimal(dgvVenta.Rows[i].Cells[4].Value);
@@ -640,11 +686,11 @@ namespace SistemaFigueri
                                 Convert.ToDecimal(dgvVenta.Rows[i].Cells[3].Value),
                                 SumaIgv, SumaSubTotal
                                 );
-                                //DevComponents.DotNetBar.MessageBoxEx.Show("Contiene Datos.");
+                                MessageBox.Show("Contiene Datos.");
                             }
                             else
                             {
-                                //DevComponents.DotNetBar.MessageBoxEx.Show("Fila Vacia.");
+                                MessageBox.Show("Fila Vacia.");
                             }
                         }
                     }
@@ -697,6 +743,52 @@ namespace SistemaFigueri
             
             //GenerarIdVenta();
             //GenerarNumeroComprobante();
+        }
+
+        private void btnEliminaritem_Click(object sender, EventArgs e)
+        {
+
+            if (dgvVenta.Rows.Count > 0)
+            {
+                if (dgvVenta.Rows[dgvVenta.CurrentRow.Index].Selected == true)
+                {
+                    if (Convert.ToString(dgvVenta.CurrentRow.Cells[2].Value) != "")
+                    {
+                        dgvVenta.Rows.RemoveAt(dgvVenta.CurrentRow.Index);
+                        lst.RemoveAt(dgvVenta.CurrentRow.Index);
+                        LlenarGrilla();
+                        MessageBox.Show("Producto Eliminado de la Lista.", "Figueri.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("No Existe Ningun Elemento en la Lista.", "Figueri.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        dgvVenta.ClearSelection();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Por Favor Seleccione Item Para Quitar", "Figueri.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            else
+            {
+                MessageBox.Show("No Existe Ningun Elemento en la Lista", "Figueri.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void rbnBoleta_CheckedChanged_1(object sender, EventArgs e)
+        {
+            GenerarNumeroComprobante();
+        }
+
+        private void tbCantidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
         }
     }
 

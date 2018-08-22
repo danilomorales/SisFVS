@@ -50,7 +50,7 @@ namespace CapaNegocio
                 lst.Add(new clParametro("@Fecha_Venta", Fecha_Venta));
                 lst.Add(new clParametro("@Total", Total));
                 lst.Add(new clParametro("@Mensaje", "", SqlDbType.VarChar, ParameterDirection.Output, 100));
-                C.EjecutarSP("SP_RegistraVenta", ref lst);
+                C.EjecutarSP("Caja.SP_RegistraVenta", ref lst);
                 return Mensaje = lst[7].Valor.ToString();
             }
             catch (Exception ex)
@@ -58,6 +58,8 @@ namespace CapaNegocio
                 throw ex;
             }
         }
+
+        
 
     }
 }

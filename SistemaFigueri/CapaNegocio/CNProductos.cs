@@ -63,12 +63,20 @@ namespace CapaNegocio
             pro.EliminarProducto(idProducto);
         }
 
-        //Carga Productos Filtro Venta 
-        public SqlDataAdapter CargaProductoFiltro()
+        //LIsta Productos 
+        public SqlDataAdapter ListaProductosFiltro()
         {
             SqlDataAdapter producto;
-            producto = pro.Cargaproductos();
+            producto = pro.CargaProductosFiltro();
             return producto;
+        }
+
+        //Carga Productos según Cliente
+
+        private CDProductos objDato = new CDProductos();
+        public SqlDataAdapter buscarPedidos(String cliente, String producto)
+        {
+            return objDato.CargaProductoCliente(cliente, producto);
         }
 
     }

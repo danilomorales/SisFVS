@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SistemaFigueri
+namespace CapaDatos
 {
-    class LocalBD
+    class CDDetalleVenta
     {
-        public int IdSerie { get; set; }
-        public String NumeroSerie { get; set; }
     }
 }

@@ -108,16 +108,40 @@ namespace CapaDatos
         }
 
         //ListaProductos paraFiltrar Venta
-
-        public SqlDataAdapter Cargaproductos()
+        public SqlDataAdapter CargaProductosFiltro()
         {
-            String sql = "select top 1000(p.IdProducto) as Código, p.Alias,p.Nota, p.DescripcionProducto as Descripción, p.TiempoDuracion, p.Stock, p.Valor_Unitario as Precio, p.PrecioOferta, p.Vigente, c.Descripcion as Ctaegoría, m.Descripcion as Medida from Caja.PRODUCTO p inner join dbo.MEDIDA m on p.IdMedida = m.IdMedida inner join dbo.CATEGORIA c on p.IdCategoria = c.IdCategoria order by p.IdProducto desc";
+            String sql = "SELECT top 100 Producto.IdProducto as Código, Producto.DescripcionProducto,Producto.Alias,Producto.Nota,Producto.TiempoDuracion,Producto.Stock, ROUND(Precio.ValorProducto, 2) AS Precio FROM Caja.PRODUCTO AS Producto INNER JOIN PRECIO AS Precio ON Producto.IdProducto = Precio.IdProducto INNER JOIN CLIENTE AS CLIENTE  ON Precio.IdSector = CLIENTE.IdSector INNER JOIN CATEGORIA AS CATEGORIA ON Producto.IdCategoria = CATEGORIA.IdCategoria WHERE(Producto.Estado = 'A')  AND(CATEGORIA.Tipo = 'P') order by Producto.IdProducto desc;";
             adapter = new SqlDataAdapter(sql, conexion.AbrirConexion());
             return adapter;
 
-            //SqlCommand comando = new SqlCommand("", conexion.AbrirConexion());
-            //comando.CommandType = CommandType.StoredProcedure;
-            //leer = comando.ExecuteReader();
+        }
+
+        public SqlDataAdapter CargaProductoCliente(String cliente, String producto)
+        {
+
+            String sql = "SELECT Producto.IdProducto, Producto.DescripcionProducto, ROUND(Precio.ValorProducto, 2) AS Precio FROM PRODUCTO AS Producto INNER JOIN PRECIO AS Precio ON Producto.IdProducto = Precio.IdProducto INNER JOIN CLIENTE AS CLIENTE ON Precio.IdSector = CLIENTE.IdSector INNER JOIN CATEGORIA AS CATEGORIA ON Producto.IdCategoria = CATEGORIA.IdCategoria WHERE(Producto.Estado = 'A') AND(Precio.IdPrecio = '01') AND(CATEGORIA.Tipo = 'P') AND(CATEGORIA.IdCategoria <> '0045') AND(CATEGORIA.IdCategoria <> '0036') AND(CATEGORIA.IdCategoria <> '0047') AND  (CLIENTE.IdCliente = '@IdCliente') AND(Producto.IdProducto = '@IdProducto')";
+
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                adapter = new SqlDataAdapter(sql, conexion.AbrirConexion());
+                adapter.SelectCommand.Parameters.AddWithValue("@IdCliente", cliente);
+                adapter.SelectCommand.Parameters.AddWithValue("@IdProducto", producto);
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al Listar"+ex);
+            }
+            return adapter;
+
+
+
+            //adapter = new SqlDataAdapter(sql, conexion.AbrirConexion());
+            //return adapter;
+            ////SqlCommand comando = new SqlCommand("", conexion.AbrirConexion());
+            ////comando.CommandType = CommandType.StoredProcedure;
+            ////leer = comando.ExecuteReader();
             //return leer();
         }
     }
