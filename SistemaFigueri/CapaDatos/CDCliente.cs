@@ -100,43 +100,65 @@ namespace CapaDatos
         //LISTAR CLIENTE
         public SqlDataAdapter listarClientes()
         {
-            String sql = "select c.IdClienteReceptor,c.Nombres,c.ApellidoPaterno as 'Apellido Paterno',c.ApellidoMaterno as 'Apellido Materno',p.Descripcion as 'Tipo de Persona',t.Nombre as 'Tipo de Documento'," +
-                "c.NroDocIdentidad as 'Nro de Documento',c.NumeroRuc as 'Nro de RUC',c.RazonSocial as 'Razón Social',c.NombreComercial as 'Nombre Comercial',c.Correo,c.Direccion as 'Dirección',c.Fax,c.Fijo,c.Telefono," +
-                "c.FechaNacimiento as 'Fecha de Nacimiento',c.Departamento,c.Provincia,c.Distrito,c.Estado,c.UsuarioRegistra as 'Usuario Registra',c.FechaRegistro as 'Fecha de Registro',c.UsuarioModifica as 'Usuario Modifica'," +
-                "c.FechaModifica as 'Fecha Modifica',s.DescripcionSector as 'Sector',c.Observacion as 'Observación'" +
-                "from caja.ClienteReceptor c,caja.TipoPersona p, caja.SECTOR s, caja.DocIdentidad t where c.IdTipoPersona = p.IdTipoPersona and c.IdSector = s.IdSector and c.IdDocIdentidad = t.IdDocIdentidad";
+            String sql = "select c.IdCliente,c.Nombres,c.ApellidoPaterno,c.ApellidoMaterno,t.NombreTienda as 'Nombre de la Tienda'," +
+                "s.DescripcionSector as 'Nombre del sector',c.NombreEmpresa as 'Nombre de la Empresa',c.Direccion," +
+                "c.Contacto as 'Nombre del Contacto',c.Telefono,c.Fax,c.RUC,c.Email as 'Correo',d.Descripcion 'Documento'," +
+                "c.NroDocumento as 'Nr° del Documento',c.Observacion as 'Observación',c.Departamento,c.Provincia,c.Distrito," +
+                "c.UsuarioRegistra as'Usuario que Registra',c.Inscripcion as 'Inscripción',c.Estado,c.SaldoCtaCte as 'Cuenta Corriente',c.Nivel," +
+                "c.FechaNac as 'Fecha de Nacimiento',c.TipoCompra as 'Tipo de Compra',c.Credito,c.Queja,c.EstSaldoIni as 'Estado Inicial'," +
+                "c.OrdenCliente as 'Orden del Cliente',c.PromedioDeVentas as 'Promedio de ventas'," +
+                "c.cta_cli,c.UsuarioModifica,c.FechaModifica from caja.CLIENTE c, dbo.TIENDA t, dbo.SECTOR s, dbo.TIPO_DOC_IDENT d " +
+                "where c.IdTienda = t.IdTienda AND c.IdSector = s.IdSector and c.IdTipoDocIdent = d.IdTipoDocIdent; ";
             adapter = new SqlDataAdapter(sql, conexion.AbrirConexion());
             return adapter;
         }
 
         //INSERTAR CLIENTE
-        public void InsertarCliente(int idDocIdentidad, int idTipoPersona, String nDocIdentidad,String numeroRuc,String razonSocial,String nombreComercial,
-            String nombre,String paterno,String materno,String correo,String direccion,String fax,String fijo,String telefono, String fechaNacimiento,
-            String depa,String provi,String distri,int usuarioRegistra, String fechaRegistro,int usuarioModifica, String fechaModifica,String idSector,String observacion)
+        public void InsertarCliente(String idTienda,String idSector,String nombreEmpresa,String nombres,String apellidoP, String apellidoM,
+            String direccion,String contacto, String telefono,String fax,String ruc,String correo, String idTipoDoc,String nroDoc,String observacion,
+            String inscripcion,double salCta, String fechaNac, String tipoCompra, double credito,String queja,int ordenclie,double promedioVentas,
+            String cta_cli,String depa,String provi,String distri,String usuRegistra)
         {
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "insert into caja.ClienteReceptor(IdDocIdentidad,IdTipoPersona,NroDocIdentidad,NumeroRuc,RazonSocial,NombreComercial,Nombres,ApellidoPaterno,ApellidoMaterno,Correo,Direccion,Fax,Fijo,Telefono,FechaNacimiento,Departamento,Provincia,Distrito,Estado,UsuarioRegistra,FechaRegistro,UsuarioModifica,FechaModifica,IdSector,Observacion) " +
-                "values('" + idDocIdentidad + "', '" + idTipoPersona + "', '" + nDocIdentidad + "', '" + numeroRuc + "', '" + razonSocial + "', '" + nombreComercial + "', '" + nombre + "', '" + paterno + "', '" + materno + "', '" + correo + "','" + direccion + "', '" + fax + "'," +
-                " '" + fijo + "', '" + telefono + "','" + fechaNacimiento + "', '" + depa + "','" + provi + "', '" + distri + "', '1', '" + usuarioRegistra + "', '" + fechaRegistro + "', '" + usuarioModifica + "','" + fechaModifica + "', '" + idSector + "','" + observacion + "')";
+            comando.CommandText = "insert into Caja.CLIENTE(IdTienda,IdSector,NombreEmpresa,Nombres,ApellidoPaterno,ApellidoMaterno,Direccion,Contacto," +
+                "Telefono,Fax,RUC,Email,IdTipoDocIdent,NroDocumento,Observacion,Inscripcion,Estado,SaldoCtaCte,Nivel,FechaNac,TipoCompra,Credito,Queja," +
+                "EstSaldoIni,OrdenCliente,TipoCliente,PromedioDeVentas,cta_cli,Departamento,Provincia,Distrito,UsuarioRegistra,UsuarioModifica," +
+                "FechaModifica)values('"+ idTienda + "', '"+ idSector + "', '"+ nombreEmpresa + "', '"+ nombres + "', '"+ apellidoP + "', '"+ apellidoM + "'," +
+                " '"+ direccion + "', '"+ contacto + "', '"+ telefono + "','"+ fax + "', '"+ ruc + "', '"+ correo + "', '"+ idTipoDoc + "', '"+ nroDoc + "'," +
+                " '"+ observacion + "', '"+ inscripcion + "', 'A', '"+ salCta + "', '1','"+ fechaNac + "', '"+ tipoCompra + "','"+ credito + "', " +
+                "'"+ queja + "', '1', '"+ ordenclie + "', '', '"+ promedioVentas + "', '"+ cta_cli + "', '"+ depa + "', '"+ provi + "', '"+ distri + "'," +
+                " '"+ usuRegistra + "','', '')";
             comando.CommandType = CommandType.Text;
             comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
         }
         
         //EDITAR CLIENTE
-        public void EditarCliente(int idRecpCliente, int idDocIdentidad, int idTipoPersona, String nDocIdentidad, String numeroRuc, String razonSocial, String nombreComercial,
-            String nombre, String paterno, String materno, String correo, String direccion, String fax, String fijo, String telefono, String fechaNacimiento,
-            String depa, String provi, String distri, int usuarioRegistra, String fechaRegistro, int usuarioModifica, String fechaModifica, String idSector, String observacion)
+        public void EditarCliente(String idCliente,String idTienda, String idSector, String nombreEmpresa, String nombres, String apellidoP, String apellidoM,
+            String direccion, String contacto, String telefono, String fax, String ruc, String correo, String idTipoDoc, String nroDoc, String observacion,
+            String inscripcion, double salCta, String fechaNac, String tipoCompra, double credito, String queja, int ordenclie, double promedioVentas,
+            String cta_cli, String depa, String provi, String distri, String usuRegistra,String usuModifica,String fechaModi)
         {
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = " update Caja.ClienteReceptor set IdDocIdentidad=" + idDocIdentidad + ",IdTipoPersona=" + idTipoPersona + ",NroDocIdentidad='" + nDocIdentidad + "'," +
-                "NumeroRuc='" + numeroRuc + "',RazonSocial='" + razonSocial + "',NombreComercial='" + nombreComercial + "',Nombres='" + nombre + "',ApellidoPaterno='" + paterno + "'," +
-                "ApellidoMaterno = '" + materno + "',Correo = '" + correo + "',Direccion = '" + direccion + "',Fax = '" + fax + "'," +
-                "Fijo ='" + fijo + "',Telefono ='" + telefono + "',FechaNacimiento =" + fechaNacimiento + ",Departamento ='" + depa + "',Provincia ='" + provi + "'," +
-                "Distrito = '" + distri + "',UsuarioRegistra = " + usuarioRegistra + ",FechaRegistro =" + fechaRegistro + ",UsuarioModifica =" + usuarioModifica + ",FechaModifica =" + fechaModifica + "," +
-                "IdSector ='" + idSector + "',Observacion ='" + observacion + "' where IdClienteReceptor =" + idRecpCliente + "";
-            comando.CommandType = CommandType.Text;
-            comando.ExecuteNonQuery();
-            conexion.CerrarConexion();
+            Console.WriteLine("id cliente" + idCliente);
+            try
+            {
+                comando.Connection = conexion.AbrirConexion();
+                comando.CommandText = "update caja.CLIENTE set IdTienda='" + idTienda + "',IdSector='" + idSector + "',NombreEmpresa='" + nombreEmpresa + "',Nombres='" + nombres + "'," +
+                    "ApellidoPaterno = '" + apellidoP + "',ApellidoMaterno = '" + apellidoM + "',Direccion = '" + direccion + "',Contacto = '" + contacto + "',Telefono = '" + telefono + "'," +
+                    "Fax = '" + fax + "',RUC = '" + ruc + "',Email = '" + correo + "',IdTipoDocIdent = '" + idTipoDoc + "',NroDocumento = '" + nroDoc + "',Observacion = '" + observacion + "'," +
+                    "Inscripcion = " + inscripcion + ",Estado = 'A',SaldoCtaCte = " + salCta + ",Nivel = '1',FechaNac = " + fechaNac + ",TipoCompra = '" + tipoCompra + "',Credito =" + credito + "," +
+                    "Queja = '" + queja + "',EstSaldoIni = '1',OrdenCliente = " + ordenclie + ",TipoCliente = '',PromedioDeVentas = " + promedioVentas + " ,cta_cli = '" + cta_cli + "'," +
+                    "Departamento = '" + depa + "',Provincia = '" + provi + "',Distrito = '" + distri + "',UsuarioRegistra = '" + usuRegistra + "',UsuarioModifica = '" + usuModifica + "'," +
+                    "FechaModifica = " + fechaModi + " where IdCliente = '" + idCliente + "'";
+                comando.CommandType = CommandType.Text;
+                comando.ExecuteNonQuery();
+                conexion.CerrarConexion();
+            }
+            catch(SqlException ex)
+            {
+                Console.WriteLine("VIENE DEL CD" + ex);
+            }
+           
         }
 
         //ELIMINAR CLIENTE
@@ -154,7 +176,7 @@ namespace CapaDatos
         {
             DataTable table = new DataTable();
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "select * from caja.DocIdentidad";
+            comando.CommandText = "select * from dbo.TIPO_DOC_IDENT";
             leer = comando.ExecuteReader();
             table.Load(leer);
             leer.Close();           
@@ -187,6 +209,20 @@ namespace CapaDatos
             conexion.CerrarConexion();
             return table;
         }
+
+        //LLENAR COMBOBOX TIENDA
+        public DataTable ListarTienda()
+        {
+            DataTable table = new DataTable();
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "select * from dbo.TIENDA";
+            leer = comando.ExecuteReader();
+            table.Load(leer);
+            leer.Close();
+            conexion.CerrarConexion();
+            return table;
+        }
+
         public SqlDataAdapter CargaClienteRedeptor()
         {
             String sql = "select top 100 cr.IdCliente, di.Descripcion as Documento, (cr.NroDocumento) as DNI, cr.RUC, cr.Nombres, (cr.ApellidoPaterno +' '+cr.ApellidoMaterno) as Apellidos, cr.NombreEmpresa, s.DescripcionSector as Sector from  Caja.CLIENTE cr left join Caja.SECTOR s on cr.IdSector=s.IdSector left join dbo.TIPO_DOC_IDENT di on cr.IdTipoDocIdent =di.IdTipoDocIdent order by cr.IdCliente desc;";

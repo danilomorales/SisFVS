@@ -56,41 +56,53 @@ namespace SistemaFigueri
             {
                 if (dgvCliente.SelectedRows.Count > 0)
                 {
-                    FormUpdateCliente formUP = new FormUpdateCliente();
+                    using (FormUpdateCliente formUP = new FormUpdateCliente())
+                    {
+                        formUP.listarTienda();
+                        formUP.listarSector();
+                        formUP.listarDocumento();
+                        formUP.idCliente = dgvCliente.CurrentRow.Cells["IdCliente"].Value.ToString();
+                        formUP.bmedinombreCliente.Text = dgvCliente.CurrentRow.Cells["Nombres"].Value.ToString();
+                        formUP.bmediapellidoP.Text = dgvCliente.CurrentRow.Cells["ApellidoPaterno"].Value.ToString();
+                        formUP.bmediapellidoM.Text = dgvCliente.CurrentRow.Cells["ApellidoMaterno"].Value.ToString();
+                        formUP.cboedidocumento.Text = dgvCliente.CurrentRow.Cells["Nombre de la Tienda"].Value.ToString();
+                        formUP.cboedisector.Text = dgvCliente.CurrentRow.Cells["Nombre del sector"].Value.ToString();
+                        formUP.bmedinombreEmpresa.Text = dgvCliente.CurrentRow.Cells["Nombre de la Empresa"].Value.ToString();
+                        formUP.bmedireccion.Text = dgvCliente.CurrentRow.Cells["Direccion"].Value.ToString();
+                        formUP.bmedicontacto.Text = dgvCliente.CurrentRow.Cells["Nombre del Contacto"].Value.ToString();
+                        formUP.bmeditelefono.Text = dgvCliente.CurrentRow.Cells["Telefono"].Value.ToString();
+                        formUP.bmedifax.Text = dgvCliente.CurrentRow.Cells["Fax"].Value.ToString();
+                        formUP.bmediruc.Text = dgvCliente.CurrentRow.Cells["RUC"].Value.ToString();
+                        formUP.bmedicorreo.Text = dgvCliente.CurrentRow.Cells["Correo"].Value.ToString();
+                        formUP.cboedidocumento.Text = dgvCliente.CurrentRow.Cells["Documento"].Value.ToString();
+                        formUP.bmedinumerodoc.Text = dgvCliente.CurrentRow.Cells["Nr° del Documento"].Value.ToString();
+                        formUP.bmediobservacion.Text = dgvCliente.CurrentRow.Cells["Observación"].Value.ToString();
+                        formUP.cboedidepartamento.Text = dgvCliente.CurrentRow.Cells["Departamento"].Value.ToString();
+                        formUP.cboediprovincia.Text = dgvCliente.CurrentRow.Cells["Provincia"].Value.ToString();
+                        formUP.cboedidistrito.Text = dgvCliente.CurrentRow.Cells["Distrito"].Value.ToString();
+                        formUP.bmediuserRegistra.Text = dgvCliente.CurrentRow.Cells["Usuario que Registra"].Value.ToString();
+                        formUP.datedinscripcion.Text = dgvCliente.CurrentRow.Cells["Inscripción"].Value.ToString();
+                        formUP.bmedicorriente.Text = dgvCliente.CurrentRow.Cells["Cuenta Corriente"].Value.ToString();
+                        formUP.datediNacimiento.Text = dgvCliente.CurrentRow.Cells["Fecha de Nacimiento"].Value.ToString();
+                        formUP.bmeditipoCompra.Text = dgvCliente.CurrentRow.Cells["Tipo de Compra"].Value.ToString();
+                        formUP.bmedicredito.Text = dgvCliente.CurrentRow.Cells["Credito"].Value.ToString();
+                        formUP.bmediqueja.Text = dgvCliente.CurrentRow.Cells["Queja"].Value.ToString();
+                        formUP.bmediordenCliente.Text = dgvCliente.CurrentRow.Cells["Orden del Cliente"].Value.ToString();
+                        formUP.bmedipromedioVentas.Text = dgvCliente.CurrentRow.Cells["Promedio de ventas"].Value.ToString();
+                        formUP.bmedicta_cli.Text = dgvCliente.CurrentRow.Cells["cta_cli"].Value.ToString();
+                        formUP.bmediuserModi.Text = dgvCliente.CurrentRow.Cells["UsuarioModifica"].Value.ToString();
+                        formUP.datediModificacion.Text = dgvCliente.CurrentRow.Cells["FechaModifica"].Value.ToString();
+                        if (formUP.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                        {
+                            MostrarClientes();
+                        }
+                    }
+                    
 
-                    formUP.listarPersona();
-                    formUP.listarSector();
-                    formUP.listarDocumento();
-                    //formUP.ListarDepartamento();
-                    //formUP.ListarProvincia("depa");
-                    //formUP.ListarDistrito("provi");   
-                    formUP.idRecpCliente = dgvCliente.CurrentRow.Cells["IdClienteReceptor"].Value.ToString();
-                    formUP.cboedidocumento.Text = dgvCliente.CurrentRow.Cells["Tipo de Documento"].Value.ToString();
-                    formUP.cboediPersona.Text = dgvCliente.CurrentRow.Cells["Tipo de Persona"].Value.ToString();
-                    formUP.bmedinumerodoc.Text = dgvCliente.CurrentRow.Cells["Nro de Documento"].Value.ToString();
-                    formUP.bmediruc.Text = dgvCliente.CurrentRow.Cells["Nro de RUC"].Value.ToString();
-                    formUP.bmedirazonSocial.Text = dgvCliente.CurrentRow.Cells["Razón Social"].Value.ToString();
-                    formUP.bmedinombreComercial.Text = dgvCliente.CurrentRow.Cells["Nombre Comercial"].Value.ToString();
-                    formUP.bmedinombreCliente.Text = dgvCliente.CurrentRow.Cells["Nombres"].Value.ToString();
-                    formUP.bmediapellidoP.Text = dgvCliente.CurrentRow.Cells["Apellido Paterno"].Value.ToString();
-                    formUP.bmediapellidoM.Text = dgvCliente.CurrentRow.Cells["Apellido Materno"].Value.ToString();                                                                                                       
-                    formUP.bmedicorreo.Text = dgvCliente.CurrentRow.Cells["Correo"].Value.ToString();
-                    formUP.bmedidireccion.Text = dgvCliente.CurrentRow.Cells["Dirección"].Value.ToString();
-                    formUP.bmedifax.Text = dgvCliente.CurrentRow.Cells["Fax"].Value.ToString();
-                    formUP.bmedifijo.Text = dgvCliente.CurrentRow.Cells["Fijo"].Value.ToString();
-                    formUP.bmeditelefono.Text = dgvCliente.CurrentRow.Cells["Telefono"].Value.ToString();
-                    formUP.dateediNacimiento.Text = dgvCliente.CurrentRow.Cells["Fecha de Nacimiento"].Value.ToString();
-                    formUP.cboedidepartamento.Text = dgvCliente.CurrentRow.Cells["Departamento"].Value.ToString();
-                    formUP.cboediprovincia.Text = dgvCliente.CurrentRow.Cells["Provincia"].Value.ToString();
-                    formUP.cboedidistrito.Text = dgvCliente.CurrentRow.Cells["Distrito"].Value.ToString();
-                    formUP.bmediUsuRegistra.Text = dgvCliente.CurrentRow.Cells["Usuario Registra"].Value.ToString();
-                    formUP.dateediInscripcion.Text = dgvCliente.CurrentRow.Cells["Fecha de Registro"].Value.ToString();
-                    formUP.bmediUserModifica.Text = dgvCliente.CurrentRow.Cells["Usuario Modifica"].Value.ToString();
-                    formUP.dtedifechaModifica.Text = dgvCliente.CurrentRow.Cells["Fecha Modifica"].Value.ToString();
-                    formUP.cboedisector.Text = dgvCliente.CurrentRow.Cells["Sector"].Value.ToString();
-                    formUP.bmediobservacion.Text = dgvCliente.CurrentRow.Cells["Observación"].Value.ToString();
-                    formUP.ShowDialog();
-                    MostrarClientes();
+
+
+                    
+                    
 
                 }
                 else
@@ -100,8 +112,7 @@ namespace SistemaFigueri
             {
                 MessageBox.Show("no mostro nada" + ex.ToString());
             }
-            //FormUpdateCliente forUC = new FormUpdateCliente();
-            //forUC.ShowDialog();
+            
         }
 
         private void btneliminar_Click(object sender, EventArgs e)

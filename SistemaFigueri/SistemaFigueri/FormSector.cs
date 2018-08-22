@@ -85,14 +85,13 @@ namespace SistemaFigueri
                         formUP.bmedidescripcion.Text = dgvSector.CurrentRow.Cells[1].Value.ToString();
                         formUP.bmedinota.Text = dgvSector.CurrentRow.Cells[2].Value.ToString();
                         formUP.bmediporcentaje.Text = dgvSector.CurrentRow.Cells[3].Value.ToString();
-                        formUP.ShowDialog();
+                        
                         if (formUP.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                         {
 
                             mostarSector();
                         }
-                    }                       
-                    mostarSector();
+                    }                                        
                 }
                 else
                     MessageBox.Show("Selecciones una fila por favor");
@@ -119,6 +118,16 @@ namespace SistemaFigueri
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvSector_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void bunifuCards3_Paint(object sender, PaintEventArgs e)
         {
 
         }

@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSector));
-            this.dgvSector = new System.Windows.Forms.DataGridView();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
             this.btneliminar = new Bunifu.Framework.UI.BunifuTileButton();
             this.bmEditar = new Bunifu.Framework.UI.BunifuTileButton();
@@ -40,29 +39,15 @@
             this.bmBuscar = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuCards4 = new Bunifu.Framework.UI.BunifuCards();
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSector)).BeginInit();
+            this.bunifuCards3 = new Bunifu.Framework.UI.BunifuCards();
+            this.dgvSector = new System.Windows.Forms.DataGridView();
             this.bunifuCards1.SuspendLayout();
             this.bunifuCards2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             this.bunifuCards4.SuspendLayout();
+            this.bunifuCards3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSector)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dgvSector
-            // 
-            this.dgvSector.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSector.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvSector.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSector.Location = new System.Drawing.Point(10, 118);
-            this.dgvSector.Name = "dgvSector";
-            this.dgvSector.Size = new System.Drawing.Size(1863, 754);
-            this.dgvSector.TabIndex = 33;
             // 
             // bunifuCards1
             // 
@@ -150,10 +135,10 @@
             this.bunifuCards2.BorderRadius = 5;
             this.bunifuCards2.BottomSahddow = true;
             this.bunifuCards2.color = System.Drawing.Color.Tomato;
+            this.bunifuCards2.Controls.Add(this.bunifuCards3);
             this.bunifuCards2.Controls.Add(this.bunifuCards1);
             this.bunifuCards2.Controls.Add(this.bunifuImageButton1);
             this.bunifuCards2.Controls.Add(this.bmBuscar);
-            this.bunifuCards2.Controls.Add(this.dgvSector);
             this.bunifuCards2.LeftSahddow = false;
             this.bunifuCards2.Location = new System.Drawing.Point(12, 125);
             this.bunifuCards2.Name = "bunifuCards2";
@@ -224,6 +209,42 @@
             this.label2.Text = "LISTA  DE SECTORES";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
+            // bunifuCards3
+            // 
+            this.bunifuCards3.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuCards3.BorderRadius = 5;
+            this.bunifuCards3.BottomSahddow = true;
+            this.bunifuCards3.color = System.Drawing.Color.Transparent;
+            this.bunifuCards3.Controls.Add(this.dgvSector);
+            this.bunifuCards3.LeftSahddow = false;
+            this.bunifuCards3.Location = new System.Drawing.Point(120, 113);
+            this.bunifuCards3.Name = "bunifuCards3";
+            this.bunifuCards3.RightSahddow = true;
+            this.bunifuCards3.ShadowDepth = 20;
+            this.bunifuCards3.Size = new System.Drawing.Size(1202, 691);
+            this.bunifuCards3.TabIndex = 59;
+            this.bunifuCards3.Paint += new System.Windows.Forms.PaintEventHandler(this.bunifuCards3_Paint);
+            // 
+            // dgvSector
+            // 
+            this.dgvSector.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvSector.BackgroundColor = System.Drawing.Color.White;
+            this.dgvSector.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSector.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvSector.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSector.Location = new System.Drawing.Point(14, 13);
+            this.dgvSector.Name = "dgvSector";
+            this.dgvSector.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            this.dgvSector.Size = new System.Drawing.Size(1171, 666);
+            this.dgvSector.TabIndex = 34;
+            // 
             // FormSector
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -239,21 +260,20 @@
             this.RightToLeftLayout = true;
             this.Text = "FormSector";
             this.Load += new System.EventHandler(this.FormSector_Load_1);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSector)).EndInit();
             this.bunifuCards1.ResumeLayout(false);
             this.bunifuCards2.ResumeLayout(false);
             this.bunifuCards2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             this.bunifuCards4.ResumeLayout(false);
             this.bunifuCards4.PerformLayout();
+            this.bunifuCards3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSector)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgvSector;
         private Bunifu.Framework.UI.BunifuCards bunifuCards1;
         private Bunifu.Framework.UI.BunifuTileButton btneliminar;
         private Bunifu.Framework.UI.BunifuTileButton bmEditar;
@@ -263,5 +283,7 @@
         private Bunifu.Framework.UI.BunifuMaterialTextbox bmBuscar;
         private Bunifu.Framework.UI.BunifuCards bunifuCards4;
         private System.Windows.Forms.Label label2;
+        private Bunifu.Framework.UI.BunifuCards bunifuCards3;
+        private System.Windows.Forms.DataGridView dgvSector;
     }
 }

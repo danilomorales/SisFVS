@@ -65,8 +65,6 @@ namespace SistemaFigueri
                 MessageBox.Show("Se edito correctamente el Sector");
                 this.DialogResult = DialogResult.OK;
                 this.Close();
-
-
             }
             catch (Exception ex)
             {
