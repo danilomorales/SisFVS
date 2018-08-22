@@ -44,8 +44,7 @@ namespace SistemaFigueri
         }
 
         private void bunifuTileButton2_Click(object sender, EventArgs e)
-        {
-            
+        {           
             try
             {
                 if (dgvProductos.SelectedRows.Count > 0)
@@ -76,12 +75,9 @@ namespace SistemaFigueri
                         formUP.bmedicta.Text = dgvProductos.CurrentRow.Cells[18].Value.ToString();
                         if (formUP.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                         {
-
                             mostarProductos();
                         }
                     }
-
-
                 }
                 else
                     MessageBox.Show("Selecciones una fila por favor");

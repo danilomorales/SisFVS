@@ -21,34 +21,34 @@ namespace CapaNegocio
         }
 
         //CREATE CLIENT
-        public void InsertClient(String idDocIdentidad, String idTipoPersona, String nDocIdentidad, String numeroRuc, String razonSocial, String nombreComercial,
-            String nombre, String paterno, String materno, String correo, String direccion, String fax, String fijo, String telefono, String fechaNacimiento, 
-            String depa, String provi, String distri, String usuarioRegistra, String fechaRegistro, String usuarioModifica, String fechaModifica, 
-            String idSector, String observacion)
+        public void InsertClient(String idTienda, String idSector, String nombreEmpresa, String nombres, String apellidoP, String apellidoM,
+            String direccion, String contacto, String telefono, String fax, String ruc, String correo, String idTipoDoc, String nroDoc, String observacion,
+            String inscripcion, String salCta, String fechaNac, String tipoCompra, String credito, String queja, String ordenclie, String promedioVentas,
+            String cta_cli, String depa, String provi, String distri, String usuRegistra)
         {
-            Console.WriteLine("Sera pues ..." + idDocIdentidad + " " + idTipoPersona + " " + nDocIdentidad + " " + direccion + " " + numeroRuc + " " + razonSocial + " " +
-            nombreComercial + " " + nombre + " " + paterno + " " + materno + " " + correo + " " + observacion + " " + direccion + " " + fax + " " +
-            fijo + " " + telefono + " " + fechaNacimiento + " " + depa + " " + provi + "   " + distri + " "  + usuarioRegistra + "   "
-            + fechaRegistro + "   " + usuarioModifica + "   " + fechaModifica + "   " + idSector + "   " + observacion);
-            cli.InsertarCliente(Convert.ToInt32(idDocIdentidad),Convert.ToInt32(idTipoPersona),nDocIdentidad,numeroRuc,razonSocial,nombreComercial,
-                nombre,paterno,materno,correo,direccion,fax,fijo,telefono,fechaNacimiento,depa,provi,distri,Convert.ToInt32(usuarioRegistra),fechaRegistro,
-                Convert.ToInt32(usuarioModifica),fechaModifica,idSector,observacion);
+            Console.WriteLine("Sera pues ..." + idTienda + " " + idSector + " " + nombreEmpresa + " " + nombres + " " + apellidoP + " " + apellidoM + " " +
+            direccion + " " + contacto + " " + telefono + " " + fax + " " + ruc + " " + correo + " " + idTipoDoc + " " + nroDoc + " " +
+            observacion + " " + inscripcion + " " + salCta + " " + fechaNac + " " + tipoCompra + "   " + credito + " "  + queja + "   "
+            + ordenclie + "   " + promedioVentas + "   " + cta_cli + "   " + depa + "   " + provi + "   " + distri + "   " + usuRegistra);
+            cli.InsertarCliente(idTienda,idSector,nombreEmpresa,nombres,apellidoP,apellidoM,direccion,contacto,telefono,fax,ruc,correo,idTipoDoc,nroDoc,
+                observacion,inscripcion,Convert.ToDouble(salCta),fechaNac,tipoCompra,Convert.ToDouble(credito),queja,Convert.ToInt32(ordenclie),
+                Convert.ToDouble(promedioVentas),cta_cli,depa,provi,distri,usuRegistra);
         }
 
         //UPDATE CLIENT
-        public void UpdateClient(String idRecpCliente, String idDocIdentidad, String idTipoPersona, String nDocIdentidad, String numeroRuc, String razonSocial,String nombreComercial,
-            String nombre, String paterno, String materno, String correo, String direccion, String fax, String fijo, String telefono, String fechaNacimiento,
-            String depa, String provi, String distri, String usuarioRegistra, String fechaRegistro, String usuarioModifica, String fechaModifica,
-            String idSector, String observacion)
+        public void UpdateClient(String idCliente, String idTienda, String idSector, String nombreEmpresa, String nombres, String apellidoP, String apellidoM,
+            String direccion, String contacto, String telefono, String fax, String ruc, String correo, String idTipoDoc, String nroDoc, String observacion,
+            String inscripcion, String salCta, String fechaNac, String tipoCompra, String credito, String queja, String ordenclie, String promedioVentas,
+            String cta_cli, String depa, String provi, String distri, String usuRegistra, String usuModifica, String fechaModi)
         {
-            Console.WriteLine("EDITACIONNNNNN ..." + idDocIdentidad + " " + idTipoPersona + " " + nDocIdentidad + " " + numeroRuc + " " + razonSocial + " " +
-            nombreComercial + " " + nombre + " " + paterno + " " + materno + " " + correo + " " + direccion + " " + fax + " " +
-            fijo + " " + telefono + " " + fechaNacimiento + " " + depa + " " + provi + "   " + distri + " " + usuarioRegistra + "   "
-            + fechaRegistro + "   " + usuarioModifica + "   " + fechaModifica + "   " + idSector + "   " + observacion+"  "+ idRecpCliente);
+            Console.WriteLine("Editadooooo ..."+ idCliente + "" + idTienda + " " + idSector + " " + nombreEmpresa + " " + nombres + " " + apellidoP + " " + apellidoM + " " +
+             direccion + " " + contacto + " " + telefono + " " + fax + " " + ruc + " " + correo + " " + idTipoDoc + " " + nroDoc + " " +
+             observacion + " " + inscripcion + " " + salCta + " " + fechaNac + " " + tipoCompra + "   " + credito + " " + queja + "   "
+             + ordenclie + "   " + promedioVentas + "   " + cta_cli + "   " + depa + "   " + provi + "   " + distri + "   " + usuRegistra);
 
-            cli.EditarCliente(Convert.ToInt32(idRecpCliente), Convert.ToInt32(idDocIdentidad), Convert.ToInt32(idTipoPersona), nDocIdentidad, numeroRuc, razonSocial, nombreComercial,
-                nombre, paterno, materno, correo, direccion, fax, fijo, telefono, fechaNacimiento, depa, provi, distri, Convert.ToInt32(usuarioRegistra), fechaRegistro,
-                Convert.ToInt32(usuarioModifica), fechaModifica, idSector, observacion);
+            cli.EditarCliente(idCliente,idTienda,idSector,nombreEmpresa,nombres,apellidoP,apellidoM,direccion,contacto,telefono,fax,ruc,correo,idTipoDoc,nroDoc,observacion,inscripcion,
+                Convert.ToDouble(salCta),fechaNac,tipoCompra,Convert.ToDouble(credito),queja,Convert.ToInt32(ordenclie),Convert.ToDouble(promedioVentas),cta_cli,depa,provi,distri,usuRegistra,
+                usuModifica,fechaModi);
         }
 
 
