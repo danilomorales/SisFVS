@@ -347,8 +347,7 @@ namespace SistemaFigueri
                         tbPrecio.Text = form.precio;
                         btnAgregaCarro.Enabled = true;
                         tbIdProducto.Text = form.idproducto;
-                        
-                       
+                                              
 
                         CNProductos objProducto = new CNProductos();
 
