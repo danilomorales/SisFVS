@@ -209,13 +209,22 @@ namespace SistemaFigueri
         {
             if (rbnFactura.Checked == true)
                 lblTipo.Text = "FACTURA";
-            else
-                lblTipo.Text = "BOLETA DE VENTA";
+            CNVentas cNVentas = new CNVentas();
+            String correlativo = cNVentas.traerSerie(1);
+            lblSerie.Text = "001";
+            lblNroCorrelativo.Text = correlativo.ToString();
+
         }
 
         private void rbnBoleta_CheckedChanged(object sender, EventArgs e)
         {
             GenerarNumeroComprobante();
+            if (rbnBoleta.Checked == true)
+                lblTipo.Text = "BOLETA";
+            CNVentas cNVentas = new CNVentas();
+            String correlativo = cNVentas.traerSerie(2);
+            lblSerie.Text = "001";
+            lblNroCorrelativo.Text = correlativo.ToString();
         }
 
        
@@ -788,6 +797,16 @@ namespace SistemaFigueri
                 e.Handled = true;
                 return;
             }
+        }
+
+        private void rbnNC_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbnNC.Checked == true)
+                lblTipo.Text = "NOTA DE CRÉDITO";
+            CNVentas cNVentas = new CNVentas();
+            String correlativo = cNVentas.traerSerie(3);
+            lblSerie.Text = "001";
+            lblNroCorrelativo.Text = correlativo.ToString();
         }
     }
 

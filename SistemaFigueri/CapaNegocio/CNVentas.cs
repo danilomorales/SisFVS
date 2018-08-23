@@ -5,12 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 
 using System.Data;
+using System.Data.SqlClient;
 using CapaDatos;
+using System.Data.Sql;
 
 namespace CapaNegocio
 {
     public class CNVentas
     {
+ 
         CDConexion C = new CDConexion();
         public int IdUsuario { get; set; }
         public int IdClienteReceptor { get; set; }
@@ -19,6 +22,7 @@ namespace CapaNegocio
         public int NroDocumento { get; set; }
         public DateTime Fecha_Venta { get; set; }
         public decimal Total { get; set; }
+        private SqlDataReader leer;
 
         public String GenerarIdVenta()
         {
@@ -59,7 +63,20 @@ namespace CapaNegocio
             }
         }
 
-        
+        public String traerSerie(int ide_comp)
+        {
+            String resultado = "";
+            SqlCommand comando = new SqlCommand("Caja.SP_TraerNSerie", C.AbrirConexion());
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@vIde_Comp_Pago", ide_comp);
+            comando.Parameters.AddWithValue("@num_serie_venta", "001");
+            comando.Parameters.Add("@Correlativo",SqlDbType.VarChar,10).Direction= ParameterDirection.Output;
+            comando.ExecuteNonQuery();
+            resultado = comando.Parameters["@Correlativo"].Value.ToString();
+            return resultado;
+        }
+
+
 
     }
 }
