@@ -74,7 +74,7 @@ namespace CapaNegocio
         //Carga Productos según Cliente
 
         private CDProductos objDato = new CDProductos();
-        public SqlDataAdapter buscarPedidos(String cliente, String producto)
+        public SqlDataAdapter buscarclienteProducto(String cliente, String producto)
         {
             return objDato.CargaProductoCliente(cliente, producto);
         }

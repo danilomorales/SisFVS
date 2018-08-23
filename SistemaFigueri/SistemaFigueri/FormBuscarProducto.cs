@@ -21,6 +21,7 @@ namespace SistemaFigueri
         CDProductos cdpro = new CDProductos();
         DataTable tProducto = new DataTable();
         CDCliente Dcliente = new CDCliente();
+        FormBuscarClienteR clie = new FormBuscarClienteR();
 
         public String alias { get; set; }
         public String descripcion { get; set; }
@@ -47,9 +48,11 @@ namespace SistemaFigueri
                 adapter.Fill(tProducto);
                 dgvProducto.DataSource = tProducto;
                 adapter.Dispose();
+                tbMIdCliente.Text = clie.idcliente;
+
 
                 //CNProductos objProducto = new CNProductos();
-                
+
                 //foreach (DataRow row in tProducto.Rows)
                 //{
                 //    list.Add((DataRow)row);
@@ -88,7 +91,6 @@ namespace SistemaFigueri
             }
             
 
-
         }
         private void tbFiltra_KeyUp(object sender, KeyEventArgs e)
         {
@@ -109,6 +111,10 @@ namespace SistemaFigueri
 
         private void dgvlListaProducto_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            //string idproducto = Idproducto.Text.ToString();
+            //SqlDataAdapter adapter = obj.buscarclienteProducto(idcliente, idproducto);
+            //MessageBox.Show("cliente " + idcliente);
+
             //FormVenta fv = new FormVenta();
             //fv.tbAlias.Text = this.dgvlListaProducto.CurrentRow.Cells["Alias"].Value.ToString();
             String IdProducto = dgvlListaProducto.Rows[e.RowIndex].Cells["Código"].Value.ToString();
@@ -127,6 +133,7 @@ namespace SistemaFigueri
             this.DialogResult = DialogResult.OK;
             this.Close();
             //fv.Close();
+            
         }
     }
 }
