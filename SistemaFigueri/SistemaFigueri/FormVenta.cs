@@ -13,6 +13,7 @@ using System.Windows.Forms;
 using MaterialSkin;
 using MaterialSkin.Controls;
 using System.Globalization;
+using CrystalDecisions.CrystalReports;
 
 namespace SistemaFigueri
 {
@@ -680,42 +681,67 @@ namespace SistemaFigueri
         {
             if (dgvVenta.Rows.Count > 0)
             {
-                if (Convert.ToString(dgvVenta.CurrentRow.Cells[2].Value) != "")
-                {
-                    GuardarVenta();
-                    try
+                using (FormComprobanteVenta formC = new FormComprobanteVenta()) {
+                    if(formC.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                     {
-                        for (int i = 0; i < dgvVenta.Rows.Count; i++)
+                        Reportes.DsDetalleVenta dsdet = new Reportes.DsDetalleVenta();
+                        int filas = dgvVenta.Rows.Count;
+                        for(int i = 0; i < filas - 2; i++)
                         {
-                            Decimal SumaIgv = 0; Decimal SumaSubTotal = 0;
-                            if (Convert.ToString(dgvVenta.Rows[i].Cells[1].Value) != "")
-                            {
-                                SumaIgv += Convert.ToDecimal(dgvVenta.Rows[i].Cells[6].Value);
-                                SumaSubTotal += Convert.ToDecimal(dgvVenta.Rows[i].Cells[4].Value);
-                                GuardarDetalleVenta(
-                                Convert.ToString(dgvVenta.Rows[i].Cells[5].Value),
-                                Convert.ToInt32(dgvVenta.Rows[i].Cells[0].Value),
-                                Convert.ToInt32(dgvVenta.Rows[i].Cells[1].Value),
-                                Convert.ToDecimal(dgvVenta.Rows[i].Cells[3].Value),
-                                SumaIgv, SumaSubTotal
+                            dsdet.Tables[i].Rows.Add(
+                                new Object[]
+                                {
+                                    dgvVenta[0,i].Value.ToString(),
+                                    dgvVenta[1,i].Value.ToString(),
+                                    dgvVenta[2,i].Value.ToString(),
+                                    dgvVenta[3,i].Value.ToString()
+                                }
                                 );
-                                MessageBox.Show("Contiene Datos.");
-                            }
-                            else
+                        }
+                        Reportes.ComprobanteVenta comp = new Reportes.ComprobanteVenta();
+                        comp.Load("C:\\Users\\AlphaLeader\\Desktop\\SisFVS2\\SistemaFigueri\\SistemaFigueri\\Reportes\\ComprobanteVenta.rpt");
+                        comp.SetDataSource(dsdet);
+                        formC.crystalReportViewer1.ReportSource = comp;
+                           
+                    }
+                }
+                    if (Convert.ToString(dgvVenta.CurrentRow.Cells[2].Value) != "")
+                    {
+                        GuardarVenta();
+                        try
+                        {
+                            for (int i = 0; i < dgvVenta.Rows.Count; i++)
                             {
-                                MessageBox.Show("Fila Vacia.");
+                                Decimal SumaIgv = 0; Decimal SumaSubTotal = 0;
+                                if (Convert.ToString(dgvVenta.Rows[i].Cells[1].Value) != "")
+                                {
+                                    SumaIgv += Convert.ToDecimal(dgvVenta.Rows[i].Cells[6].Value);
+                                    SumaSubTotal += Convert.ToDecimal(dgvVenta.Rows[i].Cells[4].Value);
+                                    GuardarDetalleVenta(
+                                    Convert.ToString(dgvVenta.Rows[i].Cells[5].Value),
+                                    Convert.ToInt32(dgvVenta.Rows[i].Cells[0].Value),
+                                    Convert.ToInt32(dgvVenta.Rows[i].Cells[1].Value),
+                                    Convert.ToDecimal(dgvVenta.Rows[i].Cells[3].Value),
+                                    SumaIgv, SumaSubTotal
+                                    );
+                                    MessageBox.Show("Contiene Datos.");
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Fila Vacia.");
+                                }
                             }
                         }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
                     }
-                    catch (Exception ex)
+                    else
                     {
-                        MessageBox.Show(ex.Message);
+                        MessageBox.Show("No Existe Ningún Elemento en la Lista.", "Sistema de Ventas.", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                }
-                else
-                {
-                    MessageBox.Show("No Existe Ningún Elemento en la Lista.", "Sistema de Ventas.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                
             }
             else
             {
