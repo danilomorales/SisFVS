@@ -211,7 +211,7 @@ namespace SistemaFigueri
                 lblTipo.Text = "FACTURA";
             CNVentas cNVentas = new CNVentas();
             String correlativo = cNVentas.traerCorrelativo(1);
-            lblSerie.Text = "001";
+            lblSerie.Text = "F001";
             lblNroCorrelativo.Text = correlativo.ToString();
 
         }
@@ -223,7 +223,7 @@ namespace SistemaFigueri
                 lblTipo.Text = "BOLETA";
             CNVentas cNVentas = new CNVentas();
             String correlativo = cNVentas.traerCorrelativo(2);
-            lblSerie.Text = "001";
+            lblSerie.Text = "B001";
             lblNroCorrelativo.Text = correlativo.ToString();
         }
 
@@ -810,7 +810,7 @@ namespace SistemaFigueri
                 lblTipo.Text = "NOTA DE CRÉDITO";
             CNVentas cNVentas = new CNVentas();
             String correlativo = cNVentas.traerCorrelativo(3);
-            lblSerie.Text = "001";
+            lblSerie.Text = "NC001";
             lblNroCorrelativo.Text = correlativo.ToString();
         }
     }
