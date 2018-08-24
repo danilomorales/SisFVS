@@ -209,10 +209,10 @@ namespace SistemaFigueri
         {
             if (rbnFactura.Checked == true)
                 lblTipo.Text = "FACTURA";
-            //CNVentas cNVentas = new CNVentas();
-            //String correlativo = cNVentas.traerSerie(1);
+            CNVentas cNVentas = new CNVentas();
+            String correlativo = cNVentas.traerCorrelativo(1);
             lblSerie.Text = "001";
-            //lblNroCorrelativo.Text = correlativo.ToString();
+            lblNroCorrelativo.Text = correlativo.ToString();
 
         }
 
@@ -221,10 +221,10 @@ namespace SistemaFigueri
             GenerarNumeroComprobante();
             if (rbnBoleta.Checked == true)
                 lblTipo.Text = "BOLETA";
-            //CNVentas cNVentas = new CNVentas();
-            //String correlativo = cNVentas.traerSerie(2);
+            CNVentas cNVentas = new CNVentas();
+            String correlativo = cNVentas.traerCorrelativo(2);
             lblSerie.Text = "001";
-            //lblNroCorrelativo.Text = correlativo.ToString();
+            lblNroCorrelativo.Text = correlativo.ToString();
         }
 
        
@@ -246,9 +246,9 @@ namespace SistemaFigueri
             //aux.Lista(dgvProductos);
 
             CNVentas cNVentas = new CNVentas();
-            //String correlativo = cNVentas.traerSerie(2);
-            //lblSerie.Text = "001";
-            //lblNroCorrelativo.Text = correlativo.ToString();
+            String correlativo = cNVentas.traerCorrelativo(2);
+            lblSerie.Text = "001";
+            lblNroCorrelativo.Text = correlativo.ToString();
 
         }
         private void GenerarNumeroComprobante()
@@ -487,6 +487,7 @@ namespace SistemaFigueri
                 MessageBox.Show("Por Favor Busque el Cliente a Vender.", "Figueri", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
             }
         }
+
         private void LlenarGrilla()
         {
             var format = (NumberFormatInfo)NumberFormatInfo.CurrentInfo.Clone();
@@ -507,6 +508,7 @@ namespace SistemaFigueri
                 SumaSubTotal += Convert.ToDecimal(dgvVenta.Rows[i].Cells[4].Value);
                 SumaIgv += Convert.ToDecimal(dgvVenta.Rows[i].Cells[6].Value);
             }
+
             dgvVenta.Rows.Add();
             dgvVenta.Rows.Add();
             dgvVenta.Rows[lst.Count + 1].Cells[3].Value = "SUB-TOTAL  S/.";
@@ -804,12 +806,12 @@ namespace SistemaFigueri
 
         private void rbnNC_CheckedChanged(object sender, EventArgs e)
         {
-            //if (rbnNC.Checked == true)
-            //    lblTipo.Text = "NOTA DE CRÉDITO";
-            //CNVentas cNVentas = new CNVentas();
-            //String correlativo = cNVentas.traerSerie(3);
-            //lblSerie.Text = "001";
-            //lblNroCorrelativo.Text = correlativo.ToString();
+            if (rbnNC.Checked == true)
+                lblTipo.Text = "NOTA DE CRÉDITO";
+            CNVentas cNVentas = new CNVentas();
+            String correlativo = cNVentas.traerCorrelativo(3);
+            lblSerie.Text = "001";
+            lblNroCorrelativo.Text = correlativo.ToString();
         }
     }
 

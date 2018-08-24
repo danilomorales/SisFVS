@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using CapaEntidades;
 using System.Data;
 using CapaDatos;
+using System.Data.SqlClient;
+using System.Data.Sql;
 
 namespace CapaNegocio
 {
@@ -44,7 +46,18 @@ namespace CapaNegocio
             }
         }
 
-       
+        public String traerCorrelativo(int opcion)
+        {
+            String correlativo = "";
+            SqlCommand comando = new SqlCommand("Caja.SP_TraerCorrelativo", C.AbrirConexion());
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@vIde_Comp_Pago", opcion);
+            comando.Parameters.AddWithValue("@num_serie_venta", "001");
+            comando.Parameters.Add("@Correlativo", SqlDbType.VarChar,10).Direction = ParameterDirection.Output;
+            comando.ExecuteNonQuery();
+            correlativo = comando.Parameters["@Correlativo"].Value.ToString();
+            return correlativo;
+        }
 
 
 
