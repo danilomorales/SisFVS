@@ -11,7 +11,14 @@ namespace CapaDatos
 {
     public class CDConexion
     {
-        
+        private static readonly CDConexion _instancia = new CDConexion();
+        public static CDConexion Instancia
+        {
+            get
+            {
+                return CDConexion._instancia;
+            }
+        }
         public SqlConnection Conexion = new SqlConnection("Data Source=192.168.21.5;Initial Catalog=DBFIGUE2;User ID=sa;Password=123;MultipleActiveResultSets=true;");
         
         public SqlConnection AbrirConexion()
@@ -27,9 +34,7 @@ namespace CapaDatos
                 Conexion.Close();
             return Conexion;
 
-
         }
-
         public DataTable Listado(String NombreSP, List<clParametro> lst)
         {
             DataTable dt = new DataTable();
@@ -87,6 +92,5 @@ namespace CapaDatos
             }
             CerrarConexion();
         }
-
     }
 }

@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using CapaEntidades;
 using System.Data;
 using CapaDatos;
+using System.Data.SqlClient;
+using System.Data.Sql;
 
 namespace CapaNegocio
 {
@@ -20,22 +22,7 @@ namespace CapaNegocio
         public DateTime Fecha_Venta { get; set; }
         public decimal Total { get; set; }
 
-        public String GenerarIdVenta()
-        {
-            List<clParametro> lst = new List<clParametro>();
-            int objIdVenta;
-            try
-            {
-                lst.Add(new clParametro("@IdVenta", "", SqlDbType.Int, ParameterDirection.Output, 4));
-                C.EjecutarSP("SP_GenerarIdVenta", ref lst);
-                objIdVenta = Convert.ToInt32(lst[0].Valor.ToString());  
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            return Convert.ToString(objIdVenta);
-        }
+   
         public String RegistrarVenta()
         {
             String Mensaje = "";
@@ -50,7 +37,7 @@ namespace CapaNegocio
                 lst.Add(new clParametro("@Fecha_Venta", Fecha_Venta));
                 lst.Add(new clParametro("@Total", Total));
                 lst.Add(new clParametro("@Mensaje", "", SqlDbType.VarChar, ParameterDirection.Output, 100));
-                C.EjecutarSP("Caja.SP_RegistraVenta", ref lst);
+               // C.EjecutarSP("Caja.SP_RegistraVenta", ref lst);
                 return Mensaje = lst[7].Valor.ToString();
             }
             catch (Exception ex)
@@ -59,7 +46,22 @@ namespace CapaNegocio
             }
         }
 
-        
+        public String traerCorrelativo(int opcion)
+        {
+            String correlativo = "";
+            SqlCommand comando = new SqlCommand("Caja.SP_TraerCorrelativo", C.AbrirConexion());
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@vIde_Comp_Pago", opcion);
+            comando.Parameters.AddWithValue("@num_serie_venta", "001");
+            comando.Parameters.Add("@Correlativo", SqlDbType.VarChar,10).Direction = ParameterDirection.Output;
+            comando.ExecuteNonQuery();
+            correlativo = comando.Parameters["@Correlativo"].Value.ToString();
+            return correlativo;
+        }
+
+
+
+
 
     }
 }

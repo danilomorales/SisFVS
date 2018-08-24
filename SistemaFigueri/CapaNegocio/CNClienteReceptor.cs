@@ -65,19 +65,7 @@ namespace CapaNegocio
             set { _ApellidoMaterno = value; }
          }
 
-        public DataTable Listado()
-        {
-            return C.Listado("Caja.SP_ListarClienteReceptor", null);
-
-        }
-
-        public DataTable BuscaClienteReceptor(String objDatos)
-        {
-            DataTable dt = new DataTable();
-            List<clParametro> lst = new List<clParametro>();
-            lst.Add(new clParametro("@Datos", objDatos));
-            return dt = C.Listado("Caja.SP_FiltrarDatosCliente", lst);
-        }
+       
 
 
 
