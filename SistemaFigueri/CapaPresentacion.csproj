@@ -1,0 +1,790 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{68BB9BEA-92F3-4A59-B381-5DECE65DDAB8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SistemaFigueri</RootNamespace>
+    <AssemblyName>SistemaFigueri</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.52">
+      <HintPath>..\..\libs\Bunifu_UI_v1.52.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Gma.QrCodeNet.Encoding, Version=0.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Gma.QrCodeNet.0.4.1.2\lib\net40\Gma.QrCodeNet.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialSkin.0.2.1\lib\MaterialSkin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.Compatibility" />
+    <Reference Include="Microsoft.VisualBasic.Compatibility.Data" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualC" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Conversiones.cs" />
+    <Compile Include="FormBuscarPedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBuscarPedidos.Designer.cs">
+      <DependentUpon>FormBuscarPedidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBuscarRoles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBuscarRoles.Designer.cs">
+      <DependentUpon>FormBuscarRoles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormComprobanteVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormComprobanteVenta.Designer.cs">
+      <DependentUpon>FormComprobanteVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditarUsuario.Designer.cs">
+      <DependentUpon>FormEditarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormKardex.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormKardex.Designer.cs">
+      <DependentUpon>FormKardex.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVenta.Designer.cs">
+      <DependentUpon>FormVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormVentaMDI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVentaMDI.Designer.cs">
+      <DependentUpon>FormVentaMDI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LocalBD.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Reportes\ComprobanteVenta.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ComprobanteVenta.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\DsDetalleVenta.cs">
+      <DependentUpon>DsDetalleVenta.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\DsDetalleVenta.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsDetalleVenta.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Venta.cs" />
+    <Compile Include="FormBuscarClienteR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBuscarClienteR.Designer.cs">
+      <DependentUpon>FormBuscarClienteR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBuscarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBuscarProducto.Designer.cs">
+      <DependentUpon>FormBuscarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBuscarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBuscarUsuario.Designer.cs">
+      <DependentUpon>FormBuscarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCliente.Designer.cs">
+      <DependentUpon>FormCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormInsertProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInsertProducto.Designer.cs">
+      <DependentUpon>FormInsertProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormInsertSector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInsertSector.Designer.cs">
+      <DependentUpon>FormInsertSector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMantCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMantCliente.Designer.cs">
+      <DependentUpon>FormMantCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormNuevoPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNuevoPerfil.Designer.cs">
+      <DependentUpon>FormNuevoPerfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPerfiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPerfiles.Designer.cs">
+      <DependentUpon>FormPerfiles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSector.Designer.cs">
+      <DependentUpon>FormSector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUpdateCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUpdateCliente.Designer.cs">
+      <DependentUpon>FormUpdateCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUpdateProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUpdateProducto.Designer.cs">
+      <DependentUpon>FormUpdateProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAperturaCaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAperturaCaja.Designer.cs">
+      <DependentUpon>FormAperturaCaja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMenuPrincipal.Designer.cs">
+      <DependentUpon>FormMenuPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPrincipalPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPrincipalPage.Designer.cs">
+      <DependentUpon>FormPrincipalPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProductos.Designer.cs">
+      <DependentUpon>FormProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRegistroCobro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRegistroCobro.Designer.cs">
+      <DependentUpon>FormRegistroCobro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTipoDeCambio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTipoDeCambio.Designer.cs">
+      <DependentUpon>FormTipoDeCambio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUpdateSector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUpdateSector.Designer.cs">
+      <DependentUpon>FormUpdateSector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="SomeData.cs" />
+    <EmbeddedResource Include="FormAperturaCaja.resx">
+      <DependentUpon>FormAperturaCaja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBuscarClienteR.resx">
+      <DependentUpon>FormBuscarClienteR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBuscarPedidos.resx">
+      <DependentUpon>FormBuscarPedidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBuscarProducto.resx">
+      <DependentUpon>FormBuscarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBuscarRoles.resx">
+      <DependentUpon>FormBuscarRoles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBuscarUsuario.resx">
+      <DependentUpon>FormBuscarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCliente.resx">
+      <DependentUpon>FormCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormComprobanteVenta.resx">
+      <DependentUpon>FormComprobanteVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditarUsuario.resx">
+      <DependentUpon>FormEditarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormInsertProducto.resx">
+      <DependentUpon>FormInsertProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormInsertSector.resx">
+      <DependentUpon>FormInsertSector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormKardex.resx">
+      <DependentUpon>FormKardex.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMantCliente.resx">
+      <DependentUpon>FormMantCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMenuPrincipal.resx">
+      <DependentUpon>FormMenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNuevoPerfil.resx">
+      <DependentUpon>FormNuevoPerfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPerfiles.resx">
+      <DependentUpon>FormPerfiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPrincipalPage.resx">
+      <DependentUpon>FormPrincipalPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProductos.resx">
+      <DependentUpon>FormProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRegistroCobro.resx">
+      <DependentUpon>FormRegistroCobro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSector.resx">
+      <DependentUpon>FormSector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTipoDeCambio.resx">
+      <DependentUpon>FormTipoDeCambio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUpdateCliente.resx">
+      <DependentUpon>FormUpdateCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUpdateProducto.resx">
+      <DependentUpon>FormUpdateProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUpdateSector.resx">
+      <DependentUpon>FormUpdateSector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormVenta.resx">
+      <DependentUpon>FormVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormVentaMDI.resx">
+      <DependentUpon>FormVentaMDI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ComprobanteVenta.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ComprobanteVenta.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SistemaFigueri.Principal.resources" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaDatos\CapaDatos.csproj">
+      <Project>{43dd90cb-9917-4b9b-a608-a4a27de69f2d}</Project>
+      <Name>CapaDatos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CapaEntidades\CapaEntidades.csproj">
+      <Project>{b9e49bb7-d11b-4163-952f-caf024cfc52e}</Project>
+      <Name>CapaEntidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CapaNegocio\CapaNegocio.csproj">
+      <Project>{219bca42-af85-414d-aaf3-af7654eff427}</Project>
+      <Name>CapaNegocio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Reportes\DsDetalleVenta.xsc">
+      <DependentUpon>DsDetalleVenta.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\DsDetalleVenta.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsDetalleVenta.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\DsDetalleVenta.xss">
+      <DependentUpon>DsDetalleVenta.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\maximize2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Minimize1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shut-down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\producto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Minimize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maximize3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cerrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu-round-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Productos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\figu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\venta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ventas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cliente.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clientesprincipal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\proveedor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\promociones.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\caja.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reporte.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\busca.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agrega.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clieteventa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pago.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imprime.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\acceder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\compra.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\quitar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Receipt_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Settings_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\suma.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\resta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GUARDA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\estock_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clienteico.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\descuento.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\borra.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\left2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\right2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pedido.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deli.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addCliente.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addProduct.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addKardex.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\k.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buscador.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\neww.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\anul.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imprimir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\34701194_1932649736756273_7733734888766963712_n.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\34701194_1932649736756273_7733734888766963712_n1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aa0000.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_friend-15-15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_friend-128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adddddd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adddddd0000.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-list-256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addplus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addplusss.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-to-shopping-cart-39480.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\APs.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cerrado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clave.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clienteico_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clienteico_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clientes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clouse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\compras.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dashboard.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\descuento_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\descuento_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dinero_large.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dolar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ediiiii.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\empleados.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\estock_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\figue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\figue2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\figueri.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\figuerixx0000.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grano.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon cerrar2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon minimizar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\llave.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo-degradado.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maxi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maximize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Membresia.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimazar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile-Menu-Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\monedas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\money.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pass1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pDT94r6S_400x400.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pDT94r6S_400x4001.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Planes.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Print.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\privi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\productoo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remove-button-md.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reportes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\res.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rol2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\role.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\satellite-dish %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\satellite-dish.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sector.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_group.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\white-edit-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\white-save-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\white-save-110.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\x-button.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

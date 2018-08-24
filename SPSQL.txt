@@ -1,0 +1,19 @@
+USE [DBFIGUE2]
+GO
+/****** Object:  StoredProcedure [dbo].[SFIniciarSesion]    Script Date: 06/07/2018 13:59:19 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER Procedure [dbo].[SFIniciarSesion]
+@Usuario nvarchar(40),
+@Contrasena nvarchar(50)
+as
+select * from caja.Usuario
+where Login=@Usuario and Pass=@Contrasena;
+
+
+
+
+*************************************************************************************
+
