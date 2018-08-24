@@ -27,6 +27,7 @@ namespace SistemaFigueri
         public static Decimal PrecioVenta;
 
 
+
         
         /// <summary>
         /// Punto de entrada principal para la aplicación.
