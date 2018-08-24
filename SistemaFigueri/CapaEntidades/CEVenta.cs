@@ -16,33 +16,31 @@ namespace CapaEntidades
         private String ruc_venta;
         private String descripcion;
         private String direccion;
-        private int cant_dias_pago;
-        private DateTime fecha_vmto;
+        private int cant_dias_pago { get; set; }
+        private DateTime fecha_vmto { get; set; }
         //EN CASO DE SER NOTA DE CRÉDITO
-        private String motivo_nc;
-        private String ref_nserie_nc;
-        private double ref_ndoc_nc;
-        private int idmoneda;
-        private double valor_venta;
-        private double deposito_venta;
-        private double importe_venta;
-        private double porc_igv;
-        private double igv_total;
+        private String motivo_nc { get; set; }
+        private String ref_nserie_nc { get; set; }
+        private decimal ref_ndoc_nc { get; set; }
+        private int idmoneda { get; set; }
+        private decimal valor_venta { get; set; }
+        private decimal deposito_venta { get; set; }
+        private decimal importe_venta { get; set; }
+        private decimal porc_igv { get; set; }
+        private decimal igv_total { get; set; }
         //CUANTO PAGA EL CLIENTE
-        private double impuesto_pago;
+        private decimal impuesto_pago { get; set; }
         //CUANTO QUEDA DE SALDO
-        private double importe_saldo;
-        private int id_punto_venta;
-        private int idarea;
+        private decimal importe_saldo { get; set; }
+        private int id_punto_venta { get; set; }
+        private int idarea { get; set; }
         //ESTADO DE COMPROBANTE
-        private int id_est_venta;
-        private int idusuario;
-        private DateTime ultima_act;
-        private String motivo_anulacion;
-        private int idsucursal;
+        private int id_est_venta { get; set; }
+        private int idusuario { get; set; }
+        private DateTime ultima_act{ get; set; }
+        private String motivo_anulacion { get; set; }
+        private int idsucursal { get; set; }
 
-        //relaciones 
-        public List<CEDetalleVenta> detalleventa { get; set; }
+        
     }
-
 }
