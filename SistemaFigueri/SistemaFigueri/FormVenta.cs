@@ -722,9 +722,45 @@ namespace SistemaFigueri
                     var imagen = new Bitmap(imageTemporal, new Size(new Point(200, 200)));
                     //panelResultado.BackgroundImage = imagen;
 
-                    // Guardar en el disco duro la imagen (Carpeta del proyecto)
-                    //imagen.Save("imagen.png", ImageFormat.Png);
-                    //btnGuardar.Enabled = true;
+                    //Guardar en el disco duro la imagen (Carpeta del proyecto)
+
+                    String urlSave = "C:\\Users\\AlphaLeader\\Desktop\\SisFVS2\\SistemaFigueri\\SistemaFigueri\\Resources\\" + lblSerie.Text + lblNroCorrelativo.Text + "QR.png";
+                    imagen.Save(urlSave, ImageFormat.Png);
+
+                    FileStream fs;
+                    // define te binary reader to read the bytes of image 
+
+                    BinaryReader br;
+                    // check the existance of image 
+
+                    if (File.Exists(urlSave))
+                    {
+                        // open image in file stream 
+
+                        fs = new FileStream(urlSave, FileMode.Open);
+                    }
+                    else
+                    {
+                        // if phot does not exist show the nophoto.jpg file 
+
+                        fs = new FileStream(urlSave, FileMode.Open);
+                    }
+                    // initialise the binary reader from file streamobject 
+
+                    br = new BinaryReader(fs);
+                    // define the byte array of filelength 
+
+                    byte[] imgbyte = new byte[fs.Length + 1];
+                    // read the bytes from the binary reader 
+
+                    imgbyte = br.ReadBytes(Convert.ToInt32((fs.Length)));
+                 
+
+                    br.Close();
+                    // close the binary reader 
+
+                    fs.Close();
+                    // close the file stream 
 
 
                     Reportes.DsDetalleVenta dsdet = new Reportes.DsDetalleVenta();
@@ -777,7 +813,7 @@ namespace SistemaFigueri
                                      SumaIgv,
                                      SumaTotal,
                                      letraImporte,
-                                     imagen
+                                     imgbyte
 
                             }
                             );
