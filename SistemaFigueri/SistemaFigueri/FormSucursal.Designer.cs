@@ -276,7 +276,7 @@
             this.bunifuFlatButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuFlatButton2.Iconcolor = System.Drawing.Color.Transparent;
             this.bunifuFlatButton2.Iconimage = null;
-            this.bunifuFlatButton2.Iconimage_right = global::SistemaFigueri.Properties.Resources.sucursal;
+            //this.bunifuFlatButton2.Iconimage_right = global::SistemaFigueri.Properties.Resources.sucursal;
             this.bunifuFlatButton2.Iconimage_right_Selected = null;
             this.bunifuFlatButton2.Iconimage_Selected = null;
             this.bunifuFlatButton2.IconMarginLeft = 0;
@@ -331,7 +331,7 @@
             this.bunifuFlatButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuFlatButton3.Iconcolor = System.Drawing.Color.Transparent;
             this.bunifuFlatButton3.Iconimage = null;
-            this.bunifuFlatButton3.Iconimage_right = global::SistemaFigueri.Properties.Resources.sucursal;
+            //this.bunifuFlatButton3.Iconimage_right = global::SistemaFigueri.Properties.Resources.sucursal;
             this.bunifuFlatButton3.Iconimage_right_Selected = null;
             this.bunifuFlatButton3.Iconimage_Selected = null;
             this.bunifuFlatButton3.IconMarginLeft = 0;
@@ -499,7 +499,7 @@
             this.bunifuFlatButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuFlatButton4.Iconcolor = System.Drawing.Color.Transparent;
             this.bunifuFlatButton4.Iconimage = null;
-            this.bunifuFlatButton4.Iconimage_right = global::SistemaFigueri.Properties.Resources.tienda;
+            //this.bunifuFlatButton4.Iconimage_right = global::SistemaFigueri.Properties.Resources.tienda;
             this.bunifuFlatButton4.Iconimage_right_Selected = null;
             this.bunifuFlatButton4.Iconimage_Selected = null;
             this.bunifuFlatButton4.IconMarginLeft = 0;
@@ -576,7 +576,7 @@
             this.bunifuFlatButton8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuFlatButton8.Iconcolor = System.Drawing.Color.Transparent;
             this.bunifuFlatButton8.Iconimage = null;
-            this.bunifuFlatButton8.Iconimage_right = global::SistemaFigueri.Properties.Resources.tienda;
+            //this.bunifuFlatButton8.Iconimage_right = global::SistemaFigueri.Properties.Resources.tienda;
             this.bunifuFlatButton8.Iconimage_right_Selected = null;
             this.bunifuFlatButton8.Iconimage_Selected = null;
             this.bunifuFlatButton8.IconMarginLeft = 0;
@@ -635,7 +635,7 @@
             this.bunifuFlatButton7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuFlatButton7.Iconcolor = System.Drawing.Color.Transparent;
             this.bunifuFlatButton7.Iconimage = null;
-            this.bunifuFlatButton7.Iconimage_right = global::SistemaFigueri.Properties.Resources.tienda;
+            //this.bunifuFlatButton7.Iconimage_right = global::SistemaFigueri.Properties.Resources.tienda;
             this.bunifuFlatButton7.Iconimage_right_Selected = null;
             this.bunifuFlatButton7.Iconimage_Selected = null;
             this.bunifuFlatButton7.IconMarginLeft = 0;
@@ -694,7 +694,7 @@
             this.bunifuFlatButton6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuFlatButton6.Iconcolor = System.Drawing.Color.Transparent;
             this.bunifuFlatButton6.Iconimage = null;
-            this.bunifuFlatButton6.Iconimage_right = global::SistemaFigueri.Properties.Resources.tienda;
+            //this.bunifuFlatButton6.Iconimage_right = global::SistemaFigueri.Properties.Resources.tienda;
             this.bunifuFlatButton6.Iconimage_right_Selected = null;
             this.bunifuFlatButton6.Iconimage_Selected = null;
             this.bunifuFlatButton6.IconMarginLeft = 0;
@@ -753,7 +753,7 @@
             this.bunifuFlatButton5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuFlatButton5.Iconcolor = System.Drawing.Color.Transparent;
             this.bunifuFlatButton5.Iconimage = null;
-            this.bunifuFlatButton5.Iconimage_right = global::SistemaFigueri.Properties.Resources.tienda;
+            //this.bunifuFlatButton5.Iconimage_right = global::SistemaFigueri.Properties.Resources.tienda;
             this.bunifuFlatButton5.Iconimage_right_Selected = null;
             this.bunifuFlatButton5.Iconimage_Selected = null;
             this.bunifuFlatButton5.IconMarginLeft = 0;
@@ -791,7 +791,7 @@
             this.bunifuFlatButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuFlatButton1.Iconcolor = System.Drawing.Color.Transparent;
             this.bunifuFlatButton1.Iconimage = null;
-            this.bunifuFlatButton1.Iconimage_right = global::SistemaFigueri.Properties.Resources.tienda;
+            //this.bunifuFlatButton1.Iconimage_right = global::SistemaFigueri.Properties.Resources.tienda;
             this.bunifuFlatButton1.Iconimage_right_Selected = null;
             this.bunifuFlatButton1.Iconimage_Selected = null;
             this.bunifuFlatButton1.IconMarginLeft = 0;
@@ -972,7 +972,7 @@
             this.bunifuFlatButton12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuFlatButton12.Iconcolor = System.Drawing.Color.Transparent;
             this.bunifuFlatButton12.Iconimage = null;
-            this.bunifuFlatButton12.Iconimage_right = global::SistemaFigueri.Properties.Resources.tienda;
+            //this.bunifuFlatButton12.Iconimage_right = global::SistemaFigueri.Properties.Resources.tienda;
             this.bunifuFlatButton12.Iconimage_right_Selected = null;
             this.bunifuFlatButton12.Iconimage_Selected = null;
             this.bunifuFlatButton12.IconMarginLeft = 0;
@@ -1027,7 +1027,7 @@
             this.bunifuFlatButton11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuFlatButton11.Iconcolor = System.Drawing.Color.Transparent;
             this.bunifuFlatButton11.Iconimage = null;
-            this.bunifuFlatButton11.Iconimage_right = global::SistemaFigueri.Properties.Resources.tienda;
+            //this.bunifuFlatButton11.Iconimage_right = global::SistemaFigueri.Properties.Resources.tienda;
             this.bunifuFlatButton11.Iconimage_right_Selected = null;
             this.bunifuFlatButton11.Iconimage_Selected = null;
             this.bunifuFlatButton11.IconMarginLeft = 0;
@@ -1082,7 +1082,7 @@
             this.bunifuFlatButton10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuFlatButton10.Iconcolor = System.Drawing.Color.Transparent;
             this.bunifuFlatButton10.Iconimage = null;
-            this.bunifuFlatButton10.Iconimage_right = global::SistemaFigueri.Properties.Resources.tienda;
+            //this.bunifuFlatButton10.Iconimage_right = global::SistemaFigueri.Properties.Resources.tienda;
             this.bunifuFlatButton10.Iconimage_right_Selected = null;
             this.bunifuFlatButton10.Iconimage_Selected = null;
             this.bunifuFlatButton10.IconMarginLeft = 0;
@@ -1118,7 +1118,7 @@
             this.bunifuFlatButton9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuFlatButton9.Iconcolor = System.Drawing.Color.Transparent;
             this.bunifuFlatButton9.Iconimage = null;
-            this.bunifuFlatButton9.Iconimage_right = global::SistemaFigueri.Properties.Resources.tienda;
+            //this.bunifuFlatButton9.Iconimage_right = global::SistemaFigueri.Properties.Resources.tienda;
             this.bunifuFlatButton9.Iconimage_right_Selected = null;
             this.bunifuFlatButton9.Iconimage_Selected = null;
             this.bunifuFlatButton9.IconMarginLeft = 0;
@@ -1287,7 +1287,7 @@
             this.bunifuFlatButton18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuFlatButton18.Iconcolor = System.Drawing.Color.Transparent;
             this.bunifuFlatButton18.Iconimage = null;
-            this.bunifuFlatButton18.Iconimage_right = global::SistemaFigueri.Properties.Resources.tienda;
+            //this.bunifuFlatButton18.Iconimage_right = global::SistemaFigueri.Properties.Resources.tienda;
             this.bunifuFlatButton18.Iconimage_right_Selected = null;
             this.bunifuFlatButton18.Iconimage_Selected = null;
             this.bunifuFlatButton18.IconMarginLeft = 0;
@@ -1342,7 +1342,7 @@
             this.bunifuFlatButton17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuFlatButton17.Iconcolor = System.Drawing.Color.Transparent;
             this.bunifuFlatButton17.Iconimage = null;
-            this.bunifuFlatButton17.Iconimage_right = global::SistemaFigueri.Properties.Resources.tienda;
+            //this.bunifuFlatButton17.Iconimage_right = global::SistemaFigueri.Properties.Resources.tienda;
             this.bunifuFlatButton17.Iconimage_right_Selected = null;
             this.bunifuFlatButton17.Iconimage_Selected = null;
             this.bunifuFlatButton17.IconMarginLeft = 0;
@@ -1391,7 +1391,7 @@
             this.bunifuFlatButton16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuFlatButton16.Iconcolor = System.Drawing.Color.Transparent;
             this.bunifuFlatButton16.Iconimage = null;
-            this.bunifuFlatButton16.Iconimage_right = global::SistemaFigueri.Properties.Resources.sucursal;
+            //this.bunifuFlatButton16.Iconimage_right = global::SistemaFigueri.Properties.Resources.sucursal;
             this.bunifuFlatButton16.Iconimage_right_Selected = null;
             this.bunifuFlatButton16.Iconimage_Selected = null;
             this.bunifuFlatButton16.IconMarginLeft = 0;
@@ -1471,7 +1471,7 @@
             this.bunifuFlatButton13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuFlatButton13.Iconcolor = System.Drawing.Color.Transparent;
             this.bunifuFlatButton13.Iconimage = null;
-            this.bunifuFlatButton13.Iconimage_right = global::SistemaFigueri.Properties.Resources.tienda;
+            //this.bunifuFlatButton13.Iconimage_right = global::SistemaFigueri.Properties.Resources.tienda;
             this.bunifuFlatButton13.Iconimage_right_Selected = null;
             this.bunifuFlatButton13.Iconimage_Selected = null;
             this.bunifuFlatButton13.IconMarginLeft = 0;
@@ -1526,7 +1526,7 @@
             this.bunifuFlatButton14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuFlatButton14.Iconcolor = System.Drawing.Color.Transparent;
             this.bunifuFlatButton14.Iconimage = null;
-            this.bunifuFlatButton14.Iconimage_right = global::SistemaFigueri.Properties.Resources.tienda;
+            //this.bunifuFlatButton14.Iconimage_right = global::SistemaFigueri.Properties.Resources.tienda;
             this.bunifuFlatButton14.Iconimage_right_Selected = null;
             this.bunifuFlatButton14.Iconimage_Selected = null;
             this.bunifuFlatButton14.IconMarginLeft = 0;
@@ -1562,7 +1562,7 @@
             this.bunifuFlatButton15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuFlatButton15.Iconcolor = System.Drawing.Color.Transparent;
             this.bunifuFlatButton15.Iconimage = null;
-            this.bunifuFlatButton15.Iconimage_right = global::SistemaFigueri.Properties.Resources.tienda;
+            //this.bunifuFlatButton15.Iconimage_right = global::SistemaFigueri.Properties.Resources.tienda;
             this.bunifuFlatButton15.Iconimage_right_Selected = null;
             this.bunifuFlatButton15.Iconimage_Selected = null;
             this.bunifuFlatButton15.IconMarginLeft = 0;
