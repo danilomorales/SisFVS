@@ -29,7 +29,7 @@ namespace SistemaFigueri
         LocalBD serie = new LocalBD();
         CNDetalleVenta Detalle = new CNDetalleVenta();
         private List<Venta> lst = new List<Venta>();
-
+        private int oldvalue { get; set; }
 
 
         public static FormVenta GetInstancia()
@@ -445,6 +445,7 @@ namespace SistemaFigueri
                                 SubTotal = ((Convert.ToDecimal(tbPrecio.Text) * Convert.ToInt32(tbCantidad.Text)) / Porcentaje);
                                 ven.Igv = Math.Round(Convert.ToDecimal(SubTotal) * (Convert.ToDecimal(tbIgv.Text) / (100)), 2);
                                 ven.SubTotal = Math.Round(SubTotal, 2);
+                                ven.stock = Int32.Parse(tbStock.Text);
                                 lst.Add(ven);
                                 LlenarGrilla();
                                 Limpiar();
@@ -506,6 +507,7 @@ namespace SistemaFigueri
                 dgvVenta.Rows[i].Cells[4].Value = lst[i].SubTotal;
                 dgvVenta.Rows[i].Cells[5].Value = lst[i].IdProducto;
                 dgvVenta.Rows[i].Cells[6].Value = lst[i].Igv;
+                dgvVenta.Rows[i].Cells["STOCK"].Value = lst[i].stock;
                 SumaSubTotal += Convert.ToDecimal(dgvVenta.Rows[i].Cells[4].Value);
                 SumaIgv += Convert.ToDecimal(dgvVenta.Rows[i].Cells[6].Value);
             }
@@ -851,12 +853,26 @@ namespace SistemaFigueri
             if (dgvVenta.Columns[e.ColumnIndex].Name == "CANTIDAD")
             {
                 int cant = Int32.Parse(dgvVenta.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString());
-                MessageBox.Show(cant.ToString());
+                //MessageBox.Show(cant.ToString());
                 double precio = Double.Parse(dgvVenta.Rows[e.RowIndex].Cells["PRECIO"].Value.ToString());
-                MessageBox.Show(precio.ToString());
+               // MessageBox.Show(precio.ToString());
                 double resultado = cant * precio;
-                dgvVenta.Rows[e.RowIndex].Cells["IMPORTE"].Value = resultado.ToString();
+                int stock = Int32.Parse(dgvVenta.Rows[e.RowIndex].Cells["STOCK"].Value.ToString());
+                if (cant <= stock)
+                {
+                    dgvVenta.Rows[e.RowIndex].Cells["IMPORTE"].Value = resultado.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Stock insuficiente");
+                    dgvVenta.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = oldvalue;
+                }
             }
+        }
+
+        private void dgvVenta_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            oldvalue = (int)dgvVenta[e.ColumnIndex, e.RowIndex].Value;
         }
     }
 
