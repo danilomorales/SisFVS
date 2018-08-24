@@ -66,7 +66,7 @@ namespace CapaNegocio
         public String traerSerie(int ide_comp)
         {
             String resultado = "";
-            SqlCommand comando = new SqlCommand("Caja.SP_TraerNSerie", C.AbrirConexion());
+            SqlCommand comando = new SqlCommand("Caja.SP_TraerCorrelativo", C.AbrirConexion());
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.AddWithValue("@vIde_Comp_Pago", ide_comp);
             comando.Parameters.AddWithValue("@num_serie_venta", "001");
