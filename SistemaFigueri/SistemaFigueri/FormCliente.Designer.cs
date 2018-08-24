@@ -61,7 +61,7 @@
             this.dgvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCliente.Location = new System.Drawing.Point(6, 82);
             this.dgvCliente.Name = "dgvCliente";
-            this.dgvCliente.Size = new System.Drawing.Size(1629, 689);
+            this.dgvCliente.Size = new System.Drawing.Size(1617, 595);
             this.dgvCliente.TabIndex = 61;
             this.dgvCliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -71,7 +71,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(15, 22);
+            this.label1.Location = new System.Drawing.Point(17, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(271, 36);
             this.label1.TabIndex = 0;
@@ -219,7 +219,7 @@
             this.bunifuCards3.color = System.Drawing.Color.Tomato;
             this.bunifuCards3.Controls.Add(this.label1);
             this.bunifuCards3.LeftSahddow = false;
-            this.bunifuCards3.Location = new System.Drawing.Point(651, 12);
+            this.bunifuCards3.Location = new System.Drawing.Point(432, 12);
             this.bunifuCards3.Name = "bunifuCards3";
             this.bunifuCards3.RightSahddow = true;
             this.bunifuCards3.ShadowDepth = 20;

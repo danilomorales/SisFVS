@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaNegocio;
 using System.Data.SqlClient;
+using CapaEntidades;
 using CapaDatos;
 
 
@@ -28,7 +29,6 @@ namespace SistemaFigueri
         public String stock { get; set; }
         public String fechavencimiento { get; set; }
         public String precio{ get; set; }
-        public String oferta { get; set; }
         public String idproducto { get; set; }
 
         public FormBuscarProducto()
@@ -37,34 +37,30 @@ namespace SistemaFigueri
         }
         public void LIstaProductoFiltro(DataGridView dgvProducto)
         {
-            try
-            {
-                CNProductos objProducto = new CNProductos();
-                SqlDataAdapter adapter = objProducto.ListaProductosFiltro();
-                foreach (DataRow row in tProducto.Rows)
-                {
-                    list.Add((DataRow)row);
-                }
-                adapter.Fill(tProducto);
-                dgvProducto.DataSource = tProducto;
-                adapter.Dispose();
-                tbMIdCliente.Text = clie.idcliente;
+  
+        }
+        private void CrearTabla()
+        {
+            
+            
+            dgvlListaProducto.Columns.Add("ColumnCodigo", "Código");
+            dgvlListaProducto.Columns.Add("ColumnAlias", "Alias");
+            dgvlListaProducto.Columns.Add("ColumnDescripcion", "DescripcionProducto");
+            dgvlListaProducto.Columns.Add("ColumnStock", "Stock");
+            dgvlListaProducto.Columns.Add("ColumnDuracion", "TiempoDuracion");
+            dgvlListaProducto.Columns.Add("ColumnPecio", "Precio");
 
 
-                //CNProductos objProducto = new CNProductos();
+            
+            dgvlListaProducto.Columns[1].Width = 30;
+            dgvlListaProducto.Columns[1].Width = 60;
 
-                //foreach (DataRow row in tProducto.Rows)
-                //{
-                //    list.Add((DataRow)row);
-                //}
-                //dgvProducto.DataSource = tProducto;
+            DataGridViewCellStyle cssCabecera = new DataGridViewCellStyle();
+            cssCabecera.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvlListaProducto.ColumnHeadersDefaultCellStyle = cssCabecera;
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Carga fallida:" + ex.ToString());
-
-            }
+            dgvlListaProducto.AllowUserToAddRows = false;
+            dgvlListaProducto.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
         }
 
@@ -73,31 +69,72 @@ namespace SistemaFigueri
         private void FormBuscarProducto_Load(object sender, EventArgs e)
         {
 
-            dgvlListaProducto.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
-            dgvlListaProducto.AllowUserToResizeRows = false;
-            LIstaProductoFiltro(dgvlListaProducto);
-           // dgvlListaProducto.Columns[0].Visible = false;
-            dgvlListaProducto.Columns["Código"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvlListaProducto.Columns["DescripcionProducto"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvlListaProducto.Columns["Alias"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvlListaProducto.Columns["Nota"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvlListaProducto.Columns["TiempoDuracion"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvlListaProducto.Columns["Stock"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvlListaProducto.Columns["Precio"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
- 
-            foreach (DataGridViewColumn column in dgvlListaProducto.Columns)
+            // dgvlListaProducto.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
+            // dgvlListaProducto.AllowUserToResizeRows = false;
+            // LIstaProductoFiltro(dgvlListaProducto);
+            //// dgvlListaProducto.Columns[0].Visible = false;
+            // dgvlListaProducto.Columns["Código"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            // dgvlListaProducto.Columns["DescripcionProducto"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            // dgvlListaProducto.Columns["Alias"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            // dgvlListaProducto.Columns["Nota"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            // dgvlListaProducto.Columns["TiempoDuracion"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            // dgvlListaProducto.Columns["Stock"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            // dgvlListaProducto.Columns["Precio"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            // foreach (DataGridViewColumn column in dgvlListaProducto.Columns)
+            // {
+            //     column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            // }
+            try
             {
-                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+                CrearTabla();
+                CargarGridProductoVenta();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Aviso",
+                 MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             
 
+
         }
+        int tip_busqueda = 0;
+
+
         private void tbFiltra_KeyUp(object sender, KeyEventArgs e)
         {
             DataView dv = tProducto.DefaultView;
             dv.RowFilter = string.Format("Código like '%{0}%' or Alias like '%{0}%' or DescripcionProducto like '%{0}%'", tbFiltra.Text);
 
         }
+        private void rbNombreProd_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                tip_busqueda = 1;
+                dgvlListaProducto.Rows.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void rbPrecio_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                tip_busqueda = 2;
+                dgvlListaProducto.Rows.Clear();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
 
         private void dtaListaPro_DoubleClick(object sender, EventArgs e)
         {
@@ -107,6 +144,32 @@ namespace SistemaFigueri
         private void btnCerrarFiltroCliente_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        private void CargarGridProductoVenta()
+        {
+            try
+            {
+                dgvlListaProducto.Rows.Clear();
+                List<CEProducto> Lista = CNProductos.Instancia.ListarProductoVenta();
+                int num = 0;
+                for (int i = 0; i < Lista.Count(); i++)
+                {
+                    num++;
+                    String[] fila = new String[] {
+                        Lista[i]._Codigo,
+                        Lista[i]._Alias,
+                        Lista[i]._DescripcionProducto,
+                        Lista[i]._Stock,
+                        Lista[i]._TiempoDuracion, 
+                        Lista[i]._precio.ToString(),num.ToString() };
+                    dgvlListaProducto.Rows.Add(fila);
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         private void dgvlListaProducto_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -135,5 +198,7 @@ namespace SistemaFigueri
             //fv.Close();
             
         }
+
+        
     }
 }

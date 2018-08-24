@@ -5,12 +5,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
+using CapaEntidades;
 
 namespace CapaDatos
 {
     public class CDProductos
     {
-         private CDConexion conexion = new CDConexion();
+        private static readonly CDProductos _intancia = new CDProductos();
+        public static CDProductos Instancia
+        {
+            get { return CDProductos._intancia; }
+        }
+
+        private CDConexion conexion = new CDConexion();
 
         SqlDataReader leer;
         DataTable tabla = new DataTable();
@@ -135,14 +142,73 @@ namespace CapaDatos
             }
             return adapter;
 
+        }
 
 
-            //adapter = new SqlDataAdapter(sql, conexion.AbrirConexion());
-            //return adapter;
-            ////SqlCommand comando = new SqlCommand("", conexion.AbrirConexion());
-            ////comando.CommandType = CommandType.StoredProcedure;
-            ////leer = comando.ExecuteReader();
-            //return leer();
+        //Carga Productos según Rbtn 
+        public List<CEProducto> BuscarProductoAvanzada(int tip_entrada, String valor_entrada)
+        {
+            SqlCommand cmd = null;
+            SqlDataReader dr = null;
+            List<CEProducto> Lista = null;
+            try
+            {
+                SqlConnection cn = CDConexion.Instancia.Conectar();
+                cmd = new SqlCommand("Caja.SP_BuscaProdAvanzado", cn);
+                cmd.Parameters.AddWithValue("@prmTipEntrada", tip_entrada);
+                cmd.Parameters.AddWithValue("@prmValorEntrada", valor_entrada);
+
+                cmd.CommandType = CommandType.StoredProcedure;
+                cn.Open();
+                dr = cmd.ExecuteReader();
+                Lista = new List<CEProducto>();
+                while (dr.Read())
+                {
+                    CEProducto p = new CEProducto();
+                    
+
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally { cmd.Connection.Close(); }
+            return Lista;
+        }
+
+        public List<CEProducto> ListarProducto()
+        {
+            SqlCommand cmd = null;
+            List<CEProducto> Lista = null;
+            SqlDataReader dr = null;
+            try
+            {
+                SqlConnection cn = CDConexion.Instancia.Conectar();
+                cmd = new SqlCommand("Caja.SP_ListaProductos_Venta", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cn.Open();
+                dr = cmd.ExecuteReader();
+                Lista = new List<CEProducto>();
+                while (dr.Read())
+                {
+                    CEProducto p = new CEProducto();
+                    p._Codigo = dr["Código"].ToString();
+                    p._Alias = dr["Alias"].ToString();
+                    p._DescripcionProducto = dr["DescripcionProducto"].ToString();
+                    p._TiempoDuracion =dr["TiempoDuracion"].ToString();
+                    p._Stock = dr["Stock"].ToString();
+                    p._precio = Convert.ToDouble(dr["Precio"].ToString());
+                    Lista.Add(p);
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally { cmd.Connection.Close(); }
+            return Lista;
         }
     }
 }

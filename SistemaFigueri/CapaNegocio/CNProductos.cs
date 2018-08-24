@@ -6,11 +6,17 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using CapaDatos;
+using CapaEntidades;
 
 namespace CapaNegocio
 {
     public class CNProductos
     {
+        private static readonly CNProductos _intancia = new CNProductos();
+        public static CNProductos Instancia
+        {
+            get { return CNProductos._intancia; }
+        }
         private CDProductos pro = new CDProductos();
         
 
@@ -79,5 +85,38 @@ namespace CapaNegocio
             return objDato.CargaProductoCliente(cliente, producto);
         }
 
+        //lista Productos según Rbtn 
+        public List<CEProducto> BuscarprodAvanzada(int tip_busq, String val_busqueda)
+        {
+            try
+            {
+                List<CEProducto> Lista = null;
+                Lista = CDProductos.Instancia.BuscarProductoAvanzada(tip_busq, val_busqueda);
+                return Lista;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        //ListaPRoductos paraventa
+        public List<CEProducto> ListarProductoVenta()
+        {
+            try
+            {
+                List<CEProducto> Lista = null;
+                Lista = CDProductos.Instancia.ListarProducto();
+                if (Lista.Count == 0) throw new ApplicationException("Lista de productos vacia");
+                else if (Lista == null) throw new ApplicationException("Se produjo un error ");
+                return Lista;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

@@ -223,7 +223,7 @@ namespace SistemaFigueri
         private void FormVenta_Load(object sender, EventArgs e)
         {
             var cards = new Bunifu.Framework.UI.BunifuCards();
-            MostrarClientes();
+            ListaFormaPago();
             this.crearTabla();
             GenerarNumeroComprobante();
 
@@ -269,12 +269,6 @@ namespace SistemaFigueri
             da.Fill(dt);
             
         }
-        public void MostrarClientes()
-        {
-            //ListaCliente.DataSource = objCN.MostrarResultadoCliente();
-            
-
-        }
 
         public void autocompleta(TextBox cajadetexto)
         {
@@ -286,6 +280,14 @@ namespace SistemaFigueri
         {
             FormMantCliente formMP = new FormMantCliente();
             formMP.ShowDialog();
+        }
+
+        public void ListaFormaPago()
+        {
+            CDVenta CDventa = new CDVenta();
+            cboFormaPago.DataSource = CDventa.CargaFormaPago();
+            cboFormaPago.DisplayMember = "DescripcionTipo";
+
         }
 
         private void tbBuscaProducto_TextAlignChanged(object sender, EventArgs e)
@@ -410,7 +412,7 @@ namespace SistemaFigueri
         {
             Venta ven = new Venta();
             Decimal Porcentaje = 0; Decimal SubTotal;
-            if(this.tbClienteNombre.Text.Trim() != "")
+            if(this.tbrazonsocial.Text.Trim() != "")
             {
                 if (tbDescripcion.Text.Trim() != "")
                 {
@@ -477,7 +479,7 @@ namespace SistemaFigueri
         private void LlenarGrilla()
         {
             var format = (NumberFormatInfo)NumberFormatInfo.CurrentInfo.Clone();
-            format.CurrencySymbol = "Soles.";
+            format.CurrencySymbol = "";
             Decimal SumaSubTotal = 0; Decimal SumaIgv = 0; Decimal SumaTotal = 0;
             dgvVenta.Rows.Clear();
             for (int i = 0; i < lst.Count; i++)
@@ -685,11 +687,11 @@ namespace SistemaFigueri
                                 Convert.ToDecimal(dgvVenta.Rows[i].Cells[3].Value),
                                 SumaIgv, SumaSubTotal
                                 );
-                                MessageBox.Show("Contiene Datos.");
+                                MessageBox.Show("Registro correcto");
                             }
                             else
                             {
-                                MessageBox.Show("Fila Vacia.");
+                                
                             }
                         }
                     }
@@ -738,7 +740,7 @@ namespace SistemaFigueri
             Detalle.PrecioUnitario = objPUnitario;
             Detalle.Igv = objIgv;
             Detalle.SubTotal = objSubTotal;
-            Detalle.RegistrarDetalleVenta();
+            //Detalle.RegistrarDetalleVenta();
             
             //GenerarIdVenta();
             //GenerarNumeroComprobante();
@@ -789,6 +791,8 @@ namespace SistemaFigueri
                 return;
             }
         }
+
+      
     }
 
 }
