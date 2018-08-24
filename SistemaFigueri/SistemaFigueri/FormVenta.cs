@@ -492,7 +492,7 @@ namespace SistemaFigueri
         private void LlenarGrilla()
         {
             var format = (NumberFormatInfo)NumberFormatInfo.CurrentInfo.Clone();
-            format.CurrencySymbol = "Soles.";
+            format.CurrencySymbol = "";
             Decimal SumaSubTotal = 0; Decimal SumaIgv = 0; Decimal SumaTotal = 0;
             dgvVenta.Rows.Clear();
             for (int i = 0; i < lst.Count; i++)
@@ -526,6 +526,8 @@ namespace SistemaFigueri
             dgvVenta.Rows[lst.Count + 3].Cells[4].Value = SumaTotal;
             dgvVenta.ClearSelection();
         }
+
+
         //otr csa
         private void Limpiar()
         {

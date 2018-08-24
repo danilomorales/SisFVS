@@ -153,7 +153,7 @@ namespace CapaDatos
             List<CEProducto> Lista = null;
             try
             {
-                SqlConnection cn = CDConexion.Instancia.Conectar();
+                SqlConnection cn = CDConexion.Instancia.CerrarConexion();
                 cmd = new SqlCommand("Caja.SP_BuscaProdAvanzado", cn);
                 cmd.Parameters.AddWithValue("@prmTipEntrada", tip_entrada);
                 cmd.Parameters.AddWithValue("@prmValorEntrada", valor_entrada);
@@ -165,8 +165,13 @@ namespace CapaDatos
                 while (dr.Read())
                 {
                     CEProducto p = new CEProducto();
-                    
-
+                    p._Codigo = dr["Código"].ToString();
+                    p._Alias = dr["Alias"].ToString();
+                    p._DescripcionProducto = dr["DescripcionProducto"].ToString();
+                    p._TiempoDuracion = dr["TiempoDuracion"].ToString();
+                    p._Stock = dr["Stock"].ToString();
+                    p._precio = Convert.ToDouble(dr["Precio"].ToString());
+                    Lista.Add(p);
                 }
             }
             catch (Exception)
@@ -184,7 +189,7 @@ namespace CapaDatos
             SqlDataReader dr = null;
             try
             {
-                SqlConnection cn = CDConexion.Instancia.Conectar();
+                SqlConnection cn = CDConexion.Instancia.CerrarConexion();
                 cmd = new SqlCommand("Caja.SP_ListaProductos_Venta", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cn.Open();

@@ -37,18 +37,18 @@ namespace CapaDatos
 
         }
 
-        public SqlConnection Conectar()
-        {
-            try
-            {
-                SqlConnection cn = new SqlConnection();
-                cn.ConnectionString = "Data Source=192.168.21.5;Initial Catalog=DBFIGUE2;User ID=sa;Password=123;MultipleActiveResultSets=true";
-                 return cn;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
+        //public SqlConnection Conectar()
+        //{
+        //    try
+        //    {
+        //        SqlConnection cn = new SqlConnection();
+        //        cn.ConnectionString = "Data Source=192.168.21.5;Initial Catalog=DBFIGUE2;User ID=sa;Password=123;MultipleActiveResultSets=true";
+        //         return cn;
+        //    }
+        //    catch (Exception)
+        //    {
+        //        throw;
+        //    }
+        //}
     }
 }

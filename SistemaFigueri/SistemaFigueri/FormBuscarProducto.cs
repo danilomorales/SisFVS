@@ -50,8 +50,12 @@ namespace SistemaFigueri
             dgvlListaProducto.Columns.Add("ColumnDuracion", "TiempoDuracion");
             dgvlListaProducto.Columns.Add("ColumnPecio", "Precio");
 
-            dgvlListaProducto.Columns[0].Width = 30;
-            dgvlListaProducto.Columns[2].Width = 30;
+            dgvlListaProducto.Columns["ColumnCodigo"].Width = 20;
+            dgvlListaProducto.Columns["ColumnAlias"].Width = 40;
+            dgvlListaProducto.Columns["ColumnDescripcion"].Width = 50;
+            dgvlListaProducto.Columns["ColumnStock"].Width = 20;
+            dgvlListaProducto.Columns["ColumnDuracion"].Width = 20;
+            dgvlListaProducto.Columns["ColumnPecio"].Width = 40;
       
 
             DataGridViewCellStyle cssCabecera = new DataGridViewCellStyle();
@@ -87,6 +91,7 @@ namespace SistemaFigueri
             try
             {
                 CrearTabla();
+                ContarItems();
                 CargarGridProductoVenta();
             }
             catch (Exception ex)
@@ -94,17 +99,42 @@ namespace SistemaFigueri
                 MessageBox.Show(ex.Message, "Aviso",
                  MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            
-
 
         }
-        int tip_busqueda = 0;
+        int tip_busqueda=1;
 
 
         private void tbFiltra_KeyUp(object sender, KeyEventArgs e)
         {
-            DataView dv = tProducto.DefaultView;
-            dv.RowFilter = string.Format("Código like '%{0}%' or Alias like '%{0}%' or DescripcionProducto like '%{0}%'", tbFiltra.Text);
+            try
+            {
+                if (e.KeyCode != Keys.Back)
+                {
+                    String val_entrada = tbFiltra.Text;
+                    int num = 0;
+                    List<CEProducto> Lista = CNProductos.Instancia.BuscarprodAvanzada(tip_busqueda, val_entrada);
+                    dgvlListaProducto.Rows.Clear();
+                    for (int i = 0; i < Lista.Count(); i++)
+                    {
+                        num++;
+                        String[] fila = new String[] {
+                        Lista[i]._Codigo,
+                        Lista[i]._Alias,
+                        Lista[i]._DescripcionProducto,
+                        Lista[i]._Stock,
+                        Lista[i]._TiempoDuracion,
+                        Lista[i]._precio.ToString(),num.ToString() };
+                        dgvlListaProducto.Rows.Add(fila);
+
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
 
         }
         private void rbNombreProd_CheckedChanged(object sender, EventArgs e)
@@ -162,6 +192,8 @@ namespace SistemaFigueri
                         Lista[i]._TiempoDuracion, 
                         Lista[i]._precio.ToString(),num.ToString() };
                     dgvlListaProducto.Rows.Add(fila);
+
+
                 }
             }
             catch (Exception)
@@ -170,21 +202,79 @@ namespace SistemaFigueri
                 throw;
             }
         }
+        private void ContarItems()
+        {
+            try
+            {
+                int num = 0;
+                foreach (DataGridViewRow row in dgvlListaProducto.Rows)
+                {
+                    num++;
+                }
+                lbresultados.Text = "Resultados Obtenidos: " + num;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
 
         private void dgvlListaProducto_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            try
+            {
+                //int id_prod = Convert.ToInt32(dgvProductos.CurrentRow.Cells[0].Value);
+                //List<entProducto> AgregarProdAlista = LocalBD.Instancia.ReturnDetVenta(1, id_prod, 1);
+                //frmBoletaVenta frmbv = new frmBoletaVenta(this.id_Usario);
+                int intento = LocalBD.Instancia.ReturnIntento(1, 1);
+                int invocador = LocalBD.Instancia.Invocar(0, 0);
+                if (invocador == 1)
+                {
+                    int id_prod = Convert.ToInt32(dgvlListaProducto.CurrentRow.Cells[0].Value);
+                    //LocalBD.Instancia.ReturnDetVenta(1, id_prod, 1);
+                }
+                else if (invocador == 2)
+                {
+                    int id_prod = Convert.ToInt32(dgvlListaProducto.CurrentRow.Cells[0].Value);
+                    //LocalBD.Instancia.ReturnDetNotaVenta(1, id_prod, 1);
+                }
+                else
+                {
+                    LocalBD.Instancia.Invocar(1, 0);
+                }
+                this.Close();
+                //frmbv.txtidcli.Text = id_cli.ToString();
+                //foreach (Form frm in Application.OpenForms)
+                //{
+                //    if (frm.GetType() == typeof(frmBoletaVenta))
+                //    {
+                //        frm.Show();
+                //        this.Visible = false;
+                //        return;
+                //    }
+                //}
+                //frmbv.Show();
+
+            }
+            catch (ApplicationException ae) { MessageBox.Show(ae.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             //string idproducto = Idproducto.Text.ToString();
             //SqlDataAdapter adapter = obj.buscarclienteProducto(idcliente, idproducto);
             //MessageBox.Show("cliente " + idcliente);
 
             //FormVenta fv = new FormVenta();
             //fv.tbAlias.Text = this.dgvlListaProducto.CurrentRow.Cells["Alias"].Value.ToString();
-            String IdProducto = dgvlListaProducto.Rows[e.RowIndex].Cells["Código"].Value.ToString();
-            String Producto = dgvlListaProducto.Rows[e.RowIndex].Cells["DescripcionProducto"].Value.ToString();
-            String Alias = dgvlListaProducto.Rows[e.RowIndex].Cells["Alias"].Value.ToString();
-            String Fechav = dgvlListaProducto.Rows[e.RowIndex].Cells["TiempoDuracion"].Value.ToString();
-            String Precio = dgvlListaProducto.Rows[e.RowIndex].Cells["Precio"].Value.ToString();
-            String Stock = dgvlListaProducto.Rows[e.RowIndex].Cells["Stock"].Value.ToString();
+            String IdProducto = dgvlListaProducto.Rows[e.RowIndex].Cells["ColumnCodigo"].Value.ToString();
+            String Producto = dgvlListaProducto.Rows[e.RowIndex].Cells["ColumnDescripcion"].Value.ToString();
+            String Alias = dgvlListaProducto.Rows[e.RowIndex].Cells["ColumnAlias"].Value.ToString(); 
+            String Fechav = dgvlListaProducto.Rows[e.RowIndex].Cells["ColumnDuracion"].Value.ToString();
+            String Precio = dgvlListaProducto.Rows[e.RowIndex].Cells["ColumnPecio"].Value.ToString();
+            String Stock = dgvlListaProducto.Rows[e.RowIndex].Cells["ColumnStock"].Value.ToString();
             //String Id = dgvlListaProducto.Rows[e.RowIndex].Cells[0].Value.ToString();
             alias = Alias;
             descripcion = Producto;
@@ -198,6 +288,5 @@ namespace SistemaFigueri
             
         }
 
-        
     }
 }
