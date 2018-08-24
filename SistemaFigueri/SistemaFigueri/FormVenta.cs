@@ -684,28 +684,32 @@ namespace SistemaFigueri
             if (dgvVenta.Rows.Count > 0)
             {
                 using (FormComprobanteVenta formC = new FormComprobanteVenta()) {
-                    if(formC.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                    
+                    /*if(formC.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                     {
-                        Reportes.DsDetalleVenta dsdet = new Reportes.DsDetalleVenta();
-                        int filas = dgvVenta.Rows.Count;
-                        for(int i = 0; i < filas - 2; i++)
-                        {
-                            dsdet.Tables[i].Rows.Add(
-                                new Object[]
-                                {
-                                    dgvVenta[0,i].Value.ToString(),
-                                    dgvVenta[1,i].Value.ToString(),
-                                    dgvVenta[2,i].Value.ToString(),
-                                    dgvVenta[3,i].Value.ToString()
-                                }
-                                );
-                        }
-                        Reportes.ComprobanteVenta comp = new Reportes.ComprobanteVenta();
-                        comp.Load("C:\\Users\\AlphaLeader\\Desktop\\SisFVS2\\SistemaFigueri\\SistemaFigueri\\Reportes\\ComprobanteVenta.rpt");
-                        comp.SetDataSource(dsdet);
-                        formC.crystalReportViewer1.ReportSource = comp;
+                       
                            
+                    }*/
+                    Reportes.DsDetalleVenta dsdet = new Reportes.DsDetalleVenta();
+                    int filas = dgvVenta.Rows.Count;
+                    MessageBox.Show(filas.ToString());
+                    for (int i = 0; i < filas - 4; i++)
+                    {
+                        dsdet.Tables[0].Rows.Add(
+                            new Object[]
+                            {
+                                    dgvVenta["CANTIDAD",i].Value.ToString(),
+                                    dgvVenta["DESCRIPCION",i].Value.ToString(),
+                                    dgvVenta["PRECIO",i].Value.ToString(),
+                                    dgvVenta["IMPORTE",i].Value.ToString()
+                            }
+                            );
                     }
+                    Reportes.ComprobanteVenta comp = new Reportes.ComprobanteVenta();
+                    comp.Load("C:\\Users\\AlphaLeader\\Desktop\\SisFVS2\\SistemaFigueri\\SistemaFigueri\\Reportes\\ComprobanteVenta.rpt");
+                    comp.SetDataSource(dsdet);
+                    formC.crystalReportViewer1.ReportSource = comp;
+                    formC.ShowDialog();
                 }
                     if (Convert.ToString(dgvVenta.CurrentRow.Cells[2].Value) != "")
                     {
@@ -840,6 +844,19 @@ namespace SistemaFigueri
             String correlativo = cNVentas.traerCorrelativo(3);
             lblSerie.Text = "NC001";
             lblNroCorrelativo.Text = correlativo.ToString();
+        }
+
+        private void dgvVenta_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvVenta.Columns[e.ColumnIndex].Name == "CANTIDAD")
+            {
+                int cant = Int32.Parse(dgvVenta.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString());
+                MessageBox.Show(cant.ToString());
+                double precio = Double.Parse(dgvVenta.Rows[e.RowIndex].Cells["PRECIO"].Value.ToString());
+                MessageBox.Show(precio.ToString());
+                double resultado = cant * precio;
+                dgvVenta.Rows[e.RowIndex].Cells["IMPORTE"].Value = resultado.ToString();
+            }
         }
     }
 

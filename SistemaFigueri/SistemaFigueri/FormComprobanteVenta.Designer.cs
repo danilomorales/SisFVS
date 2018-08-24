@@ -84,7 +84,7 @@
             // btnout
             // 
             this.btnout.BackColor = System.Drawing.Color.Transparent;
-            this.btnout.Image = global::SistemaFigueri.Properties.Resources._out;
+            //this.btnout.Image = global::SistemaFigueri.Properties.Resources._out;
             this.btnout.ImageActive = null;
             this.btnout.Location = new System.Drawing.Point(482, 618);
             this.btnout.Name = "btnout";
@@ -98,7 +98,7 @@
             // bunifuImageButton1
             // 
             this.bunifuImageButton1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuImageButton1.Image = global::SistemaFigueri.Properties.Resources.imprime;
+//            this.bunifuImageButton1.Image = global::SistemaFigueri.Properties.Resources.imprime;
             this.bunifuImageButton1.ImageActive = null;
             this.bunifuImageButton1.Location = new System.Drawing.Point(23, 618);
             this.bunifuImageButton1.Name = "bunifuImageButton1";
