@@ -143,6 +143,16 @@ namespace SistemaFigueri.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap anul {
+            get {
+                object obj = ResourceManager.GetObject("anul", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap borra {
             get {
                 object obj = ResourceManager.GetObject("borra", resourceCulture);
@@ -406,6 +416,16 @@ namespace SistemaFigueri.Properties {
         internal static System.Drawing.Bitmap Minimize1 {
             get {
                 object obj = ResourceManager.GetObject("Minimize1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap neww {
+            get {
+                object obj = ResourceManager.GetObject("neww", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

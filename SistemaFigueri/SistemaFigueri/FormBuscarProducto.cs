@@ -91,7 +91,7 @@ namespace SistemaFigueri
             try
             {
                 CrearTabla();
-                
+                ContarItems();
                 CargarGridProductoVenta();
             }
             catch (Exception ex)
@@ -202,9 +202,67 @@ namespace SistemaFigueri
                 throw;
             }
         }
+        private void ContarItems()
+        {
+            try
+            {
+                int num = 0;
+                foreach (DataGridViewRow row in dgvlListaProducto.Rows)
+                {
+                    num++;
+                }
+                lbresultados.Text = "Resultados Obtenidos: " + num;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
 
         private void dgvlListaProducto_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            try
+            {
+                //int id_prod = Convert.ToInt32(dgvProductos.CurrentRow.Cells[0].Value);
+                //List<entProducto> AgregarProdAlista = LocalBD.Instancia.ReturnDetVenta(1, id_prod, 1);
+                //frmBoletaVenta frmbv = new frmBoletaVenta(this.id_Usario);
+                int intento = LocalBD.Instancia.ReturnIntento(1, 1);
+                int invocador = LocalBD.Instancia.Invocar(0, 0);
+                if (invocador == 1)
+                {
+                    int id_prod = Convert.ToInt32(dgvlListaProducto.CurrentRow.Cells[0].Value);
+                    //LocalBD.Instancia.ReturnDetVenta(1, id_prod, 1);
+                }
+                else if (invocador == 2)
+                {
+                    int id_prod = Convert.ToInt32(dgvlListaProducto.CurrentRow.Cells[0].Value);
+                    //LocalBD.Instancia.ReturnDetNotaVenta(1, id_prod, 1);
+                }
+                else
+                {
+                    LocalBD.Instancia.Invocar(1, 0);
+                }
+                this.Close();
+                //frmbv.txtidcli.Text = id_cli.ToString();
+                //foreach (Form frm in Application.OpenForms)
+                //{
+                //    if (frm.GetType() == typeof(frmBoletaVenta))
+                //    {
+                //        frm.Show();
+                //        this.Visible = false;
+                //        return;
+                //    }
+                //}
+                //frmbv.Show();
+
+            }
+            catch (ApplicationException ae) { MessageBox.Show(ae.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             //string idproducto = Idproducto.Text.ToString();
             //SqlDataAdapter adapter = obj.buscarclienteProducto(idcliente, idproducto);
             //MessageBox.Show("cliente " + idcliente);

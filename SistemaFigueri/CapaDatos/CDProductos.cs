@@ -153,7 +153,7 @@ namespace CapaDatos
             List<CEProducto> Lista = null;
             try
             {
-                SqlConnection cn = CDConexion.Instancia.Conectar();
+                SqlConnection cn = CDConexion.Instancia.CerrarConexion();
                 cmd = new SqlCommand("Caja.SP_BuscaProdAvanzado", cn);
                 cmd.Parameters.AddWithValue("@prmTipEntrada", tip_entrada);
                 cmd.Parameters.AddWithValue("@prmValorEntrada", valor_entrada);
@@ -189,7 +189,7 @@ namespace CapaDatos
             SqlDataReader dr = null;
             try
             {
-                SqlConnection cn = CDConexion.Instancia.Conectar();
+                SqlConnection cn = CDConexion.Instancia.CerrarConexion();
                 cmd = new SqlCommand("Caja.SP_ListaProductos_Venta", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cn.Open();

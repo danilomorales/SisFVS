@@ -14,6 +14,7 @@ namespace CapaEntidades
         public string _TiempoDuracion { get; set; }
         public string _Stock { get; set; }
         public double _precio { get; set; }
+        public int _Cantidad { get; set; }
 
     }
 }
