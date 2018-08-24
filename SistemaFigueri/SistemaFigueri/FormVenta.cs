@@ -245,6 +245,11 @@ namespace SistemaFigueri
             //var aux = new Busqueda_Cliente();
             //aux.Lista(dgvProductos);
 
+            CNVentas cNVentas = new CNVentas();
+            String correlativo = cNVentas.traerSerie(2);
+            lblSerie.Text = "001";
+            lblNroCorrelativo.Text = correlativo.ToString();
+
         }
         private void GenerarNumeroComprobante()
         {
