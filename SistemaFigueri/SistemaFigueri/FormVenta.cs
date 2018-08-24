@@ -204,6 +204,7 @@ namespace SistemaFigueri
         {
             FormMantCliente formMP = new FormMantCliente();
             formMP.ShowDialog();
+
         }
 
         private void btnRegistrarCobro_Click(object sender, EventArgs e)

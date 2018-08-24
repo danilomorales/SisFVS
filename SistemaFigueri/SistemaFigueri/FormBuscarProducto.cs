@@ -58,12 +58,6 @@ namespace SistemaFigueri
             dgvlListaProducto.Columns["ColumnPecio"].Width = 40;
       
 
-            DataGridViewCellStyle cssCabecera = new DataGridViewCellStyle();
-            cssCabecera.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvlListaProducto.ColumnHeadersDefaultCellStyle = cssCabecera;
-
-            dgvlListaProducto.AllowUserToAddRows = false;
-            dgvlListaProducto.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
         }
 
