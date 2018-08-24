@@ -822,5 +822,10 @@ namespace SistemaFigueri
                 cargarPerfiles(dgvPerfiles);
             }
         }
+
+        private void bunifuCards2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

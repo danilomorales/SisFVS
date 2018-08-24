@@ -208,7 +208,6 @@
             this.bmBuscar.Size = new System.Drawing.Size(711, 44);
             this.bmBuscar.TabIndex = 57;
             this.bmBuscar.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.bmBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bmBuscar_KeyPress);
             this.bmBuscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.bmBuscar_KeyUp);
             // 
             // bunifuCards3

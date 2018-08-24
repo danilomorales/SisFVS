@@ -217,8 +217,7 @@ namespace SistemaFigueri
 
             }
             catch (Exception ex)
-            {
-
+            {           
                 MessageBox.Show("No se pudo Actualizar los datos por :" + ex.ToString());
             }
         }

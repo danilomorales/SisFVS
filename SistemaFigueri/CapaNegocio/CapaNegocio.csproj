@@ -49,6 +49,7 @@
     <Compile Include="CNPedidos.cs" />
     <Compile Include="CNProductos.cs" />
     <Compile Include="CNSector.cs" />
+    <Compile Include="CNSucursal.cs" />
     <Compile Include="CNUsuario.cs" />
     <Compile Include="CNVentas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

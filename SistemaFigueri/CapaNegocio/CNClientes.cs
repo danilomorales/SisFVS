@@ -36,7 +36,7 @@ namespace CapaNegocio
         }
 
         //UPDATE CLIENT
-        public void UpdateClient(String idCliente, String idTienda, String idSector, String nombreEmpresa, String nombres, String apellidoP, String apellidoM,
+        public void UpdateCliente(String idCliente, String idTienda, String idSector, String nombreEmpresa, String nombres, String apellidoP, String apellidoM,
             String direccion, String contacto, String telefono, String fax, String ruc, String correo, String idTipoDoc, String nroDoc, String observacion,
             String inscripcion, String salCta, String fechaNac, String tipoCompra, String credito, String queja, String ordenclie, String promedioVentas,
             String cta_cli, String depa, String provi, String distri, String usuRegistra, String usuModifica, String fechaModi)
@@ -53,9 +53,9 @@ namespace CapaNegocio
 
 
         //DELETE CLIENT
-        public void DeleteClient(String idRecpCliente)  
+        public void DeleteClient(String idCliente)  
         {
-            cli.EliminarCliente(idRecpCliente);
+            cli.EliminarCliente(idCliente);
         }
 
         //busca Cliente

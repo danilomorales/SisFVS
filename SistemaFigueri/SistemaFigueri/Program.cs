@@ -20,7 +20,6 @@ namespace SistemaFigueri
         public static String ApellidoMaterno;
         //
         public static String UserLogueado;
-
         public static string IdProducto;
         public static String DescripcionProducto;
         public static String Alias;

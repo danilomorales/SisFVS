@@ -369,7 +369,7 @@ namespace SistemaFigueri
                     lstBtnCalc[j].Normalcolor = Color.FromArgb(231, 52, 52);
                 }
             }
-            AbrirFormEnPanel(new FormSector());
+            AbrirFormEnPanel(new FormSucursal());
         }
 
         private void btnPerfiles_Click(object sender, EventArgs e)

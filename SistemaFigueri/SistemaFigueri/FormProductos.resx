@@ -1431,6 +1431,9 @@
         A/6J/vTQiFrfJME85pkE8oXAkepAXlfX/wcfsTyQxwMhbwAAAABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="dgvProductos.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="bunifuImageButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAjlJREFUSEvV
@@ -1446,4 +1449,7 @@
         CyOSNzHkuTpmu1+o5fH3L8z3o6reARC0Lc+8ccOMAAAAAElFTkSuQmCC
 </value>
   </data>
+  <metadata name="dgvProductos.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

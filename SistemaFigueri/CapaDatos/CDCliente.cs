@@ -108,7 +108,7 @@ namespace CapaDatos
                 "c.FechaNac as 'Fecha de Nacimiento',c.TipoCompra as 'Tipo de Compra',c.Credito,c.Queja,c.EstSaldoIni as 'Estado Inicial'," +
                 "c.OrdenCliente as 'Orden del Cliente',c.PromedioDeVentas as 'Promedio de ventas'," +
                 "c.cta_cli,c.UsuarioModifica,c.FechaModifica from caja.CLIENTE c, dbo.TIENDA t, dbo.SECTOR s, dbo.TIPO_DOC_IDENT d " +
-                "where c.IdTienda = t.IdTienda AND c.IdSector = s.IdSector and c.IdTipoDocIdent = d.IdTipoDocIdent; ";
+                "where c.IdTienda = t.IdTienda AND c.IdSector = s.IdSector and c.IdTipoDocIdent = d.IdTipoDocIdent";
             adapter = new SqlDataAdapter(sql, conexion.AbrirConexion());
             return adapter;
         }
@@ -162,10 +162,10 @@ namespace CapaDatos
         }
 
         //ELIMINAR CLIENTE
-        public void EliminarCliente(String idRecpCliente)
+        public void EliminarCliente(String idCliente)
         {
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = " delete from Caja.ClienteReceptor where IdClienteReceptor=" + idRecpCliente + "";
+            comando.CommandText = " delete from Caja.CLIENTE where IdCliente='" + idCliente + "'";
             comando.CommandType = CommandType.Text;
             comando.ExecuteNonQuery();
             conexion.CerrarConexion();

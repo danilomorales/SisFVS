@@ -14,7 +14,7 @@ namespace CapaDatos
         private CDConexion conexion = new CDConexion();
         SqlDataReader leer;
         DataTable tabla = new DataTable();
-        SqlCommand comando = new SqlCommand();
+        SqlCommand comando = new SqlCommand(); 
         private SqlDataAdapter adapter;
 
         //LISTAR SECTOR

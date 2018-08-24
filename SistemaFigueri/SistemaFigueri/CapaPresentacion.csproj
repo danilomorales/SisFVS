@@ -82,6 +82,12 @@
     <Compile Include="FormKardex.Designer.cs">
       <DependentUpon>FormKardex.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormSucursal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSucursal.Designer.cs">
+      <DependentUpon>FormSucursal.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormVenta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +101,12 @@
       <DependentUpon>FormVentaMDI.cs</DependentUpon>
     </Compile>
     <Compile Include="LocalBD.cs" />
+    <Compile Include="Prueba_Responsive.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prueba_Responsive.Designer.cs">
+      <DependentUpon>Prueba_Responsive.cs</DependentUpon>
+    </Compile>
     <Compile Include="Venta.cs" />
     <Compile Include="FormBuscarClienteR.cs">
       <SubType>Form</SubType>
@@ -284,6 +296,9 @@
     <EmbeddedResource Include="FormSector.resx">
       <DependentUpon>FormSector.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormSucursal.resx">
+      <DependentUpon>FormSucursal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormTipoDeCambio.resx">
       <DependentUpon>FormTipoDeCambio.cs</DependentUpon>
     </EmbeddedResource>
@@ -306,6 +321,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prueba_Responsive.resx">
+      <DependentUpon>Prueba_Responsive.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SistemaFigueri.Principal.resources" />
     <None Include="packages.config" />
@@ -493,6 +511,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\buscador.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sucursal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tienda.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

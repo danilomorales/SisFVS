@@ -24,31 +24,67 @@ namespace SistemaFigueri
         {
             InitializeComponent();
            
-        }
-       
-        private void btnNuevoProducto_Click(object sender, EventArgs e)
-        {
-            using (FormInsertProducto formMC = new FormInsertProducto())
-            {
-                if (formMC.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                {
-                    mostarProductos();
-                }
-            }
-        }
+        }      
 
         private void FormProductos_Load(object sender, EventArgs e)
         {
             mostarProductos();
+            dgvProductos.Columns[0].Visible = false;
 
         }
 
-        private void bunifuTileButton2_Click(object sender, EventArgs e)
-        {           
+             
+
+        public void mostarProductos()
+        {
+            SqlDataAdapter adapter = cp.MostarProductos();
+            tabla = new DataTable();
+            foreach (DataRow row in tabla.Rows)
+            {
+                list.Add((DataRow)row);
+            }
+
+            adapter.Fill(tabla);
+            dgvProductos.DataSource = tabla;
+            adapter.Dispose();
+
+        }
+
+        private void bmBuscar_OnValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //actualizar();
+           
+        }
+        public void actualizar()
+        {
+            SqlDataAdapter dataAdapter = new SqlDataAdapter();
+            DataTable dataset = new DataTable();
+            dataset.Clear();
+            dataAdapter.Fill(dataset);
+            dgvProductos.DataSource = cp.MostarProductos();
+        }
+
+        private void bunifuCards1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void bunifuCards2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void bunifuTileButton2_Click_1(object sender, EventArgs e)
+        {
             try
             {
                 if (dgvProductos.SelectedRows.Count > 0)
-                {                  
+                {
                     using (FormUpdateProducto formUP = new FormUpdateProducto())
                     {
                         formUP.listarCategoria();
@@ -59,7 +95,7 @@ namespace SistemaFigueri
                         formUP.cboedicategoria.Text = dgvProductos.CurrentRow.Cells[2].Value.ToString();
                         formUP.cboedimedida.Text = dgvProductos.CurrentRow.Cells[3].Value.ToString();
                         formUP.bmedidescripcion.Text = dgvProductos.CurrentRow.Cells[4].Value.ToString();
-                        formUP.dpediduracion.Value = DateTime.Parse( dgvProductos.CurrentRow.Cells[5].Value.ToString());
+                        formUP.dpediduracion.Value = DateTime.Parse(dgvProductos.CurrentRow.Cells[5].Value.ToString());
                         formUP.bmedistock.Text = dgvProductos.CurrentRow.Cells[6].Value.ToString();
                         formUP.bmedistockmax.Text = dgvProductos.CurrentRow.Cells[7].Value.ToString();
                         formUP.bmedistockmini.Text = dgvProductos.CurrentRow.Cells[8].Value.ToString();
@@ -82,16 +118,13 @@ namespace SistemaFigueri
                 else
                     MessageBox.Show("Selecciones una fila por favor");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("No se obtuvo los datos:" + ex.ToString());
             }
-            
-            
-
         }
 
-        private void btneliminar_Click(object sender, EventArgs e)
+        private void btneliminar_Click_1(object sender, EventArgs e)
         {
             if (dgvProductos.SelectedRows.Count > 0)
             {
@@ -99,28 +132,23 @@ namespace SistemaFigueri
                 cp.DeleteProduct(dgvProductos.CurrentRow.Cells[0].Value.ToString());
                 MessageBox.Show("¿Estas seguro de eliminar este producto?");
                 mostarProductos();
-                
+
             }
             else
                 MessageBox.Show("Selecciones una fila por favor");
-
-        }       
-
-        public void mostarProductos()
-        {
-            SqlDataAdapter adapter = cp.MostarProductos();
-            tabla = new DataTable();
-            foreach (DataRow row in tabla.Rows)
-            {
-                list.Add((DataRow)row);
-            }
-
-            adapter.Fill(tabla);
-            dgvProductos.DataSource = tabla;
-            adapter.Dispose();
-
         }
-         
+
+        private void btnNuevoProducto_Click_1(object sender, EventArgs e)
+        {
+            using (FormInsertProducto formMC = new FormInsertProducto())
+            {
+                if (formMC.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    mostarProductos();
+                }
+            }
+        }
+
         private void bmBuscar_KeyUp(object sender, KeyEventArgs e)
         {
             SqlConnection Conexion = new SqlConnection("Data Source=192.168.21.5;Initial Catalog=DBFIGUE2;User ID=sa;Password=123;MultipleActiveResultSets=true;");
@@ -140,26 +168,7 @@ namespace SistemaFigueri
             Conexion.Close();
         }
 
-        private void bmBuscar_OnValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgvProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //actualizar();
-           
-        }
-        public void actualizar()
-        {
-            SqlDataAdapter dataAdapter = new SqlDataAdapter();
-            DataTable dataset = new DataTable();
-            dataset.Clear();
-            dataAdapter.Fill(dataset);
-            dgvProductos.DataSource = cp.MostarProductos();
-        }
-
-        private void bunKardex_Click(object sender, EventArgs e)
+        private void bunKardex_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -167,7 +176,7 @@ namespace SistemaFigueri
                 {
                     FormKardex formUP = new FormKardex();
 
-                    formUP.idProducto = dgvProductos.CurrentRow.Cells["idProducto"].Value.ToString();                 
+                    formUP.idProducto = dgvProductos.CurrentRow.Cells["idProducto"].Value.ToString();
                     formUP.bmproducto.Text = dgvProductos.CurrentRow.Cells["Nombre"].Value.ToString();
                     formUP.bmcategoria.Text = dgvProductos.CurrentRow.Cells["Categoria"].Value.ToString();
                     formUP.ShowDialog();
@@ -179,11 +188,6 @@ namespace SistemaFigueri
             {
                 MessageBox.Show("No se obtuvo los datos:" + ex.ToString());
             }
-        }
-
-        private void bunifuCards1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
    

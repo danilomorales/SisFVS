@@ -1925,12 +1925,12 @@
             this.buniActualizar.ActiveFillColor = System.Drawing.Color.SeaGreen;
             this.buniActualizar.ActiveForecolor = System.Drawing.Color.White;
             this.buniActualizar.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.buniActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.buniActualizar.BackColor = System.Drawing.Color.Transparent;
             this.buniActualizar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buniActualizar.BackgroundImage")));
             this.buniActualizar.ButtonText = "ACTUALIZAR";
             this.buniActualizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buniActualizar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buniActualizar.ForeColor = System.Drawing.Color.White;
+            this.buniActualizar.ForeColor = System.Drawing.Color.Transparent;
             this.buniActualizar.IdleBorderThickness = 1;
             this.buniActualizar.IdleCornerRadius = 20;
             this.buniActualizar.IdleFillColor = System.Drawing.Color.Green;

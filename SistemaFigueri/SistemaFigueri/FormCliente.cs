@@ -97,13 +97,6 @@ namespace SistemaFigueri
                             MostrarClientes();
                         }
                     }
-                    
-
-
-
-                    
-                    
-
                 }
                 else
                     MessageBox.Show("Selecciones una fila por favor");
@@ -119,12 +112,9 @@ namespace SistemaFigueri
         {
             if (dgvCliente.SelectedRows.Count > 0)
             {
-                //FormUpdateProducto formUP = new FormUpdateProducto();
-                // formUP.idProducto = dgvProductos.CurrentRow.Cells["IdProducto"].Value.ToString();
+                
                 cli.DeleteClient(dgvCliente.CurrentRow.Cells[0].Value.ToString());
                 MessageBox.Show("¿Estas seguro de eliminar este Cliente?");
-                //this.Close();
-                Refresh();
                 MostrarClientes();
 
             }
@@ -148,15 +138,8 @@ namespace SistemaFigueri
                 list.Add((DataRow)row);
             }
 
-            //plist = new PagedList<DataRow>(list);
             adapter.Fill(tabla);
-            dgvCliente.DataSource = tabla;
-            /*dgvPerfiles.Columns["foto"].Width = 60;
-            dgvPerfiles.RowTemplate.Height = 120;
-            DataGridViewImageColumn imagen = new DataGridViewImageColumn();
-            ((DataGridViewImageColumn)this.dgvPerfiles.Columns["foto"]).DefaultCellStyle.NullValue = null;
-            imagen = (DataGridViewImageColumn)dgvPerfiles.Columns["foto"];
-            imagen.ImageLayout = DataGridViewImageCellLayout.Stretch;*/
+            dgvCliente.DataSource = tabla;           
             adapter.Dispose();
         }
 
@@ -166,13 +149,15 @@ namespace SistemaFigueri
             Conexion.Open();
             SqlCommand cmd = Conexion.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = " select c.IdClienteReceptor,c.Nombres,c.ApellidoPaterno as 'Apellido Paterno',c.ApellidoMaterno as 'Apellido Materno',p.Descripcion as 'Tipo de Persona'," +
-                "t.Nombre as 'Tipo de Documento',c.NroDocIdentidad as 'Nro de Documento',c.NumeroRuc as 'Nro de RUC',c.RazonSocial as 'Razón Social',c.NombreComercial as 'Nombre Comercial'," +
-                "c.Correo,c.Direccion as 'Dirección',c.Fax,c.Fijo,c.Telefono,c.FechaNacimiento as 'Fecha de Nacimiento',c.Departamento,c.Provincia,c.Distrito,c.Estado" +
-                ",c.UsuarioRegistra as 'Usuario Registra',c.FechaRegistro as 'Fecha de Registro',c.UsuarioModifica as 'Usuario Modifica',c.FechaModifica as 'Fecha Modifica'," +
-                "s.DescripcionSector as 'Sector',c.Observacion as 'Observación'from caja.ClienteReceptor c,caja.TipoPersona p, caja.SECTOR s, caja.DocIdentidad t " +
-                "where c.IdTipoPersona = p.IdTipoPersona and c.IdSector = s.IdSector and c.IdDocIdentidad = t.IdDocIdentidad and NroDocIdentidad " +
-                "like ('%" + bmBuscar.Text + "%')   ";
+            cmd.CommandText = "select c.IdCliente,c.Nombres,c.ApellidoPaterno,c.ApellidoMaterno,t.NombreTienda as 'Nombre de la Tienda'," +
+                "s.DescripcionSector as 'Nombre del sector',c.NombreEmpresa as 'Nombre de la Empresa',c.Direccion,c.Contacto as 'Nombre del Contacto'," +
+                "c.Telefono,c.Fax,c.RUC,c.Email as 'Correo',d.Descripcion 'Documento',c.NroDocumento as 'Nr° del Documento',c.Observacion as 'Observación'," +
+                "c.Departamento,c.Provincia,c.Distrito,c.UsuarioRegistra as'Usuario que Registra',c.Inscripcion as 'Inscripción',c.Estado," +
+                "c.SaldoCtaCte as 'Cuenta Corriente',c.Nivel,c.FechaNac as 'Fecha de Nacimiento',c.TipoCompra as 'Tipo de Compra',c.Credito," +
+                "c.Queja,c.EstSaldoIni as 'Estado Inicial',c.OrdenCliente as 'Orden del Cliente',c.PromedioDeVentas as 'Promedio de ventas',c.cta_cli," +
+                "c.UsuarioModifica,c.FechaModifica from caja.CLIENTE c, dbo.TIENDA t, dbo.SECTOR s, dbo.TIPO_DOC_IDENT d where c.IdTienda = t.IdTienda AND" +
+                " c.IdSector = s.IdSector and c.IdTipoDocIdent = d.IdTipoDocIdent" +
+                " AND CONCAT (NroDocumento,'',RUC,'',Nombres,'',ApellidoPaterno,'',ApellidoMaterno,'',Descripcion,'') LIKE ('%"+bmBuscar.Text+"%')";
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -189,12 +174,6 @@ namespace SistemaFigueri
             dataset.Clear();
             dataAdapter.Fill(dataset);
             
-        }
-
-        private void bmBuscar_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            //DataView dv = tabla.DefaultView;
-            //dv.RowFilter = string.Format("'Nombres' like '%{0}%' or ' Correo' like '%{0}%' or 'Telefono' like '%{0}%'", bmBuscar.Text);
-        }
+        }      
     }
 }
