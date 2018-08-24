@@ -14,6 +14,10 @@ using MaterialSkin;
 using MaterialSkin.Controls;
 using System.Globalization;
 using CrystalDecisions.CrystalReports;
+using Gma.QrCodeNet.Encoding;
+using Gma.QrCodeNet.Encoding.Windows.Render;
+using System.IO;
+using System.Drawing.Imaging;
 
 namespace SistemaFigueri
 {
@@ -30,7 +34,8 @@ namespace SistemaFigueri
         CNDetalleVenta Detalle = new CNDetalleVenta();
         private List<Venta> lst = new List<Venta>();
         private int oldvalue { get; set; }
-
+        Decimal SumaTotal { get; set; }
+        Decimal SumaSubTotal { get; set; } Decimal SumaIgv { get; set; }
 
         public static FormVenta GetInstancia()
         {
@@ -429,7 +434,18 @@ namespace SistemaFigueri
             {
                 if (tbDescripcion.Text.Trim() != "")
                 {
-                    if (tbCantidad.Text.Trim() != "")
+                    ven.Descripcion = tbAlias.Text + " - " + tbDescripcion.Text;
+                    ven.Cantidad = 1;
+                    ven.PrecioVenta = Convert.ToDecimal(tbPrecio.Text);
+                    Porcentaje = (Convert.ToDecimal(tbIgv.Text) / 100) + 1;
+                    SubTotal = ((Convert.ToDecimal(tbPrecio.Text) * 1) / Porcentaje);
+                    ven.Igv = Math.Round(Convert.ToDecimal(SubTotal) * (Convert.ToDecimal(tbIgv.Text) / (100)), 2);
+                    ven.SubTotal = Math.Round(SubTotal, 2);
+                    ven.stock = Int32.Parse(tbStock.Text);
+                    lst.Add(ven);
+                    LlenarGrilla();
+                    Limpiar();
+                    /*if (tbCantidad.Text.Trim() != "")
                     {
 
                         if (Convert.ToInt32(tbCantidad.Text) >= 0)
@@ -473,7 +489,7 @@ namespace SistemaFigueri
 
                         tbCantidad.Clear();
 
-                    }
+                    }*/
                 }
                 else
                 {
@@ -494,7 +510,7 @@ namespace SistemaFigueri
         {
             var format = (NumberFormatInfo)NumberFormatInfo.CurrentInfo.Clone();
             format.CurrencySymbol = "";
-            Decimal SumaSubTotal = 0; Decimal SumaIgv = 0; Decimal SumaTotal = 0;
+            SumaSubTotal = 0; SumaIgv = 0; SumaTotal = 0;
             dgvVenta.Rows.Clear();
             for (int i = 0; i < lst.Count; i++)
             {
@@ -686,15 +702,41 @@ namespace SistemaFigueri
             if (dgvVenta.Rows.Count > 0)
             {
                 using (FormComprobanteVenta formC = new FormComprobanteVenta()) {
-                    
+
                     /*if(formC.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                     {
                        
                            
                     }*/
+                    QrEncoder qrEncoder = new QrEncoder(ErrorCorrectionLevel.H);
+                    QrCode qrCode = new QrCode();
+                    qrEncoder.TryEncode(lblSerie + " - " + lblNroCorrelativo, out qrCode);
+
+                    GraphicsRenderer renderer = new GraphicsRenderer(new FixedCodeSize(400, QuietZoneModules.Zero), Brushes.Black, Brushes.White);
+
+                    MemoryStream ms = new MemoryStream();
+
+                    renderer.WriteToStream(qrCode.Matrix, ImageFormat.Png, ms);
+                    var imageTemporal = new Bitmap(ms);
+                    var imagen = new Bitmap(imageTemporal, new Size(new Point(200, 200)));
+                    //panelResultado.BackgroundImage = imagen;
+
+                    // Guardar en el disco duro la imagen (Carpeta del proyecto)
+                    //imagen.Save("imagen.png", ImageFormat.Png);
+                    //btnGuardar.Enabled = true;
+
+
                     Reportes.DsDetalleVenta dsdet = new Reportes.DsDetalleVenta();
                     int filas = dgvVenta.Rows.Count;
                     MessageBox.Show(filas.ToString());
+                    String client = "";
+                    client = chkcliente.Checked == true ? tbClienteNombre.Text : tbrazonsocial.Text;
+                    String letraImporte = "";
+                    Conversiones conv = new Conversiones();
+                    letraImporte=conv.enletras(SumaTotal.ToString());
+                   
+                  
+
                     for (int i = 0; i < filas - 4; i++)
                     {
                         dsdet.Tables[0].Rows.Add(
@@ -702,18 +744,49 @@ namespace SistemaFigueri
                             {
                                     dgvVenta["CANTIDAD",i].Value.ToString(),
                                     dgvVenta["DESCRIPCION",i].Value.ToString(),
-                                    dgvVenta["PRECIO",i].Value.ToString(),
-                                    dgvVenta["IMPORTE",i].Value.ToString()
+                                    Double.Parse(dgvVenta["PRECIO",i].Value.ToString()),
+                                    Double.Parse(dgvVenta["IMPORTE",i].Value.ToString())
                             }
                             );
                     }
+                    dsdet.Tables[1].Rows.Add(
+                            new Object[]
+                            {
+                                    //DIRECCION
+                                    "---- LA ERA Ñaña LT. 01 MZ. R ---- CP VIRGEN DEL CARMEN",
+                                    //SUCURSAL
+                                    "LURIGANCHO - LIMA - LIMA",
+                                    //RUC FIGUERI
+                                    "RUC 20268781529",
+                                    //TIPO DOC
+                                    lblTipo.Text+" ELECTRÓNICA",
+                                    //N DOC
+                                    lblSerie+" - "+lblNroCorrelativo,
+                                    //DNI
+                                    tbDocumento.Text,
+                                    //CLIENTE
+                                    client,
+                                    //FECHA EMISION
+                                    dtpFechaEmision.Text,
+                                    //FECHA VENCIMIENTO
+                                    dtFechaV.Text,
+                                    "SOLES",
+                                    "18.00 %",
+                                     SumaSubTotal,
+                                     SumaIgv,
+                                     SumaTotal,
+                                     letraImporte,
+                                     imagen
+
+                            }
+                            );
                     Reportes.ComprobanteVenta comp = new Reportes.ComprobanteVenta();
                     comp.Load("C:\\Users\\AlphaLeader\\Desktop\\SisFVS2\\SistemaFigueri\\SistemaFigueri\\Reportes\\ComprobanteVenta.rpt");
                     comp.SetDataSource(dsdet);
                     formC.crystalReportViewer1.ReportSource = comp;
                     formC.ShowDialog();
                 }
-                    if (Convert.ToString(dgvVenta.CurrentRow.Cells[2].Value) != "")
+                    /*if (Convert.ToString(dgvVenta.CurrentRow.Cells[2].Value) != "")
                     {
                         GuardarVenta();
                         try
@@ -748,7 +821,7 @@ namespace SistemaFigueri
                     else
                     {
                         MessageBox.Show("No Existe Ningún Elemento en la Lista.", "Sistema de Ventas.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    }*/
                 
             }
             else
@@ -873,6 +946,11 @@ namespace SistemaFigueri
         private void dgvVenta_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
         {
             oldvalue = (int)dgvVenta[e.ColumnIndex, e.RowIndex].Value;
+        }
+
+        private void bunifuCustomLabel19_Click(object sender, EventArgs e)
+        {
+
         }
     }
 
