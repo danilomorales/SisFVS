@@ -50,14 +50,9 @@ namespace SistemaFigueri
             dgvlListaProducto.Columns.Add("ColumnDuracion", "TiempoDuracion");
             dgvlListaProducto.Columns.Add("ColumnPecio", "Precio");
 
-
-            
-            dgvlListaProducto.Columns[1].Width = 10;
+            dgvlListaProducto.Columns[0].Width = 30;
             dgvlListaProducto.Columns[2].Width = 30;
-            dgvlListaProducto.Columns[3].Width = 50;
-            dgvlListaProducto.Columns[4].Width = 50;
-            dgvlListaProducto.Columns[5].Width = 60;
-            dgvlListaProducto.Columns[6].Width = 70;
+      
 
             DataGridViewCellStyle cssCabecera = new DataGridViewCellStyle();
             cssCabecera.Alignment = DataGridViewContentAlignment.MiddleCenter;
