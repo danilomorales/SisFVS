@@ -873,6 +873,7 @@ namespace SistemaFigueri
                     comp.SetDataSource(dsdet);
                     formC.crystalReportViewer1.ReportSource = comp;
                     formC.ShowDialog();
+
                 }
 
             }
