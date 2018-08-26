@@ -1078,6 +1078,7 @@ namespace SistemaFigueri
                 tbPrecio.Text = dgvVenta.Rows[e.RowIndex].Cells[3].Value.ToString();
             }
             
+
         }
 
         private void cboTipoDoc_SelectedIndexChanged(object sender, EventArgs e)

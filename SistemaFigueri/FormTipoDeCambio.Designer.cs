@@ -53,6 +53,7 @@
             this.Controls.Add(this.bunifuTextbox1);
             this.Name = "FormTipoDeCambio";
             this.Text = "FormTipoDeCambio";
+            this.Load += new System.EventHandler(this.FormTipoDeCambio_Load);
             this.ResumeLayout(false);
 
         }

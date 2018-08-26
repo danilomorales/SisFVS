@@ -16,5 +16,10 @@ namespace SistemaFigueri
         {
             InitializeComponent();
         }
+
+        private void FormTipoDeCambio_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
