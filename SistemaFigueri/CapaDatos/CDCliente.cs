@@ -16,7 +16,7 @@ namespace CapaDatos
         DataTable tabla = new DataTable();
         SqlCommand comando = new SqlCommand();
         private SqlDataAdapter adapter;
-
+        
 
         //var
         private string _Textobuscar;
@@ -218,7 +218,7 @@ namespace CapaDatos
             comando.CommandText = "select * from dbo.TIENDA";
             leer = comando.ExecuteReader();
             table.Load(leer);
-            leer.Close();
+            leer.Close();           
             conexion.CerrarConexion();
             return table;
         }
