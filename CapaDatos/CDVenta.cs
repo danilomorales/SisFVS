@@ -27,6 +27,17 @@ namespace CapaDatos
             leer.Close();
             conexion.CerrarConexion();
             return table;
+        }
+        public DataTable CargaMoneda()
+        {
+            DataTable table = new DataTable();
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "select * from CAja.Moneda";
+            leer = comando.ExecuteReader();
+            table.Load(leer);
+            leer.Close();
+            conexion.CerrarConexion();
+            return table;
 
         }
 

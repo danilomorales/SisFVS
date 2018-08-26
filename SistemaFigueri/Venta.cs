@@ -20,6 +20,7 @@ namespace SistemaFigueri
         public DateTime FechaVenta { get; set; }
         public decimal Total { get; set; }
         public int stock { get; set; }
+        public String alias { get; set; }
         //Serie
         public int Id_Serie { get; set; }
         public String Numero_Serie { get; set; }
