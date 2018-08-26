@@ -213,27 +213,6 @@ namespace SistemaFigueri
             FormRegistroCobro frmRegCobro = new FormRegistroCobro();
             frmRegCobro.ShowDialog();
         }
-       /* private void rbnFactura_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rbnFactura.Checked == true)
-                lblTipo.Text = "FACTURA";
-            CNVentas cNVentas = new CNVentas();
-            String correlativo = cNVentas.traerCorrelativo(1);
-            lblSerie.Text = "F001";
-            lblNroCorrelativo.Text = correlativo.ToString();
-
-        }*/
-
-        /*private void rbnBoleta_CheckedChanged(object sender, EventArgs e)
-        {
-            GenerarNumeroComprobante();
-            if (rbnBoleta.Checked == true)
-                lblTipo.Text = "BOLETA";
-            CNVentas cNVentas = new CNVentas();
-            String correlativo = cNVentas.traerCorrelativo(2);
-            lblSerie.Text = "B001";
-            lblNroCorrelativo.Text = correlativo.ToString();
-        }*/
 
        
 
