@@ -213,7 +213,7 @@ namespace SistemaFigueri
             FormRegistroCobro frmRegCobro = new FormRegistroCobro();
             frmRegCobro.ShowDialog();
         }
-        private void rbnFactura_CheckedChanged(object sender, EventArgs e)
+       /* private void rbnFactura_CheckedChanged(object sender, EventArgs e)
         {
             if (rbnFactura.Checked == true)
                 lblTipo.Text = "FACTURA";
@@ -222,9 +222,9 @@ namespace SistemaFigueri
             lblSerie.Text = "F001";
             lblNroCorrelativo.Text = correlativo.ToString();
 
-        }
+        }*/
 
-        private void rbnBoleta_CheckedChanged(object sender, EventArgs e)
+        /*private void rbnBoleta_CheckedChanged(object sender, EventArgs e)
         {
             GenerarNumeroComprobante();
             if (rbnBoleta.Checked == true)
@@ -233,7 +233,7 @@ namespace SistemaFigueri
             String correlativo = cNVentas.traerCorrelativo(2);
             lblSerie.Text = "B001";
             lblNroCorrelativo.Text = correlativo.ToString();
-        }
+        }*/
 
        
 
@@ -257,7 +257,15 @@ namespace SistemaFigueri
             String correlativo = cNVentas.traerCorrelativo(2);
             lblSerie.Text = "001";
             lblNroCorrelativo.Text = correlativo.ToString();
-
+            cboTipoDoc.DataSource = cNVentas.MostarCboTipoDoc();
+            cboTipoDoc.ValueMember = "IdTipoDoc";
+            cboTipoDoc.DisplayMember = "DescripcionDoc";
+            cboTipoPago.DataSource = cNVentas.MostarCboTipoPago();
+            cboTipoPago.ValueMember = "IdTipoPago";
+            cboTipoPago.DisplayMember = "DescripcionTipo";
+            CboMoneda.DataSource = cNVentas.MostarCboMoneda();
+            CboMoneda.ValueMember = "IdMoneda";
+            CboMoneda.DisplayMember = "DesMoneda";
         }
         private void GenerarNumeroComprobante()
         {
@@ -387,7 +395,7 @@ namespace SistemaFigueri
                         ven.stock = Int32.Parse(tbStock.Text);
                         lst.Add(ven);
                         LlenarGrilla();
-                        
+      
 
                     }
                 }
@@ -675,9 +683,9 @@ namespace SistemaFigueri
         public void LIstaFormapago()
         {
             CDVenta Cv = new CDVenta();
-            c.DataSource = Cv.CargaFormaPago();
-            c.DisplayMember = "DescripcionTipo";
-            c.ValueMember = "IdtipoPago";
+            cboTipoPago.DataSource = Cv.CargaFormaPago();
+            cboTipoPago.DisplayMember = "DescripcionTipo";
+            cboTipoPago.ValueMember = "IdtipoPago";
         }
         private void ListaMoneda()
         {
@@ -865,7 +873,7 @@ namespace SistemaFigueri
                     Total = Convert.ToDecimal(dgvVenta.Rows[i].Cells[4].Value);
                 }
                 string TipoDocumento = "";
-                TipoDocumento = rbnBoleta.Checked == true ? "Boleta" : "Factura";
+                //TipoDocumento = rbnBoleta.Checked == true ? "Boleta" : "Factura";
                 //Ventas.IdUser = Program.UserLogueado;
                 Ventas.IdCliente = Program.IdCliente;
                 Ventas.Serie = lblSerie.Text;
@@ -937,7 +945,7 @@ namespace SistemaFigueri
             }
         }
 
-        private void rbnNC_CheckedChanged(object sender, EventArgs e)
+        /*private void rbnNC_CheckedChanged(object sender, EventArgs e)
         {
             if (rbnNC.Checked == true)
                 lblTipo.Text = "NOTA DE CRÉDITO";
@@ -945,46 +953,52 @@ namespace SistemaFigueri
             String correlativo = cNVentas.traerCorrelativo(3);
             lblSerie.Text = "NC001";
             lblNroCorrelativo.Text = correlativo.ToString();
-        }
+        }*/
 
         private void dgvVenta_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            var format = (NumberFormatInfo)NumberFormatInfo.CurrentInfo.Clone();
-            format.CurrencySymbol = "";
-            if (dgvVenta.Columns[e.ColumnIndex].Name == "CANTIDAD")
+            if (e.RowIndex < dgvVenta.RowCount - 4)
             {
-                int cant = Int32.Parse(dgvVenta.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString());
-                //MessageBox.Show(cant.ToString());
-                double precio = Double.Parse(dgvVenta.Rows[e.RowIndex].Cells["PRECIO"].Value.ToString());
-                // MessageBox.Show(precio.ToString());
-                double resultado = cant * precio;
-                int stock = Int32.Parse(dgvVenta.Rows[e.RowIndex].Cells["STOCK"].Value.ToString());
-                if (cant <= stock)
+                var format = (NumberFormatInfo)NumberFormatInfo.CurrentInfo.Clone();
+                format.CurrencySymbol = "";
+                if (dgvVenta.Columns[e.ColumnIndex].Name == "CANTIDAD")
                 {
-                    dgvVenta.Rows[e.RowIndex].Cells["IMPORTE"].Value = resultado.ToString();
+                    int cant = Int32.Parse(dgvVenta.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString());
+                    //MessageBox.Show(cant.ToString());
+                    double precio = Double.Parse(dgvVenta.Rows[e.RowIndex].Cells["PRECIO"].Value.ToString());
+                    // MessageBox.Show(precio.ToString());
+                    double resultado = cant * precio;
+                    int stock = Int32.Parse(dgvVenta.Rows[e.RowIndex].Cells["STOCK"].Value.ToString());
+                    if (cant <= stock)
+                    {
+                        dgvVenta.Rows[e.RowIndex].Cells["IMPORTE"].Value = resultado.ToString();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Stock insuficiente");
+                        dgvVenta.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = oldvalue;
+                    }
+                    dgvVenta.Rows[lst.Count + 1].Cells[3].Value = "SUB-TOTAL  S/.";
+                    dgvVenta.Rows[lst.Count + 1].DefaultCellStyle.FormatProvider = format;
+                    dgvVenta.Rows[lst.Count + 1].Cells[4].Value = SumaSubTotal;
+                    dgvVenta.Rows[lst.Count + 2].Cells[3].Value = "      I.G.V.        %";
+                    dgvVenta.Rows[lst.Count + 2].DefaultCellStyle.FormatProvider = format;
+                    dgvVenta.Rows[lst.Count + 2].Cells[4].Value = SumaIgv;
+                    dgvVenta.Rows[lst.Count + 3].Cells[3].Value = "     TOTAL     S/.";
+                    SumaTotal += SumaSubTotal + SumaIgv;
+                    dgvVenta.Rows[lst.Count + 3].DefaultCellStyle.FormatProvider = format;
+                    dgvVenta.Rows[lst.Count + 3].Cells[4].Value = SumaTotal;
+                    dgvVenta.ClearSelection();
                 }
-                else
-                {
-                    MessageBox.Show("Stock insuficiente");
-                    dgvVenta.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = oldvalue;
-                }
-                dgvVenta.Rows[lst.Count + 1].Cells[3].Value = "SUB-TOTAL  S/.";
-                dgvVenta.Rows[lst.Count + 1].DefaultCellStyle.FormatProvider = format;
-                dgvVenta.Rows[lst.Count + 1].Cells[4].Value = SumaSubTotal;
-                dgvVenta.Rows[lst.Count + 2].Cells[3].Value = "      I.G.V.        %";
-                dgvVenta.Rows[lst.Count + 2].DefaultCellStyle.FormatProvider = format;
-                dgvVenta.Rows[lst.Count + 2].Cells[4].Value = SumaIgv;
-                dgvVenta.Rows[lst.Count + 3].Cells[3].Value = "     TOTAL     S/.";
-                SumaTotal += SumaSubTotal + SumaIgv;
-                dgvVenta.Rows[lst.Count + 3].DefaultCellStyle.FormatProvider = format;
-                dgvVenta.Rows[lst.Count + 3].Cells[4].Value = SumaTotal;
-                dgvVenta.ClearSelection();
             }
+
+                
         }
 
         private void dgvVenta_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
         {
-            //oldvalue = (int)dgvVenta[e.ColumnIndex, e.RowIndex].Value;
+            if (e.RowIndex < dgvVenta.RowCount - 4)
+                oldvalue = (int)dgvVenta[e.ColumnIndex, e.RowIndex].Value;
         }
 
         private void bunifuCustomLabel19_Click(object sender, EventArgs e)
@@ -1085,6 +1099,35 @@ namespace SistemaFigueri
                 tbPrecio.Text = dgvVenta.Rows[e.RowIndex].Cells[3].Value.ToString();
             }
             
+        }
+
+        private void cboTipoDoc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            String indice = cboTipoDoc.SelectedValue.ToString();
+            if (indice == "1")
+            {
+                lblTipo.Text = "FACTURA";
+                CNVentas cNVentas = new CNVentas();
+                String correlativo = cNVentas.traerCorrelativo(1);
+                lblSerie.Text = "F001";
+                lblNroCorrelativo.Text = correlativo.ToString();
+            }else if (indice=="3")
+            {
+        
+                lblTipo.Text = "BOLETA";
+                CNVentas cNVentas = new CNVentas();
+                String correlativo = cNVentas.traerCorrelativo(2);
+                lblSerie.Text = "B001";
+                lblNroCorrelativo.Text = correlativo.ToString();
+            }else if(indice == "96")
+            {
+                lblTipo.Text = "NOTA DE CRÉDITO";
+                CNVentas cNVentas = new CNVentas();
+                String correlativo = cNVentas.traerCorrelativo(3);
+                lblSerie.Text = "NC001";
+                lblNroCorrelativo.Text = correlativo.ToString();
+            }
+                
         }
     }   
 }

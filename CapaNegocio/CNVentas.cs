@@ -21,8 +21,12 @@ namespace CapaNegocio
         public int NroDocumento { get; set; }
         public DateTime Fecha_Venta { get; set; }
         public decimal Total { get; set; }
+        DataTable tabla = new DataTable();
+        DataTable tabla2 = new DataTable();
+        DataTable tabla3 = new DataTable();
+        SqlDataReader leer;
+        SqlCommand comando = new SqlCommand();
 
-   
         public String RegistrarVenta()
         {
             String Mensaje = "";
@@ -59,7 +63,35 @@ namespace CapaNegocio
             return correlativo;
         }
 
+        public DataTable MostarCboTipoDoc()
+        {
+            comando.Connection = C.AbrirConexion();
+            comando.CommandText = "select * from dbo.TIPO_DOC  WHERE Clasificacion='V'";
+            leer = comando.ExecuteReader();
+            tabla.Load(leer);
+            C.CerrarConexion();
+            return tabla;
+        }
 
+        public DataTable MostarCboTipoPago()
+        {
+            comando.Connection = C.AbrirConexion();
+            comando.CommandText = "select * from dbo.TIPO_PAGO";
+            SqlDataReader lector = comando.ExecuteReader();
+            tabla2.Load(lector);
+            C.CerrarConexion();
+            return tabla2;
+        }
+
+        public DataTable MostarCboMoneda()
+        {
+            comando.Connection = C.AbrirConexion();
+            comando.CommandText = "select * from Caja.Moneda";
+            SqlDataReader lector = comando.ExecuteReader();
+            tabla3.Load(lector);
+            C.CerrarConexion();
+            return tabla3;
+        }
 
 
 
