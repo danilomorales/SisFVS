@@ -37,6 +37,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "FormTipoDeCambio";
             this.Text = "FormTipoDeCambio";
+            this.Load += new System.EventHandler(this.FormTipoDeCambio_Load);
             this.ResumeLayout(false);
 
         }
