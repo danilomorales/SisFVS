@@ -521,6 +521,10 @@ namespace SistemaFigueri
             tbAlias.Clear();
             tbDescripcion.Clear();
             tbStock.Clear();
+            tbAlias.Clear();
+            tbtipodoc.Clear();
+            tbClienteNombre.Clear();
+            tbRuc.Clear();
             Program.DescripcionProducto = "";
             Program.Stock = 0;
             Program.Alias = "";
@@ -1119,7 +1123,7 @@ namespace SistemaFigueri
             try
             {
                 CECliente c = null;
-                String num_doc = tbtipodoc.Text;
+                String num_doc = tbDocumento.Text;
                 c = CNClientes.Intancia.BuscarCliente(0, num_doc);
                 tbClienteNombre.Text = c.Nombres;
                 tbrazonsocial.Text = c.Nombre_Empresa;
@@ -1134,10 +1138,22 @@ namespace SistemaFigueri
                 DialogResult r = MessageBox.Show("No se encontro al Cliente, ¿Desea Agregarlo?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (r == DialogResult.Yes)
                 {
-                    LocalBD.Instancia.Invocar(1, 1);
-                    FormMantCliente formMP = new FormMantCliente();
-                    formMP.ShowDialog();
+                    using (FormBuscarClienteR form = new FormBuscarClienteR())
+                    {
+                        if (form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                        {
+                            tbClienteNombre.Text = form.cliente;
+                            tbRuc.Text = form.ruc;
+                            tbDocumento.Text = form.dni;
+                            tbtipodoc.Text = form.tipodoc;
+                            tbrazonsocial.Text = form.empresa;
+                            tbIdCliente.Text = form.idcliente;
 
+                            CNProductos objProducto = new CNProductos();
+
+                        }
+
+                    }
                 }
             }
             catch (Exception ex)
@@ -1156,40 +1172,21 @@ namespace SistemaFigueri
             {
                 BuscaCLienteVenta();
             }
+            else
+            {
+                Limpiar();
+            }
         }
 
         private void tbRuc_KeyDown(object sender, KeyEventArgs e)
         {
-            try
-            {
-                CECliente c = null;
-                String num_doc = tbRuc.Text;
-                c = CNClientes.Intancia.BuscarCliente(0, num_doc);
-                tbClienteNombre.Text = c.Nombres;
-                tbrazonsocial.Text = c.Nombre_Empresa;
-                tbtipodoc.Text = c.Documento;
-                IdSector.Text = c.Sector;
-                tbRuc.Text = c.RUC;
-                tbtipodoc.Text = c.DNI;
-                int i = LocalBD.Instancia.ReturnIdCliente(1, c.IdCliente);
-            }
-            catch (ApplicationException)
-            {
-                DialogResult r = MessageBox.Show("No se encontro al Cliente, ¿Realizar búsqueda avanzada?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (r == DialogResult.Yes)
-                {
-                    LocalBD.Instancia.Invocar(1, 1);
-                    FormMantCliente formMP = new FormMantCliente();
-                    formMP.ShowDialog();
+        
 
+        }
 
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
+        private void tbDocumento_KeyUp(object sender, KeyEventArgs e)
+        {
+            
         }
     }   
 }
