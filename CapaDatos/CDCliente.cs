@@ -5,11 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
+using CapaEntidades;
 
 namespace CapaDatos
 {
     public class CDCliente
     {
+        private static readonly CDCliente _intancia = new CDCliente();
+        public static CDCliente Intancia
+        {
+            get { return CDCliente._intancia; }
+        }
         private CDConexion conexion = new CDConexion();
 
         SqlDataReader leer;
@@ -176,7 +182,7 @@ namespace CapaDatos
         {
             DataTable table = new DataTable();
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "select * from dbo.TIPO_DOC_IDENT";
+            comando.CommandText = "select * from Caja.TIPO_DOC_IDENT";
             leer = comando.ExecuteReader();
             table.Load(leer);
             leer.Close();           
@@ -215,7 +221,7 @@ namespace CapaDatos
         {
             DataTable table = new DataTable();
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "select * from dbo.TIENDA";
+            comando.CommandText = "select * from Caja.TIENDA";
             leer = comando.ExecuteReader();
             table.Load(leer);
             leer.Close();
@@ -229,6 +235,47 @@ namespace CapaDatos
             adapter = new SqlDataAdapter(sql, conexion.AbrirConexion());
             return adapter;
 
+        }
+
+        //Busca Clientes en Textbox
+
+        public CECliente BuscarCliente(int id_Cli, String nro_Doc)
+        {
+            SqlCommand cmd = null;
+            SqlDataReader dr = null;
+            CECliente c = null;
+            try
+            {
+                SqlConnection cn = CDConexion.Instancia.CerrarConexion();
+                cmd = new SqlCommand("Caja.SP_FE_BuscarCliente", cn);
+                cmd.Parameters.AddWithValue("@prmidCliente", id_Cli);
+                cmd.Parameters.AddWithValue("@prmNroDoc", nro_Doc);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cn.Open();
+                dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    c = new CECliente();
+                    c.IdCliente = Convert.ToInt32(dr["IdCliente"]);
+                    c.Documento = dr["Documento"].ToString();
+                    c.DNI = dr["DNI"].ToString();
+                    c.RUC = dr["RUC"].ToString();
+                    c.Nombres= dr["Nombres"].ToString();
+                    c.Apellidos= dr["Apellidos"].ToString();
+                    c.Nombre_Empresa = dr["NombreEMPRESA"].ToString();
+                    c.Sector = dr["Sector"].ToString();
+                    c.IdPrecio = dr["IdPrecio"].ToString();
+                    
+
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally { cmd.Connection.Close(); }
+            return c;
         }
 
         ////Llenar ComboBox DEPARTAMENTO

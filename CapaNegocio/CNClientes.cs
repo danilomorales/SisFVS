@@ -5,13 +5,20 @@ using System.Text;
 using System.Threading.Tasks;
 using CapaDatos;
 using System.Data;
+using CapaEntidades;
 using System.Data.SqlClient;
 
 namespace CapaNegocio
 {
    public class CNClientes
     {
-         CDCliente cli = new CDCliente();
+        private static readonly CNClientes _intancia = new CNClientes();
+        public static CNClientes Intancia
+        {
+            get { return CNClientes._intancia; }
+        }
+
+        CDCliente cli = new CDCliente();
 
         //READ CLIENT
         public SqlDataAdapter MostarClientes()
@@ -80,6 +87,23 @@ namespace CapaNegocio
             SqlDataAdapter cliente;
             cliente = cli.CargaClienteRedeptor();
             return cliente;
+        }
+
+        //Buscar Cliente En textbox
+        public  CECliente BuscarCliente(int id_cli, String nro_Doc)
+        {
+            try
+            {
+                CECliente c = null;
+                c = CDCliente.Intancia.BuscarCliente(id_cli, nro_Doc);
+                if (c == null) throw new ApplicationException("No se encontro registro");
+                return c;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

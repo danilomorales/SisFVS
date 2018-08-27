@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using CapaDatos;
 using CapaNegocio;
+using CapaEntidades;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -36,8 +37,10 @@ namespace SistemaFigueri
         private List<Venta> lst = new List<Venta>();
         private int oldvalue { get; set; }
         Decimal SumaTotal { get; set; }
-        Decimal SumaSubTotal { get; set; } Decimal SumaIgv { get; set; }
-
+        Decimal SumaSubTotal { get; set; }
+        Decimal SumaIgv { get; set; }
+        
+       public AutoCompleteStringCollection autocompletatb = new AutoCompleteStringCollection();
         public static FormVenta GetInstancia()
         {
             if (_instancia ==null)
@@ -222,9 +225,10 @@ namespace SistemaFigueri
             MostrarClientes();
             this.crearTabla();
             GenerarNumeroComprobante();
+            
 
             //GenerarIdVenta();
-           // GenerarSeriedeDocumento();
+            // GenerarSeriedeDocumento();
             dgvVenta.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             //bu.autoCompletar(tbBuscaClienteRece);
@@ -1108,6 +1112,84 @@ namespace SistemaFigueri
                 lblNroCorrelativo.Text = correlativo.ToString();
             }
                 
+        }
+        private void BuscaCLienteVenta()
+        {
+
+            try
+            {
+                CECliente c = null;
+                String num_doc = tbtipodoc.Text;
+                c = CNClientes.Intancia.BuscarCliente(0, num_doc);
+                tbClienteNombre.Text = c.Nombres;
+                tbrazonsocial.Text = c.Nombre_Empresa;
+                tbtipodoc.Text = c.Documento;
+                IdSector.Text = c.Sector;
+                tbRuc.Text = c.RUC;
+                tbtipodoc.Text = c.DNI;
+                int i = LocalBD.Instancia.ReturnIdCliente(1, c.IdCliente);
+            }
+            catch (ApplicationException)
+            {
+                DialogResult r = MessageBox.Show("No se encontro al Cliente, ¿Desea Agregarlo?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (r == DialogResult.Yes)
+                {
+                    LocalBD.Instancia.Invocar(1, 1);
+                    FormMantCliente formMP = new FormMantCliente();
+                    formMP.ShowDialog();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void tbClienteNombre_KeyDown(object sender, KeyEventArgs e)
+        {
+           
+        }
+
+        private void tbDocumento_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                BuscaCLienteVenta();
+            }
+        }
+
+        private void tbRuc_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                CECliente c = null;
+                String num_doc = tbRuc.Text;
+                c = CNClientes.Intancia.BuscarCliente(0, num_doc);
+                tbClienteNombre.Text = c.Nombres;
+                tbrazonsocial.Text = c.Nombre_Empresa;
+                tbtipodoc.Text = c.Documento;
+                IdSector.Text = c.Sector;
+                tbRuc.Text = c.RUC;
+                tbtipodoc.Text = c.DNI;
+                int i = LocalBD.Instancia.ReturnIdCliente(1, c.IdCliente);
+            }
+            catch (ApplicationException)
+            {
+                DialogResult r = MessageBox.Show("No se encontro al Cliente, ¿Realizar búsqueda avanzada?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (r == DialogResult.Yes)
+                {
+                    LocalBD.Instancia.Invocar(1, 1);
+                    FormMantCliente formMP = new FormMantCliente();
+                    formMP.ShowDialog();
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
     }   
 }

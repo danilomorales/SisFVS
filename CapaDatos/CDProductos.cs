@@ -197,6 +197,7 @@ namespace CapaDatos
                 Lista = new List<CEProducto>();
                 while (dr.Read())
                 {
+                    
                     CEProducto p = new CEProducto();
                     p._Codigo = dr["Código"].ToString();
                     p._Alias = dr["Alias"].ToString();

@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CECliente.cs" />
     <Compile Include="CEComprobantePago.cs" />
     <Compile Include="CEComprovante_Venta_Pago.cs" />
     <Compile Include="CEProducto.cs" />
