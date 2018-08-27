@@ -33,7 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bunifu_UI_v1.52">
-      <HintPath>..\..\NuevoSis\libs\Bunifu_UI_v1.52.dll</HintPath>
+      <HintPath>..\..\..\..\Documents\Figueri\libs\Bunifu_UI_v1.52.dll</HintPath>
     </Reference>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
@@ -44,7 +44,7 @@
       <HintPath>..\packages\Gma.QrCodeNet.0.4.1.2\lib\net40\Gma.QrCodeNet.Encoding.dll</HintPath>
     </Reference>
     <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\NuevoSis\SistemaFigueri\packages\MaterialSkin.0.2.1\lib\MaterialSkin.dll</HintPath>
+      <HintPath>..\packages\MaterialSkin.0.2.1\lib\MaterialSkin.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Microsoft.VisualBasic.Compatibility" />
@@ -98,6 +98,12 @@
     </Compile>
     <Compile Include="FormKardex.Designer.cs">
       <DependentUpon>FormKardex.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSucursal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSucursal.Designer.cs">
+      <DependentUpon>FormSucursal.cs</DependentUpon>
     </Compile>
     <Compile Include="FormVenta.cs">
       <SubType>Form</SubType>
@@ -316,6 +322,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormSector.resx">
       <DependentUpon>FormSector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSucursal.resx">
+      <DependentUpon>FormSucursal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTipoDeCambio.resx">
       <DependentUpon>FormTipoDeCambio.cs</DependentUpon>
@@ -785,6 +794,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\x-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\guardar2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

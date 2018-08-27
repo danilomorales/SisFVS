@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialSkin.0.2.1\lib\MaterialSkin.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -50,6 +53,7 @@
     <Compile Include="CDPedidos.cs" />
     <Compile Include="CDProductos.cs" />
     <Compile Include="CDSector.cs" />
+    <Compile Include="CDSucursal.cs" />
     <Compile Include="CDUsuario.cs" />
     <Compile Include="CDVenta.cs" />
     <Compile Include="clParametro.cs" />
@@ -61,6 +65,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

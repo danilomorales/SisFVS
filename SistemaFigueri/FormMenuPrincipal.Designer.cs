@@ -330,7 +330,7 @@
             this.btnSector.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
             this.btnSector.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSector.BorderRadius = 0;
-            this.btnSector.ButtonText = "SECTORES";
+            this.btnSector.ButtonText = "SUCURSALES";
             this.btnSector.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSector.DisabledColor = System.Drawing.Color.Gray;
             this.btnSector.Dock = System.Windows.Forms.DockStyle.Top;
@@ -354,7 +354,7 @@
             this.btnSector.selected = true;
             this.btnSector.Size = new System.Drawing.Size(243, 42);
             this.btnSector.TabIndex = 27;
-            this.btnSector.Text = "SECTORES";
+            this.btnSector.Text = "SUCURSALES";
             this.btnSector.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnSector.Textcolor = System.Drawing.Color.White;
             this.btnSector.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
