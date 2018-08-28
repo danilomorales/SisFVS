@@ -619,8 +619,6 @@ namespace SistemaFigueri.Reportes {
             
             private global::System.Data.DataColumn columnfecha_emision;
             
-            private global::System.Data.DataColumn columnfecha_vencimiento;
-            
             private global::System.Data.DataColumn columnmoneda;
             
             private global::System.Data.DataColumn columnigv;
@@ -734,14 +732,6 @@ namespace SistemaFigueri.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn fecha_vencimientoColumn {
-                get {
-                    return this.columnfecha_vencimiento;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn monedaColumn {
                 get {
                     return this.columnmoneda;
@@ -833,23 +823,7 @@ namespace SistemaFigueri.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public DataTable2Row AddDataTable2Row(
-                        string direccion, 
-                        string sucursal, 
-                        string ruc, 
-                        string tipodoc, 
-                        string ndoc, 
-                        string dni_cli, 
-                        string nom_cli, 
-                        string fecha_emision, 
-                        string fecha_vencimiento, 
-                        string moneda, 
-                        string igv, 
-                        string total_gravada, 
-                        string total_igv, 
-                        string total_importe, 
-                        string importe_letras, 
-                        string qr_venta) {
+            public DataTable2Row AddDataTable2Row(string direccion, string sucursal, string ruc, string tipodoc, string ndoc, string dni_cli, string nom_cli, string fecha_emision, string moneda, string igv, string total_gravada, string total_igv, string total_importe, string importe_letras, string qr_venta) {
                 DataTable2Row rowDataTable2Row = ((DataTable2Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         direccion,
@@ -860,7 +834,6 @@ namespace SistemaFigueri.Reportes {
                         dni_cli,
                         nom_cli,
                         fecha_emision,
-                        fecha_vencimiento,
                         moneda,
                         igv,
                         total_gravada,
@@ -898,7 +871,6 @@ namespace SistemaFigueri.Reportes {
                 this.columndni_cli = base.Columns["dni_cli"];
                 this.columnnom_cli = base.Columns["nom_cli"];
                 this.columnfecha_emision = base.Columns["fecha_emision"];
-                this.columnfecha_vencimiento = base.Columns["fecha_vencimiento"];
                 this.columnmoneda = base.Columns["moneda"];
                 this.columnigv = base.Columns["igv"];
                 this.columntotal_gravada = base.Columns["total_gravada"];
@@ -927,8 +899,6 @@ namespace SistemaFigueri.Reportes {
                 base.Columns.Add(this.columnnom_cli);
                 this.columnfecha_emision = new global::System.Data.DataColumn("fecha_emision", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnfecha_emision);
-                this.columnfecha_vencimiento = new global::System.Data.DataColumn("fecha_vencimiento", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnfecha_vencimiento);
                 this.columnmoneda = new global::System.Data.DataColumn("moneda", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnmoneda);
                 this.columnigv = new global::System.Data.DataColumn("igv", typeof(string), null, global::System.Data.MappingType.Element);
@@ -1340,22 +1310,6 @@ namespace SistemaFigueri.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string fecha_vencimiento {
-                get {
-                    try {
-                        return ((string)(this[this.tableDataTable2.fecha_vencimientoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fecha_vencimiento\' de la tabla \'DataTable2\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDataTable2.fecha_vencimientoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string moneda {
                 get {
                     try {
@@ -1560,18 +1514,6 @@ namespace SistemaFigueri.Reportes {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void Setfecha_emisionNull() {
                 this[this.tableDataTable2.fecha_emisionColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool Isfecha_vencimientoNull() {
-                return this.IsNull(this.tableDataTable2.fecha_vencimientoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void Setfecha_vencimientoNull() {
-                this[this.tableDataTable2.fecha_vencimientoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

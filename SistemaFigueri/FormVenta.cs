@@ -249,6 +249,7 @@ namespace SistemaFigueri
             CboMoneda.DataSource = cNVentas.MostarCboMoneda();
             CboMoneda.ValueMember = "IdMoneda";
             CboMoneda.DisplayMember = "DesMoneda";
+            dtpFechaEmision.Value = DateTime.Today;
         }
         private void GenerarNumeroComprobante()
         {
@@ -808,9 +809,7 @@ namespace SistemaFigueri
                                     //CLIENTE
                                     client,
                                     //FECHA EMISION
-                                    dtpFechaEmision.Text,
-                                    //FECHA VENCIMIENTO
-                                    dtFechaV.Text,
+                                    dtpFechaEmision.Value.ToString("dd/MM/yyyy"),
                                     "SOLES",
                                     "18.00 %",
                                      SumaSubTotal,
@@ -984,6 +983,12 @@ namespace SistemaFigueri
                     {
                         MessageBox.Show("Stock insuficiente");
                         dgvVenta.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = oldvalue;
+                    }
+                    SumaSubTotal = 0; SumaIgv = 0; SumaTotal = 0;
+                    for (int i = 0; i < lst.Count; i++)
+                    {
+                        SumaSubTotal += Convert.ToDecimal(dgvVenta.Rows[i].Cells[4].Value);
+                        SumaIgv += Convert.ToDecimal(dgvVenta.Rows[i].Cells[6].Value);
                     }
                     dgvVenta.Rows[lst.Count + 1].Cells[3].Value = "SUB-TOTAL  S/.";
                     dgvVenta.Rows[lst.Count + 1].DefaultCellStyle.FormatProvider = format;
