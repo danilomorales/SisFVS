@@ -10,7 +10,7 @@ using System.Data.SqlClient;
 
 namespace CapaNegocio
 {
-   public class CNClientes
+    public class CNClientes
     {
         private static readonly CNClientes _intancia = new CNClientes();
         public static CNClientes Intancia
@@ -23,8 +23,8 @@ namespace CapaNegocio
         //READ CLIENT
         public SqlDataAdapter MostarClientes()
         {
-            return  cli.listarClientes();
-       
+            return cli.listarClientes();
+
         }
 
         //CREATE CLIENT
@@ -35,11 +35,11 @@ namespace CapaNegocio
         {
             Console.WriteLine("Sera pues ..." + idTienda + " " + idSector + " " + nombreEmpresa + " " + nombres + " " + apellidoP + " " + apellidoM + " " +
             direccion + " " + contacto + " " + telefono + " " + fax + " " + ruc + " " + correo + " " + idTipoDoc + " " + nroDoc + " " +
-            observacion + " " + inscripcion + " " + salCta + " " + fechaNac + " " + tipoCompra + "   " + credito + " "  + queja + "   "
+            observacion + " " + inscripcion + " " + salCta + " " + fechaNac + " " + tipoCompra + "   " + credito + " " + queja + "   "
             + ordenclie + "   " + promedioVentas + "   " + cta_cli + "   " + depa + "   " + provi + "   " + distri + "   " + usuRegistra);
-            cli.InsertarCliente(idTienda,idSector,nombreEmpresa,nombres,apellidoP,apellidoM,direccion,contacto,telefono,fax,ruc,correo,idTipoDoc,nroDoc,
-                observacion,inscripcion,Convert.ToDouble(salCta),fechaNac,tipoCompra,Convert.ToDouble(credito),queja,Convert.ToInt32(ordenclie),
-                Convert.ToDouble(promedioVentas),cta_cli,depa,provi,distri,usuRegistra);
+            cli.InsertarCliente(idTienda, idSector, nombreEmpresa, nombres, apellidoP, apellidoM, direccion, contacto, telefono, fax, ruc, correo, idTipoDoc, nroDoc,
+                observacion, inscripcion, Convert.ToDouble(salCta), fechaNac, tipoCompra, Convert.ToDouble(credito), queja, Convert.ToInt32(ordenclie),
+                Convert.ToDouble(promedioVentas), cta_cli, depa, provi, distri, usuRegistra);
         }
 
         //UPDATE CLIENT
@@ -48,19 +48,19 @@ namespace CapaNegocio
             String inscripcion, String salCta, String fechaNac, String tipoCompra, String credito, String queja, String ordenclie, String promedioVentas,
             String cta_cli, String depa, String provi, String distri, String usuRegistra, String usuModifica, String fechaModi)
         {
-            Console.WriteLine("Editadooooo ..."+ idCliente + "" + idTienda + " " + idSector + " " + nombreEmpresa + " " + nombres + " " + apellidoP + " " + apellidoM + " " +
+            Console.WriteLine("Editadooooo ..." + idCliente + "" + idTienda + " " + idSector + " " + nombreEmpresa + " " + nombres + " " + apellidoP + " " + apellidoM + " " +
              direccion + " " + contacto + " " + telefono + " " + fax + " " + ruc + " " + correo + " " + idTipoDoc + " " + nroDoc + " " +
              observacion + " " + inscripcion + " " + salCta + " " + fechaNac + " " + tipoCompra + "   " + credito + " " + queja + "   "
              + ordenclie + "   " + promedioVentas + "   " + cta_cli + "   " + depa + "   " + provi + "   " + distri + "   " + usuRegistra);
 
-            cli.EditarCliente(idCliente,idTienda,idSector,nombreEmpresa,nombres,apellidoP,apellidoM,direccion,contacto,telefono,fax,ruc,correo,idTipoDoc,nroDoc,observacion,inscripcion,
-                Convert.ToDouble(salCta),fechaNac,tipoCompra,Convert.ToDouble(credito),queja,Convert.ToInt32(ordenclie),Convert.ToDouble(promedioVentas),cta_cli,depa,provi,distri,usuRegistra,
-                usuModifica,fechaModi);
+            cli.EditarCliente(idCliente, idTienda, idSector, nombreEmpresa, nombres, apellidoP, apellidoM, direccion, contacto, telefono, fax, ruc, correo, idTipoDoc, nroDoc, observacion, inscripcion,
+                Convert.ToDouble(salCta), fechaNac, tipoCompra, Convert.ToDouble(credito), queja, Convert.ToInt32(ordenclie), Convert.ToDouble(promedioVentas), cta_cli, depa, provi, distri, usuRegistra,
+                usuModifica, fechaModi);
         }
 
 
         //DELETE CLIENT
-        public void DeleteClient(String idRecpCliente)  
+        public void DeleteClient(String idRecpCliente)
         {
             cli.EliminarCliente(idRecpCliente);
         }
@@ -90,7 +90,7 @@ namespace CapaNegocio
         }
 
         //Buscar Cliente En textbox
-        public  CECliente BuscarCliente(int id_cli, String nro_Doc)
+        public CECliente BuscarCliente(int id_cli, String nro_Doc)
         {
             try
             {

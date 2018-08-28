@@ -5,11 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
+using CapaEntidades;
 
 namespace CapaDatos
 {
     public class CDCliente
     {
+        private static readonly CDCliente _intancia = new CDCliente();
+        public static CDCliente Intancia
+        {
+            get { return CDCliente._intancia; }
+        }
         private CDConexion conexion = new CDConexion();
 
         SqlDataReader leer;
@@ -107,37 +113,37 @@ namespace CapaDatos
                 "c.UsuarioRegistra as'Usuario que Registra',c.Inscripcion as 'Inscripción',c.Estado,c.SaldoCtaCte as 'Cuenta Corriente',c.Nivel," +
                 "c.FechaNac as 'Fecha de Nacimiento',c.TipoCompra as 'Tipo de Compra',c.Credito,c.Queja,c.EstSaldoIni as 'Estado Inicial'," +
                 "c.OrdenCliente as 'Orden del Cliente',c.PromedioDeVentas as 'Promedio de ventas'," +
-                "c.cta_cli,c.UsuarioModifica,c.FechaModifica from caja.CLIENTE c, Caja.TIENDA t, Caja.SECTOR s, Caja.TIPO_DOC_IDENT d " +
+                "c.cta_cli,c.UsuarioModifica,c.FechaModifica from caja.CLIENTE c, dbo.TIENDA t, dbo.SECTOR s, dbo.TIPO_DOC_IDENT d " +
                 "where c.IdTienda = t.IdTienda AND c.IdSector = s.IdSector and c.IdTipoDocIdent = d.IdTipoDocIdent; ";
             adapter = new SqlDataAdapter(sql, conexion.AbrirConexion());
             return adapter;
         }
 
         //INSERTAR CLIENTE
-        public void InsertarCliente(String idTienda,String idSector,String nombreEmpresa,String nombres,String apellidoP, String apellidoM,
-            String direccion,String contacto, String telefono,String fax,String ruc,String correo, String idTipoDoc,String nroDoc,String observacion,
-            String inscripcion,double salCta, String fechaNac, String tipoCompra, double credito,String queja,int ordenclie,double promedioVentas,
-            String cta_cli,String depa,String provi,String distri,String usuRegistra)
+        public void InsertarCliente(String idTienda, String idSector, String nombreEmpresa, String nombres, String apellidoP, String apellidoM,
+            String direccion, String contacto, String telefono, String fax, String ruc, String correo, String idTipoDoc, String nroDoc, String observacion,
+            String inscripcion, double salCta, String fechaNac, String tipoCompra, double credito, String queja, int ordenclie, double promedioVentas,
+            String cta_cli, String depa, String provi, String distri, String usuRegistra)
         {
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "insert into Caja.CLIENTE(IdTienda,IdSector,NombreEmpresa,Nombres,ApellidoPaterno,ApellidoMaterno,Direccion,Contacto," +
                 "Telefono,Fax,RUC,Email,IdTipoDocIdent,NroDocumento,Observacion,Inscripcion,Estado,SaldoCtaCte,Nivel,FechaNac,TipoCompra,Credito,Queja," +
                 "EstSaldoIni,OrdenCliente,TipoCliente,PromedioDeVentas,cta_cli,Departamento,Provincia,Distrito,UsuarioRegistra,UsuarioModifica," +
-                "FechaModifica)values('"+ idTienda + "', '"+ idSector + "', '"+ nombreEmpresa + "', '"+ nombres + "', '"+ apellidoP + "', '"+ apellidoM + "'," +
-                " '"+ direccion + "', '"+ contacto + "', '"+ telefono + "','"+ fax + "', '"+ ruc + "', '"+ correo + "', '"+ idTipoDoc + "', '"+ nroDoc + "'," +
-                " '"+ observacion + "', '"+ inscripcion + "', 'A', '"+ salCta + "', '1','"+ fechaNac + "', '"+ tipoCompra + "','"+ credito + "', " +
-                "'"+ queja + "', '1', '"+ ordenclie + "', '', '"+ promedioVentas + "', '"+ cta_cli + "', '"+ depa + "', '"+ provi + "', '"+ distri + "'," +
-                " '"+ usuRegistra + "','', '')";
+                "FechaModifica)values('" + idTienda + "', '" + idSector + "', '" + nombreEmpresa + "', '" + nombres + "', '" + apellidoP + "', '" + apellidoM + "'," +
+                " '" + direccion + "', '" + contacto + "', '" + telefono + "','" + fax + "', '" + ruc + "', '" + correo + "', '" + idTipoDoc + "', '" + nroDoc + "'," +
+                " '" + observacion + "', '" + inscripcion + "', 'A', '" + salCta + "', '1','" + fechaNac + "', '" + tipoCompra + "','" + credito + "', " +
+                "'" + queja + "', '1', '" + ordenclie + "', '', '" + promedioVentas + "', '" + cta_cli + "', '" + depa + "', '" + provi + "', '" + distri + "'," +
+                " '" + usuRegistra + "','', '')";
             comando.CommandType = CommandType.Text;
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
         }
-        
+
         //EDITAR CLIENTE
-        public void EditarCliente(String idCliente,String idTienda, String idSector, String nombreEmpresa, String nombres, String apellidoP, String apellidoM,
+        public void EditarCliente(String idCliente, String idTienda, String idSector, String nombreEmpresa, String nombres, String apellidoP, String apellidoM,
             String direccion, String contacto, String telefono, String fax, String ruc, String correo, String idTipoDoc, String nroDoc, String observacion,
             String inscripcion, double salCta, String fechaNac, String tipoCompra, double credito, String queja, int ordenclie, double promedioVentas,
-            String cta_cli, String depa, String provi, String distri, String usuRegistra,String usuModifica,String fechaModi)
+            String cta_cli, String depa, String provi, String distri, String usuRegistra, String usuModifica, String fechaModi)
         {
             Console.WriteLine("id cliente" + idCliente);
             try
@@ -154,18 +160,18 @@ namespace CapaDatos
                 comando.ExecuteNonQuery();
                 conexion.CerrarConexion();
             }
-            catch(SqlException ex)
+            catch (SqlException ex)
             {
                 Console.WriteLine("VIENE DEL CD" + ex);
             }
-           
+
         }
 
         //ELIMINAR CLIENTE
         public void EliminarCliente(String idRecpCliente)
         {
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = " delete from Caja.CLIENTE where IdCliente=" + idRecpCliente + "";
+            comando.CommandText = " delete from Caja.ClienteReceptor where IdClienteReceptor=" + idRecpCliente + "";
             comando.CommandType = CommandType.Text;
             comando.ExecuteNonQuery();
             conexion.CerrarConexion();
@@ -179,7 +185,7 @@ namespace CapaDatos
             comando.CommandText = "select * from Caja.TIPO_DOC_IDENT";
             leer = comando.ExecuteReader();
             table.Load(leer);
-            leer.Close();           
+            leer.Close();
             conexion.CerrarConexion();
             return table;
         }
@@ -225,10 +231,51 @@ namespace CapaDatos
 
         public SqlDataAdapter CargaClienteRedeptor()
         {
-            String sql = "select top 100 cr.IdCliente, di.Descripcion as Documento, (cr.NroDocumento) as DNI, cr.RUC, cr.Nombres, (cr.ApellidoPaterno +' '+cr.ApellidoMaterno) as Apellidos, cr.NombreEmpresa, s.DescripcionSector as Sector from  Caja.CLIENTE cr left join Caja.SECTOR s on cr.IdSector=s.IdSector left join Caja.TIPO_DOC_IDENT di on cr.IdTipoDocIdent =di.IdTipoDocIdent order by cr.IdCliente desc;";
+            String sql = "select cr.IdCliente, di.Descripcion as Documento, (cr.NroDocumento) as DNI, cr.RUC, cr.Nombres, (cr.ApellidoPaterno +' '+cr.ApellidoMaterno) as Apellidos, cr.NombreEmpresa, s.DescripcionSector as Sector from  Caja.CLIENTE cr left join Caja.SECTOR s on cr.IdSector=s.IdSector left join Caja.TIPO_DOC_IDENT di on cr.IdTipoDocIdent =di.IdTipoDocIdent order by cr.IdCliente desc;";
             adapter = new SqlDataAdapter(sql, conexion.AbrirConexion());
             return adapter;
 
+        }
+
+        //Busca Clientes en Textbox
+
+        public CECliente BuscarCliente(int id_Cli, String nro_Doc)
+        {
+            SqlCommand cmd = null;
+            SqlDataReader dr = null;
+            CECliente c = null;
+            try
+            {
+                SqlConnection cn = CDConexion.Instancia.CerrarConexion();
+                cmd = new SqlCommand("Caja.SP_FE_BuscarCliente", cn);
+                cmd.Parameters.AddWithValue("@prmidCliente", id_Cli);
+                cmd.Parameters.AddWithValue("@prmNroDoc", nro_Doc);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cn.Open();
+                dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    c = new CECliente();
+                    c.IdCliente = Convert.ToInt32(dr["IdCliente"]);
+                    c.Documento = dr["Documento"].ToString();
+                    c.DNI = dr["DNI"].ToString();
+                    c.RUC = dr["RUC"].ToString();
+                    c.Nombres = dr["Nombres"].ToString();
+                    c.Apellidos = dr["Apellidos"].ToString();
+                    c.Nombre_Empresa = dr["Razón_Social"].ToString();
+                    c.Sector = dr["Sector"].ToString();
+                    //c.IdPrecio = dr["IdPrecio"].ToString();
+
+
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally { cmd.Connection.Close(); }
+            return c;
         }
 
         ////Llenar ComboBox DEPARTAMENTO

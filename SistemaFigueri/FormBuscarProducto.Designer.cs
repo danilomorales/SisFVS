@@ -201,7 +201,7 @@
             this.dgvlListaProducto.RowHeadersVisible = false;
             this.dgvlListaProducto.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvlListaProducto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvlListaProducto.Size = new System.Drawing.Size(977, 308);
+            this.dgvlListaProducto.Size = new System.Drawing.Size(977, 324);
             this.dgvlListaProducto.TabIndex = 230;
             this.dgvlListaProducto.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvlListaProducto_CellDoubleClick);
             // 

@@ -56,7 +56,6 @@ namespace SistemaFigueri
             dgvlListaProducto.Columns["ColumnStock"].Width = 20;
             dgvlListaProducto.Columns["ColumnDuracion"].Width = 20;
             dgvlListaProducto.Columns["ColumnPecio"].Width = 40;
-      
 
 
         }
