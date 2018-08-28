@@ -524,7 +524,27 @@ namespace SistemaFigueri
             tbAlias.Clear();
             tbtipodoc.Clear();
             tbClienteNombre.Clear();
+            tbrazonsocial.Clear();
             tbRuc.Clear();
+            Program.DescripcionProducto = "";
+            Program.Stock = 0;
+            Program.Alias = "";
+            Program.PrecioVenta = 0;
+        }
+        private void LimpiarCliente()
+        {
+            tbtipodoc.Clear();
+            tbClienteNombre.Clear();
+            tbrazonsocial.Clear();
+            tbRuc.Clear();
+        }
+        private void LimpiarProducto()
+        {
+            tbPrecio.Clear();
+            tbAlias.Clear();
+            tbDescripcion.Clear();
+            tbStock.Clear();
+            tbAlias.Clear();
             Program.DescripcionProducto = "";
             Program.Stock = 0;
             Program.Alias = "";
@@ -1128,14 +1148,12 @@ namespace SistemaFigueri
                 tbClienteNombre.Text = c.Nombres;
                 tbrazonsocial.Text = c.Nombre_Empresa;
                 tbtipodoc.Text = c.Documento;
-                IdSector.Text = c.Sector;
                 tbRuc.Text = c.RUC;
-                tbtipodoc.Text = c.DNI;
                 int i = LocalBD.Instancia.ReturnIdCliente(1, c.IdCliente);
             }
             catch (ApplicationException)
             {
-                DialogResult r = MessageBox.Show("No se encontro al Cliente, ¿Desea Agregarlo?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult r = MessageBox.Show("No se encontro al Cliente, ¿realizar Búsqueda avanzada?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (r == DialogResult.Yes)
                 {
                     using (FormBuscarClienteR form = new FormBuscarClienteR())
@@ -1174,7 +1192,8 @@ namespace SistemaFigueri
             }
             else
             {
-                Limpiar();
+                LimpiarCliente();
+
             }
         }
 

@@ -38,7 +38,6 @@
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.btnCerrarFiltroCliente = new Bunifu.Framework.UI.BunifuTileButton();
             this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.tbMIdCliente = new System.Windows.Forms.TextBox();
             this.rbPrecio = new System.Windows.Forms.RadioButton();
             this.rbNombreProd = new System.Windows.Forms.RadioButton();
             this.dgvlListaProducto = new System.Windows.Forms.DataGridView();
@@ -141,21 +140,6 @@
             this.bunifuImageButton2.TabIndex = 226;
             this.bunifuImageButton2.TabStop = false;
             this.bunifuImageButton2.Zoom = 10;
-            // 
-            // tbMIdCliente
-            // 
-            this.tbMIdCliente.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.tbMIdCliente.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.tbMIdCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(190)))), ((int)(((byte)(154)))));
-            this.tbMIdCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbMIdCliente.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbMIdCliente.ForeColor = System.Drawing.Color.Black;
-            this.tbMIdCliente.Location = new System.Drawing.Point(75, 470);
-            this.tbMIdCliente.Name = "tbMIdCliente";
-            this.tbMIdCliente.ReadOnly = true;
-            this.tbMIdCliente.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbMIdCliente.Size = new System.Drawing.Size(171, 20);
-            this.tbMIdCliente.TabIndex = 227;
             // 
             // rbPrecio
             // 
@@ -261,7 +245,6 @@
             this.ClientSize = new System.Drawing.Size(1095, 537);
             this.Controls.Add(this.bunifuCards1);
             this.Controls.Add(this.dgvlListaProducto);
-            this.Controls.Add(this.tbMIdCliente);
             this.Controls.Add(this.bunifuImageButton2);
             this.Controls.Add(this.btnCerrarFiltroCliente);
             this.Controls.Add(this.lbresultados);
@@ -288,7 +271,6 @@
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private Bunifu.Framework.UI.BunifuTileButton btnCerrarFiltroCliente;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton2;
-        public System.Windows.Forms.TextBox tbMIdCliente;
         private System.Windows.Forms.RadioButton rbPrecio;
         private System.Windows.Forms.RadioButton rbNombreProd;
         private System.Windows.Forms.DataGridView dgvlListaProducto;

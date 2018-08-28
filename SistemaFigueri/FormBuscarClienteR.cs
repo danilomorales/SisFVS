@@ -33,6 +33,27 @@ namespace SistemaFigueri
         {
             InitializeComponent();
         }
+        private void CrearTabla()
+        {
+
+
+            dgvCliente.Columns.Add("ColumnCodigo", "Código");
+            dgvCliente.Columns.Add("ColumnAlias", "Alias");
+            dgvCliente.Columns.Add("ColumnDescripcion", "DescripcionProducto");
+            dgvCliente.Columns.Add("ColumnStock", "Stock");
+            dgvCliente.Columns.Add("ColumnDuracion", "TiempoDuracion");
+            dgvCliente.Columns.Add("ColumnPecio", "Precio");
+
+            dgvCliente.Columns["ColumnCodigo"].Width = 20;
+            dgvCliente.Columns["ColumnAlias"].Width = 40;
+            dgvCliente.Columns["ColumnDescripcion"].Width = 50;
+            dgvCliente.Columns["ColumnStock"].Width = 20;
+            dgvCliente.Columns["ColumnDuracion"].Width = 20;
+            dgvCliente.Columns["ColumnPecio"].Width = 40;
+
+
+
+        }
         public void MostrarCliente(DataGridView dgvProducto)
         {
             try

@@ -262,7 +262,7 @@ namespace CapaDatos
                     c.RUC = dr["RUC"].ToString();
                     c.Nombres= dr["Nombres"].ToString();
                     c.Apellidos= dr["Apellidos"].ToString();
-                    c.Nombre_Empresa = dr["NombreEMPRESA"].ToString();
+                    c.Nombre_Empresa = dr["Razón_Social"].ToString();
                     c.Sector = dr["Sector"].ToString();
                     c.IdPrecio = dr["IdPrecio"].ToString();
                     
