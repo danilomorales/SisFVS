@@ -1140,7 +1140,7 @@ namespace SistemaFigueri
                 lblSerie.Text = "NC001";
                 lblNroCorrelativo.Text = correlativo.ToString();
             }
-                
+                //zz
         }
         private void BuscaCLienteVenta()
         {
