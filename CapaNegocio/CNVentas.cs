@@ -76,7 +76,7 @@ namespace CapaNegocio
         public DataTable MostarCboTipoPago()
         {
             comando.Connection = C.AbrirConexion();
-            comando.CommandText = "select * from Caja.TIPO_PAGO";
+            comando.CommandText = "select * from Caja.TIPO_PAGO WHERE Estado='1'";
             SqlDataReader lector = comando.ExecuteReader();
             tabla2.Load(lector);
             C.CerrarConexion();

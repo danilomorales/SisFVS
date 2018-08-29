@@ -1022,9 +1022,20 @@ namespace SistemaFigueri
         private void cboTipoPago_SelectedIndexChanged(object sender, EventArgs e)
         {
             String indice = cboTipoPago.SelectedValue.ToString();
-            if (indice == "Crédito")
-            {
-                tformapago.SelectedTab = tabEfectivo;
+            //MessageBox.Show(indice);
+            switch (indice){
+                case "01":
+                    tformapago.SelectedTab = tabEfectivo;
+                    break;
+                case "12":
+                    tformapago.SelectedTab = tabcredito;
+                    break;
+                case "13":
+                    tformapago.SelectedTab = tabCheque;
+                    break;
+                case "14":
+                    tformapago.SelectedTab = tabDeposito;
+                    break;
 
             }
         }
@@ -1272,6 +1283,30 @@ namespace SistemaFigueri
 
         private void tbDocumento_KeyUp(object sender, KeyEventArgs e)
         {
+
+        }
+
+        private void tformapago_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(tformapago.SelectedTab == tabEfectivo)
+            {
+                cboTipoPago.SelectedIndex = cboTipoPago.FindStringExact("EN EFECTIVO");
+            }
+            else if(tformapago.SelectedTab == tabcredito)
+            {
+                cboTipoPago.SelectedIndex = cboTipoPago.FindStringExact("TARJETA / POS-INTEGRADO");
+            }
+            else if (tformapago.SelectedTab == tabCheque)
+            {
+                cboTipoPago.SelectedIndex = cboTipoPago.FindStringExact("CHEQUE");
+            }
+            else if(tformapago.SelectedTab == tabDeposito)
+            {
+                cboTipoPago.SelectedIndex = cboTipoPago.FindStringExact("DEPÓSITO");
+            }
+
+    
+
 
         }
     }
