@@ -66,7 +66,7 @@ namespace CapaNegocio
         public DataTable MostarCboTipoDoc()
         {
             comando.Connection = C.AbrirConexion();
-            comando.CommandText = "select * from dbo.TIPO_DOC  WHERE Clasificacion='V'";
+            comando.CommandText = "select * from Caja.TIPO_DOC  WHERE Clasificacion='V'";
             leer = comando.ExecuteReader();
             tabla.Load(leer);
             C.CerrarConexion();
@@ -76,7 +76,7 @@ namespace CapaNegocio
         public DataTable MostarCboTipoPago()
         {
             comando.Connection = C.AbrirConexion();
-            comando.CommandText = "select * from dbo.TIPO_PAGO";
+            comando.CommandText = "select * from Caja.TIPO_PAGO WHERE Estado='1'";
             SqlDataReader lector = comando.ExecuteReader();
             tabla2.Load(lector);
             C.CerrarConexion();

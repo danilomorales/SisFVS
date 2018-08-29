@@ -199,7 +199,7 @@ namespace CapaDatos
         {
             DataTable table = new DataTable();
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "select * from dbo.TIENDA";
+            comando.CommandText = "select * from Caja.TIENDA";
             leer = comando.ExecuteReader();
             table.Load(leer);
             leer.Close();

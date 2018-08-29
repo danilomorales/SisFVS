@@ -56,32 +56,13 @@ namespace SistemaFigueri
             dgvlListaProducto.Columns["ColumnStock"].Width = 20;
             dgvlListaProducto.Columns["ColumnDuracion"].Width = 20;
             dgvlListaProducto.Columns["ColumnPecio"].Width = 40;
-      
 
 
         }
 
 
-
         private void FormBuscarProducto_Load(object sender, EventArgs e)
         {
-
-            // dgvlListaProducto.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
-            // dgvlListaProducto.AllowUserToResizeRows = false;
-            // LIstaProductoFiltro(dgvlListaProducto);
-            //// dgvlListaProducto.Columns[0].Visible = false;
-            // dgvlListaProducto.Columns["Código"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            // dgvlListaProducto.Columns["DescripcionProducto"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            // dgvlListaProducto.Columns["Alias"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            // dgvlListaProducto.Columns["Nota"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            // dgvlListaProducto.Columns["TiempoDuracion"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            // dgvlListaProducto.Columns["Stock"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            // dgvlListaProducto.Columns["Precio"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
-            // foreach (DataGridViewColumn column in dgvlListaProducto.Columns)
-            // {
-            //     column.SortMode = DataGridViewColumnSortMode.NotSortable;
-            // }
             try
             {
                 CrearTabla();
@@ -119,8 +100,6 @@ namespace SistemaFigueri
                         Lista[i]._TiempoDuracion,
                         Lista[i]._precio.ToString(),num.ToString() };
                         dgvlListaProducto.Rows.Add(fila);
-
-
                     }
                 }
             }
@@ -219,9 +198,6 @@ namespace SistemaFigueri
         {
             try
             {
-                //int id_prod = Convert.ToInt32(dgvProductos.CurrentRow.Cells[0].Value);
-                //List<entProducto> AgregarProdAlista = LocalBD.Instancia.ReturnDetVenta(1, id_prod, 1);
-                //frmBoletaVenta frmbv = new frmBoletaVenta(this.id_Usario);
                 int intento = LocalBD.Instancia.ReturnIntento(1, 1);
                 int invocador = LocalBD.Instancia.Invocar(0, 0);
                 if (invocador == 1)
@@ -239,30 +215,12 @@ namespace SistemaFigueri
                     LocalBD.Instancia.Invocar(1, 0);
                 }
                 this.Close();
-                //frmbv.txtidcli.Text = id_cli.ToString();
-                //foreach (Form frm in Application.OpenForms)
-                //{
-                //    if (frm.GetType() == typeof(frmBoletaVenta))
-                //    {
-                //        frm.Show();
-                //        this.Visible = false;
-                //        return;
-                //    }
-                //}
-                //frmbv.Show();
-
             }
             catch (ApplicationException ae) { MessageBox.Show(ae.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information); }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            //string idproducto = Idproducto.Text.ToString();
-            //SqlDataAdapter adapter = obj.buscarclienteProducto(idcliente, idproducto);
-            //MessageBox.Show("cliente " + idcliente);
-
-            //FormVenta fv = new FormVenta();
-            //fv.tbAlias.Text = this.dgvlListaProducto.CurrentRow.Cells["Alias"].Value.ToString();
             String IdProducto = dgvlListaProducto.Rows[e.RowIndex].Cells["ColumnCodigo"].Value.ToString();
             String Producto = dgvlListaProducto.Rows[e.RowIndex].Cells["ColumnDescripcion"].Value.ToString();
             String Alias = dgvlListaProducto.Rows[e.RowIndex].Cells["ColumnAlias"].Value.ToString(); 
@@ -278,8 +236,7 @@ namespace SistemaFigueri
             idproducto = IdProducto;
             this.DialogResult = DialogResult.OK;
             this.Close();
-            //fv.Close();
-            
+            //fv.Close();   
         }
 
     }

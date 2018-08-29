@@ -5,19 +5,26 @@ using System.Text;
 using System.Threading.Tasks;
 using CapaDatos;
 using System.Data;
+using CapaEntidades;
 using System.Data.SqlClient;
 
 namespace CapaNegocio
 {
-   public class CNClientes
+    public class CNClientes
     {
-         CDCliente cli = new CDCliente();
+        private static readonly CNClientes _intancia = new CNClientes();
+        public static CNClientes Intancia
+        {
+            get { return CNClientes._intancia; }
+        }
+
+        CDCliente cli = new CDCliente();
 
         //READ CLIENT
         public SqlDataAdapter MostarClientes()
         {
-            return  cli.listarClientes();
-       
+            return cli.listarClientes();
+
         }
 
         //CREATE CLIENT
@@ -28,11 +35,11 @@ namespace CapaNegocio
         {
             Console.WriteLine("Sera pues ..." + idTienda + " " + idSector + " " + nombreEmpresa + " " + nombres + " " + apellidoP + " " + apellidoM + " " +
             direccion + " " + contacto + " " + telefono + " " + fax + " " + ruc + " " + correo + " " + idTipoDoc + " " + nroDoc + " " +
-            observacion + " " + inscripcion + " " + salCta + " " + fechaNac + " " + tipoCompra + "   " + credito + " "  + queja + "   "
+            observacion + " " + inscripcion + " " + salCta + " " + fechaNac + " " + tipoCompra + "   " + credito + " " + queja + "   "
             + ordenclie + "   " + promedioVentas + "   " + cta_cli + "   " + depa + "   " + provi + "   " + distri + "   " + usuRegistra);
-            cli.InsertarCliente(idTienda,idSector,nombreEmpresa,nombres,apellidoP,apellidoM,direccion,contacto,telefono,fax,ruc,correo,idTipoDoc,nroDoc,
-                observacion,inscripcion,Convert.ToDouble(salCta),fechaNac,tipoCompra,Convert.ToDouble(credito),queja,Convert.ToInt32(ordenclie),
-                Convert.ToDouble(promedioVentas),cta_cli,depa,provi,distri,usuRegistra);
+            cli.InsertarCliente(idTienda, idSector, nombreEmpresa, nombres, apellidoP, apellidoM, direccion, contacto, telefono, fax, ruc, correo, idTipoDoc, nroDoc,
+                observacion, inscripcion, Convert.ToDouble(salCta), fechaNac, tipoCompra, Convert.ToDouble(credito), queja, Convert.ToInt32(ordenclie),
+                Convert.ToDouble(promedioVentas), cta_cli, depa, provi, distri, usuRegistra);
         }
 
         //UPDATE CLIENT
@@ -41,19 +48,19 @@ namespace CapaNegocio
             String inscripcion, String salCta, String fechaNac, String tipoCompra, String credito, String queja, String ordenclie, String promedioVentas,
             String cta_cli, String depa, String provi, String distri, String usuRegistra, String usuModifica, String fechaModi)
         {
-            Console.WriteLine("Editadooooo ..."+ idCliente + "" + idTienda + " " + idSector + " " + nombreEmpresa + " " + nombres + " " + apellidoP + " " + apellidoM + " " +
+            Console.WriteLine("Editadooooo ..." + idCliente + "" + idTienda + " " + idSector + " " + nombreEmpresa + " " + nombres + " " + apellidoP + " " + apellidoM + " " +
              direccion + " " + contacto + " " + telefono + " " + fax + " " + ruc + " " + correo + " " + idTipoDoc + " " + nroDoc + " " +
              observacion + " " + inscripcion + " " + salCta + " " + fechaNac + " " + tipoCompra + "   " + credito + " " + queja + "   "
              + ordenclie + "   " + promedioVentas + "   " + cta_cli + "   " + depa + "   " + provi + "   " + distri + "   " + usuRegistra);
 
-            cli.EditarCliente(idCliente,idTienda,idSector,nombreEmpresa,nombres,apellidoP,apellidoM,direccion,contacto,telefono,fax,ruc,correo,idTipoDoc,nroDoc,observacion,inscripcion,
-                Convert.ToDouble(salCta),fechaNac,tipoCompra,Convert.ToDouble(credito),queja,Convert.ToInt32(ordenclie),Convert.ToDouble(promedioVentas),cta_cli,depa,provi,distri,usuRegistra,
-                usuModifica,fechaModi);
+            cli.EditarCliente(idCliente, idTienda, idSector, nombreEmpresa, nombres, apellidoP, apellidoM, direccion, contacto, telefono, fax, ruc, correo, idTipoDoc, nroDoc, observacion, inscripcion,
+                Convert.ToDouble(salCta), fechaNac, tipoCompra, Convert.ToDouble(credito), queja, Convert.ToInt32(ordenclie), Convert.ToDouble(promedioVentas), cta_cli, depa, provi, distri, usuRegistra,
+                usuModifica, fechaModi);
         }
 
 
         //DELETE CLIENT
-        public void DeleteClient(String idRecpCliente)  
+        public void DeleteClient(String idRecpCliente)
         {
             cli.EliminarCliente(idRecpCliente);
         }
@@ -75,11 +82,59 @@ namespace CapaNegocio
 
         //Carga Cliente Filtro Venta
 
-        public SqlDataAdapter CargaProductoFiltro()
+        //public SqlDataAdapter CargaProductoFiltro()
+        //{
+        //    SqlDataAdapter cliente;
+        //    cliente = cli.CargaClienteRedeptor();
+        //    return cliente;
+        //}
+        //ListaPRoductos paraventa
+        public List<CECliente> ListaClienteVenta()
         {
-            SqlDataAdapter cliente;
-            cliente = cli.CargaClienteRedeptor();
-            return cliente;
+            try
+            {
+                List<CECliente> Lista = CDCliente.Intancia.ListaCLienteVenta();
+                if (Lista.Count <= 0) throw new ApplicationException("Lista de clientes vacia");
+                else if (Lista == null) throw new ApplicationException("Error al cargar lista de clientes");
+                return Lista;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        //Buscar Cliente En textbox
+        public CECliente BuscarCliente(int id_cli, String nro_Doc)
+        {
+            try
+            {
+                CECliente c = null;
+                c = CDCliente.Intancia.BuscarCliente(id_cli, nro_Doc);
+                if (c == null) throw new ApplicationException("No se encontro registro");
+                return c;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        //BUsca Cliente Según TextBox
+        public List<CECliente> BuscarClienAvanzada(int tip_busq, String val_busqueda)
+        {
+            try
+            {
+                List<CECliente> Lista = null;
+                Lista = CDCliente.Intancia.BuscarClienteAvanzada(tip_busq, val_busqueda);
+                return Lista;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

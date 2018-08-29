@@ -38,7 +38,6 @@
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.btnCerrarFiltroCliente = new Bunifu.Framework.UI.BunifuTileButton();
             this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.tbMIdCliente = new System.Windows.Forms.TextBox();
             this.rbPrecio = new System.Windows.Forms.RadioButton();
             this.rbNombreProd = new System.Windows.Forms.RadioButton();
             this.dgvlListaProducto = new System.Windows.Forms.DataGridView();
@@ -142,26 +141,11 @@
             this.bunifuImageButton2.TabStop = false;
             this.bunifuImageButton2.Zoom = 10;
             // 
-            // tbMIdCliente
-            // 
-            this.tbMIdCliente.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.tbMIdCliente.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.tbMIdCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(190)))), ((int)(((byte)(154)))));
-            this.tbMIdCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbMIdCliente.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbMIdCliente.ForeColor = System.Drawing.Color.Black;
-            this.tbMIdCliente.Location = new System.Drawing.Point(75, 470);
-            this.tbMIdCliente.Name = "tbMIdCliente";
-            this.tbMIdCliente.ReadOnly = true;
-            this.tbMIdCliente.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbMIdCliente.Size = new System.Drawing.Size(171, 20);
-            this.tbMIdCliente.TabIndex = 227;
-            // 
             // rbPrecio
             // 
             this.rbPrecio.AutoSize = true;
             this.rbPrecio.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbPrecio.Location = new System.Drawing.Point(124, 54);
+            this.rbPrecio.Location = new System.Drawing.Point(98, 44);
             this.rbPrecio.Name = "rbPrecio";
             this.rbPrecio.Size = new System.Drawing.Size(74, 20);
             this.rbPrecio.TabIndex = 3;
@@ -174,7 +158,7 @@
             // 
             this.rbNombreProd.AutoSize = true;
             this.rbNombreProd.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbNombreProd.Location = new System.Drawing.Point(4, 54);
+            this.rbNombreProd.Location = new System.Drawing.Point(4, 46);
             this.rbNombreProd.Name = "rbNombreProd";
             this.rbNombreProd.Size = new System.Drawing.Size(78, 20);
             this.rbNombreProd.TabIndex = 1;
@@ -217,7 +201,7 @@
             this.dgvlListaProducto.RowHeadersVisible = false;
             this.dgvlListaProducto.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvlListaProducto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvlListaProducto.Size = new System.Drawing.Size(977, 308);
+            this.dgvlListaProducto.Size = new System.Drawing.Size(1001, 324);
             this.dgvlListaProducto.TabIndex = 230;
             this.dgvlListaProducto.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvlListaProducto_CellDoubleClick);
             // 
@@ -238,7 +222,7 @@
             // 
             // bunifuCards1
             // 
-            this.bunifuCards1.BackColor = System.Drawing.Color.White;
+            this.bunifuCards1.BackColor = System.Drawing.Color.BurlyWood;
             this.bunifuCards1.BorderRadius = 5;
             this.bunifuCards1.BottomSahddow = true;
             this.bunifuCards1.color = System.Drawing.Color.Tomato;
@@ -250,7 +234,7 @@
             this.bunifuCards1.Name = "bunifuCards1";
             this.bunifuCards1.RightSahddow = true;
             this.bunifuCards1.ShadowDepth = 20;
-            this.bunifuCards1.Size = new System.Drawing.Size(200, 76);
+            this.bunifuCards1.Size = new System.Drawing.Size(188, 76);
             this.bunifuCards1.TabIndex = 219;
             // 
             // FormBuscarProducto
@@ -261,7 +245,6 @@
             this.ClientSize = new System.Drawing.Size(1095, 537);
             this.Controls.Add(this.bunifuCards1);
             this.Controls.Add(this.dgvlListaProducto);
-            this.Controls.Add(this.tbMIdCliente);
             this.Controls.Add(this.bunifuImageButton2);
             this.Controls.Add(this.btnCerrarFiltroCliente);
             this.Controls.Add(this.lbresultados);
@@ -288,7 +271,6 @@
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private Bunifu.Framework.UI.BunifuTileButton btnCerrarFiltroCliente;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton2;
-        public System.Windows.Forms.TextBox tbMIdCliente;
         private System.Windows.Forms.RadioButton rbPrecio;
         private System.Windows.Forms.RadioButton rbNombreProd;
         private System.Windows.Forms.DataGridView dgvlListaProducto;

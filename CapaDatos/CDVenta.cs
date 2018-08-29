@@ -21,7 +21,7 @@ namespace CapaDatos
         {
             DataTable table = new DataTable();
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "select * from dbo.TIPO_PAGO";
+            comando.CommandText = "select * from Caja.TIPO_PAGO";
             leer = comando.ExecuteReader();
             table.Load(leer);
             leer.Close();
@@ -32,7 +32,7 @@ namespace CapaDatos
         {
             DataTable table = new DataTable();
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "select * from CAja.Moneda";
+            comando.CommandText = "select * from Caja.Moneda";
             leer = comando.ExecuteReader();
             table.Load(leer);
             leer.Close();
