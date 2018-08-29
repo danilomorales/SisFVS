@@ -48,7 +48,7 @@ namespace SistemaFigueri
             dgvCliente.Columns.Add("ColumnRazón_Social", "Razón_Social");
            dgvCliente.Columns.Add("ColumnSector", "Sector");
 
-            dgvCliente.Columns["ColumnIdCliente"].Width = 40;
+           // dgvCliente.Columns["ColumnIdCliente"].Width = 40;
             dgvCliente.Columns["ColumnDocumento"].Width = 10;
             dgvCliente.Columns["ColumnDNI"].Width = 10;
             dgvCliente.Columns["ColumnRUC"].Width = 10;
