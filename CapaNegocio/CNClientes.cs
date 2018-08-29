@@ -127,7 +127,7 @@ namespace CapaNegocio
             try
             {
                 List<CECliente> Lista = null;
-                //Lista = CDCliente.Intancia.busca(tip_busq, val_busqueda);
+                Lista = CDCliente.Intancia.BuscarClienteAvanzada(tip_busq, val_busqueda);
                 return Lista;
             }
             catch (Exception)

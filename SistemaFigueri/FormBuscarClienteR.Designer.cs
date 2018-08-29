@@ -81,7 +81,7 @@
             this.bunifuImageButton2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuImageButton2.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton2.Image")));
             this.bunifuImageButton2.ImageActive = null;
-            this.bunifuImageButton2.Location = new System.Drawing.Point(241, 57);
+            this.bunifuImageButton2.Location = new System.Drawing.Point(230, 54);
             this.bunifuImageButton2.Name = "bunifuImageButton2";
             this.bunifuImageButton2.Size = new System.Drawing.Size(38, 31);
             this.bunifuImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -120,7 +120,7 @@
             this.dgvCliente.Name = "dgvCliente";
             this.dgvCliente.ReadOnly = true;
             this.dgvCliente.RowHeadersVisible = false;
-            this.dgvCliente.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvCliente.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dgvCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCliente.Size = new System.Drawing.Size(926, 308);
             this.dgvCliente.TabIndex = 224;
@@ -139,10 +139,10 @@
             this.tbFiltraCliente.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
             this.tbFiltraCliente.LineMouseHoverColor = System.Drawing.Color.SandyBrown;
             this.tbFiltraCliente.LineThickness = 6;
-            this.tbFiltraCliente.Location = new System.Drawing.Point(275, 57);
+            this.tbFiltraCliente.Location = new System.Drawing.Point(271, 54);
             this.tbFiltraCliente.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbFiltraCliente.Name = "tbFiltraCliente";
-            this.tbFiltraCliente.Size = new System.Drawing.Size(422, 31);
+            this.tbFiltraCliente.Size = new System.Drawing.Size(447, 31);
             this.tbFiltraCliente.TabIndex = 223;
             this.tbFiltraCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.tbFiltraCliente.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbFiltraCliente_KeyUp);
@@ -176,7 +176,7 @@
             this.bunifuCustomLabel15.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel15.ForeColor = System.Drawing.Color.Black;
             this.bunifuCustomLabel15.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuCustomLabel15.Location = new System.Drawing.Point(704, 67);
+            this.bunifuCustomLabel15.Location = new System.Drawing.Point(725, 59);
             this.bunifuCustomLabel15.Name = "bunifuCustomLabel15";
             this.bunifuCustomLabel15.Size = new System.Drawing.Size(209, 21);
             this.bunifuCustomLabel15.TabIndex = 213;
@@ -217,20 +217,21 @@
             this.bunifuCards1.Name = "bunifuCards1";
             this.bunifuCards1.RightSahddow = true;
             this.bunifuCards1.ShadowDepth = 20;
-            this.bunifuCards1.Size = new System.Drawing.Size(196, 76);
+            this.bunifuCards1.Size = new System.Drawing.Size(186, 76);
             this.bunifuCards1.TabIndex = 226;
             // 
             // rbPrecio
             // 
             this.rbPrecio.AutoSize = true;
             this.rbPrecio.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbPrecio.Location = new System.Drawing.Point(84, 39);
+            this.rbPrecio.Location = new System.Drawing.Point(3, 53);
             this.rbPrecio.Name = "rbPrecio";
-            this.rbPrecio.Size = new System.Drawing.Size(109, 20);
+            this.rbPrecio.Size = new System.Drawing.Size(88, 20);
             this.rbPrecio.TabIndex = 3;
             this.rbPrecio.TabStop = true;
-            this.rbPrecio.Text = "Razón Social";
+            this.rbPrecio.Text = "Apellidos";
             this.rbPrecio.UseVisualStyleBackColor = true;
+            this.rbPrecio.CheckedChanged += new System.EventHandler(this.rbPrecio_CheckedChanged);
             // 
             // bunifuCustomLabel22
             // 
@@ -243,22 +244,23 @@
             this.bunifuCustomLabel22.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bunifuCustomLabel22.Location = new System.Drawing.Point(0, 0);
             this.bunifuCustomLabel22.Name = "bunifuCustomLabel22";
-            this.bunifuCustomLabel22.Size = new System.Drawing.Size(195, 21);
+            this.bunifuCustomLabel22.Size = new System.Drawing.Size(265, 21);
             this.bunifuCustomLabel22.TabIndex = 218;
-            this.bunifuCustomLabel22.Text = "        BUSCAR POR      ";
+            this.bunifuCustomLabel22.Text = "        BUSCAR POR                    ";
             this.bunifuCustomLabel22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // rbNombreProd
             // 
             this.rbNombreProd.AutoSize = true;
             this.rbNombreProd.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbNombreProd.Location = new System.Drawing.Point(4, 37);
+            this.rbNombreProd.Location = new System.Drawing.Point(3, 30);
             this.rbNombreProd.Name = "rbNombreProd";
-            this.rbNombreProd.Size = new System.Drawing.Size(82, 20);
+            this.rbNombreProd.Size = new System.Drawing.Size(140, 20);
             this.rbNombreProd.TabIndex = 1;
             this.rbNombreProd.TabStop = true;
-            this.rbNombreProd.Text = "Nombre ";
+            this.rbNombreProd.Text = "Nombre/Empresa";
             this.rbNombreProd.UseVisualStyleBackColor = true;
+            this.rbNombreProd.CheckedChanged += new System.EventHandler(this.rbNombreProd_CheckedChanged);
             // 
             // FormBuscarClienteR
             // 

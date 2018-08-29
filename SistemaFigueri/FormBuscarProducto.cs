@@ -179,7 +179,7 @@ namespace SistemaFigueri
         {
             try
             {
-                int num = 1;
+                int num = 0;
                 foreach (DataGridViewRow row in dgvlListaProducto.Rows)
                 {
                     num++;

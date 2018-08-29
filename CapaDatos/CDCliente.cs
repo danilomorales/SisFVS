@@ -113,7 +113,7 @@ namespace CapaDatos
                 "c.UsuarioRegistra as'Usuario que Registra',c.Inscripcion as 'Inscripción',c.Estado,c.SaldoCtaCte as 'Cuenta Corriente',c.Nivel," +
                 "c.FechaNac as 'Fecha de Nacimiento',c.TipoCompra as 'Tipo de Compra',c.Credito,c.Queja,c.EstSaldoIni as 'Estado Inicial'," +
                 "c.OrdenCliente as 'Orden del Cliente',c.PromedioDeVentas as 'Promedio de ventas'," +
-                "c.cta_cli,c.UsuarioModifica,c.FechaModifica from caja.CLIENTE c, dbo.TIENDA t, dbo.SECTOR s, dbo.TIPO_DOC_IDENT d " +
+                "c.cta_cli,c.UsuarioModifica,c.FechaModifica from caja.CLIENTE c, Caja.TIENDA t, Caja.SECTOR s, Caja.TIPO_DOC_IDENT d " +
                 "where c.IdTienda = t.IdTienda AND c.IdSector = s.IdSector and c.IdTipoDocIdent = d.IdTipoDocIdent; ";
             adapter = new SqlDataAdapter(sql, conexion.AbrirConexion());
             return adapter;
@@ -315,6 +315,44 @@ namespace CapaDatos
             finally { cmd.Connection.Close(); }
             return Lista;
         }
+
+        public List<CECliente> BuscarClienteAvanzada(int tip_entrada, String valor_entrada)
+        {
+            SqlCommand cmd = null;
+            SqlDataReader dr = null;
+            List<CECliente> Lista = null;
+            try
+            {
+                SqlConnection cn = CDConexion.Instancia.CerrarConexion();
+                cmd = new SqlCommand("Caja.SP_FE_BuscaClienteAvanzado", cn);
+                cmd.Parameters.AddWithValue("@prmTipEntrada", tip_entrada);
+                cmd.Parameters.AddWithValue("@prmValorEntrada", valor_entrada);
+
+                cmd.CommandType = CommandType.StoredProcedure;
+                cn.Open();
+                dr = cmd.ExecuteReader();
+                Lista = new List<CECliente>();
+                while (dr.Read())
+                {
+                    CECliente c = new CECliente();
+                    c.Documento = dr["Documento"].ToString();
+                    c.DNI = dr["DNI"].ToString();
+                    c.RUC = dr["RUC"].ToString();
+                    c.Nombres = dr["Nombres"].ToString();
+                    c.Apellidos = dr["Apellidos"].ToString();
+                    c.Nombre_Empresa = dr["Razón_Social"].ToString();
+                    c.Sector = dr["Sector"].ToString();
+                    Lista.Add(c);
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally { cmd.Connection.Close(); }
+            return Lista;
+        }
+
 
         ////Llenar ComboBox DEPARTAMENTO
         //public DataTable ListarDepartamento()

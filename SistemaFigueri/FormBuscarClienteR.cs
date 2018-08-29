@@ -23,7 +23,8 @@ namespace SistemaFigueri
         DataTable tbCliente = new DataTable();
 
         public String dni { get; set; }
-        public String cliente { get; set; }
+        public String clienteN { get; set; }
+        public String clienteA { get; set; }
         public String ruc { get; set; }
         public String empresa { get; set; }
         public String tipodoc { get; set; }
@@ -47,14 +48,16 @@ namespace SistemaFigueri
             dgvCliente.Columns.Add("ColumnRazón_Social", "Razón_Social");
            dgvCliente.Columns.Add("ColumnSector", "Sector");
 
-            //dgvCliente.Columns["ColumnIdCliente"].Width = 40;
-            dgvCliente.Columns["ColumnDocumento"].Width = 40;
-            dgvCliente.Columns["ColumnDNI"].Width = 50;
-            dgvCliente.Columns["ColumnRUC"].Width = 20;
-            dgvCliente.Columns["ColumnNombres"].Width = 20;
-            dgvCliente.Columns["ColumnApellidos"].Width = 20;
-            dgvCliente.Columns["ColumnRazón_Social"].Width = 40;
-            dgvCliente.Columns["ColumnSector"].Width = 40;
+            dgvCliente.Columns["ColumnIdCliente"].Width = 40;
+            dgvCliente.Columns["ColumnDocumento"].Width = 10;
+            dgvCliente.Columns["ColumnDNI"].Width = 10;
+            dgvCliente.Columns["ColumnRUC"].Width = 10;
+            dgvCliente.Columns["ColumnNombres"].Width = 15;
+            dgvCliente.Columns["ColumnApellidos"].Width = 15;
+            dgvCliente.Columns["ColumnRazón_Social"].Width = 30;
+            dgvCliente.Columns["ColumnSector"].Width = 70;
+            //this.dgvCliente.Columns["ColumnIdCliente"].Visible = false;
+
             DataGridViewCellStyle cssabecera = new DataGridViewCellStyle();
             cssabecera.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvCliente.ColumnHeadersDefaultCellStyle = cssabecera;
@@ -82,9 +85,9 @@ namespace SistemaFigueri
                         Lista[i].Documento,
                         Lista[i].DNI,
                         Lista[i].RUC,
-                        Lista[i].Nombre_Empresa,
                         Lista[i].Nombres,
                         Lista[i].Apellidos,
+                        Lista[i].Nombre_Empresa,
                         Lista[i].Sector};
                     dgvCliente.Rows.Add(fila);
                 }
@@ -165,18 +168,19 @@ namespace SistemaFigueri
                 {
                     String val_entrada = tbFiltraCliente.Text;
                     int num = 0;
-                    List<CECliente> Lista = CNClientes.Instancia.BuscarprodAvanzada(tip_busqueda, val_entrada);
+                    List<CECliente> Lista = CNClientes.Intancia.BuscarClienAvanzada(tip_busqueda, val_entrada);
                     dgvCliente.Rows.Clear();
                     for (int i = 0; i < Lista.Count(); i++)
                     {
                         num++;
                         String[] fila = new String[] {
-                        Lista[i]._Codigo,
-                        Lista[i]._Alias,
-                        Lista[i]._DescripcionProducto,
-                        Lista[i]._Stock,
-                        Lista[i]._TiempoDuracion,
-                        Lista[i]._precio.ToString(),num.ToString() };
+                        Lista[i].Documento,
+                        Lista[i].DNI,
+                        Lista[i].RUC,
+                        Lista[i].Nombre_Empresa,
+                        Lista[i].Nombres,
+                        Lista[i].Apellidos,
+                        Lista[i].Sector};
                         dgvCliente.Rows.Add(fila);
                     }
                 }
@@ -190,24 +194,77 @@ namespace SistemaFigueri
 
         private void dgvCliente_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            String Dni = dgvCliente.Rows[e.RowIndex].Cells["DNI"].Value.ToString();
-            String Nombres = dgvCliente.Rows[e.RowIndex].Cells["Nombres"].Value.ToString();
-            String Apellidos = dgvCliente.Rows[e.RowIndex].Cells["Apellidos"].Value.ToString();
-            String Ruc = dgvCliente.Rows[e.RowIndex].Cells["RUC"].Value.ToString();
-            String IdCliente = dgvCliente.Rows[e.RowIndex].Cells["IdCliente"].Value.ToString();
-            String Empresa = dgvCliente.Rows[e.RowIndex].Cells["NombreEmpresa"].Value.ToString();
-            String TipoDoc = dgvCliente.Rows[e.RowIndex].Cells["Documento"].Value.ToString();
+            try
+            {
+                int intento = LocalBD.Instancia.ReturnIntento(1, 1);
+                int invocador = LocalBD.Instancia.Invocar(0, 0);
+                if (invocador == 1)
+                {
+                    int Id_Cliente = Convert.ToInt32(dgvCliente.CurrentRow.Cells[0].Value);
+                    //LocalBD.Instancia.ReturnDetVenta(1, id_prod, 1);
+                }
+                else if (invocador == 2)
+                {
+                    int Id_Cliente = Convert.ToInt32(dgvCliente.CurrentRow.Cells[0].Value);
+                    //LocalBD.Instancia.ReturnDetNotaVenta(1, id_prod, 1);
+                }
+                else
+                {
+                    LocalBD.Instancia.Invocar(1, 0);
+                }
+                this.Close();
+            }
+            catch (ApplicationException ae) { MessageBox.Show(ae.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
+            String Dni = dgvCliente.Rows[e.RowIndex].Cells["ColumnDNI"].Value.ToString();
+            String Nombres = dgvCliente.Rows[e.RowIndex].Cells["ColumnNombres"].Value.ToString();
+            String Apellidos = dgvCliente.Rows[e.RowIndex].Cells["ColumnApellidos"].Value.ToString();
+            String Ruc = dgvCliente.Rows[e.RowIndex].Cells["ColumnRUC"].Value.ToString();
+            //String IdCliente = dgvCliente.Rows[e.RowIndex].Cells["ColumnIdCliente"].Value.ToString();
+            String Empresa = dgvCliente.Rows[e.RowIndex].Cells["ColumnRazón_Social"].Value.ToString();
+            String TipoDoc = dgvCliente.Rows[e.RowIndex].Cells["ColumnDocumento"].Value.ToString();
+  
             dni = Dni;
-            cliente = "" +""+Nombres+" "+Apellidos;
+            clienteN = Nombres;
+            clienteA = Apellidos;
             ruc = Ruc;
-            idcliente = IdCliente;
+            //idcliente = IdCliente;
             empresa = Empresa;
             tipodoc = TipoDoc;
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
 
+        private void rbNombreProd_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                tip_busqueda = 1;
+                dgvCliente.Rows.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void rbPrecio_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                tip_busqueda = 2;
+                dgvCliente.Rows.Clear();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 
 

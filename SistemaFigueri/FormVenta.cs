@@ -225,7 +225,9 @@ namespace SistemaFigueri
             MostrarClientes();
             this.crearTabla();
             GenerarNumeroComprobante();
-            
+            String fecha2 = DateTime.Now.AddDays(-(int)DateTime.Now.DayOfWeek).ToString("yyyy-MM-dd");
+            dtpFechaEmision.Value = DateTime.Today.AddDays(-(int)DateTime.Now.DayOfWeek);
+            dtpFechaEmision.Value = DateTime.Today;
 
             //GenerarIdVenta();
             // GenerarSeriedeDocumento();
@@ -527,12 +529,18 @@ namespace SistemaFigueri
             Program.Alias = "";
             Program.PrecioVenta = 0;
         }
-        private void LimpiarCliente()
+        private void LimpiarClienteDNI()
         {
             tbtipodoc.Clear();
             tbClienteNombre.Clear();
             tbrazonsocial.Clear();
             tbRuc.Clear();
+        }
+        private void LimpiarClienteRUC()
+        {
+            tbtipodoc.Clear();
+            tbClienteNombre.Clear();
+            tbrazonsocial.Clear();
         }
         private void LimpiarProducto()
         {
@@ -559,7 +567,8 @@ namespace SistemaFigueri
             {
                 if (form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-                    tbClienteNombre.Text = form.cliente;
+                    tbClienteNombre.Text = form.clienteN;
+                    tbCliapellido.Text = form.clienteA;
                     tbRuc.Text = form.ruc;
                     tbDocumento.Text = form.dni;
                     tbtipodoc.Text = form.tipodoc;
@@ -1143,13 +1152,56 @@ namespace SistemaFigueri
             }
 
         }
-        private void BuscaCLienteVenta()
+        private void BuscaCLienteVentaDNI()
+        {
+            try
+            {
+                CECliente c = null;
+                String num_doc = tbDocumento.Text;
+                c = CNClientes.Intancia.BuscarCliente(0, num_doc);
+                tbClienteNombre.Text = c.Nombres;
+                tbCliapellido.Text = c.Apellidos;
+                tbrazonsocial.Text = c.Nombre_Empresa;
+                tbtipodoc.Text = c.Documento;
+                tbRuc.Text = c.RUC;
+                int i = LocalBD.Instancia.ReturnIdCliente(1, c.IdCliente);
+            }
+            catch (ApplicationException)
+            {
+                DialogResult r = MessageBox.Show("No se encontro al Cliente, ¿realizar Búsqueda avanzada?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (r == DialogResult.Yes)
+                {
+                    using (FormBuscarClienteR form = new FormBuscarClienteR())
+                    {
+                        if (form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                        {
+                            tbClienteNombre.Text = form.clienteN;
+                            tbCliapellido.Text = form.clienteA;
+                            tbRuc.Text = form.ruc;
+                            tbDocumento.Text = form.dni;
+                            tbtipodoc.Text = form.tipodoc;
+                            tbrazonsocial.Text = form.empresa;
+                            tbIdCliente.Text = form.idcliente;
+
+                            CNProductos objProducto = new CNProductos();
+
+                        }
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void BuscaCLienteVentaRUC()
         {
 
             try
             {
                 CECliente c = null;
-                String num_doc = tbDocumento.Text;
+                String num_doc = tbRuc.Text;
                 c = CNClientes.Intancia.BuscarCliente(0, num_doc);
                 tbClienteNombre.Text = c.Nombres;
                 tbrazonsocial.Text = c.Nombre_Empresa;
@@ -1166,7 +1218,8 @@ namespace SistemaFigueri
                     {
                         if (form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                         {
-                            tbClienteNombre.Text = form.cliente;
+                            tbClienteNombre.Text = form.clienteN;
+                            tbCliapellido.Text = form.clienteA;
                             tbRuc.Text = form.ruc;
                             tbDocumento.Text = form.dni;
                             tbtipodoc.Text = form.tipodoc;
@@ -1194,18 +1247,26 @@ namespace SistemaFigueri
         {
             if (e.KeyCode == Keys.Enter)
             {
-                BuscaCLienteVenta();
+                BuscaCLienteVentaDNI();
             }
             else
             {
-                LimpiarCliente();
+                LimpiarClienteDNI();
 
             }
         }
 
         private void tbRuc_KeyDown(object sender, KeyEventArgs e)
         {
+            if (e.KeyCode == Keys.Enter)
+            {
+                BuscaCLienteVentaRUC();
+            }
+            else
+            {
+                LimpiarClienteRUC();
 
+            }
 
         }
 
