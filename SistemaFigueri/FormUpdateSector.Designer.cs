@@ -276,7 +276,7 @@
             this.bunifuThinButton22.IdleFillColor = System.Drawing.Color.Maroon;
             this.bunifuThinButton22.IdleForecolor = System.Drawing.Color.White;
             this.bunifuThinButton22.IdleLineColor = System.Drawing.Color.SteelBlue;
-            this.bunifuThinButton22.Location = new System.Drawing.Point(383, 222);
+            this.bunifuThinButton22.Location = new System.Drawing.Point(384, 222);
             this.bunifuThinButton22.Margin = new System.Windows.Forms.Padding(5);
             this.bunifuThinButton22.Name = "bunifuThinButton22";
             this.bunifuThinButton22.Size = new System.Drawing.Size(181, 41);
