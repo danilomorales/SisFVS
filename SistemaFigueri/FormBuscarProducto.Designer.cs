@@ -145,7 +145,7 @@
             // 
             this.rbPrecio.AutoSize = true;
             this.rbPrecio.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbPrecio.Location = new System.Drawing.Point(124, 54);
+            this.rbPrecio.Location = new System.Drawing.Point(98, 44);
             this.rbPrecio.Name = "rbPrecio";
             this.rbPrecio.Size = new System.Drawing.Size(74, 20);
             this.rbPrecio.TabIndex = 3;
@@ -158,7 +158,7 @@
             // 
             this.rbNombreProd.AutoSize = true;
             this.rbNombreProd.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbNombreProd.Location = new System.Drawing.Point(4, 54);
+            this.rbNombreProd.Location = new System.Drawing.Point(4, 46);
             this.rbNombreProd.Name = "rbNombreProd";
             this.rbNombreProd.Size = new System.Drawing.Size(78, 20);
             this.rbNombreProd.TabIndex = 1;
@@ -201,7 +201,7 @@
             this.dgvlListaProducto.RowHeadersVisible = false;
             this.dgvlListaProducto.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvlListaProducto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvlListaProducto.Size = new System.Drawing.Size(977, 324);
+            this.dgvlListaProducto.Size = new System.Drawing.Size(1001, 324);
             this.dgvlListaProducto.TabIndex = 230;
             this.dgvlListaProducto.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvlListaProducto_CellDoubleClick);
             // 
@@ -222,7 +222,7 @@
             // 
             // bunifuCards1
             // 
-            this.bunifuCards1.BackColor = System.Drawing.Color.White;
+            this.bunifuCards1.BackColor = System.Drawing.Color.BurlyWood;
             this.bunifuCards1.BorderRadius = 5;
             this.bunifuCards1.BottomSahddow = true;
             this.bunifuCards1.color = System.Drawing.Color.Tomato;
@@ -234,7 +234,7 @@
             this.bunifuCards1.Name = "bunifuCards1";
             this.bunifuCards1.RightSahddow = true;
             this.bunifuCards1.ShadowDepth = 20;
-            this.bunifuCards1.Size = new System.Drawing.Size(200, 76);
+            this.bunifuCards1.Size = new System.Drawing.Size(188, 76);
             this.bunifuCards1.TabIndex = 219;
             // 
             // FormBuscarProducto

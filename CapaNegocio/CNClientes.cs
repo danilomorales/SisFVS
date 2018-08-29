@@ -82,13 +82,28 @@ namespace CapaNegocio
 
         //Carga Cliente Filtro Venta
 
-        public SqlDataAdapter CargaProductoFiltro()
+        //public SqlDataAdapter CargaProductoFiltro()
+        //{
+        //    SqlDataAdapter cliente;
+        //    cliente = cli.CargaClienteRedeptor();
+        //    return cliente;
+        //}
+        //ListaPRoductos paraventa
+        public List<CECliente> ListaClienteVenta()
         {
-            SqlDataAdapter cliente;
-            cliente = cli.CargaClienteRedeptor();
-            return cliente;
-        }
+            try
+            {
+                List<CECliente> Lista = CDCliente.Intancia.ListaCLienteVenta();
+                if (Lista.Count <= 0) throw new ApplicationException("Lista de clientes vacia");
+                else if (Lista == null) throw new ApplicationException("Error al cargar lista de clientes");
+                return Lista;
+            }
+            catch (Exception)
+            {
 
+                throw;
+            }
+        }
         //Buscar Cliente En textbox
         public CECliente BuscarCliente(int id_cli, String nro_Doc)
         {
@@ -98,6 +113,22 @@ namespace CapaNegocio
                 c = CDCliente.Intancia.BuscarCliente(id_cli, nro_Doc);
                 if (c == null) throw new ApplicationException("No se encontro registro");
                 return c;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        //BUsca Cliente Según TextBox
+        public List<CECliente> BuscarClienAvanzada(int tip_busq, String val_busqueda)
+        {
+            try
+            {
+                List<CECliente> Lista = null;
+                //Lista = CDCliente.Intancia.busca(tip_busq, val_busqueda);
+                return Lista;
             }
             catch (Exception)
             {

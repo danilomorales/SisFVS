@@ -229,13 +229,13 @@ namespace CapaDatos
             return table;
         }
 
-        public SqlDataAdapter CargaClienteRedeptor()
-        {
-            String sql = "select cr.IdCliente, di.Descripcion as Documento, (cr.NroDocumento) as DNI, cr.RUC, cr.Nombres, (cr.ApellidoPaterno +' '+cr.ApellidoMaterno) as Apellidos, cr.NombreEmpresa, s.DescripcionSector as Sector from  Caja.CLIENTE cr left join Caja.SECTOR s on cr.IdSector=s.IdSector left join Caja.TIPO_DOC_IDENT di on cr.IdTipoDocIdent =di.IdTipoDocIdent order by cr.IdCliente desc;";
-            adapter = new SqlDataAdapter(sql, conexion.AbrirConexion());
-            return adapter;
+        //public SqlDataAdapter CargaClienteRedeptor()
+        //{
+        //    String sql = "select cr.IdCliente, di.Descripcion as Documento, (cr.NroDocumento) as DNI, cr.RUC, cr.Nombres, (cr.ApellidoPaterno +' '+cr.ApellidoMaterno) as Apellidos, cr.NombreEmpresa, s.DescripcionSector as Sector from  Caja.CLIENTE cr left join Caja.SECTOR s on cr.IdSector=s.IdSector left join Caja.TIPO_DOC_IDENT di on cr.IdTipoDocIdent =di.IdTipoDocIdent order by cr.IdCliente desc;";
+        //    adapter = new SqlDataAdapter(sql, conexion.AbrirConexion());
+        //    return adapter;
 
-        }
+        //}
 
         //Busca Clientes en Textbox
 
@@ -276,6 +276,44 @@ namespace CapaDatos
             }
             finally { cmd.Connection.Close(); }
             return c;
+        }
+
+        public List<CECliente> ListaCLienteVenta()
+        {
+            SqlCommand cmd = null;
+            SqlDataReader dr = null;
+            List<CECliente> Lista = null;
+            
+            try
+            {
+                SqlConnection cn = CDConexion.Instancia.CerrarConexion();
+                cmd = new SqlCommand("Caja.SP_FE_ListaCliente_Venta", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cn.Open();
+                dr = cmd.ExecuteReader();
+                Lista = new List<CECliente>();
+                while (dr.Read())
+                {
+
+                    CECliente c = new CECliente();
+                   // c.IdCliente = Convert.ToInt32(dr["IdCliente"]);
+                    c.Documento = dr["Documento"].ToString();
+                    c.DNI = dr["DNI"].ToString();
+                    c.RUC = dr["RUC"].ToString();
+                    c.Nombres = dr["Nombres"].ToString();
+                    c.Apellidos = dr["Apellidos"].ToString();
+                    c.Nombre_Empresa = dr["Razón_Social"].ToString();
+                    c.Sector = dr["Sector"].ToString();
+                    Lista.Add(c);
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally { cmd.Connection.Close(); }
+            return Lista;
         }
 
         ////Llenar ComboBox DEPARTAMENTO

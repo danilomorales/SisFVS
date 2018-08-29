@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using CapaNegocio;
 using CapaDatos;
+using CapaEntidades;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
@@ -37,42 +38,62 @@ namespace SistemaFigueri
         {
 
 
-            dgvCliente.Columns.Add("ColumnCodigo", "Código");
-            dgvCliente.Columns.Add("ColumnAlias", "Alias");
-            dgvCliente.Columns.Add("ColumnDescripcion", "DescripcionProducto");
-            dgvCliente.Columns.Add("ColumnStock", "Stock");
-            dgvCliente.Columns.Add("ColumnDuracion", "TiempoDuracion");
-            dgvCliente.Columns.Add("ColumnPecio", "Precio");
+            //dgvCliente.Columns.Add("ColumnIdCliente", "IdCliente");
+            dgvCliente.Columns.Add("ColumnDocumento", "Documento");
+            dgvCliente.Columns.Add("ColumnDNI", "DNI");
+            dgvCliente.Columns.Add("ColumnRUC", "RUC");
+            dgvCliente.Columns.Add("ColumnNombres", "Nombres");
+            dgvCliente.Columns.Add("ColumnApellidos", "Apellidos");
+            dgvCliente.Columns.Add("ColumnRazón_Social", "Razón_Social");
+           dgvCliente.Columns.Add("ColumnSector", "Sector");
 
-            dgvCliente.Columns["ColumnCodigo"].Width = 20;
-            dgvCliente.Columns["ColumnAlias"].Width = 40;
-            dgvCliente.Columns["ColumnDescripcion"].Width = 50;
-            dgvCliente.Columns["ColumnStock"].Width = 20;
-            dgvCliente.Columns["ColumnDuracion"].Width = 20;
-            dgvCliente.Columns["ColumnPecio"].Width = 40;
+            //dgvCliente.Columns["ColumnIdCliente"].Width = 40;
+            dgvCliente.Columns["ColumnDocumento"].Width = 40;
+            dgvCliente.Columns["ColumnDNI"].Width = 50;
+            dgvCliente.Columns["ColumnRUC"].Width = 20;
+            dgvCliente.Columns["ColumnNombres"].Width = 20;
+            dgvCliente.Columns["ColumnApellidos"].Width = 20;
+            dgvCliente.Columns["ColumnRazón_Social"].Width = 40;
+            dgvCliente.Columns["ColumnSector"].Width = 40;
+            DataGridViewCellStyle cssabecera = new DataGridViewCellStyle();
+            cssabecera.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvCliente.ColumnHeadersDefaultCellStyle = cssabecera;
 
+            dgvCliente.AllowUserToAddRows = false;
+            dgvCliente.MultiSelect = false;
+            dgvCliente.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
 
         }
-        public void MostrarCliente(DataGridView dgvProducto)
+
+        private void LlenarGrid()
         {
             try
             {
-                CNClientes objProducto = new CNClientes();
-                SqlDataAdapter adapter = objProducto.CargaProductoFiltro();
-                foreach (DataRow row in tbCliente.Rows)
+                int num = 0;
+                dgvCliente.Rows.Clear();
+                List<CECliente> Lista = CNClientes.Intancia.ListaClienteVenta();
+                for (int i = 0; i < Lista.Count; i++)
                 {
-                    lista.Add((DataRow)row);
+                    num++;
+                    String[] fila = new String[]
+                    {
+                        //Lista[i].IdCliente.ToString(),num.ToString(),
+                        Lista[i].Documento,
+                        Lista[i].DNI,
+                        Lista[i].RUC,
+                        Lista[i].Nombre_Empresa,
+                        Lista[i].Nombres,
+                        Lista[i].Apellidos,
+                        Lista[i].Sector};
+                    dgvCliente.Rows.Add(fila);
                 }
-                adapter.Fill(tbCliente);
-                dgvProducto.DataSource = tbCliente;
-                adapter.Dispose();
-
             }
-            catch (Exception ex)
+            catch (ApplicationException ae) { MessageBox.Show(ae.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+            catch (Exception)
             {
-                MessageBox.Show("Carga fallida:" + ex.ToString());
 
+                throw;
             }
         }
 
@@ -80,36 +101,22 @@ namespace SistemaFigueri
         {
 
         }
-
+      
         private void FormBuscarCliente_Load(object sender, EventArgs e)
         {
-            dgvCliente.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
-            dgvCliente.AllowUserToResizeRows = false;
-            MostrarCliente(dgvCliente);
-            //lbtotal.Text = CStr(dgvCliente.RowCount);
-
-            //dgvlListaProducto.Columns[0].Visible = false;
-            dgvCliente.Columns["Documento"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvCliente.Columns["IdCliente"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvCliente.Columns["DNI"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvCliente.Columns["RUC"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvCliente.Columns["Nombres"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvCliente.Columns["Apellidos"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvCliente.Columns["NombreEmpresa"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvCliente.Columns["Sector"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            
-            dgvCliente.Columns["Documento"].Visible = false;
-            dgvCliente.Columns["IdCliente"].Visible = false;
-
-           foreach (DataGridViewColumn column in dgvCliente.Columns)
+            try
             {
-                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+                CrearTabla();
+                LlenarGrid();
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Aviso",
+                 MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
         }
-        private void ListarClientes()
-        {
-         
-        }
+    
 
         private void btnCerrarFiltro_Click(object sender, EventArgs e)
         {
@@ -146,12 +153,38 @@ namespace SistemaFigueri
           
             this.Close();
         }
-
+        int tip_busqueda = 1;
         private void tbFiltraCliente_KeyUp(object sender, KeyEventArgs e)
         {
-            DataView dc = tbCliente.DefaultView;
-            dc.RowFilter = string.Format("Documento like '%{0}%' or DNI like '%{0}%' or DNI like '%{0}%' or Nombres like '%{0}%' or Apellidos like '%{0}%' ", tbFiltraCliente.Text);
+            //DataView dc = tbCliente.DefaultView;
+            //dc.RowFilter = string.Format("Documento like '%{0}%' or DNI like '%{0}%' or RUC like '%{0}%' or Apellidos like '%{0}%' or Razón_Social like '%{0}%' ", tbFiltraCliente.Text);
 
+            try
+            {
+                if (e.KeyCode != Keys.Back)
+                {
+                    String val_entrada = tbFiltraCliente.Text;
+                    int num = 0;
+                    List<CECliente> Lista = CNClientes.Instancia.BuscarprodAvanzada(tip_busqueda, val_entrada);
+                    dgvCliente.Rows.Clear();
+                    for (int i = 0; i < Lista.Count(); i++)
+                    {
+                        num++;
+                        String[] fila = new String[] {
+                        Lista[i]._Codigo,
+                        Lista[i]._Alias,
+                        Lista[i]._DescripcionProducto,
+                        Lista[i]._Stock,
+                        Lista[i]._TiempoDuracion,
+                        Lista[i]._precio.ToString(),num.ToString() };
+                        dgvCliente.Rows.Add(fila);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
 
