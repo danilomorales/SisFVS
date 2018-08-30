@@ -97,7 +97,8 @@
             this.bunifuCustomLabel12 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel9 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.tabcredito = new System.Windows.Forms.TabPage();
-            this.dd = new System.Windows.Forms.TabPage();
+            this.tabCheque = new System.Windows.Forms.TabPage();
+            this.tabDeposito = new System.Windows.Forms.TabPage();
             this.materialTabSelector2 = new MaterialSkin.Controls.MaterialTabSelector();
             this.panel10 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
@@ -117,6 +118,7 @@
             this.tbrazonsocial = new System.Windows.Forms.TextBox();
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.tbIdCliente = new System.Windows.Forms.TextBox();
+            this.tbCliapellido = new System.Windows.Forms.TextBox();
             this.tbClienteNombre = new System.Windows.Forms.TextBox();
             this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.btnAgregarCliente = new Bunifu.Framework.UI.BunifuTileButton();
@@ -155,7 +157,6 @@
             this.dpFechaInicio = new Bunifu.Framework.UI.BunifuDatepicker();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.tbCliapellido = new System.Windows.Forms.TextBox();
             this.Venta.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.bunifuCards4.SuspendLayout();
@@ -917,7 +918,8 @@
             // 
             this.tformapago.Controls.Add(this.tabEfectivo);
             this.tformapago.Controls.Add(this.tabcredito);
-            this.tformapago.Controls.Add(this.dd);
+            this.tformapago.Controls.Add(this.tabCheque);
+            this.tformapago.Controls.Add(this.tabDeposito);
             this.tformapago.Depth = 0;
             this.tformapago.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tformapago.Location = new System.Drawing.Point(0, 48);
@@ -926,6 +928,7 @@
             this.tformapago.SelectedIndex = 0;
             this.tformapago.Size = new System.Drawing.Size(534, 192);
             this.tformapago.TabIndex = 210;
+            this.tformapago.SelectedIndexChanged += new System.EventHandler(this.tformapago_SelectedIndexChanged_1);
             // 
             // tabEfectivo
             // 
@@ -1122,15 +1125,25 @@
             this.tabcredito.TabIndex = 1;
             this.tabcredito.Text = "Crédito";
             // 
-            // dd
+            // tabCheque
             // 
-            this.dd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(147)))), ((int)(((byte)(103)))));
-            this.dd.Location = new System.Drawing.Point(4, 22);
-            this.dd.Name = "dd";
-            this.dd.Padding = new System.Windows.Forms.Padding(3);
-            this.dd.Size = new System.Drawing.Size(526, 166);
-            this.dd.TabIndex = 2;
-            this.dd.Text = "ds";
+            this.tabCheque.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(147)))), ((int)(((byte)(103)))));
+            this.tabCheque.Location = new System.Drawing.Point(4, 22);
+            this.tabCheque.Name = "tabCheque";
+            this.tabCheque.Padding = new System.Windows.Forms.Padding(3);
+            this.tabCheque.Size = new System.Drawing.Size(526, 166);
+            this.tabCheque.TabIndex = 2;
+            this.tabCheque.Text = "CHEQUE";
+            // 
+            // tabDeposito
+            // 
+            this.tabDeposito.Location = new System.Drawing.Point(4, 22);
+            this.tabDeposito.Name = "tabDeposito";
+            this.tabDeposito.Padding = new System.Windows.Forms.Padding(3);
+            this.tabDeposito.Size = new System.Drawing.Size(526, 166);
+            this.tabDeposito.TabIndex = 3;
+            this.tabDeposito.Text = "DEPOSITO";
+            this.tabDeposito.UseVisualStyleBackColor = true;
             // 
             // materialTabSelector2
             // 
@@ -1414,6 +1427,20 @@
             this.tbIdCliente.TabIndex = 208;
             this.tbIdCliente.Visible = false;
             this.tbIdCliente.TextChanged += new System.EventHandler(this.tbDocumento_TextChanged);
+            // 
+            // tbCliapellido
+            // 
+            this.tbCliapellido.BackColor = System.Drawing.Color.FloralWhite;
+            this.tbCliapellido.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbCliapellido.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.tbCliapellido.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbCliapellido.ForeColor = System.Drawing.Color.Black;
+            this.tbCliapellido.Location = new System.Drawing.Point(292, 156);
+            this.tbCliapellido.Name = "tbCliapellido";
+            this.tbCliapellido.ReadOnly = true;
+            this.tbCliapellido.Size = new System.Drawing.Size(228, 20);
+            this.tbCliapellido.TabIndex = 3;
+            this.tbCliapellido.TextChanged += new System.EventHandler(this.tbClienteNombre_TextChanged);
             // 
             // tbClienteNombre
             // 
@@ -1902,20 +1929,6 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // tbCliapellido
-            // 
-            this.tbCliapellido.BackColor = System.Drawing.Color.FloralWhite;
-            this.tbCliapellido.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbCliapellido.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.tbCliapellido.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbCliapellido.ForeColor = System.Drawing.Color.Black;
-            this.tbCliapellido.Location = new System.Drawing.Point(292, 156);
-            this.tbCliapellido.Name = "tbCliapellido";
-            this.tbCliapellido.ReadOnly = true;
-            this.tbCliapellido.Size = new System.Drawing.Size(228, 20);
-            this.tbCliapellido.TabIndex = 3;
-            this.tbCliapellido.TextChanged += new System.EventHandler(this.tbClienteNombre_TextChanged);
-            // 
             // FormVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2110,8 +2123,9 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel12;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel9;
         private System.Windows.Forms.TabPage tabcredito;
-        private System.Windows.Forms.TabPage dd;
+        private System.Windows.Forms.TabPage tabCheque;
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.TextBox tbCliapellido;
+        private System.Windows.Forms.TabPage tabDeposito;
     }
 }

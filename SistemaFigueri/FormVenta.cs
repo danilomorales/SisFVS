@@ -1286,13 +1286,13 @@ namespace SistemaFigueri
 
         }
 
-        private void tformapago_SelectedIndexChanged(object sender, EventArgs e)
+        private void tformapago_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            if(tformapago.SelectedTab == tabEfectivo)
+            if (tformapago.SelectedTab == tabEfectivo)
             {
                 cboTipoPago.SelectedIndex = cboTipoPago.FindStringExact("EN EFECTIVO");
             }
-            else if(tformapago.SelectedTab == tabcredito)
+            else if (tformapago.SelectedTab == tabcredito)
             {
                 cboTipoPago.SelectedIndex = cboTipoPago.FindStringExact("TARJETA / POS-INTEGRADO");
             }
@@ -1300,14 +1300,10 @@ namespace SistemaFigueri
             {
                 cboTipoPago.SelectedIndex = cboTipoPago.FindStringExact("CHEQUE");
             }
-            else if(tformapago.SelectedTab == tabDeposito)
+            else if (tformapago.SelectedTab == tabDeposito)
             {
                 cboTipoPago.SelectedIndex = cboTipoPago.FindStringExact("DEPÓSITO");
             }
-
-    
-
-
         }
     }
 }
