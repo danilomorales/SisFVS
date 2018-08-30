@@ -1031,10 +1031,10 @@ namespace SistemaFigueri
                     tformapago.SelectedTab = tabcredito;
                     break;
                 case "13":
-                    tformapago.SelectedTab = tabCheque;
+                    tformapago.SelectedTab = tabcheque;
                     break;
                 case "14":
-                    tformapago.SelectedTab = tabDeposito;
+                    tformapago.SelectedTab = tabdeposito;
                     break;
 
             }
@@ -1296,11 +1296,11 @@ namespace SistemaFigueri
             {
                 cboTipoPago.SelectedIndex = cboTipoPago.FindStringExact("TARJETA / POS-INTEGRADO");
             }
-            else if (tformapago.SelectedTab == tabCheque)
+            else if (tformapago.SelectedTab == tabcheque)
             {
                 cboTipoPago.SelectedIndex = cboTipoPago.FindStringExact("CHEQUE");
             }
-            else if(tformapago.SelectedTab == tabDeposito)
+            else if(tformapago.SelectedTab == tabdeposito)
             {
                 cboTipoPago.SelectedIndex = cboTipoPago.FindStringExact("DEPÓSITO");
             }
