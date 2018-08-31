@@ -114,7 +114,7 @@ namespace CapaDatos
                 "c.FechaNac as 'Fecha de Nacimiento',c.TipoCompra as 'Tipo de Compra',c.Credito,c.Queja,c.EstSaldoIni as 'Estado Inicial'," +
                 "c.OrdenCliente as 'Orden del Cliente',c.PromedioDeVentas as 'Promedio de ventas'," +
                 "c.cta_cli,c.UsuarioModifica,c.FechaModifica from caja.CLIENTE c, Caja.TIENDA t, Caja.SECTOR s, Caja.TIPO_DOC_IDENT d " +
-                "where c.IdTienda = t.IdTienda AND c.IdSector = s.IdSector and c.IdTipoDocIdent = d.IdTipoDocIdent; ";
+                "where c.IdTienda = t.IdTienda AND c.IdSector = s.IdSector and c.IdTipoDocIdent = d.IdTipoDocIdent ";
             adapter = new SqlDataAdapter(sql, conexion.AbrirConexion());
             return adapter;
         }

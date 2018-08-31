@@ -14,12 +14,21 @@ using CapaNegocio;
 
 namespace SistemaFigueri
 {
-    public partial class FormUpdateProducto : Form
+    public partial class FormUpdateProducto : MaterialSkin.Controls.MaterialForm
     {
         public FormUpdateProducto()
         {
             InitializeComponent();
             SetStyle(ControlStyles.ResizeRedraw, true);
+            MaterialSkin.MaterialSkinManager manejoSki = MaterialSkin.MaterialSkinManager.Instance;
+            manejoSki.AddFormToManage(this);
+            manejoSki.Theme = MaterialSkin.MaterialSkinManager.Themes.LIGHT;
+            manejoSki.ColorScheme = new MaterialSkin.ColorScheme(
+                MaterialSkin.Primary.Orange100,
+                MaterialSkin.Primary.Orange300,
+                MaterialSkin.Primary.Orange100,
+                MaterialSkin.Accent.Orange100,
+                MaterialSkin.TextShade.BLACK);
         }
 
         CDProductos cdpro = new CDProductos();
@@ -32,7 +41,8 @@ namespace SistemaFigueri
         //CDProductos pro = new CDProductos();
         CNProductos cnProd = new CNProductos();
         FormProductos formPro = new FormProductos();
-        public string idProducto { get; set; }
+        public string idProducto = null;
+        //public string idProducto { get; set; }
         public string fechita { get; set; }
               
 
@@ -179,16 +189,6 @@ namespace SistemaFigueri
             SoloLetras(e);
         }
 
-        private void bmedifactor_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            SoloNumeros(e);
-        }
-
-        private void bmediItem_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            SoloNumeros(e);
-        }
-
         private void bmedinicial_KeyPress(object sender, KeyPressEventArgs e)
         {
             SoloNumeros(e);
@@ -199,22 +199,21 @@ namespace SistemaFigueri
             SoloLetras(e);
         }
 
-        private void btnguardarPro_Click(object sender, EventArgs e)
+        private void btnguardarPro_Click_1(object sender, EventArgs e)
         {
-            String fecha1 = dpediduracion.Value.ToString("yyyy-MM-dd");
+            string fecha1 = dpediduracion.Value.ToString("yyyy-MM-dd");
             MessageBox.Show("Formulario" + idProducto);
             try
             {
-                cnProd.UpdateProduct(idProducto, bmedinombre.Text.ToString(), cboedicategoria.SelectedValue.ToString(), cboedimedida.SelectedValue.ToString(),
-                    bmedidescripcion.Text.ToString(), fecha1, bmedistock.Text.ToString(), bmedistockmax.Text.ToString(),
-                    bmedistockmini.Text.ToString(), bmedivalos_unitario.Text.ToString(), bmediprecio1.Text.ToString(),
-                    bmediprecio2.Text.ToString(), bmediprecioOferta.Text.ToString(), bmedinota.Text.ToString(), bmedifactor.Text.ToString(),
-                    cboediestado.Text.ToString(), bmediItem.Text.ToString(), bmedinicial.Text.ToString(), bmedicta.Text.ToString());
+                cnProd.UpdateProduct(bmedinombre.Text, cboedicategoria.SelectedValue.ToString(), cboedimedida.SelectedValue.ToString(),
+                    bmedidescripcion.Text, fecha1, bmedistock.Text, bmedistockmax.Text,
+                    bmedistockmini.Text, bmedivalos_unitario.Text, bmediprecio1.Text,
+                    bmediprecio2.Text, bmediprecioOferta.Text, bmedinota.Text,
+                     bmedinicial.Text, idProducto);
+                MessageBox.Show("IDDD" + idProducto);
                 MessageBox.Show("Se edito correctamente");
                 this.DialogResult = DialogResult.OK;
                 this.Close();
-
-
             }
             catch (Exception ex)
             {
@@ -223,10 +222,9 @@ namespace SistemaFigueri
             }
         }
 
-        private void bunifuThinButton22_Click(object sender, EventArgs e)
+        private void bunifuThinButton22_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }
-
     }
 }

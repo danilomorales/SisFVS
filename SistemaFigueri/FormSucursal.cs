@@ -356,7 +356,7 @@ namespace SistemaFigueri
                 try
                 {
                     cnSucu.UpdateSucursal(bmsucursal.Text, fechas, idsucursal);
-                    MessageBox.Show("IDDD" + idsucursal);
+                    //MessageBox.Show("IDDD" + idsucursal);
                     MessageBox.Show("Se actualizo correctamente");
                     mostarSucursal();
                     bmsucursal.Text = "";
