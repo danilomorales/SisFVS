@@ -52,27 +52,23 @@ namespace SistemaFigueri
                     using (FormUpdateProducto formUP = new FormUpdateProducto())
                     {
                         formUP.listarCategoria();
-                        formUP.listarMedida();
-                        formUP.idProducto = dgvProductos.CurrentRow.Cells["IdProducto"].Value.ToString();
+                        formUP.listarMedida();                       
                         //MessageBox.Show("Llego"+ dgvProductos.CurrentRow.Cells["IdProducto"].Value.ToString());
-                        formUP.bmedinombre.Text = dgvProductos.CurrentRow.Cells[1].Value.ToString();
-                        formUP.cboedicategoria.Text = dgvProductos.CurrentRow.Cells[2].Value.ToString();
-                        formUP.cboedimedida.Text = dgvProductos.CurrentRow.Cells[3].Value.ToString();
-                        formUP.bmedidescripcion.Text = dgvProductos.CurrentRow.Cells[4].Value.ToString();
-                        formUP.dpediduracion.Value = DateTime.Parse( dgvProductos.CurrentRow.Cells[5].Value.ToString());
-                        formUP.bmedistock.Text = dgvProductos.CurrentRow.Cells[6].Value.ToString();
-                        formUP.bmedistockmax.Text = dgvProductos.CurrentRow.Cells[7].Value.ToString();
-                        formUP.bmedistockmini.Text = dgvProductos.CurrentRow.Cells[8].Value.ToString();
-                        formUP.bmedivalos_unitario.Text = dgvProductos.CurrentRow.Cells[9].Value.ToString();
-                        formUP.bmediprecio1.Text = dgvProductos.CurrentRow.Cells[10].Value.ToString();
-                        formUP.bmediprecio2.Text = dgvProductos.CurrentRow.Cells[11].Value.ToString();
-                        formUP.bmediprecioOferta.Text = dgvProductos.CurrentRow.Cells[12].Value.ToString();
-                        formUP.bmedinota.Text = dgvProductos.CurrentRow.Cells[13].Value.ToString();
-                        formUP.bmedifactor.Text = dgvProductos.CurrentRow.Cells[14].Value.ToString();
-                        formUP.cboediestado.Text = dgvProductos.CurrentRow.Cells[15].Value.ToString();
-                        formUP.bmediItem.Text = dgvProductos.CurrentRow.Cells[16].Value.ToString();
-                        formUP.bmedinicial.Text = dgvProductos.CurrentRow.Cells[17].Value.ToString();
-                        formUP.bmedicta.Text = dgvProductos.CurrentRow.Cells[18].Value.ToString();
+                        formUP.bmedinombre.Text = dgvProductos.CurrentRow.Cells["Nombre"].Value.ToString();
+                        formUP.cboedicategoria.Text = dgvProductos.CurrentRow.Cells["Categoria"].Value.ToString();
+                        formUP.cboedimedida.Text = dgvProductos.CurrentRow.Cells["Medida"].Value.ToString();
+                        formUP.bmedidescripcion.Text = dgvProductos.CurrentRow.Cells["Descripcion del producto"].Value.ToString();
+                        formUP.dpediduracion.Value = DateTime.Parse(dgvProductos.CurrentRow.Cells["Duración"].Value.ToString());
+                        formUP.bmedistock.Text = dgvProductos.CurrentRow.Cells["Stock"].Value.ToString();
+                        formUP.bmedistockmax.Text = dgvProductos.CurrentRow.Cells["Stock Maximo"].Value.ToString();
+                        formUP.bmedistockmini.Text = dgvProductos.CurrentRow.Cells["Stock Minimo"].Value.ToString();
+                        formUP.bmedivalos_unitario.Text = dgvProductos.CurrentRow.Cells["Valor Unitario"].Value.ToString();
+                        formUP.bmediprecio1.Text = dgvProductos.CurrentRow.Cells["P. Venta 1"].Value.ToString();
+                        formUP.bmediprecio2.Text = dgvProductos.CurrentRow.Cells["P. Venta 2"].Value.ToString();
+                        formUP.bmediprecioOferta.Text = dgvProductos.CurrentRow.Cells["Precio Oferta"].Value.ToString();
+                        formUP.bmedinota.Text = dgvProductos.CurrentRow.Cells["Nota"].Value.ToString();
+                        formUP.bmedinicial.Text = dgvProductos.CurrentRow.Cells["Stock Inicial"].Value.ToString();
+                        formUP.idProducto = dgvProductos.CurrentRow.Cells["IdProducto"].Value.ToString();
                         if (formUP.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                         {
                             mostarProductos();

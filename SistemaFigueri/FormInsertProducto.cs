@@ -15,7 +15,7 @@ using CapaDatos;
 namespace SistemaFigueri
 {
 
-    public partial class FormInsertProducto : Form
+    public partial class FormInsertProducto : MaterialSkin.Controls.MaterialForm
     {
         CNProductos pro = new CNProductos();
         FormProductos formPro = new FormProductos();
@@ -24,31 +24,20 @@ namespace SistemaFigueri
         public FormInsertProducto()
         {
             InitializeComponent();
+            MaterialSkin.MaterialSkinManager manejoSki = MaterialSkin.MaterialSkinManager.Instance;
+            manejoSki.AddFormToManage(this);
+            manejoSki.Theme = MaterialSkin.MaterialSkinManager.Themes.LIGHT;
+            manejoSki.ColorScheme = new MaterialSkin.ColorScheme(
+                MaterialSkin.Primary.Orange100,
+                MaterialSkin.Primary.Orange300,
+                MaterialSkin.Primary.Orange100,
+                MaterialSkin.Accent.Orange100,
+                MaterialSkin.TextShade.BLACK);
         }
 
         private void bunifuThinButton22_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void btnguardarPro_Click(object sender, EventArgs e)
-        {
-            //String fecha1 = dpduracion.Value.ToString("yyyy-MM-dd");
-            try
-            {
-
-                pro.InsertProduct(bmnombre.Text, cbocategoria.SelectedValue.ToString(), cbomedida.SelectedValue.ToString(), bmdescripcion.Text, bmstock.Text,
-              bmaximo.Text, bminimo.Text, bmvalorunitario.Text, bmprecio1.Text, bmprecio2.Text, bmoferta.Text, bmnota.Text,
-              bmfactor.Text, bmitem.Text, bminicial.Text, bmcta.Text);
-                MessageBox.Show("Se inserto correctamente");
-                this.DialogResult = DialogResult.OK;
-                this.Close();      
-                limpiarForm();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("No se pudo registrar los datos por :" + ex.ToString());
-            }
         }
 
 
@@ -76,29 +65,7 @@ namespace SistemaFigueri
             cbomedida.DisplayMember = "Descripcion";
             cbomedida.ValueMember = "IdMedida";
 
-        }
-
-        private void limpiarForm()
-        {
-            bmnombre.Text = "";
-            cbocategoria.Text = "";
-            cbomedida.Text = "";
-            bmdescripcion.Text = "";
-            //bmtiempo.Text = "";
-            bmstock.Text = "";
-            bmaximo.Text = "";
-            bminimo.Text = "";
-            bmvalorunitario.Text = "";
-            bmprecio1.Text = "";
-            bmprecio2.Text = "";
-            bmoferta.Text = "";
-            bmnota.Text = "";
-            bmfactor.Text = "";
-            //cboestado.Text = "";
-            bmitem.Text = "";
-            bminicial.Text = "";
-            bmcta.Text = "";
-        }
+        }      
 
         //VALIDAR SOLO LETRAS
         public static void SoloLetras(KeyPressEventArgs V)
@@ -250,6 +217,54 @@ namespace SistemaFigueri
 
         private void bmcta_OnValueChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void bminicial_OnValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuFlatButton14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnguardarPro_Click_1(object sender, EventArgs e)
+        {
+            string fecha1 = dpduracion.Value.ToString("yyyy-MM-dd");
+            try
+            {
+
+                pro.InsertProduct(bmnombre.Text,cbocategoria.SelectedValue.ToString(),cbomedida.SelectedValue.ToString(),bmdescripcion.Text,
+                    fecha1,bmstock.Text,bmaximo.Text,bminimo.Text,bmvalorunitario.Text,bmprecio1.Text,bmprecio2.Text,bmoferta.Text,bmnota.Text,
+                    bminicial.Text);
+                MessageBox.Show("Se inserto correctamente");
+                this.DialogResult = DialogResult.OK;
+                this.Close();      
+                limpiarForm();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo registrar los datos por :" + ex.ToString());
+            }
+        }
+
+        private void limpiarForm()
+        {
+            bmnombre.Text = "";
+            cbocategoria.Text = "";
+            cbomedida.Text = "";
+            bmdescripcion.Text = "";
+            bmstock.Text = "";
+            bmaximo.Text = "";
+            bminimo.Text = "";
+            bmvalorunitario.Text = "";
+            bmprecio1.Text = "";
+            bmprecio2.Text = "";
+            bmoferta.Text = "";
+            bmnota.Text = "";
+            bminicial.Text = "";
 
         }
     }

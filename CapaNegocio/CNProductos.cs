@@ -27,40 +27,42 @@ namespace CapaNegocio
         }
 
         //CREATE PRODUCT
-        public void InsertProduct(String alias, String id_categoria, String id_medida, String descripcion, String stock,
-            String stockMax, String stockMin, String valor_uni, String precio1, String precio2, String precioOferta, String nota, String factor,
-           String item, String stockIni, String cta_vnt)
+        public void InsertProduct(string alias, string id_categoria, string id_medida, string descripcion, string tiempo, string stock,
+            string stockMax, string stockMin, string valor_uni, string precio1, string precio2, string precioOferta, string nota,
+            string stockIni)
         {
             Console.WriteLine( "Sera pues ..."+alias+" "+  id_categoria+" "+  id_medida + " " + descripcion + " " + stock + " " +
-             stockMax + " " + stockMin + " " + valor_uni + " " + precio1 + " " + precio2 + " " + precioOferta + " " + nota + " " + factor + " " +
-            item + " " + stockIni + " " + cta_vnt );
+             stockMax + " " + stockMin + " " + valor_uni + " " + precio1 + " " + precio2 + " " + precioOferta + " " + nota + " " +
+             stockIni );
             pro.InsertarProductos(alias,
                 id_categoria, id_medida,
-                descripcion, 
-                Convert.ToDouble(stock), Convert.ToDouble(stockMax), 
-                Convert.ToInt32(stockMin), Convert.ToDouble(valor_uni), 
-                Convert.ToDouble(precio1), Convert.ToDouble(precio2), 
-                Convert.ToDouble(precioOferta), nota, Convert.ToDouble(factor),
-                Convert.ToInt32(item), Convert.ToDouble(stockIni), cta_vnt);
+                descripcion, tiempo,Convert.ToInt32(stock),Convert.ToDouble(stockMax),Convert.ToInt32(stockMin),Convert.ToDouble(valor_uni),
+                Convert.ToDouble(precio1),Convert.ToDouble(precio2),Convert.ToDouble(precioOferta),nota,Convert.ToDouble(stockIni));
 
         }
 
         //UPDATE PRODUCT
-        public void UpdateProduct(String idProducto,String alias, String id_categoria, String id_medida, String descripcion, String tiempo, String stock,
-            String stockMax, String stockMin, String valor_uni, String precio1, String precio2, String precioOferta, String nota, String factor,
-            String estado, String item, String stockIni, String cta_vnt)
+        public void UpdateProduct(string alias, string id_categoria, string id_medida, string descripcion, string tiempo, string stock,
+            string stockMax, string stockMin, string valor_uni, string precio1, string precio2, string precioOferta, string nota,
+            string stockIni, string idProducto)
         {
-            Console.WriteLine("Sera pues ..." + alias + " " + id_categoria + " " + id_medida + " " + descripcion + " " + tiempo + " " + stock + " " +
-             stockMax + " " + stockMin + " " + valor_uni + " " + precio1 + " " + precio2 + " " + precioOferta + " " + nota + " " + factor + " " +
-             estado + " " + item + " " + stockIni + " " + cta_vnt + " " +idProducto);
-            pro.EditarProducto(idProducto,alias,
-              id_categoria, id_medida,
-                descripcion, tiempo,
-                Convert.ToDouble(stock), Convert.ToDouble(stockMax),
-                Convert.ToInt32(stockMin), Convert.ToDouble(valor_uni),
-                Convert.ToDouble(precio1), Convert.ToDouble(precio2),
-                Convert.ToDouble(precioOferta), nota, Convert.ToDouble(factor), estado,
-                Convert.ToInt32(item), Convert.ToDouble(stockIni), cta_vnt);
+            try
+            {
+                Console.WriteLine("Editando producto ..." + alias + " " + id_categoria + " " + id_medida + " " + descripcion + " " + tiempo + " " + stock + " " +
+             stockMax + " " + stockMin + " " + valor_uni + " " + precio1 + " " + precio2 + " " + precioOferta + " " + nota + " " +
+             idProducto);
+                pro.EditarProducto(alias, id_categoria, id_medida, descripcion,
+                    tiempo, Convert.ToInt32(stock), Convert.ToDouble(stockMax),
+                    Convert.ToInt32(stockMin), Convert.ToDouble(valor_uni),
+                    Convert.ToDouble(precio1), Convert.ToDouble(precio2), 
+                    Convert.ToDouble(precioOferta),
+                    nota, Convert.ToDouble(stockIni),idProducto);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("VIENE DEL CN" + ex);
+            }
+            
         }
 
         //DELETE PRODUCT
