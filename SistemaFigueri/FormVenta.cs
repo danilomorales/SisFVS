@@ -66,10 +66,9 @@ namespace SistemaFigueri
         public FormVenta()
         {
             InitializeComponent();
-            //this.toolTip1.SetToolTip(this.btnCargaCliente, "Seleccione un cliente");
-
+           
         }
-        //Mostrar Mensaje de Confirmación
+       
         private void MensajeOk(string mensaje)
         {
             MessageBox.Show(mensaje, "Figueri", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -97,17 +96,11 @@ namespace SistemaFigueri
         }
 
 
-        private void OcultarColumnas()
-        {
-            this.dataVentas.Columns[0].Visible = false;
-            this.dataVentas.Columns[1].Visible = false;
-        }
-
         //Método Mostrar
         private void Mostrar()
         {
             //this.dataVentas.DataSource = CNVenta.Mostrar();
-            this.OcultarColumnas();
+            
             //lblTotal.Text = "Total de Registros: " + Convert.ToString(dataListado.Rows.Count);
         }
 
@@ -115,7 +108,7 @@ namespace SistemaFigueri
         private void BuscarFechas()
         {
             //this.dataVentas.DataSource = CNVenta.BuscarFechas(this.dpFechaInicio.Value.ToString("dd/MM/yyyy"), this.dpFechafin.Value.ToString("dd/MM/yyyy"));
-            this.OcultarColumnas();
+            
             //lblTotal.Text = "Total de Registros: " + Convert.ToString(dataListado.Rows.Count);
 
         }
@@ -124,7 +117,7 @@ namespace SistemaFigueri
         private void MostrarDetalles()
         {
             //this.dataVentas.DataSource = CNVenta.MostrarDetalle(this.tbIdVenta.Text);
-            this.OcultarColumnas();
+            
             //lblTotal.Text = "Total de Registros: " + Convert.ToString(dataListado.Rows.Count);
             this.dataVentas.AutoGenerateColumns = false;
         }
@@ -175,17 +168,7 @@ namespace SistemaFigueri
             _instancia = null;
         }
 
-        //private void btnBuscarProveedor_Click(object sender, EventArgs e)
-        //{
-        //    FrmVistaCliente_Venta vista = new FrmVistaCliente_Venta();
-        //    vista.ShowDialog();
-        //}
 
-        //private void btnBuscarArticulo_Click(object sender, EventArgs e)
-        //{
-        //    FrmVistaArticulo_Venta vista = new FrmVistaArticulo_Venta();
-        //    vista.ShowDialog();
-        //}
 
         private void btnVenCerrar_Click(object sender, EventArgs e)
         {
@@ -224,7 +207,7 @@ namespace SistemaFigueri
             var cards = new Bunifu.Framework.UI.BunifuCards();
             MostrarClientes();
             this.crearTabla();
-            GenerarNumeroComprobante();
+            
             String fecha2 = DateTime.Now.AddDays(-(int)DateTime.Now.DayOfWeek).ToString("yyyy-MM-dd");
             dtpFechaEmision.Value = DateTime.Today.AddDays(-(int)DateTime.Now.DayOfWeek);
             dtpFechaEmision.Value = DateTime.Today;
@@ -238,43 +221,44 @@ namespace SistemaFigueri
             //var aux = new Busqueda_Cliente();
             //aux.Lista(dgvProductos);
 
-            CNVentas cNVentas = new CNVentas();
-            String correlativo = cNVentas.traerCorrelativo(2);
-            lblSerie.Text = "001";
-            lblNroCorrelativo.Text = correlativo.ToString();
-            cboTipoDoc.DataSource = cNVentas.MostarCboTipoDoc();
-            cboTipoDoc.ValueMember = "IdTipoDoc";
-            cboTipoDoc.DisplayMember = "DescripcionDoc";
-            cboTipoPago.DataSource = cNVentas.MostarCboTipoPago();
-            cboTipoPago.ValueMember = "IdTipoPago";
-            cboTipoPago.DisplayMember = "DescripcionTipo";
-            CboMoneda.DataSource = cNVentas.MostarCboMoneda();
-            CboMoneda.ValueMember = "IdMoneda";
-            CboMoneda.DisplayMember = "DesMoneda";
+   
         }
-        private void GenerarNumeroComprobante()
+        private void VAlidaSoloNumero()
         {
-            //if (rbnBoleta.Checked == true)
-            //    //lblNroCorrelativo.Text = Ventas.NumeroComprobante("Boleta");
-            //else
-            //   // lblNroCorrelativo.Text = Ventas.NumeroComprobante("Factura");
-        }
 
-        private void cargarSerie()
-        {
             try
             {
-                //serie = negVenta.Intancia.CargarSerie(1, 1);
-                //ser = serie.Numero_Serie;
-                //lblSerie.Text = serie.Numero_Serie + "-";
-                //lblCorrelativo.Text = "Nº " + negVenta.Intancia.CargarCorrelativo(1, serie.Numero_Serie);
-                //corr = negVenta.Intancia.CargarCorrelativo(1, serie.Numero_Serie);
+                int i = oldvalue; decimal v = 0; String valor, valor_01; Boolean res = false;
+                foreach (DataGridViewRow row in dgvVenta.Rows)
+                {
+                    if (row.Cells[1].Value == null) row.Cells[1].Value = 0;
+                    valor = row.Cells[1].Value.ToString();
+                    res = int.TryParse(valor, out i);
+                    if (res == false)
+                    {
+                        MessageBox.Show("Solo números 'Cantidad', valor se reducira a cero", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        row.Cells[1].Value = i;
+                    }
+                    if (row.Cells[1].Value == null) row.Cells[3].Value = 0;
+                    valor_01 = row.Cells[1].Value.ToString().Replace(".", ",");
+                    if (!Decimal.TryParse(valor_01, out v))
+                    {
+                        //MessageBox.Show(, valor se reducira a cero", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        row.Cells[3].Value = 0;
+                    }
+                    else
+                    {
+                        row.Cells[1].Value = valor_01;
+
+                    }
+
+                }
             }
-            catch (Exception)
+            catch
             {
 
-                throw;
             }
+
         }
 
         public void filtrar(DataTable data, String buscarnombre)
@@ -312,40 +296,7 @@ namespace SistemaFigueri
 
         }
 
-
-        private void btnSumaCan_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                //int contar = int.Parse(tbCantidad.Text);
-                //contar++;
-                //tbCantidad.Text = contar.ToString();
-            }
-            catch
-            {
-                MessageBox.Show("Ingrese Cantidad Correcta");
-            }
-
-        }
-
-        private void btnRestaCan_Click(object sender, EventArgs e)
-        {
-
-            try
-            {
-                /*int descontar = int.Parse(tbCantidad.Text);
-                descontar--;
-                tbCantidad.Text = descontar.ToString();*/
-
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Ingrese Cantidad Correcta");
-            }
-
-        }
-
-
+      
 
         private void btnBuscaProcto_Click(object sender, EventArgs e)
         {
@@ -437,42 +388,6 @@ namespace SistemaFigueri
 
         }
 
-        /*private void btnAgregaCarro_Click_1(object sender, EventArgs e)
-        {
-            Venta ven = new Venta();
-            Decimal Porcentaje = 0; Decimal SubTotal;
-            if(this.tbrazonsocial.Text.Trim() != "")
-            {
-                if (tbDescripcion.Text.Trim() != "")
-                {
-                    ven.Descripcion = tbAlias.Text + " - " + tbDescripcion.Text;
-                    ven.Cantidad = 1;
-                    ven.PrecioVenta = Convert.ToDecimal(tbPrecio.Text);
-                    Porcentaje = (Convert.ToDecimal(tbIgv.Text) / 100) + 1;
-                    SubTotal = ((Convert.ToDecimal(tbPrecio.Text) * 1) / Porcentaje);
-                    ven.Igv = Math.Round(Convert.ToDecimal(SubTotal) * (Convert.ToDecimal(tbIgv.Text) / (100)), 2);
-                    ven.SubTotal = Math.Round(SubTotal, 2);
-                    ven.stock = Int32.Parse(tbStock.Text);
-                    lst.Add(ven);
-                    LlenarGrilla();
-                    Limpiar();
-                    
-                }
-                else
-                {
-                    MessageBox.Show("Busque Producto a Vender", "Figueri", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-
-                    tbPrecio.Focus();
-                    tbDescripcion.Focus();
-                    tbAlias.Focus();
-                }
-            }
-            else
-            {
-                MessageBox.Show("Por Favor Busque el Cliente a Vender.", "Figueri", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-            }
-        }*/
-
         private void LlenarGrilla()
         {
             var format = (NumberFormatInfo)NumberFormatInfo.CurrentInfo.Clone();
@@ -533,6 +448,7 @@ namespace SistemaFigueri
         {
             tbtipodoc.Clear();
             tbClienteNombre.Clear();
+            tbCliapellido.Clear();
             tbrazonsocial.Clear();
             tbRuc.Clear();
         }
@@ -714,11 +630,6 @@ namespace SistemaFigueri
                 using (FormComprobanteVenta formC = new FormComprobanteVenta())
                 {
 
-                    /*if(formC.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                    {
-                       
-                           
-                    }*/
                     QrEncoder qrEncoder = new QrEncoder(ErrorCorrectionLevel.H);
                     QrCode qrCode = new QrCode();
                     qrEncoder.TryEncode(lblSerie + " - " + lblNroCorrelativo, out qrCode);
@@ -945,7 +856,7 @@ namespace SistemaFigueri
 
         private void rbnBoleta_CheckedChanged_1(object sender, EventArgs e)
         {
-            GenerarNumeroComprobante();
+            
         }
 
         private void tbCantidad_KeyPress(object sender, KeyPressEventArgs e)
@@ -957,16 +868,6 @@ namespace SistemaFigueri
                 return;
             }
         }
-
-        /*private void rbnNC_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rbnNC.Checked == true)
-                lblTipo.Text = "NOTA DE CRÉDITO";
-            CNVentas cNVentas = new CNVentas();
-            String correlativo = cNVentas.traerCorrelativo(3);
-            lblSerie.Text = "NC001";
-            lblNroCorrelativo.Text = correlativo.ToString();
-        }*/
 
         private void dgvVenta_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
@@ -1061,7 +962,6 @@ namespace SistemaFigueri
                             Convert.ToDecimal(dgvVenta.Rows[i].Cells[3].Value),
                             SumaIgv, SumaSubTotal
                             );
-
                         }
                     }
                     catch (Exception ex)
@@ -1170,6 +1070,8 @@ namespace SistemaFigueri
                 CECliente c = null;
                 String num_doc = tbDocumento.Text;
                 c = CNClientes.Intancia.BuscarCliente(0, num_doc);
+                //tbIdCliente.Text = c.IdCliente;
+                tbIdCliente.Text = c.Id_Cliente;
                 tbClienteNombre.Text = c.Nombres;
                 tbCliapellido.Text = c.Apellidos;
                 tbrazonsocial.Text = c.Nombre_Empresa;
@@ -1193,6 +1095,50 @@ namespace SistemaFigueri
                             tbtipodoc.Text = form.tipodoc;
                             tbrazonsocial.Text = form.empresa;
                             tbIdCliente.Text = form.idcliente;
+
+                            CNProductos objProducto = new CNProductos();
+
+                        }
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void BuscaProductoCB()
+        {
+            try
+            {
+                CEProducto p = null;
+                String Cod_barra = tbCodBarras.Text;
+                p = CNProductos.Instancia.BuscaProductoBarra(0, Cod_barra);
+                //tbIdCliente.Text = c.IdCliente;
+                tbAlias.Text = p._Alias;
+                tbDescripcion.Text = p._DescripcionProducto;
+                tbStock.Text = p._Stock;
+                p._precio = Convert.ToDouble(tbPrecio.Text.ToString());
+                int i = LocalBD.Instancia.ReturnIdprod(1, p._IdProdcuto);
+
+            }
+            catch (ApplicationException)
+            {
+                DialogResult r = MessageBox.Show("No se encontro el producto, ¿realizar Búsqueda avanzada?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (r == DialogResult.Yes)
+                {
+                    using (FormBuscarProducto form = new FormBuscarProducto())
+                    {
+                        if (form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                        {
+                            tbAlias.Text = form.alias;
+                            tbDescripcion.Text = form.descripcion;
+                            tbStock.Text = form.stock;
+                            //dtFechaV.Text = form.fechavencimiento;
+                            tbPrecio.Text = form.precio;
+                            //btnAgregaCarro.Enabled = true;
+                            tbIdProducto.Text = form.idproducto;
 
                             CNProductos objProducto = new CNProductos();
 
@@ -1303,6 +1249,45 @@ namespace SistemaFigueri
             else if (tformapago.SelectedTab == tabDeposito)
             {
                 cboTipoPago.SelectedIndex = cboTipoPago.FindStringExact("DEPÓSITO");
+            }
+        }
+
+        private void btnGuarda_Click_1(object sender, EventArgs e)
+        {
+            CNVentas objUsuario = new CNVentas();
+            if (dgvVenta.Rows.Count > 0)
+            {
+                if (Convert.ToString(dgvVenta.CurrentRow.Cells[2].Value) != "")
+                {
+                    VAlidaSoloNumero();
+                    CEVenta v = new CEVenta();
+                    CECliente c = new CECliente();
+                    c.IdCliente = LocalBD.Instancia.ReturnIdClienteNV(0, 0);
+                    //v.
+                }
+                else
+                {
+                    MessageBox.Show("No Existe Ningún Elemento en la Lista.", "Figeueri.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("No Existe Ningún Elemento en la Lista.", "Figueri", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+        }
+
+        private void tbCodBarras_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                BuscaProductoCB();
+            }
+            else
+            {
+                LimpiarProducto();
+
             }
         }
     }

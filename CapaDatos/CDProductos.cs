@@ -216,5 +216,41 @@ namespace CapaDatos
             finally { cmd.Connection.Close(); }
             return Lista;
         }
+
+        //Busca Productos por código de barra
+        public CEProducto BuscaProductoCB(int id_pro, String Cod_barra)
+        {
+            SqlCommand cmd = null;
+            SqlDataReader dr = null;
+            CEProducto p = null;
+            try
+            {
+                SqlConnection cn = CDConexion.Instancia.CerrarConexion();
+                cmd = new SqlCommand("Caja.SP_FE_BuscaProductoCB", cn);
+                cmd.Parameters.AddWithValue("@prmidProducto", id_pro);
+                cmd.Parameters.AddWithValue("@prmCodBarra", Cod_barra);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cn.Open();
+                dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    p = new CEProducto();
+                    p._Codigo = dr["Código"].ToString();
+                    p._Alias = dr["Alias"].ToString();
+                    p._DescripcionProducto = dr["DescripcionProducto"].ToString();
+                    p._TiempoDuracion = dr["TiempoDuracion"].ToString();
+                    p._Stock = dr["Stock"].ToString();
+                    p._precio = Convert.ToDouble(dr["Precio"].ToString());
+
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally { cmd.Connection.Close(); }
+            return p;
+        }
     }
 }
