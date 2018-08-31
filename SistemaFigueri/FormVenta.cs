@@ -200,6 +200,20 @@ namespace SistemaFigueri
             frmRegCobro.ShowDialog();
         }
 
+        public void LIstaFormapago()
+        {
+            CDVenta Cv = new CDVenta();
+            cboTipoPago.DataSource = Cv.CargaFormaPago();
+            cboTipoPago.DisplayMember = "DescripcionTipo";
+            cboTipoPago.ValueMember = "IdtipoPago";
+        }
+        private void ListaMoneda()
+        {
+            CDVenta Ds = new CDVenta();
+            CboMoneda.DataSource = Ds.CargaMoneda();
+            CboMoneda.DisplayMember = "DesMoneda";
+            CboMoneda.ValueMember = "IdMoneda";
+        }
 
 
         private void FormVenta_Load(object sender, EventArgs e)
@@ -608,20 +622,6 @@ namespace SistemaFigueri
             }
         }
 
-        public void LIstaFormapago()
-        {
-            CDVenta Cv = new CDVenta();
-            cboTipoPago.DataSource = Cv.CargaFormaPago();
-            cboTipoPago.DisplayMember = "DescripcionTipo";
-            cboTipoPago.ValueMember = "IdtipoPago";
-        }
-        private void ListaMoneda()
-        {
-            CDVenta Ds = new CDVenta();
-            CboMoneda.DataSource = Ds.CargaMoneda();
-            CboMoneda.DisplayMember = "DesMoneda";
-            CboMoneda.ValueMember = "IdMoneda";
-        }
 
         private void btRegistraVenta_Click(object sender, EventArgs e)
         {
@@ -886,12 +886,14 @@ namespace SistemaFigueri
                     if (cant <= stock)
                     {
                         dgvVenta.Rows[e.RowIndex].Cells["IMPORTE"].Value = resultado.ToString();
+                        ImproteTotal.Text = SumaTotal.ToString("0.00");
                     }
                     else
                     {
                         MessageBox.Show("Stock insuficiente");
                         dgvVenta.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = oldvalue;
                     }
+                    dgvVenta.Columns[4].DefaultCellStyle.BackColor = Color.GreenYellow;
                     dgvVenta.Rows[lst.Count + 1].Cells[3].Value = "SUB-TOTAL  S/.";
                     dgvVenta.Rows[lst.Count + 1].DefaultCellStyle.FormatProvider = format;
                     dgvVenta.Rows[lst.Count + 1].Cells[4].Value = SumaSubTotal;
