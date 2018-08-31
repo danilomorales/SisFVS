@@ -120,5 +120,22 @@ namespace CapaNegocio
                 throw;
             }
         }
+
+        //bbusca produtos con Codigo de barra venta 
+        public CEProducto BuscaProductoBarra(int id_pro, String Cod_barra)
+        {
+            try
+            {
+                CEProducto c = null;
+                c = CDProductos.Instancia.BuscaProductoCB(id_pro, Cod_barra);
+                if (c == null) throw new ApplicationException("No se encontro registro");
+                return c;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

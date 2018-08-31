@@ -257,6 +257,7 @@ namespace CapaDatos
                 {
                     c = new CECliente();
                     c.IdCliente = Convert.ToInt32(dr["IdCliente"]);
+                    c.Id_Cliente = dr["IdCliente"].ToString();
                     c.Documento = dr["Documento"].ToString();
                     c.DNI = dr["DNI"].ToString();
                     c.RUC = dr["RUC"].ToString();

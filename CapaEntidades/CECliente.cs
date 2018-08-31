@@ -9,6 +9,7 @@ namespace CapaEntidades
     public class CECliente
     {
         public int IdCliente { get; set; }
+        public String Id_Cliente { get; set; }
         public String Documento { get; set; }
         public String DNI { get; set; }
         public String RUC { get; set; }
