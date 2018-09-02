@@ -203,18 +203,27 @@ namespace SistemaFigueri
         public void LIstaFormapago()
         {
             CDVenta Cv = new CDVenta();
-            cboTipoPago.DataSource = Cv.CargaFormaPago();
+            
             cboTipoPago.DisplayMember = "DescripcionTipo";
             cboTipoPago.ValueMember = "IdtipoPago";
+            cboTipoPago.DataSource = Cv.CargaFormaPago();
         }
         private void ListaMoneda()
         {
             CDVenta Ds = new CDVenta();
-            CboMoneda.DataSource = Ds.CargaMoneda();
+            
             CboMoneda.DisplayMember = "DesMoneda";
             CboMoneda.ValueMember = "IdMoneda";
+            CboMoneda.DataSource = Ds.CargaMoneda();
         }
-
+        private void ListaTipoDoc()
+        {
+            CNVentas Ds = new CNVentas();
+            
+            cboTipoDoc.DisplayMember = "DescripcionDoc";
+            cboTipoDoc.ValueMember = "IdTipoDoc";
+            cboTipoDoc.DataSource = Ds.MostarCboTipoDoc();
+        }
 
         private void FormVenta_Load(object sender, EventArgs e)
         {
@@ -234,8 +243,20 @@ namespace SistemaFigueri
 
             //var aux = new Busqueda_Cliente();
             //aux.Lista(dgvProductos);
+            LIstaFormapago();
+            ListaMoneda();
+            ListaTipoDoc();
 
-   
+            CNVentas cNVentas = new CNVentas();
+            int idcomprobante = Int32.Parse(cboTipoDoc.SelectedValue.ToString());
+            cboSerie.ValueMember = "IdSerie";
+            cboSerie.DisplayMember = "Serie";
+            cboSerie.DataSource = cNVentas.traerSerie(idcomprobante);
+            int idserie = Int32.Parse(cboSerie.SelectedValue.ToString());
+            String correlativo = cNVentas.traerCorrelativo(idcomprobante,idserie);
+            lblSerie.Text = cboSerie.Text;
+            lblNroCorrelativo.Text = correlativo;
+
         }
         private void VAlidaSoloNumero()
         {
@@ -1041,34 +1062,30 @@ namespace SistemaFigueri
         private void cboTipoDoc_SelectedIndexChanged(object sender, EventArgs e)
         {
             String indice = cboTipoDoc.SelectedValue.ToString();
-            if (indice == "1")
+
+            if (indice == "96")
             {
-                lblTipo.Text = "FACTURA";
+
+            }
+            else{
+                /*lblTipo.Text = "FACTURA";
                 CNVentas cNVentas = new CNVentas();
                 String correlativo = cNVentas.traerCorrelativo(1);
                 lblSerie.Text = "F001";
-                lblNroCorrelativo.Text = correlativo.ToString();
+                lblNroCorrelativo.Text = correlativo.ToString();*/
+                CNVentas cNVentas = new CNVentas();
+
+                cboSerie.ValueMember = "IdSerie";
+                cboSerie.DisplayMember = "Serie";
+                cboSerie.DataSource = cNVentas.traerSerie(Int32.Parse(indice));
+                int idserie = Int32.Parse(cboSerie.SelectedValue.ToString());
+                String correlativo = cNVentas.traerCorrelativo(Int32.Parse(indice), idserie);
+                lblSerie.Text = cboSerie.Text;
+                lblNroCorrelativo.Text = correlativo;
+            }
                 
-            }
-            else if (indice == "3")
-            {
 
-                lblTipo.Text = "BOLETA";
-                CNVentas cNVentas = new CNVentas();
-                String correlativo = cNVentas.traerCorrelativo(2);
-                lblSerie.Text = "B001";
-                lblNroCorrelativo.Text = correlativo.ToString();
-               
-            }
-            else if (indice == "96")
-            {
-                lblTipo.Text = "NOTA DE CRÉDITO";
-                CNVentas cNVentas = new CNVentas();
-                String correlativo = cNVentas.traerCorrelativo(3);
-                lblSerie.Text = "NC001";
-                lblNroCorrelativo.Text = correlativo.ToString();
-            }
-
+            
         }
         private void BuscaCLienteVentaDNI()
         {
@@ -1296,6 +1313,16 @@ namespace SistemaFigueri
                 LimpiarProducto();
 
             }
+        }
+
+        private void cboSerie_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int idcomprobante = Int32.Parse(cboTipoDoc.SelectedValue.ToString());
+            int idserie = Int32.Parse(cboSerie.SelectedValue.ToString());
+            CNVentas cNVentas = new CNVentas();
+            String correlativo = cNVentas.traerCorrelativo(idcomprobante,idserie);
+            lblSerie.Text = cboSerie.Text;
+            lblNroCorrelativo.Text = correlativo;
         }
     }
 }

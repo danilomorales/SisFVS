@@ -18,6 +18,7 @@ namespace CapaNegocio
         DataTable tabla = new DataTable();
         DataTable tabla2 = new DataTable();
         DataTable tabla3 = new DataTable();
+        DataTable tabla4 = new DataTable();
         SqlDataReader leer;
         SqlCommand comando = new SqlCommand();
 
@@ -36,17 +37,28 @@ namespace CapaNegocio
             }
         }
 
-        public String traerCorrelativo(int opcion)
+        public String traerCorrelativo(int opcion,int nserie)
         {
             String correlativo = "";
             SqlCommand comando = new SqlCommand("Caja.SP_TraerCorrelativo", C.AbrirConexion());
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.AddWithValue("@vIde_Comp_Pago", opcion);
-            comando.Parameters.AddWithValue("@num_serie_venta", "001");
+            comando.Parameters.AddWithValue("@IdSerie", nserie);
             comando.Parameters.Add("@Correlativo", SqlDbType.VarChar,10).Direction = ParameterDirection.Output;
             comando.ExecuteNonQuery();
             correlativo = comando.Parameters["@Correlativo"].Value.ToString();
             return correlativo;
+        }
+
+        public DataTable traerSerie(int opcion)
+        {
+            String correlativo = "";
+            SqlCommand comando = new SqlCommand("Caja.SP_TraerNSerie", C.AbrirConexion());
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@vIde_Comp_Pago", opcion);
+            SqlDataReader lector = comando.ExecuteReader();
+            tabla4.Load(lector);
+            return tabla4;
         }
 
         public DataTable MostarCboTipoDoc()
