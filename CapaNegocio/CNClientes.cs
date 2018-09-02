@@ -28,41 +28,48 @@ namespace CapaNegocio
         }
 
         //CREATE CLIENT
-        public void InsertClient(String idTienda, String idSector, String nombreEmpresa, String nombres, String apellidoP, String apellidoM,
-            String direccion, String contacto, String telefono, String fax, String ruc, String correo, String idTipoDoc, String nroDoc, String observacion,
-            String inscripcion, String salCta, String fechaNac, String tipoCompra, String credito, String queja, String ordenclie, String promedioVentas,
-            String cta_cli, String depa, String provi, String distri, String usuRegistra)
+        public void InsertClient(string idTienda, string idSector, string nombre, string apellidoP, string apellidoM, string nombreEmpre,
+            string direccion, string contacto, string telefono, string fax, string ruc, string email, string idtipoPersona, string idtipoDocIdent,
+            string nroDocumento, string observacion, string inscripcion, string fechaNac, string credito, string tipoCliente, string depa,
+            string provi, string distri, string usuRegistra)
         {
-            Console.WriteLine("Sera pues ..." + idTienda + " " + idSector + " " + nombreEmpresa + " " + nombres + " " + apellidoP + " " + apellidoM + " " +
-            direccion + " " + contacto + " " + telefono + " " + fax + " " + ruc + " " + correo + " " + idTipoDoc + " " + nroDoc + " " +
-            observacion + " " + inscripcion + " " + salCta + " " + fechaNac + " " + tipoCompra + "   " + credito + " " + queja + "   "
-            + ordenclie + "   " + promedioVentas + "   " + cta_cli + "   " + depa + "   " + provi + "   " + distri + "   " + usuRegistra);
-            cli.InsertarCliente(idTienda, idSector, nombreEmpresa, nombres, apellidoP, apellidoM, direccion, contacto, telefono, fax, ruc, correo, idTipoDoc, nroDoc,
-                observacion, inscripcion, Convert.ToDouble(salCta), fechaNac, tipoCompra, Convert.ToDouble(credito), queja, Convert.ToInt32(ordenclie),
-                Convert.ToDouble(promedioVentas), cta_cli, depa, provi, distri, usuRegistra);
+            Console.WriteLine("Insertando Cliente: ..." + idTienda + " " + idSector + " " + nombre + " " + apellidoP + " " + apellidoM + " " + nombreEmpre+" "+
+            direccion + " " + contacto + " " + telefono + " " + fax + " " + ruc + " " + email + " " + idtipoPersona + " " + idtipoDocIdent + " " +
+            nroDocumento + " " + observacion + " " + inscripcion + " " + fechaNac + " " + credito + "   " + tipoCliente + 
+             "   " + depa + "   " + provi + "   " + distri + "   " + usuRegistra);
+            cli.InsertarCliente(idTienda,idSector,nombre,apellidoP,apellidoM,nombreEmpre,direccion,contacto,telefono,fax,ruc,email,
+                Convert.ToInt32(idtipoPersona),idtipoDocIdent,nroDocumento,observacion,inscripcion,fechaNac,Convert.ToDouble(credito),tipoCliente,
+                depa,provi,distri,usuRegistra);
         }
 
         //UPDATE CLIENT
-        public void UpdateClient(String idCliente, String idTienda, String idSector, String nombreEmpresa, String nombres, String apellidoP, String apellidoM,
-            String direccion, String contacto, String telefono, String fax, String ruc, String correo, String idTipoDoc, String nroDoc, String observacion,
-            String inscripcion, String salCta, String fechaNac, String tipoCompra, String credito, String queja, String ordenclie, String promedioVentas,
-            String cta_cli, String depa, String provi, String distri, String usuRegistra, String usuModifica, String fechaModi)
+        public void UpdateClient(string idTienda, string idSector, string nombre, string apellidoP, string apellidoM, string nombreEmpre,
+            string direccion, string contacto, string telefono, string fax, string ruc, string email, string idtipoPersona, string idtipoDocIdent,
+            string nroDocumento, string observacion, string inscripcion, string fechaNac, string credito, string tipoCliente, string depa,
+            string provi, string distri, string usuRegistra, string usuModifica, string fechaModifica, string idCliente)
         {
-            Console.WriteLine("Editadooooo ..." + idCliente + "" + idTienda + " " + idSector + " " + nombreEmpresa + " " + nombres + " " + apellidoP + " " + apellidoM + " " +
-             direccion + " " + contacto + " " + telefono + " " + fax + " " + ruc + " " + correo + " " + idTipoDoc + " " + nroDoc + " " +
-             observacion + " " + inscripcion + " " + salCta + " " + fechaNac + " " + tipoCompra + "   " + credito + " " + queja + "   "
-             + ordenclie + "   " + promedioVentas + "   " + cta_cli + "   " + depa + "   " + provi + "   " + distri + "   " + usuRegistra);
-
-            cli.EditarCliente(idCliente, idTienda, idSector, nombreEmpresa, nombres, apellidoP, apellidoM, direccion, contacto, telefono, fax, ruc, correo, idTipoDoc, nroDoc, observacion, inscripcion,
-                Convert.ToDouble(salCta), fechaNac, tipoCompra, Convert.ToDouble(credito), queja, Convert.ToInt32(ordenclie), Convert.ToDouble(promedioVentas), cta_cli, depa, provi, distri, usuRegistra,
-                usuModifica, fechaModi);
+            try
+            {
+                Console.WriteLine("EDITANDOOOO Cliente: ..." + idTienda + " " + idSector + " " + nombre + " " + apellidoP + " " + apellidoM + " " + nombreEmpre + " " +
+            direccion + " " + contacto + " " + telefono + " " + fax + " " + ruc + " " + email + " " + idtipoPersona + " " + idtipoDocIdent + " " +
+            nroDocumento + " " + observacion + " " + inscripcion + " " + fechaNac + " " + credito + "   " + tipoCliente +
+             "   " + depa + "   " + provi + "   " + distri + "   " + usuRegistra + "   " + usuModifica + "   " + fechaModifica + "   " + idCliente);
+                cli.EditarCliente(idTienda, idSector, nombre, apellidoP, apellidoM, nombreEmpre, direccion, contacto, telefono, fax, ruc, email,
+                    Convert.ToInt32(idtipoPersona), idtipoDocIdent, nroDocumento, observacion, inscripcion, fechaNac, Convert.ToDouble(credito), tipoCliente,
+                    depa, provi, distri, usuRegistra, usuModifica, fechaModifica, idCliente);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("VIENE DEL CN" + ex);
+            }
+           
         }
 
 
         //DELETE CLIENT
-        public void DeleteClient(String idRecpCliente)
+        public void DeleteClient(string idcliente)
         {
-            cli.EliminarCliente(idRecpCliente);
+            cli.EliminarCliente(idcliente);
         }
 
         //busca Cliente

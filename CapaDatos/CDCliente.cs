@@ -106,59 +106,89 @@ namespace CapaDatos
         //LISTAR CLIENTE
         public SqlDataAdapter listarClientes()
         {
-            String sql = "select c.IdCliente,c.Nombres,c.ApellidoPaterno,c.ApellidoMaterno,t.NombreTienda as 'Nombre de la Tienda'," +
-                "s.DescripcionSector as 'Nombre del sector',c.NombreEmpresa as 'Nombre de la Empresa',c.Direccion," +
-                "c.Contacto as 'Nombre del Contacto',c.Telefono,c.Fax,c.RUC,c.Email as 'Correo',d.Descripcion 'Documento'," +
-                "c.NroDocumento as 'Nr° del Documento',c.Observacion as 'Observación',c.Departamento,c.Provincia,c.Distrito," +
-                "c.UsuarioRegistra as'Usuario que Registra',c.Inscripcion as 'Inscripción',c.Estado,c.SaldoCtaCte as 'Cuenta Corriente',c.Nivel," +
-                "c.FechaNac as 'Fecha de Nacimiento',c.TipoCompra as 'Tipo de Compra',c.Credito,c.Queja,c.EstSaldoIni as 'Estado Inicial'," +
-                "c.OrdenCliente as 'Orden del Cliente',c.PromedioDeVentas as 'Promedio de ventas'," +
-                "c.cta_cli,c.UsuarioModifica,c.FechaModifica from caja.CLIENTE c, Caja.TIENDA t, Caja.SECTOR s, Caja.TIPO_DOC_IDENT d " +
-                "where c.IdTienda = t.IdTienda AND c.IdSector = s.IdSector and c.IdTipoDocIdent = d.IdTipoDocIdent ";
+            String sql = "Caja.SP_FE_MostrarCliente";
             adapter = new SqlDataAdapter(sql, conexion.AbrirConexion());
             return adapter;
         }
 
         //INSERTAR CLIENTE
-        public void InsertarCliente(String idTienda, String idSector, String nombreEmpresa, String nombres, String apellidoP, String apellidoM,
-            String direccion, String contacto, String telefono, String fax, String ruc, String correo, String idTipoDoc, String nroDoc, String observacion,
-            String inscripcion, double salCta, String fechaNac, String tipoCompra, double credito, String queja, int ordenclie, double promedioVentas,
-            String cta_cli, String depa, String provi, String distri, String usuRegistra)
+        public void InsertarCliente(string idTienda, string idSector, string nombre, string apellidoP, string apellidoM, string nombreEmpre,
+            string direccion, string contacto, string telefono, string fax, string ruc, string email,int idtipoPersona, string idtipoDocIdent, 
+            string nroDocumento, string observacion, string inscripcion, string fechaNac,double credito, string tipoCliente, string depa,
+            string provi, string distri, string usuRegistra)
         {
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "insert into Caja.CLIENTE(IdTienda,IdSector,NombreEmpresa,Nombres,ApellidoPaterno,ApellidoMaterno,Direccion,Contacto," +
-                "Telefono,Fax,RUC,Email,IdTipoDocIdent,NroDocumento,Observacion,Inscripcion,Estado,SaldoCtaCte,Nivel,FechaNac,TipoCompra,Credito,Queja," +
-                "EstSaldoIni,OrdenCliente,TipoCliente,PromedioDeVentas,cta_cli,Departamento,Provincia,Distrito,UsuarioRegistra,UsuarioModifica," +
-                "FechaModifica)values('" + idTienda + "', '" + idSector + "', '" + nombreEmpresa + "', '" + nombres + "', '" + apellidoP + "', '" + apellidoM + "'," +
-                " '" + direccion + "', '" + contacto + "', '" + telefono + "','" + fax + "', '" + ruc + "', '" + correo + "', '" + idTipoDoc + "', '" + nroDoc + "'," +
-                " '" + observacion + "', '" + inscripcion + "', 'A', '" + salCta + "', '1','" + fechaNac + "', '" + tipoCompra + "','" + credito + "', " +
-                "'" + queja + "', '1', '" + ordenclie + "', '', '" + promedioVentas + "', '" + cta_cli + "', '" + depa + "', '" + provi + "', '" + distri + "'," +
-                " '" + usuRegistra + "','', '')";
-            comando.CommandType = CommandType.Text;
+            comando.CommandText = "Caja.SP_FE_InsertarCliente";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@idTienda", idTienda);
+            comando.Parameters.AddWithValue("@idSector", idSector);
+            comando.Parameters.AddWithValue("@nombre", nombre);
+            comando.Parameters.AddWithValue("@apellidoP", apellidoP);
+            comando.Parameters.AddWithValue("@apellidoM", apellidoM);
+            comando.Parameters.AddWithValue("@nombreEmpre", nombreEmpre);
+            comando.Parameters.AddWithValue("@direccion", direccion);
+            comando.Parameters.AddWithValue("@contacto", contacto);
+            comando.Parameters.AddWithValue("@telefono", telefono);
+            comando.Parameters.AddWithValue("@fax", fax);
+            comando.Parameters.AddWithValue("@ruc", ruc);
+            comando.Parameters.AddWithValue("@email", email);
+            comando.Parameters.AddWithValue("@idtipoPersona", idtipoPersona);
+            comando.Parameters.AddWithValue("@idtipoDocIdent", idtipoDocIdent);
+            comando.Parameters.AddWithValue("@nroDocumento", nroDocumento);
+            comando.Parameters.AddWithValue("@observacion", observacion);
+            comando.Parameters.AddWithValue("@inscripcion", inscripcion);
+            comando.Parameters.AddWithValue("@fechaNac", fechaNac);
+            comando.Parameters.AddWithValue("@credito", credito);
+            comando.Parameters.AddWithValue("@tipoCliente", tipoCliente);
+            comando.Parameters.AddWithValue("@depa", depa);
+            comando.Parameters.AddWithValue("@provi", provi);
+            comando.Parameters.AddWithValue("@distri", distri);
+            comando.Parameters.AddWithValue("@usuRegistra", usuRegistra);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
         }
 
         //EDITAR CLIENTE
-        public void EditarCliente(String idCliente, String idTienda, String idSector, String nombreEmpresa, String nombres, String apellidoP, String apellidoM,
-            String direccion, String contacto, String telefono, String fax, String ruc, String correo, String idTipoDoc, String nroDoc, String observacion,
-            String inscripcion, double salCta, String fechaNac, String tipoCompra, double credito, String queja, int ordenclie, double promedioVentas,
-            String cta_cli, String depa, String provi, String distri, String usuRegistra, String usuModifica, String fechaModi)
+        public void EditarCliente(string idTienda, string idSector, string nombre, string apellidoP, string apellidoM, string nombreEmpre,
+            string direccion, string contacto, string telefono, string fax, string ruc, string email, int idtipoPersona, string idtipoDocIdent,
+            string nroDocumento, string observacion, string inscripcion, string fechaNac, double credito, string tipoCliente, string depa,
+            string provi, string distri, string usuRegistra,string usuModifica,string fechaModifica, string idCliente)
         {
             Console.WriteLine("id cliente" + idCliente);
             try
             {
                 comando.Connection = conexion.AbrirConexion();
-                comando.CommandText = "update caja.CLIENTE set IdTienda='" + idTienda + "',IdSector='" + idSector + "',NombreEmpresa='" + nombreEmpresa + "',Nombres='" + nombres + "'," +
-                    "ApellidoPaterno = '" + apellidoP + "',ApellidoMaterno = '" + apellidoM + "',Direccion = '" + direccion + "',Contacto = '" + contacto + "',Telefono = '" + telefono + "'," +
-                    "Fax = '" + fax + "',RUC = '" + ruc + "',Email = '" + correo + "',IdTipoDocIdent = '" + idTipoDoc + "',NroDocumento = '" + nroDoc + "',Observacion = '" + observacion + "'," +
-                    "Inscripcion = " + inscripcion + ",Estado = 'A',SaldoCtaCte = " + salCta + ",Nivel = '1',FechaNac = " + fechaNac + ",TipoCompra = '" + tipoCompra + "',Credito =" + credito + "," +
-                    "Queja = '" + queja + "',EstSaldoIni = '1',OrdenCliente = " + ordenclie + ",TipoCliente = '',PromedioDeVentas = " + promedioVentas + " ,cta_cli = '" + cta_cli + "'," +
-                    "Departamento = '" + depa + "',Provincia = '" + provi + "',Distrito = '" + distri + "',UsuarioRegistra = '" + usuRegistra + "',UsuarioModifica = '" + usuModifica + "'," +
-                    "FechaModifica = " + fechaModi + " where IdCliente = '" + idCliente + "'";
-                comando.CommandType = CommandType.Text;
+                comando.CommandText = "Caja.SP_FE_EditarCliente";
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@idTienda", idTienda);
+                comando.Parameters.AddWithValue("@idSector", idSector);
+                comando.Parameters.AddWithValue("@nombre", nombre);
+                comando.Parameters.AddWithValue("@apellidoP", apellidoP);
+                comando.Parameters.AddWithValue("@apellidoM", apellidoM);
+                comando.Parameters.AddWithValue("@nombreEmpre", nombreEmpre);
+                comando.Parameters.AddWithValue("@direccion", direccion);
+                comando.Parameters.AddWithValue("@contacto", contacto);
+                comando.Parameters.AddWithValue("@telefono", telefono);
+                comando.Parameters.AddWithValue("@fax", fax);
+                comando.Parameters.AddWithValue("@ruc", ruc);
+                comando.Parameters.AddWithValue("@email", email);
+                comando.Parameters.AddWithValue("@idtipoPersona", idtipoPersona);
+                comando.Parameters.AddWithValue("@idtipoDocIdent", idtipoDocIdent);
+                comando.Parameters.AddWithValue("@nroDocumento", nroDocumento);
+                comando.Parameters.AddWithValue("@observacion", observacion);
+                comando.Parameters.AddWithValue("@inscripcion", inscripcion);
+                comando.Parameters.AddWithValue("@fechaNac", fechaNac);
+                comando.Parameters.AddWithValue("@credito", credito);
+                comando.Parameters.AddWithValue("@tipoCliente", tipoCliente);
+                comando.Parameters.AddWithValue("@depa", depa);
+                comando.Parameters.AddWithValue("@provi", provi);
+                comando.Parameters.AddWithValue("@distri", distri);
+                comando.Parameters.AddWithValue("@usuRegistra", usuRegistra);
+                comando.Parameters.AddWithValue("@usuModifica", usuModifica);
+                comando.Parameters.AddWithValue("@fechaModifica", fechaModifica);
+                comando.Parameters.AddWithValue("@idCliente", idCliente);
                 comando.ExecuteNonQuery();
-                conexion.CerrarConexion();
+                comando.Parameters.Clear();
             }
             catch (SqlException ex)
             {
@@ -168,13 +198,15 @@ namespace CapaDatos
         }
 
         //ELIMINAR CLIENTE
-        public void EliminarCliente(String idRecpCliente)
+        public void EliminarCliente(string idcliente)
         {
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = " delete from Caja.ClienteReceptor where IdClienteReceptor=" + idRecpCliente + "";
-            comando.CommandType = CommandType.Text;
+            comando.CommandText = "Caja.SP_FE_EliminarCliente";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@idcliente", idcliente);
             comando.ExecuteNonQuery();
-            conexion.CerrarConexion();
+
+            comando.Parameters.Clear();
         }
 
         //Llenar comboBox Documento

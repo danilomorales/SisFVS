@@ -87,6 +87,12 @@
     <Compile Include="FormComprobanteVenta.Designer.cs">
       <DependentUpon>FormComprobanteVenta.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormEditarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditarCliente.Designer.cs">
+      <DependentUpon>FormEditarCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormEditarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -283,6 +289,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormComprobanteVenta.resx">
       <DependentUpon>FormComprobanteVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditarCliente.resx">
+      <DependentUpon>FormEditarCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormEditarUsuario.resx">
       <DependentUpon>FormEditarUsuario.cs</DependentUpon>
