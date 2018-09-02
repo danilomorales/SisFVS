@@ -41,6 +41,22 @@ namespace CapaDatos
 
         }
 
+        public void InsertaNuevaVenta(CEVenta venta_entidad)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("Caja.SP_NuevaVenta", conexion.Conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("", SqlDbType.Int).Value = venta_entidad.Cant_dias_pago;
+
+
+            }
+            catch
+            {
+
+            }
+        }
+
 
     }
 }
