@@ -886,7 +886,7 @@ namespace SistemaFigueri
                     if (cant <= stock)
                     {
                         dgvVenta.Rows[e.RowIndex].Cells["IMPORTE"].Value = resultado.ToString();
-                        ImproteTotal.Text = SumaTotal.ToString("0.00");
+                        ImproteTotal.Text = SumaIgv.ToString("0.00");
                     }
                     else
                     {
@@ -908,13 +908,18 @@ namespace SistemaFigueri
                 }
             }
 
-
         }
 
         private void dgvVenta_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
         {
-            if (e.RowIndex < dgvVenta.RowCount - 4)
-                oldvalue = (int)dgvVenta[e.ColumnIndex, e.RowIndex].Value;
+            try
+            {
+                if (e.RowIndex < dgvVenta.RowCount - 4)
+                    oldvalue = (int)dgvVenta[e.ColumnIndex, e.RowIndex].Value;
+            }
+            catch(ApplicationException)
+            {
+            } 
         }
 
         private void bunifuCustomLabel19_Click(object sender, EventArgs e)
