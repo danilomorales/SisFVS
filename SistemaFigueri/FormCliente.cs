@@ -56,7 +56,7 @@ namespace SistemaFigueri
             {
                 if (dgvCliente.SelectedRows.Count > 0)
                 {
-                    using (FormEditarCliente formUP = new FormEditarCliente())
+                    using (FormUpdateCliente formUP = new FormUpdateCliente())
                     {
                         formUP.listarTienda();
                         formUP.listarSector();

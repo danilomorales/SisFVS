@@ -19,7 +19,6 @@ namespace CapaNegocio
             get { return CNProductos._intancia; }
         }
         private CDProductos pro = new CDProductos();
-        private CDCliente clientes = new CDCliente();
 
         //READALL PRODUCT
         public SqlDataAdapter MostarProductos()
@@ -138,27 +137,6 @@ namespace CapaNegocio
                 throw;
             }
         }
-        //UPDATE CLIENT
-        public void UpdateClient(string idTienda, string idSector, string nombre, string apellidoP, string apellidoM, string nombreEmpre,
-            string direccion, string contacto, string telefono, string fax, string ruc, string email, string idtipoPersona, string idtipoDocIdent,
-            string nroDocumento, string observacion, string inscripcion, string fechaNac, string credito, string tipoCliente, string depa,
-            string provi, string distri, string usuRegistra, string usuModifica, string fechaModifica, string idCliente)
-        {
-            try
-            {
-                Console.WriteLine("EDITANDOOOO Cliente: ..." + idTienda + " " + idSector + " " + nombre + " " + apellidoP + " " + apellidoM + " " + nombreEmpre + " " +
-            direccion + " " + contacto + " " + telefono + " " + fax + " " + ruc + " " + email + " " + idtipoPersona + " " + idtipoDocIdent + " " +
-            nroDocumento + " " + observacion + " " + inscripcion + " " + fechaNac + " " + credito + "   " + tipoCliente +
-             "   " + depa + "   " + provi + "   " + distri + "   " + usuRegistra + "   " + usuModifica + "   " + fechaModifica + "   " + idCliente);
-                clientes.EditarCliente(idTienda, idSector, nombre, apellidoP, apellidoM, nombreEmpre, direccion, contacto, telefono, fax, ruc, email,
-                    Convert.ToInt32(idtipoPersona), idtipoDocIdent, nroDocumento, observacion, inscripcion, fechaNac, Convert.ToDouble(credito), tipoCliente,
-                    depa, provi, distri, usuRegistra, usuModifica, fechaModifica, idCliente);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("VIENE DEL CN" + ex);
-            }
-
-        }
+       
     }
 }
