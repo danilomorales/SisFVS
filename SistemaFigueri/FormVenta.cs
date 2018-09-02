@@ -246,6 +246,7 @@ namespace SistemaFigueri
             LIstaFormapago();
             ListaMoneda();
             ListaTipoDoc();
+            crearTabla();
 
             CNVentas cNVentas = new CNVentas();
             int idcomprobante = Int32.Parse(cboTipoDoc.SelectedValue.ToString());
@@ -901,7 +902,7 @@ namespace SistemaFigueri
                     int cant = Int32.Parse(dgvVenta.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString());
                     //MessageBox.Show(cant.ToString());
                     double precio = Double.Parse(dgvVenta.Rows[e.RowIndex].Cells["PRECIO"].Value.ToString());
-                    // MessageBox.Show(precio.ToString());
+                    //MessageBox.Show(precio.ToString());
                     double resultado = cant * precio;
                     int stock = Int32.Parse(dgvVenta.Rows[e.RowIndex].Cells["STOCK"].Value.ToString());
                     if (cant <= stock)
@@ -1035,7 +1036,7 @@ namespace SistemaFigueri
 
                 }
                 else
-                {  // no hacer nada 
+                {  // no hace nada 
                 }
             }
             catch (Exception ex)
