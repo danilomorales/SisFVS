@@ -89,8 +89,8 @@ namespace CapaDatos
             SqlCommand cmd = null;
             List<CEVenta> Lista = null;
             SqlDataReader dr = null;
-            //try
-            //{
+            try
+            {
                 
             //    cmd = new SqlCommand("spListaVenta", conexion.Conexion);
             //    cmd.Parameters.AddWithValue("@prmfinicio", fechadesde);
@@ -122,7 +122,7 @@ namespace CapaDatos
             //        v.tipopago = tp;
             //        Lista.Add(v);
             //    }
-            //}
+            }
             catch (Exception)
             {
                 throw;
