@@ -910,7 +910,7 @@ namespace SistemaFigueri
                             SumaSubTotal += Convert.ToDecimal(dgvVenta.Rows[i].Cells[4].Value);
                             SumaIgv += Convert.ToDecimal(dgvVenta.Rows[i].Cells[6].Value);
                         }
-                        dgvVenta.Columns[4].DefaultCellStyle.BackColor = Color.GreenYellow;
+                        dgvVenta.Columns[4].DefaultCellStyle.BackColor = Color.Tan;
                         dgvVenta.Rows[lst.Count + 1].Cells[3].Value = "SUB-TOTAL  S/.";
                         dgvVenta.Rows[lst.Count + 1].DefaultCellStyle.FormatProvider = format;
                         dgvVenta.Rows[lst.Count + 1].Cells[4].Value = SumaSubTotal;
@@ -1081,7 +1081,7 @@ namespace SistemaFigueri
                 lblSerie.Text = cboSerie.Text;
                 lblNroCorrelativo.Text = correlativo;
             }
-
+            
 
 
         }
@@ -1116,7 +1116,7 @@ namespace SistemaFigueri
                             tbDocumento.Text = form.dni;
                             tbtipodoc.Text = form.tipodoc;
                             tbrazonsocial.Text = form.empresa;
-                            tbIdCliente.Text = form.idcliente;
+                            //tbIdCliente.Text = form.idcliente;
 
                             CNProductos objProducto = new CNProductos();
 
@@ -1283,7 +1283,8 @@ namespace SistemaFigueri
                 {
                     VAlidaSoloNumero();
                     venta_ent._ide_cliente = tbIdCliente.Text;
-                    
+                    venta_ent._ide_cliente = tbIdCliente.Text;
+                   // venta_ent._precio = Convert.ToDouble(tbPrecio.Text.ToString());
                 }
                 else
                 {

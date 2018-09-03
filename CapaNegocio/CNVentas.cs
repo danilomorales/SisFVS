@@ -102,9 +102,18 @@ namespace CapaNegocio
         }
 
 
-        public void InsertarVenta (CEVenta venta_ent)
+        public void InsertarVenta (CEVenta venta_ent, String idComPago)
         {
-            venta.InsertaNuevaVenta(venta_ent);
+            try
+            {
+                venta.InsertaNuevaVenta(venta_ent, idComPago);
+                if (venta == null) throw new ApplicationException("No se insertó");
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            
         }
 
         public void InsertarDetalleVenta(CEDetalleVenta detalle_ent)

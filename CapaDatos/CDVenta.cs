@@ -47,12 +47,14 @@ namespace CapaDatos
 
         }
 
-        public void InsertaNuevaVenta(CEVenta venta_entidad)
+        public void InsertaNuevaVenta(CEVenta venta_entidad, String idComPago)
         {
             try
             {
                 SqlCommand cmd = new SqlCommand("Caja.SP_NuevaVenta", conexion.Conexion);
+                cmd.Parameters.AddWithValue("@ide_comp_pago", idComPago);
                 cmd.CommandType = CommandType.StoredProcedure;
+
                 cmd.Parameters.Add("@ide_cliente", SqlDbType.Int).Value = venta_entidad._ide_cliente;
                 cmd.Parameters.Add("@ide_comp_pago", SqlDbType.Int).Value = venta_entidad._cant_dias_pago;
                 //cmd.Parameters.Add("@ide_comp_pago", SqlDbType.DateTime).Value = venta_entidad._fecha_vmto;
