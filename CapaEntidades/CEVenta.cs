@@ -9,9 +9,9 @@ namespace CapaEntidades
     public class CEVenta
     {
 
-        private int ide_cliente;
+        private String ide_cliente;
 
-        public int _ide_cliente
+        public String _ide_cliente
         {
             get { return ide_cliente; }
             set { ide_cliente = value; }

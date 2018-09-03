@@ -70,37 +70,46 @@ namespace SistemaFigueri
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            decimal amount = Convert.ToDecimal(tbMonto.Text);
-            decimal importe = Convert.ToDecimal(tbImporteTotal.Text);
-            if (tbMonto.Text != "")
+            try
             {
-                Venta ven = new Venta();
-                ven.IdTipoPago = Int32.Parse(cboFormaPago.SelectedValue.ToString());
-                //MessageBox.Show("Este es idtipo pago: " + cboFormaPago.SelectedValue.ToString());
-                ven.IdMoneda = Int32.Parse(cboMoneda.SelectedValue.ToString());
-                //MessageBox.Show("Este es idmoneda: " + cboMoneda.SelectedValue.ToString());
-                ven.FormaPago = cboFormaPago.Text;
-                ven.Moneda = cboMoneda.Text;
-                if (amount <= importe)
+                decimal amount = Convert.ToDecimal(tbMonto.Text);
+                decimal importe = Convert.ToDecimal(tbImporteTotal.Text);
+                if (tbMonto.Text != "")
                 {
-                    //MessageBox.Show("Este es moneda: " + cboFormaPago.Text + "Forma pago"+ cboMoneda.Text);
-                    ven.Monto = Convert.ToDecimal(tbMonto.Text);
-                    tbTotalCobrado.Text = String.Format("{0:N}", Convert.ToDecimal(tbMonto.Text));
-                    tbVuelto.Text = "0.00";
-                }
-                else
-                {
-                    //MessageBox.Show("Este es moneda: " + cboFormaPago.Text + "Forma pago"+ cboMoneda.Text);
-                    ven.Monto = importe;
-                    tbTotalCobrado.Text = tbMonto.Text;
-                    tbVuelto.Text = String.Format("{0:N}", (amount - importe));
-                    
+                    Venta ven = new Venta();
+                    ven.IdTipoPago = Int32.Parse(cboFormaPago.SelectedValue.ToString());
+                    //MessageBox.Show("Este es idtipo pago: " + cboFormaPago.SelectedValue.ToString());
+                    ven.IdMoneda = Int32.Parse(cboMoneda.SelectedValue.ToString());
+                    //MessageBox.Show("Este es idmoneda: " + cboMoneda.SelectedValue.ToString());
+                    ven.FormaPago = cboFormaPago.Text;
+                    ven.Moneda = cboMoneda.Text;
+                    if (amount <= importe)
+                    {
+                        //MessageBox.Show("Este es moneda: " + cboFormaPago.Text + "Forma pago"+ cboMoneda.Text);
+                        ven.Monto = Convert.ToDecimal(tbMonto.Text);
+                        tbTotalCobrado.Text = String.Format("{0:N}", Convert.ToDecimal(tbMonto.Text));
+                        tbVuelto.Text = "0.00";
+                    }
+                    else
+                    {
+                        //MessageBox.Show("Este es moneda: " + cboFormaPago.Text + "Forma pago"+ cboMoneda.Text);
+                        ven.Monto = importe;
+                        tbTotalCobrado.Text = tbMonto.Text;
+                        tbVuelto.Text = String.Format("{0:N}", (amount - importe));
+
+
+                    }
+                    lista.Add(ven);
+                    LlenarGrilla();
 
                 }
-                lista.Add(ven);
-                LlenarGrilla();
-
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            
             
         }
 

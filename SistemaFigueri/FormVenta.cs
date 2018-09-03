@@ -39,7 +39,7 @@ namespace SistemaFigueri
         Decimal SumaTotal { get; set; }
         Decimal SumaSubTotal { get; set; }
         Decimal SumaIgv { get; set; }
-
+        
         public AutoCompleteStringCollection autocompletatb = new AutoCompleteStringCollection();
         public static FormVenta GetInstancia()
         {
@@ -68,6 +68,8 @@ namespace SistemaFigueri
             InitializeComponent();
 
         }
+        CEVenta venta_ent = new CEVenta();
+        CNVentas venta_neg = new CNVentas();
 
         private void MensajeOk(string mensaje)
         {
@@ -430,6 +432,23 @@ namespace SistemaFigueri
             dgvVenta.Rows[lst.Count + 3].Cells[4].Value = SumaTotal;
             tbImpTotal.Text = SumaTotal.ToString();
             dgvVenta.ClearSelection();
+
+
+
+            dgvVenta.Columns[2].Width = 60;
+            dgvVenta.Columns["CANTIDAD"].Width = 15;
+            dgvVenta.Columns["PRECIO"].Width = 30;
+            dgvVenta.Columns["STOCK"].Width = 20;
+            dgvVenta.Columns["IMPORTE"].Width = 60;
+
+            DataGridViewCellStyle csscabecera = new DataGridViewCellStyle();
+            csscabecera.Alignment = DataGridViewContentAlignment.TopCenter;
+            dgvVenta.ColumnHeadersDefaultCellStyle = csscabecera;
+            dgvVenta.AllowUserToAddRows = false;
+            dgvVenta.AllowUserToResizeColumns = false;
+            dgvVenta.AllowUserToResizeRows = false;
+            dgvVenta.ReadOnly = false;
+            dgvVenta.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
 
@@ -861,49 +880,59 @@ namespace SistemaFigueri
 
         private void dgvVenta_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex < dgvVenta.RowCount - 4)
+            try
             {
-                var format = (NumberFormatInfo)NumberFormatInfo.CurrentInfo.Clone();
-                format.CurrencySymbol = "";
-                if (dgvVenta.Columns[e.ColumnIndex].Name == "CANTIDAD")
+                if (e.RowIndex < dgvVenta.RowCount - 4)
                 {
-                    int cant = Int32.Parse(dgvVenta.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString());
-                    //MessageBox.Show(cant.ToString());
-                    double precio = Double.Parse(dgvVenta.Rows[e.RowIndex].Cells["PRECIO"].Value.ToString());
-                    //MessageBox.Show(precio.ToString());
-                    double resultado = cant * precio;
-                    int stock = Int32.Parse(dgvVenta.Rows[e.RowIndex].Cells["STOCK"].Value.ToString());
-                    if (cant <= stock)
+                    var format = (NumberFormatInfo)NumberFormatInfo.CurrentInfo.Clone();
+                    format.CurrencySymbol = "";
+                    if (dgvVenta.Columns[e.ColumnIndex].Name == "CANTIDAD")
                     {
-                        dgvVenta.Rows[e.RowIndex].Cells["IMPORTE"].Value = resultado.ToString();
-                        //ImproteTotal.Text = SumaIgv.ToString("0.00");
+                        int cant = Int32.Parse(dgvVenta.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString());
+                        //MessageBox.Show(cant.ToString());
+                        double precio = Double.Parse(dgvVenta.Rows[e.RowIndex].Cells["PRECIO"].Value.ToString());
+                        //MessageBox.Show(precio.ToString());
+                        double resultado = cant * precio;
+                        int stock = Int32.Parse(dgvVenta.Rows[e.RowIndex].Cells["STOCK"].Value.ToString());
+                        if (cant <= stock)
+                        {
+                            dgvVenta.Rows[e.RowIndex].Cells["IMPORTE"].Value = resultado.ToString();
+                            //ImproteTotal.Text = SumaIgv.ToString("0.00");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Stock insuficiente");
+                            dgvVenta.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = oldvalue;
+                        }
+                        SumaSubTotal = 0; SumaIgv = 0;
+                        for (int i = 0; i < lst.Count; i++)
+                        {
+                            SumaSubTotal += Convert.ToDecimal(dgvVenta.Rows[i].Cells[4].Value);
+                            SumaIgv += Convert.ToDecimal(dgvVenta.Rows[i].Cells[6].Value);
+                        }
+                        dgvVenta.Columns[4].DefaultCellStyle.BackColor = Color.GreenYellow;
+                        dgvVenta.Rows[lst.Count + 1].Cells[3].Value = "SUB-TOTAL  S/.";
+                        dgvVenta.Rows[lst.Count + 1].DefaultCellStyle.FormatProvider = format;
+                        dgvVenta.Rows[lst.Count + 1].Cells[4].Value = SumaSubTotal;
+                        dgvVenta.Rows[lst.Count + 2].Cells[3].Value = "      I.G.V.        %";
+                        dgvVenta.Rows[lst.Count + 2].DefaultCellStyle.FormatProvider = format;
+                        dgvVenta.Rows[lst.Count + 2].Cells[4].Value = SumaIgv;
+                        dgvVenta.Rows[lst.Count + 3].Cells[3].Value = "     TOTAL     S/.";
+                        SumaTotal = SumaSubTotal + SumaIgv;
+                        dgvVenta.Rows[lst.Count + 3].DefaultCellStyle.FormatProvider = format;
+                        dgvVenta.Rows[lst.Count + 3].Cells[4].Value = SumaTotal;
+                        tbImpTotal.Text = SumaTotal.ToString();
+                        dgvVenta.ClearSelection();
+
                     }
-                    else
-                    {
-                        MessageBox.Show("Stock insuficiente");
-                        dgvVenta.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = oldvalue;
-                    }
-                    SumaSubTotal = 0; SumaIgv = 0;
-                    for (int i = 0; i < lst.Count; i++)
-                    {
-                        SumaSubTotal += Convert.ToDecimal(dgvVenta.Rows[i].Cells[4].Value);
-                        SumaIgv += Convert.ToDecimal(dgvVenta.Rows[i].Cells[6].Value);
-                    }
-                    dgvVenta.Columns[4].DefaultCellStyle.BackColor = Color.GreenYellow;
-                    dgvVenta.Rows[lst.Count + 1].Cells[3].Value = "SUB-TOTAL  S/.";
-                    dgvVenta.Rows[lst.Count + 1].DefaultCellStyle.FormatProvider = format;
-                    dgvVenta.Rows[lst.Count + 1].Cells[4].Value = SumaSubTotal;
-                    dgvVenta.Rows[lst.Count + 2].Cells[3].Value = "      I.G.V.        %";
-                    dgvVenta.Rows[lst.Count + 2].DefaultCellStyle.FormatProvider = format;
-                    dgvVenta.Rows[lst.Count + 2].Cells[4].Value = SumaIgv;
-                    dgvVenta.Rows[lst.Count + 3].Cells[3].Value = "     TOTAL     S/.";
-                    SumaTotal = SumaSubTotal + SumaIgv;
-                    dgvVenta.Rows[lst.Count + 3].DefaultCellStyle.FormatProvider = format;
-                    dgvVenta.Rows[lst.Count + 3].Cells[4].Value = SumaTotal;
-                    tbImpTotal.Text = SumaTotal.ToString();
-                    dgvVenta.ClearSelection();
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+           
 
         }
 
@@ -914,8 +943,9 @@ namespace SistemaFigueri
                 if (e.RowIndex < dgvVenta.RowCount - 4)
                     oldvalue = (int)dgvVenta[e.ColumnIndex, e.RowIndex].Value;
             }
-            catch (ApplicationException)
+            catch (Exception ex)
             {
+                MessageBox.Show(ex.Message, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -1002,14 +1032,27 @@ namespace SistemaFigueri
         private void dgvVenta_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             //MessageBox.Show(" rowindex" + e.RowIndex + " rowcount " + dgvVenta.RowCount);
-            if (e.RowIndex < dgvVenta.RowCount - 4)
+
+            try
             {
-                tbAlias.Text = dgvVenta.Rows[e.RowIndex].Cells["ALIAS"].Value.ToString();
-                tbDescripcion.Text = dgvVenta.Rows[e.RowIndex].Cells[2].Value.ToString();
-                tbStock.Text = dgvVenta.Rows[e.RowIndex].Cells["STOCK"].Value.ToString();
-                //dtFechaV.Text = form.fechavencimiento;
-                tbPrecio.Text = dgvVenta.Rows[e.RowIndex].Cells[3].Value.ToString();
+                if (e.RowIndex < dgvVenta.RowCount - 4)
+                {
+                    tbAlias.Text = dgvVenta.Rows[e.RowIndex].Cells["ALIAS"].Value.ToString();
+                    tbDescripcion.Text = dgvVenta.Rows[e.RowIndex].Cells[2].Value.ToString();
+                    tbStock.Text = dgvVenta.Rows[e.RowIndex].Cells["STOCK"].Value.ToString();
+                    //dtFechaV.Text = form.fechavencimiento;
+                    tbPrecio.Text = dgvVenta.Rows[e.RowIndex].Cells[3].Value.ToString();
+                }
+                else
+                {
+
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
 
 
         }
@@ -1239,10 +1282,8 @@ namespace SistemaFigueri
                 if (Convert.ToString(dgvVenta.CurrentRow.Cells[2].Value) != "")
                 {
                     VAlidaSoloNumero();
-                    CEVenta v = new CEVenta();
-                    CECliente c = new CECliente();
-                    c.IdCliente = LocalBD.Instancia.ReturnIdClienteNV(0, 0);
-                    //v.
+                    venta_ent._ide_cliente = tbIdCliente.Text;
+                    
                 }
                 else
                 {
@@ -1322,6 +1363,9 @@ namespace SistemaFigueri
                 form.ShowDialog();
             }
         }
+        //Guardar Venta--
+       
+
         //Form Historial de Vetas***********************************************************************************
         private void CrearTablaHisVentas()
         {
