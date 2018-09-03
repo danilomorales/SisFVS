@@ -35,12 +35,6 @@ namespace SistemaFigueri
                 MaterialSkin.TextShade.BLACK);
         }
 
-        private void bunifuThinButton22_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-
         private void FormInsertProducto_Load(object sender, EventArgs e)
         {
             listarCategoria();
@@ -266,6 +260,11 @@ namespace SistemaFigueri
             bmnota.Text = "";
             bminicial.Text = "";
 
+        }
+
+        private void btncancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

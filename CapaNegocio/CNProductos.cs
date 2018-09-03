@@ -7,6 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 using CapaDatos;
 using CapaEntidades;
+using CapaNegocio;
 
 namespace CapaNegocio
 {
@@ -18,7 +19,6 @@ namespace CapaNegocio
             get { return CNProductos._intancia; }
         }
         private CDProductos pro = new CDProductos();
-        
 
         //READALL PRODUCT
         public SqlDataAdapter MostarProductos()
@@ -137,5 +137,6 @@ namespace CapaNegocio
                 throw;
             }
         }
+       
     }
 }

@@ -29,7 +29,7 @@ namespace SistemaFigueri
                 MaterialSkin.Accent.Orange100,
                 MaterialSkin.TextShade.BLACK);
         }
-        CNClientes cli = new CNClientes();
+        CNClientes c = new CNClientes();
         public string idCliente;       
 
         private void FormUpdateCliente_Load(object sender, EventArgs e)
@@ -65,6 +65,14 @@ namespace SistemaFigueri
             cboedisector.ValueMember = "IdSector";
         }
 
+        //LISTAR PERSONA
+        public void listarPersona()
+        {
+            CDCliente cdcli = new CDCliente();
+            cboeditipoPersona.DataSource = cdcli.ListarPersona();
+            cboeditipoPersona.DisplayMember = "Descripcion";
+            cboeditipoPersona.ValueMember = "IdTipoPersona";
+        }
         SqlConnection Con = new SqlConnection("Data Source=192.168.21.5;Initial Catalog=DBFIGUE2;User ID=sa;Password=123;MultipleActiveResultSets=true;");
         public void ListarDepartamento()
         {
@@ -131,22 +139,21 @@ namespace SistemaFigueri
 
         private void buniActualizar_Click(object sender, EventArgs e)
         {
+            string fecha1 = dateedinscripcion.Value.ToString("yyyy-MM-dd");
+            string fecha2 = datediNacimiento.Value.ToString("yyyy-MM-dd");
+            string fecha3 = datedimodificacion.Value.ToString("yyyy-MM-dd");
             try
             {
-                MessageBox.Show("clientes"+ cli);
-                cli.UpdateClient(idCliente,cboediTienda.SelectedValue.ToString(),cboedisector.SelectedValue.ToString(),bmedinombreEmpresa.Text,
-                    bmedinombreCliente.Text,bmediapellidoP.Text,bmediapellidoM.Text,bmedireccion.Text,bmedicontacto.Text,bmeditelefono.Text,bmedifax.Text,
-                    bmediruc.Text,bmedicorreo.Text,cboedidocumento.SelectedValue.ToString(),bmedinumerodoc.Text,bmediobservacion.Text,datedinscripcion.Text,
-                    bmedicorriente.Text,datediNacimiento.Text,bmeditipoCompra.Text,bmedicredito.Text,bmediqueja.Text,bmediordenCliente.Text,
-                    bmedipromedioVentas.Text,bmedicta_cli.Text,cboedidepartamento.SelectedValue.ToString(),cboediprovincia.SelectedValue.ToString(),
-                    cboedidistrito.SelectedValue.ToString(),bmediuserRegistra.Text,bmediuserModi.Text,datediModificacion.Text);
-                MessageBox.Show("Se edito correctamente el CLIENTE");
-                this.DialogResult = DialogResult.OK;
-                this.Close();
+                c.UpdateClient(cboediTienda.SelectedValue.ToString(),cboedisector.SelectedValue.ToString(),bmedinombreCliente.Text,bmediapellidoP.Text,
+                    bmediapellidoM.Text,bmedinombreEmpresa.Text,bmedireccion.Text,bmedicontacto.Text,bmeditelefono.Text,bmedifax.Text,bmediruc.Text,
+                    bmedicorreo.Text,cboeditipoPersona.SelectedValue.ToString(),cboedidocumento.SelectedValue.ToString(),bmedinumerodoc.Text,
+                    bmediobservacion.Text,fecha1,fecha2,bmedicredito.Text,cboeditipoCliente.SelectedValue.ToString(),cboedidepartamento.SelectedValue.ToString(),
+                    cboediprovincia.SelectedValue.ToString(),cboedidistrito.SelectedValue.ToString(),bmediuserModi.Text,bmediuserModi.Text,
+                    fecha3,idCliente);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("No se pudo actuaizar" + ex.ToString());
+                MessageBox.Show("No se pudo ACTUALIZAR:" + ex);
             }
         }
     }

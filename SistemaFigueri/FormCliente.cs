@@ -61,49 +61,38 @@ namespace SistemaFigueri
                         formUP.listarTienda();
                         formUP.listarSector();
                         formUP.listarDocumento();
+                        formUP.listarPersona();
                         formUP.idCliente = dgvCliente.CurrentRow.Cells["IdCliente"].Value.ToString();
                         formUP.bmedinombreCliente.Text = dgvCliente.CurrentRow.Cells["Nombres"].Value.ToString();
-                        formUP.bmediapellidoP.Text = dgvCliente.CurrentRow.Cells["ApellidoPaterno"].Value.ToString();
-                        formUP.bmediapellidoM.Text = dgvCliente.CurrentRow.Cells["ApellidoMaterno"].Value.ToString();
+                        formUP.bmediapellidoP.Text = dgvCliente.CurrentRow.Cells["Apellido Paterno"].Value.ToString();
+                        formUP.bmediapellidoM.Text = dgvCliente.CurrentRow.Cells["Apellido Materno"].Value.ToString();
                         formUP.cboedidocumento.Text = dgvCliente.CurrentRow.Cells["Nombre de la Tienda"].Value.ToString();
                         formUP.cboedisector.Text = dgvCliente.CurrentRow.Cells["Nombre del sector"].Value.ToString();
                         formUP.bmedinombreEmpresa.Text = dgvCliente.CurrentRow.Cells["Nombre de la Empresa"].Value.ToString();
-                        formUP.bmedireccion.Text = dgvCliente.CurrentRow.Cells["Direccion"].Value.ToString();
-                        formUP.bmedicontacto.Text = dgvCliente.CurrentRow.Cells["Nombre del Contacto"].Value.ToString();
+                        formUP.bmedireccion.Text = dgvCliente.CurrentRow.Cells["Dirección"].Value.ToString();
+                        formUP.bmedicontacto.Text = dgvCliente.CurrentRow.Cells["Contacto"].Value.ToString();
                         formUP.bmeditelefono.Text = dgvCliente.CurrentRow.Cells["Telefono"].Value.ToString();
                         formUP.bmedifax.Text = dgvCliente.CurrentRow.Cells["Fax"].Value.ToString();
                         formUP.bmediruc.Text = dgvCliente.CurrentRow.Cells["RUC"].Value.ToString();
-                        formUP.bmedicorreo.Text = dgvCliente.CurrentRow.Cells["Correo"].Value.ToString();
-                        formUP.cboedidocumento.Text = dgvCliente.CurrentRow.Cells["Documento"].Value.ToString();
-                        formUP.bmedinumerodoc.Text = dgvCliente.CurrentRow.Cells["Nr° del Documento"].Value.ToString();
+                        formUP.bmedicorreo.Text = dgvCliente.CurrentRow.Cells["Email"].Value.ToString();
+                        formUP.cboeditipoPersona.Text = dgvCliente.CurrentRow.Cells["Tipo de persona"].Value.ToString();
+                        formUP.cboedidocumento.Text = dgvCliente.CurrentRow.Cells["Tipo de Documento"].Value.ToString();
+                        formUP.bmedinumerodoc.Text = dgvCliente.CurrentRow.Cells["N° de Documento"].Value.ToString();
                         formUP.bmediobservacion.Text = dgvCliente.CurrentRow.Cells["Observación"].Value.ToString();
+                        formUP.dateedinscripcion.Value = DateTime.Parse(dgvCliente.CurrentRow.Cells["Inscripción"].Value.ToString());
+                        formUP.datediNacimiento.Value = DateTime.Parse(dgvCliente.CurrentRow.Cells["Fecha de Nacimiento"].Value.ToString());
+                        formUP.bmedicredito.Text = dgvCliente.CurrentRow.Cells["Credito"].Value.ToString();
+                        formUP.cboeditipoCliente.Text = dgvCliente.CurrentRow.Cells["Tipo de Cliente"].Value.ToString();
                         formUP.cboedidepartamento.Text = dgvCliente.CurrentRow.Cells["Departamento"].Value.ToString();
                         formUP.cboediprovincia.Text = dgvCliente.CurrentRow.Cells["Provincia"].Value.ToString();
                         formUP.cboedidistrito.Text = dgvCliente.CurrentRow.Cells["Distrito"].Value.ToString();
-                        formUP.bmediuserRegistra.Text = dgvCliente.CurrentRow.Cells["Usuario que Registra"].Value.ToString();
-                        formUP.datedinscripcion.Text = dgvCliente.CurrentRow.Cells["Inscripción"].Value.ToString();
-                        formUP.bmedicorriente.Text = dgvCliente.CurrentRow.Cells["Cuenta Corriente"].Value.ToString();
-                        formUP.datediNacimiento.Text = dgvCliente.CurrentRow.Cells["Fecha de Nacimiento"].Value.ToString();
-                        formUP.bmeditipoCompra.Text = dgvCliente.CurrentRow.Cells["Tipo de Compra"].Value.ToString();
-                        formUP.bmedicredito.Text = dgvCliente.CurrentRow.Cells["Credito"].Value.ToString();
-                        formUP.bmediqueja.Text = dgvCliente.CurrentRow.Cells["Queja"].Value.ToString();
-                        formUP.bmediordenCliente.Text = dgvCliente.CurrentRow.Cells["Orden del Cliente"].Value.ToString();
-                        formUP.bmedipromedioVentas.Text = dgvCliente.CurrentRow.Cells["Promedio de ventas"].Value.ToString();
-                        formUP.bmedicta_cli.Text = dgvCliente.CurrentRow.Cells["cta_cli"].Value.ToString();
-                        formUP.bmediuserModi.Text = dgvCliente.CurrentRow.Cells["UsuarioModifica"].Value.ToString();
-                        formUP.datediModificacion.Text = dgvCliente.CurrentRow.Cells["FechaModifica"].Value.ToString();
+                        formUP.bmediuserRegistra.Text = dgvCliente.CurrentRow.Cells["Usuario que registra"].Value.ToString();
+                        //formUP.datedimodificacion.Value = DateTime.Parse(dgvCliente.CurrentRow.Cells["Fecha que Modifica"].Value.ToString());
                         if (formUP.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                         {
                             MostrarClientes();
                         }
-                    }
-                    
-
-
-
-                    
-                    
-
+                    }                  
                 }
                 else
                     MessageBox.Show("Selecciones una fila por favor");
@@ -124,7 +113,6 @@ namespace SistemaFigueri
                 cli.DeleteClient(dgvCliente.CurrentRow.Cells[0].Value.ToString());
                 MessageBox.Show("¿Estas seguro de eliminar este Cliente?");
                 //this.Close();
-                Refresh();
                 MostrarClientes();
 
             }
@@ -151,12 +139,6 @@ namespace SistemaFigueri
             //plist = new PagedList<DataRow>(list);
             adapter.Fill(tabla);
             dgvCliente.DataSource = tabla;
-            /*dgvPerfiles.Columns["foto"].Width = 60;
-            dgvPerfiles.RowTemplate.Height = 120;
-            DataGridViewImageColumn imagen = new DataGridViewImageColumn();
-            ((DataGridViewImageColumn)this.dgvPerfiles.Columns["foto"]).DefaultCellStyle.NullValue = null;
-            imagen = (DataGridViewImageColumn)dgvPerfiles.Columns["foto"];
-            imagen.ImageLayout = DataGridViewImageCellLayout.Stretch;*/
             adapter.Dispose();
         }
 
