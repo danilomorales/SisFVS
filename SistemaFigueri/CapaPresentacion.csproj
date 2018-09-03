@@ -117,6 +117,12 @@
     <Compile Include="FormVentaMDI.Designer.cs">
       <DependentUpon>FormVentaMDI.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormVentaPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVentaPago.Designer.cs">
+      <DependentUpon>FormVentaPago.cs</DependentUpon>
+    </Compile>
     <Compile Include="LocalBD.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <DependentUpon>Resources.resx</DependentUpon>
@@ -343,6 +349,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormVentaMDI.resx">
       <DependentUpon>FormVentaMDI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormVentaPago.resx">
+      <DependentUpon>FormVentaPago.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <SubType>Designer</SubType>

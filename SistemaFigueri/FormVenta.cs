@@ -204,17 +204,17 @@ namespace SistemaFigueri
         {
             CDVenta Cv = new CDVenta();
             
-            cboTipoPago.DisplayMember = "DescripcionTipo";
+            /*cboTipoPago.DisplayMember = "DescripcionTipo";
             cboTipoPago.ValueMember = "IdtipoPago";
-            cboTipoPago.DataSource = Cv.CargaFormaPago();
+            cboTipoPago.DataSource = Cv.CargaFormaPago();*/
         }
         private void ListaMoneda()
         {
             CDVenta Ds = new CDVenta();
             
-            CboMoneda.DisplayMember = "DesMoneda";
+           /* CboMoneda.DisplayMember = "DesMoneda";
             CboMoneda.ValueMember = "IdMoneda";
-            CboMoneda.DataSource = Ds.CargaMoneda();
+            CboMoneda.DataSource = Ds.CargaMoneda();*/
         }
         private void ListaTipoDoc()
         {
@@ -257,6 +257,18 @@ namespace SistemaFigueri
             String correlativo = cNVentas.traerCorrelativo(idcomprobante,idserie);
             lblSerie.Text = cboSerie.Text;
             lblNroCorrelativo.Text = correlativo;
+            double amount =0.00;
+            tbImpTotal.Text = String.Format("{0:N}", amount);
+           /* tbTotalPagar.Text = String.Format("{0:N}", amount);
+            tbTotalCobrado.Text = String.Format("{0:N}", amount);
+            tbSaldoSoles.Text = String.Format("{0:N}", amount);
+            tbSaldoDolares.Text = String.Format("{0:N}", amount);
+            tbVuelto.Text = String.Format("{0:N}", amount);*/
+            /*tbTotalPagar.Text = amount.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("en-PE"));
+            tbTotalCobrado.Text = amount.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("en-PE"));
+            tbSaldoSoles.Text = amount.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("en-PE"));
+            tbSaldoDolares.Text = amount.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("en-ca"));
+            tbVuelto.Text = amount.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("en-PE"));*/
 
         }
         private void VAlidaSoloNumero()
@@ -458,9 +470,10 @@ namespace SistemaFigueri
             dgvVenta.Rows[lst.Count + 2].Cells[4].Value = SumaIgv;
             dgvVenta.Rows.Add();
             dgvVenta.Rows[lst.Count + 3].Cells[3].Value = "     TOTAL     S/.";
-            SumaTotal += SumaSubTotal + SumaIgv;
+            SumaTotal = SumaSubTotal + SumaIgv;
             dgvVenta.Rows[lst.Count + 3].DefaultCellStyle.FormatProvider = format;
             dgvVenta.Rows[lst.Count + 3].Cells[4].Value = SumaTotal;
+            tbImpTotal.Text = SumaTotal.ToString();
             dgvVenta.ClearSelection();
         }
 
@@ -908,12 +921,18 @@ namespace SistemaFigueri
                     if (cant <= stock)
                     {
                         dgvVenta.Rows[e.RowIndex].Cells["IMPORTE"].Value = resultado.ToString();
-                        ImproteTotal.Text = SumaIgv.ToString("0.00");
+                        //ImproteTotal.Text = SumaIgv.ToString("0.00");
                     }
                     else
                     {
                         MessageBox.Show("Stock insuficiente");
                         dgvVenta.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = oldvalue;
+                    }
+                    SumaSubTotal = 0; SumaIgv = 0;
+                    for (int i = 0; i < lst.Count; i++)
+                    {
+                        SumaSubTotal += Convert.ToDecimal(dgvVenta.Rows[i].Cells[4].Value);
+                        SumaIgv += Convert.ToDecimal(dgvVenta.Rows[i].Cells[6].Value);
                     }
                     dgvVenta.Columns[4].DefaultCellStyle.BackColor = Color.GreenYellow;
                     dgvVenta.Rows[lst.Count + 1].Cells[3].Value = "SUB-TOTAL  S/.";
@@ -923,9 +942,10 @@ namespace SistemaFigueri
                     dgvVenta.Rows[lst.Count + 2].DefaultCellStyle.FormatProvider = format;
                     dgvVenta.Rows[lst.Count + 2].Cells[4].Value = SumaIgv;
                     dgvVenta.Rows[lst.Count + 3].Cells[3].Value = "     TOTAL     S/.";
-                    SumaTotal += SumaSubTotal + SumaIgv;
+                    SumaTotal = SumaSubTotal + SumaIgv;
                     dgvVenta.Rows[lst.Count + 3].DefaultCellStyle.FormatProvider = format;
                     dgvVenta.Rows[lst.Count + 3].Cells[4].Value = SumaTotal;
+                    tbImpTotal.Text = SumaTotal.ToString();
                     dgvVenta.ClearSelection();
                 }
             }
@@ -947,27 +967,6 @@ namespace SistemaFigueri
         private void bunifuCustomLabel19_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void cboTipoPago_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            String indice = cboTipoPago.SelectedValue.ToString();
-            //MessageBox.Show(indice);
-            switch (indice){
-                case "01":
-                    tformapago.SelectedTab = tabEfectivo;
-                    break;
-                case "12":
-                    tformapago.SelectedTab = tabcredito;
-                    break;
-                case "13":
-                    tformapago.SelectedTab = tabCheque;
-                    break;
-                case "14":
-                    tformapago.SelectedTab = tabDeposito;
-                    break;
-
-            }
         }
 
         private void btnGuarda_Click(object sender, EventArgs e)
@@ -1257,7 +1256,7 @@ namespace SistemaFigueri
 
         }
 
-        private void tformapago_SelectedIndexChanged_1(object sender, EventArgs e)
+        /*private void tformapago_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             if (tformapago.SelectedTab == tabEfectivo)
             {
@@ -1275,7 +1274,7 @@ namespace SistemaFigueri
             {
                 cboTipoPago.SelectedIndex = cboTipoPago.FindStringExact("DEPÓSITO");
             }
-        }
+        }*/
 
         private void btnGuarda_Click_1(object sender, EventArgs e)
         {
@@ -1324,6 +1323,49 @@ namespace SistemaFigueri
             String correlativo = cNVentas.traerCorrelativo(idcomprobante,idserie);
             lblSerie.Text = cboSerie.Text;
             lblNroCorrelativo.Text = correlativo;
+        }
+
+        private void bunifuCustomLabel26_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPagar_Click(object sender, EventArgs e)
+        {
+            using (FormVentaPago form = new FormVentaPago())
+            {
+                
+                CNVentas Ds = new CNVentas();
+                //CARGAR COMBO TIPO DOC
+                form.cboTipoDoc.DisplayMember = "DescripcionDoc";
+                form.cboTipoDoc.ValueMember = "IdTipoDoc";
+                form.cboTipoDoc.DataSource = Ds.MostarCboTipoDoc();
+                int idcomprobante = Int32.Parse(cboTipoDoc.SelectedValue.ToString());
+                //CARGAR COMBO SERIE
+                form.cboSerie.ValueMember = "IdSerie";
+                form.cboSerie.DisplayMember = "Serie";
+                form.cboSerie.DataSource = Ds.traerSerie(idcomprobante);
+                //SELECCIONAR VALORES DE LOS COMBOS
+                form.cboTipoDoc.SelectedIndex = cboTipoDoc.SelectedIndex;
+                form.cboSerie.SelectedIndex = cboSerie.SelectedIndex;
+                //CARGAR DATOS DEL CLIENTE
+                form.tbDNI.Text = tbDocumento.Text;
+                form.tbCliente.Text = tbClienteNombre.Text + " " + tbCliapellido.Text;
+                form.tbEmpresa.Text = tbrazonsocial.Text;
+                form.tbRUC.Text = tbRuc.Text;
+                //CARGAR COMBO TIPO PAGO
+                form.cboFormaPago.DisplayMember = "DescripcionTipo";
+                form.cboFormaPago.ValueMember = "IdtipoPago";
+                form.cboFormaPago.DataSource = Ds.MostarCboTipoPago();
+                //CARGAR COMBO MONEDA
+                form.cboMoneda.DisplayMember = "DesMoneda";
+                form.cboMoneda.ValueMember = "IdMoneda";
+                form.cboMoneda.DataSource = Ds.MostarCboMoneda();
+                //CARGAR MONTO
+                form.tbImporteTotal.Text = tbImpTotal.Text;
+                form.tbTotalPagar.Text = tbImpTotal.Text;
+                form.ShowDialog();
+            }
         }
     }
 }
