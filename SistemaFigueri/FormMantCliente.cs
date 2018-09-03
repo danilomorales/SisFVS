@@ -30,12 +30,7 @@ namespace SistemaFigueri
                 MaterialSkin.Accent.Orange100,
                 MaterialSkin.TextShade.BLACK);
         }
-        CNClientes cli = new CNClientes();
         FormCliente formCliente = new FormCliente();
-        private void btnCancelarMant_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
         private void bunifuThinButton22_Click(object sender, EventArgs e)
         {
@@ -46,34 +41,11 @@ namespace SistemaFigueri
         {           
             listarSector();
             listarDocumento();
-            //listarPersona();
+            listarPersona();
             ListarDepartamento();
             listarTienda();
 
         }      
-
-        //GUARDAR NUEVO CLIENTE
-        private void bmGuardar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                cli.InsertClient(cboTienda.SelectedValue.ToString(), cbosector.SelectedValue.ToString(),
-                    bmnombreEmpresa.Text, bmnombreCliente.Text, bmapellidoP.Text, bmapellidoM.Text, bmdireccion.Text,
-                    bmcontacto.Text, bmtelefono.Text, bmfax.Text, bmruc.Text, bmcorreo.Text, cbodocumento.SelectedValue.ToString(),
-                    bmnumerodoc.Text, bmobservacion.Text, dateinscripcion.Text, bmcorriente.Text, dateNacimiento.Text,
-                    bmtipoCompra.Text, bmcredito.Text, bmqueja.Text, bmordenCliente.Text, bmpromedioVentas.Text,
-                    bmcta_cli.Text, cbodepartamento.SelectedValue.ToString(), cboprovincia.SelectedValue.ToString(),
-                    cbodistrito.SelectedValue.ToString(),bmUsuRegistra.Text);
-                MessageBox.Show("SE  registro CLIENTE");
-                this.DialogResult = DialogResult.OK;
-                this.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("No se registro CLIENTE" + ex.ToString());
-            }
-        }
-
         //LISTAR DOCUMENTO
         private void listarDocumento()
         {
@@ -84,14 +56,14 @@ namespace SistemaFigueri
 
         }
 
-        ////LISTAR PERSONA
-        //private void listarPersona()
-        //{
-        //    CDCliente cdcli = new CDCliente();
-        //    cboTienda.DataSource = cdcli.ListarPersona();
-        //    cboTienda.DisplayMember = "Descripcion";
-        //    cboTienda.ValueMember = "IdTipoPersona";
-        //}
+        //LISTAR PERSONA
+        private void listarPersona()
+        {
+            CDCliente cdcli = new CDCliente();
+            cboTipoPersona.DataSource = cdcli.ListarPersona();
+            cboTipoPersona.DisplayMember = "Descripcion";
+            cboTipoPersona.ValueMember = "IdTipoPersona";
+        }
 
         //LISTAR SECTOR
         private void listarSector()
@@ -115,21 +87,7 @@ namespace SistemaFigueri
         private void cancelaMant_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void cboPersona_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //if (cboPersona.SelectedIndex.Equals("Persona Juridica"))
-            //{
-            //    bmruc.Visible = true;
-            //    bmruc.Visible = true;
-            //}
-            //else
-            //{
-            //    bmruc.Visible = false;
-            //    bmruc.Visible = false;
-            //}
-        }
+        }     
 
         SqlConnection Con = new SqlConnection("Data Source=192.168.21.5;Initial Catalog=DBFIGUE2;User ID=sa;Password=123;MultipleActiveResultSets=true;");
         public void ListarDepartamento()
@@ -210,14 +168,48 @@ namespace SistemaFigueri
             }
         }
 
-        private void bunifuCards2_Paint(object sender, PaintEventArgs e)
+        private void bunifuFlatButton17_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void bunifuFlatButton17_Click(object sender, EventArgs e)
+        private void cboTipoPersona_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if(cboTipoPersona.SelectedValue.Equals(2))
+            //if (cboTipoPersona.SelectedItem.Equals("Persona Juridica"))
+            {
+                bfruc.Visible = true;
+                bmruc.Visible = true;
+            }
+            else
+            {
+                bfruc.Visible = false;
+                bmruc.Visible = false;
+            }
+        }
 
+        private void btnguardarCliente_Click(object sender, EventArgs e)
+        {
+            CNClientes cNClientes = new CNClientes();
+            string fecha1 = dateInscripcion.Value.ToString("yyyy-MM-dd");
+            string fecha2 = dateFechaNac.Value.ToString("yyyy-MM-dd");
+            try
+            {
+                MessageBox.Show("Clase de negocio:" + cNClientes);
+                cNClientes.InsertClient(cboTienda.SelectedValue.ToString(), cbosector.SelectedValue.ToString(), bmnombreCliente.Text, bmapellidoP.Text,
+                    bmapellidoM.Text, bmnombreEmpresa.Text, bmdireccion.Text, bmcontacto.Text, bmtelefono.Text, bmfax.Text, bmruc.Text, bmcorreo.Text,
+                    cboTipoPersona.SelectedValue.ToString(), cbodocumento.SelectedValue.ToString(), bmnumerodoc.Text, bmobservacion.Text, fecha1,
+                    fecha2, bmcredito.Text, cboTipoCiente.SelectedValue.ToString(), cbodepartamento.SelectedValue.ToString(), cboprovincia.SelectedValue.ToString(),
+                    cbodistrito.SelectedValue.ToString(), bmUsuRegistra.Text);
+                MessageBox.Show("SE registro CLIENTE");
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error del mantenimiento:" + ex);
+                MessageBox.Show("No se registro CLIENTE" + ex.ToString());
+            }
         }
     }
 }

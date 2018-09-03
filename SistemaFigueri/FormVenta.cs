@@ -204,17 +204,17 @@ namespace SistemaFigueri
         {
             CDVenta Cv = new CDVenta();
             
-            cboTipoPago.DisplayMember = "DescripcionTipo";
+            /*cboTipoPago.DisplayMember = "DescripcionTipo";
             cboTipoPago.ValueMember = "IdtipoPago";
-            cboTipoPago.DataSource = Cv.CargaFormaPago();
+            cboTipoPago.DataSource = Cv.CargaFormaPago();*/
         }
         private void ListaMoneda()
         {
             CDVenta Ds = new CDVenta();
             
-            CboMoneda.DisplayMember = "DesMoneda";
+           /* CboMoneda.DisplayMember = "DesMoneda";
             CboMoneda.ValueMember = "IdMoneda";
-            CboMoneda.DataSource = Ds.CargaMoneda();
+            CboMoneda.DataSource = Ds.CargaMoneda();*/
         }
         private void ListaTipoDoc()
         {
@@ -227,7 +227,6 @@ namespace SistemaFigueri
 
         private void FormVenta_Load(object sender, EventArgs e)
         {
-            CrearTablaHisVentas();
             var cards = new Bunifu.Framework.UI.BunifuCards();
             MostrarClientes();
             this.crearTabla();
@@ -258,6 +257,18 @@ namespace SistemaFigueri
             String correlativo = cNVentas.traerCorrelativo(idcomprobante,idserie);
             lblSerie.Text = cboSerie.Text;
             lblNroCorrelativo.Text = correlativo;
+            double amount =0.00;
+            tbImpTotal.Text = String.Format("{0:N}", amount);
+           /* tbTotalPagar.Text = String.Format("{0:N}", amount);
+            tbTotalCobrado.Text = String.Format("{0:N}", amount);
+            tbSaldoSoles.Text = String.Format("{0:N}", amount);
+            tbSaldoDolares.Text = String.Format("{0:N}", amount);
+            tbVuelto.Text = String.Format("{0:N}", amount);*/
+            /*tbTotalPagar.Text = amount.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("en-PE"));
+            tbTotalCobrado.Text = amount.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("en-PE"));
+            tbSaldoSoles.Text = amount.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("en-PE"));
+            tbSaldoDolares.Text = amount.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("en-ca"));
+            tbVuelto.Text = amount.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("en-PE"));*/
 
         }
         private void VAlidaSoloNumero()
@@ -459,9 +470,10 @@ namespace SistemaFigueri
             dgvVenta.Rows[lst.Count + 2].Cells[4].Value = SumaIgv;
             dgvVenta.Rows.Add();
             dgvVenta.Rows[lst.Count + 3].Cells[3].Value = "     TOTAL     S/.";
-            SumaTotal += SumaSubTotal + SumaIgv;
+            SumaTotal = SumaSubTotal + SumaIgv;
             dgvVenta.Rows[lst.Count + 3].DefaultCellStyle.FormatProvider = format;
             dgvVenta.Rows[lst.Count + 3].Cells[4].Value = SumaTotal;
+            tbImpTotal.Text = SumaTotal.ToString();
             dgvVenta.ClearSelection();
         }
 
@@ -909,12 +921,18 @@ namespace SistemaFigueri
                     if (cant <= stock)
                     {
                         dgvVenta.Rows[e.RowIndex].Cells["IMPORTE"].Value = resultado.ToString();
-                        ImproteTotal.Text = SumaIgv.ToString("0.00");
+                        //ImproteTotal.Text = SumaIgv.ToString("0.00");
                     }
                     else
                     {
                         MessageBox.Show("Stock insuficiente");
                         dgvVenta.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = oldvalue;
+                    }
+                    SumaSubTotal = 0; SumaIgv = 0;
+                    for (int i = 0; i < lst.Count; i++)
+                    {
+                        SumaSubTotal += Convert.ToDecimal(dgvVenta.Rows[i].Cells[4].Value);
+                        SumaIgv += Convert.ToDecimal(dgvVenta.Rows[i].Cells[6].Value);
                     }
                     dgvVenta.Columns[4].DefaultCellStyle.BackColor = Color.GreenYellow;
                     dgvVenta.Rows[lst.Count + 1].Cells[3].Value = "SUB-TOTAL  S/.";
@@ -924,9 +942,10 @@ namespace SistemaFigueri
                     dgvVenta.Rows[lst.Count + 2].DefaultCellStyle.FormatProvider = format;
                     dgvVenta.Rows[lst.Count + 2].Cells[4].Value = SumaIgv;
                     dgvVenta.Rows[lst.Count + 3].Cells[3].Value = "     TOTAL     S/.";
-                    SumaTotal += SumaSubTotal + SumaIgv;
+                    SumaTotal = SumaSubTotal + SumaIgv;
                     dgvVenta.Rows[lst.Count + 3].DefaultCellStyle.FormatProvider = format;
                     dgvVenta.Rows[lst.Count + 3].Cells[4].Value = SumaTotal;
+                    tbImpTotal.Text = SumaTotal.ToString();
                     dgvVenta.ClearSelection();
                 }
             }
@@ -948,27 +967,6 @@ namespace SistemaFigueri
         private void bunifuCustomLabel19_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void cboTipoPago_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            String indice = cboTipoPago.SelectedValue.ToString();
-            //MessageBox.Show(indice);
-            switch (indice){
-                case "01":
-                    tformapago.SelectedTab = tabEfectivo;
-                    break;
-                case "12":
-                    tformapago.SelectedTab = tabcredito;
-                    break;
-                case "13":
-                    tformapago.SelectedTab = tabCheque;
-                    break;
-                case "14":
-                    tformapago.SelectedTab = tabDeposito;
-                    break;
-
-            }
         }
 
         private void btnGuarda_Click(object sender, EventArgs e)
@@ -1258,7 +1256,7 @@ namespace SistemaFigueri
 
         }
 
-        private void tformapago_SelectedIndexChanged_1(object sender, EventArgs e)
+        /*private void tformapago_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             if (tformapago.SelectedTab == tabEfectivo)
             {
@@ -1276,7 +1274,7 @@ namespace SistemaFigueri
             {
                 cboTipoPago.SelectedIndex = cboTipoPago.FindStringExact("DEPÓSITO");
             }
-        }
+        }*/
 
         private void btnGuarda_Click_1(object sender, EventArgs e)
         {
@@ -1327,96 +1325,46 @@ namespace SistemaFigueri
             lblNroCorrelativo.Text = correlativo;
         }
 
-
-
-        //Form Historial de Vetas***********************************************************************************
-        private void CrearTablaHisVentas()
+        private void bunifuCustomLabel26_Click(object sender, EventArgs e)
         {
-            try
-            {
-                dgvHistorialVentas.Columns.Add("ColumnId", "Id");
-                dgvHistorialVentas.Columns.Add("ColumnCodigo", "Codigo");
-                dgvHistorialVentas.Columns.Add("ColumnEstado", "Estado");
-                dgvHistorialVentas.Columns.Add("ColumnComprobante", "Comprobante");
-                dgvHistorialVentas.Columns.Add("ColumnCorrelativo", "Número");
-                dgvHistorialVentas.Columns.Add("ColumnFecha", "Fecha");
-                dgvHistorialVentas.Columns.Add("ColumnHora", "Hora");
-                dgvHistorialVentas.Columns.Add("ColumnIgv", "Igv");
-                dgvHistorialVentas.Columns.Add("ColumnTotal", "Total");
 
-                dgvHistorialVentas.Columns[0].Visible = false;
-                dgvHistorialVentas.Columns[2].Width = 60;
-                dgvHistorialVentas.Columns[5].Width = 60;
-                dgvHistorialVentas.Columns[6].Width = 58;
-                dgvHistorialVentas.Columns[7].Width = 40;
-                dgvHistorialVentas.Columns[8].Width = 70;
-
-
-                DataGridViewCellStyle csscabecera = new DataGridViewCellStyle();
-                csscabecera.Alignment = DataGridViewContentAlignment.TopCenter;
-                dgvHistorialVentas.ColumnHeadersDefaultCellStyle = csscabecera;
-                dgvHistorialVentas.AllowUserToAddRows = false;
-                dgvHistorialVentas.AllowUserToResizeColumns = false;
-                dgvHistorialVentas.AllowUserToResizeRows = false;
-                dgvHistorialVentas.ReadOnly = false;
-                dgvHistorialVentas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
         }
 
-        private void LlenarTablaHistVenta()
+        private void btnPagar_Click(object sender, EventArgs e)
         {
-            try
+            using (FormVentaPago form = new FormVentaPago())
             {
-                double total = 0, boleta = 0.0, factura = 0.0, notaventa = 0.0,
-                 efectivo = 0.0, tarjetacred = 0.0, contrareembolso = 0.0, deposito = 0.0, dolares = 0.0, inversion = 0.0, totalUtilidades = 0.0;
-                dgvHistorialVentas.Rows.Clear();
-                int idSucursal = (int)cboSucursal.SelectedValue;
-                List<entVenta> Lista = CNVentas..ListarVenta(dtpDesde.Value.ToString("yyyy/MM/dd"), dtpHasta.Value.ToString("yyyy/MM/dd"), idSucursal);
-                for (int i = 0; i < Lista.Count; i++)
-                {
-                    String[] fila = new String[] { Lista[i].Id_Venta.ToString(), Lista[i].Codigo_Venta,Lista[i].Estado_Venta,Lista[i].tipocomprobante.Nombre_TipCom,
-                    Lista[i].Correlativo_Venta,Lista[i].FechaVenta.ToString("dd-MM-yy"),Lista[i].FechaVenta.ToString("HH:mm:ss"),Lista[i].Igv_Venta.ToString(),(Lista[i].Total-Lista[i].Descuento_Venta).ToString("0.00"),(Lista[i].Utilidad).ToString("0.00")};
-                    dgvHistorialVentas.Rows.Add(fila);
-                    dgvHistorialVentas.Rows[i].DefaultCellStyle.Alignment = DataGridViewContentAlignment.TopCenter;
-                    if (Lista[i].Estado_Venta == 'A'.ToString()) dgvHistorialVentas.Rows[i].DefaultCellStyle.BackColor = Color.LightCoral;
-                    if (Lista[i].Estado_Venta == 'E'.ToString())
-                    {
-                        total += Lista[i].Total - Lista[i].Descuento_Venta;
-                        descuento += Lista[i].Descuento_Venta;
-                        inversion += Lista[i].Inversion;
-                        totalUtilidades += Lista[i].Utilidad;
-
-                        if (Lista[i].tipocomprobante.Id_TipCom == 1) boleta += Lista[i].Total;
-                        else if (Lista[i].tipocomprobante.Id_TipCom == 2) factura += Lista[i].Total;
-                        else if (Lista[i].tipocomprobante.Id_TipCom == 5) notaventa += Lista[i].Total - Lista[i].Descuento_Venta;
-
-                        if (Lista[i].tipopago.Id_TipPago == 1) efectivo += Lista[i].Total - Lista[i].Descuento_Venta;
-                        else if (Lista[i].tipopago.Id_TipPago == 2) tarjetacred += Lista[i].Total - Lista[i].Descuento_Venta;
-                        else if (Lista[i].tipopago.Id_TipPago == 3) contrareembolso += Lista[i].Total - Lista[i].Descuento_Venta;
-                        else if (Lista[i].tipopago.Id_TipPago == 4) deposito += Lista[i].Total - Lista[i].Descuento_Venta;
-
-                    }
-                }
-                lblTotal.Text = string.Format("S/ ") + total.ToString("0.00"); lblBoleta.Text = boleta.ToString("0.00"); lblFactura.Text = factura.ToString("0.00");
-                lblNotaventa.Text = notaventa.ToString("0.00"); lblEfectivo.Text = efectivo.ToString("0.00"); lblTarjetacredito.Text = tarjetacred.ToString("0.00");
-                lblContrarembolso.Text = contrareembolso.ToString("0.00"); lbldeposito.Text = deposito.ToString("0.00"); lblsoles.Text = "S/ " + total.ToString("0.00"); lbldolares.Text = "$ " + dolares.ToString("0.00");
-                lbldescuento.Text = descuento.ToString("0.00");
-
-                /*CÁLCULO DE UTILIDADES*/
-                lblImporteInversion.Text = "S/ " + inversion.ToString("0.00");
-                lblTotalUtilidades.Text = "S/ " + totalUtilidades.ToString("0.00");
-
-
-            }
-            catch (e)
-            {
-
+                
+                CNVentas Ds = new CNVentas();
+                //CARGAR COMBO TIPO DOC
+                form.cboTipoDoc.DisplayMember = "DescripcionDoc";
+                form.cboTipoDoc.ValueMember = "IdTipoDoc";
+                form.cboTipoDoc.DataSource = Ds.MostarCboTipoDoc();
+                int idcomprobante = Int32.Parse(cboTipoDoc.SelectedValue.ToString());
+                //CARGAR COMBO SERIE
+                form.cboSerie.ValueMember = "IdSerie";
+                form.cboSerie.DisplayMember = "Serie";
+                form.cboSerie.DataSource = Ds.traerSerie(idcomprobante);
+                //SELECCIONAR VALORES DE LOS COMBOS
+                form.cboTipoDoc.SelectedIndex = cboTipoDoc.SelectedIndex;
+                form.cboSerie.SelectedIndex = cboSerie.SelectedIndex;
+                //CARGAR DATOS DEL CLIENTE
+                form.tbDNI.Text = tbDocumento.Text;
+                form.tbCliente.Text = tbClienteNombre.Text + " " + tbCliapellido.Text;
+                form.tbEmpresa.Text = tbrazonsocial.Text;
+                form.tbRUC.Text = tbRuc.Text;
+                //CARGAR COMBO TIPO PAGO
+                form.cboFormaPago.DisplayMember = "DescripcionTipo";
+                form.cboFormaPago.ValueMember = "IdtipoPago";
+                form.cboFormaPago.DataSource = Ds.MostarCboTipoPago();
+                //CARGAR COMBO MONEDA
+                form.cboMoneda.DisplayMember = "DesMoneda";
+                form.cboMoneda.ValueMember = "IdMoneda";
+                form.cboMoneda.DataSource = Ds.MostarCboMoneda();
+                //CARGAR MONTO
+                form.tbImporteTotal.Text = tbImpTotal.Text;
+                form.tbTotalPagar.Text = tbImpTotal.Text;
+                form.ShowDialog();
             }
         }
     }
