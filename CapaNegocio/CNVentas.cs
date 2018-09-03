@@ -117,7 +117,7 @@ namespace CapaNegocio
         {
             try
             {
-                List<CEVenta> Lista = CDVenta..ListarVenta(fdesde, fhasta, idSucursal);
+                List<CEVenta> Lista = CDVenta.Instancia.ListarVenta(fdesde, fhasta, idSucursal);
                 if (Lista == null) throw new ApplicationException("Error al cargar historial de ventas");
                 else if (Lista.Count == 0) throw new ApplicationException("Lista de historial de ventas vacia");
                 return Lista;
