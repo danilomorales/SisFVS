@@ -1056,21 +1056,48 @@ namespace SistemaFigueri
 
 
         }
-
+        
         private void cboTipoDoc_SelectedIndexChanged(object sender, EventArgs e)
         {
+            try
+            {
+                String idinsert = cboTipoDoc.SelectedValue.ToString();
+                if (idinsert == "96")
+                {
+                    cboTipoDoc.ValueMember = "3";
+                    String val_entrada = idinsert;
+
+
+                }
+                else
+                {
+                    CNVentas ventas_neg = new CNVentas();
+                   // String correlativo = ventas_neg.InsertarVenta(venta_ent, idinsert);
+
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
             String indice = cboTipoDoc.SelectedValue.ToString();
 
             if (indice == "96")
             {
-
+                
             }
+          
             else {
                 /*lblTipo.Text = "FACTURA";
                 CNVentas cNVentas = new CNVentas();
                 String correlativo = cNVentas.traerCorrelativo(1);
                 lblSerie.Text = "F001";
                 lblNroCorrelativo.Text = correlativo.ToString();*/
+
                 CNVentas cNVentas = new CNVentas();
 
                 cboSerie.ValueMember = "IdSerie";
@@ -1283,8 +1310,10 @@ namespace SistemaFigueri
                 {
                     VAlidaSoloNumero();
                     venta_ent._ide_cliente = tbIdCliente.Text;
-                    venta_ent._ide_cliente = tbIdCliente.Text;
-                   // venta_ent._precio = Convert.ToDouble(tbPrecio.Text.ToString());
+
+
+                    //venta_ent. = tbIdCliente.Text;
+                    //venta_ent._precio = Convert.ToDouble(tbPrecio.Text.ToString());
                 }
                 else
                 {

@@ -35,8 +35,8 @@ namespace CapaEntidades
             get { return motivo_nc; }
             set { motivo_nc = value; }
         }
-
         private String ref_nserie_nc;
+
         private decimal ref_ndoc_nc;
         private int idmoneda;
         private decimal valor_venta;
