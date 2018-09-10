@@ -91,6 +91,7 @@ namespace SistemaFigueri
                     dgvlListaProducto.Rows.Clear();
                     for (int i = 0; i < Lista.Count(); i++)
                     {
+
                         num++;
                         String[] fila = new String[] {
                         Lista[i]._Codigo,
@@ -107,7 +108,6 @@ namespace SistemaFigueri
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
 
         }
         private void rbNombreProd_CheckedChanged(object sender, EventArgs e)
@@ -134,6 +134,7 @@ namespace SistemaFigueri
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
 
 

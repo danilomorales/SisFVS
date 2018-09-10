@@ -337,6 +337,7 @@ namespace CapaDatos
                     c.Apellidos = dr["Apellidos"].ToString();
                     c.Nombre_Empresa = dr["Razón_Social"].ToString();
                     c.Sector = dr["Sector"].ToString();
+                    c.Id_Cliente = dr["IdCliente"].ToString();
                     Lista.Add(c);
                 }
             }
