@@ -19,7 +19,7 @@ namespace CapaDatos
                 return CDConexion._instancia;
             }
         }
-        public SqlConnection Conexion = new SqlConnection("Data Source=192.168.21.5;Initial Catalog=DBFIGUE2;User ID=sa;Password=123;MultipleActiveResultSets=true;");
+        public SqlConnection Conexion = new SqlConnection("Data Source=192.168.21.13;Initial Catalog=DBFIGUE2;User ID=sa;Password=123;MultipleActiveResultSets=true;");
         
         public SqlConnection AbrirConexion()
         {

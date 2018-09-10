@@ -1364,7 +1364,29 @@ namespace SistemaFigueri
                 //CARGAR MONTO
                 form.tbImporteTotal.Text = tbImpTotal.Text;
                 form.tbTotalPagar.Text = tbImpTotal.Text;
+                //CARGA TARJETA
+                form.cboTarjeta.DisplayMember = "DesTarjeta";
+                form.cboTarjeta.ValueMember = "IdTarjeta";
+                form.cboTarjeta.DataSource = Ds.MostarCboTarjeta(2);
+                //CARGA TIPO TARJETA
+                form.cboTipoTarjeta.DisplayMember = "DesTipoTarjeta";
+                form.cboTipoTarjeta.ValueMember = "IdTipoTarjeta";
+                form.cboTipoTarjeta.DataSource = Ds.MostarCboTipoTarjeta();
+                
                 form.ShowDialog();
+            }
+        }
+
+        private void tbImpTotal_TextChanged(object sender, EventArgs e)
+        {
+            decimal valor = Convert.ToDecimal(tbImpTotal.Text.ToString());
+            if (valor != 0.00M)
+            {
+                btnPagar.Enabled = true;
+            }
+            else
+            {
+                btnPagar.Enabled = false;
             }
         }
     }

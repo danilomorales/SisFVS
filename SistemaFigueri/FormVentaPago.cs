@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Globalization;
+using CapaNegocio;
+using CapaEntidades;
 
 namespace SistemaFigueri
 {
@@ -16,6 +18,7 @@ namespace SistemaFigueri
         private String valor;
         Decimal Importe { get; set; }
         Decimal SumaMonto { get; set; }
+        Decimal MontoActual { get; set; }
         Venta Ventas = new Venta();
         private List<Venta> lista = new List<Venta>();
         public FormVentaPago()
@@ -36,9 +39,20 @@ namespace SistemaFigueri
 
         private void FormVentaPago_Load(object sender, EventArgs e)
         {
-            
+            CNVentas dao = new CNVentas();
+            tbTipoCambio.Text = dao.traerTipoCambio(2);
+            tbTotalCobrado.Text = "0,00";
+            tbSaldoSoles.Text = "0,00";
+            tbSaldoDolares.Text = "0,00";
+            tbVuelto.Text = "0,00";
+            panelTarjeta.Visible = false;
+            panelTipoTarjeta.Visible = false;
+            panelPostExterno.Visible = false;
+            panelImpresiones.Visible = false;
+            btnVisa.Enabled = false;
+            btnMasterCard.Enabled = false;
         }
-
+       
         private void tbMonto_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsDigit(e.KeyChar) && e.KeyChar != Convert.ToChar(Keys.Back))
@@ -70,10 +84,81 @@ namespace SistemaFigueri
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            decimal amount = Convert.ToDecimal(tbMonto.Text);
+            nuevoPago();
+            
+        }
+
+        private void nuevoPagoTarjeta(CETarjeta tarjeta)
+        {
+            decimal amount = Convert.ToDecimal(tarjeta.monto);
+            decimal dollarAmount = 0.00M;
             decimal importe = Convert.ToDecimal(tbImporteTotal.Text);
-            if (tbMonto.Text != "")
+            decimal tipoCambio = Convert.ToDecimal(tbTipoCambio.Text);
+            decimal totalCobrado = Convert.ToDecimal(tbTotalCobrado.Text);
+            decimal saldoSoles = Convert.ToDecimal(tbSaldoSoles.Text);
+            decimal saldoDolares = Convert.ToDecimal(tbSaldoDolares.Text); ;
+            decimal vuelto = Convert.ToDecimal(tbVuelto.Text);
+            Venta ven = new Venta();
+            ven.IdTipoPago = Int32.Parse(cboFormaPago.SelectedValue.ToString());
+            //MessageBox.Show("Este es idtipo pago: " + cboFormaPago.SelectedValue.ToString());
+            ven.IdMoneda = tarjeta.idmoneda;
+            //MessageBox.Show("Este es idmoneda: " + cboMoneda.SelectedValue.ToString());
+            ven.FormaPago = cboFormaPago.Text;
+            ven.Moneda = cboMoneda.Text;
+            if (cboMoneda.SelectedValue.ToString() == "2")
             {
+                dollarAmount = amount;
+                amount = amount * tipoCambio;
+
+            }
+            if (totalCobrado+amount <= importe)
+            {
+                //MessageBox.Show("Este es moneda: " + cboFormaPago.Text + "Forma pago"+ cboMoneda.Text);
+                if (cboMoneda.SelectedValue.ToString() == "2")
+                { ven.Monto = dollarAmount; }
+                else { ven.Monto = amount; }
+
+                totalCobrado = totalCobrado + amount;
+                ven.Cobrado = totalCobrado;
+                tbTotalCobrado.Text = String.Format("{0:N}", totalCobrado);
+                tbVuelto.Text = "0,00";
+                tbSaldoSoles.Text = String.Format("{0:N}", importe - totalCobrado);
+                tbSaldoDolares.Text = String.Format("{0:N}", (importe - totalCobrado) / tipoCambio);
+            }
+            else
+            {
+                //MessageBox.Show("Este es moneda: " + cboFormaPago.Text + "Forma pago"+ cboMoneda.Text);
+                dollarAmount = importe / tipoCambio;
+                if (cboMoneda.SelectedValue.ToString() == "2")
+                { ven.Monto = dollarAmount; }
+                else { ven.Monto = amount; }
+
+                ven.Cobrado = totalCobrado+amount;
+                tbTotalCobrado.Text = String.Format("{0:N}", totalCobrado+amount);
+                tbVuelto.Text = String.Format("{0:N}", totalCobrado+ amount - importe);
+                tbSaldoSoles.Text = "0,00";
+                tbSaldoDolares.Text = "0,00";
+                btnAgregar.Visible = false;
+            }
+            ven.tarjeta = tarjeta.tarjeta;
+            ven.noperacion = tarjeta.noperacion;
+            ven.nreferencia = tarjeta.nreferencia;
+            lista.Add(ven);
+            LlenarGrilla();
+        }
+
+            private void nuevoPago()
+        {
+            if (!string.IsNullOrWhiteSpace(tbMonto.Text))
+            {
+                decimal amount = Convert.ToDecimal(tbMonto.Text);
+                decimal dollarAmount = 0.00M;
+                decimal importe = Convert.ToDecimal(tbImporteTotal.Text);
+                decimal tipoCambio = Convert.ToDecimal(tbTipoCambio.Text);
+                decimal totalCobrado = Convert.ToDecimal(tbTotalCobrado.Text);
+                decimal saldoSoles = Convert.ToDecimal(tbSaldoSoles.Text);
+                decimal saldoDolares = Convert.ToDecimal(tbSaldoDolares.Text); ;
+                decimal vuelto = Convert.ToDecimal(tbVuelto.Text);
                 Venta ven = new Venta();
                 ven.IdTipoPago = Int32.Parse(cboFormaPago.SelectedValue.ToString());
                 //MessageBox.Show("Este es idtipo pago: " + cboFormaPago.SelectedValue.ToString());
@@ -81,27 +166,45 @@ namespace SistemaFigueri
                 //MessageBox.Show("Este es idmoneda: " + cboMoneda.SelectedValue.ToString());
                 ven.FormaPago = cboFormaPago.Text;
                 ven.Moneda = cboMoneda.Text;
-                if (amount <= importe)
+                if (cboMoneda.SelectedValue.ToString() == "2")
+                {
+                    dollarAmount = amount;
+                    amount = amount * tipoCambio;
+
+                }
+                if (totalCobrado+amount <= importe)
                 {
                     //MessageBox.Show("Este es moneda: " + cboFormaPago.Text + "Forma pago"+ cboMoneda.Text);
-                    ven.Monto = Convert.ToDecimal(tbMonto.Text);
-                    tbTotalCobrado.Text = String.Format("{0:N}", Convert.ToDecimal(tbMonto.Text));
-                    tbVuelto.Text = "0.00";
+                    if (cboMoneda.SelectedValue.ToString() == "2")
+                    { ven.Monto = dollarAmount; }
+                    else { ven.Monto = amount; }
+                       
+                    totalCobrado = totalCobrado + amount;
+                    ven.Cobrado = totalCobrado;
+                    tbTotalCobrado.Text = String.Format("{0:N}", totalCobrado);
+                    tbVuelto.Text = "0,00";
+                    tbSaldoSoles.Text = String.Format("{0:N}",importe - totalCobrado);
+                    tbSaldoDolares.Text = String.Format("{0:N}", (importe - totalCobrado) / tipoCambio);
                 }
                 else
                 {
                     //MessageBox.Show("Este es moneda: " + cboFormaPago.Text + "Forma pago"+ cboMoneda.Text);
-                    ven.Monto = importe;
-                    tbTotalCobrado.Text = tbMonto.Text;
-                    tbVuelto.Text = String.Format("{0:N}", (amount - importe));
-                    
-
+                    dollarAmount = amount / tipoCambio;
+                    if (cboMoneda.SelectedValue.ToString() == "2")
+                    { ven.Monto = dollarAmount; }
+                    else { ven.Monto = amount; }
+   
+                    ven.Cobrado = totalCobrado+amount;
+                    tbTotalCobrado.Text = String.Format("{0:N}", totalCobrado+amount);
+                    tbVuelto.Text = String.Format("{0:N}", totalCobrado+amount - importe);
+                    tbSaldoSoles.Text = "0,00";
+                    tbSaldoDolares.Text = "0,00";
+                    btnAgregar.Visible = false;
                 }
                 lista.Add(ven);
                 LlenarGrilla();
 
             }
-            
         }
 
         private void LlenarGrilla()
@@ -118,11 +221,27 @@ namespace SistemaFigueri
                 dgvPago.Rows[i].Cells[1].Value = lista[i].IdMoneda;
                 dgvPago.Rows[i].Cells[2].Value = lista[i].FormaPago;
                 dgvPago.Rows[i].Cells[3].Value = lista[i].Moneda;
-                dgvPago.Columns[4].DefaultCellStyle.Format = "c2";
-                dgvPago.Columns[4].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("es-PE");
-                dgvPago.Rows[i].Cells[4].Value = lista[i].Monto;
+                dgvPago.Rows[i].Cells[6].Value = lista[i].tarjeta;
+                dgvPago.Rows[i].Cells[9].Value = lista[i].noperacion;
+                dgvPago.Rows[i].Cells[10].Value = lista[i].nreferencia;
+                //MessageBox.Show(cboMoneda.SelectedValue.ToString());
+                if (cboMoneda.SelectedValue.ToString() == "2")
+                {
+                    
+                    dgvPago.Columns[4].DefaultCellStyle.Format = "N2";
+                    dgvPago.Columns[4].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("en-US");
+                }
+                else
+                {
+                    dgvPago.Columns[4].DefaultCellStyle.Format = "N2";
+                    dgvPago.Columns[4].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("es-PE");
+                }
                 
-             
+                dgvPago.Columns[5].DefaultCellStyle.Format = "N2";
+                dgvPago.Columns[5].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("es-PE");
+                dgvPago.Rows[i].Cells[4].Value = lista[i].Monto;
+                dgvPago.Rows[i].Cells[5].Value = lista[i].Cobrado;
+
                 dgvPago.Rows[i].Cells["ELIMINA"].Value = Properties.Resources.quitar;
                 //deleteButton.ImageLayout = DataGridViewImageCellLayout.Stretch;
                 //this.dgvPago.Columns.Add(deleteButton);
@@ -130,8 +249,8 @@ namespace SistemaFigueri
                 dgvPago.Rows[i].Cells[5].Value = lista[i].IdProducto;
                 dgvPago.Rows[i].Cells[6].Value = lista[i].Igv;*/
 
-                //SumaMonto += Convert.ToDecimal(dgvPago.Rows[i].Cells[4].Value);
-                tbTotalCobrado.Text = tbMonto.Text;
+                SumaMonto += Convert.ToDecimal(dgvPago.Rows[i].Cells[4].Value);
+                //tbTotalCobrado.Text = tbMonto.Text;
                 tbMonto.Text = String.Empty;
             }
             dgvPago.ClearSelection();
@@ -163,16 +282,55 @@ namespace SistemaFigueri
 
         private void dgvPago_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            decimal importe = Convert.ToDecimal(tbImporteTotal.Text);
+            decimal tipoCambio = Convert.ToDecimal(tbTipoCambio.Text);
+            decimal totalCobrado = Convert.ToDecimal(tbTotalCobrado.Text);
+            decimal saldoSoles = Convert.ToDecimal(tbSaldoSoles.Text);
+            decimal saldoDolares = Convert.ToDecimal(tbSaldoDolares.Text); ;
+            decimal vuelto = Convert.ToDecimal(tbVuelto.Text);
+            SumaMonto = 0; MontoActual = 0;
             if (e.RowIndex == dgvPago.NewRowIndex || e.RowIndex < 0)
                 return;
             if (e.ColumnIndex == dgvPago.Columns["ELIMINA"].Index)
             {
+                
                 //Put some logic here, for example to remove row from your binding list.
-                MessageBox.Show(e.RowIndex.ToString());
-                MessageBox.Show(lista.Count.ToString());
+                
+
+                /*for (int i = 0; i < lista.Count; i++)
+                {
+                    SumaMonto += Convert.ToDecimal(dgvPago.Rows[e.RowIndex].Cells[5].Value);
+                }*/
+                MontoActual = Convert.ToDecimal(dgvPago.Rows[e.RowIndex].Cells[4].Value);
+                totalCobrado = totalCobrado - MontoActual;
                 lista.RemoveAt(e.RowIndex);
-                MessageBox.Show(lista.Count.ToString());
-               
+                tbTotalCobrado.Text = String.Format("{0:N}", totalCobrado);
+                if (totalCobrado <= importe)
+                {
+                    if (totalCobrado == 0.00M)
+                    {
+                        tbSaldoSoles.Text = "0,00";
+                        tbSaldoDolares.Text = "0,00";
+                    }
+                    else
+                    {
+                        tbSaldoSoles.Text = String.Format("{0:N}", importe - totalCobrado);
+                        tbSaldoDolares.Text = String.Format("{0:N}", (importe - totalCobrado) / tipoCambio);
+                    }
+                    if (cboFormaPago.SelectedValue.ToString() != "12")
+                    {
+                        btnAgregar.Visible = true;
+                    }
+                    
+                    tbVuelto.Text = "0,00";
+                }
+                else
+                {
+                    tbVuelto.Text = String.Format("{0:N}", totalCobrado - importe);
+                    tbSaldoSoles.Text = "0,00";
+                    tbSaldoDolares.Text = "0,00";
+                }
+                
             }
             LlenarGrilla();
         }
@@ -180,39 +338,151 @@ namespace SistemaFigueri
         private void tbMonto_KeyDown(object sender, KeyEventArgs e)
         {
            
+            
+        }
+
+        private void cboFormaPago_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            String valor = cboFormaPago.SelectedValue.ToString();
+            switch (valor)
+            {
+                case "01":
+                    panelTarjeta.Visible = false;
+                    panelTipoTarjeta.Visible = false;
+                    panelPostExterno.Visible = false;
+                    panelImpresiones.Visible = false;
+                    cboMoneda.Enabled = true;
+                    if (tbTotalCobrado.Text != "")
+                    {
+                        decimal importe = Convert.ToDecimal(tbImporteTotal.Text);
+                        decimal totalCobrado = Convert.ToDecimal(tbTotalCobrado.Text);
+                        if (importe < totalCobrado)
+                        {
+                            btnAgregar.Visible = false;
+                        }
+                        else
+                        {
+                            btnAgregar.Visible = true;
+                        }
+                    }
+                    
+                    break;
+                case "12":
+                    panelTarjeta.Visible = true;
+                    panelTipoTarjeta.Visible = true;
+                    panelPostExterno.Visible = true;
+                    panelImpresiones.Visible = true;
+                    btnAgregar.Visible = false;
+                    cboMoneda.SelectedValue = "1";
+                    cboMoneda.Enabled = false;
+                    break;
+                case "13":
+                    break;
+            }
+        }
+
+        private void tbMonto_KeyDown_1(object sender, KeyEventArgs e)
+        {
             if (e.KeyCode == Keys.Enter)
             {
-                if (tbMonto.Text != "")
+                decimal importe = Convert.ToDecimal(tbImporteTotal.Text);
+                decimal totalCobrado = Convert.ToDecimal(tbTotalCobrado.Text);
+                if (importe > totalCobrado)
                 {
-                    decimal amount = Convert.ToDecimal(tbMonto.Text);
-                    decimal importe = Convert.ToDecimal(tbImporteTotal.Text);
-                    Venta ven = new Venta();
-                    ven.IdTipoPago = Int32.Parse(cboFormaPago.SelectedValue.ToString());
-                    //MessageBox.Show("Este es idtipo pago: " + cboFormaPago.SelectedValue.ToString());
-                    ven.IdMoneda = Int32.Parse(cboMoneda.SelectedValue.ToString());
-                    //MessageBox.Show("Este es idmoneda: " + cboMoneda.SelectedValue.ToString());
-                    ven.FormaPago = cboFormaPago.Text;
-                    ven.Moneda = cboMoneda.Text;
-                    if (amount <= importe)
+                    if (cboFormaPago.SelectedValue.ToString() != "12")
                     {
-                        //MessageBox.Show("Este es moneda: " + cboFormaPago.Text + "Forma pago"+ cboMoneda.Text);
-                        ven.Monto = Convert.ToDecimal(tbMonto.Text);
-                        tbTotalCobrado.Text = String.Format("{0:N}", Convert.ToDecimal(tbMonto.Text));
-                        tbVuelto.Text = "0.00";
+                        nuevoPago();
                     }
-                    else
-                    {
-                        //MessageBox.Show("Este es moneda: " + cboFormaPago.Text + "Forma pago"+ cboMoneda.Text);
-                        ven.Monto = importe;
-                        tbTotalCobrado.Text = tbMonto.Text;
-                        tbTotalCobrado.Text = String.Format("{0:N}", Convert.ToDecimal(tbMonto.Text));
-                        tbVuelto.Text = String.Format("{0:N}", (amount - importe));
-
-
-                    }
-                    lista.Add(ven);
-                    LlenarGrilla();
+                    
                 }
+      
+            }
+        }
+
+        private void cboTarjeta_SelectedValueChanged(object sender, EventArgs e)
+        {
+            CNVentas cNVentas = new CNVentas();
+            /*int idTipoTarjeta = Int32.Parse(cboTarjeta.SelectedValue.ToString());
+            cboTarjeta.DataSource = cNVentas.MostarCboTarjeta(idTipoTarjeta);*/
+        }
+
+        private void cboTarjeta_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            String idtarjeta = cboTarjeta.SelectedValue.ToString();
+            if (idtarjeta=="1")
+            {
+                btnVisa.Enabled = true;
+                btnMasterCard.Enabled = false;
+            }
+            else{
+                btnMasterCard.Enabled = true;
+                btnVisa.Enabled = false;
+            }
+        }
+
+        private void btnPosExterno_Click(object sender, EventArgs e)
+        {
+            using (FormPosExterno form = new FormPosExterno())
+            {
+                CNVentas Ds = new CNVentas();
+                //CARGAR COMBO MONEDA
+                form.cboMoneda.DisplayMember = "DesMoneda";
+                form.cboMoneda.ValueMember = "IdMoneda";
+                form.cboMoneda.DataSource = Ds.MostarCboMoneda();
+                form.cboMoneda.SelectedValue = cboMoneda.SelectedValue;
+                //CARGAR MONTO
+                form.tbMonto.Text = tbMonto.Text;
+                //CARGA TARJETA
+                form.cboTarjeta.DisplayMember = "DesTarjeta";
+                form.cboTarjeta.ValueMember = "IdTarjeta";
+                DataTable tablaTarjeta = Ds.MostarCboTarjeta(2);
+                form.cboTarjeta.DataSource = tablaTarjeta;
+                form.cboTarjeta.SelectedValue = cboTarjeta.SelectedValue;
+                
+                String idtarjeta = cboTipoTarjeta.SelectedValue.ToString();
+                DataRow[] filteredRows= tablaTarjeta.Select("IdTarjeta="+idtarjeta);
+                String nlote = filteredRows[0][3].ToString();
+                String nterminal = filteredRows[0][4].ToString();
+                form.tbLote.Text = nlote;
+                form.tbTerminal.Text = nterminal;
+                
+                //CARGA TIPO TARJETA
+                form.cboTipoTarjeta.DisplayMember = "DesTipoTarjeta";
+                form.cboTipoTarjeta.ValueMember = "IdTipoTarjeta";
+                form.cboTipoTarjeta.DataSource = Ds.MostarCboTipoTarjeta();
+                form.cboTipoTarjeta.SelectedValue = cboTipoTarjeta.SelectedValue;
+                //form.ShowDialog();
+                if (form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    CETarjeta tarjeta = form.tarjeta;
+                    //MessageBox.Show(tarjeta.monto);
+                    tbMonto.Text = String.Empty;
+                    nuevoPagoTarjeta(tarjeta);
+                }
+            }
+        }
+
+        private void btnClear_Click_1(object sender, EventArgs e)
+        {
+            tbMonto.Text = String.Empty;
+        }
+
+        private void tbMonto_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbMonto_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != Convert.ToChar(Keys.Back))
+            {
+                if (e.KeyChar == ',')
+                {
+                    e.Handled = (tbMonto.Text.Contains(","));
+                }
+                else
+                    e.Handled = true;
             }
         }
     }

@@ -48,6 +48,7 @@
     <Compile Include="CEComprovante_Venta_Pago.cs" />
     <Compile Include="CEProducto.cs" />
     <Compile Include="CESerie.cs" />
+    <Compile Include="CETarjeta.cs" />
     <Compile Include="CEVenta.cs" />
     <Compile Include="CEDetalleVenta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -99,6 +99,12 @@
     <Compile Include="FormKardex.Designer.cs">
       <DependentUpon>FormKardex.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormPosExterno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPosExterno.Designer.cs">
+      <DependentUpon>FormPosExterno.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormSucursal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -316,6 +322,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormPerfiles.resx">
       <DependentUpon>FormPerfiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPosExterno.resx">
+      <DependentUpon>FormPosExterno.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPrincipalPage.resx">
       <DependentUpon>FormPrincipalPage.cs</DependentUpon>
@@ -809,6 +818,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\comprobante.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\visa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mastercard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\credit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cardpay.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\safeout.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
