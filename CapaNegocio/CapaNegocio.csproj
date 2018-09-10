@@ -48,11 +48,12 @@
     <Compile Include="ad.cs" />
     <Compile Include="CNClienteReceptor.cs" />
     <Compile Include="CNClientes.cs" />
+    <Compile Include="CNComprobante_Pago.cs" />
     <Compile Include="CNDetalleVenta.cs" />
     <Compile Include="CNKardex.cs" />
     <Compile Include="CNPedidos.cs" />
     <Compile Include="CNProductos.cs" />
-    <Compile Include="CNSector.cs" />
+    <Compile Include="CNSerie.cs" />
     <Compile Include="CNSucursal.cs" />
     <Compile Include="CNUsuario.cs" />
     <Compile Include="CNVentas.cs" />

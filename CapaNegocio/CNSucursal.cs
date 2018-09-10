@@ -90,15 +90,15 @@ namespace CapaNegocio
         }
 
         //INSERT PUNTO_VENTA
-        public void InsertPunto_Venta(string des_puntoVenta, string ide, string idSector, string flg_puntoVenta, string idUsu, string fecha)
+        public void InsertPunto_Venta(string des_puntoVenta, string idSector, string flg_puntoVenta, string idUsu, string fecha)
         {
-            sucu.InsertarPunto_Venta(des_puntoVenta, Convert.ToInt32(ide), idSector, Convert.ToInt32(flg_puntoVenta),Convert.ToInt32(idUsu),fecha);
+            sucu.InsertarPunto_Venta(des_puntoVenta, idSector, Convert.ToInt32(flg_puntoVenta),Convert.ToInt32(idUsu),fecha);
         }
 
         //UPDATE PUNTO_VENTA
-        public void UpdatePunto_Venta(string des_puntoVenta, string ide, string idSector, string flg_puntoVenta, string idUsu, string fecha,string idpunto_venta)
+        public void UpdatePunto_Venta(string des_puntoVenta, string idSector, string flg_puntoVenta, string idUsu, string fecha,string idpunto_venta)
         {
-            sucu.EditarPunto_Venta(des_puntoVenta, Convert.ToInt32(ide), idSector, Convert.ToInt32(flg_puntoVenta), Convert.ToInt32(idUsu), fecha,Convert.ToInt32(idpunto_venta));
+            sucu.EditarPunto_Venta(des_puntoVenta, idSector, Convert.ToInt32(flg_puntoVenta), Convert.ToInt32(idUsu), fecha,Convert.ToInt32(idpunto_venta));
         }
 
         //DELETE PUNTO_VENTA
@@ -106,5 +106,32 @@ namespace CapaNegocio
         {
             sucu.EliminarPunto_Venta(Convert.ToInt32(idpunto_venta));
         }
+
+        //READALL CAJERO
+        public SqlDataAdapter MostarCajero()
+        {
+            return sucu.listarCajero();
+        }
+
+        //INSERT CAJERO
+        public void InsertCajero(string idusu, string idsuper, string idpunto, string fondo, string efectivo)
+        {
+            sucu.InsertarCajero(Convert.ToInt32(idusu), Convert.ToInt32(idsuper), Convert.ToInt32(idpunto),
+                Convert.ToDouble(fondo), Convert.ToDouble(efectivo));
+        }
+
+        //UPDATE CAJERO
+        public void UpdateCajero(string idusu, string idsuper, string idpunto, string fondo, string efectivo, string idCaja)
+        {
+            sucu.EditarCajero(Convert.ToInt32(idusu), Convert.ToInt32(idsuper), Convert.ToInt32(idpunto),
+                Convert.ToDouble(fondo), Convert.ToDouble(efectivo), Convert.ToInt32(idCaja));
+        }
+
+        //DELETE CAJERO
+        public void DeleteCajero(string idCaja)
+        {
+            sucu.EliminarCajero(Convert.ToInt32(idCaja));
+        }
+
     }
 }

@@ -43,6 +43,7 @@ namespace SistemaFigueri
 
             using (FormMantCliente formMC = new FormMantCliente())
             {
+
                 if (formMC.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
                     MostrarClientes();
@@ -144,24 +145,40 @@ namespace SistemaFigueri
 
         private void bmBuscar_KeyUp(object sender, KeyEventArgs e)
         {
-            SqlConnection Conexion = new SqlConnection("Data Source=192.168.21.5;Initial Catalog=DBFIGUE2;User ID=sa;Password=123;MultipleActiveResultSets=true;");
+            SqlConnection Conexion = new SqlConnection("Data Source=192.168.21.13;Initial Catalog=DBFIGUE2;User ID=sa;Password=123;MultipleActiveResultSets=true;");
             Conexion.Open();
             SqlCommand cmd = Conexion.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = " select c.IdClienteReceptor,c.Nombres,c.ApellidoPaterno as 'Apellido Paterno',c.ApellidoMaterno as 'Apellido Materno',p.Descripcion as 'Tipo de Persona'," +
-                "t.Nombre as 'Tipo de Documento',c.NroDocIdentidad as 'Nro de Documento',c.NumeroRuc as 'Nro de RUC',c.RazonSocial as 'Razón Social',c.NombreComercial as 'Nombre Comercial'," +
-                "c.Correo,c.Direccion as 'Dirección',c.Fax,c.Fijo,c.Telefono,c.FechaNacimiento as 'Fecha de Nacimiento',c.Departamento,c.Provincia,c.Distrito,c.Estado" +
-                ",c.UsuarioRegistra as 'Usuario Registra',c.FechaRegistro as 'Fecha de Registro',c.UsuarioModifica as 'Usuario Modifica',c.FechaModifica as 'Fecha Modifica'," +
-                "s.DescripcionSector as 'Sector',c.Observacion as 'Observación'from caja.ClienteReceptor c,caja.TipoPersona p, caja.SECTOR s, caja.DocIdentidad t " +
-                "where c.IdTipoPersona = p.IdTipoPersona and c.IdSector = s.IdSector and c.IdDocIdentidad = t.IdDocIdentidad and NroDocIdentidad " +
-                "like ('%" + bmBuscar.Text + "%')   ";
+            cmd.CommandText = "select c.IdCliente,c.Nombres,c.ApellidoPaterno as 'Apellido Paterno'," +
+                "c.ApellidoMaterno as 'Apellido Materno',t.NombreTienda as 'Nombre de la Tienda',s.DescripcionSector as 'Nombre del Sector'," +
+                "c.NombreEmpresa as 'Nombre de la Empresa',c.Direccion as 'Dirección',c.Contacto,c.Telefono,c.Fax,c.RUC," +
+                "c.Email,p.Descripcion as 'Tipo de persona',d.Descripcion as 'Tipo de Documento',c.NroDocumento as 'N° de Documento'," +
+                "c.Observacion as 'Observación',c.Inscripcion as 'Inscripción',c.Estado,c.FechaNac as 'Fecha de Nacimiento'," +
+                "c.Credito,c.TipoCliente as 'Tipo de Cliente',c.Departamento,c.Provincia,c.Distrito,c.UsuarioRegistra as 'Usuario que registra'," +
+                "c.UsuarioModifica as 'Usuario que modifica',c.FechaModifica as 'Fecha que Modifica'from caja.CLIENTE c, " +
+                "caja.TIENDA t, caja.SECTOR s, caja.TIPO_DOC_IDENT d, caja.TipoPersona p " +
+                "where c.IdTienda = t.IdTienda and c.IdSector = s.IdSector and c.IdTipoDocIdent = d.IdTipoDocIdent " +
+                "and c.IdTipoPersona = p.IdTipoPersona and " +
+                "(c.NroDocumento like('%" + bmBuscar.Text + "%')) and(d.Descripcion like('%" + bmBuscar.Text + "%'))";
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             dgvCliente.DataSource = dt;
             Conexion.Close();
-          
+
+            //SqlConnection Conexion = new SqlConnection("Data Source=192.168.21.13;Initial Catalog=DBFIGUE2;User ID=sa;Password=123;MultipleActiveResultSets=true;");
+            //Conexion.Open();
+            //SqlCommand cmd = Conexion.CreateCommand();
+            //cmd.CommandText = "Caja.SP_FE_BuscarCliente2";
+            //cmd.CommandType = CommandType.StoredProcedure;
+            //cmd.ExecuteNonQuery();
+            //DataTable dt = new DataTable();
+            //SqlDataAdapter da = new SqlDataAdapter(cmd);
+            //da.Fill(dt);
+            //dgvCliente.DataSource = dt;
+            //Conexion.Close();
+
         }
 
         public void actualizar()
