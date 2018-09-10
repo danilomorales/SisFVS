@@ -13,8 +13,18 @@ namespace CapaNegocio
 {
     public class CNVentas
     {
+        private static readonly CNVentas _intancia = new CNVentas();
+        public static CNVentas Intancia
+        {
+            get { return CNVentas._intancia; }
+
+        } 
+
+
+
         CDConexion C = new CDConexion();
-       
+        CDVenta venta = new CDVenta();
+        CD_DetalleVenta detventa = new CD_DetalleVenta();
         DataTable tabla = new DataTable();
         DataTable tabla2 = new DataTable();
         DataTable tabla3 = new DataTable();
@@ -128,6 +138,42 @@ namespace CapaNegocio
             comando.ExecuteNonQuery();
             tipocambio = comando.Parameters["@TCVenta"].Value.ToString();
             return tipocambio;
+        }
+
+        public void InsertarVenta (CEVenta venta_ent, String idComPago)
+        {
+            try
+            {
+                venta.InsertaNuevaVenta(venta_ent, idComPago);
+                if (venta == null) throw new ApplicationException("No se insertó");
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            
+        }
+
+        public void InsertarDetalleVenta(CEDetalleVenta detalle_ent)
+        {
+            detventa.InsertaDetalleVenta(detalle_ent);
+        }
+
+
+        public List<CEVenta> ListarVenta(String fdesde, String fhasta, int idSucursal)
+        {
+            try
+            {
+                List<CEVenta> Lista = CDVenta.Instancia.ListarVenta(fdesde, fhasta, idSucursal);
+                if (Lista == null) throw new ApplicationException("Error al cargar historial de ventas");
+                else if (Lista.Count == 0) throw new ApplicationException("Lista de historial de ventas vacia");
+                return Lista;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
 

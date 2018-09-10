@@ -1480,7 +1480,7 @@
             this.btnguardarCliente.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnguardarCliente.ActiveForecolor = System.Drawing.Color.White;
             this.btnguardarCliente.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.btnguardarCliente.BackColor = System.Drawing.Color.White;
+            this.btnguardarCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
             this.btnguardarCliente.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnguardarCliente.BackgroundImage")));
             this.btnguardarCliente.ButtonText = "GUARDAR";
             this.btnguardarCliente.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -1568,7 +1568,6 @@
         private Bunifu.Framework.UI.BunifuMaterialTextbox bmcredito;
         private Bunifu.Framework.UI.BunifuCards bunifuCards3;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton5;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox bmUsuRegistra;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton17;
         private Bunifu.Framework.UI.BunifuMaterialTextbox bmapellidoM;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton2;
@@ -1583,5 +1582,6 @@
         private Bunifu.Framework.UI.BunifuDatepicker dateInscripcion;
         private Bunifu.Framework.UI.BunifuDatepicker dateFechaNac;
         private Bunifu.Framework.UI.BunifuThinButton2 btnguardarCliente;
+        public Bunifu.Framework.UI.BunifuMaterialTextbox bmUsuRegistra;
     }
 }

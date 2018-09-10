@@ -119,7 +119,7 @@ namespace SistemaFigueri
          
         private void bmBuscar_KeyUp(object sender, KeyEventArgs e)
         {
-            SqlConnection Conexion = new SqlConnection("Data Source=192.168.21.5;Initial Catalog=DBFIGUE2;User ID=sa;Password=123;MultipleActiveResultSets=true;");
+            SqlConnection Conexion = new SqlConnection("Data Source=192.168.21.13;Initial Catalog=DBFIGUE2;User ID=sa;Password=123;MultipleActiveResultSets=true;");
             Conexion.Open();
             SqlCommand cmd = Conexion.CreateCommand();
             cmd.CommandType = CommandType.Text;
@@ -133,7 +133,7 @@ namespace SistemaFigueri
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             dgvProductos.DataSource = dt;
-            Conexion.Close();
+            Conexion.Close();           
         }
 
         private void bmBuscar_OnValueChanged(object sender, EventArgs e)
