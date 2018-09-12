@@ -37,7 +37,7 @@ namespace SistemaFigueri
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormComprobante_Pago());
+            Application.Run(new FormLogin());
         }
     }
 }

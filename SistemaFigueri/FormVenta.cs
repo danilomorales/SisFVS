@@ -1156,6 +1156,16 @@ namespace SistemaFigueri
                     {
                         if (form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                         {
+                            //tbAlias.Text = form.alias;
+                            //tbDescripcion.Text = form.descripcion;
+                            //tbStock.Text = form.stock;
+                            ////dtFechaV.Text = form.fechavencimiento;
+                            //tbPrecio.Text = form.precio;
+                            ////btnAgregaCarro.Enabled = true;
+                            //tbIdProducto.Text = form.idproducto;
+
+                            CNProductos objProducto = new CNProductos();
+                            Limpiar();
                             tbAlias.Text = form.alias;
                             tbDescripcion.Text = form.descripcion;
                             tbStock.Text = form.stock;
@@ -1164,7 +1174,6 @@ namespace SistemaFigueri
                             //btnAgregaCarro.Enabled = true;
                             tbIdProducto.Text = form.idproducto;
 
-                            CNProductos objProducto = new CNProductos();
 
                         }
 
@@ -1242,6 +1251,7 @@ namespace SistemaFigueri
             if (e.KeyCode == Keys.Enter)
             {
                 BuscaCLienteVentaRUC();
+
             }
             else
             {
@@ -1307,6 +1317,25 @@ namespace SistemaFigueri
             if (e.KeyCode == Keys.Enter)
             {
                 BuscaProductoCB();
+
+                //CNProductos objProducto = new CNProductos();
+                Venta ven = new Venta();
+                Decimal Porcentaje = 0; Decimal SubTotal;
+                using (FormBuscarProducto form = new FormBuscarProducto())
+                {
+                    ven.Descripcion = tbAlias.Text + " - " + tbDescripcion.Text;
+                    ven.alias = form.alias;
+                    ven.Cantidad = 1;
+                    ven.PrecioVenta = Convert.ToDecimal(tbPrecio.Text);
+                    Porcentaje = (Convert.ToDecimal(tbIgv.Text) / 100) + 1;
+                    SubTotal = ((Convert.ToDecimal(tbPrecio.Text) * 1) / Porcentaje);
+                    ven.Igv = Math.Round(Convert.ToDecimal(SubTotal) * (Convert.ToDecimal(tbIgv.Text) / (100)), 2);
+                    ven.SubTotal = Math.Round(SubTotal, 2);
+                    ven.stock = Int32.Parse(tbStock.Text);
+                    lst.Add(ven);
+                    LlenarGrilla();
+                }
+              
             }
             else
             {
