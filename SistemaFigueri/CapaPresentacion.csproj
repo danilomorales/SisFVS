@@ -117,12 +117,6 @@
     <Compile Include="FormVenta.Designer.cs">
       <DependentUpon>FormVenta.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormVentaMDI.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormVentaMDI.Designer.cs">
-      <DependentUpon>FormVentaMDI.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormVentaPago.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -328,9 +322,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormVenta.resx">
       <DependentUpon>FormVenta.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormVentaMDI.resx">
-      <DependentUpon>FormVentaMDI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormVentaPago.resx">
       <DependentUpon>FormVentaPago.cs</DependentUpon>
@@ -809,6 +800,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\safeout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sucursal.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -223,6 +223,8 @@ namespace SistemaFigueri
                     lstBtnCalc[j].Normalcolor = Color.FromArgb(231, 52, 52);
                 }
             }
+            AbrirFormEnPanel(new FormAperturaCaja());
+
         }
 
         private void btnReportes_Click(object sender, EventArgs e)
