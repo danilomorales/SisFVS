@@ -185,6 +185,7 @@ namespace SistemaFigueri
         private void btnMantCliente_Click(object sender, EventArgs e)
         {
             
+
             {
                 BuscaProductoCB();
 
