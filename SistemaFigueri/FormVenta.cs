@@ -204,6 +204,8 @@ namespace SistemaFigueri
                     ven.stock = Int32.Parse(tbStock.Text);
                     lst.Add(ven);
 
+
+
                 }
                 LlenarGrilla();
             }
