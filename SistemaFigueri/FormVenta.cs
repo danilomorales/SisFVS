@@ -186,34 +186,6 @@ namespace SistemaFigueri
         {
             
 
-            {
-                BuscaProductoCB();
-
-                //CNProductos objProducto = new CNProductos();
-                Venta ven = new Venta();
-                Decimal Porcentaje = 0; Decimal SubTotal;
-                using (FormBuscarProducto form = new FormBuscarProducto())
-                {
-                    ven.Descripcion = tbAlias.Text + " - " + tbDescripcion.Text;
-                    ven.alias = form.alias;
-                    ven.Cantidad = 1;
-                    //ven.PrecioVenta = Convert.ToDecimal(tbPrecio.Text);
-                    Porcentaje = (Convert.ToDecimal(tbIgv.Text) / 100) + 1;
-                    SubTotal = ((Convert.ToDecimal(tbPrecio.Text) * 1) / Porcentaje);
-                    ven.Igv = Math.Round(Convert.ToDecimal(SubTotal) * (Convert.ToDecimal(tbIgv.Text) / (100)), 2);
-                    ven.SubTotal = Math.Round(SubTotal, 2);
-                    ven.stock = Int32.Parse(tbStock.Text);
-                    lst.Add(ven);
-
-
-
-                }
-                LlenarGrilla();
-            }
-                LimpiarProducto();
-
-            
-
         }
 
         private void btnRegistrarCobro_Click(object sender, EventArgs e)
@@ -437,6 +409,11 @@ namespace SistemaFigueri
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvDetalleNotaVenta_KeyUp(object sender, KeyEventArgs e)
         {
 
         }
@@ -1142,10 +1119,6 @@ namespace SistemaFigueri
 
                     }
                 }
-                else
-                {
-                  
-                }
             }
             catch (Exception ex)
             {
@@ -1194,6 +1167,10 @@ namespace SistemaFigueri
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+        private void tbClienteNombre_KeyDown(object sender, KeyEventArgs e)
+        {
+
         }
 
         private void tbDocumento_KeyDown(object sender, KeyEventArgs e)
@@ -1279,7 +1256,34 @@ namespace SistemaFigueri
         {
             try
             {
-               
+                if (e.KeyCode == Keys.Enter)
+                {
+                    BuscaProductoCB();
+
+                    //CNProductos objProducto = new CNProductos();
+                    Venta ven = new Venta();
+                    Decimal Porcentaje = 0; Decimal SubTotal;
+                    using (FormBuscarProducto form = new FormBuscarProducto())
+                    {
+                        ven.Descripcion = tbAlias.Text + " - " + tbDescripcion.Text;
+                        ven.alias = form.alias;
+                        ven.Cantidad = 1;
+                        ven.PrecioVenta = Convert.ToDecimal(tbPrecio.Text);
+                        Porcentaje = (Convert.ToDecimal(tbIgv.Text) / 100) + 1;
+                        SubTotal = ((Convert.ToDecimal(tbPrecio.Text) * 1) / Porcentaje);
+                        ven.Igv = Math.Round(Convert.ToDecimal(SubTotal) * (Convert.ToDecimal(tbIgv.Text) / (100)), 2);
+                        ven.SubTotal = Math.Round(SubTotal, 2);
+                        ven.stock = Int32.Parse(tbStock.Text);
+                        lst.Add(ven);
+
+                    }
+                    LlenarGrilla();
+                }
+                else
+                {
+                    LimpiarProducto();
+
+                }
 
             }
             catch ( Exception ex)
