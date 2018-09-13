@@ -144,11 +144,6 @@ namespace SistemaFigueri
             this.BuscarFechas();
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-
-        }
-
 
         private void chkEliminar_CheckedChanged(object sender, EventArgs e)
         {
@@ -189,8 +184,32 @@ namespace SistemaFigueri
 
         private void btnMantCliente_Click(object sender, EventArgs e)
         {
-            FormMantCliente formMP = new FormMantCliente();
-            formMP.ShowDialog();
+            
+            {
+                BuscaProductoCB();
+
+                //CNProductos objProducto = new CNProductos();
+                Venta ven = new Venta();
+                Decimal Porcentaje = 0; Decimal SubTotal;
+                using (FormBuscarProducto form = new FormBuscarProducto())
+                {
+                    ven.Descripcion = tbAlias.Text + " - " + tbDescripcion.Text;
+                    ven.alias = form.alias;
+                    ven.Cantidad = 1;
+                    //ven.PrecioVenta = Convert.ToDecimal(tbPrecio.Text);
+                    Porcentaje = (Convert.ToDecimal(tbIgv.Text) / 100) + 1;
+                    SubTotal = ((Convert.ToDecimal(tbPrecio.Text) * 1) / Porcentaje);
+                    ven.Igv = Math.Round(Convert.ToDecimal(SubTotal) * (Convert.ToDecimal(tbIgv.Text) / (100)), 2);
+                    ven.SubTotal = Math.Round(SubTotal, 2);
+                    ven.stock = Int32.Parse(tbStock.Text);
+                    lst.Add(ven);
+
+                }
+                LlenarGrilla();
+            }
+                LimpiarProducto();
+
+            
 
         }
 
@@ -415,11 +434,6 @@ namespace SistemaFigueri
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgvDetalleNotaVenta_KeyUp(object sender, KeyEventArgs e)
         {
 
         }
@@ -889,11 +903,6 @@ namespace SistemaFigueri
             }
         }
 
-        private void rbnBoleta_CheckedChanged_1(object sender, EventArgs e)
-        {
-            
-        }
-
         private void tbCantidad_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
@@ -902,6 +911,7 @@ namespace SistemaFigueri
                 e.Handled = true;
                 return;
             }
+
         }
 
         private void dgvVenta_CellEndEdit(object sender, DataGridViewCellEventArgs e)
@@ -972,84 +982,14 @@ namespace SistemaFigueri
             } 
         }
 
-        private void bunifuCustomLabel19_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnGuarda_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (Convert.ToString(dgvVenta.CurrentRow.Cells[2].Value) != "")
-                {
-                    GuardarVenta();
-                    try
-                    {
-                        for (int i = 0; i < dgvVenta.Rows.Count; i++)
-                        {
-                            Decimal SumaIgv = 0; Decimal SumaSubTotal = 0;
-                            SumaIgv += Convert.ToDecimal(dgvVenta.Rows[i].Cells[6].Value);
-                            SumaSubTotal += Convert.ToDecimal(dgvVenta.Rows[i].Cells[4].Value);
-                            GuardarDetalleVenta(
-                            Convert.ToString(dgvVenta.Rows[i].Cells[5].Value),
-                            Convert.ToInt32(dgvVenta.Rows[i].Cells[0].Value),
-                            Convert.ToInt32(dgvVenta.Rows[i].Cells[1].Value),
-                            Convert.ToDecimal(dgvVenta.Rows[i].Cells[3].Value),
-                            SumaIgv, SumaSubTotal
-                            );
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("No Existe Ningún Elemento en la Lista.", "Sistema de Ventas.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
-                DialogResult r = MessageBox.Show("¿Desea guardar", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (r == DialogResult.Yes)
-                {
-                    //CeldaNumerico();
-
-                    CEVenta v = new CEVenta();
-
-                    //CECliente c = new CECliente();
-                    tbIdCliente.Text = tbIdCliente.ToString();
-
-
-                }
-            }
-            catch (ApplicationException ae) { MessageBox.Show(ae.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning); }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
 
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            try
-            {
-                DialogResult r = MessageBox.Show("¿Desea realizar una nueva venta?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (r == DialogResult.Yes)
-                {
-                    FormVenta ven = new FormVenta();
 
-                }
-                else
-                {  // no hace nada 
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
 
         private void dgvVenta_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -1199,6 +1139,10 @@ namespace SistemaFigueri
 
                     }
                 }
+                else
+                {
+                  
+                }
             }
             catch (Exception ex)
             {
@@ -1247,10 +1191,6 @@ namespace SistemaFigueri
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-        private void tbClienteNombre_KeyDown(object sender, KeyEventArgs e)
-        {
-
         }
 
         private void tbDocumento_KeyDown(object sender, KeyEventArgs e)
@@ -1334,34 +1274,16 @@ namespace SistemaFigueri
 
         private void tbCodBarras_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            try
             {
-                BuscaProductoCB();
-
-                //CNProductos objProducto = new CNProductos();
-                Venta ven = new Venta();
-                Decimal Porcentaje = 0; Decimal SubTotal;
-                using (FormBuscarProducto form = new FormBuscarProducto())
-                {
-                    ven.Descripcion = tbAlias.Text + " - " + tbDescripcion.Text;
-                    ven.alias = form.alias;
-                    ven.Cantidad = 1;
-                    ven.PrecioVenta = Convert.ToDecimal(tbPrecio.Text);
-                    Porcentaje = (Convert.ToDecimal(tbIgv.Text) / 100) + 1;
-                    SubTotal = ((Convert.ToDecimal(tbPrecio.Text) * 1) / Porcentaje);
-                    ven.Igv = Math.Round(Convert.ToDecimal(SubTotal) * (Convert.ToDecimal(tbIgv.Text) / (100)), 2);
-                    ven.SubTotal = Math.Round(SubTotal, 2);
-                    ven.stock = Int32.Parse(tbStock.Text);
-                    lst.Add(ven);
-                    LlenarGrilla();
-                }
-              
-            }
-            else
-            {
-                LimpiarProducto();
+               
 
             }
+            catch ( Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        
         }
 
         private void cboSerie_SelectedIndexChanged(object sender, EventArgs e)
@@ -1372,11 +1294,6 @@ namespace SistemaFigueri
             String correlativo = cNVentas.traerCorrelativo(idcomprobante,idserie);
             lblSerie.Text = cboSerie.Text;
             lblNroCorrelativo.Text = correlativo;
-        }
-
-        private void bunifuCustomLabel26_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnPagar_Click(object sender, EventArgs e)
