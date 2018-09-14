@@ -87,12 +87,6 @@
     <Compile Include="FormComprobanteVenta.Designer.cs">
       <DependentUpon>FormComprobanteVenta.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormComprobante_Pago.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormComprobante_Pago.Designer.cs">
-      <DependentUpon>FormComprobante_Pago.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormEditarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,11 +99,11 @@
     <Compile Include="FormKardex.Designer.cs">
       <DependentUpon>FormKardex.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormSerie.cs">
+    <Compile Include="FormPosExterno.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormSerie.Designer.cs">
-      <DependentUpon>FormSerie.cs</DependentUpon>
+    <Compile Include="FormPosExterno.Designer.cs">
+      <DependentUpon>FormPosExterno.cs</DependentUpon>
     </Compile>
     <Compile Include="FormSucursal.cs">
       <SubType>Form</SubType>
@@ -122,12 +116,6 @@
     </Compile>
     <Compile Include="FormVenta.Designer.cs">
       <DependentUpon>FormVenta.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormVentaMDI.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormVentaMDI.Designer.cs">
-      <DependentUpon>FormVentaMDI.cs</DependentUpon>
     </Compile>
     <Compile Include="FormVentaPago.cs">
       <SubType>Form</SubType>
@@ -284,9 +272,6 @@
     <EmbeddedResource Include="FormComprobanteVenta.resx">
       <DependentUpon>FormComprobanteVenta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormComprobante_Pago.resx">
-      <DependentUpon>FormComprobante_Pago.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormEditarUsuario.resx">
       <DependentUpon>FormEditarUsuario.cs</DependentUpon>
     </EmbeddedResource>
@@ -311,6 +296,9 @@
     <EmbeddedResource Include="FormPerfiles.resx">
       <DependentUpon>FormPerfiles.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormPosExterno.resx">
+      <DependentUpon>FormPosExterno.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormPrincipalPage.resx">
       <DependentUpon>FormPrincipalPage.cs</DependentUpon>
     </EmbeddedResource>
@@ -319,9 +307,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormRegistroCobro.resx">
       <DependentUpon>FormRegistroCobro.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormSerie.resx">
-      <DependentUpon>FormSerie.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSucursal.resx">
       <DependentUpon>FormSucursal.cs</DependentUpon>
@@ -337,9 +322,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormVenta.resx">
       <DependentUpon>FormVenta.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormVentaMDI.resx">
-      <DependentUpon>FormVentaMDI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormVentaPago.resx">
       <DependentUpon>FormVentaPago.cs</DependentUpon>
@@ -800,6 +782,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\comprobante.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\visa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mastercard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\credit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cardpay.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\safeout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sucursal.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

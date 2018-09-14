@@ -29,6 +29,8 @@ namespace CapaNegocio
         DataTable tabla2 = new DataTable();
         DataTable tabla3 = new DataTable();
         DataTable tabla4 = new DataTable();
+        DataTable tabla5 = new DataTable();
+        DataTable tabla6 = new DataTable();
         SqlDataReader leer;
         SqlCommand comando = new SqlCommand();
 
@@ -81,6 +83,27 @@ namespace CapaNegocio
             return tabla;
         }
 
+        public DataTable MostarCboTipoTarjeta()
+        {
+            comando.Connection = C.AbrirConexion();
+            comando.CommandText = "select * from Caja.TipoTarjeta ";
+            leer = comando.ExecuteReader();
+            tabla5.Load(leer);
+            C.CerrarConexion();
+            return tabla5;
+        }
+
+        public DataTable MostarCboTarjeta(int idTipoTarjeta)
+        {
+            comando.Connection = C.AbrirConexion();
+            comando.CommandText = "select * from Caja.Tarjeta where IdTipoTarjeta=@IdTipoTarjeta";
+            comando.Parameters.AddWithValue("@IdTipoTarjeta", idTipoTarjeta);
+            leer = comando.ExecuteReader();
+            tabla6.Load(leer);
+            C.CerrarConexion();
+            return tabla6;
+        }
+
         public DataTable MostarCboTipoPago()
         {
             comando.Connection = C.AbrirConexion();
@@ -101,6 +124,21 @@ namespace CapaNegocio
             return tabla3;
         }
 
+        public String traerTipoCambio(int idmoneda)
+        {
+            String tipocambio = "";
+            SqlCommand comando = new SqlCommand("Caja.SP_FE_TraerTipoCambio", C.AbrirConexion());
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@IdMoneda", idmoneda);
+            SqlParameter param = new SqlParameter("@TCVenta", SqlDbType.Decimal);
+            param.SourceColumn = "TCVenta";
+            param.Precision = 10;
+            param.Scale = 2;
+            comando.Parameters.Add(param).Direction = ParameterDirection.Output;
+            comando.ExecuteNonQuery();
+            tipocambio = comando.Parameters["@TCVenta"].Value.ToString();
+            return tipocambio;
+        }
 
         public void InsertarVenta (CEVenta venta_ent, String idComPago)
         {

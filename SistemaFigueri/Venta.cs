@@ -34,10 +34,24 @@ namespace SistemaFigueri
         public decimal SubTotal { get; set; }
 
         //Pago
+        //1 - EFECTIVO
         public string FormaPago { get; set; }
         public decimal Monto { get; set; }
+        public decimal Cobrado { get; set; }
         public int IdMoneda { get; set; }
         public string Moneda { get; set; }
+        //2 - TARJETA
+        public int idtarjeta { get; set; }
+        public String tarjeta { get; set; }
+        public int idtipotarjeta { get; set; }
+        public int idmoneda { get; set; }
+        public String moneda { get; set; }
+        public String monto { get; set; }
+        public String noperacion { get; set; }
+        public String nreferencia { get; set; }
+        public String nlote { get; set; }
+        public String nterminal { get; set; }
+        public String ntarjeta { get; set; }
 
         public Venta()
         {

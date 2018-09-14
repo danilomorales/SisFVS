@@ -333,6 +333,16 @@ namespace SistemaFigueri.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cardpay {
+            get {
+                object obj = ResourceManager.GetObject("cardpay", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cerrado {
             get {
                 object obj = ResourceManager.GetObject("cerrado", resourceCulture);
@@ -466,6 +476,16 @@ namespace SistemaFigueri.Properties {
         internal static System.Drawing.Bitmap comprobante {
             get {
                 object obj = ResourceManager.GetObject("comprobante", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap credit {
+            get {
+                object obj = ResourceManager.GetObject("credit", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -673,6 +693,16 @@ namespace SistemaFigueri.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_cerrar21 {
+            get {
+                object obj = ResourceManager.GetObject("icon cerrar21", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_minimizar {
             get {
                 object obj = ResourceManager.GetObject("icon minimizar", resourceCulture);
@@ -796,6 +826,16 @@ namespace SistemaFigueri.Properties {
         internal static System.Drawing.Bitmap logon1 {
             get {
                 object obj = ResourceManager.GetObject("logon1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mastercard {
+            get {
+                object obj = ResourceManager.GetObject("mastercard", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1053,6 +1093,16 @@ namespace SistemaFigueri.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap plus64 {
+            get {
+                object obj = ResourceManager.GetObject("plus64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Print {
             get {
                 object obj = ResourceManager.GetObject("Print", resourceCulture);
@@ -1233,6 +1283,16 @@ namespace SistemaFigueri.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap safeout {
+            get {
+                object obj = ResourceManager.GetObject("safeout", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap satellite_dish {
             get {
                 object obj = ResourceManager.GetObject("satellite-dish", resourceCulture);
@@ -1313,6 +1373,16 @@ namespace SistemaFigueri.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap sucursal {
+            get {
+                object obj = ResourceManager.GetObject("sucursal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap suma {
             get {
                 object obj = ResourceManager.GetObject("suma", resourceCulture);
@@ -1386,6 +1456,16 @@ namespace SistemaFigueri.Properties {
         internal static System.Drawing.Bitmap ventas {
             get {
                 object obj = ResourceManager.GetObject("ventas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap visa {
+            get {
+                object obj = ResourceManager.GetObject("visa", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
