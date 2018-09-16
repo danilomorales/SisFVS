@@ -48,6 +48,7 @@
     <Compile Include="ad.cs" />
     <Compile Include="CNClienteReceptor.cs" />
     <Compile Include="CNClientes.cs" />
+    <Compile Include="CNComporbante_Venta.cs" />
     <Compile Include="CNComprobante_Pago.cs" />
     <Compile Include="CNDetalleVenta.cs" />
     <Compile Include="CNKardex.cs" />
