@@ -15,13 +15,20 @@ namespace CapaDatos
         {
             get { return CDVenta._intancia; }
         }
-
+        CDConexion objSql = new CDConexion();
         private CDConexion conexion = new CDConexion();
 
         SqlDataReader leer;
         DataTable tabla = new DataTable();
         SqlCommand comando = new SqlCommand();
         private SqlDataAdapter adapter;
+
+        string strError = "";
+
+        public string deverror()
+        {
+            return strError;
+        }
 
         public DataTable CargaFormaPago()
         {
@@ -131,6 +138,426 @@ namespace CapaDatos
             }
             finally { cmd.Connection.Close(); }
             return Lista;
+        }
+        public int Inserta_FEComprobanteVenta(CE_FE_Comprobante_Venta dObj_Venta)
+        {
+
+            SqlConnection pCnx = new SqlConnection();
+
+            int dRpta = 0;
+
+            pCnx = objSql.AbrirConexion();
+            SqlTransaction objTrans = objSql.begintrans(pCnx);
+
+            try
+            {
+
+                SqlCommand Cmd = new SqlCommand("[Caja].[SP_FEComprobanteVentaInsertaVenta_INS]", pCnx);
+                SqlParameter dPar = new SqlParameter();
+                Cmd.Parameters.Clear();
+
+                Cmd.CommandType = CommandType.StoredProcedure;
+                Cmd.Transaction = objTrans;
+
+
+                dPar = Cmd.Parameters.Add("@vIde_Cliente", SqlDbType.Int);
+                dPar.Value = dObj_Venta.Ide_Cliente;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vIde_Comp_Pago", SqlDbType.Int);
+                dPar.Value = dObj_Venta.Ide_Comp_Pago;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vNum_Serie_Venta", SqlDbType.NVarChar);
+                dPar.Value = dObj_Venta.Num_Serie_Venta;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vNum_Doc_Venta", SqlDbType.NVarChar);
+                dPar.Value = dObj_Venta.Num_Doc_Venta;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vFec_Emite_Venta", SqlDbType.Date);
+                dPar.Value = dObj_Venta.Fec_Emite_Venta;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vNum_Ruc_Venta", SqlDbType.NVarChar);
+                dPar.Value = dObj_Venta.Num_Ruc_Venta;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vIde_Empresa_Fact", SqlDbType.Int);
+                dPar.Value = dObj_Venta.Ide_Empresa_Fact;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vDes_Nombre_Venta", SqlDbType.NVarChar);
+                dPar.Value = dObj_Venta.Des_Nombre_Venta;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vDes_Direc_Venta", SqlDbType.NVarChar);
+                dPar.Value = dObj_Venta.des_Direc_Venta;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vIde_Tipo_Venta", SqlDbType.Int);
+                dPar.Value = dObj_Venta.Ide_Tipo_Venta;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vCan_Dias_Pago_Venta", SqlDbType.Int);
+                dPar.Value = dObj_Venta.Can_Dias_Pago_Venta;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vFec_Vmto_Venta", SqlDbType.Date);
+                dPar.Value = dObj_Venta.Fec_Vmto_Venta;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vIde_Motivo_NotCred", SqlDbType.Int);
+                dPar.Value = dObj_Venta.Ide_Motivo_Notcred;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vRef_Num_Serie_Venta", SqlDbType.NVarChar);
+                dPar.Value = dObj_Venta.Ref_Num_Serie_Venta;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vRef_Num_Doc_Venta", SqlDbType.NVarChar);
+                dPar.Value = dObj_Venta.Ref_Num_Doc_Venta;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vImp_Tipo_Cambio_Venta", SqlDbType.Decimal);
+                dPar.Value = dObj_Venta.Imp_Tipo_Cambio_Venta;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vIde_Moneda", SqlDbType.Int);
+                dPar.Value = dObj_Venta.Ide_moneda;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vImp_Valor_Venta", SqlDbType.Decimal);
+                dPar.Value = dObj_Venta.Imp_Valor_Venta;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vImp_Depo_Venta", SqlDbType.Decimal);
+                dPar.Value = dObj_Venta.Imp_Depo_Venta;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vImp_Total_Venta", SqlDbType.Decimal);
+                dPar.Value = dObj_Venta.Imp_Total_Venta;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vPor_Impto_Venta", SqlDbType.Decimal);
+                dPar.Value = dObj_Venta.Por_Impto_Venta;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vImp_Impto_Venta", SqlDbType.Decimal);
+                dPar.Value = dObj_Venta.Imp_Impto_Venta;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vImp_Precio_Venta", SqlDbType.Decimal);
+                dPar.Value = dObj_Venta.Imp_Precio_Venta;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vImp_Val_Inaf_Venta", SqlDbType.Decimal);
+                dPar.Value = dObj_Venta.Imp_Val_Inaf_Venta;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vImp_Depo_Inaf_Venta", SqlDbType.Decimal);
+                dPar.Value = dObj_Venta.Imp_Depo_Inaf_Venta;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vImp_Precio_Inaf_Venta", SqlDbType.Decimal);
+                dPar.Value = dObj_Venta.Imp_Precio_Inaf_Venta;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vImp_Precio_Total_Venta", SqlDbType.Decimal);
+                dPar.Value = dObj_Venta.Imp_Precio_Total_Venta;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vImp_Paga_Venta", SqlDbType.Decimal);
+                dPar.Value = dObj_Venta.Imp_Paga_Venta;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vImp_Saldo_Venta", SqlDbType.Decimal);
+                dPar.Value = dObj_Venta.Imp_Saldo_Venta;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vIde_Punto_Venta", SqlDbType.Int);
+                dPar.Value = dObj_Venta.Ide_Punto_Venta;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vIde_Area", SqlDbType.Int);
+                dPar.Value = dObj_Venta.Ide_Area;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vIde_Estado_Venta", SqlDbType.Int);
+                dPar.Value = dObj_Venta.Ide_Estado_Venta;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vIde_Usuario", SqlDbType.Int);
+                dPar.Value = dObj_Venta.Ide_Usuario;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vFec_Factu_Comp_Venta", SqlDbType.Date);
+                dPar.Value = dObj_Venta.Fec_Factu_Comp_Venta;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vIde_Motivo_Anula_Venta", SqlDbType.Int);
+                dPar.Value = dObj_Venta.Ide_Motivo_Anula_Venta;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vDes_Obs_Motivo_Anula", SqlDbType.NVarChar);
+                dPar.Value = dObj_Venta.Des_Obs_Motivo_Anula;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vIde_Sucursal", SqlDbType.Int);
+                dPar.Value = dObj_Venta.Ide_Sucursal;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@valor", SqlDbType.Int);
+                dPar.Direction = ParameterDirection.Output;
+
+                Cmd.ExecuteNonQuery();
+
+                dRpta = int.Parse(Cmd.Parameters["@valor"].Value.ToString());
+
+                if (dRpta > 0)
+                {
+                    objSql.committrans(objTrans);
+                    Cmd.Dispose();
+                }
+                else
+                {
+                    objSql.rollbacktrans(objTrans);
+                    strError = "Error";
+                    Cmd.Dispose();
+                }
+            }
+            catch (SqlException ExSql)
+            {
+                strError = ExSql.Message;
+                objSql.rollbacktrans(objTrans);
+            }
+
+            catch (Exception Ex)
+            {
+                strError = Ex.Message;
+                objSql.rollbacktrans(objTrans);
+            }
+            finally
+            {
+
+                pCnx.Close();
+            }
+            return dRpta;
+        }
+        public int Inserta_FEComprobanteVentaDetalle(CE_FE_Comprobante_Vta_Det dObj_VentaDet)
+        {
+
+            SqlConnection pCnx = new SqlConnection();
+
+            int dRpta = 0;
+
+            pCnx = objSql.AbrirConexion();
+            SqlTransaction objTrans = objSql.begintrans(pCnx);
+
+            try
+            {
+
+                SqlCommand Cmd = new SqlCommand("[Caja].[SP_FEComprobanteVtaDetInsertaVentaDet_INS]", pCnx);
+                SqlParameter dPar = new SqlParameter();
+                Cmd.Parameters.Clear();
+
+                Cmd.CommandType = CommandType.StoredProcedure;
+                Cmd.Transaction = objTrans;
+
+
+                dPar = Cmd.Parameters.Add("@vIde_Venta", SqlDbType.Int);
+                dPar.Value = dObj_VentaDet.Ide_Venta;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vNum_Item_Vta_Det", SqlDbType.Int);
+                dPar.Value = dObj_VentaDet.Num_Item_Vta_Det;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vIde_Producto", SqlDbType.NVarChar);
+                dPar.Value = dObj_VentaDet.Ide_Producto;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vDes_Concepto_Vta_Det", SqlDbType.NVarChar);
+                dPar.Value = dObj_VentaDet.Des_Concepto_Vta_Det;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vImp_Unit_Vta_Det", SqlDbType.Decimal);
+                dPar.Value = dObj_VentaDet.Imp_Unit_Vta_Det;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vCan_Unit_Vta_Det", SqlDbType.Decimal);
+                dPar.Value = dObj_VentaDet.Can_Unit_Vta_Det;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vImp_Costo_Vta_Det", SqlDbType.Decimal);
+                dPar.Value = dObj_VentaDet.Imp_Costo_Vta_Det;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vPor_Dscto_Vta_Det", SqlDbType.Decimal);
+                dPar.Value = dObj_VentaDet.Por_Dscto_Vta_Det;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vImp_Dscto_Vta_Det", SqlDbType.Decimal);
+                dPar.Value = dObj_VentaDet.Imp_Dscto_Vta_Det;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vImp_Valor_Vta_Det", SqlDbType.Decimal);
+                dPar.Value = dObj_VentaDet.Imp_Valor_Vta_Det;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vFlg_Inaf_Vta_Det", SqlDbType.Int);
+                dPar.Value = dObj_VentaDet.Flg_Inaf_Vta_Det;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vPor_Impto_Vta_Det", SqlDbType.Decimal);
+                dPar.Value = dObj_VentaDet.Por_Impto_Vta_Det;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vImp_Impto_Vta_Det", SqlDbType.Decimal);
+                dPar.Value = dObj_VentaDet.Imp_Impto_Vta_Det;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vImp_Precio_Vta_Det", SqlDbType.Decimal);
+                dPar.Value = dObj_VentaDet.Imp_Precio_Vta_Det;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@valorDet", SqlDbType.Int);
+                dPar.Direction = ParameterDirection.Output;
+
+                Cmd.ExecuteNonQuery();
+
+                dRpta = int.Parse(Cmd.Parameters["@valorDet"].Value.ToString());
+
+                if (dRpta > 0)
+                {
+                    objSql.committrans(objTrans);
+                    Cmd.Dispose();
+                }
+                else
+                {
+                    objSql.rollbacktrans(objTrans);
+                    strError = "Error";
+                    Cmd.Dispose();
+                }
+            }
+            catch (SqlException ExSql)
+            {
+                strError = ExSql.Message;
+                objSql.rollbacktrans(objTrans);
+            }
+
+            catch (Exception Ex)
+            {
+                strError = Ex.Message;
+                objSql.rollbacktrans(objTrans);
+            }
+            finally
+            {
+
+                pCnx.Close();
+            }
+            return dRpta;
+        }
+        public int Inserta_FEComprobanteVentaPago(CE_FE_Comprobante_VentaPago dObj_VentaPago)
+        {
+
+            SqlConnection pCnx = new SqlConnection();
+            int dRpta = 0;
+            pCnx = objSql.AbrirConexion();
+            SqlTransaction objTrans = objSql.begintrans(pCnx);
+
+            try
+            {
+
+                SqlCommand Cmd = new SqlCommand("[Caja].[SP_FEComprobanteVentaPagoInsertaVentaPago_INS]", pCnx);
+                SqlParameter dPar = new SqlParameter();
+                Cmd.Parameters.Clear();
+
+                Cmd.CommandType = CommandType.StoredProcedure;
+                Cmd.Transaction = objTrans;
+
+
+                dPar = Cmd.Parameters.Add("@vIde_Venta", SqlDbType.Int);
+                dPar.Value = dObj_VentaPago.Ide_Venta;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vNum_Item_Venta_Pago", SqlDbType.Int);
+                dPar.Value = dObj_VentaPago.Num_Item_Venta_Pago;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vIde_Forma_Pago", SqlDbType.Int);
+                dPar.Value = dObj_VentaPago.Ide_Forma_Pago;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vIde_Tarjeta_Banco", SqlDbType.Int);
+                dPar.Value = dObj_VentaPago.Ide_Tarjeta_Banco;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vIde_Banco", SqlDbType.Int);
+                dPar.Value = dObj_VentaPago.Ide_Banco;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vIde_Banco_Cuenta", SqlDbType.Int);
+                dPar.Value = dObj_VentaPago.Ide_Banco_Cuenta;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vFecha_Doc_Pago", SqlDbType.Date);
+                dPar.Value = dObj_VentaPago.Fecha_Doc_Pago;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vNum_Doc_Pago", SqlDbType.NVarChar);
+                dPar.Value = dObj_VentaPago.Num_Doc_Pago;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vIde_Moneda", SqlDbType.Int);
+                dPar.Value = dObj_VentaPago.Ide_Moneda;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vImp_Pago", SqlDbType.Decimal);
+                dPar.Value = dObj_VentaPago.Imp_Pago;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vIde_Usuario", SqlDbType.Int);
+                dPar.Value = dObj_VentaPago.Ide_Usuario;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@valor", SqlDbType.Int);
+                dPar.Direction = ParameterDirection.Output;
+
+                Cmd.ExecuteNonQuery();
+
+                dRpta = int.Parse(Cmd.Parameters["@valor"].Value.ToString());
+
+                if (dRpta > 0)
+                {
+                    objSql.committrans(objTrans);
+                    Cmd.Dispose();
+                }
+                else
+                {
+                    objSql.rollbacktrans(objTrans);
+                    strError = "Error";
+                    Cmd.Dispose();
+                }
+            }
+            catch (SqlException ExSql)
+            {
+                strError = ExSql.Message;
+                objSql.rollbacktrans(objTrans);
+            }
+
+            catch (Exception Ex)
+            {
+                strError = Ex.Message;
+                objSql.rollbacktrans(objTrans);
+            }
+            finally
+            {
+
+                pCnx.Close();
+            }
+            return dRpta;
         }
 
 
