@@ -36,6 +36,26 @@ namespace CapaDatos
 
 
         }
+        public SqlTransaction begintrans(SqlConnection pcnx)
+        {
+            return pcnx.BeginTransaction();
+        }
+
+        public void committrans(SqlTransaction pTran)
+        {
+            pTran.Commit();
+        }
+
+        public void rollbacktrans(SqlTransaction pTran)
+        {
+            pTran.Rollback();
+        }
+
+        public void fincnx(SqlConnection pcnx)
+        {
+            pcnx.Close();
+            pcnx.Dispose();
+        }
 
         //public SqlConnection Conectar()
         //{

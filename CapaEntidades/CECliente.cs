@@ -18,5 +18,35 @@ namespace CapaEntidades
         public String Nombre_Empresa { get; set; }
         public String Sector { get; set; }
         public String IdPrecio { get; set; }
+        int idTipoPersona;
+
+        public int IdTipoPersona
+        {
+            get { return idTipoPersona; }
+            set { idTipoPersona = value; }
+        }
+        String direccion;
+
+        public String Direccion
+        {
+            get { return direccion; }
+            set { direccion = value; }
+        }
+
+        String telefono;
+
+        public String Telefono
+        {
+            get { return telefono; }
+            set { telefono = value; }
+        }
+
+        char estado;
+
+        public char Estado
+        {
+            get { return estado; }
+            set { estado = value; }
+        }
     }
 }

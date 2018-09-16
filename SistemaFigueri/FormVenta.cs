@@ -39,7 +39,12 @@ namespace SistemaFigueri
         Decimal SumaTotal { get; set; }
         Decimal SumaSubTotal { get; set; }
         Decimal SumaIgv { get; set; }
+        CECliente Cliente;
+        double TCVenta;
+        double ImporteNeto = 0.00;
+        double MontoPago = 0.00;
 
+        CNVentas dObj_Modelo = new CNVentas();
         public AutoCompleteStringCollection autocompletatb = new AutoCompleteStringCollection();
         public static FormVenta GetInstancia()
         {
@@ -184,34 +189,6 @@ namespace SistemaFigueri
 
         private void btnMantCliente_Click(object sender, EventArgs e)
         {
-            
-
-            {
-                BuscaProductoCB();
-
-                //CNProductos objProducto = new CNProductos();
-                Venta ven = new Venta();
-                Decimal Porcentaje = 0; Decimal SubTotal;
-                using (FormBuscarProducto form = new FormBuscarProducto())
-                {
-                    ven.Descripcion = tbAlias.Text + " - " + tbDescripcion.Text;
-                    ven.alias = form.alias;
-                    ven.Cantidad = 1;
-                    //ven.PrecioVenta = Convert.ToDecimal(tbPrecio.Text);
-                    Porcentaje = (Convert.ToDecimal(tbIgv.Text) / 100) + 1;
-                    SubTotal = ((Convert.ToDecimal(tbPrecio.Text) * 1) / Porcentaje);
-                    ven.Igv = Math.Round(Convert.ToDecimal(SubTotal) * (Convert.ToDecimal(tbIgv.Text) / (100)), 2);
-                    ven.SubTotal = Math.Round(SubTotal, 2);
-                    ven.stock = Int32.Parse(tbStock.Text);
-                    lst.Add(ven);
-
-
-
-                }
-                LlenarGrilla();
-            }
-                LimpiarProducto();
-
             
 
         }
@@ -437,6 +414,11 @@ namespace SistemaFigueri
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvDetalleNotaVenta_KeyUp(object sender, KeyEventArgs e)
         {
 
         }
@@ -1142,10 +1124,6 @@ namespace SistemaFigueri
 
                     }
                 }
-                else
-                {
-                  
-                }
             }
             catch (Exception ex)
             {
@@ -1194,6 +1172,10 @@ namespace SistemaFigueri
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+        private void tbClienteNombre_KeyDown(object sender, KeyEventArgs e)
+        {
+
         }
 
         private void tbDocumento_KeyDown(object sender, KeyEventArgs e)
@@ -1273,13 +1255,237 @@ namespace SistemaFigueri
             }
 
 
+            if (Cliente != null)
+            {
+
+                if (cboTipoDoc.SelectedIndex == 0)
+                {
+                    if (tbImpTotal.Text == "")
+                    {
+                        MessageBox.Show("Inserte un monto válido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        
+                    }
+                    else
+                    {
+
+                        int valorInserta = 0;
+                        CE_FE_Comprobante_Venta dObj_Venta = new CE_FE_Comprobante_Venta();
+                        List<CE_FE_Comprobante_Vta_Det> dObj_ListaDetalle = new List<CE_FE_Comprobante_Vta_Det>();
+                       // CE_FE_Comprobante_VentaPago dObj_VentaPago = new CE_FE_Comprobante_VentaPago();
+                        dObj_Venta = Llena_Entidad_Venta();
+                        dObj_ListaDetalle = Llena_Entidad_Venta_Det();
+                       // dObj_VentaPago = Llena_Entidad_Venta_Pago();
+                        valorInserta = dObj_Modelo.Inserta_FEComprobanteVenta(dObj_Venta, dObj_ListaDetalle);
+                        if (valorInserta > 0)
+                        {
+                            MessageBox.Show("Se ha realizado la venta Correctamente.", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            MontoPago = Convert.ToDouble(tbImpTotal.Text);
+                            //ImporteVuelto = (MontoPago - ImporteTotal);
+                            //txtVuelto.Text = ImporteVuelto.ToString();
+                            //SaldoSoles = 0.00;
+                            //SaldoDolares = 0.00;
+                            //txtSaldoSoles.Text = SaldoSoles.ToString();
+                            //txtSaldoDolares.Text = SaldoDolares.ToString();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error al Insertar la Información de la Venta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+
+
+                    }
+
+                }
+                else if (cboTipoDoc.SelectedIndex == 1)
+                {
+                    if (tbImpTotal.Text == "")
+                    {
+
+                    }
+                    else
+                    {
+
+                        int valorInserta = 0;
+                        CE_FE_Comprobante_Venta dObj_Venta = new CE_FE_Comprobante_Venta();
+                        List<CE_FE_Comprobante_Vta_Det> dObj_ListaDetalle = new List<CE_FE_Comprobante_Vta_Det>();
+                        // CE_FE_Comprobante_VentaPago dObj_VentaPago = new CE_FE_Comprobante_VentaPago();
+                        dObj_Venta = Llena_Entidad_Venta();
+                        dObj_ListaDetalle = Llena_Entidad_Venta_Det();
+                        // dObj_VentaPago = Llena_Entidad_Venta_Pago();
+                        valorInserta = dObj_Modelo.Inserta_FEComprobanteVenta(dObj_Venta, dObj_ListaDetalle);
+                        if (valorInserta > 0)
+                        {
+                            MessageBox.Show("Se ha realizado la venta Correctamente.", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            MontoPago = Convert.ToDouble(tbImpTotal.Text);
+                            //ImporteVuelto = (MontoPago - ImporteTotal);
+                            //txtVuelto.Text = ImporteVuelto.ToString();
+                            //SaldoSoles = 0.00;
+                            //SaldoDolares = 0.00;
+                            //txtSaldoSoles.Text = SaldoSoles.ToString();
+                            //txtSaldoDolares.Text = SaldoDolares.ToString();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error al Insertar la Información de la Venta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar primero un cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+
+        }
+        
+        private List<CE_FE_Comprobante_Vta_Det> Llena_Entidad_Venta_Det()
+        {
+          
+            int num_item = 0;
+            List<CE_FE_Comprobante_Vta_Det> Lista_Detalle = new List<CE_FE_Comprobante_Vta_Det>();
+
+            foreach (DataGridViewRow rowGrid in dgvVenta.Rows)
+            {
+                num_item += 1;
+                CE_FE_Comprobante_Vta_Det dObj_VentaDet = new CE_FE_Comprobante_Vta_Det();
+                //dObj_VentaDet.Ide_Venta = ide_venta;
+                dObj_VentaDet.Num_Item_Vta_Det = num_item;
+                dObj_VentaDet.Ide_Producto = Convert.ToString(rowGrid.Cells[0].Value);
+                dObj_VentaDet.Des_Concepto_Vta_Det = Convert.ToString(rowGrid.Cells[1].Value);
+                dObj_VentaDet.Imp_Unit_Vta_Det = Convert.ToDouble(rowGrid.Cells[2].Value);
+                dObj_VentaDet.Can_Unit_Vta_Det = Convert.ToDouble(rowGrid.Cells[4].Value);
+                dObj_VentaDet.Imp_Costo_Vta_Det = Convert.ToDouble(rowGrid.Cells[6].Value);
+                dObj_VentaDet.Por_Dscto_Vta_Det = 0.00;
+                dObj_VentaDet.Imp_Dscto_Vta_Det = 0.00;
+                dObj_VentaDet.Imp_Valor_Vta_Det = Convert.ToDouble(rowGrid.Cells[5].Value);
+                dObj_VentaDet.Flg_Inaf_Vta_Det = 0;
+                dObj_VentaDet.Por_Impto_Vta_Det = 18;
+                dObj_VentaDet.Imp_Impto_Vta_Det = Convert.ToDouble(rowGrid.Cells[3].Value);
+                dObj_VentaDet.Imp_Precio_Vta_Det = Convert.ToDouble(rowGrid.Cells[6].Value);
+
+                Lista_Detalle.Add(dObj_VentaDet);
+            }
+            return Lista_Detalle;
+
+
+        }
+        private CE_FE_Comprobante_Venta Llena_Entidad_Venta()
+        {
+            CE_FE_Comprobante_Venta dObj_Venta = new CE_FE_Comprobante_Venta();
+
+            dObj_Venta.Ide_Cliente = Cliente.IdCliente;
+            dObj_Venta.Ide_Comp_Pago = Convert.ToInt32(cboTipoDoc.SelectedValue);
+            dObj_Venta.Num_Serie_Venta = cboSerie.Text;
+            dObj_Venta.Num_Doc_Venta = "0";
+            dObj_Venta.Fec_Emite_Venta = Convert.ToDateTime("01/01/1999");
+            if (chkndoc.Checked)
+            {
+                dObj_Venta.Num_Ruc_Venta = Cliente.DNI;
+            }
+            else if (chkruc.Checked)
+            {
+                dObj_Venta.Num_Ruc_Venta = Cliente.RUC;
+            }
+            dObj_Venta.Ide_Empresa_Fact = 0;
+            dObj_Venta.Des_Nombre_Venta = Cliente.Nombres + " " + Cliente.Apellidos;
+            
+          
+            dObj_Venta.des_Direc_Venta = Cliente.Direccion;
+            dObj_Venta.Ide_Tipo_Venta = 1;
+            dObj_Venta.Can_Dias_Pago_Venta = 0;
+            dObj_Venta.Fec_Vmto_Venta = Convert.ToDateTime("01/01/1999");
+            dObj_Venta.Ide_Motivo_Notcred = 0;
+            dObj_Venta.Ref_Num_Serie_Venta = "";
+            dObj_Venta.Ref_Num_Doc_Venta = "";
+            dObj_Venta.Imp_Tipo_Cambio_Venta = TCVenta;
+            
+            dObj_Venta.Imp_Valor_Venta = ImporteNeto;
+            dObj_Venta.Imp_Depo_Venta = 0.00;
+            //if (cboMoneda.SelectedIndex == 0)
+            //{
+            //    dObj_Venta.Imp_Total_Venta = ImporteTotal;
+            //}
+            //else if (cboMoneda.SelectedIndex == 1)
+            //{
+            //    dObj_Venta.Imp_Total_Venta = ImporteTotalDolares;
+            //}
+            //dObj_Venta.Por_Impto_Venta = 18;
+            //dObj_Venta.Imp_Impto_Venta = TotalIGV;
+            //if (cboMoneda.SelectedIndex == 0)
+            //{
+            //    dObj_Venta.Imp_Impto_Venta = TotalIGV;
+            //}
+            //else if (cboMoneda.SelectedIndex == 1)
+            //{
+            //    dObj_Venta.Imp_Impto_Venta = (TotalIGV / TCVenta);
+            //}
+            //if (cboMoneda.SelectedIndex == 0)
+            //{
+            //    dObj_Venta.Imp_Precio_Venta = ImporteTotal;
+            //}
+            //else if (cboMoneda.SelectedIndex == 1)
+            //{
+            //    dObj_Venta.Imp_Precio_Venta = ImporteTotalDolares;
+            //}
+            dObj_Venta.Imp_Val_Inaf_Venta = 0.00;
+            dObj_Venta.Imp_Depo_Inaf_Venta = 0.00;
+            dObj_Venta.Imp_Precio_Inaf_Venta = 0.00;
+            //if (cboMoneda.SelectedIndex == 0)
+            //{
+            //    dObj_Venta.Imp_Precio_Total_Venta = ImporteTotal;
+            //}
+            //else if (cboMoneda.SelectedIndex == 1)
+            //{
+            //    dObj_Venta.Imp_Precio_Total_Venta = ImporteTotalDolares;
+            //}
+            dObj_Venta.Imp_Paga_Venta = MontoPago;
+            dObj_Venta.Imp_Saldo_Venta = 0.00;
+            //dObj_Venta.Ide_Punto_Venta = IdPuntoVenta;
+            //dObj_Venta.Ide_Area = IdArea;
+            dObj_Venta.Ide_Estado_Venta = 1;
+           // dObj_Venta.Ide_Usuario = IdCajero;
+            dObj_Venta.Fec_Factu_Comp_Venta = Convert.ToDateTime("01/01/1999");
+            dObj_Venta.Ide_Motivo_Anula_Venta = 0;
+            dObj_Venta.Des_Obs_Motivo_Anula = "";
+            dObj_Venta.Ide_Sucursal = 1;
+
+            return dObj_Venta;
+
         }
 
         private void tbCodBarras_KeyDown(object sender, KeyEventArgs e)
         {
             try
             {
-               
+                if (e.KeyCode == Keys.Enter)
+                {
+                    BuscaProductoCB();
+
+                    //CNProductos objProducto = new CNProductos();
+                    Venta ven = new Venta();
+                    Decimal Porcentaje = 0; Decimal SubTotal;
+                    using (FormBuscarProducto form = new FormBuscarProducto())
+                    {
+                        ven.Descripcion = tbAlias.Text + " - " + tbDescripcion.Text;
+                        ven.alias = form.alias;
+                        ven.Cantidad = 1;
+                        ven.PrecioVenta = Convert.ToDecimal(tbPrecio.Text);
+                        Porcentaje = (Convert.ToDecimal(tbIgv.Text) / 100) + 1;
+                        SubTotal = ((Convert.ToDecimal(tbPrecio.Text) * 1) / Porcentaje);
+                        ven.Igv = Math.Round(Convert.ToDecimal(SubTotal) * (Convert.ToDecimal(tbIgv.Text) / (100)), 2);
+                        ven.SubTotal = Math.Round(SubTotal, 2);
+                        ven.stock = Int32.Parse(tbStock.Text);
+                        lst.Add(ven);
+
+                    }
+                    LlenarGrilla();
+                }
+                else
+                {
+                    LimpiarProducto();
+
+                }
 
             }
             catch ( Exception ex)

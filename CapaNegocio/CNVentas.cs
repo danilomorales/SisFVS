@@ -176,6 +176,46 @@ namespace CapaNegocio
             }
         }
 
+        public int Inserta_FEComprobanteVenta(CE_FE_Comprobante_Venta dObj_Venta, List<CE_FE_Comprobante_Vta_Det> dObj_ListaDetalle)
+        {
+            int valor = 0;
+            int valorDet = 0;
+            int valorPago = 0;
+            try
+            {
+
+                valor = venta.Inserta_FEComprobanteVenta(dObj_Venta);
+
+                if (valor > 0)
+                {
+                    foreach (CE_FE_Comprobante_Vta_Det dObj_VentaDet in dObj_ListaDetalle)
+                    {
+                        dObj_VentaDet.Ide_Venta = valor;
+                        valorDet = venta.Inserta_FEComprobanteVentaDetalle(dObj_VentaDet);
+                    }
+
+                    //if (valorDet > 0)
+                    //{
+                    //    dObj_VentaPago.Ide_Venta = valor;
+                    //    valorPago = Trans.Inserta_FEComprobanteVentaPago(dObj_VentaPago);
+                    //    if (valorPago > 0)
+                    //    {
+                    //        return valor;
+                    //    }
+
+                    //}
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+
+            return valor;
+        }
+
 
     }
 }
