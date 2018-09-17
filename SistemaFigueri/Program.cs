@@ -10,7 +10,7 @@ namespace SistemaFigueri
     {
         //Cliente Receptor
         public static int IdCliente;
-        public static int IdDocIdentidad;
+        //public static int IdDocIdentidad;D:\SisFVS\SistemaFigueri\Program.cs
         public static String NroDocIdentidad;
         public static String RazonSocial;
         public static String NombreComercial;

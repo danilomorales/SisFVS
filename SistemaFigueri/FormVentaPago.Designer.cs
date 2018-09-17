@@ -721,7 +721,7 @@
             this.btnAgregar.IconRightVisible = true;
             this.btnAgregar.IconRightZoom = 0D;
             this.btnAgregar.IconVisible = true;
-            this.btnAgregar.IconZoom = 100D;
+            this.btnAgregar.IconZoom = 80D;
             this.btnAgregar.IsTab = false;
             this.btnAgregar.Location = new System.Drawing.Point(1372, 24);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
@@ -755,11 +755,10 @@
             // 
             this.panelCancelacion.Controls.Add(this.textBox1);
             this.panelCancelacion.Controls.Add(this.bunifuCustomLabel28);
-            this.panelCancelacion.Location = new System.Drawing.Point(11, 5);
+            this.panelCancelacion.Location = new System.Drawing.Point(3, 3);
             this.panelCancelacion.Name = "panelCancelacion";
             this.panelCancelacion.Size = new System.Drawing.Size(241, 31);
             this.panelCancelacion.TabIndex = 1;
-            this.panelCancelacion.Visible = false;
             // 
             // textBox1
             // 
@@ -783,7 +782,7 @@
             this.bunifuCustomLabel28.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bunifuCustomLabel28.Font = new System.Drawing.Font("Century Gothic", 11F);
             this.bunifuCustomLabel28.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel28.Location = new System.Drawing.Point(3, 1);
+            this.bunifuCustomLabel28.Location = new System.Drawing.Point(13, 5);
             this.bunifuCustomLabel28.Name = "bunifuCustomLabel28";
             this.bunifuCustomLabel28.Size = new System.Drawing.Size(119, 23);
             this.bunifuCustomLabel28.TabIndex = 252;

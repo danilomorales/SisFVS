@@ -51,6 +51,10 @@
     <Compile Include="CETarjeta.cs" />
     <Compile Include="CEVenta.cs" />
     <Compile Include="CEDetalleVenta.cs" />
+    <Compile Include="CE_Cliente.cs" />
+    <Compile Include="CE_FE_Comprobante_VentaPago.cs" />
+    <Compile Include="CE_FE_Comprobante_Vta_Det.cs" />
+    <Compile Include="CE_FE_Comprobante_Venta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

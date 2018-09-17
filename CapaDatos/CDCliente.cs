@@ -22,7 +22,13 @@ namespace CapaDatos
         DataTable tabla = new DataTable();
         SqlCommand comando = new SqlCommand();
         private SqlDataAdapter adapter;
+        CDConexion objSql = new CDConexion();
+        string strError = "";
 
+        public string deverror()
+        {
+            return strError;
+        }
 
         //var
         private string _Textobuscar;
@@ -385,6 +391,38 @@ namespace CapaDatos
             }
             finally { cmd.Connection.Close(); }
             return Lista;
+        }
+        public DataTable LlenaEntidad_Cliente(string vIdCliente)
+        {
+            DataSet dst = new DataSet();
+            DataTable dTabla = new DataTable();
+            SqlConnection cnx = new SqlConnection();
+            SqlParameter dPar = new SqlParameter();
+            SqlDataAdapter dap = new SqlDataAdapter();
+            try
+            {
+                cnx = objSql.AbrirConexion();
+                dap = new SqlDataAdapter("Caja.SP_FE_CargaClienteVenta", cnx);
+                dap.SelectCommand.CommandType = CommandType.StoredProcedure;
+
+                dPar = dap.SelectCommand.Parameters.Add("@vIdCliente", SqlDbType.Int);
+                dPar.Value = vIdCliente;
+                dPar.Direction = ParameterDirection.Input;
+
+                dap.Fill(dst, "IdCliente");
+                dTabla = dst.Tables[0];
+
+            }
+            catch (Exception Ex)
+            {
+                strError = Ex.Message;
+                dTabla.Clear();
+            }
+            finally
+            {
+                cnx.Close();
+            }
+            return dTabla;
         }
 
 

@@ -21,7 +21,7 @@ namespace SistemaFigueri
         CNClientes nc = new CNClientes();
         CDCliente dc = new CDCliente();
         DataTable tbCliente = new DataTable();
-
+        public CE_Cliente EnCliente;
         public String dni { get; set; }
         public String clienteN { get; set; }
         public String clienteA { get; set; }
@@ -39,7 +39,7 @@ namespace SistemaFigueri
         {
 
 
-            //dgvCliente.Columns.Add("ColumnIdCliente", "IdCliente");
+            dgvCliente.Columns.Add("ColumnIdCliente", "IdCliente");
             dgvCliente.Columns.Add("ColumnDocumento", "Documento");
             dgvCliente.Columns.Add("ColumnDNI", "DNI");
             dgvCliente.Columns.Add("ColumnRUC", "RUC");
@@ -48,7 +48,7 @@ namespace SistemaFigueri
             dgvCliente.Columns.Add("ColumnRazón_Social", "Razón_Social");
            dgvCliente.Columns.Add("ColumnSector", "Sector");
 
-           // dgvCliente.Columns["ColumnIdCliente"].Width = 40;
+           dgvCliente.Columns["ColumnIdCliente"].Width = 40;
             dgvCliente.Columns["ColumnDocumento"].Width = 10;
             dgvCliente.Columns["ColumnDNI"].Width = 10;
             dgvCliente.Columns["ColumnRUC"].Width = 10;
@@ -56,7 +56,7 @@ namespace SistemaFigueri
             dgvCliente.Columns["ColumnApellidos"].Width = 15;
             dgvCliente.Columns["ColumnRazón_Social"].Width = 30;
             dgvCliente.Columns["ColumnSector"].Width = 70;
-            //this.dgvCliente.Columns["ColumnIdCliente"].Visible = false;
+            this.dgvCliente.Columns["ColumnIdCliente"].Visible = false;
 
             DataGridViewCellStyle cssabecera = new DataGridViewCellStyle();
             cssabecera.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -237,6 +237,8 @@ namespace SistemaFigueri
             tipodoc = TipoDoc;
             this.DialogResult = DialogResult.OK;
             this.Close();
+
+            
         }
 
         private void rbNombreProd_CheckedChanged(object sender, EventArgs e)
@@ -264,6 +266,27 @@ namespace SistemaFigueri
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void Selecciona()
+        {
+            if (dgvCliente.SelectedRows.Count > 0)
+            {
+                String IdCliente;
+                CNClientes dObj_ModeloCaj = new CNClientes();
+                IdCliente = dgvCliente.SelectedRows[0].Cells["ColumnIdCliente"].ToString();
+                EnCliente = dObj_ModeloCaj.LlenaEntidad_Cliente(IdCliente);
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Debes sombrear un registro para seleccionarlo", "Validar busqueda", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private void dgvCliente_DoubleClick_1(object sender, EventArgs e)
+        {
+            Selecciona();
         }
     }
 
