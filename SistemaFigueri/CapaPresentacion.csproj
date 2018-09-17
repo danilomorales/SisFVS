@@ -87,6 +87,12 @@
     <Compile Include="FormComprobanteVenta.Designer.cs">
       <DependentUpon>FormComprobanteVenta.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormComprobante_Pago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormComprobante_Pago.Designer.cs">
+      <DependentUpon>FormComprobante_Pago.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormEditarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,12 +186,6 @@
     <Compile Include="FormInsertProducto.Designer.cs">
       <DependentUpon>FormInsertProducto.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormInsertSector.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormInsertSector.Designer.cs">
-      <DependentUpon>FormInsertSector.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormMantCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -203,12 +203,6 @@
     </Compile>
     <Compile Include="FormPerfiles.Designer.cs">
       <DependentUpon>FormPerfiles.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormSector.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormSector.Designer.cs">
-      <DependentUpon>FormSector.cs</DependentUpon>
     </Compile>
     <Compile Include="FormUpdateCliente.cs">
       <SubType>Form</SubType>
@@ -264,12 +258,6 @@
     <Compile Include="FormTipoDeCambio.Designer.cs">
       <DependentUpon>FormTipoDeCambio.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormUpdateSector.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormUpdateSector.Designer.cs">
-      <DependentUpon>FormUpdateSector.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="SomeData.cs" />
     <EmbeddedResource Include="FormAperturaCaja.resx">
@@ -296,14 +284,14 @@
     <EmbeddedResource Include="FormComprobanteVenta.resx">
       <DependentUpon>FormComprobanteVenta.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormComprobante_Pago.resx">
+      <DependentUpon>FormComprobante_Pago.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormEditarUsuario.resx">
       <DependentUpon>FormEditarUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormInsertProducto.resx">
       <DependentUpon>FormInsertProducto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormInsertSector.resx">
-      <DependentUpon>FormInsertSector.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormKardex.resx">
       <DependentUpon>FormKardex.cs</DependentUpon>
@@ -335,9 +323,6 @@
     <EmbeddedResource Include="FormRegistroCobro.resx">
       <DependentUpon>FormRegistroCobro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormSector.resx">
-      <DependentUpon>FormSector.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormSucursal.resx">
       <DependentUpon>FormSucursal.cs</DependentUpon>
     </EmbeddedResource>
@@ -349,9 +334,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormUpdateProducto.resx">
       <DependentUpon>FormUpdateProducto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormUpdateSector.resx">
-      <DependentUpon>FormUpdateSector.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormVenta.resx">
       <DependentUpon>FormVenta.cs</DependentUpon>
