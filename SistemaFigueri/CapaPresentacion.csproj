@@ -87,6 +87,12 @@
     <Compile Include="FormComprobanteVenta.Designer.cs">
       <DependentUpon>FormComprobanteVenta.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormComprobante_Venta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormComprobante_Venta.Designer.cs">
+      <DependentUpon>FormComprobante_Venta.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormEditarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +141,14 @@
       <DependentUpon>ComprobanteVenta.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reportes\DataComprobante.cs">
+      <DependentUpon>DataComprobante.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\DataComprobante.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataComprobante.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\DsDetalleVenta.cs">
       <DependentUpon>DsDetalleVenta.xsd</DependentUpon>
     </Compile>
@@ -142,6 +156,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DsDetalleVenta.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\FilterComprobante.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FilterComprobante.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Venta.cs" />
     <Compile Include="FormBuscarClienteR.cs">
@@ -272,6 +292,9 @@
     <EmbeddedResource Include="FormComprobanteVenta.resx">
       <DependentUpon>FormComprobanteVenta.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormComprobante_Venta.resx">
+      <DependentUpon>FormComprobante_Venta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormEditarUsuario.resx">
       <DependentUpon>FormEditarUsuario.cs</DependentUpon>
     </EmbeddedResource>
@@ -335,6 +358,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ComprobanteVenta.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FilterComprobante.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>FilterComprobante.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="SistemaFigueri.Principal.resources" />
     <None Include="packages.config" />
   </ItemGroup>
@@ -359,6 +386,17 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Reportes\DataComprobante.xsc">
+      <DependentUpon>DataComprobante.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\DataComprobante.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataComprobante.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\DataComprobante.xss">
+      <DependentUpon>DataComprobante.xsd</DependentUpon>
+    </None>
     <None Include="Reportes\DsDetalleVenta.xsc">
       <DependentUpon>DsDetalleVenta.xsd</DependentUpon>
     </None>
