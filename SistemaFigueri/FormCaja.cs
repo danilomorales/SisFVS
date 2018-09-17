@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SistemaFigueri
 {
-    public partial class FormAperturaCaja : Form
+    public partial class FormCaja : Form
     {
-        public FormAperturaCaja()
+        public FormCaja()
         {
             InitializeComponent();
         }
