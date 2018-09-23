@@ -224,11 +224,11 @@
     <Compile Include="FormUpdateProducto.Designer.cs">
       <DependentUpon>FormUpdateProducto.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormAperturaCaja.cs">
+    <Compile Include="FormCaja.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAperturaCaja.Designer.cs">
-      <DependentUpon>FormAperturaCaja.cs</DependentUpon>
+    <Compile Include="FormCaja.Designer.cs">
+      <DependentUpon>FormCaja.cs</DependentUpon>
     </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
@@ -268,8 +268,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="SomeData.cs" />
-    <EmbeddedResource Include="FormAperturaCaja.resx">
-      <DependentUpon>FormAperturaCaja.cs</DependentUpon>
+    <EmbeddedResource Include="FormCaja.resx">
+      <DependentUpon>FormCaja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormBuscarClienteR.resx">
       <DependentUpon>FormBuscarClienteR.cs</DependentUpon>

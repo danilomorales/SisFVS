@@ -20,6 +20,8 @@ namespace CapaNegocio
 
         CDCliente cli = new CDCliente();
 
+       CECliente cliente = new CECliente();
+
         //READ CLIENT
         public SqlDataAdapter MostarClientes()
         {
@@ -142,6 +144,36 @@ namespace CapaNegocio
 
                 throw;
             }
+        }
+
+        public CE_Cliente LlenaEntidad_Cliente(string IdCliente)
+        {
+            CE_Cliente dObj_Cliente = new CE_Cliente();
+            DataTable dTbl_Cliente;
+
+            dTbl_Cliente = cli.LlenaEntidad_Cliente(IdCliente);
+            //dObj_Cliente.IdCliente = int.Parse(dTbl_Cliente.Rows[0]["IdCliente"].ToString());
+            dObj_Cliente.IdCliente = dTbl_Cliente.Rows[0]["IdCliente"].ToString();
+            dObj_Cliente.IdTipoDocIdent = dTbl_Cliente.Rows[0]["IdTipoDocIdent"].ToString();
+            dObj_Cliente.IdSector = dTbl_Cliente.Rows[0]["IdSector"].ToString();
+            dObj_Cliente.IdTipoPersona = int.Parse(dTbl_Cliente.Rows[0]["IdTipoPersona"].ToString());
+            dObj_Cliente.Nombres = dTbl_Cliente.Rows[0]["Nombres"].ToString();
+            dObj_Cliente.ApellidoPaterno = dTbl_Cliente.Rows[0]["ApellidoPaterno"].ToString();
+            dObj_Cliente.ApellidoMaterno = dTbl_Cliente.Rows[0]["ApellidoMaterno"].ToString();
+            dObj_Cliente.NombreEmpresa = dTbl_Cliente.Rows[0]["NombreEmpresa"].ToString();
+            dObj_Cliente.Direccion = dTbl_Cliente.Rows[0]["Direccion"].ToString();
+            dObj_Cliente.Direccion = dTbl_Cliente.Rows[0]["Direccion"].ToString();
+            dObj_Cliente.Contacto = dTbl_Cliente.Rows[0]["Contacto"].ToString();
+            dObj_Cliente.Fax = dTbl_Cliente.Rows[0]["Fax"].ToString();
+            dObj_Cliente.RUC = dTbl_Cliente.Rows[0]["RUC"].ToString();
+            dObj_Cliente.NroDocumento = dTbl_Cliente.Rows[0]["NroDocumento"].ToString();
+            dObj_Cliente.IdUbigeo = dTbl_Cliente.Rows[0]["IdUbigeo"].ToString();
+            dObj_Cliente.Departamento = dTbl_Cliente.Rows[0]["IdUbigeo"].ToString();
+            dObj_Cliente.Provincia = dTbl_Cliente.Rows[0]["Departamento"].ToString();
+            dObj_Cliente.Distrito = dTbl_Cliente.Rows[0]["Distrito"].ToString();
+            dObj_Cliente.Estado = char.Parse(dTbl_Cliente.Rows[0]["Estado"].ToString());
+
+            return dObj_Cliente;
         }
     }
 }

@@ -16,9 +16,9 @@ namespace CapaEntidades
             set { ide_venta = value; }
         }
 
-        int ide_cliente;
+        string ide_cliente;
 
-        public int Ide_Cliente
+        public string Ide_Cliente
         {
             get { return ide_cliente; }
             set { ide_cliente = value; }

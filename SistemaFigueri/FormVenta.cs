@@ -39,7 +39,10 @@ namespace SistemaFigueri
         Decimal SumaTotal { get; set; }
         Decimal SumaSubTotal { get; set; }
         Decimal SumaIgv { get; set; }
-        CECliente Cliente;
+
+
+        CE_Cliente ECLiente;
+
         double TCVenta;
         double ImporteNeto = 0.00;
         double MontoPago = 0.00;
@@ -361,7 +364,6 @@ namespace SistemaFigueri
                         //btnAgregaCarro.Enabled = true;
                         tbIdProducto.Text = form.idproducto;
 
-
                         CNProductos objProducto = new CNProductos();
                         Venta ven = new Venta();
                         Decimal Porcentaje = 0; Decimal SubTotal;
@@ -377,7 +379,6 @@ namespace SistemaFigueri
                         ven.stock = Int32.Parse(tbStock.Text);
                         lst.Add(ven);
                         LlenarGrilla();
-
 
                     }
                 
@@ -1233,29 +1234,29 @@ namespace SistemaFigueri
 
         private void btnGuarda_Click_1(object sender, EventArgs e)
         {
-            CNVentas objUsuario = new CNVentas();
-            if (dgvVenta.Rows.Count > 0)
-            {
-                if (Convert.ToString(dgvVenta.CurrentRow.Cells[2].Value) != "")
-                {
-                    VAlidaSoloNumero();
-                    CEVenta v = new CEVenta();
-                    CECliente c = new CECliente();
-                    c.IdCliente = LocalBD.Instancia.ReturnIdClienteNV(0, 0);
-                    //v.Deposito_venta = CEVenta
-                }
-                else
-                {
-                    MessageBox.Show("No Existe Ningún Elemento en la Lista.", "Figeueri.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else
-            {
-                MessageBox.Show("No Existe Ningún Elemento en la Lista.", "Figueri", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            //CNVentas objUsuario = new CNVentas();
+            //if (dgvVenta.Rows.Count > 0)
+            //{
+            //    if (Convert.ToString(dgvVenta.CurrentRow.Cells[2].Value) != "")
+            //    {
+            //        VAlidaSoloNumero();
+            //        CEVenta v = new CEVenta();
+            //        CECliente c = new CECliente();
+            //        c.IdCliente = LocalBD.Instancia.ReturnIdClienteNV(0, 0);
+            //        //v.Deposito_venta = CEVenta
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("No Existe Ningún Elemento en la Lista.", "Figeueri.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    }
+            //}
+            //else
+            //{
+            //    MessageBox.Show("No Existe Ningún Elemento en la Lista.", "Figueri", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
 
 
-            if (Cliente != null)
+            if (ECLiente != null)
             {
 
                 if (cboTipoDoc.SelectedIndex == 0)
@@ -1272,6 +1273,7 @@ namespace SistemaFigueri
                         CE_FE_Comprobante_Venta dObj_Venta = new CE_FE_Comprobante_Venta();
                         List<CE_FE_Comprobante_Vta_Det> dObj_ListaDetalle = new List<CE_FE_Comprobante_Vta_Det>();
                        // CE_FE_Comprobante_VentaPago dObj_VentaPago = new CE_FE_Comprobante_VentaPago();
+
                         dObj_Venta = Llena_Entidad_Venta();
                         dObj_ListaDetalle = Llena_Entidad_Venta_Det();
                        // dObj_VentaPago = Llena_Entidad_Venta_Pago();
@@ -1330,14 +1332,14 @@ namespace SistemaFigueri
                         }
                     }
                 }
-            }
+        }
             else
             {
                 MessageBox.Show("Debe seleccionar primero un cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
 
-        }
+}
         
         private List<CE_FE_Comprobante_Vta_Det> Llena_Entidad_Venta_Det()
         {
@@ -1374,24 +1376,24 @@ namespace SistemaFigueri
         {
             CE_FE_Comprobante_Venta dObj_Venta = new CE_FE_Comprobante_Venta();
 
-            dObj_Venta.Ide_Cliente = Cliente.IdCliente;
+            dObj_Venta.Ide_Cliente = ECLiente.IdCliente;
             dObj_Venta.Ide_Comp_Pago = Convert.ToInt32(cboTipoDoc.SelectedValue);
             dObj_Venta.Num_Serie_Venta = cboSerie.Text;
             dObj_Venta.Num_Doc_Venta = "0";
             dObj_Venta.Fec_Emite_Venta = Convert.ToDateTime("01/01/1999");
             if (chkndoc.Checked)
             {
-                dObj_Venta.Num_Ruc_Venta = Cliente.DNI;
+                dObj_Venta.Num_Ruc_Venta = ECLiente.NroDocumento;
             }
             else if (chkruc.Checked)
             {
-                dObj_Venta.Num_Ruc_Venta = Cliente.RUC;
+                dObj_Venta.Num_Ruc_Venta = ECLiente.RUC;
             }
             dObj_Venta.Ide_Empresa_Fact = 0;
-            dObj_Venta.Des_Nombre_Venta = Cliente.Nombres + " " + Cliente.Apellidos;
+            dObj_Venta.Des_Nombre_Venta = ECLiente.Nombres + " " + ECLiente.ApellidoPaterno+""+ ECLiente.ApellidoMaterno;
             
           
-            dObj_Venta.des_Direc_Venta = Cliente.Direccion;
+            dObj_Venta.des_Direc_Venta = ECLiente.Direccion;
             dObj_Venta.Ide_Tipo_Venta = 1;
             dObj_Venta.Can_Dias_Pago_Venta = 0;
             dObj_Venta.Fec_Vmto_Venta = Convert.ToDateTime("01/01/1999");
