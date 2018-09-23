@@ -165,7 +165,7 @@ namespace SistemaFigueri
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             dgvCliente.DataSource = dt;
-            Conexion.Close();
+            Conexion.Close();   
 
             //SqlConnection Conexion = new SqlConnection("Data Source=192.168.21.13;Initial Catalog=DBFIGUE2;User ID=sa;Password=123;MultipleActiveResultSets=true;");
             //Conexion.Open();
