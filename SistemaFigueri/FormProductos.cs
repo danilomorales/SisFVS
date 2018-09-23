@@ -119,7 +119,7 @@ namespace SistemaFigueri
          
         private void bmBuscar_KeyUp(object sender, KeyEventArgs e)
         {
-            SqlConnection Conexion = new SqlConnection("Data Source=192.168.21.13;Initial Catalog=DBFIGUE2;User ID=sa;Password=123;MultipleActiveResultSets=true;");
+            SqlConnection Conexion = new SqlConnection("Data Source=192.168.21.05;Initial Catalog=DBFIGUE2;User ID=sa;Password=123;MultipleActiveResultSets=true;");
             Conexion.Open();
             SqlCommand cmd = Conexion.CreateCommand();
             cmd.CommandType = CommandType.Text;

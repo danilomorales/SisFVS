@@ -145,55 +145,32 @@ namespace SistemaFigueri
 
         private void bmBuscar_KeyUp(object sender, KeyEventArgs e)
         {
-            SqlConnection Conexion = new SqlConnection("Data Source=192.168.21.13;Initial Catalog=DBFIGUE2;User ID=sa;Password=123;MultipleActiveResultSets=true;");
+            SqlConnection Conexion = new SqlConnection("Data Source=192.168.21.05;Initial Catalog=DBFIGUE2;User ID=sa;Password=123;MultipleActiveResultSets=true;");
             Conexion.Open();
             SqlCommand cmd = Conexion.CreateCommand();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "select c.IdCliente,c.Nombres,c.ApellidoPaterno as 'Apellido Paterno'," +
-                "c.ApellidoMaterno as 'Apellido Materno',t.NombreTienda as 'Nombre de la Tienda',s.DescripcionSector as 'Nombre del Sector'," +
-                "c.NombreEmpresa as 'Nombre de la Empresa',c.Direccion as 'Dirección',c.Contacto,c.Telefono,c.Fax,c.RUC," +
-                "c.Email,p.Descripcion as 'Tipo de persona',d.Descripcion as 'Tipo de Documento',c.NroDocumento as 'N° de Documento'," +
-                "c.Observacion as 'Observación',c.Inscripcion as 'Inscripción',c.Estado,c.FechaNac as 'Fecha de Nacimiento'," +
-                "c.Credito,c.TipoCliente as 'Tipo de Cliente',c.Departamento,c.Provincia,c.Distrito,c.UsuarioRegistra as 'Usuario que registra'," +
-                "c.UsuarioModifica as 'Usuario que modifica',c.FechaModifica as 'Fecha que Modifica'from caja.CLIENTE c, " +
-                "caja.TIENDA t, caja.SECTOR s, caja.TIPO_DOC_IDENT d, caja.TipoPersona p " +
-                "where c.IdTienda = t.IdTienda and c.IdSector = s.IdSector and c.IdTipoDocIdent = d.IdTipoDocIdent " +
-                "and c.IdTipoPersona = p.IdTipoPersona and " +
-                "(c.NroDocumento like('%" + bmBuscar.Text + "%')) and(d.Descripcion like('%" + bmBuscar.Text + "%'))";
+                "c.ApellidoMaterno as 'Apellido Materno',t.NombreTienda as 'Nombre de la Tienda'," +
+                "s.DescripcionSector as 'Nombre del Sector',c.NombreEmpresa as 'Nombre de la Empresa'," +
+                "c.Direccion as 'Dirección',c.Contacto,c.Telefono,c.Fax,c.RUC,c.Email," +
+                "p.Descripcion as 'Tipo de persona',d.Descripcion as 'Tipo de Documento'," +
+                "c.NroDocumento as 'N° de Documento',c.Observacion as 'Observación'," +
+                "c.Inscripcion as 'Inscripción',c.Estado,c.FechaNac as 'Fecha de Nacimiento'," +
+                "c.Credito,c.TipoCliente as 'Tipo de Cliente',c.Departamento,c.Provincia," +
+                "c.Distrito,c.UsuarioRegistra as 'Usuario que registra',c.UsuarioModifica as 'Usuario que modifica'," +
+                "c.FechaModifica as 'Fecha que Modifica'from caja.CLIENTE c, caja.TIENDA t, caja.SECTOR s," +
+                " caja.TIPO_DOC_IDENT d, caja.TipoPersona p where (c.NroDocumento like ('%" + bmBuscar.Text + "%')" +
+                "or c.Nombres like ('%" + bmBuscar.Text + "%')or c.ApellidoPaterno like ('%" + bmBuscar.Text + "%')" +
+                "or c.ApellidoMaterno like ('%" + bmBuscar.Text + "%')or d.Descripcion like ('%" + bmBuscar.Text + "%')) " +
+                "and c.IdTienda = t.IdTienda and c.IdSector = s.IdSector " +
+                "and c.IdTipoDocIdent = d.IdTipoDocIdent and c.IdTipoPersona = p.IdTipoPersona ";
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             dgvCliente.DataSource = dt;
-            Conexion.Close();   
-
-            //SqlConnection Conexion = new SqlConnection("Data Source=192.168.21.13;Initial Catalog=DBFIGUE2;User ID=sa;Password=123;MultipleActiveResultSets=true;");
-            //Conexion.Open();
-            //SqlCommand cmd = Conexion.CreateCommand();
-            //cmd.CommandText = "Caja.SP_FE_BuscarCliente2";
-            //cmd.CommandType = CommandType.StoredProcedure;
-            //cmd.ExecuteNonQuery();
-            //DataTable dt = new DataTable();
-            //SqlDataAdapter da = new SqlDataAdapter(cmd);
-            //da.Fill(dt);
-            //dgvCliente.DataSource = dt;
-            //Conexion.Close();
-
+            Conexion.Close();
         }
-
-        public void actualizar()
-        {
-            SqlDataAdapter dataAdapter = new SqlDataAdapter();
-            DataTable dataset = new DataTable();
-            dataset.Clear();
-            dataAdapter.Fill(dataset);
-            
-        }
-
-        private void bmBuscar_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            //DataView dv = tabla.DefaultView;
-            //dv.RowFilter = string.Format("'Nombres' like '%{0}%' or ' Correo' like '%{0}%' or 'Telefono' like '%{0}%'", bmBuscar.Text);
-        }
+       
     }
 }
