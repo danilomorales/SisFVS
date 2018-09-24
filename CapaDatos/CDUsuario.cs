@@ -32,7 +32,7 @@ namespace CapaDatos
 
         public SqlDataReader usuarioPerfil(string usuario)
         {
-            String sql = "SFPerfilUsuario";
+            String sql = "Caja.SF_FE_PerfilUsuario ";
             SqlCommand comandon = new SqlCommand(sql, Conexion.AbrirConexion());
             comandon.CommandType = CommandType.StoredProcedure;
             comandon.Parameters.AddWithValue("@Usuario", usuario);
@@ -42,7 +42,7 @@ namespace CapaDatos
 
         public SqlDataReader controlUsuarioRol(int idusuario,int idrol)
         {
-            String sql = "SPControlUsuarioRol";
+            String sql = "Caja.SP_FE_ControlUsuarioRol";
             SqlCommand comandon = new SqlCommand(sql, Conexion.AbrirConexion());
             comandon.CommandType = CommandType.StoredProcedure;
             comandon.Parameters.AddWithValue("@id", idusuario);
@@ -92,7 +92,7 @@ namespace CapaDatos
             int count = 0;
             try
             {
-                String sql = "SPInsertarUsuario";
+                String sql = "Caja.SP_FE_SPInsertarUsuario";
                 SqlCommand comando = new SqlCommand(sql, Conexion.AbrirConexion());
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@vNombres ", nombres);
