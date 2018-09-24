@@ -230,11 +230,11 @@
     <Compile Include="FormUpdateProducto.Designer.cs">
       <DependentUpon>FormUpdateProducto.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCaja.cs">
+    <Compile Include="FormAperturaCaja.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCaja.Designer.cs">
-      <DependentUpon>FormCaja.cs</DependentUpon>
+    <Compile Include="FormAperturaCaja.Designer.cs">
+      <DependentUpon>FormAperturaCaja.cs</DependentUpon>
     </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
@@ -254,6 +254,12 @@
     <Compile Include="FormProductos.Designer.cs">
       <DependentUpon>FormProductos.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormRegistroCobro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRegistroCobro.Designer.cs">
+      <DependentUpon>FormRegistroCobro.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormTipoDeCambio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -262,8 +268,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="SomeData.cs" />
-    <EmbeddedResource Include="FormCaja.resx">
-      <DependentUpon>FormCaja.cs</DependentUpon>
+    <EmbeddedResource Include="FormAperturaCaja.resx">
+      <DependentUpon>FormAperturaCaja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormBuscarClienteR.resx">
       <DependentUpon>FormBuscarClienteR.cs</DependentUpon>
@@ -318,6 +324,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormProductos.resx">
       <DependentUpon>FormProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRegistroCobro.resx">
+      <DependentUpon>FormRegistroCobro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSucursal.resx">
       <DependentUpon>FormSucursal.cs</DependentUpon>
@@ -831,13 +840,16 @@
     <None Include="Resources\sucursal.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\KEY.png" />
+    <None Include="Resources\trashfull.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\sol1.png" />
+    <None Include="Resources\trash2.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\k1.png" />
+    <None Include="Resources\waste.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\recycler.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

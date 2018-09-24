@@ -228,6 +228,32 @@ namespace CapaDatos
             return table;
         }
 
+        //Filtrar Persona
+        public List<String> filtroClienteEmpresa()
+        {
+            List<String> Lista = new List<string>();
+            SqlConnection sqlCon;
+            try
+            {
+                sqlCon = conexion.AbrirConexion();
+   
+                SqlCommand cmd = new SqlCommand("SELECT NombreEmpresa from Caja.CLIENTE", sqlCon);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Lista.Add(reader.GetString(0));
+                }
+                conexion.CerrarConexion();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al filtrar cliente" + ex);
+            }
+
+                return Lista;
+
+        }
+
         //Llenar comboBox TIPOPERSONA
         public DataTable ListarPersona()
         {
@@ -284,17 +310,17 @@ namespace CapaDatos
             CECliente c = null;
             try
             {
-                SqlConnection cn = CDConexion.Instancia.CerrarConexion();
+                SqlConnection cn = CDConexion.Instancia.AbrirConexion();
                 cmd = new SqlCommand("Caja.SP_FE_BuscarCliente", cn);
                 cmd.Parameters.AddWithValue("@prmidCliente", id_Cli);
                 cmd.Parameters.AddWithValue("@prmNroDoc", nro_Doc);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cn.Open();
+                
                 dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
                     c = new CECliente();
-                    c.IdCliente = Convert.ToInt32(dr["IdCliente"]);
+                    //c.IdCliente = Convert.ToInt32(dr["IdCliente"]);
                     c.Id_Cliente = dr["IdCliente"].ToString();
                     c.Documento = dr["Documento"].ToString();
                     c.DNI = dr["DNI"].ToString();
@@ -307,6 +333,48 @@ namespace CapaDatos
 
 
                 }
+                cn.Close();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally { cmd.Connection.Close(); }
+            return c;
+        }
+        //Buscar cliente por empresa
+        public CECliente BuscarClienteEmpresa(int id_Cli, String empresa)
+        {
+            SqlCommand cmd = null;
+            SqlDataReader dr = null;
+            CECliente c = null;
+            try
+            {
+                SqlConnection cn = CDConexion.Instancia.AbrirConexion();
+                cmd = new SqlCommand("Caja.SP_FE_BuscarClienteEmpresa", cn);
+                cmd.Parameters.AddWithValue("@prmidCliente", id_Cli);
+                cmd.Parameters.AddWithValue("@prmEmpresa", empresa);
+                cmd.CommandType = CommandType.StoredProcedure;
+                
+                dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    c = new CECliente();
+                    //c.IdCliente = Convert.ToInt32(dr["IdCliente"]);
+                    c.Id_Cliente = dr["IdCliente"].ToString();
+                    c.Documento = dr["Documento"].ToString();
+                    c.DNI = dr["DNI"].ToString();
+                    c.RUC = dr["RUC"].ToString();
+                    c.Nombres = dr["Nombres"].ToString();
+                    c.Apellidos = dr["Apellidos"].ToString();
+                    c.Nombre_Empresa = dr["Razón_Social"].ToString();
+                    c.Sector = dr["Sector"].ToString();
+                    //c.IdPrecio = dr["IdPrecio"].ToString();
+
+
+                }
+                cn.Close();
             }
             catch (Exception)
             {

@@ -130,6 +130,32 @@ namespace CapaNegocio
             }
         }
 
+        public List<String> filtroClienteEmpresa()
+        {
+            List<String> Lista = cli.filtroClienteEmpresa();
+            if (Lista.Count <= 0) throw new ApplicationException("Lista de clientes vacia");
+            else if (Lista == null) throw new ApplicationException("Error al cargar lista de clientes");
+            return Lista;
+            
+        }
+
+        //Buscar empresa
+        public CECliente BuscarClienteEmpresa(int id_cli, String empresa)
+        {
+            try
+            {
+                CECliente c = null;
+                c = CDCliente.Intancia.BuscarClienteEmpresa(id_cli, empresa);
+                if (c == null) throw new ApplicationException("No se encontro registro");
+                return c;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         //BUsca Cliente Según TextBox
         public List<CECliente> BuscarClienAvanzada(int tip_busq, String val_busqueda)
         {

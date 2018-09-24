@@ -62,6 +62,25 @@ namespace CapaNegocio
             return correlativo;
         }
 
+        public Decimal traerPrecio(String idcliente, String idproducto)
+        {
+            Decimal precio = 0.00M;
+            SqlCommand comando = new SqlCommand("Caja.SP_FE_CargaPrecioClienteProducto", C.AbrirConexion());
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@IdCliente", idcliente);
+            comando.Parameters.AddWithValue("@IdProducto", idproducto);
+            SqlParameter param = new SqlParameter("@Precio", SqlDbType.Decimal);
+            param.SourceColumn = "Precio";
+            param.Precision = 10;
+
+            param.Scale = 2;
+            comando.Parameters.Add(param).Direction = ParameterDirection.Output;
+            //comando.Parameters.Add("@Precio", SqlDbType.Decimal, 10).Direction = ParameterDirection.Output;
+            comando.ExecuteNonQuery();
+            precio = Decimal.Parse(comando.Parameters["@Precio"].Value.ToString());
+            return precio;
+        }
+
         public DataTable traerSerie(int opcion)
         {
             String correlativo = "";
@@ -76,7 +95,7 @@ namespace CapaNegocio
         public DataTable MostarCboTipoDoc()
         {
             comando.Connection = C.AbrirConexion();
-            comando.CommandText = "select * from Caja.TIPO_DOC  WHERE Clasificacion='V'";
+            comando.CommandText = "select * from Caja.FE_COMPROBANTE_PAGO";
             leer = comando.ExecuteReader();
             tabla.Load(leer);
             C.CerrarConexion();

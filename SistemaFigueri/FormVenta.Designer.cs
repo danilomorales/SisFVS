@@ -41,20 +41,10 @@
             this.bunifuCards4 = new Bunifu.Framework.UI.BunifuCards();
             this.panel8 = new System.Windows.Forms.Panel();
             this.bunifuCards6 = new Bunifu.Framework.UI.BunifuCards();
-            this.bunifuImageButton4 = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnNuevo = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnGuarda = new Bunifu.Framework.UI.BunifuImageButton();
             this.tbIgv = new System.Windows.Forms.TextBox();
             this.dgvVenta = new System.Windows.Forms.DataGridView();
-            this.IdD = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.CANTIDAD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DESCRIPCION = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PRECIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IMPORTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.STOCK = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ALIAS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tbCodBarras = new System.Windows.Forms.TextBox();
             this.tbDescripcion = new System.Windows.Forms.TextBox();
@@ -65,6 +55,7 @@
             this.bunifuCustomLabel16 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnEliminaritem = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnEliminarTodo = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel15 = new System.Windows.Forms.Panel();
             this.bunifuCustomLabel14 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.tbAlias = new System.Windows.Forms.TextBox();
@@ -76,7 +67,6 @@
             this.panel16 = new System.Windows.Forms.Panel();
             this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.tbPrecio = new System.Windows.Forms.TextBox();
-            this.btnpedidos = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnBuscaProcto = new Bunifu.Framework.UI.BunifuTileButton();
             this.panel11 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
@@ -103,6 +93,7 @@
             this.tbtipodoc = new System.Windows.Forms.TextBox();
             this.bunifuCustomLabel23 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.chktipodoc = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.btnpedidos = new Bunifu.Framework.UI.BunifuTileButton();
             this.tbrazonsocial = new System.Windows.Forms.TextBox();
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.tbIdCliente = new System.Windows.Forms.TextBox();
@@ -114,8 +105,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lblReferencia = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tbIdComprobante = new System.Windows.Forms.TextBox();
             this.cboSerie = new System.Windows.Forms.ComboBox();
             this.bunifuCustomLabel10 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.cboTipoDoc = new System.Windows.Forms.ComboBox();
@@ -144,12 +135,21 @@
             this.dpFechaInicio = new Bunifu.Framework.UI.BunifuDatepicker();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
+            this.IdD = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.CANTIDAD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DESCRIPCION = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PRECIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IMPORTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.STOCK = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ALIAS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Venta.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.bunifuCards4.SuspendLayout();
             this.panel8.SuspendLayout();
             this.bunifuCards6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnNuevo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGuarda)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVenta)).BeginInit();
@@ -157,6 +157,7 @@
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminaritem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEliminarTodo)).BeginInit();
             this.panel15.SuspendLayout();
             this.panel17.SuspendLayout();
             this.panel16.SuspendLayout();
@@ -267,7 +268,6 @@
             this.bunifuCards6.BorderRadius = 5;
             this.bunifuCards6.BottomSahddow = true;
             this.bunifuCards6.color = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(190)))), ((int)(((byte)(154)))));
-            this.bunifuCards6.Controls.Add(this.bunifuImageButton4);
             this.bunifuCards6.Controls.Add(this.btnNuevo);
             this.bunifuCards6.Controls.Add(this.btnGuarda);
             this.bunifuCards6.LeftSahddow = false;
@@ -278,22 +278,6 @@
             this.bunifuCards6.Size = new System.Drawing.Size(428, 66);
             this.bunifuCards6.TabIndex = 241;
             // 
-            // bunifuImageButton4
-            // 
-            this.bunifuImageButton4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuImageButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(190)))), ((int)(((byte)(154)))));
-            this.bunifuImageButton4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuImageButton4.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton4.Image")));
-            this.bunifuImageButton4.ImageActive = null;
-            this.bunifuImageButton4.Location = new System.Drawing.Point(249, 11);
-            this.bunifuImageButton4.Name = "bunifuImageButton4";
-            this.bunifuImageButton4.Size = new System.Drawing.Size(58, 44);
-            this.bunifuImageButton4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton4.TabIndex = 241;
-            this.bunifuImageButton4.TabStop = false;
-            this.bunifuImageButton4.Zoom = 10;
-            // 
             // btnNuevo
             // 
             this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -302,13 +286,15 @@
             this.btnNuevo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
             this.btnNuevo.ImageActive = null;
-            this.btnNuevo.Location = new System.Drawing.Point(185, 11);
+            this.btnNuevo.Location = new System.Drawing.Point(297, 11);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(58, 44);
             this.btnNuevo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnNuevo.TabIndex = 242;
             this.btnNuevo.TabStop = false;
+            this.toolTip1.SetToolTip(this.btnNuevo, "GENERAR NUEVA VENTA");
             this.btnNuevo.Zoom = 10;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click_1);
             // 
             // btnGuarda
             // 
@@ -318,12 +304,13 @@
             this.btnGuarda.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGuarda.Image = ((System.Drawing.Image)(resources.GetObject("btnGuarda.Image")));
             this.btnGuarda.ImageActive = null;
-            this.btnGuarda.Location = new System.Drawing.Point(121, 11);
+            this.btnGuarda.Location = new System.Drawing.Point(94, 11);
             this.btnGuarda.Name = "btnGuarda";
             this.btnGuarda.Size = new System.Drawing.Size(58, 44);
             this.btnGuarda.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnGuarda.TabIndex = 243;
             this.btnGuarda.TabStop = false;
+            this.toolTip2.SetToolTip(this.btnGuarda, "Guardar Venta");
             this.btnGuarda.Zoom = 10;
             this.btnGuarda.Click += new System.EventHandler(this.btnGuarda_Click_1);
             // 
@@ -346,6 +333,9 @@
             // dgvVenta
             // 
             this.dgvVenta.AllowUserToAddRows = false;
+            this.dgvVenta.AllowUserToOrderColumns = true;
+            this.dgvVenta.AllowUserToResizeColumns = false;
+            this.dgvVenta.AllowUserToResizeRows = false;
             this.dgvVenta.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -373,6 +363,7 @@
             this.Column6,
             this.STOCK,
             this.ALIAS});
+            this.dgvVenta.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -394,75 +385,10 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvVenta.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvVenta.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvVenta.Size = new System.Drawing.Size(743, 292);
             this.dgvVenta.TabIndex = 218;
-            this.dgvVenta.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgvVenta_CellBeginEdit);
-            this.dgvVenta.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVenta_CellClick);
             this.dgvVenta.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVenta_CellEndEdit);
-            // 
-            // IdD
-            // 
-            this.IdD.HeaderText = "IdV";
-            this.IdD.Name = "IdD";
-            this.IdD.ReadOnly = true;
-            this.IdD.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.IdD.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.IdD.Visible = false;
-            // 
-            // CANTIDAD
-            // 
-            this.CANTIDAD.HeaderText = "CANT.";
-            this.CANTIDAD.Name = "CANTIDAD";
-            // 
-            // DESCRIPCION
-            // 
-            this.DESCRIPCION.HeaderText = "DESCRIPCIÓN";
-            this.DESCRIPCION.Name = "DESCRIPCION";
-            this.DESCRIPCION.ReadOnly = true;
-            // 
-            // PRECIO
-            // 
-            dataGridViewCellStyle2.Format = "C2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.PRECIO.DefaultCellStyle = dataGridViewCellStyle2;
-            this.PRECIO.HeaderText = "PRECIO U.";
-            this.PRECIO.Name = "PRECIO";
-            this.PRECIO.ReadOnly = true;
-            // 
-            // IMPORTE
-            // 
-            dataGridViewCellStyle3.Format = "C2";
-            dataGridViewCellStyle3.NullValue = null;
-            this.IMPORTE.DefaultCellStyle = dataGridViewCellStyle3;
-            this.IMPORTE.HeaderText = "IMPORTE";
-            this.IMPORTE.Name = "IMPORTE";
-            this.IMPORTE.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "IdP";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Visible = false;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "IGV";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Visible = false;
-            // 
-            // STOCK
-            // 
-            this.STOCK.HeaderText = "STOCK";
-            this.STOCK.Name = "STOCK";
-            this.STOCK.Visible = false;
-            // 
-            // ALIAS
-            // 
-            this.ALIAS.HeaderText = "ALIAS";
-            this.ALIAS.Name = "ALIAS";
-            this.ALIAS.Visible = false;
             // 
             // panel1
             // 
@@ -481,12 +407,12 @@
             this.panel1.Controls.Add(this.tbIdProducto);
             this.panel1.Controls.Add(this.Idproducto);
             this.panel1.Controls.Add(this.panel16);
-            this.panel1.Controls.Add(this.btnpedidos);
             this.panel1.Controls.Add(this.btnBuscaProcto);
             this.panel1.Location = new System.Drawing.Point(0, 24);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(765, 260);
             this.panel1.TabIndex = 3;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // tbCodBarras
             // 
@@ -501,7 +427,6 @@
             this.tbCodBarras.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tbCodBarras.Size = new System.Drawing.Size(180, 21);
             this.tbCodBarras.TabIndex = 220;
-            this.tbCodBarras.TextChanged += new System.EventHandler(this.btnMantCliente_Click);
             this.tbCodBarras.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbCodBarras_KeyDown);
             // 
             // tbDescripcion
@@ -599,19 +524,20 @@
             // 
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.Controls.Add(this.btnEliminaritem);
-            this.panel4.Location = new System.Drawing.Point(645, 204);
+            this.panel4.Controls.Add(this.btnEliminarTodo);
+            this.panel4.Location = new System.Drawing.Point(526, 185);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(69, 53);
+            this.panel4.Size = new System.Drawing.Size(171, 63);
             this.panel4.TabIndex = 235;
             // 
             // btnEliminaritem
             // 
             this.btnEliminaritem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEliminaritem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(205)))), ((int)(((byte)(210)))));
+            this.btnEliminaritem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(190)))), ((int)(((byte)(154)))));
             this.btnEliminaritem.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminaritem.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminaritem.Image")));
             this.btnEliminaritem.ImageActive = null;
-            this.btnEliminaritem.Location = new System.Drawing.Point(5, 3);
+            this.btnEliminaritem.Location = new System.Drawing.Point(23, 3);
             this.btnEliminaritem.Name = "btnEliminaritem";
             this.btnEliminaritem.Size = new System.Drawing.Size(57, 44);
             this.btnEliminaritem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -620,6 +546,24 @@
             this.toolTip1.SetToolTip(this.btnEliminaritem, "Eliminar fila");
             this.btnEliminaritem.Zoom = 10;
             this.btnEliminaritem.Click += new System.EventHandler(this.btnEliminaritem_Click);
+            // 
+            // btnEliminarTodo
+            // 
+            this.btnEliminarTodo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEliminarTodo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(190)))), ((int)(((byte)(154)))));
+            this.btnEliminarTodo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminarTodo.Image = global::SistemaFigueri.Properties.Resources.recycler;
+            this.btnEliminarTodo.ImageActive = null;
+            this.btnEliminarTodo.Location = new System.Drawing.Point(102, 3);
+            this.btnEliminarTodo.Name = "btnEliminarTodo";
+            this.btnEliminarTodo.Size = new System.Drawing.Size(58, 44);
+            this.btnEliminarTodo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnEliminarTodo.TabIndex = 241;
+            this.btnEliminarTodo.TabStop = false;
+            this.toolTip1.SetToolTip(this.btnEliminarTodo, "Eliminar Todo");
+            this.btnEliminarTodo.Zoom = 10;
+            this.btnEliminarTodo.Click += new System.EventHandler(this.btnEliminarTodo_Click);
             // 
             // panel15
             // 
@@ -670,7 +614,7 @@
             this.panel17.Controls.Add(this.bunifuCustomLabel19);
             this.panel17.Location = new System.Drawing.Point(289, 118);
             this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(358, 40);
+            this.panel17.Size = new System.Drawing.Size(397, 40);
             this.panel17.TabIndex = 244;
             // 
             // dtpFechaEmision
@@ -687,7 +631,7 @@
             this.dtpFechaEmision.Location = new System.Drawing.Point(92, 6);
             this.dtpFechaEmision.Name = "dtpFechaEmision";
             this.dtpFechaEmision.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dtpFechaEmision.Size = new System.Drawing.Size(252, 28);
+            this.dtpFechaEmision.Size = new System.Drawing.Size(291, 28);
             this.dtpFechaEmision.TabIndex = 248;
             this.toolTip1.SetToolTip(this.dtpFechaEmision, "Fecha de emisión");
             this.dtpFechaEmision.Value = new System.DateTime(2018, 8, 25, 19, 46, 8, 529);
@@ -718,11 +662,11 @@
             this.tbIdProducto.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.tbIdProducto.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbIdProducto.ForeColor = System.Drawing.Color.Black;
-            this.tbIdProducto.Location = new System.Drawing.Point(699, 118);
+            this.tbIdProducto.Location = new System.Drawing.Point(27, 206);
             this.tbIdProducto.Multiline = true;
             this.tbIdProducto.Name = "tbIdProducto";
             this.tbIdProducto.ReadOnly = true;
-            this.tbIdProducto.Size = new System.Drawing.Size(53, 26);
+            this.tbIdProducto.Size = new System.Drawing.Size(129, 26);
             this.tbIdProducto.TabIndex = 233;
             this.tbIdProducto.Visible = false;
             // 
@@ -781,26 +725,6 @@
             this.tbPrecio.Size = new System.Drawing.Size(164, 25);
             this.tbPrecio.TabIndex = 241;
             // 
-            // btnpedidos
-            // 
-            this.btnpedidos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(117)))), ((int)(((byte)(50)))));
-            this.btnpedidos.color = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(117)))), ((int)(((byte)(50)))));
-            this.btnpedidos.colorActive = System.Drawing.Color.MediumSeaGreen;
-            this.btnpedidos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnpedidos.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.btnpedidos.ForeColor = System.Drawing.Color.White;
-            this.btnpedidos.Image = ((System.Drawing.Image)(resources.GetObject("btnpedidos.Image")));
-            this.btnpedidos.ImagePosition = -3;
-            this.btnpedidos.ImageZoom = 70;
-            this.btnpedidos.LabelPosition = 19;
-            this.btnpedidos.LabelText = "Pedido";
-            this.btnpedidos.Location = new System.Drawing.Point(13, 18);
-            this.btnpedidos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnpedidos.Name = "btnpedidos";
-            this.btnpedidos.Size = new System.Drawing.Size(79, 77);
-            this.btnpedidos.TabIndex = 206;
-            this.btnpedidos.Click += new System.EventHandler(this.btnpedidos_Click_1);
-            // 
             // btnBuscaProcto
             // 
             this.btnBuscaProcto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(117)))), ((int)(((byte)(50)))));
@@ -814,10 +738,10 @@
             this.btnBuscaProcto.ImageZoom = 70;
             this.btnBuscaProcto.LabelPosition = 19;
             this.btnBuscaProcto.LabelText = "Producto";
-            this.btnBuscaProcto.Location = new System.Drawing.Point(100, 19);
+            this.btnBuscaProcto.Location = new System.Drawing.Point(28, 6);
             this.btnBuscaProcto.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnBuscaProcto.Name = "btnBuscaProcto";
-            this.btnBuscaProcto.Size = new System.Drawing.Size(79, 77);
+            this.btnBuscaProcto.Size = new System.Drawing.Size(110, 89);
             this.btnBuscaProcto.TabIndex = 206;
             this.btnBuscaProcto.Click += new System.EventHandler(this.btnBuscaProcto_Click);
             // 
@@ -869,9 +793,9 @@
             this.btRegistraVenta.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btRegistraVenta.Image = ((System.Drawing.Image)(resources.GetObject("btRegistraVenta.Image")));
             this.btRegistraVenta.ImageActive = null;
-            this.btRegistraVenta.Location = new System.Drawing.Point(71, 599);
+            this.btRegistraVenta.Location = new System.Drawing.Point(43, 588);
             this.btRegistraVenta.Name = "btRegistraVenta";
-            this.btRegistraVenta.Size = new System.Drawing.Size(96, 55);
+            this.btRegistraVenta.Size = new System.Drawing.Size(80, 55);
             this.btRegistraVenta.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btRegistraVenta.TabIndex = 202;
             this.btRegistraVenta.TabStop = false;
@@ -1025,6 +949,7 @@
             this.panel6.Controls.Add(this.tbtipodoc);
             this.panel6.Controls.Add(this.bunifuCustomLabel23);
             this.panel6.Controls.Add(this.chktipodoc);
+            this.panel6.Controls.Add(this.btnpedidos);
             this.panel6.Controls.Add(this.tbrazonsocial);
             this.panel6.Controls.Add(this.bunifuCustomLabel2);
             this.panel6.Controls.Add(this.tbIdCliente);
@@ -1197,8 +1122,30 @@
             this.chktipodoc.Size = new System.Drawing.Size(20, 20);
             this.chktipodoc.TabIndex = 211;
             // 
+            // btnpedidos
+            // 
+            this.btnpedidos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(117)))), ((int)(((byte)(50)))));
+            this.btnpedidos.color = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(117)))), ((int)(((byte)(50)))));
+            this.btnpedidos.colorActive = System.Drawing.Color.MediumSeaGreen;
+            this.btnpedidos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnpedidos.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.btnpedidos.ForeColor = System.Drawing.Color.White;
+            this.btnpedidos.Image = ((System.Drawing.Image)(resources.GetObject("btnpedidos.Image")));
+            this.btnpedidos.ImagePosition = -3;
+            this.btnpedidos.ImageZoom = 70;
+            this.btnpedidos.LabelPosition = 19;
+            this.btnpedidos.LabelText = "Pedidos";
+            this.btnpedidos.Location = new System.Drawing.Point(428, 32);
+            this.btnpedidos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnpedidos.Name = "btnpedidos";
+            this.btnpedidos.Size = new System.Drawing.Size(79, 77);
+            this.btnpedidos.TabIndex = 206;
+            this.btnpedidos.Click += new System.EventHandler(this.btnpedidos_Click_1);
+            // 
             // tbrazonsocial
             // 
+            this.tbrazonsocial.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.tbrazonsocial.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.tbrazonsocial.BackColor = System.Drawing.Color.FloralWhite;
             this.tbrazonsocial.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbrazonsocial.Cursor = System.Windows.Forms.Cursors.Arrow;
@@ -1206,10 +1153,10 @@
             this.tbrazonsocial.ForeColor = System.Drawing.Color.Black;
             this.tbrazonsocial.Location = new System.Drawing.Point(129, 187);
             this.tbrazonsocial.Name = "tbrazonsocial";
-            this.tbrazonsocial.ReadOnly = true;
             this.tbrazonsocial.Size = new System.Drawing.Size(378, 20);
             this.tbrazonsocial.TabIndex = 209;
             this.tbrazonsocial.TextChanged += new System.EventHandler(this.tbrazonsocial_TextChanged);
+            this.tbrazonsocial.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbrazonsocial_KeyDown);
             // 
             // bunifuCustomLabel2
             // 
@@ -1294,7 +1241,7 @@
             this.btnAgregarCliente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAgregarCliente.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold);
             this.btnAgregarCliente.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarCliente.Image")));
+            this.btnAgregarCliente.Image = global::SistemaFigueri.Properties.Resources.logon11;
             this.btnAgregarCliente.ImagePosition = 1;
             this.btnAgregarCliente.ImageZoom = 40;
             this.btnAgregarCliente.LabelPosition = 19;
@@ -1350,7 +1297,6 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(190)))), ((int)(((byte)(154)))));
-            this.panel2.Controls.Add(this.lblReferencia);
             this.panel2.Controls.Add(this.groupBox1);
             this.panel2.Controls.Add(this.panel14);
             this.panel2.Controls.Add(this.panel3);
@@ -1360,21 +1306,9 @@
             this.panel2.Size = new System.Drawing.Size(534, 167);
             this.panel2.TabIndex = 217;
             // 
-            // lblReferencia
-            // 
-            this.lblReferencia.AutoSize = true;
-            this.lblReferencia.BackColor = System.Drawing.Color.Crimson;
-            this.lblReferencia.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReferencia.ForeColor = System.Drawing.Color.White;
-            this.lblReferencia.Location = new System.Drawing.Point(320, 29);
-            this.lblReferencia.Name = "lblReferencia";
-            this.lblReferencia.Size = new System.Drawing.Size(210, 20);
-            this.lblReferencia.TabIndex = 192;
-            this.lblReferencia.Text = "Número de doc. referencia";
-            this.lblReferencia.Visible = false;
-            // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.tbIdComprobante);
             this.groupBox1.Controls.Add(this.cboSerie);
             this.groupBox1.Controls.Add(this.bunifuCustomLabel10);
             this.groupBox1.Controls.Add(this.cboTipoDoc);
@@ -1386,6 +1320,23 @@
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tipo Documento";
+            // 
+            // tbIdComprobante
+            // 
+            this.tbIdComprobante.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbIdComprobante.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(190)))), ((int)(((byte)(154)))));
+            this.tbIdComprobante.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbIdComprobante.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.tbIdComprobante.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbIdComprobante.ForeColor = System.Drawing.Color.Black;
+            this.tbIdComprobante.Location = new System.Drawing.Point(200, 71);
+            this.tbIdComprobante.Multiline = true;
+            this.tbIdComprobante.Name = "tbIdComprobante";
+            this.tbIdComprobante.ReadOnly = true;
+            this.tbIdComprobante.Size = new System.Drawing.Size(85, 26);
+            this.tbIdComprobante.TabIndex = 251;
+            this.tbIdComprobante.Visible = false;
             // 
             // cboSerie
             // 
@@ -1436,9 +1387,9 @@
             this.panel14.Controls.Add(this.lblSerie);
             this.panel14.Controls.Add(this.lblTipo);
             this.panel14.ForeColor = System.Drawing.Color.White;
-            this.panel14.Location = new System.Drawing.Point(320, 54);
+            this.panel14.Location = new System.Drawing.Point(320, 42);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(200, 102);
+            this.panel14.Size = new System.Drawing.Size(200, 97);
             this.panel14.TabIndex = 3;
             // 
             // label7
@@ -1599,7 +1550,6 @@
             this.dataVentas.Name = "dataVentas";
             this.dataVentas.Size = new System.Drawing.Size(941, 398);
             this.dataVentas.TabIndex = 210;
-            this.dataVentas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Column1
             // 
@@ -1729,6 +1679,85 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // toolTip1
+            // 
+            this.toolTip1.AutomaticDelay = 300;
+            this.toolTip1.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.toolTip1.IsBalloon = true;
+            this.toolTip1.Tag = "hhhh";
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            // 
+            // toolTip2
+            // 
+            this.toolTip2.AutomaticDelay = 300;
+            this.toolTip2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.toolTip2.IsBalloon = true;
+            this.toolTip2.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            // 
+            // IdD
+            // 
+            this.IdD.HeaderText = "IdV";
+            this.IdD.Name = "IdD";
+            this.IdD.ReadOnly = true;
+            this.IdD.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.IdD.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.IdD.Visible = false;
+            // 
+            // CANTIDAD
+            // 
+            this.CANTIDAD.HeaderText = "CANT.";
+            this.CANTIDAD.Name = "CANTIDAD";
+            // 
+            // DESCRIPCION
+            // 
+            this.DESCRIPCION.HeaderText = "DESCRIPCIÓN";
+            this.DESCRIPCION.Name = "DESCRIPCION";
+            this.DESCRIPCION.ReadOnly = true;
+            // 
+            // PRECIO
+            // 
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = null;
+            this.PRECIO.DefaultCellStyle = dataGridViewCellStyle2;
+            this.PRECIO.HeaderText = "PRECIO U.";
+            this.PRECIO.Name = "PRECIO";
+            this.PRECIO.ReadOnly = true;
+            // 
+            // IMPORTE
+            // 
+            dataGridViewCellStyle3.Format = "C2";
+            dataGridViewCellStyle3.NullValue = null;
+            this.IMPORTE.DefaultCellStyle = dataGridViewCellStyle3;
+            this.IMPORTE.HeaderText = "IMP.";
+            this.IMPORTE.Name = "IMPORTE";
+            this.IMPORTE.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "IdP";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Visible = false;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "IGV";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Visible = false;
+            // 
+            // STOCK
+            // 
+            this.STOCK.HeaderText = "STOCK";
+            this.STOCK.Name = "STOCK";
+            this.STOCK.Visible = false;
+            // 
+            // ALIAS
+            // 
+            this.ALIAS.HeaderText = "ALIAS";
+            this.ALIAS.Name = "ALIAS";
+            this.ALIAS.Visible = false;
+            // 
             // FormVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1750,7 +1779,6 @@
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             this.bunifuCards6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnNuevo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGuarda)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVenta)).EndInit();
@@ -1760,6 +1788,7 @@
             this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminaritem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEliminarTodo)).EndInit();
             this.panel15.ResumeLayout(false);
             this.panel15.PerformLayout();
             this.panel17.ResumeLayout(false);
@@ -1781,7 +1810,6 @@
             this.panel7.PerformLayout();
             this.bunifuCards1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel14.ResumeLayout(false);
@@ -1857,7 +1885,7 @@
         public System.Windows.Forms.DataGridView dgvVenta;
         private System.Windows.Forms.TextBox tbIdCliente;
         private Bunifu.Framework.UI.BunifuCards bunifuCards6;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton4;
+        private Bunifu.Framework.UI.BunifuImageButton btnEliminarTodo;
         private Bunifu.Framework.UI.BunifuImageButton btnNuevo;
         private Bunifu.Framework.UI.BunifuImageButton btnGuarda;
         private System.Windows.Forms.ComboBox cboTipoDoc;
@@ -1894,7 +1922,6 @@
         private Bunifu.Framework.UI.BunifuTileButton btnpedidos;
         private Bunifu.Framework.UI.BunifuTileButton btnBuscaProcto;
         private System.Windows.Forms.TextBox tbCodBarras;
-        private System.Windows.Forms.Label lblReferencia;
         private System.Windows.Forms.ComboBox cboSerie;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel10;
         private System.Windows.Forms.Panel panel9;
@@ -1904,6 +1931,8 @@
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Label label5;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
+        private System.Windows.Forms.ToolTip toolTip2;
+        public System.Windows.Forms.TextBox tbIdComprobante;
         private System.Windows.Forms.DataGridViewButtonColumn IdD;
         private System.Windows.Forms.DataGridViewTextBoxColumn CANTIDAD;
         private System.Windows.Forms.DataGridViewTextBoxColumn DESCRIPCION;

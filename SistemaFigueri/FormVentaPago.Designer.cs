@@ -45,6 +45,9 @@
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panelCancelacion = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.bunifuCustomLabel28 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelImpresiones = new System.Windows.Forms.Panel();
             this.bunifuCustomLabel27 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -72,9 +75,6 @@
             this.cboFormaPago = new System.Windows.Forms.ComboBox();
             this.btnAgregar = new Bunifu.Framework.UI.BunifuFlatButton();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.panelCancelacion = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.bunifuCustomLabel28 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.dgvPago = new System.Windows.Forms.DataGridView();
             this.IDFORMAPAGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDMONEDA = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -118,6 +118,7 @@
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panelCancelacion.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelImpresiones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnVisa)).BeginInit();
@@ -131,7 +132,6 @@
             this.panelTarjeta.SuspendLayout();
             this.panelFormaPago.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            this.panelCancelacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPago)).BeginInit();
             this.groupBox5.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -224,7 +224,7 @@
             this.groupBox2.ForeColor = System.Drawing.Color.Black;
             this.groupBox2.Location = new System.Drawing.Point(255, 47);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1268, 97);
+            this.groupBox2.Size = new System.Drawing.Size(1216, 97);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "DATOS DEL CLIENTE";
@@ -254,7 +254,7 @@
             this.tbEmpresa.Multiline = true;
             this.tbEmpresa.Name = "tbEmpresa";
             this.tbEmpresa.ReadOnly = true;
-            this.tbEmpresa.Size = new System.Drawing.Size(530, 27);
+            this.tbEmpresa.Size = new System.Drawing.Size(575, 27);
             this.tbEmpresa.TabIndex = 247;
             // 
             // tbCliente
@@ -268,7 +268,7 @@
             this.tbCliente.Multiline = true;
             this.tbCliente.Name = "tbCliente";
             this.tbCliente.ReadOnly = true;
-            this.tbCliente.Size = new System.Drawing.Size(530, 27);
+            this.tbCliente.Size = new System.Drawing.Size(575, 27);
             this.tbCliente.TabIndex = 246;
             // 
             // tbDNI
@@ -355,7 +355,7 @@
             this.groupBox3.ForeColor = System.Drawing.Color.Black;
             this.groupBox3.Location = new System.Drawing.Point(12, 159);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1511, 116);
+            this.groupBox3.Size = new System.Drawing.Size(1459, 116);
             this.groupBox3.TabIndex = 10;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "ASIGNAR FORMA DE PAGO";
@@ -368,6 +368,46 @@
             this.panel3.Size = new System.Drawing.Size(1346, 36);
             this.panel3.TabIndex = 1;
             // 
+            // panelCancelacion
+            // 
+            this.panelCancelacion.Controls.Add(this.textBox1);
+            this.panelCancelacion.Controls.Add(this.bunifuCustomLabel28);
+            this.panelCancelacion.Location = new System.Drawing.Point(3, 3);
+            this.panelCancelacion.Name = "panelCancelacion";
+            this.panelCancelacion.Size = new System.Drawing.Size(241, 31);
+            this.panelCancelacion.TabIndex = 1;
+            this.panelCancelacion.Visible = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.FloralWhite;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.ForeColor = System.Drawing.Color.Black;
+            this.textBox1.Location = new System.Drawing.Point(128, 1);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(103, 27);
+            this.textBox1.TabIndex = 249;
+            this.textBox1.Text = "INTERNO";
+            // 
+            // bunifuCustomLabel28
+            // 
+            this.bunifuCustomLabel28.AutoSize = true;
+            this.bunifuCustomLabel28.BackColor = System.Drawing.Color.Moccasin;
+            this.bunifuCustomLabel28.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bunifuCustomLabel28.Font = new System.Drawing.Font("Century Gothic", 11F);
+            this.bunifuCustomLabel28.ForeColor = System.Drawing.Color.Black;
+            this.bunifuCustomLabel28.Location = new System.Drawing.Point(13, 5);
+            this.bunifuCustomLabel28.Name = "bunifuCustomLabel28";
+            this.bunifuCustomLabel28.Size = new System.Drawing.Size(119, 23);
+            this.bunifuCustomLabel28.TabIndex = 252;
+            this.bunifuCustomLabel28.Text = "Cancelación:   ";
+            this.bunifuCustomLabel28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuCustomLabel28.UseCompatibleTextRendering = true;
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.panelImpresiones);
@@ -379,7 +419,7 @@
             this.panel2.Controls.Add(this.panelFormaPago);
             this.panel2.Location = new System.Drawing.Point(10, 22);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1346, 37);
+            this.panel2.Size = new System.Drawing.Size(1316, 37);
             this.panel2.TabIndex = 1;
             // 
             // panelImpresiones
@@ -388,9 +428,9 @@
             this.panelImpresiones.Controls.Add(this.btnVisa);
             this.panelImpresiones.Controls.Add(this.btnMasterCard);
             this.panelImpresiones.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelImpresiones.Location = new System.Drawing.Point(1117, 0);
+            this.panelImpresiones.Location = new System.Drawing.Point(1120, 0);
             this.panelImpresiones.Name = "panelImpresiones";
-            this.panelImpresiones.Size = new System.Drawing.Size(229, 37);
+            this.panelImpresiones.Size = new System.Drawing.Size(196, 37);
             this.panelImpresiones.TabIndex = 259;
             // 
             // bunifuCustomLabel27
@@ -414,9 +454,9 @@
             this.btnVisa.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVisa.Image = global::SistemaFigueri.Properties.Resources.visa;
             this.btnVisa.ImageActive = null;
-            this.btnVisa.Location = new System.Drawing.Point(156, 2);
+            this.btnVisa.Location = new System.Drawing.Point(144, 2);
             this.btnVisa.Name = "btnVisa";
-            this.btnVisa.Size = new System.Drawing.Size(67, 33);
+            this.btnVisa.Size = new System.Drawing.Size(43, 33);
             this.btnVisa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnVisa.TabIndex = 2;
             this.btnVisa.TabStop = false;
@@ -430,7 +470,7 @@
             this.btnMasterCard.ImageActive = null;
             this.btnMasterCard.Location = new System.Drawing.Point(83, 2);
             this.btnMasterCard.Name = "btnMasterCard";
-            this.btnMasterCard.Size = new System.Drawing.Size(67, 33);
+            this.btnMasterCard.Size = new System.Drawing.Size(55, 33);
             this.btnMasterCard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnMasterCard.TabIndex = 1;
             this.btnMasterCard.TabStop = false;
@@ -723,14 +763,14 @@
             this.btnAgregar.IconVisible = true;
             this.btnAgregar.IconZoom = 80D;
             this.btnAgregar.IsTab = false;
-            this.btnAgregar.Location = new System.Drawing.Point(1372, 24);
+            this.btnAgregar.Location = new System.Drawing.Point(1332, 21);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.btnAgregar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btnAgregar.OnHoverTextColor = System.Drawing.Color.White;
             this.btnAgregar.selected = false;
-            this.btnAgregar.Size = new System.Drawing.Size(124, 35);
+            this.btnAgregar.Size = new System.Drawing.Size(120, 36);
             this.btnAgregar.TabIndex = 194;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -746,49 +786,10 @@
             this.groupBox4.ForeColor = System.Drawing.Color.Black;
             this.groupBox4.Location = new System.Drawing.Point(12, 293);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(1120, 331);
+            this.groupBox4.Size = new System.Drawing.Size(1074, 331);
             this.groupBox4.TabIndex = 11;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "DETALLE DE FORMA DE PAGO";
-            // 
-            // panelCancelacion
-            // 
-            this.panelCancelacion.Controls.Add(this.textBox1);
-            this.panelCancelacion.Controls.Add(this.bunifuCustomLabel28);
-            this.panelCancelacion.Location = new System.Drawing.Point(3, 3);
-            this.panelCancelacion.Name = "panelCancelacion";
-            this.panelCancelacion.Size = new System.Drawing.Size(241, 31);
-            this.panelCancelacion.TabIndex = 1;
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.FloralWhite;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.Black;
-            this.textBox1.Location = new System.Drawing.Point(128, 1);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(103, 27);
-            this.textBox1.TabIndex = 249;
-            this.textBox1.Text = "INTERNO";
-            // 
-            // bunifuCustomLabel28
-            // 
-            this.bunifuCustomLabel28.AutoSize = true;
-            this.bunifuCustomLabel28.BackColor = System.Drawing.Color.Moccasin;
-            this.bunifuCustomLabel28.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bunifuCustomLabel28.Font = new System.Drawing.Font("Century Gothic", 11F);
-            this.bunifuCustomLabel28.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel28.Location = new System.Drawing.Point(13, 5);
-            this.bunifuCustomLabel28.Name = "bunifuCustomLabel28";
-            this.bunifuCustomLabel28.Size = new System.Drawing.Size(119, 23);
-            this.bunifuCustomLabel28.TabIndex = 252;
-            this.bunifuCustomLabel28.Text = "Cancelación:   ";
-            this.bunifuCustomLabel28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuCustomLabel28.UseCompatibleTextRendering = true;
             // 
             // dgvPago
             // 
@@ -815,7 +816,7 @@
             this.dgvPago.ReadOnly = true;
             this.dgvPago.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvPago.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPago.Size = new System.Drawing.Size(1089, 294);
+            this.dgvPago.Size = new System.Drawing.Size(1057, 294);
             this.dgvPago.TabIndex = 0;
             this.dgvPago.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPago_CellClick);
             this.dgvPago.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvPago_CellPainting);
@@ -919,7 +920,7 @@
             this.groupBox5.Controls.Add(this.bunifuCustomLabel19);
             this.groupBox5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.ForeColor = System.Drawing.Color.Black;
-            this.groupBox5.Location = new System.Drawing.Point(1157, 293);
+            this.groupBox5.Location = new System.Drawing.Point(1105, 293);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(366, 332);
             this.groupBox5.TabIndex = 12;
@@ -1204,7 +1205,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1556, 41);
+            this.panel1.Size = new System.Drawing.Size(1479, 41);
             this.panel1.TabIndex = 194;
             // 
             // pictureBox1
@@ -1284,7 +1285,7 @@
             this.btnGuardar.IconVisible = true;
             this.btnGuardar.IconZoom = 80D;
             this.btnGuardar.IsTab = false;
-            this.btnGuardar.Location = new System.Drawing.Point(1244, 640);
+            this.btnGuardar.Location = new System.Drawing.Point(1088, 639);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Normalcolor = System.Drawing.Color.SteelBlue;
@@ -1297,6 +1298,7 @@
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnGuardar.Textcolor = System.Drawing.Color.White;
             this.btnGuardar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnFinalizar
             // 
@@ -1320,7 +1322,7 @@
             this.btnFinalizar.IconVisible = true;
             this.btnFinalizar.IconZoom = 80D;
             this.btnFinalizar.IsTab = false;
-            this.btnFinalizar.Location = new System.Drawing.Point(1399, 639);
+            this.btnFinalizar.Location = new System.Drawing.Point(1278, 639);
             this.btnFinalizar.Margin = new System.Windows.Forms.Padding(4);
             this.btnFinalizar.Name = "btnFinalizar";
             this.btnFinalizar.Normalcolor = System.Drawing.Color.Tomato;
@@ -1340,7 +1342,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Moccasin;
-            this.ClientSize = new System.Drawing.Size(1556, 687);
+            this.ClientSize = new System.Drawing.Size(1479, 687);
             this.Controls.Add(this.tbTipoCambio);
             this.Controls.Add(this.bunifuCustomLabel3);
             this.Controls.Add(this.btnGuardar);
@@ -1362,6 +1364,8 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            this.panelCancelacion.ResumeLayout(false);
+            this.panelCancelacion.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panelImpresiones.ResumeLayout(false);
             this.panelImpresiones.PerformLayout();
@@ -1382,8 +1386,6 @@
             this.panelFormaPago.ResumeLayout(false);
             this.panelFormaPago.PerformLayout();
             this.groupBox4.ResumeLayout(false);
-            this.panelCancelacion.ResumeLayout(false);
-            this.panelCancelacion.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPago)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
@@ -1437,7 +1439,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton btnFinalizar;
         private Bunifu.Framework.UI.BunifuFlatButton btnGuardar;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
-        private Bunifu.Framework.UI.BunifuCustomLabel tbTipoCambio;
         private System.Windows.Forms.DataGridView dgvPago;
         public System.Windows.Forms.ComboBox cboSerie;
         public System.Windows.Forms.ComboBox cboTipoDoc;
@@ -1482,5 +1483,6 @@
         private System.Windows.Forms.Panel panelCancelacion;
         public System.Windows.Forms.TextBox textBox1;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel28;
+        public Bunifu.Framework.UI.BunifuCustomLabel tbTipoCambio;
     }
 }

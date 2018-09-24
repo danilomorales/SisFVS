@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaNegocio;
 using System.Data.SqlClient;
+using CapaEntidades;
+
 
 namespace SistemaFigueri
 {
@@ -16,15 +18,19 @@ namespace SistemaFigueri
     {
         CNPedidos obj = new CNPedidos();
         DataTable tabla;
+        public DataTable tablaDetallePedido;
         public List<DataRow> list { get; set; }
         public String IdPedidoProducto { get; set; }
+        public String fechaPedido { get; set; }
+        public String clienteApellidos { get; set; }
         public String idcliente { get; set; }
-        public String cliente { get; set; }
+        public String clienteNombres { get; set; }
         public String ruc { get; set; }
         public String tipodoc { get; set; }
         public String ndoc { get; set; }
         public String empresa { get; set; }
         public List<DataRow> listaDetalle { get; set; }
+        //public CE_Cliente clientes { get; set; }
         //public List<Venta> listaVenta { get; set; }
         public FormBuscarPedidos()
         {
@@ -62,16 +68,23 @@ namespace SistemaFigueri
             DataView dv = tabla.DefaultView;
             dv.RowFilter = string.Format("Responsable like '%{0}%' or NombreEmpresa like '%{0}%'", tbpedidos.Text);
         }
-
+ 
         private void dgvPedidos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             IdPedidoProducto = dgvPedidos.Rows[e.RowIndex].Cells["IdPedidoProducto"].Value.ToString();
             idcliente = dgvPedidos.Rows[e.RowIndex].Cells["IdCliente"].Value.ToString();
             empresa = dgvPedidos.Rows[e.RowIndex].Cells["NombreEmpresa"].Value.ToString();
-            cliente = dgvPedidos.Rows[e.RowIndex].Cells["cliente"].Value.ToString();
+            clienteNombres = dgvPedidos.Rows[e.RowIndex].Cells["clienteNombres"].Value.ToString();
+            clienteApellidos = dgvPedidos.Rows[e.RowIndex].Cells["clienteApellidos"].Value.ToString();
             tipodoc =  dgvPedidos.Rows[e.RowIndex].Cells["Descripcion"].Value.ToString();
             ndoc = dgvPedidos.Rows[e.RowIndex].Cells["NroDocumento"].Value.ToString();
             ruc = dgvPedidos.Rows[e.RowIndex].Cells["RUC"].Value.ToString();
+            fechaPedido = dgvPedidos.Rows[e.RowIndex].Cells["FechaPedido"].Value.ToString();
+            CNPedidos cN = new CNPedidos();
+            SqlDataAdapter adapter = cN.buscarDetallePedido(IdPedidoProducto);
+            //MessageBox.Show("fecha1: " + fecha1 + "fecha2: " + fecha2);
+            tablaDetallePedido = new DataTable();
+            adapter.Fill(tablaDetallePedido);
             this.DialogResult = DialogResult.OK;
             this.Close();
             MessageBox.Show("iddp: "+IdPedidoProducto+"id: "+idcliente+" empresa: "+empresa);

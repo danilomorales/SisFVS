@@ -37,17 +37,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.bunifuCards3 = new Bunifu.Framework.UI.BunifuCards();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnbuscarpedido = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnCerrar = new Bunifu.Framework.UI.BunifuTileButton();
             this.dphasta = new Bunifu.Framework.UI.BunifuDatepicker();
             this.dpdesde = new Bunifu.Framework.UI.BunifuDatepicker();
             this.tbpedidos = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.dgvPedidos = new System.Windows.Forms.DataGridView();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.btnbuscarpedido = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuCards2.SuspendLayout();
             this.bunifuCards3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnbuscarpedido)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedidos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnbuscarpedido)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuCards2
@@ -142,21 +142,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "PEDIDOS PENDIENTES";
             // 
-            // btnbuscarpedido
-            // 
-            this.btnbuscarpedido.BackColor = System.Drawing.Color.DarkCyan;
-            this.btnbuscarpedido.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnbuscarpedido.Image = global::SistemaFigueri.Properties.Resources.busca;
-            this.btnbuscarpedido.ImageActive = null;
-            this.btnbuscarpedido.Location = new System.Drawing.Point(1037, 98);
-            this.btnbuscarpedido.Name = "btnbuscarpedido";
-            this.btnbuscarpedido.Size = new System.Drawing.Size(55, 46);
-            this.btnbuscarpedido.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnbuscarpedido.TabIndex = 219;
-            this.btnbuscarpedido.TabStop = false;
-            this.btnbuscarpedido.Zoom = 20;
-            this.btnbuscarpedido.Click += new System.EventHandler(this.btnbuscarpedido_Click);
-            // 
             // btnCerrar
             // 
             this.btnCerrar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -185,7 +170,7 @@
             this.dphasta.ForeColor = System.Drawing.Color.White;
             this.dphasta.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.dphasta.FormatCustom = null;
-            this.dphasta.Location = new System.Drawing.Point(674, 108);
+            this.dphasta.Location = new System.Drawing.Point(674, 98);
             this.dphasta.Name = "dphasta";
             this.dphasta.Size = new System.Drawing.Size(357, 46);
             this.dphasta.TabIndex = 60;
@@ -220,7 +205,7 @@
             this.tbpedidos.Location = new System.Drawing.Point(635, 171);
             this.tbpedidos.Margin = new System.Windows.Forms.Padding(4);
             this.tbpedidos.Name = "tbpedidos";
-            this.tbpedidos.Size = new System.Drawing.Size(437, 44);
+            this.tbpedidos.Size = new System.Drawing.Size(457, 44);
             this.tbpedidos.TabIndex = 57;
             this.tbpedidos.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.tbpedidos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbpedidos_KeyPress);
@@ -229,6 +214,8 @@
             // 
             this.dgvPedidos.AllowUserToAddRows = false;
             this.dgvPedidos.AllowUserToDeleteRows = false;
+            this.dgvPedidos.AllowUserToResizeColumns = false;
+            this.dgvPedidos.AllowUserToResizeRows = false;
             this.dgvPedidos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -259,7 +246,7 @@
             this.dgvPedidos.RowHeadersVisible = false;
             this.dgvPedidos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvPedidos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPedidos.Size = new System.Drawing.Size(1024, 326);
+            this.dgvPedidos.Size = new System.Drawing.Size(1044, 326);
             this.dgvPedidos.TabIndex = 33;
             this.dgvPedidos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPedidos_CellDoubleClick);
             // 
@@ -267,6 +254,21 @@
             // 
             this.bunifuElipse1.ElipseRadius = 15;
             this.bunifuElipse1.TargetControl = this;
+            // 
+            // btnbuscarpedido
+            // 
+            this.btnbuscarpedido.BackColor = System.Drawing.Color.DarkCyan;
+            this.btnbuscarpedido.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnbuscarpedido.Image = global::SistemaFigueri.Properties.Resources.busca;
+            this.btnbuscarpedido.ImageActive = null;
+            this.btnbuscarpedido.Location = new System.Drawing.Point(1037, 98);
+            this.btnbuscarpedido.Name = "btnbuscarpedido";
+            this.btnbuscarpedido.Size = new System.Drawing.Size(55, 46);
+            this.btnbuscarpedido.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnbuscarpedido.TabIndex = 219;
+            this.btnbuscarpedido.TabStop = false;
+            this.btnbuscarpedido.Zoom = 20;
+            this.btnbuscarpedido.Click += new System.EventHandler(this.btnbuscarpedido_Click);
             // 
             // FormBuscarPedidos
             // 
@@ -283,8 +285,8 @@
             this.bunifuCards2.PerformLayout();
             this.bunifuCards3.ResumeLayout(false);
             this.bunifuCards3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnbuscarpedido)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedidos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnbuscarpedido)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
