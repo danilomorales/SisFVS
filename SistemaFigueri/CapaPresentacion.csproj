@@ -254,12 +254,6 @@
     <Compile Include="FormProductos.Designer.cs">
       <DependentUpon>FormProductos.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormRegistroCobro.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormRegistroCobro.Designer.cs">
-      <DependentUpon>FormRegistroCobro.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormTipoDeCambio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -324,9 +318,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormProductos.resx">
       <DependentUpon>FormProductos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormRegistroCobro.resx">
-      <DependentUpon>FormRegistroCobro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSucursal.resx">
       <DependentUpon>FormSucursal.cs</DependentUpon>
