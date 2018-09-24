@@ -178,13 +178,6 @@ namespace SistemaFigueri
             Close();
         }
 
-
-        private void btnFinalizar_Click(object sender, EventArgs e)
-        {
-            FormRegistroCobro formRp = new FormRegistroCobro();
-            formRp.ShowDialog();
-        }
-
         private void btnCerrarVenta_Click(object sender, EventArgs e)
         {
             Close();
@@ -194,12 +187,6 @@ namespace SistemaFigueri
         {
             
 
-        }
-
-        private void btnRegistrarCobro_Click(object sender, EventArgs e)
-        {
-            FormRegistroCobro frmRegCobro = new FormRegistroCobro();
-            frmRegCobro.ShowDialog();
         }
 
         public void LIstaFormapago()

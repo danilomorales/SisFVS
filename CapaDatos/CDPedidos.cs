@@ -26,7 +26,7 @@ namespace CapaDatos
                 "WHERE pedido.FechaPedido >= TRY_PARSE(@FechaPedido1 as datetime using 'es-ES') " +
                 "and pedido.FechaPedido <= TRY_PARSE(@FechaPedido2 as datetime using 'es-ES') " +
                 "and pedido.IdPedidoProducto NOT IN(select DISTINCT IdPedidoProducto from dbo.DETALLE_PEDIDO_PRODUCTO where Devolucion='0') " +
-                "ORDER BY pedido.FechaPedido DESC ;";
+                "ORDER BY pedido.FechaPedido DESC;";
                
             SqlConnection SqlCon = new SqlConnection();
             try
