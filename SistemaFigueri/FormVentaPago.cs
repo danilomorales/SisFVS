@@ -5,11 +5,13 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
+using System.Threading.Tasks;
 using System.Globalization;
 using CapaNegocio;
 using CapaEntidades;
+using System.IO;
 
 namespace SistemaFigueri
 {
@@ -27,6 +29,11 @@ namespace SistemaFigueri
             InitializeComponent();
             dgvPago.RowTemplate.Height = 45;
         }
+        // movimiento
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hend, int wsmg, int wparam, int lparam);
 
         private void btnClear_Click(object sender, EventArgs e)
         {
@@ -510,6 +517,12 @@ namespace SistemaFigueri
             }
             
 
+        }
+
+        private void BarraCabecera_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(Handle, 0x112, 0xf012, 0);
         }
     }
 }
