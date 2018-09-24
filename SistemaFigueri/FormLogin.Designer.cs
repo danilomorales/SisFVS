@@ -48,7 +48,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(167)))), ((int)(((byte)(117)))));
+            this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -58,7 +58,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(167)))), ((int)(((byte)(117)))));
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(-42, 70);
             this.pictureBox1.Name = "pictureBox1";
@@ -70,8 +70,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(415, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(181, 25);
@@ -82,7 +83,9 @@
             // 
             this.linkLabel1.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.linkLabel1.AutoSize = true;
+            this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
             this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.ForeColor = System.Drawing.Color.Black;
             this.linkLabel1.LinkColor = System.Drawing.Color.Silver;
             this.linkLabel1.Location = new System.Drawing.Point(439, 277);
             this.linkLabel1.Name = "linkLabel1";
@@ -93,14 +96,14 @@
             // 
             // bunifuElipse1
             // 
-            this.bunifuElipse1.ElipseRadius = 15;
+            this.bunifuElipse1.ElipseRadius = 20;
             this.bunifuElipse1.TargetControl = this;
             // 
             // tbContrasenna
             // 
             this.tbContrasenna.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tbContrasenna.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
-            this.tbContrasenna.ForeColor = System.Drawing.Color.White;
+            this.tbContrasenna.ForeColor = System.Drawing.Color.Black;
             this.tbContrasenna.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.tbContrasenna.HintText = "";
             this.tbContrasenna.isPassword = true;
@@ -123,7 +126,7 @@
             // 
             this.tbUsuario.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tbUsuario.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
-            this.tbUsuario.ForeColor = System.Drawing.Color.White;
+            this.tbUsuario.ForeColor = System.Drawing.Color.Black;
             this.tbUsuario.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.tbUsuario.HintText = "USUARIO";
             this.tbUsuario.isPassword = false;
@@ -168,7 +171,7 @@
             this.btnLogin.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btnLogin.OnHoverTextColor = System.Drawing.Color.White;
             this.btnLogin.selected = false;
-            this.btnLogin.Size = new System.Drawing.Size(319, 32);
+            this.btnLogin.Size = new System.Drawing.Size(319, 42);
             this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "ACCEDER";
             this.btnLogin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -208,7 +211,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(147)))), ((int)(((byte)(103)))));
             this.ClientSize = new System.Drawing.Size(780, 330);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.btnMinimizar);

@@ -33,20 +33,18 @@
             this.panel1ContenedorPrincipal = new System.Windows.Forms.Panel();
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
+            this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
+            this.pbPerfil = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.materialDivider2 = new MaterialSkin.Controls.MaterialDivider();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.bunifuCards2 = new Bunifu.Framework.UI.BunifuCards();
             this.lbFechadia = new System.Windows.Forms.Label();
             this.lbHora1 = new System.Windows.Forms.Label();
-            this.BarraTitulo = new System.Windows.Forms.Panel();
-            this.tmOcultarMenu = new System.Windows.Forms.Timer(this.components);
-            this.tmMostrarMenu = new System.Windows.Forms.Timer(this.components);
-            this.tmFechaHora = new System.Windows.Forms.Timer(this.components);
-            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.pbPerfil = new System.Windows.Forms.PictureBox();
+            this.btnMenu = new System.Windows.Forms.PictureBox();
+            this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
+            this.materialDivider2 = new MaterialSkin.Controls.MaterialDivider();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.btnPerfiles = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnProductos = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnReportes = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -55,23 +53,25 @@
             this.btnPromociones = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnClientes = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnCaja = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnMenu = new System.Windows.Forms.PictureBox();
+            this.BarraTitulo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.btnMinimiza = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
-            this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
-            this.bunifuCards2 = new Bunifu.Framework.UI.BunifuCards();
+            this.tmOcultarMenu = new System.Windows.Forms.Timer(this.components);
+            this.tmMostrarMenu = new System.Windows.Forms.Timer(this.components);
+            this.tmFechaHora = new System.Windows.Forms.Timer(this.components);
+            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel1ContenedorPrincipal.SuspendLayout();
             this.panelMenu.SuspendLayout();
+            this.bunifuCards1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPerfil)).BeginInit();
+            this.bunifuCards2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
             this.panel2.SuspendLayout();
             this.BarraTitulo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPerfil)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            this.bunifuCards1.SuspendLayout();
-            this.bunifuCards2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1ContenedorPrincipal
@@ -114,6 +114,136 @@
             this.panelMenu.TabIndex = 2;
             this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenu_Paint);
             // 
+            // bunifuCards1
+            // 
+            this.bunifuCards1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(150)))), ((int)(((byte)(33)))));
+            this.bunifuCards1.BorderRadius = 5;
+            this.bunifuCards1.BottomSahddow = true;
+            this.bunifuCards1.color = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
+            this.bunifuCards1.Controls.Add(this.pbPerfil);
+            this.bunifuCards1.Controls.Add(this.label1);
+            this.bunifuCards1.Controls.Add(this.label3);
+            this.bunifuCards1.Controls.Add(this.label2);
+            this.bunifuCards1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bunifuCards1.LeftSahddow = false;
+            this.bunifuCards1.Location = new System.Drawing.Point(0, 68);
+            this.bunifuCards1.Name = "bunifuCards1";
+            this.bunifuCards1.RightSahddow = true;
+            this.bunifuCards1.ShadowDepth = 20;
+            this.bunifuCards1.Size = new System.Drawing.Size(240, 104);
+            this.bunifuCards1.TabIndex = 1;
+            // 
+            // pbPerfil
+            // 
+            this.pbPerfil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbPerfil.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pbPerfil.ErrorImage")));
+            this.pbPerfil.Location = new System.Drawing.Point(5, 5);
+            this.pbPerfil.Name = "pbPerfil";
+            this.pbPerfil.Size = new System.Drawing.Size(72, 96);
+            this.pbPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbPerfil.TabIndex = 26;
+            this.pbPerfil.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AccessibleName = "";
+            this.label1.AutoSize = true;
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.Location = new System.Drawing.Point(94, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(30, 15);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "user";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label3.Location = new System.Drawing.Point(94, 65);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(40, 15);
+            this.label3.TabIndex = 25;
+            this.label3.Text = "label3";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label2.Location = new System.Drawing.Point(94, 37);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(40, 15);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "label2";
+            // 
+            // bunifuCards2
+            // 
+            this.bunifuCards2.AutoSize = true;
+            this.bunifuCards2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(150)))), ((int)(((byte)(33)))));
+            this.bunifuCards2.BorderRadius = 5;
+            this.bunifuCards2.BottomSahddow = true;
+            this.bunifuCards2.color = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
+            this.bunifuCards2.Controls.Add(this.lbFechadia);
+            this.bunifuCards2.Controls.Add(this.lbHora1);
+            this.bunifuCards2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bunifuCards2.LeftSahddow = false;
+            this.bunifuCards2.Location = new System.Drawing.Point(0, 594);
+            this.bunifuCards2.Name = "bunifuCards2";
+            this.bunifuCards2.RightSahddow = true;
+            this.bunifuCards2.ShadowDepth = 20;
+            this.bunifuCards2.Size = new System.Drawing.Size(240, 63);
+            this.bunifuCards2.TabIndex = 2;
+            // 
+            // lbFechadia
+            // 
+            this.lbFechadia.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbFechadia.AutoSize = true;
+            this.lbFechadia.BackColor = System.Drawing.Color.Transparent;
+            this.lbFechadia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFechadia.ForeColor = System.Drawing.Color.Black;
+            this.lbFechadia.Location = new System.Drawing.Point(26, 39);
+            this.lbFechadia.Name = "lbFechadia";
+            this.lbFechadia.Size = new System.Drawing.Size(119, 15);
+            this.lbFechadia.TabIndex = 6;
+            this.lbFechadia.Text = "dia, 10 de mes 2018";
+            this.lbFechadia.Click += new System.EventHandler(this.lbFechadia_Click);
+            // 
+            // lbHora1
+            // 
+            this.lbHora1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbHora1.AutoEllipsis = true;
+            this.lbHora1.AutoSize = true;
+            this.lbHora1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(41)))));
+            this.lbHora1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lbHora1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHora1.ForeColor = System.Drawing.Color.LightGray;
+            this.lbHora1.Location = new System.Drawing.Point(55, 11);
+            this.lbHora1.Name = "lbHora1";
+            this.lbHora1.Size = new System.Drawing.Size(90, 25);
+            this.lbHora1.TabIndex = 5;
+            this.lbHora1.Text = "00:00:00";
+            this.lbHora1.Click += new System.EventHandler(this.lbHora1_Click);
+            // 
+            // btnMenu
+            // 
+            this.btnMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
+            this.btnMenu.Location = new System.Drawing.Point(172, 6);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(57, 59);
+            this.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnMenu.TabIndex = 12;
+            this.btnMenu.TabStop = false;
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
+            // 
             // materialDivider1
             // 
             this.materialDivider1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -124,43 +254,6 @@
             this.materialDivider1.Size = new System.Drawing.Size(237, 10);
             this.materialDivider1.TabIndex = 28;
             this.materialDivider1.Text = "materialDivider1";
-            // 
-            // label1
-            // 
-            this.label1.AccessibleName = "";
-            this.label1.AutoSize = true;
-            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(94, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 16);
-            this.label1.TabIndex = 23;
-            this.label1.Text = "user";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(94, 65);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 16);
-            this.label3.TabIndex = 25;
-            this.label3.Text = "label3";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(94, 37);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 16);
-            this.label2.TabIndex = 24;
-            this.label2.Text = "label2";
             // 
             // materialDivider2
             // 
@@ -189,77 +282,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(243, 397);
             this.panel2.TabIndex = 27;
-            // 
-            // lbFechadia
-            // 
-            this.lbFechadia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbFechadia.AutoSize = true;
-            this.lbFechadia.BackColor = System.Drawing.Color.Transparent;
-            this.lbFechadia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFechadia.ForeColor = System.Drawing.Color.Black;
-            this.lbFechadia.Location = new System.Drawing.Point(36, 36);
-            this.lbFechadia.Name = "lbFechadia";
-            this.lbFechadia.Size = new System.Drawing.Size(119, 15);
-            this.lbFechadia.TabIndex = 6;
-            this.lbFechadia.Text = "dia, 10 de mes 2018";
-            this.lbFechadia.Click += new System.EventHandler(this.lbFechadia_Click);
-            // 
-            // lbHora1
-            // 
-            this.lbHora1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbHora1.AutoSize = true;
-            this.lbHora1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(41)))));
-            this.lbHora1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHora1.ForeColor = System.Drawing.Color.LightGray;
-            this.lbHora1.Location = new System.Drawing.Point(65, 11);
-            this.lbHora1.Name = "lbHora1";
-            this.lbHora1.Size = new System.Drawing.Size(90, 25);
-            this.lbHora1.TabIndex = 5;
-            this.lbHora1.Text = "00:00:00";
-            this.lbHora1.Click += new System.EventHandler(this.lbHora1_Click);
-            // 
-            // BarraTitulo
-            // 
-            this.BarraTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(147)))), ((int)(((byte)(103)))));
-            this.BarraTitulo.Controls.Add(this.pictureBox1);
-            this.BarraTitulo.Controls.Add(this.pictureBox8);
-            this.BarraTitulo.Controls.Add(this.btnMinimiza);
-            this.BarraTitulo.Controls.Add(this.btnCerrar);
-            this.BarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BarraTitulo.Location = new System.Drawing.Point(0, 0);
-            this.BarraTitulo.Name = "BarraTitulo";
-            this.BarraTitulo.Size = new System.Drawing.Size(1320, 43);
-            this.BarraTitulo.TabIndex = 1;
-            this.BarraTitulo.Paint += new System.Windows.Forms.PaintEventHandler(this.BarraTitulo_Paint);
-            this.BarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BarraTitulo_MouseDown);
-            // 
-            // tmOcultarMenu
-            // 
-            this.tmOcultarMenu.Tick += new System.EventHandler(this.tmOcultarMenu_Tick);
-            // 
-            // tmMostrarMenu
-            // 
-            this.tmMostrarMenu.Tick += new System.EventHandler(this.tmMostrarMenu_Tick);
-            // 
-            // tmFechaHora
-            // 
-            this.tmFechaHora.Tick += new System.EventHandler(this.tmFechaHora_Tick);
-            // 
-            // bunifuElipse1
-            // 
-            this.bunifuElipse1.ElipseRadius = 15;
-            this.bunifuElipse1.TargetControl = this;
-            // 
-            // pbPerfil
-            // 
-            this.pbPerfil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbPerfil.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pbPerfil.ErrorImage")));
-            this.pbPerfil.Location = new System.Drawing.Point(5, 5);
-            this.pbPerfil.Name = "pbPerfil";
-            this.pbPerfil.Size = new System.Drawing.Size(72, 96);
-            this.pbPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbPerfil.TabIndex = 26;
-            this.pbPerfil.TabStop = false;
             // 
             // btnPerfiles
             // 
@@ -573,18 +595,20 @@
             this.btnCaja.Visible = false;
             this.btnCaja.Click += new System.EventHandler(this.btnCaja_Click);
             // 
-            // btnMenu
+            // BarraTitulo
             // 
-            this.btnMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
-            this.btnMenu.Location = new System.Drawing.Point(172, 6);
-            this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(57, 59);
-            this.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnMenu.TabIndex = 12;
-            this.btnMenu.TabStop = false;
-            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
+            this.BarraTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(147)))), ((int)(((byte)(103)))));
+            this.BarraTitulo.Controls.Add(this.pictureBox1);
+            this.BarraTitulo.Controls.Add(this.pictureBox8);
+            this.BarraTitulo.Controls.Add(this.btnMinimiza);
+            this.BarraTitulo.Controls.Add(this.btnCerrar);
+            this.BarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BarraTitulo.Location = new System.Drawing.Point(0, 0);
+            this.BarraTitulo.Name = "BarraTitulo";
+            this.BarraTitulo.Size = new System.Drawing.Size(1320, 43);
+            this.BarraTitulo.TabIndex = 1;
+            this.BarraTitulo.Paint += new System.Windows.Forms.PaintEventHandler(this.BarraTitulo_Paint);
+            this.BarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BarraTitulo_MouseDown);
             // 
             // pictureBox1
             // 
@@ -640,41 +664,22 @@
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
-            // bunifuCards1
+            // tmOcultarMenu
             // 
-            this.bunifuCards1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(150)))), ((int)(((byte)(33)))));
-            this.bunifuCards1.BorderRadius = 5;
-            this.bunifuCards1.BottomSahddow = true;
-            this.bunifuCards1.color = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
-            this.bunifuCards1.Controls.Add(this.pbPerfil);
-            this.bunifuCards1.Controls.Add(this.label1);
-            this.bunifuCards1.Controls.Add(this.label3);
-            this.bunifuCards1.Controls.Add(this.label2);
-            this.bunifuCards1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bunifuCards1.LeftSahddow = false;
-            this.bunifuCards1.Location = new System.Drawing.Point(0, 68);
-            this.bunifuCards1.Name = "bunifuCards1";
-            this.bunifuCards1.RightSahddow = true;
-            this.bunifuCards1.ShadowDepth = 20;
-            this.bunifuCards1.Size = new System.Drawing.Size(240, 104);
-            this.bunifuCards1.TabIndex = 1;
+            this.tmOcultarMenu.Tick += new System.EventHandler(this.tmOcultarMenu_Tick);
             // 
-            // bunifuCards2
+            // tmMostrarMenu
             // 
-            this.bunifuCards2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(150)))), ((int)(((byte)(33)))));
-            this.bunifuCards2.BorderRadius = 5;
-            this.bunifuCards2.BottomSahddow = true;
-            this.bunifuCards2.color = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
-            this.bunifuCards2.Controls.Add(this.lbFechadia);
-            this.bunifuCards2.Controls.Add(this.lbHora1);
-            this.bunifuCards2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.bunifuCards2.LeftSahddow = false;
-            this.bunifuCards2.Location = new System.Drawing.Point(0, 594);
-            this.bunifuCards2.Name = "bunifuCards2";
-            this.bunifuCards2.RightSahddow = true;
-            this.bunifuCards2.ShadowDepth = 20;
-            this.bunifuCards2.Size = new System.Drawing.Size(240, 63);
-            this.bunifuCards2.TabIndex = 2;
+            this.tmMostrarMenu.Tick += new System.EventHandler(this.tmMostrarMenu_Tick);
+            // 
+            // tmFechaHora
+            // 
+            this.tmFechaHora.Tick += new System.EventHandler(this.tmFechaHora_Tick);
+            // 
+            // bunifuElipse1
+            // 
+            this.bunifuElipse1.ElipseRadius = 15;
+            this.bunifuElipse1.TargetControl = this;
             // 
             // FormMenuPrincipal
             // 
@@ -693,16 +698,16 @@
             this.panel1ContenedorPrincipal.ResumeLayout(false);
             this.panelMenu.ResumeLayout(false);
             this.panelMenu.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.BarraTitulo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbPerfil)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.bunifuCards1.ResumeLayout(false);
             this.bunifuCards1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPerfil)).EndInit();
             this.bunifuCards2.ResumeLayout(false);
             this.bunifuCards2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.BarraTitulo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.ResumeLayout(false);
 
         }

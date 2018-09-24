@@ -114,6 +114,18 @@ namespace SistemaFigueri
             adapter.Fill(tabla);
             dgvProductos.DataSource = tabla;
             adapter.Dispose();
+            
+
+            dgvProductos.AllowUserToAddRows = false;
+            dgvProductos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvProductos.AllowUserToResizeColumns = false;
+            dgvProductos.Columns[0].Visible = false;
+            dgvProductos.Columns[5].Visible = false;
+            dgvProductos.Columns[7].Visible = false;
+            dgvProductos.Columns[8].Visible = false;
+            dgvProductos.Columns[9].Visible = false;
+            dgvProductos.Columns[10].Visible = false;
+            dgvProductos.Columns[11].Visible = false;
 
         }
          

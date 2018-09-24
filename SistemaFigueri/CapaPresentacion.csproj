@@ -111,6 +111,12 @@
     <Compile Include="FormPosExterno.Designer.cs">
       <DependentUpon>FormPosExterno.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormPrincipalPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPrincipalPage.Designer.cs">
+      <DependentUpon>FormPrincipalPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormSucursal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -242,12 +248,6 @@
     <Compile Include="FormMenuPrincipal.Designer.cs">
       <DependentUpon>FormMenuPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormPrincipalPage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormPrincipalPage.Designer.cs">
-      <DependentUpon>FormPrincipalPage.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormProductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -315,9 +315,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormPosExterno.resx">
       <DependentUpon>FormPosExterno.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormPrincipalPage.resx">
-      <DependentUpon>FormPrincipalPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormProductos.resx">
       <DependentUpon>FormProductos.cs</DependentUpon>

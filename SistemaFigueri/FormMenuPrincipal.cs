@@ -17,6 +17,7 @@ namespace SistemaFigueri
         public FormMenuPrincipal()
         {
             InitializeComponent();
+            tmFechaHora.Enabled = true;
         }
         int lx, ly;
         int sw, sh;

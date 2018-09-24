@@ -16,21 +16,5 @@ namespace SistemaFigueri
         {
             InitializeComponent();
         }
-
-        private void FormPrincipalPage_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tmFechaHora_Tick(object sender, EventArgs e)
-        {
-            //lbFecha.Text = DateTime.Now.ToLongDateString();
-            //lblHora.Text = DateTime.Now.ToString("HH:mm:ssss");
-        }
-
-        private void materialFlatButton1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
