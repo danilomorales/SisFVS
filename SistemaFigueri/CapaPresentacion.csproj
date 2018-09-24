@@ -69,6 +69,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conversiones.cs" />
+    <Compile Include="FormAperturaCaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAperturaCaja.Designer.cs">
+      <DependentUpon>FormAperturaCaja.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormBuscarPedidos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -230,12 +236,6 @@
     <Compile Include="FormUpdateProducto.Designer.cs">
       <DependentUpon>FormUpdateProducto.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormAperturaCaja.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormAperturaCaja.Designer.cs">
-      <DependentUpon>FormAperturaCaja.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -262,9 +262,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="SomeData.cs" />
-    <EmbeddedResource Include="FormAperturaCaja.resx">
-      <DependentUpon>FormAperturaCaja.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormBuscarClienteR.resx">
       <DependentUpon>FormBuscarClienteR.cs</DependentUpon>
     </EmbeddedResource>
