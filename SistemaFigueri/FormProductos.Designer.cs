@@ -30,25 +30,25 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProductos));
             this.bunifuCards3 = new Bunifu.Framework.UI.BunifuCards();
-            this.label1 = new System.Windows.Forms.Label();
             this.bunifuCards4 = new Bunifu.Framework.UI.BunifuCards();
             this.label2 = new System.Windows.Forms.Label();
             this.bunifuCards2 = new Bunifu.Framework.UI.BunifuCards();
-            this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
+            this.bmBuscar = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.dgvProductos = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
             this.bunKardex = new Bunifu.Framework.UI.BunifuTileButton();
             this.btneliminar = new Bunifu.Framework.UI.BunifuTileButton();
             this.bunifuTileButton2 = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnNuevoProducto = new Bunifu.Framework.UI.BunifuTileButton();
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bmBuscar = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuCards3.SuspendLayout();
             this.bunifuCards4.SuspendLayout();
             this.bunifuCards2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.panel1.SuspendLayout();
             this.bunifuCards1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,28 +70,15 @@
             this.bunifuCards3.Size = new System.Drawing.Size(1670, 970);
             this.bunifuCards3.TabIndex = 36;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(15, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 36);
-            this.label1.TabIndex = 0;
-            // 
             // bunifuCards4
             // 
-            this.bunifuCards4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.bunifuCards4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(190)))), ((int)(((byte)(154)))));
             this.bunifuCards4.BorderRadius = 5;
             this.bunifuCards4.BottomSahddow = true;
             this.bunifuCards4.color = System.Drawing.Color.Tomato;
             this.bunifuCards4.Controls.Add(this.label2);
             this.bunifuCards4.LeftSahddow = false;
-            this.bunifuCards4.Location = new System.Drawing.Point(568, 22);
+            this.bunifuCards4.Location = new System.Drawing.Point(429, 22);
             this.bunifuCards4.Name = "bunifuCards4";
             this.bunifuCards4.RightSahddow = true;
             this.bunifuCards4.ShadowDepth = 20;
@@ -112,8 +99,7 @@
             // 
             // bunifuCards2
             // 
-            this.bunifuCards2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.bunifuCards2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.bunifuCards2.AutoSize = true;
             this.bunifuCards2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(190)))), ((int)(((byte)(154)))));
@@ -130,29 +116,15 @@
             this.bunifuCards2.Size = new System.Drawing.Size(1532, 672);
             this.bunifuCards2.TabIndex = 38;
             // 
-            // dgvProductos
-            // 
-            this.dgvProductos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
-            this.dgvProductos.BackgroundColor = System.Drawing.Color.Honeydew;
-            this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProductos.GridColor = System.Drawing.Color.Peru;
-            this.dgvProductos.Location = new System.Drawing.Point(9, 111);
-            this.dgvProductos.Name = "dgvProductos";
-            this.dgvProductos.Size = new System.Drawing.Size(1182, 548);
-            this.dgvProductos.TabIndex = 57;
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.bunifuCards1);
             this.panel1.Controls.Add(this.bunifuImageButton1);
             this.panel1.Controls.Add(this.bmBuscar);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 5);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1530, 100);
+            this.panel1.Size = new System.Drawing.Size(1532, 100);
             this.panel1.TabIndex = 58;
             // 
             // bunifuCards1
@@ -173,8 +145,55 @@
             this.bunifuCards1.Name = "bunifuCards1";
             this.bunifuCards1.RightSahddow = true;
             this.bunifuCards1.ShadowDepth = 20;
-            this.bunifuCards1.Size = new System.Drawing.Size(366, 91);
+            this.bunifuCards1.Size = new System.Drawing.Size(368, 91);
             this.bunifuCards1.TabIndex = 57;
+            // 
+            // bmBuscar
+            // 
+            this.bmBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.bmBuscar.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.bmBuscar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bmBuscar.ForeColor = System.Drawing.Color.Black;
+            this.bmBuscar.HintForeColor = System.Drawing.Color.Black;
+            this.bmBuscar.HintText = "Buscar Producto";
+            this.bmBuscar.isPassword = false;
+            this.bmBuscar.LineFocusedColor = System.Drawing.Color.Red;
+            this.bmBuscar.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
+            this.bmBuscar.LineMouseHoverColor = System.Drawing.Color.SandyBrown;
+            this.bmBuscar.LineThickness = 5;
+            this.bmBuscar.Location = new System.Drawing.Point(90, 29);
+            this.bmBuscar.Margin = new System.Windows.Forms.Padding(4);
+            this.bmBuscar.Name = "bmBuscar";
+            this.bmBuscar.Size = new System.Drawing.Size(512, 44);
+            this.bmBuscar.TabIndex = 58;
+            this.bmBuscar.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bmBuscar.OnValueChanged += new System.EventHandler(this.bmBuscar_OnValueChanged);
+            // 
+            // dgvProductos
+            // 
+            this.dgvProductos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
+            this.dgvProductos.BackgroundColor = System.Drawing.Color.Honeydew;
+            this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProductos.GridColor = System.Drawing.Color.Peru;
+            this.dgvProductos.Location = new System.Drawing.Point(9, 111);
+            this.dgvProductos.Name = "dgvProductos";
+            this.dgvProductos.Size = new System.Drawing.Size(1182, 548);
+            this.dgvProductos.TabIndex = 57;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.Location = new System.Drawing.Point(15, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 36);
+            this.label1.TabIndex = 0;
             // 
             // bunKardex
             // 
@@ -270,28 +289,6 @@
             this.bunifuImageButton1.TabStop = false;
             this.bunifuImageButton1.Zoom = 10;
             // 
-            // bmBuscar
-            // 
-            this.bmBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.bmBuscar.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bmBuscar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bmBuscar.ForeColor = System.Drawing.Color.Black;
-            this.bmBuscar.HintForeColor = System.Drawing.Color.Black;
-            this.bmBuscar.HintText = "Buscar Producto";
-            this.bmBuscar.isPassword = false;
-            this.bmBuscar.LineFocusedColor = System.Drawing.Color.Red;
-            this.bmBuscar.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
-            this.bmBuscar.LineMouseHoverColor = System.Drawing.Color.SandyBrown;
-            this.bmBuscar.LineThickness = 5;
-            this.bmBuscar.Location = new System.Drawing.Point(90, 29);
-            this.bmBuscar.Margin = new System.Windows.Forms.Padding(4);
-            this.bmBuscar.Name = "bmBuscar";
-            this.bmBuscar.Size = new System.Drawing.Size(512, 44);
-            this.bmBuscar.TabIndex = 58;
-            this.bmBuscar.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.bmBuscar.OnValueChanged += new System.EventHandler(this.bmBuscar_OnValueChanged);
-            // 
             // FormProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -311,10 +308,10 @@
             this.bunifuCards4.ResumeLayout(false);
             this.bunifuCards4.PerformLayout();
             this.bunifuCards2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.bunifuCards1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             this.ResumeLayout(false);
 
