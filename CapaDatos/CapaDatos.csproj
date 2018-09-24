@@ -60,6 +60,7 @@
     <Compile Include="CDVenta.cs" />
     <Compile Include="CD_DetalleVenta.cs" />
     <Compile Include="clParametro.cs" />
+    <Compile Include="LoginInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>

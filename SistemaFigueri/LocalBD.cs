@@ -17,8 +17,8 @@ namespace SistemaFigueri
             get { return LocalBD._intancia; }
         }
         int intento = 0;
-        int IdProd = 0;
-        int Iidcliente = 0, idClienteNV = 0;
+        String IdProd = "0";
+        string Iidcliente = "0";
         int invocador = 0; // 1: BOLETA, 2: NOTAVENTA, 3: FACT
         private int _idsucrusal;
         public int IdSucursal
@@ -59,24 +59,8 @@ namespace SistemaFigueri
                 throw;
             }
         }
-        public int ReturnIdClienteNV(int getset, int idCliente)
-        {
-            try
-            {
-                if (getset == 1)
-                {
-                    idClienteNV = idCliente;
-                }
-                return idClienteNV;
 
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-        }
-        public int ReturnIdCliente(int getset, int idCliente)
+        public string ReturnIdCliente(int getset, string idCliente)
         {
             try
             {
@@ -93,7 +77,7 @@ namespace SistemaFigueri
                 throw;
             }
         }
-        public int ReturnIdprod(int getset, int idprod)
+        public String ReturnIdprod(int getset, String idprod)
         {
             try
             {
@@ -121,7 +105,7 @@ namespace SistemaFigueri
                     {
                         for (int i = 0; i < detBoleta.Count; i++)
                         {
-                            if (detBoleta[i]._Codigo == Codigo)
+                            if (detBoleta[i]._IdProdcuto == Codigo)
                             {
                                 detBoleta[i]._Cantidad = cantidad;
                                 break;
@@ -158,7 +142,7 @@ namespace SistemaFigueri
             {
                 foreach (CEProducto p in detBoleta)
                 {
-                    if (p._Codigo == IDProducto)
+                    if (p._IdProdcuto == IDProducto)
                     {
                         detBoleta.Remove(p);
                         return;
@@ -176,7 +160,7 @@ namespace SistemaFigueri
             {
                 foreach (CEProducto p in detNotaVenta)
                 {
-                    if (p._Codigo == Codigo)
+                    if (p._IdProdcuto == Codigo)
                     {
                         detNotaVenta.Remove(p);
                         return;

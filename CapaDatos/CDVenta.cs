@@ -160,7 +160,8 @@ namespace CapaDatos
                 Cmd.Transaction = objTrans;
 
 
-                dPar = Cmd.Parameters.Add("@vIde_Cliente", SqlDbType.Int);
+                dPar = Cmd.Parameters.Add("@vIde_Cliente", SqlDbType.NVarChar);
+                
                 dPar.Value = dObj_Venta.Ide_Cliente;
                 dPar.Direction = ParameterDirection.Input;
 
@@ -173,7 +174,7 @@ namespace CapaDatos
                 dPar.Direction = ParameterDirection.Input;
 
                 dPar = Cmd.Parameters.Add("@vNum_Doc_Venta", SqlDbType.NVarChar);
-                dPar.Value = dObj_Venta.Num_Doc_Venta;
+                dPar.Value =dObj_Venta.Num_Doc_Venta;
                 dPar.Direction = ParameterDirection.Input;
 
                 dPar = Cmd.Parameters.Add("@vFec_Emite_Venta", SqlDbType.Date);
@@ -184,9 +185,9 @@ namespace CapaDatos
                 dPar.Value = dObj_Venta.Num_Ruc_Venta;
                 dPar.Direction = ParameterDirection.Input;
 
-                dPar = Cmd.Parameters.Add("@vIde_Empresa_Fact", SqlDbType.Int);
+                /*dPar = Cmd.Parameters.Add("@vIde_Empresa_Fact", SqlDbType.Int);
                 dPar.Value = dObj_Venta.Ide_Empresa_Fact;
-                dPar.Direction = ParameterDirection.Input;
+                dPar.Direction = ParameterDirection.Input;*/
 
                 dPar = Cmd.Parameters.Add("@vDes_Nombre_Venta", SqlDbType.NVarChar);
                 dPar.Value = dObj_Venta.Des_Nombre_Venta;
@@ -196,28 +197,28 @@ namespace CapaDatos
                 dPar.Value = dObj_Venta.des_Direc_Venta;
                 dPar.Direction = ParameterDirection.Input;
 
-                dPar = Cmd.Parameters.Add("@vIde_Tipo_Venta", SqlDbType.Int);
+                /*dPar = Cmd.Parameters.Add("@vIde_Tipo_Venta", SqlDbType.Int);
                 dPar.Value = dObj_Venta.Ide_Tipo_Venta;
-                dPar.Direction = ParameterDirection.Input;
+                dPar.Direction = ParameterDirection.Input;*/
 
-                dPar = Cmd.Parameters.Add("@vCan_Dias_Pago_Venta", SqlDbType.Int);
+                /*dPar = Cmd.Parameters.Add("@vCan_Dias_Pago_Venta", SqlDbType.Int);
                 dPar.Value = dObj_Venta.Can_Dias_Pago_Venta;
-                dPar.Direction = ParameterDirection.Input;
+                dPar.Direction = ParameterDirection.Input;*/
 
-                dPar = Cmd.Parameters.Add("@vFec_Vmto_Venta", SqlDbType.Date);
+                /*dPar = Cmd.Parameters.Add("@vFec_Vmto_Venta", SqlDbType.Date);
                 dPar.Value = dObj_Venta.Fec_Vmto_Venta;
-                dPar.Direction = ParameterDirection.Input;
+                dPar.Direction = ParameterDirection.Input;*/
 
-                dPar = Cmd.Parameters.Add("@vIde_Motivo_NotCred", SqlDbType.Int);
+                /*dPar = Cmd.Parameters.Add("@vIde_Motivo_NotCred", SqlDbType.Int);
                 dPar.Value = dObj_Venta.Ide_Motivo_Notcred;
-                dPar.Direction = ParameterDirection.Input;
+                dPar.Direction = ParameterDirection.Input;*/
 
                 dPar = Cmd.Parameters.Add("@vRef_Num_Serie_Venta", SqlDbType.NVarChar);
-                dPar.Value = dObj_Venta.Ref_Num_Serie_Venta;
+                dPar.Value = (object) dObj_Venta.Ref_Num_Serie_Venta ==null? DBNull.Value: (object)dObj_Venta.Ref_Num_Serie_Venta;
                 dPar.Direction = ParameterDirection.Input;
 
                 dPar = Cmd.Parameters.Add("@vRef_Num_Doc_Venta", SqlDbType.NVarChar);
-                dPar.Value = dObj_Venta.Ref_Num_Doc_Venta;
+                dPar.Value = (object) dObj_Venta.Ref_Num_Doc_Venta == null ? DBNull.Value : (object)dObj_Venta.Ref_Num_Doc_Venta;
                 dPar.Direction = ParameterDirection.Input;
 
                 dPar = Cmd.Parameters.Add("@vImp_Tipo_Cambio_Venta", SqlDbType.Decimal);
@@ -253,15 +254,15 @@ namespace CapaDatos
                 dPar.Direction = ParameterDirection.Input;
 
                 dPar = Cmd.Parameters.Add("@vImp_Val_Inaf_Venta", SqlDbType.Decimal);
-                dPar.Value = dObj_Venta.Imp_Val_Inaf_Venta;
+                dPar.Value = (object) dObj_Venta.Imp_Val_Inaf_Venta == null ? DBNull.Value : (object)dObj_Venta.Imp_Val_Inaf_Venta;
                 dPar.Direction = ParameterDirection.Input;
 
                 dPar = Cmd.Parameters.Add("@vImp_Depo_Inaf_Venta", SqlDbType.Decimal);
-                dPar.Value = dObj_Venta.Imp_Depo_Inaf_Venta;
+                dPar.Value = (object) dObj_Venta.Imp_Depo_Inaf_Venta == null ? DBNull.Value : (object)dObj_Venta.Imp_Depo_Inaf_Venta;
                 dPar.Direction = ParameterDirection.Input;
 
                 dPar = Cmd.Parameters.Add("@vImp_Precio_Inaf_Venta", SqlDbType.Decimal);
-                dPar.Value = dObj_Venta.Imp_Precio_Inaf_Venta;
+                dPar.Value = (object)dObj_Venta.Imp_Precio_Inaf_Venta == null ? DBNull.Value : (object)dObj_Venta.Imp_Precio_Inaf_Venta;
                 dPar.Direction = ParameterDirection.Input;
 
                 dPar = Cmd.Parameters.Add("@vImp_Precio_Total_Venta", SqlDbType.Decimal);
@@ -280,11 +281,12 @@ namespace CapaDatos
                 dPar.Value = dObj_Venta.Ide_Punto_Venta;
                 dPar.Direction = ParameterDirection.Input;
 
-                dPar = Cmd.Parameters.Add("@vIde_Area", SqlDbType.Int);
+                dPar = Cmd.Parameters.Add("@vIde_Area ", SqlDbType.Int);
                 dPar.Value = dObj_Venta.Ide_Area;
                 dPar.Direction = ParameterDirection.Input;
 
                 dPar = Cmd.Parameters.Add("@vIde_Estado_Venta", SqlDbType.Int);
+            //Cmd.P
                 dPar.Value = dObj_Venta.Ide_Estado_Venta;
                 dPar.Direction = ParameterDirection.Input;
 
@@ -292,29 +294,33 @@ namespace CapaDatos
                 dPar.Value = dObj_Venta.Ide_Usuario;
                 dPar.Direction = ParameterDirection.Input;
 
-                dPar = Cmd.Parameters.Add("@vFec_Factu_Comp_Venta", SqlDbType.Date);
+                /*dPar = Cmd.Parameters.Add("@vFec_Factu_Comp_Venta", SqlDbType.Date);
                 dPar.Value = dObj_Venta.Fec_Factu_Comp_Venta;
                 dPar.Direction = ParameterDirection.Input;
 
                 dPar = Cmd.Parameters.Add("@vIde_Motivo_Anula_Venta", SqlDbType.Int);
                 dPar.Value = dObj_Venta.Ide_Motivo_Anula_Venta;
-                dPar.Direction = ParameterDirection.Input;
-
-                dPar = Cmd.Parameters.Add("@vDes_Obs_Motivo_Anula", SqlDbType.NVarChar);
-                dPar.Value = dObj_Venta.Des_Obs_Motivo_Anula;
-                dPar.Direction = ParameterDirection.Input;
+                dPar.Direction = ParameterDirection.Input;*/
 
                 dPar = Cmd.Parameters.Add("@vIde_Sucursal", SqlDbType.Int);
                 dPar.Value = dObj_Venta.Ide_Sucursal;
                 dPar.Direction = ParameterDirection.Input;
 
-                dPar = Cmd.Parameters.Add("@valor", SqlDbType.Int);
-                dPar.Direction = ParameterDirection.Output;
+                dPar = Cmd.Parameters.Add("@vDes_Obs_Motivo_Anula", SqlDbType.NVarChar);
+                dPar.Value = (object) dObj_Venta.Des_Obs_Motivo_Anula == null ? DBNull.Value : (object)dObj_Venta.Des_Obs_Motivo_Anula;
+                dPar.Direction = ParameterDirection.Input;
 
-                Cmd.ExecuteNonQuery();
+                dPar = Cmd.Parameters.Add("@vObs_comp_vta_estado", SqlDbType.NVarChar);
+                dPar.Value = (object)dObj_Venta.Obs_comp_vta_estado == null ? DBNull.Value : (object)dObj_Venta.Obs_comp_vta_estado;
+                dPar.Direction = ParameterDirection.Input;
+
+            dPar = Cmd.Parameters.Add("@valor", SqlDbType.Int);
+            dPar.Direction = ParameterDirection.Output;
+
+            Cmd.ExecuteNonQuery();
 
                 dRpta = int.Parse(Cmd.Parameters["@valor"].Value.ToString());
-
+                //dRpta = 1;
                 if (dRpta > 0)
                 {
                     objSql.committrans(objTrans);
@@ -330,12 +336,14 @@ namespace CapaDatos
             catch (SqlException ExSql)
             {
                 strError = ExSql.Message;
-                objSql.rollbacktrans(objTrans);
+                Console.WriteLine(strError);
+               objSql.rollbacktrans(objTrans);
             }
 
             catch (Exception Ex)
             {
                 strError = Ex.Message;
+                Console.WriteLine(strError);
                 objSql.rollbacktrans(objTrans);
             }
             finally
@@ -478,9 +486,9 @@ namespace CapaDatos
                 Cmd.Transaction = objTrans;
 
 
-                dPar = Cmd.Parameters.Add("@vIde_Venta", SqlDbType.Int);
+                /*dPar = Cmd.Parameters.Add("@vIde_Venta", SqlDbType.Int);
                 dPar.Value = dObj_VentaPago.Ide_Venta;
-                dPar.Direction = ParameterDirection.Input;
+                dPar.Direction = ParameterDirection.Input;*/
 
                 dPar = Cmd.Parameters.Add("@vNum_Item_Venta_Pago", SqlDbType.Int);
                 dPar.Value = dObj_VentaPago.Num_Item_Venta_Pago;

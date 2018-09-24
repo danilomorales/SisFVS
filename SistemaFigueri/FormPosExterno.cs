@@ -81,9 +81,15 @@ namespace SistemaFigueri
             tarjeta.nlote = tbLote.Text;
             tarjeta.nterminal = tbTerminal.Text;
             tarjeta.ntarjeta = tbTarjeta.Text;
-
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+            if (tbMonto.Text != "" && tbOperacion.Text != "" && tbReferencia.Text != "" && tbTarjeta.MaskCompleted)
+            {
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            else{
+                MessageBox.Show("Se debe rellenar todos los campos", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
     }
 }

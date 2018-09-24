@@ -172,23 +172,23 @@ namespace CapaDatos
             List<CEProducto> Lista = null;
             try
             {
-                SqlConnection cn = CDConexion.Instancia.CerrarConexion();
+                SqlConnection cn = CDConexion.Instancia.AbrirConexion();
                 cmd = new SqlCommand("Caja.SP_BuscaProdAvanzado", cn);
                 cmd.Parameters.AddWithValue("@prmTipEntrada", tip_entrada);
                 cmd.Parameters.AddWithValue("@prmValorEntrada", valor_entrada);
 
                 cmd.CommandType = CommandType.StoredProcedure;
-                cn.Open();
+
                 dr = cmd.ExecuteReader();
                 Lista = new List<CEProducto>();
                 while (dr.Read())
                 {
                     CEProducto p = new CEProducto();
-                    p._Codigo = dr["Código"].ToString();
+                    p._IdProdcuto = dr["IdProducto"].ToString();
                     p._Alias = dr["Alias"].ToString();
                     p._DescripcionProducto = dr["DescripcionProducto"].ToString();
                     p._TiempoDuracion = dr["TiempoDuracion"].ToString();
-                    p._Stock = dr["Stock"].ToString();
+                    p._Stock = Convert.ToInt32(dr["Stock"].ToString());
                     p._precio = Convert.ToDouble(dr["Precio"].ToString());
                     Lista.Add(p);
                 }
@@ -208,22 +208,20 @@ namespace CapaDatos
             SqlDataReader dr = null;
             try
             {
-                SqlConnection cn = CDConexion.Instancia.CerrarConexion();
+                SqlConnection cn = CDConexion.Instancia.AbrirConexion();
                 cmd = new SqlCommand("Caja.SP_ListaProductos_Venta", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cn.Open();
+               
                 dr = cmd.ExecuteReader();
                 Lista = new List<CEProducto>();
                 while (dr.Read())
                 {
                     
                     CEProducto p = new CEProducto();
-                    p._Codigo = dr["Código"].ToString();
+                    p._IdProdcuto = dr["IdProducto"].ToString();
                     p._Alias = dr["Alias"].ToString();
                     p._DescripcionProducto = dr["DescripcionProducto"].ToString();
-                    p._TiempoDuracion =dr["TiempoDuracion"].ToString();
-                    p._Stock = dr["Stock"].ToString();
-                    p._precio = Convert.ToDouble(dr["Precio"].ToString());
+                    p._Stock = Convert.ToInt32(dr["Stock"].ToString());
                     Lista.Add(p);
                 }
             }
@@ -242,33 +240,33 @@ namespace CapaDatos
             SqlCommand cmd = null;
             SqlDataReader dr = null;
             CEProducto p = null;
-            try
-            {
-                SqlConnection cn = CDConexion.Instancia.CerrarConexion();
+            /*try
+            {*/
+                SqlConnection cn = CDConexion.Instancia.AbrirConexion();
                 cmd = new SqlCommand("Caja.SP_FE_BuscaProductoCB", cn);
                 cmd.Parameters.AddWithValue("@prmidProducto", id_pro);
                 cmd.Parameters.AddWithValue("@prmCodBarra", Cod_barra);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cn.Open();
+               
                 dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
                     p = new CEProducto();
-                    p._Codigo = dr["Código"].ToString();
+                    p._IdProdcuto = dr["IdProducto"].ToString();
                     p._Alias = dr["Alias"].ToString();
                     p._DescripcionProducto = dr["DescripcionProducto"].ToString();
-                    p._TiempoDuracion = dr["TiempoDuracion"].ToString();
-                    p._Stock = dr["Stock"].ToString();
-                    p._precio = Convert.ToDouble(dr["Precio"].ToString());
+                    p._Stock = Convert.ToInt32(dr["Stock"].ToString());
+                    p._CodBarra = dr["CodBar"].ToString();
 
                 }
-            }
+                cmd.Connection.Close();
+            /*}
             catch (Exception)
             {
 
                 throw;
-            }
-            finally { cmd.Connection.Close(); }
+            }*/
+           /* finally { cmd.Connection.Close(); }*/
             return p;
         }
     }

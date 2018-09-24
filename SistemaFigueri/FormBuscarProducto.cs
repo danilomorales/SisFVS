@@ -23,7 +23,7 @@ namespace SistemaFigueri
         DataTable tProducto = new DataTable();
         CDCliente Dcliente = new CDCliente();
         FormBuscarClienteR clie = new FormBuscarClienteR();
-
+        public String idcliente { get; set; }
         public String alias { get; set; }
         public String descripcion { get; set; }
         public String stock { get; set; }
@@ -43,18 +43,16 @@ namespace SistemaFigueri
         {
             
             
-            dgvlListaProducto.Columns.Add("ColumnCodigo", "Código");
+            dgvlListaProducto.Columns.Add("ColumnCodigo", "IdProducto");
             dgvlListaProducto.Columns.Add("ColumnAlias", "Alias");
             dgvlListaProducto.Columns.Add("ColumnDescripcion", "DescripcionProducto");
             dgvlListaProducto.Columns.Add("ColumnStock", "Stock");
-            dgvlListaProducto.Columns.Add("ColumnDuracion", "TiempoDuracion");
             dgvlListaProducto.Columns.Add("ColumnPecio", "Precio");
 
             dgvlListaProducto.Columns["ColumnCodigo"].Width = 20;
             dgvlListaProducto.Columns["ColumnAlias"].Width = 40;
             dgvlListaProducto.Columns["ColumnDescripcion"].Width = 50;
             dgvlListaProducto.Columns["ColumnStock"].Width = 20;
-            dgvlListaProducto.Columns["ColumnDuracion"].Width = 20;
             dgvlListaProducto.Columns["ColumnPecio"].Width = 40;
 
 
@@ -94,10 +92,10 @@ namespace SistemaFigueri
 
                         num++;
                         String[] fila = new String[] {
-                        Lista[i]._Codigo,
+                        Lista[i]._IdProdcuto,
                         Lista[i]._Alias,
                         Lista[i]._DescripcionProducto,
-                        Lista[i]._Stock,
+                        Lista[i]._Stock.ToString(),
                         Lista[i]._TiempoDuracion,
                         Lista[i]._precio.ToString(),num.ToString() };
                         dgvlListaProducto.Rows.Add(fila);
@@ -159,10 +157,10 @@ namespace SistemaFigueri
                 {
                     num++;
                     String[] fila = new String[] {
-                        Lista[i]._Codigo,
+                        Lista[i]._IdProdcuto,
                         Lista[i]._Alias,
                         Lista[i]._DescripcionProducto,
-                        Lista[i]._Stock,
+                        Lista[i]._Stock.ToString(),
                         Lista[i]._TiempoDuracion, 
                         Lista[i]._precio.ToString(),num.ToString() };
                     dgvlListaProducto.Rows.Add(fila);
@@ -222,18 +220,17 @@ namespace SistemaFigueri
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            CNVentas cn = new CNVentas();
             String IdProducto = dgvlListaProducto.Rows[e.RowIndex].Cells["ColumnCodigo"].Value.ToString();
             String Producto = dgvlListaProducto.Rows[e.RowIndex].Cells["ColumnDescripcion"].Value.ToString();
             String Alias = dgvlListaProducto.Rows[e.RowIndex].Cells["ColumnAlias"].Value.ToString(); 
-            String Fechav = dgvlListaProducto.Rows[e.RowIndex].Cells["ColumnDuracion"].Value.ToString();
-            String Precio = dgvlListaProducto.Rows[e.RowIndex].Cells["ColumnPecio"].Value.ToString();
+            Decimal nuevoPrecio = cn.traerPrecio(idcliente, IdProducto);
             String Stock = dgvlListaProducto.Rows[e.RowIndex].Cells["ColumnStock"].Value.ToString();
             //String Id = dgvlListaProducto.Rows[e.RowIndex].Cells[0].Value.ToString();
             alias = Alias;
             descripcion = Producto;
             stock = Stock;
-            fechavencimiento = Fechav;
-            precio = Precio;
+            precio = nuevoPrecio.ToString();
             idproducto = IdProducto;
             this.DialogResult = DialogResult.OK;
             this.Close();

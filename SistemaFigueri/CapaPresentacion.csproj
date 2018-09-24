@@ -842,5 +842,17 @@
   <ItemGroup>
     <None Include="Resources\sucursal.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trashfull.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trash2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\waste.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\recycler.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

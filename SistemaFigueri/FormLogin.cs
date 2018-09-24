@@ -12,6 +12,7 @@ using CapaNegocio;
 using System.Data.SqlClient;
 using Bunifu.Framework.UI;
 using System.IO;
+using CapaDatos;
 
 namespace SistemaFigueri
 {
@@ -77,7 +78,7 @@ namespace SistemaFigueri
                                 MemoryStream ms = new MemoryStream(picture);
                                 objPPrincipal.pbPerfil.Image = Image.FromStream(ms);
                             }
-                            
+                            LoginInfo.IdUsuario = Perfil["IdUsuario"].ToString();
                             objPPrincipal.label1.Text = nomUsu;
                             objPPrincipal.label2.Text = patUsu + " " + matUsu;
                             objPPrincipal.label3.Text = rol;

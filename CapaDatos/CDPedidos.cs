@@ -15,48 +15,37 @@ namespace CapaDatos
         private CDConexion Conexion = new CDConexion();
         public SqlDataAdapter buscarPedido(String fecha1,String fecha2)
         {
-            String sql = "select pedido.IdPedidoProducto,cli.IdCliente,cli.NombreEmpresa,concat(cli.Nombres,' ',cli.ApellidoPaterno,' ',cli.ApellidoMaterno) as cliente, " +
-                "cli.RUC, tidoc.Descripcion,cli.NroDocumento, ti.NombreTienda,concat(res.Nombres,' ',res.Apellidos) as Responsable,pedido.FechaPedido,pedido.Valor,pedido.IGV,pedido.MontoTotal," +
-                "pedido.Descuento,pedido.TotalEnviado " +
-                "from PEDIDO_PRODUCTO pedido " +
-                "INNER JOIN  Caja.CLIENTE cli ON pedido.IdCliente = cli.IdCliente " +
-                "INNER JOIN dbo.TIPO_DOC_IDENT tidoc ON cli.IdTipoDocIdent=tidoc.IdTipoDocIdent " +
-                "INNER JOIN dbo.TIENDA ti ON pedido.IdTienda = ti.IdTienda " +
-                "INNER JOIN dbo.RESPONSABLE res ON pedido.IdResponsable = res.IdResponsable " +
-                "WHERE pedido.FechaPedido >= TRY_PARSE(@FechaPedido1 as datetime using 'es-ES') " +
-                "and pedido.FechaPedido <= TRY_PARSE(@FechaPedido2 as datetime using 'es-ES') " +
-                "and pedido.IdPedidoProducto NOT IN(select DISTINCT IdPedidoProducto from dbo.DETALLE_PEDIDO_PRODUCTO where Devolucion='0') " +
-                "ORDER BY pedido.FechaPedido DESC ;";
+            String sql = "Caja.SP_FE_TraerPedido";
                
             SqlConnection SqlCon = new SqlConnection();
             try
             {
                 adapter = new SqlDataAdapter(sql, Conexion.AbrirConexion());
+
+                adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
                 adapter.SelectCommand.Parameters.AddWithValue("@FechaPedido1", fecha1);
                 adapter.SelectCommand.Parameters.AddWithValue("@FechaPedido2", fecha2);
-
+                adapter.SelectCommand.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error al buscar producto: "+ex);
+                Console.WriteLine("Error al buscar pedido: "+ex);
             }
             return adapter;
         }
 
         public SqlDataAdapter buscarDetallePedido(String idPedido)  
         {
-                String sql = "SELECT det.IdProducto,pro.DescripcionProducto,det.Precio,pro.Stock,det.Cantidad FROM dbo.DETALLE_PEDIDO_PRODUCTO det " +
-                        ", dbo.PEDIDO_PRODUCTO ped, dbo.PRODUCTO pro " +
-                        "WHERE ped.IdPedidoProducto = det.IdPedidoProducto " +
-                        "AND det.IdProducto = pro.IdProducto " +
-                        "AND ped.IdPedidoProducto = @IdPedido; ";
+                String sql = "[Caja].[SP_FE_TraerDetallePedido]";
                 SqlConnection SqlCon = new SqlConnection();
                 try
                 {
                     adapter = new SqlDataAdapter(sql, Conexion.AbrirConexion());
-                    adapter.SelectCommand.Parameters.AddWithValue("@IdPedido", idPedido);
- 
-                }
+                adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                adapter.SelectCommand.Parameters.AddWithValue("@vIdPedidoProducto", idPedido);
+                adapter.SelectCommand.ExecuteNonQuery();
+
+            }
                 catch (Exception ex)
                 {
                     Console.WriteLine("Error al buscar detalle: " + ex);

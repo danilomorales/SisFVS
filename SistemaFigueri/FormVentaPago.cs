@@ -20,7 +20,8 @@ namespace SistemaFigueri
         Decimal SumaMonto { get; set; }
         Decimal MontoActual { get; set; }
         Venta Ventas = new Venta();
-        private List<Venta> lista = new List<Venta>();
+        CETarjeta tarjeta;
+        public List<Venta> lista = new List<Venta>();
         public FormVentaPago()
         {
             InitializeComponent();
@@ -51,6 +52,7 @@ namespace SistemaFigueri
             panelImpresiones.Visible = false;
             btnVisa.Enabled = false;
             btnMasterCard.Enabled = false;
+            tbMonto.Focus();
         }
        
         private void tbMonto_KeyPress(object sender, KeyPressEventArgs e)
@@ -305,6 +307,7 @@ namespace SistemaFigueri
                 totalCobrado = totalCobrado - MontoActual;
                 lista.RemoveAt(e.RowIndex);
                 tbTotalCobrado.Text = String.Format("{0:N}", totalCobrado);
+                //SI EL TOTAL COBRADO ES MENOR O IGUAL A LO QUE DEBE PAGAR
                 if (totalCobrado <= importe)
                 {
                     if (totalCobrado == 0.00M)
@@ -323,6 +326,8 @@ namespace SistemaFigueri
                     }
                     
                     tbVuelto.Text = "0,00";
+                    btnPosExterno.Enabled = true;
+                    chkPosExterno.Checked = false;
                 }
                 else
                 {
@@ -353,6 +358,7 @@ namespace SistemaFigueri
                     panelPostExterno.Visible = false;
                     panelImpresiones.Visible = false;
                     cboMoneda.Enabled = true;
+                    tbMonto.Focus();
                     if (tbTotalCobrado.Text != "")
                     {
                         decimal importe = Convert.ToDecimal(tbImporteTotal.Text);
@@ -455,11 +461,14 @@ namespace SistemaFigueri
                 //form.ShowDialog();
                 if (form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-                    CETarjeta tarjeta = form.tarjeta;
+                    tarjeta = form.tarjeta;
                     //MessageBox.Show(tarjeta.monto);
                     tbMonto.Text = String.Empty;
+                    chkPosExterno.Checked = true;
                     nuevoPagoTarjeta(tarjeta);
+                    btnPosExterno.Enabled = false;
                 }
+
             }
         }
 
@@ -484,6 +493,23 @@ namespace SistemaFigueri
                 else
                     e.Handled = true;
             }
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            if (lista.Count>0){
+                if (MessageBox.Show("¿Desea confirmar la venta?", "Confirmar venta",
+            MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            == DialogResult.Yes)
+                {
+                    this.DialogResult = DialogResult.OK;
+                }
+            }
+            else{
+                MessageBox.Show("No se ha seleccionado la forma de pago aún", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
+
         }
     }
 }
