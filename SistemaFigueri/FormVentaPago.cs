@@ -510,6 +510,7 @@ namespace SistemaFigueri
             == DialogResult.Yes)
                 {
                     this.DialogResult = DialogResult.OK;
+                    
                 }
             }
             else{

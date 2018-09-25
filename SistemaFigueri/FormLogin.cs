@@ -88,13 +88,7 @@ namespace SistemaFigueri
                         //Console.WriteLine(liston[0].ToString()+ " .. "+ liston[1].ToString());
                         Hide();
                         Loguear.Close();
-                        /*Label label = new Label();
-                        label.Font= new Font("Arial", label.Font.Size, FontStyle.Bold);
-                        label.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-                        label.BackColor = Color.FromArgb(39, 57, 80);
-                        label.Location = new Point(22, 13);
-                        label.Text="Nombre del usuario";
-                        objPPrincipal.Controls.Add(label);*/
+
 
                         objPPrincipal.Show();
                     }
@@ -102,10 +96,6 @@ namespace SistemaFigueri
                         MessageBox.Show("Error en el loginForm"+e);
                     }
 
-
-
-
-                    
                 }
                 else
                 {

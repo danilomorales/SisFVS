@@ -141,23 +141,22 @@ namespace CapaDatos
         }
         public int Inserta_FEComprobanteVenta(CE_FE_Comprobante_Venta dObj_Venta)
         {
-
             SqlConnection pCnx = new SqlConnection();
 
             int dRpta = 0;
 
             pCnx = objSql.AbrirConexion();
-            SqlTransaction objTrans = objSql.begintrans(pCnx);
+            //SqlTransaction objTrans = objSql.begintrans(pCnx);
 
-            try
-            {
+            /*try
+            {*/
 
                 SqlCommand Cmd = new SqlCommand("[Caja].[SP_FEComprobanteVentaInsertaVenta_INS]", pCnx);
                 SqlParameter dPar = new SqlParameter();
                 Cmd.Parameters.Clear();
 
                 Cmd.CommandType = CommandType.StoredProcedure;
-                Cmd.Transaction = objTrans;
+                //Cmd.Transaction = objTrans;
 
 
                 dPar = Cmd.Parameters.Add("@vIde_Cliente", SqlDbType.NVarChar);
@@ -321,7 +320,7 @@ namespace CapaDatos
 
                 dRpta = int.Parse(Cmd.Parameters["@valor"].Value.ToString());
                 //dRpta = 1;
-                if (dRpta > 0)
+                /*if (dRpta > 0)
                 {
                     objSql.committrans(objTrans);
                     Cmd.Dispose();
@@ -350,7 +349,7 @@ namespace CapaDatos
             {
 
                 pCnx.Close();
-            }
+            }*/
             return dRpta;
         }
         public int Inserta_FEComprobanteVentaDetalle(CE_FE_Comprobante_Vta_Det dObj_VentaDet)
@@ -361,17 +360,17 @@ namespace CapaDatos
             int dRpta = 0;
 
             pCnx = objSql.AbrirConexion();
-            SqlTransaction objTrans = objSql.begintrans(pCnx);
+            //SqlTransaction objTrans = objSql.begintrans(pCnx);
 
-            try
-            {
+            /*try
+            {*/
 
                 SqlCommand Cmd = new SqlCommand("[Caja].[SP_FEComprobanteVtaDetInsertaVentaDet_INS]", pCnx);
                 SqlParameter dPar = new SqlParameter();
                 Cmd.Parameters.Clear();
 
                 Cmd.CommandType = CommandType.StoredProcedure;
-                Cmd.Transaction = objTrans;
+                //Cmd.Transaction = objTrans;
 
 
                 dPar = Cmd.Parameters.Add("@vIde_Venta", SqlDbType.Int);
@@ -437,7 +436,7 @@ namespace CapaDatos
 
                 dRpta = int.Parse(Cmd.Parameters["@valorDet"].Value.ToString());
 
-                if (dRpta > 0)
+                /*if (dRpta > 0)
                 {
                     objSql.committrans(objTrans);
                     Cmd.Dispose();
@@ -464,7 +463,7 @@ namespace CapaDatos
             {
 
                 pCnx.Close();
-            }
+            }*/
             return dRpta;
         }
         public int Inserta_FEComprobanteVentaPago(CE_FE_Comprobante_VentaPago dObj_VentaPago)
@@ -473,22 +472,22 @@ namespace CapaDatos
             SqlConnection pCnx = new SqlConnection();
             int dRpta = 0;
             pCnx = objSql.AbrirConexion();
-            SqlTransaction objTrans = objSql.begintrans(pCnx);
+            //SqlTransaction objTrans = objSql.begintrans(pCnx);
 
-            try
-            {
+            /*try
+            {*/
 
                 SqlCommand Cmd = new SqlCommand("[Caja].[SP_FEComprobanteVentaPagoInsertaVentaPago_INS]", pCnx);
                 SqlParameter dPar = new SqlParameter();
                 Cmd.Parameters.Clear();
 
                 Cmd.CommandType = CommandType.StoredProcedure;
-                Cmd.Transaction = objTrans;
+                //Cmd.Transaction = objTrans;
 
 
-                /*dPar = Cmd.Parameters.Add("@vIde_Venta", SqlDbType.Int);
+                dPar = Cmd.Parameters.Add("@vIde_Venta", SqlDbType.Int);
                 dPar.Value = dObj_VentaPago.Ide_Venta;
-                dPar.Direction = ParameterDirection.Input;*/
+                dPar.Direction = ParameterDirection.Input;
 
                 dPar = Cmd.Parameters.Add("@vNum_Item_Venta_Pago", SqlDbType.Int);
                 dPar.Value = dObj_VentaPago.Num_Item_Venta_Pago;
@@ -499,23 +498,23 @@ namespace CapaDatos
                 dPar.Direction = ParameterDirection.Input;
 
                 dPar = Cmd.Parameters.Add("@vIde_Tarjeta_Banco", SqlDbType.Int);
-                dPar.Value = dObj_VentaPago.Ide_Tarjeta_Banco;
+                dPar.Value = (object) dObj_VentaPago.Ide_Tarjeta_Banco == null ? DBNull.Value : (object)dObj_VentaPago.Ide_Tarjeta_Banco;
                 dPar.Direction = ParameterDirection.Input;
 
                 dPar = Cmd.Parameters.Add("@vIde_Banco", SqlDbType.Int);
-                dPar.Value = dObj_VentaPago.Ide_Banco;
+                dPar.Value = (object) dObj_VentaPago.Ide_Banco == null ? DBNull.Value : (object)dObj_VentaPago.Ide_Banco;
                 dPar.Direction = ParameterDirection.Input;
 
                 dPar = Cmd.Parameters.Add("@vIde_Banco_Cuenta", SqlDbType.Int);
-                dPar.Value = dObj_VentaPago.Ide_Banco_Cuenta;
+                dPar.Value = (object) dObj_VentaPago.Ide_Banco_Cuenta == null ? DBNull.Value : (object)dObj_VentaPago.Ide_Banco_Cuenta;
                 dPar.Direction = ParameterDirection.Input;
 
                 dPar = Cmd.Parameters.Add("@vFecha_Doc_Pago", SqlDbType.Date);
-                dPar.Value = dObj_VentaPago.Fecha_Doc_Pago;
+                dPar.Value = (object) dObj_VentaPago.Fecha_Doc_Pago == null ? DBNull.Value : (object)dObj_VentaPago.Fecha_Doc_Pago;
                 dPar.Direction = ParameterDirection.Input;
 
                 dPar = Cmd.Parameters.Add("@vNum_Doc_Pago", SqlDbType.NVarChar);
-                dPar.Value = dObj_VentaPago.Num_Doc_Pago;
+                dPar.Value = (object) dObj_VentaPago.Num_Doc_Pago == null ? DBNull.Value : (object)dObj_VentaPago.Num_Doc_Pago;
                 dPar.Direction = ParameterDirection.Input;
 
                 dPar = Cmd.Parameters.Add("@vIde_Moneda", SqlDbType.Int);
@@ -537,7 +536,7 @@ namespace CapaDatos
 
                 dRpta = int.Parse(Cmd.Parameters["@valor"].Value.ToString());
 
-                if (dRpta > 0)
+                /*if (dRpta > 0)
                 {
                     objSql.committrans(objTrans);
                     Cmd.Dispose();
@@ -564,7 +563,70 @@ namespace CapaDatos
             {
 
                 pCnx.Close();
+            }*/
+            return dRpta;
+        }
+
+        public int Inserta_FEComprobanteVentaEstado(CE_FE_Comprobante_VentaEstado dObj_VentaEstado)
+        {
+
+            SqlConnection pCnx = new SqlConnection();
+            int dRpta = 0;
+            pCnx = objSql.AbrirConexion();
+            //SqlTransaction objTrans = objSql.begintrans(pCnx);
+
+            /*try
+            {*/
+
+                SqlCommand Cmd = new SqlCommand("[Caja].[SP_FEComprobanteVentaEstado_INS]", pCnx);
+                SqlParameter dPar = new SqlParameter();
+                Cmd.Parameters.Clear();
+
+                Cmd.CommandType = CommandType.StoredProcedure;
+                //Cmd.Transaction = objTrans;
+
+
+                dPar = Cmd.Parameters.Add("@vIde_Venta", SqlDbType.Int);
+                dPar.Value = dObj_VentaEstado.Ide_Venta;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vNum_item_comp_vta_estado", SqlDbType.Int);
+                dPar.Value = dObj_VentaEstado.Num_Item_Comp_Venta_Estado;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vIde_estado_venta", SqlDbType.Int);
+                dPar.Value = dObj_VentaEstado.Ide_estado_venta;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vObs_comp_vta_estado", SqlDbType.NVarChar);
+                dPar.Value = dObj_VentaEstado.Obs_comp_vta_estado;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vIde_Usuario", SqlDbType.Int);
+                dPar.Value = dObj_VentaEstado.Ide_Usuario;
+                dPar.Direction = ParameterDirection.Input;
+
+                Cmd.ExecuteNonQuery();
+
+                dRpta = 1;
+
+            /*}
+            catch (SqlException ExSql)
+            {
+                strError = ExSql.Message;
+                objSql.rollbacktrans(objTrans);
             }
+
+            catch (Exception Ex)
+            {
+                strError = Ex.Message;
+                objSql.rollbacktrans(objTrans);
+            }
+            finally
+            {
+
+                pCnx.Close();
+            }*/
             return dRpta;
         }
 
