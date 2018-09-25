@@ -49,7 +49,7 @@ namespace SistemaFigueri
             string fecha1 = dpdesde.Value.ToString("yyyy-MM-dd");
             string fecha2 = dphasta.Value.ToString("yyyy-MM-dd");
             SqlDataAdapter adapter = obj.buscarPedidos(fecha1, fecha2);
-            MessageBox.Show("fecha1: " + fecha1 + "fecha2: " + fecha2);
+            //MessageBox.Show("fecha1: " + fecha1 + "fecha2: " + fecha2);
             tabla = new DataTable();
             adapter.Fill(tabla);
             dgvPedidos.DataSource = tabla;
@@ -87,7 +87,7 @@ namespace SistemaFigueri
             adapter.Fill(tablaDetallePedido);
             this.DialogResult = DialogResult.OK;
             this.Close();
-            MessageBox.Show("iddp: "+IdPedidoProducto+"id: "+idcliente+" empresa: "+empresa);
+            //MessageBox.Show("iddp: "+IdPedidoProducto+"id: "+idcliente+" empresa: "+empresa);
                 
         }
 
