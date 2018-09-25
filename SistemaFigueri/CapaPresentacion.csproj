@@ -842,5 +842,8 @@
   <ItemGroup>
     <None Include="Resources\recycler.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="SistemaFigueri\Resources\aa0000.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

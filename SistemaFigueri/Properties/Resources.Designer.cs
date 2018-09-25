@@ -113,6 +113,16 @@ namespace SistemaFigueri.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap aa00001 {
+            get {
+                object obj = ResourceManager.GetObject("aa00001", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap acceder {
             get {
                 object obj = ResourceManager.GetObject("acceder", resourceCulture);
@@ -763,26 +773,6 @@ namespace SistemaFigueri.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap k1 {
-            get {
-                object obj = ResourceManager.GetObject("k1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap KEY {
-            get {
-                object obj = ResourceManager.GetObject("KEY", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap left {
             get {
                 object obj = ResourceManager.GetObject("left", resourceCulture);
@@ -1406,16 +1396,6 @@ namespace SistemaFigueri.Properties {
         internal static System.Drawing.Bitmap sol {
             get {
                 object obj = ResourceManager.GetObject("sol", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap sol1 {
-            get {
-                object obj = ResourceManager.GetObject("sol1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

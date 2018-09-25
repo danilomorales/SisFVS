@@ -35,7 +35,12 @@ namespace SistemaFigueri
         // metodo crea tabla
         private void CrearTabla()
         {
-            dgvcaja.Columns.Add("ColOperacion", "OPERACIÓN");
+            //dgvcaja.Columns.Add("ColOperacion", "OPERACIÓN");
+            DataGridViewImageColumn dgvImagenColumn = new DataGridViewImageColumn();
+            dgvImagenColumn.HeaderText = "Estado";
+            dgvImagenColumn.Name = "ColumnEstado";
+            dgvcaja.Columns.Add(dgvImagenColumn);
+            dgvImagenColumn.ImageLayout = DataGridViewImageCellLayout.Zoom;
             dgvcaja.Columns.Add("ColCaja","CAJA");
             dgvcaja.Columns.Add("ColMontoInicial","MONTO INICIAL");
             dgvcaja.Columns.Add("ColMontofinal","MONTO FINAL");
@@ -60,7 +65,7 @@ namespace SistemaFigueri
             dgvc.HeaderText = "CERRAR";
             dgvc.Name = "CERRAR";
             dgvc.ImageLayout = DataGridViewImageCellLayout.Zoom;
-            dgvc.Width = 60;
+            dgvc.Width = 40;
             //dgvimg.HeaderText = "CAJERO PERFIL";
             //dgvimg.ImageLayout = DataGridViewImageCellLayout.Zoom;
             //dgvcaja.Columns.Add(dgvimg);
@@ -91,8 +96,17 @@ namespace SistemaFigueri
                 dgvcaja.Rows.Clear();
                 List<CECaja> Lista = CNCaja.Instancia.ListaCaja();
                 int num = 0;
+                Image img = null;
                 for (int i = 0; i < Lista.Count(); i++)
-                {
+                { 
+                    if(Lista[i].TipoOper == "1")
+                    {
+                        img = Properties.Resources.add;
+                    }
+                    else if (Lista[i].TipoOper == "0")
+                    {
+                        img = Properties.Resources.sector;
+                    }
                     num++;
                     String[] fila = new String[] {
                         Lista[i].TipoOper.ToString(),
@@ -103,6 +117,7 @@ namespace SistemaFigueri
                         Lista[i].FechaOperacion.ToString(),
                         Lista[i].Voucher.ToString()};
                         dgvcaja.Rows.Add(fila);
+                    dgvcaja.Rows[i].Cells[0].Value = img;
                 }
             }
             catch(Exception ex)
