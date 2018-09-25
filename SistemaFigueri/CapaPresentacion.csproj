@@ -845,5 +845,14 @@
   <ItemGroup>
     <None Include="SistemaFigueri\Resources\aa0000.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cajaclose.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cajaopen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cerradooo.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

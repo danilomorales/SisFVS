@@ -31,11 +31,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.Caja = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
+            this.bunifuFlatButton3 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuCards5 = new Bunifu.Framework.UI.BunifuCards();
             this.dgvcaja = new System.Windows.Forms.DataGridView();
             this.bunifuCards3 = new Bunifu.Framework.UI.BunifuCards();
@@ -43,42 +43,43 @@
             this.Inicio = new System.Windows.Forms.TabPage();
             this.Apertura = new System.Windows.Forms.TabPage();
             this.panelAperturaCaja = new System.Windows.Forms.Panel();
-            this.bunifuImageButton3 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bunifuImageButton4 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuFlatButton4 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton5 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tbNumDocApertura = new System.Windows.Forms.TextBox();
+            this.tbMontoApertura = new System.Windows.Forms.TextBox();
             this.Cierre = new System.Windows.Forms.TabPage();
             this.panelCierreCaja = new System.Windows.Forms.Panel();
             this.materialRadioButton2 = new MaterialSkin.Controls.MaterialRadioButton();
             this.materialRadioButton1 = new MaterialSkin.Controls.MaterialRadioButton();
-            this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbAcuentaEmpresa = new System.Windows.Forms.TextBox();
             this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton15 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.tbVoucher = new System.Windows.Forms.TextBox();
-            this.tbMonto = new System.Windows.Forms.TextBox();
+            this.tbMontoCierre = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.bunifuCards4 = new Bunifu.Framework.UI.BunifuCards();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
+            this.tbCandelaCaja = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnGuardaCaja = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnCerrar = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnGuardaCierre = new Bunifu.Framework.UI.BunifuImageButton();
             this.Caja.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.bunifuCards1.SuspendLayout();
             this.bunifuCards5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvcaja)).BeginInit();
             this.bunifuCards3.SuspendLayout();
             this.tcAperturaCierre.SuspendLayout();
             this.Apertura.SuspendLayout();
             this.panelAperturaCaja.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton4)).BeginInit();
             this.Cierre.SuspendLayout();
             this.panelCierreCaja.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbCandelaCaja)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnGuardaCaja)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnGuardaCierre)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -111,6 +112,7 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(218)))), ((int)(((byte)(183)))));
+            this.tabPage1.Controls.Add(this.bunifuCards1);
             this.tabPage1.Controls.Add(this.bunifuCards5);
             this.tabPage1.Controls.Add(this.bunifuCards3);
             this.tabPage1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(190)))), ((int)(((byte)(154)))));
@@ -121,6 +123,62 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "CAJA";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // bunifuCards1
+            // 
+            this.bunifuCards1.AutoSize = true;
+            this.bunifuCards1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(218)))), ((int)(((byte)(183)))));
+            this.bunifuCards1.BorderRadius = 5;
+            this.bunifuCards1.BottomSahddow = false;
+            this.bunifuCards1.color = System.Drawing.Color.Transparent;
+            this.bunifuCards1.Controls.Add(this.bunifuFlatButton3);
+            this.bunifuCards1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bunifuCards1.LeftSahddow = false;
+            this.bunifuCards1.Location = new System.Drawing.Point(3, 3);
+            this.bunifuCards1.Name = "bunifuCards1";
+            this.bunifuCards1.RightSahddow = false;
+            this.bunifuCards1.ShadowDepth = 20;
+            this.bunifuCards1.Size = new System.Drawing.Size(1036, 46);
+            this.bunifuCards1.TabIndex = 237;
+            // 
+            // bunifuFlatButton3
+            // 
+            this.bunifuFlatButton3.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.bunifuFlatButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuFlatButton3.BackColor = System.Drawing.Color.Peru;
+            this.bunifuFlatButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuFlatButton3.BorderRadius = 0;
+            this.bunifuFlatButton3.ButtonText = "CENTRALIZACIÓN DE CAJA";
+            this.bunifuFlatButton3.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.bunifuFlatButton3.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuFlatButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton3.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuFlatButton3.Iconimage = null;
+            this.bunifuFlatButton3.Iconimage_right = null;
+            this.bunifuFlatButton3.Iconimage_right_Selected = null;
+            this.bunifuFlatButton3.Iconimage_Selected = null;
+            this.bunifuFlatButton3.IconMarginLeft = 0;
+            this.bunifuFlatButton3.IconMarginRight = 0;
+            this.bunifuFlatButton3.IconRightVisible = false;
+            this.bunifuFlatButton3.IconRightZoom = 0D;
+            this.bunifuFlatButton3.IconVisible = false;
+            this.bunifuFlatButton3.IconZoom = 40D;
+            this.bunifuFlatButton3.IsTab = false;
+            this.bunifuFlatButton3.Location = new System.Drawing.Point(368, 6);
+            this.bunifuFlatButton3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.bunifuFlatButton3.Name = "bunifuFlatButton3";
+            this.bunifuFlatButton3.Normalcolor = System.Drawing.Color.Peru;
+            this.bunifuFlatButton3.OnHovercolor = System.Drawing.Color.SeaGreen;
+            this.bunifuFlatButton3.OnHoverTextColor = System.Drawing.Color.White;
+            this.bunifuFlatButton3.selected = false;
+            this.bunifuFlatButton3.Size = new System.Drawing.Size(327, 37);
+            this.bunifuFlatButton3.TabIndex = 179;
+            this.bunifuFlatButton3.Text = "CENTRALIZACIÓN DE CAJA";
+            this.bunifuFlatButton3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuFlatButton3.Textcolor = System.Drawing.Color.Black;
+            this.bunifuFlatButton3.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // bunifuCards5
             // 
@@ -134,68 +192,61 @@
             this.bunifuCards5.color = System.Drawing.Color.Transparent;
             this.bunifuCards5.Controls.Add(this.dgvcaja);
             this.bunifuCards5.LeftSahddow = false;
-            this.bunifuCards5.Location = new System.Drawing.Point(29, 138);
+            this.bunifuCards5.Location = new System.Drawing.Point(32, 151);
             this.bunifuCards5.Name = "bunifuCards5";
             this.bunifuCards5.RightSahddow = false;
             this.bunifuCards5.ShadowDepth = 20;
-            this.bunifuCards5.Size = new System.Drawing.Size(971, 324);
+            this.bunifuCards5.Size = new System.Drawing.Size(971, 358);
             this.bunifuCards5.TabIndex = 236;
             // 
             // dgvcaja
             // 
             this.dgvcaja.AllowUserToAddRows = false;
             this.dgvcaja.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvcaja.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvcaja.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvcaja.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvcaja.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(190)))), ((int)(((byte)(154)))));
             this.dgvcaja.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvcaja.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvcaja.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Peru;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvcaja.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvcaja.ColumnHeadersHeight = 55;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Peru;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvcaja.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvcaja.ColumnHeadersHeight = 30;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(147)))), ((int)(((byte)(103)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(190)))), ((int)(((byte)(154)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvcaja.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(190)))), ((int)(((byte)(154)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Menu;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvcaja.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvcaja.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvcaja.EnableHeadersVisualStyles = false;
-            this.dgvcaja.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(147)))), ((int)(((byte)(103)))));
+            this.dgvcaja.GridColor = System.Drawing.Color.SeaShell;
             this.dgvcaja.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.dgvcaja.Location = new System.Drawing.Point(7, 3);
+            this.dgvcaja.Location = new System.Drawing.Point(0, 0);
             this.dgvcaja.Name = "dgvcaja";
             this.dgvcaja.ReadOnly = true;
             this.dgvcaja.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Peru;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.PaleVioletRed;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ScrollBar;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvcaja.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvcaja.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Peru;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.PaleVioletRed;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Tomato;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvcaja.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvcaja.RowHeadersWidth = 50;
             this.dgvcaja.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvcaja.Size = new System.Drawing.Size(960, 318);
-            this.dgvcaja.TabIndex = 11;
+            this.dgvcaja.Size = new System.Drawing.Size(971, 358);
+            this.dgvcaja.TabIndex = 66;
             this.dgvcaja.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvcaja_CellClick);
-            this.dgvcaja.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvcaja_CellContentClick_1);
-            this.dgvcaja.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvcaja_CellPainting);
+            this.dgvcaja.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvcaja_CellContentClick);
+            this.dgvcaja.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvcaja_CellMouseDown);
             // 
             // bunifuCards3
             // 
@@ -207,7 +258,7 @@
             this.bunifuCards3.color = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(218)))), ((int)(((byte)(183)))));
             this.bunifuCards3.Controls.Add(this.tcAperturaCierre);
             this.bunifuCards3.LeftSahddow = false;
-            this.bunifuCards3.Location = new System.Drawing.Point(29, 31);
+            this.bunifuCards3.Location = new System.Drawing.Point(32, 44);
             this.bunifuCards3.Name = "bunifuCards3";
             this.bunifuCards3.RightSahddow = false;
             this.bunifuCards3.ShadowDepth = 20;
@@ -252,43 +303,17 @@
             // panelAperturaCaja
             // 
             this.panelAperturaCaja.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(190)))), ((int)(((byte)(154)))));
-            this.panelAperturaCaja.Controls.Add(this.bunifuImageButton3);
-            this.panelAperturaCaja.Controls.Add(this.bunifuImageButton4);
+            this.panelAperturaCaja.Controls.Add(this.tbCandelaCaja);
+            this.panelAperturaCaja.Controls.Add(this.btnGuardaCaja);
             this.panelAperturaCaja.Controls.Add(this.bunifuFlatButton4);
             this.panelAperturaCaja.Controls.Add(this.bunifuFlatButton5);
-            this.panelAperturaCaja.Controls.Add(this.textBox3);
-            this.panelAperturaCaja.Controls.Add(this.textBox4);
+            this.panelAperturaCaja.Controls.Add(this.tbNumDocApertura);
+            this.panelAperturaCaja.Controls.Add(this.tbMontoApertura);
             this.panelAperturaCaja.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelAperturaCaja.Location = new System.Drawing.Point(3, 3);
             this.panelAperturaCaja.Name = "panelAperturaCaja";
             this.panelAperturaCaja.Size = new System.Drawing.Size(957, 72);
             this.panelAperturaCaja.TabIndex = 189;
-            // 
-            // bunifuImageButton3
-            // 
-            this.bunifuImageButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(147)))), ((int)(((byte)(103)))));
-            this.bunifuImageButton3.Image = global::SistemaFigueri.Properties.Resources.cancel;
-            this.bunifuImageButton3.ImageActive = null;
-            this.bunifuImageButton3.Location = new System.Drawing.Point(901, 12);
-            this.bunifuImageButton3.Name = "bunifuImageButton3";
-            this.bunifuImageButton3.Size = new System.Drawing.Size(36, 39);
-            this.bunifuImageButton3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton3.TabIndex = 183;
-            this.bunifuImageButton3.TabStop = false;
-            this.bunifuImageButton3.Zoom = 10;
-            // 
-            // bunifuImageButton4
-            // 
-            this.bunifuImageButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(147)))), ((int)(((byte)(103)))));
-            this.bunifuImageButton4.Image = global::SistemaFigueri.Properties.Resources.GUARDA;
-            this.bunifuImageButton4.ImageActive = null;
-            this.bunifuImageButton4.Location = new System.Drawing.Point(850, 12);
-            this.bunifuImageButton4.Name = "bunifuImageButton4";
-            this.bunifuImageButton4.Size = new System.Drawing.Size(36, 39);
-            this.bunifuImageButton4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton4.TabIndex = 182;
-            this.bunifuImageButton4.TabStop = false;
-            this.bunifuImageButton4.Zoom = 10;
             // 
             // bunifuFlatButton4
             // 
@@ -362,27 +387,27 @@
             this.bunifuFlatButton5.Textcolor = System.Drawing.Color.Black;
             this.bunifuFlatButton5.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
-            // textBox3
+            // tbNumDocApertura
             // 
-            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(147)))), ((int)(((byte)(103)))));
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(442, 10);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(154, 39);
-            this.textBox3.TabIndex = 177;
+            this.tbNumDocApertura.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(147)))), ((int)(((byte)(103)))));
+            this.tbNumDocApertura.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbNumDocApertura.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbNumDocApertura.Location = new System.Drawing.Point(442, 10);
+            this.tbNumDocApertura.Multiline = true;
+            this.tbNumDocApertura.Name = "tbNumDocApertura";
+            this.tbNumDocApertura.Size = new System.Drawing.Size(154, 39);
+            this.tbNumDocApertura.TabIndex = 177;
             // 
-            // textBox4
+            // tbMontoApertura
             // 
-            this.textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(147)))), ((int)(((byte)(103)))));
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(114, 11);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(95, 39);
-            this.textBox4.TabIndex = 176;
+            this.tbMontoApertura.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(147)))), ((int)(((byte)(103)))));
+            this.tbMontoApertura.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbMontoApertura.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbMontoApertura.Location = new System.Drawing.Point(114, 11);
+            this.tbMontoApertura.Multiline = true;
+            this.tbMontoApertura.Name = "tbMontoApertura";
+            this.tbMontoApertura.Size = new System.Drawing.Size(95, 39);
+            this.tbMontoApertura.TabIndex = 176;
             // 
             // Cierre
             // 
@@ -400,14 +425,14 @@
             this.panelCierreCaja.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(190)))), ((int)(((byte)(154)))));
             this.panelCierreCaja.Controls.Add(this.materialRadioButton2);
             this.panelCierreCaja.Controls.Add(this.materialRadioButton1);
-            this.panelCierreCaja.Controls.Add(this.bunifuImageButton2);
-            this.panelCierreCaja.Controls.Add(this.bunifuImageButton1);
+            this.panelCierreCaja.Controls.Add(this.btnCerrar);
+            this.panelCierreCaja.Controls.Add(this.btnGuardaCierre);
             this.panelCierreCaja.Controls.Add(this.bunifuFlatButton1);
-            this.panelCierreCaja.Controls.Add(this.textBox2);
+            this.panelCierreCaja.Controls.Add(this.tbAcuentaEmpresa);
             this.panelCierreCaja.Controls.Add(this.bunifuFlatButton2);
             this.panelCierreCaja.Controls.Add(this.bunifuFlatButton15);
             this.panelCierreCaja.Controls.Add(this.tbVoucher);
-            this.panelCierreCaja.Controls.Add(this.tbMonto);
+            this.panelCierreCaja.Controls.Add(this.tbMontoCierre);
             this.panelCierreCaja.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelCierreCaja.Location = new System.Drawing.Point(3, 3);
             this.panelCierreCaja.Name = "panelCierreCaja";
@@ -419,7 +444,7 @@
             this.materialRadioButton2.Appearance = System.Windows.Forms.Appearance.Button;
             this.materialRadioButton2.AutoSize = true;
             this.materialRadioButton2.Depth = 0;
-            this.materialRadioButton2.Font = new System.Drawing.Font("Roboto", 10F);
+            this.materialRadioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.materialRadioButton2.Location = new System.Drawing.Point(225, 14);
             this.materialRadioButton2.Margin = new System.Windows.Forms.Padding(0);
             this.materialRadioButton2.MouseLocation = new System.Drawing.Point(-1, -1);
@@ -437,7 +462,7 @@
             this.materialRadioButton1.AutoCheck = false;
             this.materialRadioButton1.AutoSize = true;
             this.materialRadioButton1.Depth = 0;
-            this.materialRadioButton1.Font = new System.Drawing.Font("Roboto", 10F);
+            this.materialRadioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.materialRadioButton1.Location = new System.Drawing.Point(313, 13);
             this.materialRadioButton1.Margin = new System.Windows.Forms.Padding(0);
             this.materialRadioButton1.MouseLocation = new System.Drawing.Point(-1, -1);
@@ -449,32 +474,6 @@
             this.materialRadioButton1.TabStop = true;
             this.materialRadioButton1.Text = "A Empresa";
             this.materialRadioButton1.UseVisualStyleBackColor = true;
-            // 
-            // bunifuImageButton2
-            // 
-            this.bunifuImageButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(147)))), ((int)(((byte)(103)))));
-            this.bunifuImageButton2.Image = global::SistemaFigueri.Properties.Resources.cancel;
-            this.bunifuImageButton2.ImageActive = null;
-            this.bunifuImageButton2.Location = new System.Drawing.Point(913, 13);
-            this.bunifuImageButton2.Name = "bunifuImageButton2";
-            this.bunifuImageButton2.Size = new System.Drawing.Size(36, 39);
-            this.bunifuImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton2.TabIndex = 183;
-            this.bunifuImageButton2.TabStop = false;
-            this.bunifuImageButton2.Zoom = 10;
-            // 
-            // bunifuImageButton1
-            // 
-            this.bunifuImageButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(147)))), ((int)(((byte)(103)))));
-            this.bunifuImageButton1.Image = global::SistemaFigueri.Properties.Resources.GUARDA;
-            this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.Location = new System.Drawing.Point(867, 12);
-            this.bunifuImageButton1.Name = "bunifuImageButton1";
-            this.bunifuImageButton1.Size = new System.Drawing.Size(36, 39);
-            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton1.TabIndex = 182;
-            this.bunifuImageButton1.TabStop = false;
-            this.bunifuImageButton1.Zoom = 10;
             // 
             // bunifuFlatButton1
             // 
@@ -511,16 +510,16 @@
             this.bunifuFlatButton1.Textcolor = System.Drawing.Color.Black;
             this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
-            // textBox2
+            // tbAcuentaEmpresa
             // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(147)))), ((int)(((byte)(103)))));
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(442, 10);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(96, 39);
-            this.textBox2.TabIndex = 180;
+            this.tbAcuentaEmpresa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(147)))), ((int)(((byte)(103)))));
+            this.tbAcuentaEmpresa.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbAcuentaEmpresa.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAcuentaEmpresa.Location = new System.Drawing.Point(442, 10);
+            this.tbAcuentaEmpresa.Multiline = true;
+            this.tbAcuentaEmpresa.Name = "tbAcuentaEmpresa";
+            this.tbAcuentaEmpresa.Size = new System.Drawing.Size(96, 39);
+            this.tbAcuentaEmpresa.TabIndex = 180;
             // 
             // bunifuFlatButton2
             // 
@@ -605,16 +604,16 @@
             this.tbVoucher.Size = new System.Drawing.Size(154, 39);
             this.tbVoucher.TabIndex = 177;
             // 
-            // tbMonto
+            // tbMontoCierre
             // 
-            this.tbMonto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(147)))), ((int)(((byte)(103)))));
-            this.tbMonto.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbMonto.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbMonto.Location = new System.Drawing.Point(114, 11);
-            this.tbMonto.Multiline = true;
-            this.tbMonto.Name = "tbMonto";
-            this.tbMonto.Size = new System.Drawing.Size(95, 39);
-            this.tbMonto.TabIndex = 176;
+            this.tbMontoCierre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(147)))), ((int)(((byte)(103)))));
+            this.tbMontoCierre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbMontoCierre.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbMontoCierre.Location = new System.Drawing.Point(114, 11);
+            this.tbMontoCierre.Multiline = true;
+            this.tbMontoCierre.Name = "tbMontoCierre";
+            this.tbMontoCierre.Size = new System.Drawing.Size(95, 39);
+            this.tbMontoCierre.TabIndex = 176;
             // 
             // tabPage2
             // 
@@ -661,6 +660,60 @@
             this.materialTabSelector1.Text = "materialTabSelector1";
             this.materialTabSelector1.Click += new System.EventHandler(this.materialTabSelector1_Click);
             // 
+            // tbCandelaCaja
+            // 
+            this.tbCandelaCaja.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(147)))), ((int)(((byte)(103)))));
+            this.tbCandelaCaja.Image = global::SistemaFigueri.Properties.Resources.cancel;
+            this.tbCandelaCaja.ImageActive = null;
+            this.tbCandelaCaja.Location = new System.Drawing.Point(901, 12);
+            this.tbCandelaCaja.Name = "tbCandelaCaja";
+            this.tbCandelaCaja.Size = new System.Drawing.Size(36, 39);
+            this.tbCandelaCaja.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.tbCandelaCaja.TabIndex = 183;
+            this.tbCandelaCaja.TabStop = false;
+            this.tbCandelaCaja.Zoom = 10;
+            this.tbCandelaCaja.Click += new System.EventHandler(this.tbCandelaCaja_Click);
+            // 
+            // btnGuardaCaja
+            // 
+            this.btnGuardaCaja.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(147)))), ((int)(((byte)(103)))));
+            this.btnGuardaCaja.Image = global::SistemaFigueri.Properties.Resources.GUARDA;
+            this.btnGuardaCaja.ImageActive = null;
+            this.btnGuardaCaja.Location = new System.Drawing.Point(850, 12);
+            this.btnGuardaCaja.Name = "btnGuardaCaja";
+            this.btnGuardaCaja.Size = new System.Drawing.Size(36, 39);
+            this.btnGuardaCaja.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnGuardaCaja.TabIndex = 182;
+            this.btnGuardaCaja.TabStop = false;
+            this.btnGuardaCaja.Zoom = 10;
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(147)))), ((int)(((byte)(103)))));
+            this.btnCerrar.Image = global::SistemaFigueri.Properties.Resources.cancel;
+            this.btnCerrar.ImageActive = null;
+            this.btnCerrar.Location = new System.Drawing.Point(913, 13);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(36, 39);
+            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnCerrar.TabIndex = 183;
+            this.btnCerrar.TabStop = false;
+            this.btnCerrar.Zoom = 10;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
+            // btnGuardaCierre
+            // 
+            this.btnGuardaCierre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(147)))), ((int)(((byte)(103)))));
+            this.btnGuardaCierre.Image = global::SistemaFigueri.Properties.Resources.GUARDA;
+            this.btnGuardaCierre.ImageActive = null;
+            this.btnGuardaCierre.Location = new System.Drawing.Point(867, 12);
+            this.btnGuardaCierre.Name = "btnGuardaCierre";
+            this.btnGuardaCierre.Size = new System.Drawing.Size(36, 39);
+            this.btnGuardaCierre.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnGuardaCierre.TabIndex = 182;
+            this.btnGuardaCierre.TabStop = false;
+            this.btnGuardaCierre.Zoom = 10;
+            // 
             // FormCaja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -677,6 +730,7 @@
             this.Caja.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.bunifuCards1.ResumeLayout(false);
             this.bunifuCards5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvcaja)).EndInit();
             this.bunifuCards3.ResumeLayout(false);
@@ -684,14 +738,14 @@
             this.Apertura.ResumeLayout(false);
             this.panelAperturaCaja.ResumeLayout(false);
             this.panelAperturaCaja.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton4)).EndInit();
             this.Cierre.ResumeLayout(false);
             this.panelCierreCaja.ResumeLayout(false);
             this.panelCierreCaja.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tbCandelaCaja)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnGuardaCaja)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnGuardaCierre)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -706,29 +760,31 @@
         private Bunifu.Framework.UI.BunifuCards bunifuCards4;
         private MaterialSkin.Controls.MaterialTabSelector materialTabSelector1;
         private Bunifu.Framework.UI.BunifuCards bunifuCards5;
-        private System.Windows.Forms.DataGridView dgvcaja;
         private Bunifu.Framework.UI.BunifuCards bunifuCards3;
         private MaterialSkin.Controls.MaterialTabControl tcAperturaCierre;
         private System.Windows.Forms.TabPage Inicio;
         private System.Windows.Forms.TabPage Apertura;
         private System.Windows.Forms.Panel panelAperturaCaja;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton3;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton4;
+        private Bunifu.Framework.UI.BunifuImageButton tbCandelaCaja;
+        private Bunifu.Framework.UI.BunifuImageButton btnGuardaCaja;
         public Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton4;
         public Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton5;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox tbNumDocApertura;
+        private System.Windows.Forms.TextBox tbMontoApertura;
         private System.Windows.Forms.TabPage Cierre;
         private System.Windows.Forms.Panel panelCierreCaja;
         private MaterialSkin.Controls.MaterialRadioButton materialRadioButton2;
         private MaterialSkin.Controls.MaterialRadioButton materialRadioButton1;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton2;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
+        private Bunifu.Framework.UI.BunifuImageButton btnCerrar;
+        private Bunifu.Framework.UI.BunifuImageButton btnGuardaCierre;
         public Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tbAcuentaEmpresa;
         public Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton2;
         public Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton15;
         private System.Windows.Forms.TextBox tbVoucher;
-        private System.Windows.Forms.TextBox tbMonto;
+        private System.Windows.Forms.TextBox tbMontoCierre;
+        private System.Windows.Forms.DataGridView dgvcaja;
+        private Bunifu.Framework.UI.BunifuCards bunifuCards1;
+        public Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton3;
     }
 }

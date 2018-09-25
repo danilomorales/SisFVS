@@ -333,6 +333,26 @@ namespace SistemaFigueri.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cajaclose {
+            get {
+                object obj = ResourceManager.GetObject("cajaclose", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cajaopen {
+            get {
+                object obj = ResourceManager.GetObject("cajaopen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cancel {
             get {
                 object obj = ResourceManager.GetObject("cancel", resourceCulture);
@@ -356,6 +376,16 @@ namespace SistemaFigueri.Properties {
         internal static System.Drawing.Bitmap cerrado {
             get {
                 object obj = ResourceManager.GetObject("cerrado", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cerradooo {
+            get {
+                object obj = ResourceManager.GetObject("cerradooo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

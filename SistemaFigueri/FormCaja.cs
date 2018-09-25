@@ -19,7 +19,7 @@ namespace SistemaFigueri
         //definiciones
         public List<DataRow> list { get; set; }
         CNCaja cncaja = new CNCaja();
-
+        public int IdUsuario;
 
 
         public FormCaja()
@@ -47,7 +47,9 @@ namespace SistemaFigueri
             dgvcaja.Columns.Add("ColCajero","CAJERO");
             dgvcaja.Columns.Add("colFecha","F. CIERRE");
             dgvcaja.Columns.Add("colvoucher", "voucher");
-            dgvcaja.Columns[6].Visible = false;
+            //dgvcaja.Columns[6].Visible = false;
+            dgvcaja.Columns[0].Width = 40;
+            dgvcaja.RowTemplate.Height = 44;
             dgvcaja.Columns[6].DefaultCellStyle.Format = "dd/MM/yyyy";
             DataGridViewImageColumn dgvimg = new DataGridViewImageColumn();
             Image abre = Properties.Resources.llave;
@@ -56,7 +58,8 @@ namespace SistemaFigueri
             dgvimg.HeaderText = "APERTURAR";
             dgvimg.Name = "APERTURA";
             dgvimg.ImageLayout = DataGridViewImageCellLayout.Zoom;
-            dgvimg.Width = 70;
+            dgvimg.Width = 50;
+            
 
             DataGridViewImageColumn dgvc = new DataGridViewImageColumn();
             Image cierra = Properties.Resources.cerrado;
@@ -101,11 +104,11 @@ namespace SistemaFigueri
                 { 
                     if(Lista[i].TipoOper == "1")
                     {
-                        img = Properties.Resources.add;
+                        img = Properties.Resources.cajaopen;
                     }
                     else if (Lista[i].TipoOper == "0")
                     {
-                        img = Properties.Resources.sector;
+                        img = Properties.Resources.cajaclose;
                     }
                     num++;
                     String[] fila = new String[] {
@@ -202,6 +205,28 @@ namespace SistemaFigueri
         private void materialTabSelector2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void tbCandelaCaja_Click(object sender, EventArgs e)
+        {
+            DialogResult r = MessageBox.Show("Seguro que desea Candelar la operación", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (r == DialogResult.Yes)
+                {
+                    tcAperturaCierre.SelectedTab = Inicio;
+                }
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            DialogResult r = MessageBox.Show("Seguro que desea Candelar la operación", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (r == DialogResult.Yes)
+            {
+                tcAperturaCierre.SelectedTab = Inicio;
+            }
+        }
+
+        private void dgvcaja_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
         }
     }
 }
