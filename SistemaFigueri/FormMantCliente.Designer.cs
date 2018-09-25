@@ -1480,7 +1480,7 @@
             this.btnguardarCliente.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnguardarCliente.ActiveForecolor = System.Drawing.Color.White;
             this.btnguardarCliente.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.btnguardarCliente.BackColor = System.Drawing.Color.White;
+            this.btnguardarCliente.BackColor = System.Drawing.Color.DarkGray;
             this.btnguardarCliente.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnguardarCliente.BackgroundImage")));
             this.btnguardarCliente.ButtonText = "GUARDAR";
             this.btnguardarCliente.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -1505,7 +1505,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(1014, 760);
             this.Controls.Add(this.btnguardarCliente);
             this.Controls.Add(this.bunifuCards3);

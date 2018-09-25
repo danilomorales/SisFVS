@@ -108,8 +108,7 @@ namespace SistemaFigueri
 
         private void FormLogin_MouseDown(object sender, MouseEventArgs e)
         {
-            ReleaseCapture();
-            SendMessage(Handle, 0x112, 0xf012, 0);
+         
         }
 
         private void tbContrasenna_Enter(object sender, EventArgs e)
@@ -148,6 +147,12 @@ namespace SistemaFigueri
             {
                 validar();
             }
+        }
+
+        private void barraCanecera_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(Handle, 0x112, 0xf012, 0);
         }
     }
 

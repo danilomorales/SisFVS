@@ -55,11 +55,12 @@ namespace SistemaFigueri
             dgvPedidos.DataSource = tabla;
  
             adapter.Dispose();
-
+            
             //plist = new PagedList<DataRow>(list);
 
             dgvPedidos.DataSource = tabla;
             dgvPedidos.Columns[0].Visible = false;
+           
 
         }
 
@@ -76,7 +77,7 @@ namespace SistemaFigueri
             empresa = dgvPedidos.Rows[e.RowIndex].Cells["NombreEmpresa"].Value.ToString();
             clienteNombres = dgvPedidos.Rows[e.RowIndex].Cells["clienteNombres"].Value.ToString();
             clienteApellidos = dgvPedidos.Rows[e.RowIndex].Cells["clienteApellidos"].Value.ToString();
-            tipodoc =  dgvPedidos.Rows[e.RowIndex].Cells["Descripcion"].Value.ToString();
+            tipodoc = dgvPedidos.Rows[e.RowIndex].Cells["Descripcion"].Value.ToString();
             ndoc = dgvPedidos.Rows[e.RowIndex].Cells["NroDocumento"].Value.ToString();
             ruc = dgvPedidos.Rows[e.RowIndex].Cells["RUC"].Value.ToString();
             fechaPedido = dgvPedidos.Rows[e.RowIndex].Cells["FechaPedido"].Value.ToString();
@@ -105,6 +106,7 @@ namespace SistemaFigueri
             tabla = new DataTable();
             adapter.Fill(tabla);
             dgvPedidos.DataSource = tabla;
+            dgvPedidos.Columns[1].Visible = false;
 
             adapter.Dispose();
 
