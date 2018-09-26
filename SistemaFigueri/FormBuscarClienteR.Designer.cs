@@ -41,7 +41,7 @@
             this.dgvCliente = new System.Windows.Forms.DataGridView();
             this.tbFiltraCliente = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.btnCerrarFiltro = new Bunifu.Framework.UI.BunifuTileButton();
-            this.bunifuCustomLabel15 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lbtotalresultados = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lbtotal = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuCards2.SuspendLayout();
@@ -63,7 +63,7 @@
             this.bunifuCards2.Controls.Add(this.dgvCliente);
             this.bunifuCards2.Controls.Add(this.tbFiltraCliente);
             this.bunifuCards2.Controls.Add(this.btnCerrarFiltro);
-            this.bunifuCards2.Controls.Add(this.bunifuCustomLabel15);
+            this.bunifuCards2.Controls.Add(this.lbtotalresultados);
             this.bunifuCards2.Controls.Add(this.lbtotal);
             this.bunifuCards2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bunifuCards2.LeftSahddow = false;
@@ -184,6 +184,7 @@
             this.dgvCliente.Size = new System.Drawing.Size(926, 308);
             this.dgvCliente.TabIndex = 224;
             this.dgvCliente.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCliente_CellDoubleClick_1);
+            this.dgvCliente.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvCliente_DataBindingComplete);
             this.dgvCliente.DoubleClick += new System.EventHandler(this.dgvCliente_DoubleClick_1);
             // 
             // tbFiltraCliente
@@ -228,20 +229,20 @@
             this.btnCerrarFiltro.TabIndex = 217;
             this.btnCerrarFiltro.Click += new System.EventHandler(this.btnCerrarFiltro_Click);
             // 
-            // bunifuCustomLabel15
+            // lbtotalresultados
             // 
-            this.bunifuCustomLabel15.AutoSize = true;
-            this.bunifuCustomLabel15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(190)))), ((int)(((byte)(154)))));
-            this.bunifuCustomLabel15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bunifuCustomLabel15.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel15.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel15.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuCustomLabel15.Location = new System.Drawing.Point(725, 59);
-            this.bunifuCustomLabel15.Name = "bunifuCustomLabel15";
-            this.bunifuCustomLabel15.Size = new System.Drawing.Size(209, 21);
-            this.bunifuCustomLabel15.TabIndex = 213;
-            this.bunifuCustomLabel15.Text = "TOTAL DE RESULTADOS";
-            this.bunifuCustomLabel15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbtotalresultados.AutoSize = true;
+            this.lbtotalresultados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(190)))), ((int)(((byte)(154)))));
+            this.lbtotalresultados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbtotalresultados.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbtotalresultados.ForeColor = System.Drawing.Color.Black;
+            this.lbtotalresultados.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbtotalresultados.Location = new System.Drawing.Point(725, 59);
+            this.lbtotalresultados.Name = "lbtotalresultados";
+            this.lbtotalresultados.Size = new System.Drawing.Size(209, 21);
+            this.lbtotalresultados.TabIndex = 213;
+            this.lbtotalresultados.Text = "TOTAL DE RESULTADOS";
+            this.lbtotalresultados.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbtotal
             // 
@@ -289,7 +290,7 @@
 
         private Bunifu.Framework.UI.BunifuCards bunifuCards2;
         private Bunifu.Framework.UI.BunifuTileButton btnCerrarFiltro;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel15;
+        private Bunifu.Framework.UI.BunifuCustomLabel lbtotalresultados;
         private Bunifu.Framework.UI.BunifuCustomLabel lbtotal;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private System.Windows.Forms.DataGridView dgvCliente;
