@@ -29,9 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBuscarProducto));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBuscarProducto));
             this.lbtotal = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel22 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.tbFiltra = new Bunifu.Framework.UI.BunifuMaterialTextbox();
@@ -39,13 +41,12 @@
             this.btnCerrarFiltroCliente = new Bunifu.Framework.UI.BunifuTileButton();
             this.rbPrecio = new System.Windows.Forms.RadioButton();
             this.rbNombreProd = new System.Windows.Forms.RadioButton();
-            this.dgvlListaProducto = new System.Windows.Forms.DataGridView();
-            this.lbresultados = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
             this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvlListaProducto)).BeginInit();
+            this.dgvlListaProducto = new System.Windows.Forms.DataGridView();
             this.bunifuCards1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvlListaProducto)).BeginInit();
             this.SuspendLayout();
             // 
             // lbtotal
@@ -152,61 +153,6 @@
             this.rbNombreProd.UseVisualStyleBackColor = true;
             this.rbNombreProd.CheckedChanged += new System.EventHandler(this.rbNombreProd_CheckedChanged);
             // 
-            // dgvlListaProducto
-            // 
-            this.dgvlListaProducto.AllowUserToAddRows = false;
-            this.dgvlListaProducto.AllowUserToDeleteRows = false;
-            this.dgvlListaProducto.AllowUserToResizeColumns = false;
-            this.dgvlListaProducto.AllowUserToResizeRows = false;
-            this.dgvlListaProducto.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvlListaProducto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvlListaProducto.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(126)))), ((int)(((byte)(176)))));
-            this.dgvlListaProducto.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvlListaProducto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvlListaProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvlListaProducto.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvlListaProducto.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvlListaProducto.Location = new System.Drawing.Point(46, 125);
-            this.dgvlListaProducto.Name = "dgvlListaProducto";
-            this.dgvlListaProducto.ReadOnly = true;
-            this.dgvlListaProducto.RowHeadersVisible = false;
-            this.dgvlListaProducto.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgvlListaProducto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvlListaProducto.Size = new System.Drawing.Size(1001, 324);
-            this.dgvlListaProducto.TabIndex = 230;
-            this.dgvlListaProducto.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvlListaProducto_CellDoubleClick);
-            // 
-            // lbresultados
-            // 
-            this.lbresultados.AutoSize = true;
-            this.lbresultados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(190)))), ((int)(((byte)(154)))));
-            this.lbresultados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lbresultados.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbresultados.ForeColor = System.Drawing.Color.Black;
-            this.lbresultados.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbresultados.Location = new System.Drawing.Point(805, 56);
-            this.lbresultados.Name = "lbresultados";
-            this.lbresultados.Size = new System.Drawing.Size(21, 21);
-            this.lbresultados.TabIndex = 219;
-            this.lbresultados.Text = "n";
-            this.lbresultados.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // bunifuCards1
             // 
             this.bunifuCards1.BackColor = System.Drawing.Color.BurlyWood;
@@ -239,6 +185,54 @@
             this.bunifuImageButton2.TabStop = false;
             this.bunifuImageButton2.Zoom = 10;
             // 
+            // dgvlListaProducto
+            // 
+            this.dgvlListaProducto.AllowUserToAddRows = false;
+            this.dgvlListaProducto.AllowUserToOrderColumns = true;
+            this.dgvlListaProducto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvlListaProducto.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(190)))), ((int)(((byte)(154)))));
+            this.dgvlListaProducto.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvlListaProducto.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Peru;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvlListaProducto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvlListaProducto.ColumnHeadersHeight = 55;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(190)))), ((int)(((byte)(154)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Menu;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvlListaProducto.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvlListaProducto.EnableHeadersVisualStyles = false;
+            this.dgvlListaProducto.GridColor = System.Drawing.Color.SeaShell;
+            this.dgvlListaProducto.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.dgvlListaProducto.Location = new System.Drawing.Point(57, 115);
+            this.dgvlListaProducto.Name = "dgvlListaProducto";
+            this.dgvlListaProducto.ReadOnly = true;
+            this.dgvlListaProducto.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Peru;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.PaleVioletRed;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Tomato;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvlListaProducto.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvlListaProducto.RowHeadersWidth = 50;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            this.dgvlListaProducto.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvlListaProducto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvlListaProducto.Size = new System.Drawing.Size(990, 331);
+            this.dgvlListaProducto.TabIndex = 231;
+            this.dgvlListaProducto.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvlListaProducto_CellDoubleClick);
+            // 
             // FormBuscarProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -249,7 +243,6 @@
             this.Controls.Add(this.bunifuCards1);
             this.Controls.Add(this.bunifuImageButton2);
             this.Controls.Add(this.btnCerrarFiltroCliente);
-            this.Controls.Add(this.lbresultados);
             this.Controls.Add(this.lbtotal);
             this.Controls.Add(this.tbFiltra);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -257,10 +250,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormBuscarProducto";
             this.Load += new System.EventHandler(this.FormBuscarProducto_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvlListaProducto)).EndInit();
             this.bunifuCards1.ResumeLayout(false);
             this.bunifuCards1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvlListaProducto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -275,8 +268,7 @@
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton2;
         private System.Windows.Forms.RadioButton rbPrecio;
         private System.Windows.Forms.RadioButton rbNombreProd;
-        private System.Windows.Forms.DataGridView dgvlListaProducto;
         private Bunifu.Framework.UI.BunifuCards bunifuCards1;
-        private Bunifu.Framework.UI.BunifuCustomLabel lbresultados;
+        private System.Windows.Forms.DataGridView dgvlListaProducto;
     }
 }

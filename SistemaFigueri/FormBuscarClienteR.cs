@@ -40,15 +40,14 @@ namespace SistemaFigueri
 
 
             dgvCliente.Columns.Add("ColumnIdCliente", "IdCliente");
-            dgvCliente.Columns.Add("ColumnDocumento", "Documento");
+            dgvCliente.Columns.Add("ColumnDocumento", "Tipo Documento");
             dgvCliente.Columns.Add("ColumnDNI", "DNI");
             dgvCliente.Columns.Add("ColumnRUC", "RUC");
             dgvCliente.Columns.Add("ColumnNombres", "Nombres");
             dgvCliente.Columns.Add("ColumnApellidos", "Apellidos");
-            dgvCliente.Columns.Add("ColumnRazón_Social", "Razón_Social");
+            dgvCliente.Columns.Add("ColumnRazón_Social", "Razón Social");
             dgvCliente.Columns.Add("ColumnSector", "Sector");
 
-            dgvCliente.Columns["ColumnIdCliente"].Width = 40;
             dgvCliente.Columns["ColumnDocumento"].Width = 10;
             dgvCliente.Columns["ColumnDNI"].Width = 10;
             dgvCliente.Columns["ColumnRUC"].Width = 10;
@@ -81,7 +80,7 @@ namespace SistemaFigueri
                     num++;
                     String[] fila = new String[]
                     {
-                        //Lista[i].IdCliente.ToString(),num.ToString(),
+                        //Lista[i].Id_Cliente.ToString(),num.ToString(),
                         Lista[i].Documento,
                         Lista[i].DNI,
                         Lista[i].RUC,
@@ -131,17 +130,6 @@ namespace SistemaFigueri
   
         }
 
-        private void dgvCliente_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-           
-        }
-
-   
-
-        private void dgvCliente_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         private void dgvCliente_DoubleClick(object sender, EventArgs e)
         {

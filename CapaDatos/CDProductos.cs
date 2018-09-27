@@ -269,5 +269,68 @@ namespace CapaDatos
            /* finally { cmd.Connection.Close(); }*/
             return p;
         }
+        public CEProducto BuscaProductoPorDescripcion(int id_pro, String des_pro)
+        {
+            SqlCommand cmd = null;
+            SqlDataReader dr = null;
+            CEProducto c = null;
+            try
+            {
+                SqlConnection cn = CDConexion.Instancia.AbrirConexion();
+                cmd = new SqlCommand("Caja.SP_FE_BuscaProductoDescripcion", cn);
+                cmd.Parameters.AddWithValue("@prmidProducto", id_pro);
+                cmd.Parameters.AddWithValue("@prmDescripcion", des_pro);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    c = new CEProducto();
+                    //c.IdCliente = Convert.ToInt32(dr["IdCliente"]);
+                    c._IdProdcuto = dr["IdProducto"].ToString();
+                    c._DescripcionProducto = dr["DescripcionProducto"].ToString();
+                    c._Stock = Convert.ToInt32(dr["Stock"].ToString());
+                    c._Alias = dr["Alias"].ToString();
+                    c._CodBarra = dr["CodBar"].ToString();
+
+                    //c.IdPrecio = dr["IdPrecio"].ToString();
+
+
+                }
+                cn.Close();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally { cmd.Connection.Close(); }
+            return c;
+        }
+
+        public List<String> filtroProductoDesc()
+        {
+            List<String> Lista = new List<string>();
+            SqlConnection sqlCon;
+            try
+            {
+                sqlCon = conexion.AbrirConexion();
+
+                SqlCommand cmd = new SqlCommand("SELECT DISTINCT Producto.DescripcionProducto FROM Caja.PRODUCTO AS Producto INNER JOIN CATEGORIA AS CATEGORIA ON Producto.IdCategoria = CATEGORIA.IdCategoria WHERE (Producto.Estado = 'A')  AND (CATEGORIA.Tipo = 'P') AND (CATEGORIA.IdCategoria <> '0045') AND (CATEGORIA.IdCategoria <> '0036') AND (CATEGORIA.IdCategoria <> '0047');", sqlCon);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Lista.Add(reader.GetString(0));
+                }
+                conexion.CerrarConexion();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al filtrar producto" + ex);
+            }
+
+            return Lista;
+
+        }
     }
 }

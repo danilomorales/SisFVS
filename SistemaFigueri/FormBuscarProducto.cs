@@ -183,7 +183,7 @@ namespace SistemaFigueri
                 {
                     num++;
                 }
-                lbresultados.Text = "Resultados Obtenidos: " + num;
+                //lbresultados.Text = "Resultados Obtenidos: " + num;
             }
             catch (Exception)
             {

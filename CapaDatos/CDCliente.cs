@@ -254,6 +254,8 @@ namespace CapaDatos
 
         }
 
+     
+
         //Llenar comboBox TIPOPERSONA
         public DataTable ListarPersona()
         {
@@ -393,10 +395,10 @@ namespace CapaDatos
             
             try
             {
-                SqlConnection cn = CDConexion.Instancia.CerrarConexion();
+                SqlConnection cn = CDConexion.Instancia.AbrirConexion();
                 cmd = new SqlCommand("Caja.SP_FE_ListaCliente_Venta", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cn.Open();
+
                 dr = cmd.ExecuteReader();
                 Lista = new List<CECliente>();
                 while (dr.Read())
@@ -431,13 +433,11 @@ namespace CapaDatos
             List<CECliente> Lista = null;
             try
             {
-                SqlConnection cn = CDConexion.Instancia.CerrarConexion();
+                SqlConnection cn = CDConexion.Instancia.AbrirConexion();
                 cmd = new SqlCommand("Caja.SP_FE_BuscaClienteAvanzado", cn);
                 cmd.Parameters.AddWithValue("@prmTipEntrada", tip_entrada);
                 cmd.Parameters.AddWithValue("@prmValorEntrada", valor_entrada);
-
                 cmd.CommandType = CommandType.StoredProcedure;
-                cn.Open();
                 dr = cmd.ExecuteReader();
                 Lista = new List<CECliente>();
                 while (dr.Read())

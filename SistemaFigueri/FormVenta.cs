@@ -257,7 +257,17 @@ namespace SistemaFigueri
             {
                 coleccion.Add(c);
             }
+
+            CNProductos pro = new CNProductos();
+            List<String> listaProducto = pro.filtroProductoDescripcion();
+            AutoCompleteStringCollection cole = new AutoCompleteStringCollection();
+            foreach (String p in listaProducto)
+            {
+                cole.Add(p);
+            }
             tbrazonsocial.AutoCompleteCustomSource = coleccion;
+            tbDescripcion.AutoCompleteCustomSource = cole;
+
             //tbTotalPagar.Text = "0,00";
             tbSaldoSoles.Text = "0,00";
             tbSaldoDolares.Text = "0,00";
@@ -422,11 +432,6 @@ namespace SistemaFigueri
         }
 
 
-        private void tbPrecio_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void tabPage2_Click(object sender, EventArgs e)
         {
 
@@ -469,6 +474,8 @@ namespace SistemaFigueri
                 dgvVenta.Rows[i].Cells[8].Value = lst[i].alias;
                 SumaSubTotal += Convert.ToDecimal(dgvVenta.Rows[i].Cells[4].Value);
                 SumaIgv += Convert.ToDecimal(dgvVenta.Rows[i].Cells[6].Value);
+
+                dgvVenta.RowTemplate.Height = 25;
 
                 dgvVenta.Columns[1].Width = 10;
                 dgvVenta.Columns[2].Width = 70;
@@ -555,28 +562,6 @@ namespace SistemaFigueri
         }
 
 
-        private void btnCargaCliente_Click(object sender, EventArgs e)
-        {
-            using (FormBuscarClienteR form = new FormBuscarClienteR())
-            {
-                if (form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                {
-                    tbClienteNombre.Text = form.clienteN;
-                    tbCliapellido.Text = form.clienteA;
-                    tbRuc.Text = form.ruc;
-                    tbDocumento.Text = form.dni;
-                    tbtipodoc.Text = form.tipodoc;
-                    tbrazonsocial.Text = form.empresa;
-                    tbIdCliente.Text = form.idcliente;
-
-                    CNProductos objProducto = new CNProductos();
-
-                }
-
-            }
-
-        }
-
         private void btnpedidos_Click_1(object sender, EventArgs e)
         {
             using (FormBuscarPedidos form = new FormBuscarPedidos())
@@ -627,25 +612,6 @@ namespace SistemaFigueri
 
                 }
             }
-        }
-
-        private void tbRuc_TextChanged(object sender, EventArgs e)
-        {
-            if (tbRuc.Text == "")
-            {
-                if (chkruc.Checked == true)
-                {
-                    chkruc.Checked = false;
-                }
-            }
-            else
-            {
-                if (chkruc.Checked == false)
-                {
-                    chkruc.Checked = true;
-                }
-            }
-
         }
 
         private void tbrazonsocial_TextChanged(object sender, EventArgs e)
@@ -1163,6 +1129,67 @@ namespace SistemaFigueri
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private void Buscaproductotb()
+        {
+            try
+            {
+                CEProducto p = null;
+                String descripcion = tbDescripcion.Text;
+                p = CNProductos.Instancia.BuscaProductoDescripcion(0, descripcion);
+                //MessageBox.Show("esto" + p._IdProdcuto);
+                //tbIdCliente.Text = c.IdCliente;
+
+                tbAlias.Text = p._Alias;
+                sales = new Venta();
+                sales.IdVenta = lst.Count + 1;
+                sales.Descripcion = p._DescripcionProducto;
+                sales.stock = p._Stock;
+                sales.IdProducto = p._IdProdcuto;
+                sales.Cantidad = 1;
+
+                tbIdProducto.Text = p._IdProdcuto;
+                tbAlias.Text = p._Alias;
+                tbDescripcion.Text = p._DescripcionProducto;
+                tbCodBarras.Text = p._CodBarra;
+            
+                tbStock.Text = p._Stock.ToString();
+                //tbrazonsocial.Text = c.Nombre_Empresa;
+
+                tbIdProducto.Text = p._IdProdcuto;
+
+                CNVentas cn = new CNVentas();
+                Decimal nuevoPrecio = cn.traerPrecio(tbIdCliente.Text.ToString(), tbIdProducto.Text.ToString());
+                sales.PrecioVenta = nuevoPrecio;
+                //MessageBox.Show("esto" + nuevoPrecio);
+
+                string i = LocalBD.Instancia.ReturnIdprod(1, p._IdProdcuto);
+            }
+            catch (ApplicationException)
+            {
+                DialogResult r = MessageBox.Show("No se encontró e producto, ¿realizar Búsqueda avanzada?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (r == DialogResult.Yes)
+                {
+                    using (FormBuscarProducto form = new FormBuscarProducto())
+                    {
+                        if (form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                        {
+                            tbDescripcion.Text = form.descripcion;
+                            tbIdProducto.Text = form.idproducto;
+                            tbRuc.Text = form.alias;
+                            tbStock.Text = form.stock;
+                            CNProductos objProducto = new CNProductos();
+
+                        }
+
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
         private void BuscaCLienteVentaEmpresa()
         {
@@ -1246,7 +1273,7 @@ namespace SistemaFigueri
                             CNProductos objProducto = new CNProductos();
 
                         }
-
+                         
                     }
                 }
             }
@@ -1913,6 +1940,52 @@ namespace SistemaFigueri
             }
           
         }
+        private void tbDescripcion_KeyDown(object sender, KeyEventArgs e)
+        {
+            Boolean existe = false;
+            FormBuscarProducto form = new FormBuscarProducto();
+            if (e.KeyCode == Keys.Enter)
+            {
+                Buscaproductotb();
+                
+                Venta ven = new Venta();
+                ven = sales;
+                Decimal Porcentaje = 0; Decimal SubTotal;
+
+                //Porcentaje = (Convert.ToDecimal(tbIgv.Text) / 100) + 1;
+                //SubTotal = (ven.PrecioVenta * 1) / Porcentaje;
+                //ven.Igv = Math.Round(Convert.ToDecimal(SubTotal) * (Convert.ToDecimal(tbIgv.Text) / (100)), 2);
+                //ven.SubTotal = Math.Round(SubTotal, 2);
+                
+                for (int j = 0; j < lst.Count; j++)
+                {
+                    //MessageBox.Show("En la lista" + lst[j].IdProducto);
+                    if (lst[j].IdProducto.ToString() == form.idproducto)
+                    {
+                        //MessageBox.Show("Producto repetido");
+                        existe = true;
+                        int quantity = Int32.Parse(lst[j].Cantidad.ToString()) + 1;
+                        decimal price = lst[j].PrecioVenta;
+
+                        decimal discount = (Convert.ToDecimal(tbIgv.Text) / 100) + 1;
+                        lst[j].Cantidad = quantity;
+                        lst[j].SubTotal = (quantity * price) / discount;
+                    }
+                }
+                if (existe == false)
+                {
+                    lst.Add(ven);
+                }
+
+                LlenarGrilla();
+                LimpiarProducto();
+                tbDescripcion.Focus();
+            }
+            else
+            {
+               
+            }
+        }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -2053,6 +2126,8 @@ namespace SistemaFigueri
                 e.Handled = true;
             }
         }
+
+      
     }
 }
 
