@@ -1062,7 +1062,6 @@ namespace SistemaFigueri
                     break;
                 case "2":
                  
-
                     cboSerie.ValueMember = "IdSerie";
                     cboSerie.DisplayMember = "Serie";
                     cboSerie.DataSource = cNVentas.traerSerie(Int32.Parse(indice));
@@ -1403,7 +1402,7 @@ namespace SistemaFigueri
             }
             else
             {
-                LimpiarClienteDNI();
+               
 
             }
         }
