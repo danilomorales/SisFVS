@@ -73,6 +73,7 @@ namespace SistemaFigueri
             try
             {
                 CrearTabla();
+                tbFiltra.Focus();
             }
             catch (Exception ex)
             {

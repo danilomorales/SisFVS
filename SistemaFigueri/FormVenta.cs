@@ -1167,7 +1167,7 @@ namespace SistemaFigueri
             }
             catch (ApplicationException)
             {
-                DialogResult r = MessageBox.Show("No se encontró e producto, ¿realizar Búsqueda avanzada?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult r = MessageBox.Show("No se encontró el producto, ¿realizar Búsqueda avanzada?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (r == DialogResult.Yes)
                 {
                     using (FormBuscarProducto form = new FormBuscarProducto())
@@ -1185,6 +1185,7 @@ namespace SistemaFigueri
 
                     }
                 }
+
             }
             catch (Exception ex)
             {
