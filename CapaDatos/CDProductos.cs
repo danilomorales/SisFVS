@@ -311,16 +311,17 @@ namespace CapaDatos
         public List<String> filtroProductoDesc()
         {
             List<String> Lista = new List<string>();
-            SqlConnection sqlCon;
+
             try
             {
-                sqlCon = conexion.AbrirConexion();
+                comando.CommandText = "Caja.SP_FE_CargaProductoAutocomplete";
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Connection = conexion.AbrirConexion();
+                leer = comando.ExecuteReader();
 
-                SqlCommand cmd = new SqlCommand("SELECT DISTINCT Producto.DescripcionProducto FROM Caja.PRODUCTO AS Producto INNER JOIN CATEGORIA AS CATEGORIA ON Producto.IdCategoria = CATEGORIA.IdCategoria WHERE (Producto.Estado = 'A')  AND (CATEGORIA.Tipo = 'P') AND (CATEGORIA.IdCategoria <> '0045') AND (CATEGORIA.IdCategoria <> '0036') AND (CATEGORIA.IdCategoria <> '0047');", sqlCon);
-                SqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
+                while (leer.Read())
                 {
-                    Lista.Add(reader.GetString(0));
+                    Lista.Add(leer.GetString(0));
                 }
                 conexion.CerrarConexion();
             }
@@ -332,5 +333,23 @@ namespace CapaDatos
             return Lista;
 
         }
+        //Lista productos en tabla 
+        public SqlDataAdapter CargaProductoLista()
+        {
+            try
+            {
+                String sql = "Caja.SP_BuscaProdAvanzado";
+                adapter = new SqlDataAdapter(sql, conexion.AbrirConexion());
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al filtrar producto" + ex);
+            }
+
+            return adapter;
+        }
+
+        
     }
 }

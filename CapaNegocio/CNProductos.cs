@@ -102,6 +102,13 @@ namespace CapaNegocio
                 throw;
             }
         }
+        // losta productos en tabla From Buscar Cliente 
+        public SqlDataAdapter CargaProdcuto()
+        {
+            SqlDataAdapter prodcuto;
+            prodcuto = pro.CargaProductoLista();
+            return prodcuto;
+        }
 
         //ListaPRoductos paraventa
         public List<CEProducto> ListarProductoVenta()

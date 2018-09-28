@@ -227,6 +227,7 @@ namespace SistemaFigueri
             ListaMoneda();
             ListaTipoDoc();
             crearTabla();
+            tbrazonsocial.Focus();
 
             CNVentas cNVentas = new CNVentas();
             int idcomprobante = Int32.Parse(cboTipoDoc.SelectedValue.ToString());
@@ -1696,7 +1697,7 @@ namespace SistemaFigueri
                 }
                 else
                 {
-                    LimpiarProducto();
+                   
 
                 }
 
@@ -1915,6 +1916,7 @@ namespace SistemaFigueri
 
 
                 }
+
             }
         }
 
@@ -1943,48 +1945,57 @@ namespace SistemaFigueri
         private void tbDescripcion_KeyDown(object sender, KeyEventArgs e)
         {
             Boolean existe = false;
-            FormBuscarProducto form = new FormBuscarProducto();
-            if (e.KeyCode == Keys.Enter)
+            if (tbIdCliente.Text == "")
             {
-                Buscaproductotb();
-                
-                Venta ven = new Venta();
-                ven = sales;
-                Decimal Porcentaje = 0; Decimal SubTotal;
-
-                Porcentaje = (Convert.ToDecimal(tbIgv.Text) / 100) + 1;
-                SubTotal = (ven.PrecioVenta * 1) / Porcentaje;
-                ven.Igv = Math.Round(Convert.ToDecimal(SubTotal) * (Convert.ToDecimal(tbIgv.Text) / (100)), 2);
-                ven.SubTotal = Math.Round(SubTotal, 2);
-
-                for (int j = 0; j < lst.Count; j++)
-                {
-                    MessageBox.Show("En la lista" + lst[j].IdProducto);
-                    if (lst[j].IdProducto.ToString() == form.idproducto)
-                    {
-                        //MessageBox.Show("Producto repetido");
-                        existe = true;
-                        int quantity = Int32.Parse(lst[j].Cantidad.ToString()) + 1;
-                        decimal price = lst[j].PrecioVenta;
-
-                        decimal discount = (Convert.ToDecimal(tbIgv.Text) / 100) + 1;
-                        lst[j].Cantidad = quantity;
-                        lst[j].SubTotal = (quantity * price) / discount;
-                    }
-                }
-                if (existe == false)
-                {
-                    lst.Add(ven);
-                }
-
-                LlenarGrilla();
-                LimpiarProducto();
-                tbDescripcion.Focus();
+                MessageBox.Show("Elija el cliente primero", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                tbrazonsocial.Focus();
             }
             else
             {
-               
+                if (e.KeyCode == Keys.Enter)
+                {
+                    Buscaproductotb();
+
+                    Venta ven = new Venta();
+                    ven = sales;
+                    Decimal Porcentaje = 0; Decimal SubTotal;
+
+                    Porcentaje = (Convert.ToDecimal(tbIgv.Text) / 100) + 1;
+                    SubTotal = (ven.PrecioVenta * 1) / Porcentaje;
+                    ven.Igv = Math.Round(Convert.ToDecimal(SubTotal) * (Convert.ToDecimal(tbIgv.Text) / (100)), 2);
+                    ven.SubTotal = Math.Round(SubTotal, 2);
+
+                    for (int j = 0; j < lst.Count; j++)
+                    {
+                        //MessageBox.Show("En la lista" + lst[j].IdProducto);
+                        if (lst[j].IdProducto.ToString() == tbIdProducto.Text)
+                        {
+                            //MessageBox.Show("Producto repetido");
+                            existe = true;
+                            int quantity = Int32.Parse(lst[j].Cantidad.ToString()) + 1;
+                            decimal price = lst[j].PrecioVenta;
+
+                            decimal discount = (Convert.ToDecimal(tbIgv.Text) / 100) + 1;
+                            lst[j].Cantidad = quantity;
+                            lst[j].SubTotal = (quantity * price) / discount;
+                        }
+                    }
+                    if (existe == false)
+                    {
+                        lst.Add(ven);
+                    }
+
+                    LlenarGrilla();
+                    LimpiarProducto();
+                    tbDescripcion.Focus();
+                }
+                else
+                {
+                  
+                }
             }
+           
+           
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

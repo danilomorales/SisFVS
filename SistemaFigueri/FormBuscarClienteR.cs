@@ -36,12 +36,13 @@ namespace SistemaFigueri
             InitializeComponent();
         }
         private void CrearTabla()
-        {dgvCliente.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
+        {
+                dgvCliente.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
                 dgvCliente.AllowUserToResizeRows = false;
                 MostrarCliente(dgvCliente);
                 //lbtotal.Text = CStr(dgvCliente.RowCount);
 
-                dgvCliente.Columns["IdCliente"].Visible = false;
+                //dgvCliente.Columns["IdCliente"].Visible = false;
                 dgvCliente.Columns["IdCliente"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 dgvCliente.Columns["Documento"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 dgvCliente.Columns["DNI"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -71,24 +72,6 @@ namespace SistemaFigueri
         {
             try
             {
-                //int num = 0;
-                //dgvCliente.Rows.Clear();
-                //List<CECliente> Lista = CNClientes.Intancia.ListaClienteVenta();
-                //for (int i = 0; i < Lista.Count; i++)
-                //{
-                //    num++;
-                //    String[] fila = new String[]
-                //    {
-                //        //Lista[i].Id_Cliente.ToString(),num.ToString(),
-                //        Lista[i].Documento,
-                //        Lista[i].DNI,
-                //        Lista[i].RUC,
-                //        Lista[i].Nombres,
-                //        Lista[i].Apellidos,
-                //        Lista[i].Nombre_Empresa,
-                //        Lista[i].Sector};
-                //    dgvCliente.Rows.Add(fila);
-                //}
                 CNClientes objProducto = new CNClientes();
                 SqlDataAdapter adapter = objProducto.CargaCliente();
                 foreach (DataRow row in tbCliente.Rows)
@@ -113,15 +96,15 @@ namespace SistemaFigueri
       
         private void FormBuscarCliente_Load(object sender, EventArgs e)
         {
-            //try
-            //{
+            try
+            {
                 CrearTabla();
-               
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //}
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
 
         }
     
@@ -141,6 +124,7 @@ namespace SistemaFigueri
         {
             try
             {
+
                 int intento = LocalBD.Instancia.ReturnIntento(1, 1);
                 int invocador = LocalBD.Instancia.Invocar(0, 0);
                 if (invocador == 1)
@@ -165,6 +149,7 @@ namespace SistemaFigueri
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+           // String IdCliente = dgvCliente.Rows[e.RowIndex].Cells["IdCliente"].Value.ToString();
             String Dni = dgvCliente.Rows[e.RowIndex].Cells["DNI"].Value.ToString();
             String Nombres = dgvCliente.Rows[e.RowIndex].Cells["Nombres"].Value.ToString();
             String Apellidos = dgvCliente.Rows[e.RowIndex].Cells["Apellidos"].Value.ToString();
@@ -190,7 +175,7 @@ namespace SistemaFigueri
             {
                 String IdCliente;
                 CNClientes dObj_ModeloCaj = new CNClientes();
-                IdCliente = dgvCliente.SelectedRows[0].Cells["IdCliente"].ToString();
+                IdCliente = dgvCliente.SelectedRows[0].Cells[0].ToString();
                 EnCliente = dObj_ModeloCaj.LlenaEntidad_Cliente(IdCliente);
                 this.Close();
             }
@@ -200,22 +185,15 @@ namespace SistemaFigueri
             }
         }
 
+        private void tbFiltraCliente_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            DataView dv = tbCliente.DefaultView;
+            dv.RowFilter = string.Format("Nombres like '%{0}%' or Apellidos like '%{0}%'  or DNI like '%{0}%'  or RUC like '%{0}%'  or Razón_Social like '%{0}%'", tbFiltraCliente.Text);
+        }
+
         private void dgvCliente_DoubleClick_1(object sender, EventArgs e)
         {
             Selecciona();
-        }
-
-        private void dgvCliente_CellEnter(object sender, DataGridViewCellEventArgs e)
-        {
-
-
-        }
-
-        private void tbFiltraCliente_KeyUp(object sender, KeyEventArgs e)
-        {
-            DataView dc = tbCliente.DefaultView;
-            dc.RowFilter = string.Format("Nombres like '%{0}%' or Apellidos like '%{0}%' or DNI like '%{0}%' or like '%{0}%' or like '%{0}%'", tbFiltraCliente.Text);
-
         }
     }
 

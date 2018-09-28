@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bunifuCards2 = new Bunifu.Framework.UI.BunifuCards();
             this.dgvCliente = new System.Windows.Forms.DataGridView();
             this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
             this.tbFiltraCliente = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.btnCerrarFiltro = new Bunifu.Framework.UI.BunifuTileButton();
+            this.lbtotalresultados = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lbtotal = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.lbtotalresultados = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCards2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
@@ -77,23 +77,23 @@
             this.dgvCliente.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(190)))), ((int)(((byte)(154)))));
             this.dgvCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvCliente.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.Peru;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCliente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Peru;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCliente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvCliente.ColumnHeadersHeight = 55;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(190)))), ((int)(((byte)(154)))));
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Menu;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCliente.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(190)))), ((int)(((byte)(154)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Menu;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCliente.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvCliente.EnableHeadersVisualStyles = false;
             this.dgvCliente.GridColor = System.Drawing.Color.SeaShell;
             this.dgvCliente.ImeMode = System.Windows.Forms.ImeMode.Off;
@@ -101,22 +101,22 @@
             this.dgvCliente.Name = "dgvCliente";
             this.dgvCliente.ReadOnly = true;
             this.dgvCliente.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.Peru;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.PaleVioletRed;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Tomato;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCliente.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Peru;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.PaleVioletRed;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Tomato;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCliente.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvCliente.RowHeadersWidth = 50;
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
-            this.dgvCliente.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            this.dgvCliente.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCliente.Size = new System.Drawing.Size(926, 331);
             this.dgvCliente.TabIndex = 228;
             this.dgvCliente.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCliente_CellDoubleClick_1);
-            this.dgvCliente.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCliente_CellEnter);
+            this.dgvCliente.DoubleClick += new System.EventHandler(this.dgvCliente_DoubleClick_1);
             // 
             // bunifuImageButton2
             // 
@@ -152,7 +152,7 @@
             this.tbFiltraCliente.Size = new System.Drawing.Size(671, 31);
             this.tbFiltraCliente.TabIndex = 223;
             this.tbFiltraCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.tbFiltraCliente.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbFiltraCliente_KeyUp);
+            this.tbFiltraCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbFiltraCliente_KeyPress_1);
             // 
             // btnCerrarFiltro
             // 
@@ -175,6 +175,21 @@
             this.btnCerrarFiltro.TabIndex = 217;
             this.btnCerrarFiltro.Click += new System.EventHandler(this.btnCerrarFiltro_Click);
             // 
+            // lbtotalresultados
+            // 
+            this.lbtotalresultados.AutoSize = true;
+            this.lbtotalresultados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(190)))), ((int)(((byte)(154)))));
+            this.lbtotalresultados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbtotalresultados.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbtotalresultados.ForeColor = System.Drawing.Color.Black;
+            this.lbtotalresultados.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbtotalresultados.Location = new System.Drawing.Point(333, 8);
+            this.lbtotalresultados.Name = "lbtotalresultados";
+            this.lbtotalresultados.Size = new System.Drawing.Size(195, 21);
+            this.lbtotalresultados.TabIndex = 213;
+            this.lbtotalresultados.Text = "Busqueda Avanzada";
+            this.lbtotalresultados.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // lbtotal
             // 
             this.lbtotal.AutoSize = true;
@@ -194,21 +209,6 @@
             // 
             this.bunifuElipse1.ElipseRadius = 40;
             this.bunifuElipse1.TargetControl = this;
-            // 
-            // lbtotalresultados
-            // 
-            this.lbtotalresultados.AutoSize = true;
-            this.lbtotalresultados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(190)))), ((int)(((byte)(154)))));
-            this.lbtotalresultados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lbtotalresultados.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbtotalresultados.ForeColor = System.Drawing.Color.Black;
-            this.lbtotalresultados.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbtotalresultados.Location = new System.Drawing.Point(333, 8);
-            this.lbtotalresultados.Name = "lbtotalresultados";
-            this.lbtotalresultados.Size = new System.Drawing.Size(195, 21);
-            this.lbtotalresultados.TabIndex = 213;
-            this.lbtotalresultados.Text = "Busqueda Avanzada";
-            this.lbtotalresultados.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FormBuscarClienteR
             // 
