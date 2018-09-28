@@ -29,26 +29,20 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBuscarClienteR));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bunifuCards2 = new Bunifu.Framework.UI.BunifuCards();
             this.dgvCliente = new System.Windows.Forms.DataGridView();
-            this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
-            this.rbPrecio = new System.Windows.Forms.RadioButton();
-            this.bunifuCustomLabel22 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.rbNombreProd = new System.Windows.Forms.RadioButton();
             this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
             this.tbFiltraCliente = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.btnCerrarFiltro = new Bunifu.Framework.UI.BunifuTileButton();
-            this.lbtotalresultados = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lbtotal = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.lbtotalresultados = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCards2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
-            this.bunifuCards1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,7 +55,6 @@
             this.bunifuCards2.BottomSahddow = true;
             this.bunifuCards2.color = System.Drawing.Color.Tomato;
             this.bunifuCards2.Controls.Add(this.dgvCliente);
-            this.bunifuCards2.Controls.Add(this.bunifuCards1);
             this.bunifuCards2.Controls.Add(this.bunifuImageButton2);
             this.bunifuCards2.Controls.Add(this.tbFiltraCliente);
             this.bunifuCards2.Controls.Add(this.btnCerrarFiltro);
@@ -84,23 +77,23 @@
             this.dgvCliente.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(190)))), ((int)(((byte)(154)))));
             this.dgvCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvCliente.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Peru;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCliente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.Peru;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCliente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvCliente.ColumnHeadersHeight = 55;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(190)))), ((int)(((byte)(154)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Menu;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCliente.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(190)))), ((int)(((byte)(154)))));
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Menu;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCliente.DefaultCellStyle = dataGridViewCellStyle10;
             this.dgvCliente.EnableHeadersVisualStyles = false;
             this.dgvCliente.GridColor = System.Drawing.Color.SeaShell;
             this.dgvCliente.ImeMode = System.Windows.Forms.ImeMode.Off;
@@ -108,89 +101,31 @@
             this.dgvCliente.Name = "dgvCliente";
             this.dgvCliente.ReadOnly = true;
             this.dgvCliente.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Peru;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.PaleVioletRed;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Tomato;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCliente.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.Peru;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.PaleVioletRed;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Tomato;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCliente.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvCliente.RowHeadersWidth = 50;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            this.dgvCliente.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
+            this.dgvCliente.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCliente.Size = new System.Drawing.Size(926, 331);
             this.dgvCliente.TabIndex = 228;
             this.dgvCliente.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCliente_CellDoubleClick_1);
-            // 
-            // bunifuCards1
-            // 
-            this.bunifuCards1.BackColor = System.Drawing.Color.White;
-            this.bunifuCards1.BorderRadius = 5;
-            this.bunifuCards1.BottomSahddow = true;
-            this.bunifuCards1.color = System.Drawing.Color.Tomato;
-            this.bunifuCards1.Controls.Add(this.rbPrecio);
-            this.bunifuCards1.Controls.Add(this.bunifuCustomLabel22);
-            this.bunifuCards1.Controls.Add(this.rbNombreProd);
-            this.bunifuCards1.LeftSahddow = false;
-            this.bunifuCards1.Location = new System.Drawing.Point(16, 30);
-            this.bunifuCards1.Name = "bunifuCards1";
-            this.bunifuCards1.RightSahddow = true;
-            this.bunifuCards1.ShadowDepth = 20;
-            this.bunifuCards1.Size = new System.Drawing.Size(186, 76);
-            this.bunifuCards1.TabIndex = 226;
-            // 
-            // rbPrecio
-            // 
-            this.rbPrecio.AutoSize = true;
-            this.rbPrecio.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbPrecio.Location = new System.Drawing.Point(3, 53);
-            this.rbPrecio.Name = "rbPrecio";
-            this.rbPrecio.Size = new System.Drawing.Size(88, 20);
-            this.rbPrecio.TabIndex = 3;
-            this.rbPrecio.TabStop = true;
-            this.rbPrecio.Text = "Apellidos";
-            this.rbPrecio.UseVisualStyleBackColor = true;
-            this.rbPrecio.CheckedChanged += new System.EventHandler(this.rbPrecio_CheckedChanged);
-            // 
-            // bunifuCustomLabel22
-            // 
-            this.bunifuCustomLabel22.AutoSize = true;
-            this.bunifuCustomLabel22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(190)))), ((int)(((byte)(154)))));
-            this.bunifuCustomLabel22.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bunifuCustomLabel22.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bunifuCustomLabel22.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel22.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel22.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuCustomLabel22.Location = new System.Drawing.Point(0, 0);
-            this.bunifuCustomLabel22.Name = "bunifuCustomLabel22";
-            this.bunifuCustomLabel22.Size = new System.Drawing.Size(265, 21);
-            this.bunifuCustomLabel22.TabIndex = 218;
-            this.bunifuCustomLabel22.Text = "        BUSCAR POR                    ";
-            this.bunifuCustomLabel22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // rbNombreProd
-            // 
-            this.rbNombreProd.AutoSize = true;
-            this.rbNombreProd.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbNombreProd.Location = new System.Drawing.Point(3, 30);
-            this.rbNombreProd.Name = "rbNombreProd";
-            this.rbNombreProd.Size = new System.Drawing.Size(140, 20);
-            this.rbNombreProd.TabIndex = 1;
-            this.rbNombreProd.TabStop = true;
-            this.rbNombreProd.Text = "Nombre/Empresa";
-            this.rbNombreProd.UseVisualStyleBackColor = true;
-            this.rbNombreProd.CheckedChanged += new System.EventHandler(this.rbNombreProd_CheckedChanged);
+            this.dgvCliente.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCliente_CellEnter);
             // 
             // bunifuImageButton2
             // 
             this.bunifuImageButton2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.bunifuImageButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(147)))), ((int)(((byte)(103)))));
             this.bunifuImageButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuImageButton2.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton2.Image")));
+            this.bunifuImageButton2.Image = global::SistemaFigueri.Properties.Resources.buscadoe;
             this.bunifuImageButton2.ImageActive = null;
-            this.bunifuImageButton2.Location = new System.Drawing.Point(230, 54);
+            this.bunifuImageButton2.Location = new System.Drawing.Point(117, 67);
             this.bunifuImageButton2.Name = "bunifuImageButton2";
             this.bunifuImageButton2.Size = new System.Drawing.Size(38, 31);
             this.bunifuImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -211,10 +146,10 @@
             this.tbFiltraCliente.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
             this.tbFiltraCliente.LineMouseHoverColor = System.Drawing.Color.SandyBrown;
             this.tbFiltraCliente.LineThickness = 6;
-            this.tbFiltraCliente.Location = new System.Drawing.Point(271, 54);
+            this.tbFiltraCliente.Location = new System.Drawing.Point(156, 67);
             this.tbFiltraCliente.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbFiltraCliente.Name = "tbFiltraCliente";
-            this.tbFiltraCliente.Size = new System.Drawing.Size(447, 31);
+            this.tbFiltraCliente.Size = new System.Drawing.Size(671, 31);
             this.tbFiltraCliente.TabIndex = 223;
             this.tbFiltraCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.tbFiltraCliente.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbFiltraCliente_KeyUp);
@@ -240,21 +175,6 @@
             this.btnCerrarFiltro.TabIndex = 217;
             this.btnCerrarFiltro.Click += new System.EventHandler(this.btnCerrarFiltro_Click);
             // 
-            // lbtotalresultados
-            // 
-            this.lbtotalresultados.AutoSize = true;
-            this.lbtotalresultados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(190)))), ((int)(((byte)(154)))));
-            this.lbtotalresultados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lbtotalresultados.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbtotalresultados.ForeColor = System.Drawing.Color.Black;
-            this.lbtotalresultados.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbtotalresultados.Location = new System.Drawing.Point(725, 59);
-            this.lbtotalresultados.Name = "lbtotalresultados";
-            this.lbtotalresultados.Size = new System.Drawing.Size(209, 21);
-            this.lbtotalresultados.TabIndex = 213;
-            this.lbtotalresultados.Text = "TOTAL DE RESULTADOS";
-            this.lbtotalresultados.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // lbtotal
             // 
             this.lbtotal.AutoSize = true;
@@ -275,6 +195,21 @@
             this.bunifuElipse1.ElipseRadius = 40;
             this.bunifuElipse1.TargetControl = this;
             // 
+            // lbtotalresultados
+            // 
+            this.lbtotalresultados.AutoSize = true;
+            this.lbtotalresultados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(190)))), ((int)(((byte)(154)))));
+            this.lbtotalresultados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbtotalresultados.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbtotalresultados.ForeColor = System.Drawing.Color.Black;
+            this.lbtotalresultados.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbtotalresultados.Location = new System.Drawing.Point(333, 8);
+            this.lbtotalresultados.Name = "lbtotalresultados";
+            this.lbtotalresultados.Size = new System.Drawing.Size(195, 21);
+            this.lbtotalresultados.TabIndex = 213;
+            this.lbtotalresultados.Text = "Busqueda Avanzada";
+            this.lbtotalresultados.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // FormBuscarClienteR
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -289,8 +224,6 @@
             this.bunifuCards2.ResumeLayout(false);
             this.bunifuCards2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).EndInit();
-            this.bunifuCards1.ResumeLayout(false);
-            this.bunifuCards1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -301,15 +234,11 @@
 
         private Bunifu.Framework.UI.BunifuCards bunifuCards2;
         private Bunifu.Framework.UI.BunifuTileButton btnCerrarFiltro;
-        private Bunifu.Framework.UI.BunifuCustomLabel lbtotalresultados;
         private Bunifu.Framework.UI.BunifuCustomLabel lbtotal;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private Bunifu.Framework.UI.BunifuMaterialTextbox tbFiltraCliente;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton2;
-        private Bunifu.Framework.UI.BunifuCards bunifuCards1;
-        private System.Windows.Forms.RadioButton rbPrecio;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel22;
-        private System.Windows.Forms.RadioButton rbNombreProd;
         private System.Windows.Forms.DataGridView dgvCliente;
+        private Bunifu.Framework.UI.BunifuCustomLabel lbtotalresultados;
     }
 }

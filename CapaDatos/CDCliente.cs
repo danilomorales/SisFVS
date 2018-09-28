@@ -493,6 +493,14 @@ namespace CapaDatos
             return dTabla;
         }
 
+        //Carga cliente para buasqueda avanzada
+
+        public SqlDataAdapter CargaClienteBusqueda()
+        {
+            String sql = "Caja.SP_FE_BuscaClienteAvanzado";
+            adapter = new SqlDataAdapter(sql, conexion.AbrirConexion());
+            return adapter;
+        }
 
         ////Llenar ComboBox DEPARTAMENTO
         //public DataTable ListarDepartamento()

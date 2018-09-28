@@ -1952,14 +1952,14 @@ namespace SistemaFigueri
                 ven = sales;
                 Decimal Porcentaje = 0; Decimal SubTotal;
 
-                //Porcentaje = (Convert.ToDecimal(tbIgv.Text) / 100) + 1;
-                //SubTotal = (ven.PrecioVenta * 1) / Porcentaje;
-                //ven.Igv = Math.Round(Convert.ToDecimal(SubTotal) * (Convert.ToDecimal(tbIgv.Text) / (100)), 2);
-                //ven.SubTotal = Math.Round(SubTotal, 2);
-                
+                Porcentaje = (Convert.ToDecimal(tbIgv.Text) / 100) + 1;
+                SubTotal = (ven.PrecioVenta * 1) / Porcentaje;
+                ven.Igv = Math.Round(Convert.ToDecimal(SubTotal) * (Convert.ToDecimal(tbIgv.Text) / (100)), 2);
+                ven.SubTotal = Math.Round(SubTotal, 2);
+
                 for (int j = 0; j < lst.Count; j++)
                 {
-                    //MessageBox.Show("En la lista" + lst[j].IdProducto);
+                    MessageBox.Show("En la lista" + lst[j].IdProducto);
                     if (lst[j].IdProducto.ToString() == form.idproducto)
                     {
                         //MessageBox.Show("Producto repetido");

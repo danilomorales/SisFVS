@@ -171,6 +171,15 @@ namespace CapaNegocio
                 throw;
             }
         }
+        //Cargqa Cliente para bsusqueda 
+
+        public SqlDataAdapter CargaCliente()
+        {
+            SqlDataAdapter cliente;
+            cliente = cli.CargaClienteBusqueda();
+            return cliente;
+        }
+
 
         public CE_Cliente LlenaEntidad_Cliente(string IdCliente)
         {
