@@ -179,5 +179,13 @@ namespace SistemaFigueri
             }
 
         }
+
+        private void dgvlListaProducto_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                
+            }
+        }
     }
 }
