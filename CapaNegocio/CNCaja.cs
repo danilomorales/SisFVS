@@ -28,7 +28,6 @@ namespace CapaNegocio
                 if (Lista.Count == 0) throw new ApplicationException("Lista vacia");
                 else if (Lista == null) throw new ApplicationException("Se produjo un error ");
                 return Lista;
-
             }
             catch (Exception)
             {

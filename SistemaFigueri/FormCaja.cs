@@ -47,7 +47,10 @@ namespace SistemaFigueri
             dgvcaja.Columns.Add("ColCajero","CAJERO");
             dgvcaja.Columns.Add("colFecha","F. CIERRE");
             dgvcaja.Columns.Add("colvoucher", "voucher");
-            //dgvcaja.Columns[6].Visible = false;
+            dgvcaja.Columns.Add("colIdCajero", "IdCajero");
+            dgvcaja.Columns[6].Visible = false;
+            this.dgvcaja.Columns["colIdCajero"].Visible = false;
+
             dgvcaja.Columns[0].Width = 40;
             dgvcaja.RowTemplate.Height = 44;
             dgvcaja.Columns[6].DefaultCellStyle.Format = "dd/MM/yyyy";
@@ -118,7 +121,8 @@ namespace SistemaFigueri
                         Lista[i].Egreso.ToString(),
                         Lista[i].Cajero.ToString(),
                         Lista[i].FechaOperacion.ToString(),
-                        Lista[i].Voucher.ToString()};
+                        Lista[i].Voucher.ToString(),
+                        Lista[i].IdCajero.ToString()};
                         dgvcaja.Rows.Add(fila);
                     dgvcaja.Rows[i].Cells[0].Value = img;
                 }
@@ -156,10 +160,35 @@ namespace SistemaFigueri
             CNCaja objCaja = new CNCaja();
             try
             {
-                //cncaja.InsertaIngresoEgreso_Caja(tbtipoopera.Text, tbidsupervisor.Text, tbidcajero.Text,tbtipoDoc.Text,tbingreso.Text,tbegreso.Text,tbVoucher.Text);
+                CECaja ca = new CECaja();
+                ca.TipoOper = "1";
+                ca.IdSupervisor = "12";
+                ca.Tipodoc = "docvoucher";
+                ca.Voucher = "voucher";
+                cncaja.InsertaIngresoEgreso_Caja(ca.TipoOper, ca.IdSupervisor, tbIdCajero.Text, ca.Tipodoc, tbMontoApertura.Text, tbNumDocApertura.Text, ca.Voucher);
+                MessageBox.Show("sdsdsd");
+                CargaGridCaja();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo registrar los datos por :" + ex.ToString());
+            }
+        }
+
+        private void btnGuardaCierre_Click(object sender, EventArgs e)
+        {
+
+            CNCaja objCaja = new CNCaja();
+            try
+            {
+
+                //int tbtipoopera = 0;
+                //string tbidsupervisor = "0";
+                //string tbtipoDoc = "docvoucher";
+                //cncaja.InsertaIngresoEgreso_Caja(tbtipoopera, tbidsupervisor, tbIdCajeroCierre.Text, tbtipoDoc.Text, tbingreso.Text, tbegreso.Text, tbVoucher.Text);
                 //MessageBox.Show("sdsdsd");
                 //CargaGridCaja();
-                
 
             }
             catch (Exception ex)
@@ -175,14 +204,18 @@ namespace SistemaFigueri
 
         private void dgvcaja_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 7)               
+            if (e.ColumnIndex == 8)               
             {
                 tcAperturaCierre.SelectedTab = Apertura;
+                tbCajero.Text = this.dgvcaja.CurrentRow.Cells["ColCajero"].Value.ToString();
+                tbIdCajero.Text = this.dgvcaja.CurrentRow.Cells["colIdCajero"].Value.ToString();
             }
    
-            if (e.ColumnIndex == 8)
+            if (e.ColumnIndex == 9)
             {
                 tcAperturaCierre.SelectedTab = Cierre;
+                tbCajeroCierre.Text = this.dgvcaja.CurrentRow.Cells["ColCajero"].Value.ToString();
+                tbIdCajeroCierre.Text = this.dgvcaja.CurrentRow.Cells["colIdCajero"].Value.ToString();
             }
             
         }
@@ -228,5 +261,7 @@ namespace SistemaFigueri
         private void dgvcaja_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
         {
         }
+
+       
     }
 }

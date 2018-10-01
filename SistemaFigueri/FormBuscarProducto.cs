@@ -119,7 +119,11 @@ namespace SistemaFigueri
 
             }
         }
-       
+        private void SeleccionaFila(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
         private void dgvlListaProducto_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -150,7 +154,7 @@ namespace SistemaFigueri
             CNVentas cn = new CNVentas();
             String IdProducto = dgvlListaProducto.Rows[e.RowIndex].Cells["IdProducto"].Value.ToString();
             String Producto = dgvlListaProducto.Rows[e.RowIndex].Cells["DescripcionProducto"].Value.ToString();
-            String Alias = dgvlListaProducto.Rows[e.RowIndex].Cells["Alias"].Value.ToString(); 
+            String Alias = dgvlListaProducto.Rows[e.RowIndex].Cells["Alias"].Value.ToString();
             Decimal nuevoPrecio = cn.traerPrecio(idcliente, IdProducto);
             String Stock = dgvlListaProducto.Rows[e.RowIndex].Cells["Stock"].Value.ToString();
             //String Id = dgvlListaProducto.Rows[e.RowIndex].Cells[0].Value.ToString();
@@ -161,7 +165,7 @@ namespace SistemaFigueri
             idproducto = IdProducto;
             this.DialogResult = DialogResult.OK;
             this.Close();
-            //fv.Close();   
+            //fv.Close();  
         }
 
         private void tbFiltra_KeyPress(object sender, KeyPressEventArgs e)
@@ -182,10 +186,33 @@ namespace SistemaFigueri
 
         private void dgvlListaProducto_KeyDown(object sender, KeyEventArgs e)
         {
+
             if (e.KeyCode == Keys.Enter)
             {
+                int fila = Convert.ToInt32 (dgvlListaProducto.CurrentCell.RowIndex);
+                CNVentas cn = new CNVentas();
+                String IdProducto = dgvlListaProducto.Rows[fila].Cells["IdProducto"].Value.ToString();
+                String Producto = dgvlListaProducto.Rows[fila].Cells["DescripcionProducto"].Value.ToString();
+                String Alias = dgvlListaProducto.Rows[fila].Cells["Alias"].Value.ToString();
+                Decimal nuevoPrecio = cn.traerPrecio(idcliente, IdProducto);
+                String Stock = dgvlListaProducto.Rows[fila].Cells["Stock"].Value.ToString();
+                //String Id = dgvlListaProducto.Rows[e.RowIndex].Cells[0].Value.ToString();
                 
+                alias = Alias;
+                descripcion = Producto;
+                stock = Stock;
+                precio = nuevoPrecio.ToString();
+                idproducto = IdProducto;
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+                //fv.Close();  
+                Console.WriteLine(fila);
             }
+        }
+
+        private void dgvlListaProducto_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+         
         }
     }
 }

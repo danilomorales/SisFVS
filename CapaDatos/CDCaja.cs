@@ -49,6 +49,7 @@ namespace CapaDatos
                     caja.Nombre = dr["Nombre_Caja"].ToString();
                     caja.Ingreso = Convert.ToDecimal(dr["MontoInicial"].ToString());
                     caja.Egreso = Convert.ToDecimal(dr["MontoFinal"].ToString());
+                    caja.IdCajero = Convert.ToInt32(dr["IdCajero"].ToString());
                     caja.Cajero = dr["Cajero"].ToString();
                     caja.TipoOper = dr["Estado"].ToString();
                     caja.Voucher = dr["voucher"].ToString();
@@ -74,6 +75,7 @@ namespace CapaDatos
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.AddWithValue("@TipoOper", TipoOper);
             comando.Parameters.AddWithValue("@IdSupervisor", IdSupervisor);
+            comando.Parameters.AddWithValue("@IdCajero", IdCajero);
             comando.Parameters.AddWithValue("@Ingreso", Ingreso);
             comando.Parameters.AddWithValue("@Egreso", Egreso);
             comando.Parameters.AddWithValue("@voucher", voucher);

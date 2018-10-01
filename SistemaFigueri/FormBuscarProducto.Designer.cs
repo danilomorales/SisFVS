@@ -146,6 +146,7 @@
             this.dgvlListaProducto.Size = new System.Drawing.Size(1020, 331);
             this.dgvlListaProducto.TabIndex = 231;
             this.dgvlListaProducto.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvlListaProducto_CellDoubleClick);
+            this.dgvlListaProducto.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvlListaProducto_CellEnter);
             this.dgvlListaProducto.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvlListaProducto_KeyDown);
             // 
             // tbFiltra
