@@ -52,7 +52,7 @@
             this.btnEditarTienda = new Bunifu.Framework.UI.BunifuTileButton();
             this.btneliminartienda = new Bunifu.Framework.UI.BunifuTileButton();
             this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bunifuMaterialTextbox1 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.bmbuscarTienda = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bmserie = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuFlatButton4 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.cboencargado = new System.Windows.Forms.ComboBox();
@@ -74,7 +74,7 @@
             this.btneditarSector = new Bunifu.Framework.UI.BunifuTileButton();
             this.btneliminarSector = new Bunifu.Framework.UI.BunifuTileButton();
             this.bunifuImageButton3 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bunifuMaterialTextbox2 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.bmbuscarSector = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.cbotienda = new System.Windows.Forms.ComboBox();
             this.bunifuCards8 = new Bunifu.Framework.UI.BunifuCards();
             this.dgvsector = new System.Windows.Forms.DataGridView();
@@ -515,7 +515,7 @@
             this.buTienda.color = System.Drawing.Color.Tomato;
             this.buTienda.Controls.Add(this.bunifuCards2);
             this.buTienda.Controls.Add(this.bunifuImageButton2);
-            this.buTienda.Controls.Add(this.bunifuMaterialTextbox1);
+            this.buTienda.Controls.Add(this.bmbuscarTienda);
             this.buTienda.Controls.Add(this.bmserie);
             this.buTienda.Controls.Add(this.bunifuFlatButton4);
             this.buTienda.Controls.Add(this.cboencargado);
@@ -629,24 +629,25 @@
             this.bunifuImageButton2.TabStop = false;
             this.bunifuImageButton2.Zoom = 10;
             // 
-            // bunifuMaterialTextbox1
+            // bmbuscarTienda
             // 
-            this.bunifuMaterialTextbox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuMaterialTextbox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuMaterialTextbox1.ForeColor = System.Drawing.Color.Black;
-            this.bunifuMaterialTextbox1.HintForeColor = System.Drawing.Color.Black;
-            this.bunifuMaterialTextbox1.HintText = "Buscar Tienda";
-            this.bunifuMaterialTextbox1.isPassword = false;
-            this.bunifuMaterialTextbox1.LineFocusedColor = System.Drawing.Color.Red;
-            this.bunifuMaterialTextbox1.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
-            this.bunifuMaterialTextbox1.LineMouseHoverColor = System.Drawing.Color.SandyBrown;
-            this.bunifuMaterialTextbox1.LineThickness = 5;
-            this.bunifuMaterialTextbox1.Location = new System.Drawing.Point(216, 163);
-            this.bunifuMaterialTextbox1.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuMaterialTextbox1.Name = "bunifuMaterialTextbox1";
-            this.bunifuMaterialTextbox1.Size = new System.Drawing.Size(690, 44);
-            this.bunifuMaterialTextbox1.TabIndex = 179;
-            this.bunifuMaterialTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bmbuscarTienda.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.bmbuscarTienda.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bmbuscarTienda.ForeColor = System.Drawing.Color.Black;
+            this.bmbuscarTienda.HintForeColor = System.Drawing.Color.Black;
+            this.bmbuscarTienda.HintText = "Buscar Tienda";
+            this.bmbuscarTienda.isPassword = false;
+            this.bmbuscarTienda.LineFocusedColor = System.Drawing.Color.Red;
+            this.bmbuscarTienda.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
+            this.bmbuscarTienda.LineMouseHoverColor = System.Drawing.Color.SandyBrown;
+            this.bmbuscarTienda.LineThickness = 5;
+            this.bmbuscarTienda.Location = new System.Drawing.Point(216, 163);
+            this.bmbuscarTienda.Margin = new System.Windows.Forms.Padding(4);
+            this.bmbuscarTienda.Name = "bmbuscarTienda";
+            this.bmbuscarTienda.Size = new System.Drawing.Size(690, 44);
+            this.bmbuscarTienda.TabIndex = 179;
+            this.bmbuscarTienda.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bmbuscarTienda.KeyUp += new System.Windows.Forms.KeyEventHandler(this.bmbuscarTienda_KeyUp);
             // 
             // bmserie
             // 
@@ -1015,7 +1016,7 @@
             this.bunisector.color = System.Drawing.Color.Tomato;
             this.bunisector.Controls.Add(this.bunifuCards4);
             this.bunisector.Controls.Add(this.bunifuImageButton3);
-            this.bunisector.Controls.Add(this.bunifuMaterialTextbox2);
+            this.bunisector.Controls.Add(this.bmbuscarSector);
             this.bunisector.Controls.Add(this.cbotienda);
             this.bunisector.Controls.Add(this.bunifuCards8);
             this.bunisector.Controls.Add(this.bmporcentaje);
@@ -1127,25 +1128,25 @@
             this.bunifuImageButton3.TabStop = false;
             this.bunifuImageButton3.Zoom = 10;
             // 
-            // bunifuMaterialTextbox2
+            // bmbuscarSector
             // 
-            this.bunifuMaterialTextbox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuMaterialTextbox2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuMaterialTextbox2.ForeColor = System.Drawing.Color.Black;
-            this.bunifuMaterialTextbox2.HintForeColor = System.Drawing.Color.Black;
-            this.bunifuMaterialTextbox2.HintText = "Buscar Sector";
-            this.bunifuMaterialTextbox2.isPassword = false;
-            this.bunifuMaterialTextbox2.LineFocusedColor = System.Drawing.Color.Red;
-            this.bunifuMaterialTextbox2.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
-            this.bunifuMaterialTextbox2.LineMouseHoverColor = System.Drawing.Color.SandyBrown;
-            this.bunifuMaterialTextbox2.LineThickness = 5;
-            this.bunifuMaterialTextbox2.Location = new System.Drawing.Point(242, 132);
-            this.bunifuMaterialTextbox2.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuMaterialTextbox2.Name = "bunifuMaterialTextbox2";
-            this.bunifuMaterialTextbox2.Size = new System.Drawing.Size(748, 44);
-            this.bunifuMaterialTextbox2.TabIndex = 181;
-            this.bunifuMaterialTextbox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.bunifuMaterialTextbox2.OnValueChanged += new System.EventHandler(this.bunifuMaterialTextbox2_OnValueChanged);
+            this.bmbuscarSector.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.bmbuscarSector.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bmbuscarSector.ForeColor = System.Drawing.Color.Black;
+            this.bmbuscarSector.HintForeColor = System.Drawing.Color.Black;
+            this.bmbuscarSector.HintText = "Buscar Sector";
+            this.bmbuscarSector.isPassword = false;
+            this.bmbuscarSector.LineFocusedColor = System.Drawing.Color.Red;
+            this.bmbuscarSector.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
+            this.bmbuscarSector.LineMouseHoverColor = System.Drawing.Color.SandyBrown;
+            this.bmbuscarSector.LineThickness = 5;
+            this.bmbuscarSector.Location = new System.Drawing.Point(242, 132);
+            this.bmbuscarSector.Margin = new System.Windows.Forms.Padding(4);
+            this.bmbuscarSector.Name = "bmbuscarSector";
+            this.bmbuscarSector.Size = new System.Drawing.Size(748, 44);
+            this.bmbuscarSector.TabIndex = 181;
+            this.bmbuscarSector.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bmbuscarSector.KeyUp += new System.Windows.Forms.KeyEventHandler(this.bmbuscarSector_KeyUp);
             // 
             // cbotienda
             // 
@@ -2425,9 +2426,9 @@
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
         private Bunifu.Framework.UI.BunifuMaterialTextbox bmBuscar;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton2;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox1;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox bmbuscarTienda;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton3;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox2;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox bmbuscarSector;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton4;
         private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox3;
         private Bunifu.Framework.UI.BunifuTileButton btneliminarPunto;

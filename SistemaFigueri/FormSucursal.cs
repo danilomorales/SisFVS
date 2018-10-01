@@ -627,11 +627,6 @@ namespace SistemaFigueri
 
         }
 
-        private void bunifuMaterialTextbox2_OnValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void bunifuCards8_Paint_1(object sender, PaintEventArgs e)
         {
 
@@ -787,6 +782,42 @@ namespace SistemaFigueri
             da.Fill(dt);
             dgvsucursal.DataSource = dt;
             Conexion.Close();
+        }
+
+        private void bmbuscarTienda_KeyUp(object sender, KeyEventArgs e)
+        {
+            SqlConnection Conex = new SqlConnection("Data Source=192.168.21.05;Initial Catalog=DBFIGUE2;User ID=sa;Password=123;MultipleActiveResultSets=true;");
+            Conex.Open();
+            SqlCommand cmd2 = Conex.CreateCommand();
+            cmd2.CommandType = CommandType.Text;
+            cmd2.CommandText = "select t.IdTienda,r.Nombres,r.Apellidos,t.NombreTienda as 'Nombre de la tienda'," +
+                "t.DireccionTienda as 'Dirección',t.TelefonoTienda 'Telefono',s.nombre_sucursal as 'Sucursal', " +
+                "t.Serie from Caja.TIENDA t, caja.FE_SUCURSAL s,dbo.RESPONSABLE r " +
+                "where (NombreTienda like('%" + bmbuscarTienda.Text + "%')) " +
+                "and t.ide_sucursal = s.ide_sucursal and t.IdResponsable = r.IdResponsable ";
+            cmd2.ExecuteNonQuery();
+            DataTable dt2 = new DataTable();
+            SqlDataAdapter da2 = new SqlDataAdapter(cmd2);
+            da2.Fill(dt2);
+            dgvsucursal.DataSource = dt2;
+            Conex.Close();
+        }
+
+        private void bmbuscarSector_KeyUp(object sender, KeyEventArgs e)
+        {
+            SqlConnection Conexi = new SqlConnection("Data Source=192.168.21.05;Initial Catalog=DBFIGUE2;User ID=sa;Password=123;MultipleActiveResultSets=true;");
+            Conexi.Open();
+            SqlCommand cmd3 = Conexi.CreateCommand();
+            cmd3.CommandType = CommandType.Text;
+            cmd3.CommandText = "select s.IdSector,t.NombreTienda as 'Nombre de la Tienda'," +
+                "s.DescripcionSector 'Sector',s.Nota,s.Porcentaje from caja.SECTOR s, caja.TIENDA t " +
+                "where s.IdTienda = t.IdTienda and DescripcionSector like('%" + bmbuscarSector.Text + "%')";
+            cmd3.ExecuteNonQuery();
+            DataTable dt3 = new DataTable();
+            SqlDataAdapter da3 = new SqlDataAdapter(cmd3);
+            da3.Fill(dt3);
+            dgvsucursal.DataSource = dt3;
+            Conexi.Close();
         }
     }
 }
