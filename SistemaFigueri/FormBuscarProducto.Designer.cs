@@ -146,6 +146,7 @@
             this.dgvlListaProducto.Size = new System.Drawing.Size(1020, 331);
             this.dgvlListaProducto.TabIndex = 231;
             this.dgvlListaProducto.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvlListaProducto_CellDoubleClick);
+            this.dgvlListaProducto.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvlListaProducto_KeyDown);
             // 
             // tbFiltra
             // 
@@ -154,7 +155,7 @@
             this.tbFiltra.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.tbFiltra.ForeColor = System.Drawing.Color.Black;
             this.tbFiltra.HintForeColor = System.Drawing.Color.Black;
-            this.tbFiltra.HintText = "Buscar Cliente";
+            this.tbFiltra.HintText = "Buscar Producto";
             this.tbFiltra.isPassword = false;
             this.tbFiltra.LineFocusedColor = System.Drawing.Color.Red;
             this.tbFiltra.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
@@ -165,6 +166,7 @@
             this.tbFiltra.Name = "tbFiltra";
             this.tbFiltra.Size = new System.Drawing.Size(671, 31);
             this.tbFiltra.TabIndex = 232;
+            this.tbFiltra.Text = "Buscar Cliente";
             this.tbFiltra.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.tbFiltra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbFiltra_KeyPress);
             // 
