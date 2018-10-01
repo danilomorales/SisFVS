@@ -133,6 +133,7 @@ namespace CapaNegocio
         {
             try
             {
+
                 CEProducto c = null;
                 c = CDProductos.Instancia.BuscaProductoCB(id_pro, Cod_barra);
                 if (c == null) throw new ApplicationException("No se encontro registro");

@@ -501,6 +501,18 @@ namespace CapaDatos
                 dPar.Value = (object) dObj_VentaPago.Ide_Tarjeta_Banco == null ? DBNull.Value : (object)dObj_VentaPago.Ide_Tarjeta_Banco;
                 dPar.Direction = ParameterDirection.Input;
 
+                dPar = Cmd.Parameters.Add("@vNro_tarjeta", SqlDbType.NChar);
+                dPar.Value = (object) dObj_VentaPago.Num_Tarjeta == null ? DBNull.Value : (object)dObj_VentaPago.Num_Tarjeta;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vNro_operacion", SqlDbType.NChar);
+                dPar.Value = (object) dObj_VentaPago.Num_Operacion == null ? DBNull.Value : (object)dObj_VentaPago.Num_Operacion;
+                dPar.Direction = ParameterDirection.Input;
+
+                dPar = Cmd.Parameters.Add("@vNro_referencia", SqlDbType.NChar);
+                dPar.Value = (object)dObj_VentaPago.Num_Referencia == null ? DBNull.Value : (object)dObj_VentaPago.Num_Referencia;
+                dPar.Direction = ParameterDirection.Input;
+
                 dPar = Cmd.Parameters.Add("@vIde_Banco", SqlDbType.Int);
                 dPar.Value = (object) dObj_VentaPago.Ide_Banco == null ? DBNull.Value : (object)dObj_VentaPago.Ide_Banco;
                 dPar.Direction = ParameterDirection.Input;

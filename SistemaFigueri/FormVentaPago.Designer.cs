@@ -49,26 +49,31 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.bunifuCustomLabel28 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panelImpresiones = new System.Windows.Forms.Panel();
-            this.bunifuCustomLabel27 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panelPostExterno = new System.Windows.Forms.Panel();
             this.chkPosExterno = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.btnPosExterno = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuCustomLabel23 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panelMonto = new System.Windows.Forms.Panel();
+            this.btnClear = new Bunifu.Framework.UI.BunifuImageButton();
             this.tbMonto = new System.Windows.Forms.TextBox();
             this.bunifuCustomLabel11 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.panelTipoTarjeta = new System.Windows.Forms.Panel();
-            this.cboTipoTarjeta = new System.Windows.Forms.ComboBox();
-            this.bunifuCustomLabel22 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.panelMoneda = new System.Windows.Forms.Panel();
-            this.cboMoneda = new System.Windows.Forms.ComboBox();
-            this.bunifuCustomLabel10 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.panelTarjeta = new System.Windows.Forms.Panel();
-            this.cboTarjeta = new System.Windows.Forms.ComboBox();
-            this.bunifuCustomLabel21 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.panelImpresiones = new System.Windows.Forms.Panel();
+            this.bunifuCustomLabel27 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.btnVisa = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnMasterCard = new Bunifu.Framework.UI.BunifuImageButton();
             this.panelFormaPago = new System.Windows.Forms.Panel();
             this.bunifuCustomLabel9 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.cboFormaPago = new System.Windows.Forms.ComboBox();
+            this.panelTarjeta = new System.Windows.Forms.Panel();
+            this.cboTarjeta = new System.Windows.Forms.ComboBox();
+            this.bunifuCustomLabel21 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.panelMoneda = new System.Windows.Forms.Panel();
+            this.cboMoneda = new System.Windows.Forms.ComboBox();
+            this.bunifuCustomLabel10 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.panelTipoTarjeta = new System.Windows.Forms.Panel();
+            this.cboTipoTarjeta = new System.Windows.Forms.ComboBox();
+            this.bunifuCustomLabel22 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.btnAgregar = new Bunifu.Framework.UI.BunifuFlatButton();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dgvPago = new System.Windows.Forms.DataGridView();
             this.IDFORMAPAGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -103,39 +108,34 @@
             this.bunifuCustomLabel16 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel19 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.BarraCabecera = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.tbTipoCambio = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.btnGuardar = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnFinalizar = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnVisa = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnMasterCard = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnPosExterno = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnClear = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnAgregar = new Bunifu.Framework.UI.BunifuFlatButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panelCancelacion.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panelImpresiones.SuspendLayout();
             this.panelPostExterno.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPosExterno)).BeginInit();
             this.panelMonto.SuspendLayout();
-            this.panelTipoTarjeta.SuspendLayout();
-            this.panelMoneda.SuspendLayout();
-            this.panelTarjeta.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClear)).BeginInit();
+            this.panelImpresiones.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnVisa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMasterCard)).BeginInit();
             this.panelFormaPago.SuspendLayout();
+            this.panelTarjeta.SuspendLayout();
+            this.panelMoneda.SuspendLayout();
+            this.panelTipoTarjeta.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPago)).BeginInit();
             this.groupBox5.SuspendLayout();
             this.BarraCabecera.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnVisa)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMasterCard)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnPosExterno)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnClear)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -413,40 +413,14 @@
             this.panel2.Controls.Add(this.panelPostExterno);
             this.panel2.Controls.Add(this.panelMonto);
             this.panel2.Controls.Add(this.panelImpresiones);
-            this.panel2.Controls.Add(this.panelFormaPago);
             this.panel2.Controls.Add(this.panelTarjeta);
-            this.panel2.Controls.Add(this.panelMoneda);
             this.panel2.Controls.Add(this.panelTipoTarjeta);
+            this.panel2.Controls.Add(this.panelMoneda);
+            this.panel2.Controls.Add(this.panelFormaPago);
             this.panel2.Location = new System.Drawing.Point(10, 22);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(940, 59);
             this.panel2.TabIndex = 1;
-            // 
-            // panelImpresiones
-            // 
-            this.panelImpresiones.Controls.Add(this.bunifuCustomLabel27);
-            this.panelImpresiones.Controls.Add(this.btnVisa);
-            this.panelImpresiones.Controls.Add(this.btnMasterCard);
-            this.panelImpresiones.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelImpresiones.Location = new System.Drawing.Point(744, 0);
-            this.panelImpresiones.Name = "panelImpresiones";
-            this.panelImpresiones.Size = new System.Drawing.Size(196, 59);
-            this.panelImpresiones.TabIndex = 259;
-            // 
-            // bunifuCustomLabel27
-            // 
-            this.bunifuCustomLabel27.AutoSize = true;
-            this.bunifuCustomLabel27.BackColor = System.Drawing.Color.Moccasin;
-            this.bunifuCustomLabel27.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bunifuCustomLabel27.Font = new System.Drawing.Font("Century Gothic", 11F);
-            this.bunifuCustomLabel27.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel27.Location = new System.Drawing.Point(6, 5);
-            this.bunifuCustomLabel27.Name = "bunifuCustomLabel27";
-            this.bunifuCustomLabel27.Size = new System.Drawing.Size(75, 23);
-            this.bunifuCustomLabel27.TabIndex = 257;
-            this.bunifuCustomLabel27.Text = "Imprimir:  ";
-            this.bunifuCustomLabel27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuCustomLabel27.UseCompatibleTextRendering = true;
             // 
             // panelPostExterno
             // 
@@ -461,7 +435,7 @@
             // 
             // chkPosExterno
             // 
-            this.chkPosExterno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
+            this.chkPosExterno.BackColor = System.Drawing.Color.Silver;
             this.chkPosExterno.ChechedOffColor = System.Drawing.Color.Silver;
             this.chkPosExterno.Checked = false;
             this.chkPosExterno.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
@@ -472,6 +446,21 @@
             this.chkPosExterno.Name = "chkPosExterno";
             this.chkPosExterno.Size = new System.Drawing.Size(20, 20);
             this.chkPosExterno.TabIndex = 261;
+            // 
+            // btnPosExterno
+            // 
+            this.btnPosExterno.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnPosExterno.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPosExterno.Image = global::SistemaFigueri.Properties.Resources.credit;
+            this.btnPosExterno.ImageActive = null;
+            this.btnPosExterno.Location = new System.Drawing.Point(99, 4);
+            this.btnPosExterno.Name = "btnPosExterno";
+            this.btnPosExterno.Size = new System.Drawing.Size(41, 23);
+            this.btnPosExterno.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnPosExterno.TabIndex = 260;
+            this.btnPosExterno.TabStop = false;
+            this.btnPosExterno.Zoom = 10;
+            this.btnPosExterno.Click += new System.EventHandler(this.btnPosExterno_Click);
             // 
             // bunifuCustomLabel23
             // 
@@ -498,6 +487,21 @@
             this.panelMonto.Name = "panelMonto";
             this.panelMonto.Size = new System.Drawing.Size(118, 59);
             this.panelMonto.TabIndex = 4;
+            // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.Color.Transparent;
+            this.btnClear.Image = ((System.Drawing.Image)(resources.GetObject("btnClear.Image")));
+            this.btnClear.ImageActive = null;
+            this.btnClear.Location = new System.Drawing.Point(83, 30);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(0);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(32, 27);
+            this.btnClear.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnClear.TabIndex = 255;
+            this.btnClear.TabStop = false;
+            this.btnClear.Zoom = 10;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click_1);
             // 
             // tbMonto
             // 
@@ -531,87 +535,104 @@
             this.bunifuCustomLabel11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuCustomLabel11.UseCompatibleTextRendering = true;
             // 
-            // panelTipoTarjeta
+            // panelImpresiones
             // 
-            this.panelTipoTarjeta.Controls.Add(this.cboTipoTarjeta);
-            this.panelTipoTarjeta.Controls.Add(this.bunifuCustomLabel22);
-            this.panelTipoTarjeta.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelTipoTarjeta.Location = new System.Drawing.Point(0, 0);
-            this.panelTipoTarjeta.Name = "panelTipoTarjeta";
-            this.panelTipoTarjeta.Size = new System.Drawing.Size(110, 59);
-            this.panelTipoTarjeta.TabIndex = 258;
+            this.panelImpresiones.Controls.Add(this.bunifuCustomLabel27);
+            this.panelImpresiones.Controls.Add(this.btnVisa);
+            this.panelImpresiones.Controls.Add(this.btnMasterCard);
+            this.panelImpresiones.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelImpresiones.Location = new System.Drawing.Point(744, 0);
+            this.panelImpresiones.Name = "panelImpresiones";
+            this.panelImpresiones.Size = new System.Drawing.Size(196, 59);
+            this.panelImpresiones.TabIndex = 259;
             // 
-            // cboTipoTarjeta
+            // bunifuCustomLabel27
             // 
-            this.cboTipoTarjeta.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cboTipoTarjeta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboTipoTarjeta.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboTipoTarjeta.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.cboTipoTarjeta.FormattingEnabled = true;
-            this.cboTipoTarjeta.Location = new System.Drawing.Point(3, 30);
-            this.cboTipoTarjeta.Name = "cboTipoTarjeta";
-            this.cboTipoTarjeta.Size = new System.Drawing.Size(97, 26);
-            this.cboTipoTarjeta.TabIndex = 257;
-            this.cboTipoTarjeta.SelectedValueChanged += new System.EventHandler(this.cboTarjeta_SelectedValueChanged);
+            this.bunifuCustomLabel27.AutoSize = true;
+            this.bunifuCustomLabel27.BackColor = System.Drawing.Color.Moccasin;
+            this.bunifuCustomLabel27.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bunifuCustomLabel27.Font = new System.Drawing.Font("Century Gothic", 11F);
+            this.bunifuCustomLabel27.ForeColor = System.Drawing.Color.Black;
+            this.bunifuCustomLabel27.Location = new System.Drawing.Point(6, 5);
+            this.bunifuCustomLabel27.Name = "bunifuCustomLabel27";
+            this.bunifuCustomLabel27.Size = new System.Drawing.Size(75, 23);
+            this.bunifuCustomLabel27.TabIndex = 257;
+            this.bunifuCustomLabel27.Text = "Imprimir:  ";
+            this.bunifuCustomLabel27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuCustomLabel27.UseCompatibleTextRendering = true;
             // 
-            // bunifuCustomLabel22
+            // btnVisa
             // 
-            this.bunifuCustomLabel22.AutoSize = true;
-            this.bunifuCustomLabel22.BackColor = System.Drawing.Color.Moccasin;
-            this.bunifuCustomLabel22.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bunifuCustomLabel22.Font = new System.Drawing.Font("Century Gothic", 11F);
-            this.bunifuCustomLabel22.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel22.Location = new System.Drawing.Point(3, 5);
-            this.bunifuCustomLabel22.Name = "bunifuCustomLabel22";
-            this.bunifuCustomLabel22.Size = new System.Drawing.Size(97, 23);
-            this.bunifuCustomLabel22.TabIndex = 256;
-            this.bunifuCustomLabel22.Text = "Tipo Tarjeta: ";
-            this.bunifuCustomLabel22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuCustomLabel22.UseCompatibleTextRendering = true;
+            this.btnVisa.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnVisa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVisa.Image = global::SistemaFigueri.Properties.Resources.visa;
+            this.btnVisa.ImageActive = null;
+            this.btnVisa.Location = new System.Drawing.Point(144, 2);
+            this.btnVisa.Name = "btnVisa";
+            this.btnVisa.Size = new System.Drawing.Size(43, 33);
+            this.btnVisa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnVisa.TabIndex = 2;
+            this.btnVisa.TabStop = false;
+            this.btnVisa.Zoom = 10;
             // 
-            // panelMoneda
+            // btnMasterCard
             // 
-            this.panelMoneda.Controls.Add(this.cboMoneda);
-            this.panelMoneda.Controls.Add(this.bunifuCustomLabel10);
-            this.panelMoneda.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelMoneda.Location = new System.Drawing.Point(110, 0);
-            this.panelMoneda.Name = "panelMoneda";
-            this.panelMoneda.Size = new System.Drawing.Size(97, 59);
-            this.panelMoneda.TabIndex = 3;
+            this.btnMasterCard.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnMasterCard.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMasterCard.Image = global::SistemaFigueri.Properties.Resources.mastercard;
+            this.btnMasterCard.ImageActive = null;
+            this.btnMasterCard.Location = new System.Drawing.Point(83, 2);
+            this.btnMasterCard.Name = "btnMasterCard";
+            this.btnMasterCard.Size = new System.Drawing.Size(55, 33);
+            this.btnMasterCard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnMasterCard.TabIndex = 1;
+            this.btnMasterCard.TabStop = false;
+            this.btnMasterCard.Zoom = 10;
             // 
-            // cboMoneda
+            // panelFormaPago
             // 
-            this.cboMoneda.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cboMoneda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboMoneda.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboMoneda.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.cboMoneda.FormattingEnabled = true;
-            this.cboMoneda.Location = new System.Drawing.Point(3, 29);
-            this.cboMoneda.Name = "cboMoneda";
-            this.cboMoneda.Size = new System.Drawing.Size(77, 26);
-            this.cboMoneda.TabIndex = 253;
+            this.panelFormaPago.Controls.Add(this.cboFormaPago);
+            this.panelFormaPago.Controls.Add(this.bunifuCustomLabel9);
+            this.panelFormaPago.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelFormaPago.Location = new System.Drawing.Point(0, 0);
+            this.panelFormaPago.Name = "panelFormaPago";
+            this.panelFormaPago.Size = new System.Drawing.Size(139, 59);
+            this.panelFormaPago.TabIndex = 1;
             // 
-            // bunifuCustomLabel10
+            // bunifuCustomLabel9
             // 
-            this.bunifuCustomLabel10.AutoSize = true;
-            this.bunifuCustomLabel10.BackColor = System.Drawing.Color.Moccasin;
-            this.bunifuCustomLabel10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bunifuCustomLabel10.Font = new System.Drawing.Font("Century Gothic", 11F);
-            this.bunifuCustomLabel10.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel10.Location = new System.Drawing.Point(3, 4);
-            this.bunifuCustomLabel10.Name = "bunifuCustomLabel10";
-            this.bunifuCustomLabel10.Size = new System.Drawing.Size(77, 23);
-            this.bunifuCustomLabel10.TabIndex = 252;
-            this.bunifuCustomLabel10.Text = "Moneda: ";
-            this.bunifuCustomLabel10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuCustomLabel10.UseCompatibleTextRendering = true;
+            this.bunifuCustomLabel9.AutoSize = true;
+            this.bunifuCustomLabel9.BackColor = System.Drawing.Color.Moccasin;
+            this.bunifuCustomLabel9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bunifuCustomLabel9.Font = new System.Drawing.Font("Century Gothic", 11F);
+            this.bunifuCustomLabel9.ForeColor = System.Drawing.Color.Black;
+            this.bunifuCustomLabel9.Location = new System.Drawing.Point(3, 4);
+            this.bunifuCustomLabel9.Name = "bunifuCustomLabel9";
+            this.bunifuCustomLabel9.Size = new System.Drawing.Size(128, 23);
+            this.bunifuCustomLabel9.TabIndex = 251;
+            this.bunifuCustomLabel9.Text = "Forma de Pago: ";
+            this.bunifuCustomLabel9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuCustomLabel9.UseCompatibleTextRendering = true;
+            // 
+            // cboFormaPago
+            // 
+            this.cboFormaPago.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cboFormaPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboFormaPago.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboFormaPago.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.cboFormaPago.FormattingEnabled = true;
+            this.cboFormaPago.Location = new System.Drawing.Point(6, 30);
+            this.cboFormaPago.Name = "cboFormaPago";
+            this.cboFormaPago.Size = new System.Drawing.Size(125, 26);
+            this.cboFormaPago.TabIndex = 250;
+            this.cboFormaPago.SelectedIndexChanged += new System.EventHandler(this.cboFormaPago_SelectedIndexChanged);
             // 
             // panelTarjeta
             // 
             this.panelTarjeta.Controls.Add(this.cboTarjeta);
             this.panelTarjeta.Controls.Add(this.bunifuCustomLabel21);
             this.panelTarjeta.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelTarjeta.Location = new System.Drawing.Point(207, 0);
+            this.panelTarjeta.Location = new System.Drawing.Point(346, 0);
             this.panelTarjeta.Name = "panelTarjeta";
             this.panelTarjeta.Size = new System.Drawing.Size(97, 59);
             this.panelTarjeta.TabIndex = 1;
@@ -645,43 +666,117 @@
             this.bunifuCustomLabel21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuCustomLabel21.UseCompatibleTextRendering = true;
             // 
-            // panelFormaPago
+            // panelMoneda
             // 
-            this.panelFormaPago.Controls.Add(this.bunifuCustomLabel9);
-            this.panelFormaPago.Controls.Add(this.cboFormaPago);
-            this.panelFormaPago.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelFormaPago.Location = new System.Drawing.Point(304, 0);
-            this.panelFormaPago.Name = "panelFormaPago";
-            this.panelFormaPago.Size = new System.Drawing.Size(139, 59);
-            this.panelFormaPago.TabIndex = 1;
+            this.panelMoneda.Controls.Add(this.cboMoneda);
+            this.panelMoneda.Controls.Add(this.bunifuCustomLabel10);
+            this.panelMoneda.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelMoneda.Location = new System.Drawing.Point(139, 0);
+            this.panelMoneda.Name = "panelMoneda";
+            this.panelMoneda.Size = new System.Drawing.Size(97, 59);
+            this.panelMoneda.TabIndex = 3;
             // 
-            // bunifuCustomLabel9
+            // cboMoneda
             // 
-            this.bunifuCustomLabel9.AutoSize = true;
-            this.bunifuCustomLabel9.BackColor = System.Drawing.Color.Moccasin;
-            this.bunifuCustomLabel9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bunifuCustomLabel9.Font = new System.Drawing.Font("Century Gothic", 11F);
-            this.bunifuCustomLabel9.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel9.Location = new System.Drawing.Point(3, 4);
-            this.bunifuCustomLabel9.Name = "bunifuCustomLabel9";
-            this.bunifuCustomLabel9.Size = new System.Drawing.Size(128, 23);
-            this.bunifuCustomLabel9.TabIndex = 251;
-            this.bunifuCustomLabel9.Text = "Forma de Pago: ";
-            this.bunifuCustomLabel9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuCustomLabel9.UseCompatibleTextRendering = true;
+            this.cboMoneda.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cboMoneda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboMoneda.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboMoneda.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.cboMoneda.FormattingEnabled = true;
+            this.cboMoneda.Location = new System.Drawing.Point(3, 29);
+            this.cboMoneda.Name = "cboMoneda";
+            this.cboMoneda.Size = new System.Drawing.Size(77, 26);
+            this.cboMoneda.TabIndex = 253;
             // 
-            // cboFormaPago
+            // bunifuCustomLabel10
             // 
-            this.cboFormaPago.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cboFormaPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboFormaPago.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboFormaPago.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.cboFormaPago.FormattingEnabled = true;
-            this.cboFormaPago.Location = new System.Drawing.Point(6, 30);
-            this.cboFormaPago.Name = "cboFormaPago";
-            this.cboFormaPago.Size = new System.Drawing.Size(125, 26);
-            this.cboFormaPago.TabIndex = 250;
-            this.cboFormaPago.SelectedIndexChanged += new System.EventHandler(this.cboFormaPago_SelectedIndexChanged);
+            this.bunifuCustomLabel10.AutoSize = true;
+            this.bunifuCustomLabel10.BackColor = System.Drawing.Color.Moccasin;
+            this.bunifuCustomLabel10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bunifuCustomLabel10.Font = new System.Drawing.Font("Century Gothic", 11F);
+            this.bunifuCustomLabel10.ForeColor = System.Drawing.Color.Black;
+            this.bunifuCustomLabel10.Location = new System.Drawing.Point(3, 4);
+            this.bunifuCustomLabel10.Name = "bunifuCustomLabel10";
+            this.bunifuCustomLabel10.Size = new System.Drawing.Size(77, 23);
+            this.bunifuCustomLabel10.TabIndex = 252;
+            this.bunifuCustomLabel10.Text = "Moneda: ";
+            this.bunifuCustomLabel10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuCustomLabel10.UseCompatibleTextRendering = true;
+            // 
+            // panelTipoTarjeta
+            // 
+            this.panelTipoTarjeta.Controls.Add(this.cboTipoTarjeta);
+            this.panelTipoTarjeta.Controls.Add(this.bunifuCustomLabel22);
+            this.panelTipoTarjeta.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelTipoTarjeta.Location = new System.Drawing.Point(236, 0);
+            this.panelTipoTarjeta.Name = "panelTipoTarjeta";
+            this.panelTipoTarjeta.Size = new System.Drawing.Size(110, 59);
+            this.panelTipoTarjeta.TabIndex = 258;
+            // 
+            // cboTipoTarjeta
+            // 
+            this.cboTipoTarjeta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cboTipoTarjeta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTipoTarjeta.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboTipoTarjeta.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.cboTipoTarjeta.FormattingEnabled = true;
+            this.cboTipoTarjeta.Location = new System.Drawing.Point(3, 30);
+            this.cboTipoTarjeta.Name = "cboTipoTarjeta";
+            this.cboTipoTarjeta.Size = new System.Drawing.Size(97, 26);
+            this.cboTipoTarjeta.TabIndex = 257;
+            this.cboTipoTarjeta.SelectedValueChanged += new System.EventHandler(this.cboTarjeta_SelectedValueChanged);
+            // 
+            // bunifuCustomLabel22
+            // 
+            this.bunifuCustomLabel22.AutoSize = true;
+            this.bunifuCustomLabel22.BackColor = System.Drawing.Color.Moccasin;
+            this.bunifuCustomLabel22.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bunifuCustomLabel22.Font = new System.Drawing.Font("Century Gothic", 11F);
+            this.bunifuCustomLabel22.ForeColor = System.Drawing.Color.Black;
+            this.bunifuCustomLabel22.Location = new System.Drawing.Point(3, 5);
+            this.bunifuCustomLabel22.Name = "bunifuCustomLabel22";
+            this.bunifuCustomLabel22.Size = new System.Drawing.Size(97, 23);
+            this.bunifuCustomLabel22.TabIndex = 256;
+            this.bunifuCustomLabel22.Text = "Tipo Tarjeta: ";
+            this.bunifuCustomLabel22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuCustomLabel22.UseCompatibleTextRendering = true;
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAgregar.BorderRadius = 0;
+            this.btnAgregar.ButtonText = "Agregar";
+            this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregar.DisabledColor = System.Drawing.Color.Gray;
+            this.btnAgregar.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnAgregar.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Iconimage")));
+            this.btnAgregar.Iconimage_right = null;
+            this.btnAgregar.Iconimage_right_Selected = null;
+            this.btnAgregar.Iconimage_Selected = null;
+            this.btnAgregar.IconMarginLeft = 0;
+            this.btnAgregar.IconMarginRight = 0;
+            this.btnAgregar.IconRightVisible = true;
+            this.btnAgregar.IconRightZoom = 0D;
+            this.btnAgregar.IconVisible = true;
+            this.btnAgregar.IconZoom = 80D;
+            this.btnAgregar.IsTab = false;
+            this.btnAgregar.Location = new System.Drawing.Point(957, 23);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnAgregar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btnAgregar.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnAgregar.selected = false;
+            this.btnAgregar.Size = new System.Drawing.Size(120, 57);
+            this.btnAgregar.TabIndex = 194;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnAgregar.Textcolor = System.Drawing.Color.White;
+            this.btnAgregar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // groupBox4
             // 
@@ -1114,6 +1209,16 @@
             this.BarraCabecera.TabIndex = 194;
             this.BarraCabecera.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BarraCabecera_MouseDown);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(29, 36);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 212;
+            this.pictureBox1.TabStop = false;
+            // 
             // bunifuCustomLabel2
             // 
             this.bunifuCustomLabel2.AutoSize = true;
@@ -1233,111 +1338,6 @@
             this.btnFinalizar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(29, 36);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 212;
-            this.pictureBox1.TabStop = false;
-            // 
-            // btnVisa
-            // 
-            this.btnVisa.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnVisa.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVisa.Image = global::SistemaFigueri.Properties.Resources.visa;
-            this.btnVisa.ImageActive = null;
-            this.btnVisa.Location = new System.Drawing.Point(144, 2);
-            this.btnVisa.Name = "btnVisa";
-            this.btnVisa.Size = new System.Drawing.Size(43, 33);
-            this.btnVisa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnVisa.TabIndex = 2;
-            this.btnVisa.TabStop = false;
-            this.btnVisa.Zoom = 10;
-            // 
-            // btnMasterCard
-            // 
-            this.btnMasterCard.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMasterCard.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMasterCard.Image = global::SistemaFigueri.Properties.Resources.mastercard;
-            this.btnMasterCard.ImageActive = null;
-            this.btnMasterCard.Location = new System.Drawing.Point(83, 2);
-            this.btnMasterCard.Name = "btnMasterCard";
-            this.btnMasterCard.Size = new System.Drawing.Size(55, 33);
-            this.btnMasterCard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnMasterCard.TabIndex = 1;
-            this.btnMasterCard.TabStop = false;
-            this.btnMasterCard.Zoom = 10;
-            // 
-            // btnPosExterno
-            // 
-            this.btnPosExterno.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btnPosExterno.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPosExterno.Image = global::SistemaFigueri.Properties.Resources.credit;
-            this.btnPosExterno.ImageActive = null;
-            this.btnPosExterno.Location = new System.Drawing.Point(99, 4);
-            this.btnPosExterno.Name = "btnPosExterno";
-            this.btnPosExterno.Size = new System.Drawing.Size(41, 23);
-            this.btnPosExterno.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnPosExterno.TabIndex = 260;
-            this.btnPosExterno.TabStop = false;
-            this.btnPosExterno.Zoom = 10;
-            this.btnPosExterno.Click += new System.EventHandler(this.btnPosExterno_Click);
-            // 
-            // btnClear
-            // 
-            this.btnClear.BackColor = System.Drawing.Color.Transparent;
-            this.btnClear.Image = ((System.Drawing.Image)(resources.GetObject("btnClear.Image")));
-            this.btnClear.ImageActive = null;
-            this.btnClear.Location = new System.Drawing.Point(83, 30);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(0);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(32, 27);
-            this.btnClear.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnClear.TabIndex = 255;
-            this.btnClear.TabStop = false;
-            this.btnClear.Zoom = 10;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click_1);
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAgregar.BorderRadius = 0;
-            this.btnAgregar.ButtonText = "Agregar";
-            this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregar.DisabledColor = System.Drawing.Color.Gray;
-            this.btnAgregar.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnAgregar.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Iconimage")));
-            this.btnAgregar.Iconimage_right = null;
-            this.btnAgregar.Iconimage_right_Selected = null;
-            this.btnAgregar.Iconimage_Selected = null;
-            this.btnAgregar.IconMarginLeft = 0;
-            this.btnAgregar.IconMarginRight = 0;
-            this.btnAgregar.IconRightVisible = true;
-            this.btnAgregar.IconRightZoom = 0D;
-            this.btnAgregar.IconVisible = true;
-            this.btnAgregar.IconZoom = 80D;
-            this.btnAgregar.IsTab = false;
-            this.btnAgregar.Location = new System.Drawing.Point(957, 23);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnAgregar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.btnAgregar.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnAgregar.selected = false;
-            this.btnAgregar.Size = new System.Drawing.Size(120, 57);
-            this.btnAgregar.TabIndex = 194;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnAgregar.Textcolor = System.Drawing.Color.White;
-            this.btnAgregar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
             // FormVentaPago
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1368,20 +1368,24 @@
             this.panelCancelacion.ResumeLayout(false);
             this.panelCancelacion.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.panelImpresiones.ResumeLayout(false);
-            this.panelImpresiones.PerformLayout();
             this.panelPostExterno.ResumeLayout(false);
             this.panelPostExterno.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPosExterno)).EndInit();
             this.panelMonto.ResumeLayout(false);
             this.panelMonto.PerformLayout();
-            this.panelTipoTarjeta.ResumeLayout(false);
-            this.panelTipoTarjeta.PerformLayout();
-            this.panelMoneda.ResumeLayout(false);
-            this.panelMoneda.PerformLayout();
-            this.panelTarjeta.ResumeLayout(false);
-            this.panelTarjeta.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClear)).EndInit();
+            this.panelImpresiones.ResumeLayout(false);
+            this.panelImpresiones.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnVisa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMasterCard)).EndInit();
             this.panelFormaPago.ResumeLayout(false);
             this.panelFormaPago.PerformLayout();
+            this.panelTarjeta.ResumeLayout(false);
+            this.panelTarjeta.PerformLayout();
+            this.panelMoneda.ResumeLayout(false);
+            this.panelMoneda.PerformLayout();
+            this.panelTipoTarjeta.ResumeLayout(false);
+            this.panelTipoTarjeta.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPago)).EndInit();
             this.groupBox5.ResumeLayout(false);
@@ -1389,10 +1393,6 @@
             this.BarraCabecera.ResumeLayout(false);
             this.BarraCabecera.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnVisa)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMasterCard)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnPosExterno)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnClear)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
