@@ -240,8 +240,8 @@ namespace CapaDatos
             SqlCommand cmd = null;
             SqlDataReader dr = null;
             CEProducto p = null;
-            /*try
-            {*/
+            try
+            {
                 SqlConnection cn = CDConexion.Instancia.AbrirConexion();
                 cmd = new SqlCommand("Caja.SP_FE_BuscaProductoCB", cn);
                 cmd.Parameters.AddWithValue("@prmidProducto", id_pro);
@@ -260,13 +260,13 @@ namespace CapaDatos
 
                 }
                 cmd.Connection.Close();
-            /*}
+            }
             catch (Exception)
             {
 
                 throw;
-            }*/
-           /* finally { cmd.Connection.Close(); }*/
+            }
+           finally { cmd.Connection.Close(); }
             return p;
         }
         public CEProducto BuscaProductoPorDescripcion(int id_pro, String des_pro)

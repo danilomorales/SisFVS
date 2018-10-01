@@ -72,6 +72,7 @@ namespace SistemaFigueri
  
         private void dgvPedidos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            
             IdPedidoProducto = dgvPedidos.Rows[e.RowIndex].Cells["IdPedidoProducto"].Value.ToString();
             idcliente = dgvPedidos.Rows[e.RowIndex].Cells["IdCliente"].Value.ToString();
             empresa = dgvPedidos.Rows[e.RowIndex].Cells["NombreEmpresa"].Value.ToString();

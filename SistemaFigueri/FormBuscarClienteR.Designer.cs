@@ -116,7 +116,6 @@
             this.dgvCliente.Size = new System.Drawing.Size(926, 331);
             this.dgvCliente.TabIndex = 228;
             this.dgvCliente.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCliente_CellDoubleClick_1);
-            this.dgvCliente.DoubleClick += new System.EventHandler(this.dgvCliente_DoubleClick_1);
             // 
             // bunifuImageButton2
             // 

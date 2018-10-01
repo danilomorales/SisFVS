@@ -40,6 +40,30 @@ namespace CapaEntidades
             set { ide_tarjeta_banco = value; }
         }
 
+        string num_tarjeta;
+
+        public string Num_Tarjeta
+        {
+            get { return num_tarjeta; }
+            set { num_tarjeta = value; }
+        }
+
+        string num_operacion;
+
+        public string Num_Operacion
+        {
+            get { return num_operacion; }
+            set { num_operacion = value; }
+        }
+
+        string num_referencia;
+
+        public string Num_Referencia
+        {
+            get { return num_referencia; }
+            set { num_referencia = value; }
+        }
+
         int ide_banco;
 
         public int Ide_Banco

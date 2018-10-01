@@ -230,6 +230,7 @@ namespace SistemaFigueri
             tbrazonsocial.Focus();
 
             CNVentas cNVentas = new CNVentas();
+            cboTipoDoc.SelectedValue = "2";
             int idcomprobante = Int32.Parse(cboTipoDoc.SelectedValue.ToString());
             cboSerie.ValueMember = "IdSerie";
             cboSerie.DisplayMember = "Serie";
@@ -505,10 +506,12 @@ namespace SistemaFigueri
             if (lst.Count > 0)
             {
                 tbMonto.Enabled = true;
+                btnPagar.Enabled = true;
             }
             else
             {
                 tbMonto.Enabled = false;
+                btnPagar.Enabled = false;
             }
         }
 
@@ -529,6 +532,24 @@ namespace SistemaFigueri
             Program.PrecioVenta = 0;
         }
         private void LimpiarClienteDNI()
+        {
+            //tbDocumento.Clear();
+            tbtipodoc.Clear();
+            tbClienteNombre.Clear();
+            tbCliapellido.Clear();
+            tbrazonsocial.Clear();
+            tbRuc.Clear();
+        }
+        private void LimpiarClienteEmpresa()
+        {
+            tbDocumento.Clear();
+            tbtipodoc.Clear();
+            tbClienteNombre.Clear();
+            tbCliapellido.Clear();
+                
+            tbRuc.Clear();
+        }
+        private void LimpiarClienteTotal()
         {
             tbDocumento.Clear();
             tbtipodoc.Clear();
@@ -839,13 +860,14 @@ namespace SistemaFigueri
                                 {
                                     MessageBox.Show("Se insertó correctamente");
                                     Reportes.ComprobanteVenta compPrint = new Reportes.ComprobanteVenta();
-                                    compPrint.Load("C:\\Users\\AlphaLeader\\Desktop\\SisFVS2\\SistemaFigueri\\SistemaFigueri\\Reportes\\ComprobanteVenta.rpt");
-                                    compPrint.SetDataSource(dsdet);
-                                    //formC.crystalReportViewer1.ReportSource = compPrint;
-                                    //formC.ShowDialog();
-                                    /*comp.PrintOptions.PaperOrientation = PaperOrientation.Portrait;
-                                    comp.PrintOptions.PaperSize = PaperSize.PaperA4;*/
-                                    compPrint.PrintToPrinter(1, false, 0, 15);
+                                //compPrint.Load("C:\\Users\\AlphaLeader\\Desktop\\SisFVS2\\SistemaFigueri\\SistemaFigueri\\Reportes\\ComprobanteVenta.rpt");
+                                //compPrint.SetDataSource(dsdet);
+                                //formC.crystalReportViewer1.ReportSource = compPrint;
+                                //formC.ShowDialog();
+                                /*comp.PrintOptions.PaperOrientation = PaperOrientation.Portrait;
+                                comp.PrintOptions.PaperSize = PaperSize.PaperA4;*/
+                                //compPrint.PrintToPrinter(1, false, 0, 15);
+                                    cboTipoDoc.SelectedValue = "2";
                                     Limpiar();
                                     LimpiarClienteDNI();
                                     LimpiarProducto();
@@ -1038,7 +1060,7 @@ namespace SistemaFigueri
 
             */
         }
-
+        int contando = 0;
         private void cboTipoDoc_SelectedIndexChanged(object sender, EventArgs e)
         {
             String indice = cboTipoDoc.SelectedValue.ToString();
@@ -1048,20 +1070,32 @@ namespace SistemaFigueri
             switch (indice)
             {
                 case "1":
+                    contando++;
+                    if (tieneRuc == true)
+                    {
+                        cboSerie.ValueMember = "IdSerie";
+                        cboSerie.DisplayMember = "Serie";
+                        cboSerie.DataSource = cNVentas.traerSerie(Int32.Parse(indice));
+                        idserie = Int32.Parse(cboSerie.SelectedValue.ToString());
+                        correlativo = cNVentas.traerCorrelativo(Int32.Parse(indice), idserie);
+
+                        lblSerie.Text = cboSerie.Text;
+                        lblNroCorrelativo.Text = correlativo;
+                        lblTipo.Text = "FACTURA DE VENTA";
+                    }
+                    else
+                    {
+                        if (contando > 1)
+                        {
+                            MessageBox.Show("El cliente no tiene RUC", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            cboTipoDoc.SelectedValue = "2";
+                        }
+                       
+                    }
                     
-
-                    cboSerie.ValueMember = "IdSerie";
-                    cboSerie.DisplayMember = "Serie";
-                    cboSerie.DataSource = cNVentas.traerSerie(Int32.Parse(indice));
-                    idserie = Int32.Parse(cboSerie.SelectedValue.ToString());
-                    correlativo = cNVentas.traerCorrelativo(Int32.Parse(indice), idserie);
-
-                    lblSerie.Text = cboSerie.Text;
-                    lblNroCorrelativo.Text = correlativo;
-                    lblTipo.Text = "FACTURA DE VENTA";
                     break;
                 case "2":
-                 
+                    
                     cboSerie.ValueMember = "IdSerie";
                     cboSerie.DisplayMember = "Serie";
                     cboSerie.DataSource = cNVentas.traerSerie(Int32.Parse(indice));
@@ -1072,7 +1106,7 @@ namespace SistemaFigueri
                     lblNroCorrelativo.Text = correlativo;
                     lblTipo.Text = "BOLETA DE VENTA";
                     break;
-                case "96":
+                case "3":
                     //MUY PRONTO ...
                     break;
                 default:
@@ -1099,6 +1133,23 @@ namespace SistemaFigueri
                 tbtipodoc.Text = c.Documento;
                 tbRuc.Text = c.RUC;
                 string i = LocalBD.Instancia.ReturnIdCliente(1, c.Id_Cliente);
+                CNVentas cn = new CNVentas();
+                if (lst.Count > 0)
+                {
+                    for (int j = 0; j < lst.Count; j++)
+                    {
+
+                        Decimal nuevoPrecio = cn.traerPrecio(c.Id_Cliente, lst[j].IdProducto);
+                        lst[j].PrecioVenta = nuevoPrecio;
+                        int cant = lst[j].Cantidad ;
+                        decimal porcentaje = (Convert.ToDecimal(tbIgv.Text) / 100) + 1;
+                        decimal resultado = Math.Round(cant * nuevoPrecio / porcentaje, 2);
+                        lst[j].SubTotal = resultado;
+                    }
+                    LlenarGrilla();
+                }
+                
+                
             }
             catch (ApplicationException)
             {
@@ -1109,13 +1160,14 @@ namespace SistemaFigueri
                     {
                         if (form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                         {
+
                             tbClienteNombre.Text = form.clienteN;
                             tbCliapellido.Text = form.clienteA;
                             tbRuc.Text = form.ruc;
                             tbDocumento.Text = form.dni;
                             tbtipodoc.Text = form.tipodoc;
                             tbrazonsocial.Text = form.empresa;
-                            tbIdCliente.Text = form.idcliente;
+                            tbIdCliente.Text = form.id_cliente;
 
                             CNProductos objProducto = new CNProductos();
 
@@ -1253,6 +1305,21 @@ namespace SistemaFigueri
                 tbtipodoc.Text = c.Documento;
                 tbRuc.Text = c.RUC;
                 string i = LocalBD.Instancia.ReturnIdCliente(1, c.Id_Cliente);
+                CNVentas cn = new CNVentas();
+                if (lst.Count > 0)
+                {
+                    for (int j = 0; j < lst.Count; j++)
+                    {
+
+                        Decimal nuevoPrecio = cn.traerPrecio(c.Id_Cliente, lst[j].IdProducto);
+                        lst[j].PrecioVenta = nuevoPrecio;
+                        int cant = lst[j].Cantidad;
+                        decimal porcentaje = (Convert.ToDecimal(tbIgv.Text) / 100) + 1;
+                        decimal resultado = Math.Round(cant * nuevoPrecio / porcentaje, 2);
+                        lst[j].SubTotal = resultado;
+                    }
+                    LlenarGrilla();
+                }
             }
             catch (ApplicationException)
             {
@@ -1400,10 +1467,9 @@ namespace SistemaFigueri
             {
                 BuscaCLienteVentaDNI();
             }
-            else
+            if (e.KeyCode == Keys.Back)
             {
-               
-
+                LimpiarClienteDNI();
             }
         }
 
@@ -1673,9 +1739,11 @@ namespace SistemaFigueri
 
         private void tbCodBarras_KeyDown(object sender, KeyEventArgs e)
         {
-            /*try
-            {*/
+            try
+            {
                 if ( e.KeyCode == Keys.Enter)
+                {
+                if (tbCodBarras.Text != "")
                 {
                     BuscaProductoCB();
 
@@ -1684,16 +1752,18 @@ namespace SistemaFigueri
                     ven = sales;
                     Decimal Porcentaje = 0; Decimal SubTotal;
 
-                       
-                        Porcentaje = (Convert.ToDecimal(tbIgv.Text) / 100) + 1;
-                        SubTotal = (ven.PrecioVenta * 1) / Porcentaje;
-                        ven.Igv = Math.Round(Convert.ToDecimal(SubTotal) * (Convert.ToDecimal(tbIgv.Text) / (100)), 2);
-                        ven.SubTotal = Math.Round(SubTotal, 2);
-                        lst.Add(ven);
-                      
-                    
+
+                    Porcentaje = (Convert.ToDecimal(tbIgv.Text) / 100) + 1;
+                    SubTotal = (ven.PrecioVenta * 1) / Porcentaje;
+                    ven.Igv = Math.Round(Convert.ToDecimal(SubTotal) * (Convert.ToDecimal(tbIgv.Text) / (100)), 2);
+                    ven.SubTotal = Math.Round(SubTotal, 2);
+                    lst.Add(ven);
+
+
                     LlenarGrilla();
                     LimpiarProducto();
+                }
+                    
                 }
                 else
                 {
@@ -1701,11 +1771,11 @@ namespace SistemaFigueri
 
                 }
 
-            /*}
+            }
             catch ( Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error en evento KeyDown", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }*/
+            }
         
         }
 
@@ -1875,7 +1945,9 @@ namespace SistemaFigueri
                         pago.Ide_Forma_Pago = vnt.IdTipoPago;
                         pago.Ide_Moneda = 1;
                         pago.Ide_Tarjeta_Banco = vnt.idtarjeta;
-                        
+                        pago.Num_Tarjeta = vnt.ntarjeta;
+                        pago.Num_Operacion = vnt.noperacion;
+                        pago.Num_Referencia = vnt.nreferencia;
                         pago.Imp_Pago = Double.Parse(tbImpTotal.Text.ToString());
                         pago.Ide_Usuario = Int32.Parse(LoginInfo.IdUsuario);
                         cDVenta.Inserta_FEComprobanteVentaPago(pago);
@@ -1895,13 +1967,13 @@ namespace SistemaFigueri
                     {
                         MessageBox.Show("Se insertó correctamente");
                         Reportes.ComprobanteVenta compPrint = new Reportes.ComprobanteVenta();
-                        compPrint.Load("C:\\Users\\AlphaLeader\\Desktop\\SisFVS2\\SistemaFigueri\\SistemaFigueri\\Reportes\\ComprobanteVenta.rpt");
-                        compPrint.SetDataSource(dsdet);
+                        /*compPrint.Load("C:\\Users\\AlphaLeader\\Desktop\\SisFVS2\\SistemaFigueri\\SistemaFigueri\\Reportes\\ComprobanteVenta.rpt");
+                        compPrint.SetDataSource(dsdet);*/
                         //formC.crystalReportViewer1.ReportSource = compPrint;
                         //formC.ShowDialog();
                         /*comp.PrintOptions.PaperOrientation = PaperOrientation.Portrait;
                         comp.PrintOptions.PaperSize = PaperSize.PaperA4;*/
-                        compPrint.PrintToPrinter(1, false, 0, 15);
+                        //compPrint.PrintToPrinter(1, false, 0, 15);
                         Limpiar();
                         LimpiarClienteDNI();
                         LimpiarProducto();
@@ -1940,7 +2012,11 @@ namespace SistemaFigueri
                 BuscaCLienteEmpresa();
                 tbCodBarras.Focus();
             }
-          
+            if (e.KeyCode == Keys.Back)
+            {
+                LimpiarClienteEmpresa();
+            }
+
         }
         private void tbDescripcion_KeyDown(object sender, KeyEventArgs e)
         {
@@ -2138,7 +2214,34 @@ namespace SistemaFigueri
             }
         }
 
-      
+        private void tbDocumento_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+        bool tieneRuc = false;
+        private void tbRuc_TextChanged(object sender, EventArgs e)
+        {
+            if (tbRuc.Text == "")
+            {
+                if (chkruc.Checked == true)
+                {
+                    chkruc.Checked = false;
+                }
+                tieneRuc = false;
+                cboTipoDoc.SelectedValue = "3";
+            }
+            else
+            {
+                if (chkruc.Checked == false)
+                {
+                    chkruc.Checked = true;
+                }
+                tieneRuc = true;
+            }
+        }
     }
 }
 

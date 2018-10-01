@@ -25,6 +25,7 @@ namespace SistemaFigueri
         public String dni { get; set; }
         public String clienteN { get; set; }
         public String clienteA { get; set; }
+        public String id_cliente { get; set; }
         public String ruc { get; set; }
         public String empresa { get; set; }
         public String tipodoc { get; set; }
@@ -149,7 +150,7 @@ namespace SistemaFigueri
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-           // String IdCliente = dgvCliente.Rows[e.RowIndex].Cells["IdCliente"].Value.ToString();
+            String IdCliente = dgvCliente.Rows[e.RowIndex].Cells["IdCliente"].Value.ToString();
             String Dni = dgvCliente.Rows[e.RowIndex].Cells["DNI"].Value.ToString();
             String Nombres = dgvCliente.Rows[e.RowIndex].Cells["Nombres"].Value.ToString();
             String Apellidos = dgvCliente.Rows[e.RowIndex].Cells["Apellidos"].Value.ToString();
@@ -158,6 +159,9 @@ namespace SistemaFigueri
             String Empresa = dgvCliente.Rows[e.RowIndex].Cells["Razón_Social"].Value.ToString();
             String TipoDoc = dgvCliente.Rows[e.RowIndex].Cells["Documento"].Value.ToString();
 
+            
+            id_cliente = IdCliente;
+            MessageBox.Show(id_cliente);
             dni = Dni;
             clienteN = Nombres;
             clienteA = Apellidos;

@@ -32,6 +32,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnClearTarjeta = new Bunifu.Framework.UI.BunifuImageButton();
+            this.tbTarjeta = new System.Windows.Forms.MaskedTextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -41,7 +43,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnClearTarjeta = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnClearTerminal = new Bunifu.Framework.UI.BunifuImageButton();
             this.tbTerminal = new System.Windows.Forms.TextBox();
             this.btnClearLote = new Bunifu.Framework.UI.BunifuImageButton();
@@ -66,7 +67,6 @@
             this.cboTarjeta = new System.Windows.Forms.ComboBox();
             this.btnCancelar = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnGuardar = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.tbTarjeta = new System.Windows.Forms.MaskedTextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -158,6 +158,30 @@
             this.groupBox1.TabIndex = 196;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "DATOS TRANSACCIÓN:  ";
+            // 
+            // btnClearTarjeta
+            // 
+            this.btnClearTarjeta.BackColor = System.Drawing.Color.FloralWhite;
+            this.btnClearTarjeta.Image = global::SistemaFigueri.Properties.Resources.icon_cerrar21;
+            this.btnClearTarjeta.ImageActive = null;
+            this.btnClearTarjeta.Location = new System.Drawing.Point(481, 380);
+            this.btnClearTarjeta.Name = "btnClearTarjeta";
+            this.btnClearTarjeta.Size = new System.Drawing.Size(28, 26);
+            this.btnClearTarjeta.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnClearTarjeta.TabIndex = 267;
+            this.btnClearTarjeta.TabStop = false;
+            this.btnClearTarjeta.Zoom = 10;
+            this.btnClearTarjeta.Click += new System.EventHandler(this.btnClearTarjeta_Click);
+            // 
+            // tbTarjeta
+            // 
+            this.tbTarjeta.BackColor = System.Drawing.Color.FloralWhite;
+            this.tbTarjeta.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbTarjeta.Location = new System.Drawing.Point(196, 379);
+            this.tbTarjeta.Mask = "XXXX-XXXX-XXXX-0000";
+            this.tbTarjeta.Name = "tbTarjeta";
+            this.tbTarjeta.Size = new System.Drawing.Size(289, 27);
+            this.tbTarjeta.TabIndex = 278;
             // 
             // label9
             // 
@@ -258,20 +282,6 @@
             this.label1.TabIndex = 269;
             this.label1.Text = "*";
             // 
-            // btnClearTarjeta
-            // 
-            this.btnClearTarjeta.BackColor = System.Drawing.Color.FloralWhite;
-            this.btnClearTarjeta.Image = global::SistemaFigueri.Properties.Resources.icon_cerrar21;
-            this.btnClearTarjeta.ImageActive = null;
-            this.btnClearTarjeta.Location = new System.Drawing.Point(481, 380);
-            this.btnClearTarjeta.Name = "btnClearTarjeta";
-            this.btnClearTarjeta.Size = new System.Drawing.Size(28, 26);
-            this.btnClearTarjeta.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnClearTarjeta.TabIndex = 267;
-            this.btnClearTarjeta.TabStop = false;
-            this.btnClearTarjeta.Zoom = 10;
-            this.btnClearTarjeta.Click += new System.EventHandler(this.btnClearTarjeta_Click);
-            // 
             // btnClearTerminal
             // 
             this.btnClearTerminal.BackColor = System.Drawing.Color.FloralWhite;
@@ -355,6 +365,7 @@
             this.tbReferencia.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbReferencia.ForeColor = System.Drawing.Color.Black;
             this.tbReferencia.Location = new System.Drawing.Point(196, 246);
+            this.tbReferencia.MaxLength = 4;
             this.tbReferencia.Name = "tbReferencia";
             this.tbReferencia.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tbReferencia.Size = new System.Drawing.Size(289, 26);
@@ -383,6 +394,7 @@
             this.tbOperacion.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbOperacion.ForeColor = System.Drawing.Color.Black;
             this.tbOperacion.Location = new System.Drawing.Point(196, 201);
+            this.tbOperacion.MaxLength = 8;
             this.tbOperacion.Name = "tbOperacion";
             this.tbOperacion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tbOperacion.Size = new System.Drawing.Size(289, 26);
@@ -660,16 +672,6 @@
             this.btnGuardar.Textcolor = System.Drawing.Color.White;
             this.btnGuardar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // tbTarjeta
-            // 
-            this.tbTarjeta.BackColor = System.Drawing.Color.FloralWhite;
-            this.tbTarjeta.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbTarjeta.Location = new System.Drawing.Point(196, 379);
-            this.tbTarjeta.Mask = "XXXX-XXXX-XXXX-0000";
-            this.tbTarjeta.Name = "tbTarjeta";
-            this.tbTarjeta.Size = new System.Drawing.Size(289, 27);
-            this.tbTarjeta.TabIndex = 278;
             // 
             // FormPosExterno
             // 
