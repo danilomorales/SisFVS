@@ -114,6 +114,7 @@ namespace SistemaFigueri
                 cli.DeleteClient(dgvCliente.CurrentRow.Cells[0].Value.ToString());
                 MessageBox.Show("¿Estas seguro de eliminar este Cliente?");
                 //this.Close();
+               
                 MostrarClientes();
 
             }
@@ -136,11 +137,26 @@ namespace SistemaFigueri
             {
                 list.Add((DataRow)row);
             }
-
-            //plist = new PagedList<DataRow>(list);
+          
             adapter.Fill(tabla);
             dgvCliente.DataSource = tabla;
             adapter.Dispose();
+            dgvCliente.Columns[0].Visible = false;
+            dgvCliente.Columns[10].Visible = false;
+            dgvCliente.Columns[13].Visible = false;
+            dgvCliente.Columns[17].Visible = false;
+            dgvCliente.Columns[18].Visible = false;
+            dgvCliente.Columns[19].Visible = false;
+            dgvCliente.Columns[20].Visible = false;
+            dgvCliente.Columns[21].Visible = false;
+            dgvCliente.Columns[22].Visible = false;
+            dgvCliente.Columns[23].Visible = false;
+            dgvCliente.Columns[24].Visible = false;
+            dgvCliente.Columns[25].Visible = false;
+            dgvCliente.Columns[26].Visible = false;
+            dgvCliente.Columns[27].Visible = false;
+            //dgvCliente.Columns[28].Visible = false;
+            //plist = new PagedList<DataRow>(list);
         }
 
         private void bmBuscar_KeyUp(object sender, KeyEventArgs e)

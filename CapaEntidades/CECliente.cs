@@ -8,7 +8,7 @@ namespace CapaEntidades
 {
     public class CECliente
     {
-        public int IdCliente { get; set; }
+        //public int IdCliente { get; set; }
         public String IdSector { get; set; }
         public String Id_Cliente { get; set; }
         public String Documento { get; set; }

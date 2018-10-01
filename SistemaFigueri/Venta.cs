@@ -10,7 +10,7 @@ namespace SistemaFigueri
 {
     public class Venta
     {
-        public int IdProducto { get; set; }
+        public String IdProducto { get; set; }
         public int IdVenta { get; set; }
         public int IdUser { get; set; }
         public int IdCliente { get; set; }
@@ -59,14 +59,14 @@ namespace SistemaFigueri
             Descripcion = "";
             PrecioVenta = 0;
             IdVenta = 0;
-            IdProducto = 0;
+            IdProducto = "";
             Igv = 18;
             SubTotal = 0;
             Descuento = "";
 
         }
         public Venta(int objIdVenta, int objCantidad, string objDescripcion, decimal objPVenta,
-           int objIdProducto, decimal objIgv, decimal objSubTotal, string objDescuento)
+           String objIdProducto, decimal objIgv, decimal objSubTotal, string objDescuento)
         {
             IdVenta = objIdVenta;
             Cantidad = objCantidad;

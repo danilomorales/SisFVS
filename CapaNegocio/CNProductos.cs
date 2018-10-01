@@ -102,6 +102,13 @@ namespace CapaNegocio
                 throw;
             }
         }
+        // losta productos en tabla From Buscar Cliente 
+        public SqlDataAdapter CargaProdcuto()
+        {
+            SqlDataAdapter prodcuto;
+            prodcuto = pro.CargaProductoLista();
+            return prodcuto;
+        }
 
         //ListaPRoductos paraventa
         public List<CEProducto> ListarProductoVenta()
@@ -126,6 +133,7 @@ namespace CapaNegocio
         {
             try
             {
+
                 CEProducto c = null;
                 c = CDProductos.Instancia.BuscaProductoCB(id_pro, Cod_barra);
                 if (c == null) throw new ApplicationException("No se encontro registro");
@@ -137,6 +145,33 @@ namespace CapaNegocio
                 throw;
             }
         }
-       
+
+        //busca Producto por Descripcion
+        public CEProducto BuscaProductoDescripcion(int id_pro, String des_pro)
+        {
+            try
+            {
+                CEProducto c = null;
+                c = CDProductos.Instancia.BuscaProductoPorDescripcion(id_pro, des_pro);
+                if (c == null) throw new ApplicationException("No se encontro registro");
+                return c;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public List<String> filtroProductoDescripcion()
+        {
+            List<String> Lista = pro.filtroProductoDesc();
+            if (Lista.Count <= 0) throw new ApplicationException("Lista de productos vacia");
+            else if (Lista == null) throw new ApplicationException("Error al cargar lista de productos");
+            return Lista;
+
+        }
+
+
     }
 }

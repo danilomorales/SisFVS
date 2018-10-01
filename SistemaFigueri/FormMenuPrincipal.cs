@@ -17,6 +17,7 @@ namespace SistemaFigueri
         public FormMenuPrincipal()
         {
             InitializeComponent();
+            tmFechaHora.Enabled = true;
         }
         int lx, ly;
         int sw, sh;
@@ -223,8 +224,8 @@ namespace SistemaFigueri
                     lstBtnCalc[j].Normalcolor = Color.FromArgb(231, 52, 52);
                 }
             }
-            AbrirFormEnPanel(new FormCaja());
 
+            AbrirFormEnPanel(new FormCaja());
         }
 
         private void btnReportes_Click(object sender, EventArgs e)

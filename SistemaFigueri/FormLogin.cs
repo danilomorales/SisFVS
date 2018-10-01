@@ -12,6 +12,7 @@ using CapaNegocio;
 using System.Data.SqlClient;
 using Bunifu.Framework.UI;
 using System.IO;
+using CapaDatos;
 
 namespace SistemaFigueri
 {
@@ -77,7 +78,7 @@ namespace SistemaFigueri
                                 MemoryStream ms = new MemoryStream(picture);
                                 objPPrincipal.pbPerfil.Image = Image.FromStream(ms);
                             }
-                            
+                            LoginInfo.IdUsuario = Perfil["IdUsuario"].ToString();
                             objPPrincipal.label1.Text = nomUsu;
                             objPPrincipal.label2.Text = patUsu + " " + matUsu;
                             objPPrincipal.label3.Text = rol;
@@ -87,13 +88,7 @@ namespace SistemaFigueri
                         //Console.WriteLine(liston[0].ToString()+ " .. "+ liston[1].ToString());
                         Hide();
                         Loguear.Close();
-                        /*Label label = new Label();
-                        label.Font= new Font("Arial", label.Font.Size, FontStyle.Bold);
-                        label.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-                        label.BackColor = Color.FromArgb(39, 57, 80);
-                        label.Location = new Point(22, 13);
-                        label.Text="Nombre del usuario";
-                        objPPrincipal.Controls.Add(label);*/
+
 
                         objPPrincipal.Show();
                     }
@@ -101,10 +96,6 @@ namespace SistemaFigueri
                         MessageBox.Show("Error en el loginForm"+e);
                     }
 
-
-
-
-                    
                 }
                 else
                 {
@@ -117,8 +108,7 @@ namespace SistemaFigueri
 
         private void FormLogin_MouseDown(object sender, MouseEventArgs e)
         {
-            ReleaseCapture();
-            SendMessage(Handle, 0x112, 0xf012, 0);
+         
         }
 
         private void tbContrasenna_Enter(object sender, EventArgs e)
@@ -157,6 +147,12 @@ namespace SistemaFigueri
             {
                 validar();
             }
+        }
+
+        private void barraCanecera_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(Handle, 0x112, 0xf012, 0);
         }
     }
 

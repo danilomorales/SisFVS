@@ -290,5 +290,16 @@ namespace CapaEntidades
             get { return ide_sucursal; }
             set { ide_sucursal = value; }
         }
+
+        string obs_comp_vta_estado;
+        public string Obs_comp_vta_estado {
+            get {
+                return obs_comp_vta_estado;
+            }
+            set
+            {
+                obs_comp_vta_estado = value;
+            }
+        }
     }
 }

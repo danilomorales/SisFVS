@@ -106,14 +106,35 @@ namespace SistemaFigueri
         {
             SqlDataAdapter adapter = cp.MostarProductos();
             tabla = new DataTable();
+            Image img = null;
             foreach (DataRow row in tabla.Rows)
             {
+                
                 list.Add((DataRow)row);
             }
 
             adapter.Fill(tabla);
             dgvProductos.DataSource = tabla;
             adapter.Dispose();
+
+            //DataGridViewImageColumn dgvImagenColumn = new DataGridViewImageColumn();
+            //dgvImagenColumn.HeaderText = "Estado";
+            //dgvImagenColumn.Name = "Estado";
+            //dgvProductos.Columns.Add(dgvImagenColumn);
+            //dgvImagenColumn.ImageLayout = DataGridViewImageCellLayout.Zoom;
+
+            dgvProductos.AllowUserToAddRows = false;
+            dgvProductos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvProductos.AllowUserToResizeColumns = false;
+            dgvProductos.Columns[0].Visible = false;
+            dgvProductos.Columns[5].Visible = false;
+            dgvProductos.Columns[7].Visible = false;
+            dgvProductos.Columns[8].Visible = false;
+            dgvProductos.Columns[9].Visible = false;
+            dgvProductos.Columns[10].Visible = false;
+            dgvProductos.Columns[11].Visible = false;
+            dgvProductos.Columns["Precio Oferta"].Visible = false;
+            dgvProductos.Columns["Estado"].Visible = false;
 
         }
          
@@ -178,6 +199,16 @@ namespace SistemaFigueri
         }
 
         private void bunifuCards1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
         {
 
         }

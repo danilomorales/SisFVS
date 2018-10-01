@@ -1953,18 +1953,17 @@
             this.bmbuscarCajero.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bmbuscarCajero.ForeColor = System.Drawing.Color.Black;
             this.bmbuscarCajero.HintForeColor = System.Drawing.Color.Black;
-            this.bmbuscarCajero.HintText = "Buscar Tienda";
+            this.bmbuscarCajero.HintText = "Buscar Cajero";
             this.bmbuscarCajero.isPassword = false;
             this.bmbuscarCajero.LineFocusedColor = System.Drawing.Color.Red;
             this.bmbuscarCajero.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
             this.bmbuscarCajero.LineMouseHoverColor = System.Drawing.Color.SandyBrown;
             this.bmbuscarCajero.LineThickness = 5;
-            this.bmbuscarCajero.Location = new System.Drawing.Point(185, 133);
+            this.bmbuscarCajero.Location = new System.Drawing.Point(185, 147);
             this.bmbuscarCajero.Margin = new System.Windows.Forms.Padding(4);
             this.bmbuscarCajero.Name = "bmbuscarCajero";
-            this.bmbuscarCajero.Size = new System.Drawing.Size(740, 44);
+            this.bmbuscarCajero.Size = new System.Drawing.Size(740, 30);
             this.bmbuscarCajero.TabIndex = 191;
-            this.bmbuscarCajero.Text = "Buscar Cajero";
             this.bmbuscarCajero.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // bunifuCards11

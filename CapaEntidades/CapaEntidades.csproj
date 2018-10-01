@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CECaja.cs" />
     <Compile Include="CECliente.cs" />
     <Compile Include="CEComprobantePago.cs" />
     <Compile Include="CEComprovante_Venta_Pago.cs" />
@@ -52,6 +53,8 @@
     <Compile Include="CEVenta.cs" />
     <Compile Include="CEDetalleVenta.cs" />
     <Compile Include="CE_Cliente.cs" />
+    <Compile Include="CE_FE_Comprobante_Estado.cs" />
+    <Compile Include="CE_FE_Comprobante_VentaEstado.cs" />
     <Compile Include="CE_FE_Comprobante_VentaPago.cs" />
     <Compile Include="CE_FE_Comprobante_Vta_Det.cs" />
     <Compile Include="CE_FE_Comprobante_Venta.cs" />

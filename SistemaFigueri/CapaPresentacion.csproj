@@ -81,6 +81,12 @@
     <Compile Include="FormBuscarRoles.Designer.cs">
       <DependentUpon>FormBuscarRoles.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCaja.Designer.cs">
+      <DependentUpon>FormCaja.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormComprobanteVenta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,12 @@
     </Compile>
     <Compile Include="FormPosExterno.Designer.cs">
       <DependentUpon>FormPosExterno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPrincipalPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPrincipalPage.Designer.cs">
+      <DependentUpon>FormPrincipalPage.cs</DependentUpon>
     </Compile>
     <Compile Include="FormSucursal.cs">
       <SubType>Form</SubType>
@@ -224,12 +236,6 @@
     <Compile Include="FormUpdateProducto.Designer.cs">
       <DependentUpon>FormUpdateProducto.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCaja.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormCaja.Designer.cs">
-      <DependentUpon>FormCaja.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -242,23 +248,11 @@
     <Compile Include="FormMenuPrincipal.Designer.cs">
       <DependentUpon>FormMenuPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormPrincipalPage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormPrincipalPage.Designer.cs">
-      <DependentUpon>FormPrincipalPage.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormProductos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormProductos.Designer.cs">
       <DependentUpon>FormProductos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormRegistroCobro.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormRegistroCobro.Designer.cs">
-      <DependentUpon>FormRegistroCobro.cs</DependentUpon>
     </Compile>
     <Compile Include="FormTipoDeCambio.cs">
       <SubType>Form</SubType>
@@ -268,9 +262,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="SomeData.cs" />
-    <EmbeddedResource Include="FormCaja.resx">
-      <DependentUpon>FormCaja.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormBuscarClienteR.resx">
       <DependentUpon>FormBuscarClienteR.cs</DependentUpon>
     </EmbeddedResource>
@@ -285,6 +276,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormBuscarUsuario.resx">
       <DependentUpon>FormBuscarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCaja.resx">
+      <DependentUpon>FormCaja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCliente.resx">
       <DependentUpon>FormCliente.cs</DependentUpon>
@@ -322,14 +316,8 @@
     <EmbeddedResource Include="FormPosExterno.resx">
       <DependentUpon>FormPosExterno.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormPrincipalPage.resx">
-      <DependentUpon>FormPrincipalPage.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormProductos.resx">
       <DependentUpon>FormProductos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormRegistroCobro.resx">
-      <DependentUpon>FormRegistroCobro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSucursal.resx">
       <DependentUpon>FormSucursal.cs</DependentUpon>
@@ -841,6 +829,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\sucursal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trashfull.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trash2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\waste.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\recycler.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SistemaFigueri\Resources\aa0000.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cajaclose.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cajaopen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cerradooo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buscadoe.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
