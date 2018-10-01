@@ -135,7 +135,7 @@ namespace SistemaFigueri
             dgvProductos.DataSource = dt;
             Conexion.Close();           
         }
-
+             
         private void bmBuscar_OnValueChanged(object sender, EventArgs e)
         {
 

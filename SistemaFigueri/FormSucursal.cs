@@ -772,5 +772,21 @@ namespace SistemaFigueri
             else
                 MessageBox.Show("Seleccione una fila por favor");
         }
+
+        private void bmBuscar_KeyUp(object sender, KeyEventArgs e)
+        {
+            SqlConnection Conexion = new SqlConnection("Data Source=192.168.21.05;Initial Catalog=DBFIGUE2;User ID=sa;Password=123;MultipleActiveResultSets=true;");
+            Conexion.Open();
+            SqlCommand cmd = Conexion.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select ide_sucursal, nombre_sucursal as 'Sucursal', flg_estado_sucursal as 'Estado de la sucursal'," +
+                "fecha_ult_registro as 'Fecha de registro' from caja.FE_SUCURSAL where nombre_sucursal like ('%" + bmBuscar.Text + "%'); ";
+            cmd.ExecuteNonQuery();
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            dgvsucursal.DataSource = dt;
+            Conexion.Close();
+        }
     }
 }

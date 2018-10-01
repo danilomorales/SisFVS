@@ -349,6 +349,7 @@
             this.bmBuscar.Size = new System.Drawing.Size(602, 44);
             this.bmBuscar.TabIndex = 153;
             this.bmBuscar.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bmBuscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.bmBuscar_KeyUp);
             // 
             // bunifuCards6
             // 
@@ -1876,7 +1877,7 @@
             // 
             this.Cajero.BackColor = System.Drawing.Color.Moccasin;
             this.Cajero.BorderRadius = 5;
-            this.Cajero.BottomSahddow = true;
+            this.Cajero.BottomSahddow = false;
             this.Cajero.color = System.Drawing.Color.Tomato;
             this.Cajero.Controls.Add(this.bunifuCards12);
             this.Cajero.Controls.Add(this.bunifuImageButton5);
@@ -1896,7 +1897,7 @@
             this.Cajero.LeftSahddow = false;
             this.Cajero.Location = new System.Drawing.Point(3, 3);
             this.Cajero.Name = "Cajero";
-            this.Cajero.RightSahddow = true;
+            this.Cajero.RightSahddow = false;
             this.Cajero.ShadowDepth = 20;
             this.Cajero.Size = new System.Drawing.Size(1066, 478);
             this.Cajero.TabIndex = 0;
@@ -1909,13 +1910,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.bunifuCards12.BackColor = System.Drawing.Color.Moccasin;
             this.bunifuCards12.BorderRadius = 5;
-            this.bunifuCards12.BottomSahddow = true;
+            this.bunifuCards12.BottomSahddow = false;
             this.bunifuCards12.color = System.Drawing.Color.Transparent;
             this.bunifuCards12.Controls.Add(this.dgvcajero);
             this.bunifuCards12.LeftSahddow = false;
             this.bunifuCards12.Location = new System.Drawing.Point(89, 200);
             this.bunifuCards12.Name = "bunifuCards12";
-            this.bunifuCards12.RightSahddow = true;
+            this.bunifuCards12.RightSahddow = false;
             this.bunifuCards12.ShadowDepth = 20;
             this.bunifuCards12.Size = new System.Drawing.Size(892, 266);
             this.bunifuCards12.TabIndex = 193;
